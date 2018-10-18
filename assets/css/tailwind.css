@@ -1,0 +1,111 @@
+/**
+ * This injects Tailwind's base styles, which is a combination of
+ * Normalize.css and some additional base styles.
+ *
+ * You can see the styles here:
+ * https://github.com/tailwindcss/tailwindcss/blob/master/css/preflight.css
+ *
+ * If using `postcss-import`, use this import instead:
+ *
+ * @import "tailwindcss/preflight";
+ */
+@tailwind preflight;
+
+/**
+ * This injects any component classes registered by plugins.
+ *
+ * If using `postcss-import`, use this import instead:
+ *
+ * @import "tailwindcss/components";
+ */
+@tailwind components;
+
+button {
+  outline: none !important;
+}
+
+.transition {
+  transition: background-color .15s ease-out;
+}
+
+.btn {
+  @apply outline-none rounded-lg text-14 text-grey font-bold uppercase px-30 py-12;
+}
+
+.btn:focus {
+  @apply shadow-outline;
+}
+
+.btn-primary {
+  @apply bg-green text-white;
+}
+
+.btn-primary:hover {
+  @apply bg-green-dark;
+}
+
+.btn-secondary {
+  @apply bg-pink-dark text-white;
+}
+
+.btn-secondary:hover {
+  @apply bg-pink-darker;
+}
+
+.btn-default {
+  @apply shadow;
+}
+
+.dropdown-parent {
+  @apply relative;
+}
+
+.dropdown-parent:hover > .dropdown-child {
+  @apply block;
+}
+
+.dropdown-child {
+  @apply hidden absolute min-w-150 bg-white shadow rounded-lg;
+}
+
+
+/**
+ * Here you would add any of your custom component classes; stuff that you'd
+ * want loaded *before* the utilities so that the utilities could still
+ * override them.
+ *
+ * Example:
+ *
+ * .btn { ... }
+ * .form-input { ... }
+ *
+ * Or if using a preprocessor or `postcss-import`:
+ *
+ * @import "components/buttons";
+ * @import "components/forms";
+ */
+
+/**
+ * This injects all of Tailwind's utility classes, generated based on your
+ * config file.
+ *
+ * If using `postcss-import`, use this import instead:
+ *
+ * @import "tailwindcss/utilities";
+ */
+@tailwind utilities;
+
+/**
+ * Here you would add any custom utilities you need that don't come out of the
+ * box with Tailwind.
+ *
+ * Example :
+ *
+ * .bg-pattern-graph-paper { ... }
+ * .skew-45 { ... }
+ *
+ * Or if using a preprocessor or `postcss-import`:
+ *
+ * @import "utilities/background-patterns";
+ * @import "utilities/skew-transforms";
+ */
