@@ -17,5 +17,11 @@ config.autoAddCss = false
     library.add(fortawesomeprosolidsvgicons_fas)
   
 
+  
+  
+    import  { fab as fortawesomefreebrandssvgicons_fab } from '@fortawesome/free-brands-svg-icons'
+    library.add(fortawesomefreebrandssvgicons_fab)
+  
+
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)

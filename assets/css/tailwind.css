@@ -76,6 +76,18 @@ button {
   @apply hidden absolute min-w-150 bg-white shadow rounded-lg;
 }
 
+.title-small {
+  @apply text-base text-green-darkest uppercase font-bold;
+}
+
+.footer-link {
+  @apply no-underline text-green-darkest text-14;
+}
+
+.footer-link:hover {
+  @apply underline;
+}
+
 
 /**
  * Here you would add any of your custom component classes; stuff that you'd
