@@ -220,6 +220,9 @@ module.exports = {
       'Liberation Mono',
       'Courier New',
       'monospace',
+    ],
+    'cafe': [
+      'Louis George Cafe Bold'
     ]
   },
 

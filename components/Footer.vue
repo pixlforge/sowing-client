@@ -2,8 +2,8 @@
   <div>
     <div class="container">
       Footer
-      <Disclaimer/>
     </div>
+    <Disclaimer/>
   </div>
 </template>
 
