@@ -6,9 +6,7 @@
         href="https://www.sowing.ch/"
         target="_blank"
         rel="noopener noreferrer"
-        class="no-underline hover:underline text-white font-cafe uppercase">
-        Sowing
-      </a>.
+        class="no-underline hover:underline text-white font-cafe uppercase">Sowing</a>.
     </p>
     <p class="mt-5">
       Réalisé avec
@@ -20,9 +18,7 @@
         href="https://www.pixlforge.ch/"
         target="_blank"
         rel="noopener noreferrer"
-        class="no-underline hover:underline text-white font-semibold">
-        Pixlforge
-      </a>.
+        class="no-underline hover:underline text-white font-semibold">Pixlforge</a>.
     </p>
   </div>
 </template>
