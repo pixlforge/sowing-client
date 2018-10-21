@@ -663,6 +663,7 @@ module.exports = {
   */
 
   padding: {
+    '0': '0',
     '5': '.5rem',
     '10': '1rem',
     '15': '1.5rem',
@@ -694,6 +695,7 @@ module.exports = {
 
   margin: {
     'auto': 'auto',
+    '0': '0',
     '5': '.5rem',
     '10': '1rem',
     '15': '1.5rem',

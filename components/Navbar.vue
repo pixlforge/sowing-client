@@ -1,7 +1,11 @@
 <template>
   <div class="h-80 flex items-center">
     <div class="container flex items-center">
-      <Logo class="mr-30"/>
+      <nuxt-link
+        :to="{ name: 'index' }"
+        class="mr-30">
+        <Logo/>
+      </nuxt-link>
       <Searchbar/>
       <ButtonLanguages class="mr-30"/>
       <Button
