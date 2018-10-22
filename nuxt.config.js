@@ -18,6 +18,12 @@ module.exports = {
     ]
   },
 
+  router: {
+    middleware: [
+      'locale-redirect'
+    ]
+  },
+
   /*
   ** Customize the progress-bar color
   */
@@ -43,6 +49,47 @@ module.exports = {
     // Doc: https://github.com/nuxt-community/axios-module#usage
     '@nuxtjs/axios',
     'nuxt-fontawesome',
+    [
+      'nuxt-i18n', {
+        locales: [
+          {
+            name: 'English',
+            code: 'en',
+            iso: 'en-GB',
+            file: 'en-GB.js'
+          },
+          {
+            name: 'Français',
+            code: 'fr',
+            iso: 'fr-CH',
+            file: 'fr-CH.js'
+          },
+          {
+            name: 'Deutsch',
+            code: 'de',
+            iso: 'de-CH',
+            file: 'de-CH.js'
+          },
+          {
+            name: 'Italiano',
+            code: 'it',
+            iso: 'it-IT',
+            file: 'it-IT.js'
+          }
+        ],
+        strategy: 'prefix',
+        defaultLocale: 'fr',
+        vueI18n: {
+          fallbackLocale: 'fr',
+        },
+        lazy: true,
+        langDir: 'lang/',
+        detectBrowserLanguage: {
+          useCookie: true,
+          cookieKey: 'i18n_redirected'
+        }
+      }
+    ]
   ],
   /*
   ** Axios module configuration

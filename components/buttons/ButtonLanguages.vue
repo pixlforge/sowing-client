@@ -8,32 +8,32 @@
       class="text-14 text-grey-dark"/>
     <ul class="dropdown-child list-reset text-left pin-t py-20 ml-37 mt-35">
       <li>
-        <a
-          href="#"
+        <nuxt-link
+          :to="switchLocalePath('fr')"
           class="block no-underline text-grey-dark hover:text-green pl-30 py-5">
           Français
-        </a>
+        </nuxt-link>
       </li>
       <li>
-        <a
-          href="#"
+        <nuxt-link
+          :to="switchLocalePath('en')"
           class="block no-underline text-grey-dark hover:text-green pl-30 py-5">
           English
-        </a>
+        </nuxt-link>
       </li>
       <li>
-        <a
-          href="#"
+        <nuxt-link
+          :to="switchLocalePath('de')"
           class="block no-underline text-grey-dark hover:text-green pl-30 py-5">
           Deutsch
-        </a>
+        </nuxt-link>
       </li>
       <li>
-        <a
-          href="#"
+        <nuxt-link
+          :to="switchLocalePath('it')"
           class="block no-underline text-grey-dark hover:text-green pl-30 py-5">
           Italiano
-        </a>
+        </nuxt-link>
       </li>
     </ul>
   </button>

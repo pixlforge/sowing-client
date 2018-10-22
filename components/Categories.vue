@@ -1,15 +1,14 @@
 <template>
-  <div class="bg-green-lightest py-15">
+  <div class="bg-green-lightest py-5">
     <div class="container h-full flex items-center">
-      <ul class="list-reset w-full flex flex-wrap justify-between">
+      <ul class="list-reset w-full flex flex-wrap justify-between -mx-10">
         <li
           v-for="category in categories"
-          :key="category.slug"
-          class="mx-10 xl:mx-0">
+          :key="category.slug">
           <nuxt-link
-            :to="{ name: 'categories-slug', params: { slug: category.slug } }"
-            class="block no-underline hover:underline text-base font-semibold text-green-darkest">
-            {{ category.name }}
+            :to="localePath({ name: 'categories-slug', params: { slug: category.slug } })"
+            class="link-category">
+            {{ category.name[locale] }}
           </nuxt-link>
         </li>
       </ul>
@@ -24,7 +23,10 @@ export default {
   computed: {
     ...mapGetters({
       categories: "categories"
-    })
+    }),
+    locale() {
+      return this.$store.state.i18n.locale;
+    }
   }
 };
 </script>

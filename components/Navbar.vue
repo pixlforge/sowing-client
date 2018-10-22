@@ -2,7 +2,7 @@
   <div class="h-80 flex items-center">
     <div class="container flex items-center">
       <nuxt-link
-        :to="{ name: 'index' }"
+        :to="localePath({ name: 'index' })"
         class="mr-30">
         <Logo/>
       </nuxt-link>

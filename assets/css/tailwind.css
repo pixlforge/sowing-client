@@ -37,7 +37,7 @@ button {
 }
 
 .btn {
-  @apply outline-none rounded-lg text-14 text-grey font-bold uppercase px-30 py-12;
+  @apply outline-none rounded-lg text-14 text-grey font-bold uppercase no-underline px-30 py-12;
 }
 
 .btn:focus {
@@ -76,6 +76,10 @@ button {
   @apply hidden absolute min-w-150 bg-white shadow rounded-lg;
 }
 
+.title-large {
+  @apply font-cafe text-48 text-green-darkest font-bold;
+}
+
 .title-small {
   @apply text-base text-green-darkest uppercase font-bold;
 }
@@ -86,6 +90,26 @@ button {
 
 .footer-link:hover {
   @apply underline;
+}
+
+.card-product {
+  @apply w-720 flex bg-green-lightest no-underline text-green-darkest outline-none;
+}
+
+.card-product:focus {
+  @apply shadow-outline;
+}
+
+.link-category {
+ @apply block no-underline text-base font-semibold text-green-darkest outline-none rounded-lg px-10 py-10;
+}
+
+.link-category:hover {
+ @apply underline;
+}
+
+.link-category:focus {
+ @apply shadow-outline;
 }
 
 

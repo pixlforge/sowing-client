@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+const _7e2baf66 = () => import('../pages/products/_slug.vue' /* webpackChunkName: "pages/products/_slug" */).then(m => m.default || m)
 const _3dbde985 = () => import('../pages/categories/_slug.vue' /* webpackChunkName: "pages/categories/_slug" */).then(m => m.default || m)
 const _60595394 = () => import('../pages/index.vue' /* webpackChunkName: "pages/index" */).then(m => m.default || m)
 
@@ -64,14 +65,64 @@ export function createRouter () {
     scrollBehavior,
     routes: [
 		{
-			path: "/categories/:slug?",
-			component: _3dbde985,
-			name: "categories-slug"
+			path: "/en/products/:slug?",
+			component: _7e2baf66,
+			name: "products-slug___en"
 		},
 		{
-			path: "/",
+			path: "/fr/products/:slug?",
+			component: _7e2baf66,
+			name: "products-slug___fr"
+		},
+		{
+			path: "/de/products/:slug?",
+			component: _7e2baf66,
+			name: "products-slug___de"
+		},
+		{
+			path: "/it/products/:slug?",
+			component: _7e2baf66,
+			name: "products-slug___it"
+		},
+		{
+			path: "/en/categories/:slug?",
+			component: _3dbde985,
+			name: "categories-slug___en"
+		},
+		{
+			path: "/fr/categories/:slug?",
+			component: _3dbde985,
+			name: "categories-slug___fr"
+		},
+		{
+			path: "/de/categories/:slug?",
+			component: _3dbde985,
+			name: "categories-slug___de"
+		},
+		{
+			path: "/it/categories/:slug?",
+			component: _3dbde985,
+			name: "categories-slug___it"
+		},
+		{
+			path: "/en/",
 			component: _60595394,
-			name: "index"
+			name: "index___en"
+		},
+		{
+			path: "/fr/",
+			component: _60595394,
+			name: "index___fr"
+		},
+		{
+			path: "/de/",
+			component: _60595394,
+			name: "index___de"
+		},
+		{
+			path: "/it/",
+			component: _60595394,
+			name: "index___it"
 		}
     ],
     

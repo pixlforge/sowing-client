@@ -5,63 +5,17 @@
 
         <!-- Categories -->
         <div class="w-200 lg:w-1/5 mx-auto mt-50 lg:mt-100">
-          <h5 class="title-small">Catégories</h5>
+          <h5 class="title-small mb-10">Catégories</h5>
           <ul class="list-reset leading-normal">
-            <li class="mt-10">
-              <a
-                href="#"
+            <li
+              v-for="category in categories"
+              :key="category.slug"
+              class="mx-10 xl:mx-0">
+              <nuxt-link
+                :to="localePath({ name: 'categories-slug', params: { slug: category.slug } })"
                 class="footer-link">
-                Beauté &amp; bien-être
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                class="footer-link">
-                Bijoux &amp; accessoires
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                class="footer-link">
-                Vêtements
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                class="footer-link">
-                Maison &amp; ameublement
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                class="footer-link">
-                Jouets &amp; divertissements
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                class="footer-link">
-                Art &amp; collections
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                class="footer-link">
-                Papeterie
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                class="footer-link">
-                Produits locaux
-              </a>
+                {{ category.name[locale] }}
+              </nuxt-link>
             </li>
           </ul>
         </div>
@@ -131,35 +85,16 @@
 
         <!-- Languages -->
         <div class="w-200 lg:w-1/5 mx-auto mt-50 lg:mt-100">
-          <h5 class="title-small">Langues</h5>
+          <h5 class="title-small mb-10">{{ $t("lang") }}</h5>
           <ul class="list-reset leading-normal">
-            <li class="mt-10">
-              <a
-                href="#"
+            <li
+              v-for="locale in $i18n.locales"
+              :key="locale.code">
+              <nuxt-link
+                :to="switchLocalePath(locale.code)"
                 class="footer-link">
-                Français
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                class="footer-link">
-                English
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                class="footer-link">
-                Deutsch
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                class="footer-link">
-                Italiano
-              </a>
+                {{ locale.name }}
+              </nuxt-link>
             </li>
           </ul>
         </div>
@@ -199,10 +134,19 @@
 
 <script>
 import Disclaimer from "@/components/Disclaimer";
+import { mapGetters } from "vuex";
 
 export default {
   components: {
     Disclaimer
+  },
+  computed: {
+    ...mapGetters({
+      categories: "categories"
+    }),
+    locale() {
+      return this.$store.state.i18n.locale;
+    }
   }
 };
 </script>
