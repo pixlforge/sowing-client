@@ -65,64 +65,244 @@ export function createRouter () {
     scrollBehavior,
     routes: [
 		{
-			path: "/en/products/:slug?",
+			path: "/en/en/products/:slug?",
 			component: _7e2baf66,
-			name: "products-slug___en"
+			name: "products-slug___en___en"
 		},
 		{
-			path: "/fr/products/:slug?",
+			path: "/fr/en/products/:slug?",
 			component: _7e2baf66,
-			name: "products-slug___fr"
+			name: "products-slug___en___fr"
 		},
 		{
-			path: "/de/products/:slug?",
+			path: "/de/en/products/:slug?",
 			component: _7e2baf66,
-			name: "products-slug___de"
+			name: "products-slug___en___de"
 		},
 		{
-			path: "/it/products/:slug?",
+			path: "/it/en/products/:slug?",
 			component: _7e2baf66,
-			name: "products-slug___it"
+			name: "products-slug___en___it"
 		},
 		{
-			path: "/en/categories/:slug?",
+			path: "/en/fr/products/:slug?",
+			component: _7e2baf66,
+			name: "products-slug___fr___en"
+		},
+		{
+			path: "/fr/fr/products/:slug?",
+			component: _7e2baf66,
+			name: "products-slug___fr___fr"
+		},
+		{
+			path: "/de/fr/products/:slug?",
+			component: _7e2baf66,
+			name: "products-slug___fr___de"
+		},
+		{
+			path: "/it/fr/products/:slug?",
+			component: _7e2baf66,
+			name: "products-slug___fr___it"
+		},
+		{
+			path: "/en/de/products/:slug?",
+			component: _7e2baf66,
+			name: "products-slug___de___en"
+		},
+		{
+			path: "/fr/de/products/:slug?",
+			component: _7e2baf66,
+			name: "products-slug___de___fr"
+		},
+		{
+			path: "/de/de/products/:slug?",
+			component: _7e2baf66,
+			name: "products-slug___de___de"
+		},
+		{
+			path: "/it/de/products/:slug?",
+			component: _7e2baf66,
+			name: "products-slug___de___it"
+		},
+		{
+			path: "/en/it/products/:slug?",
+			component: _7e2baf66,
+			name: "products-slug___it___en"
+		},
+		{
+			path: "/fr/it/products/:slug?",
+			component: _7e2baf66,
+			name: "products-slug___it___fr"
+		},
+		{
+			path: "/de/it/products/:slug?",
+			component: _7e2baf66,
+			name: "products-slug___it___de"
+		},
+		{
+			path: "/it/it/products/:slug?",
+			component: _7e2baf66,
+			name: "products-slug___it___it"
+		},
+		{
+			path: "/en/en/categories/:slug?",
 			component: _3dbde985,
-			name: "categories-slug___en"
+			name: "categories-slug___en___en"
 		},
 		{
-			path: "/fr/categories/:slug?",
+			path: "/fr/en/categories/:slug?",
 			component: _3dbde985,
-			name: "categories-slug___fr"
+			name: "categories-slug___en___fr"
 		},
 		{
-			path: "/de/categories/:slug?",
+			path: "/de/en/categories/:slug?",
 			component: _3dbde985,
-			name: "categories-slug___de"
+			name: "categories-slug___en___de"
 		},
 		{
-			path: "/it/categories/:slug?",
+			path: "/it/en/categories/:slug?",
 			component: _3dbde985,
-			name: "categories-slug___it"
+			name: "categories-slug___en___it"
 		},
 		{
-			path: "/en/",
-			component: _60595394,
-			name: "index___en"
+			path: "/en/fr/categories/:slug?",
+			component: _3dbde985,
+			name: "categories-slug___fr___en"
 		},
 		{
-			path: "/fr/",
-			component: _60595394,
-			name: "index___fr"
+			path: "/fr/fr/categories/:slug?",
+			component: _3dbde985,
+			name: "categories-slug___fr___fr"
 		},
 		{
-			path: "/de/",
-			component: _60595394,
-			name: "index___de"
+			path: "/de/fr/categories/:slug?",
+			component: _3dbde985,
+			name: "categories-slug___fr___de"
 		},
 		{
-			path: "/it/",
+			path: "/it/fr/categories/:slug?",
+			component: _3dbde985,
+			name: "categories-slug___fr___it"
+		},
+		{
+			path: "/en/de/categories/:slug?",
+			component: _3dbde985,
+			name: "categories-slug___de___en"
+		},
+		{
+			path: "/fr/de/categories/:slug?",
+			component: _3dbde985,
+			name: "categories-slug___de___fr"
+		},
+		{
+			path: "/de/de/categories/:slug?",
+			component: _3dbde985,
+			name: "categories-slug___de___de"
+		},
+		{
+			path: "/it/de/categories/:slug?",
+			component: _3dbde985,
+			name: "categories-slug___de___it"
+		},
+		{
+			path: "/en/it/categories/:slug?",
+			component: _3dbde985,
+			name: "categories-slug___it___en"
+		},
+		{
+			path: "/fr/it/categories/:slug?",
+			component: _3dbde985,
+			name: "categories-slug___it___fr"
+		},
+		{
+			path: "/de/it/categories/:slug?",
+			component: _3dbde985,
+			name: "categories-slug___it___de"
+		},
+		{
+			path: "/it/it/categories/:slug?",
+			component: _3dbde985,
+			name: "categories-slug___it___it"
+		},
+		{
+			path: "/en/en/",
 			component: _60595394,
-			name: "index___it"
+			name: "index___en___en"
+		},
+		{
+			path: "/fr/en/",
+			component: _60595394,
+			name: "index___en___fr"
+		},
+		{
+			path: "/de/en/",
+			component: _60595394,
+			name: "index___en___de"
+		},
+		{
+			path: "/it/en/",
+			component: _60595394,
+			name: "index___en___it"
+		},
+		{
+			path: "/en/fr/",
+			component: _60595394,
+			name: "index___fr___en"
+		},
+		{
+			path: "/fr/fr/",
+			component: _60595394,
+			name: "index___fr___fr"
+		},
+		{
+			path: "/de/fr/",
+			component: _60595394,
+			name: "index___fr___de"
+		},
+		{
+			path: "/it/fr/",
+			component: _60595394,
+			name: "index___fr___it"
+		},
+		{
+			path: "/en/de/",
+			component: _60595394,
+			name: "index___de___en"
+		},
+		{
+			path: "/fr/de/",
+			component: _60595394,
+			name: "index___de___fr"
+		},
+		{
+			path: "/de/de/",
+			component: _60595394,
+			name: "index___de___de"
+		},
+		{
+			path: "/it/de/",
+			component: _60595394,
+			name: "index___de___it"
+		},
+		{
+			path: "/en/it/",
+			component: _60595394,
+			name: "index___it___en"
+		},
+		{
+			path: "/fr/it/",
+			component: _60595394,
+			name: "index___it___fr"
+		},
+		{
+			path: "/de/it/",
+			component: _60595394,
+			name: "index___it___de"
+		},
+		{
+			path: "/it/it/",
+			component: _60595394,
+			name: "index___it___it"
 		}
     ],
     

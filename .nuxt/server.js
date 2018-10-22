@@ -104,7 +104,7 @@ export default async (ssrContext) => {
   /*
   ** Call global middleware (nuxt.config.js)
   */
-  let midd = ["locale-redirect","i18n"]
+  let midd = ["locale-redirect","i18n","i18n"]
   midd = midd.map((name) => {
     if (typeof name === 'function') return name
     if (typeof middleware[name] !== 'function') {

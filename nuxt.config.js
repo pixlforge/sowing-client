@@ -96,7 +96,7 @@ module.exports = {
   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
-    baseURL: 'http://sowing.test/api'
+    baseURL: 'https://api.sowing.ch/api'
   },
 
   /** 
