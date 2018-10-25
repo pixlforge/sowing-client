@@ -5,6 +5,9 @@ export const state = () => ({
 export const getters = {
   categories(state) {
     return state.categories;
+  },
+  locale(state) {
+    return state.i18n.locale;
   }
 };
 

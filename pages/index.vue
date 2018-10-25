@@ -1,14 +1,57 @@
 <template>
   <div>
-    <div class="container py-100">
-      <h1 class="title-large text-center">Index</h1>
-      <p class="text-18">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate blanditiis labore accusamus id ab, dolor incidunt nihil itaque laudantium explicabo illum saepe cumque obcaecati expedita mollitia, quasi rem cupiditate amet?
-      </p>
+    <div class="container">
+
+      <!-- Features section -->
+      <section class="section">
+        <h1 class="title-large text-center mt-100">{{ $t("pages.home.titles.features") }}</h1>
+
+        <div class="flex flex-wrap justify-between">
+
+          <!-- Feature 1 -->
+          <Feature icon="lightbulb">
+            <template slot="title">
+              {{ $t("pages.home.features.first.title") }}
+            </template>
+            {{ $t("pages.home.features.first.body") }}
+          </Feature>
+
+          <!-- Feature 2 -->
+          <Feature icon="eye">
+            <template slot="title">
+              {{ $t("pages.home.features.second.title") }}
+            </template>
+            {{ $t("pages.home.features.second.body") }}
+          </Feature>
+
+          <!-- Feature 3 -->
+          <Feature icon="rocket">
+            <template slot="title">
+              {{ $t("pages.home.features.third.title") }}
+            </template>
+            {{ $t("pages.home.features.third.body") }}
+          </Feature>
+
+          <!-- Feature 4 -->
+          <Feature icon="shield-check">
+            <template slot="title">
+              {{ $t("pages.home.features.fourth.title") }}
+            </template>
+            {{ $t("pages.home.features.fourth.body") }}
+          </Feature>
+          
+        </div>
+      </section>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+import Feature from "@/components/Feature";
+
+export default {
+  components: {
+    Feature
+  }
+};
 </script>

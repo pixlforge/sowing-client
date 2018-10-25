@@ -5,7 +5,7 @@
 
         <!-- Categories -->
         <div class="w-200 lg:w-1/5 mx-auto mt-50 lg:mt-100">
-          <h5 class="title-small mb-10">Catégories</h5>
+          <h5 class="title-small mb-10">{{ $t('footer.titles.categories') }}</h5>
           <ul class="list-reset leading-normal">
             <li
               v-for="category in categories"
@@ -22,70 +22,63 @@
 
         <!-- Selling -->
         <div class="w-200 lg:w-1/5 mx-auto mt-50 lg:mt-100">
-          <h5 class="title-small">Vendre sur Sowing</h5>
+          <h5 class="title-small">{{ $t("footer.titles.sell-on-sowing") }}</h5>
           <ul class="list-reset leading-normal">
             <li class="mt-10">
-              <a
-                href="#"
+              <nuxt-link
+                :to="localePath({ name: 'index' })"
                 class="footer-link">
-                Connexion
-              </a>
+                {{ $t("footer.links.login") }}
+              </nuxt-link>
             </li>
             <li>
-              <a
-                href="#"
+              <nuxt-link
+                :to="localePath({ name: 'index' })"
                 class="footer-link">
-                Votre propre boutique
-              </a>
+                {{ $t("footer.links.your-own-store") }}
+              </nuxt-link>
             </li>
             <li>
-              <a
-                href="#"
+              <nuxt-link
+                :to="localePath({ name: 'index' })"
                 class="footer-link">
-                Nouveaux vendeurs
-              </a>
+                {{ $t("footer.links.new-vendors") }}
+              </nuxt-link>
             </li>
           </ul>
         </div>
 
         <!-- About -->
         <div class="w-200 lg:w-1/5 mx-auto mt-50 lg:mt-100">
-          <h5 class="title-small">À propos</h5>
+          <h5 class="title-small">{{ $t("footer.titles.about") }}</h5>
           <ul class="list-reset leading-normal">
             <li class="mt-10">
-              <a
-                href="#"
+              <nuxt-link
+                :to="localePath({ name: 'index' })"
                 class="footer-link">
-                Conditions d'utilisation
-              </a>
+                {{ $t("footer.links.terms") }}
+              </nuxt-link>
             </li>
             <li>
-              <a
-                href="#"
+              <nuxt-link
+                :to="localePath({ name: 'index' })"
                 class="footer-link">
-                Règlement
-              </a>
+                {{ $t("footer.links.payments") }}
+              </nuxt-link>
             </li>
             <li>
-              <a
-                href="#"
+              <nuxt-link
+                :to="localePath({ name: 'index' })"
                 class="footer-link">
-                Modes de paiement
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                class="footer-link">
-                Livraisons
-              </a>
+                {{ $t("footer.links.shipments") }}
+              </nuxt-link>
             </li>
           </ul>
         </div>
 
         <!-- Languages -->
         <div class="w-200 lg:w-1/5 mx-auto mt-50 lg:mt-100">
-          <h5 class="title-small mb-10">{{ $t("lang") }}</h5>
+          <h5 class="title-small mb-10">{{ $t("footer.titles.language") }}</h5>
           <ul class="list-reset leading-normal">
             <li
               v-for="locale in $i18n.locales"
@@ -101,7 +94,7 @@
 
         <!-- Social Networks -->
         <div class="w-200 lg:w-1/5 mx-auto mt-50 lg:mt-100">
-          <h5 class="title-small">Réseaux sociaux</h5>
+          <h5 class="title-small">{{ $t("footer.titles.social-networks") }}</h5>
           <ul class="list-reset leading-normal">
             <li class="mt-10">
               <a
@@ -128,7 +121,9 @@
 
       </div>
     </div>
+
     <Disclaimer/>
+    
   </div>
 </template>
 
@@ -142,11 +137,9 @@ export default {
   },
   computed: {
     ...mapGetters({
-      categories: "categories"
-    }),
-    locale() {
-      return this.$store.state.i18n.locale;
-    }
+      categories: "categories",
+      locale: "locale"
+    })
   }
 };
 </script>

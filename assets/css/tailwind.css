@@ -28,6 +28,10 @@
  */
 @tailwind components;
 
+.section {
+  @apply pb-100;
+}
+
 button {
   outline: none !important;
 }
@@ -93,7 +97,7 @@ button {
 }
 
 .card-product {
-  @apply w-720 flex bg-green-lightest no-underline text-green-darkest outline-none;
+  @apply w-720 flex no-underline text-green-darkest outline-none rounded-lg shadow-md;
 }
 
 .card-product:focus {
@@ -110,6 +114,14 @@ button {
 
 .link-category:focus {
  @apply shadow-outline;
+}
+
+.link-dropdown {
+  @apply block no-underline text-grey-dark pl-30 py-5;
+}
+
+.link-dropdown:hover {
+  @apply text-green;
 }
 
 

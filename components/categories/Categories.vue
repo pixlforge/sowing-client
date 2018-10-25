@@ -22,11 +22,9 @@ import { mapGetters } from "vuex";
 export default {
   computed: {
     ...mapGetters({
-      categories: "categories"
-    }),
-    locale() {
-      return this.$store.state.i18n.locale;
-    }
+      categories: "categories",
+      locale: "locale"
+    })
   }
 };
 </script>

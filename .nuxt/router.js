@@ -3,6 +3,7 @@ import Router from 'vue-router'
 
 const _7e2baf66 = () => import('../pages/products/_slug.vue' /* webpackChunkName: "pages/products/_slug" */).then(m => m.default || m)
 const _3dbde985 = () => import('../pages/categories/_slug.vue' /* webpackChunkName: "pages/categories/_slug" */).then(m => m.default || m)
+const _382080c1 = () => import('../pages/categories/_category/_subcategory/_slug.vue' /* webpackChunkName: "pages/categories/_category/_subcategory/_slug" */).then(m => m.default || m)
 const _60595394 = () => import('../pages/index.vue' /* webpackChunkName: "pages/index" */).then(m => m.default || m)
 
 Vue.use(Router)
@@ -65,244 +66,84 @@ export function createRouter () {
     scrollBehavior,
     routes: [
 		{
-			path: "/en/en/products/:slug?",
+			path: "/en/products/:slug?",
 			component: _7e2baf66,
-			name: "products-slug___en___en"
+			name: "products-slug___en"
 		},
 		{
-			path: "/fr/en/products/:slug?",
+			path: "/fr/products/:slug?",
 			component: _7e2baf66,
-			name: "products-slug___en___fr"
+			name: "products-slug___fr"
 		},
 		{
-			path: "/de/en/products/:slug?",
+			path: "/de/products/:slug?",
 			component: _7e2baf66,
-			name: "products-slug___en___de"
+			name: "products-slug___de"
 		},
 		{
-			path: "/it/en/products/:slug?",
+			path: "/it/products/:slug?",
 			component: _7e2baf66,
-			name: "products-slug___en___it"
+			name: "products-slug___it"
 		},
 		{
-			path: "/en/fr/products/:slug?",
-			component: _7e2baf66,
-			name: "products-slug___fr___en"
-		},
-		{
-			path: "/fr/fr/products/:slug?",
-			component: _7e2baf66,
-			name: "products-slug___fr___fr"
-		},
-		{
-			path: "/de/fr/products/:slug?",
-			component: _7e2baf66,
-			name: "products-slug___fr___de"
-		},
-		{
-			path: "/it/fr/products/:slug?",
-			component: _7e2baf66,
-			name: "products-slug___fr___it"
-		},
-		{
-			path: "/en/de/products/:slug?",
-			component: _7e2baf66,
-			name: "products-slug___de___en"
-		},
-		{
-			path: "/fr/de/products/:slug?",
-			component: _7e2baf66,
-			name: "products-slug___de___fr"
-		},
-		{
-			path: "/de/de/products/:slug?",
-			component: _7e2baf66,
-			name: "products-slug___de___de"
-		},
-		{
-			path: "/it/de/products/:slug?",
-			component: _7e2baf66,
-			name: "products-slug___de___it"
-		},
-		{
-			path: "/en/it/products/:slug?",
-			component: _7e2baf66,
-			name: "products-slug___it___en"
-		},
-		{
-			path: "/fr/it/products/:slug?",
-			component: _7e2baf66,
-			name: "products-slug___it___fr"
-		},
-		{
-			path: "/de/it/products/:slug?",
-			component: _7e2baf66,
-			name: "products-slug___it___de"
-		},
-		{
-			path: "/it/it/products/:slug?",
-			component: _7e2baf66,
-			name: "products-slug___it___it"
-		},
-		{
-			path: "/en/en/categories/:slug?",
+			path: "/en/categories/:slug?",
 			component: _3dbde985,
-			name: "categories-slug___en___en"
+			name: "categories-slug___en"
 		},
 		{
-			path: "/fr/en/categories/:slug?",
+			path: "/fr/categories/:slug?",
 			component: _3dbde985,
-			name: "categories-slug___en___fr"
+			name: "categories-slug___fr"
 		},
 		{
-			path: "/de/en/categories/:slug?",
+			path: "/de/categories/:slug?",
 			component: _3dbde985,
-			name: "categories-slug___en___de"
+			name: "categories-slug___de"
 		},
 		{
-			path: "/it/en/categories/:slug?",
+			path: "/it/categories/:slug?",
 			component: _3dbde985,
-			name: "categories-slug___en___it"
+			name: "categories-slug___it"
 		},
 		{
-			path: "/en/fr/categories/:slug?",
-			component: _3dbde985,
-			name: "categories-slug___fr___en"
+			path: "/en/categories/:category?/:subcategory?/:slug?",
+			component: _382080c1,
+			name: "categories-category-subcategory-slug___en"
 		},
 		{
-			path: "/fr/fr/categories/:slug?",
-			component: _3dbde985,
-			name: "categories-slug___fr___fr"
+			path: "/fr/categories/:category?/:subcategory?/:slug?",
+			component: _382080c1,
+			name: "categories-category-subcategory-slug___fr"
 		},
 		{
-			path: "/de/fr/categories/:slug?",
-			component: _3dbde985,
-			name: "categories-slug___fr___de"
+			path: "/de/categories/:category?/:subcategory?/:slug?",
+			component: _382080c1,
+			name: "categories-category-subcategory-slug___de"
 		},
 		{
-			path: "/it/fr/categories/:slug?",
-			component: _3dbde985,
-			name: "categories-slug___fr___it"
+			path: "/it/categories/:category?/:subcategory?/:slug?",
+			component: _382080c1,
+			name: "categories-category-subcategory-slug___it"
 		},
 		{
-			path: "/en/de/categories/:slug?",
-			component: _3dbde985,
-			name: "categories-slug___de___en"
-		},
-		{
-			path: "/fr/de/categories/:slug?",
-			component: _3dbde985,
-			name: "categories-slug___de___fr"
-		},
-		{
-			path: "/de/de/categories/:slug?",
-			component: _3dbde985,
-			name: "categories-slug___de___de"
-		},
-		{
-			path: "/it/de/categories/:slug?",
-			component: _3dbde985,
-			name: "categories-slug___de___it"
-		},
-		{
-			path: "/en/it/categories/:slug?",
-			component: _3dbde985,
-			name: "categories-slug___it___en"
-		},
-		{
-			path: "/fr/it/categories/:slug?",
-			component: _3dbde985,
-			name: "categories-slug___it___fr"
-		},
-		{
-			path: "/de/it/categories/:slug?",
-			component: _3dbde985,
-			name: "categories-slug___it___de"
-		},
-		{
-			path: "/it/it/categories/:slug?",
-			component: _3dbde985,
-			name: "categories-slug___it___it"
-		},
-		{
-			path: "/en/en/",
+			path: "/en/",
 			component: _60595394,
-			name: "index___en___en"
+			name: "index___en"
 		},
 		{
-			path: "/fr/en/",
+			path: "/fr/",
 			component: _60595394,
-			name: "index___en___fr"
+			name: "index___fr"
 		},
 		{
-			path: "/de/en/",
+			path: "/de/",
 			component: _60595394,
-			name: "index___en___de"
+			name: "index___de"
 		},
 		{
-			path: "/it/en/",
+			path: "/it/",
 			component: _60595394,
-			name: "index___en___it"
-		},
-		{
-			path: "/en/fr/",
-			component: _60595394,
-			name: "index___fr___en"
-		},
-		{
-			path: "/fr/fr/",
-			component: _60595394,
-			name: "index___fr___fr"
-		},
-		{
-			path: "/de/fr/",
-			component: _60595394,
-			name: "index___fr___de"
-		},
-		{
-			path: "/it/fr/",
-			component: _60595394,
-			name: "index___fr___it"
-		},
-		{
-			path: "/en/de/",
-			component: _60595394,
-			name: "index___de___en"
-		},
-		{
-			path: "/fr/de/",
-			component: _60595394,
-			name: "index___de___fr"
-		},
-		{
-			path: "/de/de/",
-			component: _60595394,
-			name: "index___de___de"
-		},
-		{
-			path: "/it/de/",
-			component: _60595394,
-			name: "index___de___it"
-		},
-		{
-			path: "/en/it/",
-			component: _60595394,
-			name: "index___it___en"
-		},
-		{
-			path: "/fr/it/",
-			component: _60595394,
-			name: "index___it___fr"
-		},
-		{
-			path: "/de/it/",
-			component: _60595394,
-			name: "index___it___de"
-		},
-		{
-			path: "/it/it/",
-			component: _60595394,
-			name: "index___it___it"
+			name: "index___it"
 		}
     ],
     

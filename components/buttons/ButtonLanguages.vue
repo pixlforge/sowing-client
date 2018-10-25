@@ -7,32 +7,13 @@
       :icon="['fas', 'caret-down']"
       class="text-14 text-grey-dark"/>
     <ul class="dropdown-child list-reset text-left pin-t py-20 ml-37 mt-35">
-      <li>
+      <li
+        v-for="locale in $i18n.locales"
+        :key="locale.code">
         <nuxt-link
-          :to="switchLocalePath('fr')"
-          class="block no-underline text-grey-dark hover:text-green pl-30 py-5">
-          Français
-        </nuxt-link>
-      </li>
-      <li>
-        <nuxt-link
-          :to="switchLocalePath('en')"
-          class="block no-underline text-grey-dark hover:text-green pl-30 py-5">
-          English
-        </nuxt-link>
-      </li>
-      <li>
-        <nuxt-link
-          :to="switchLocalePath('de')"
-          class="block no-underline text-grey-dark hover:text-green pl-30 py-5">
-          Deutsch
-        </nuxt-link>
-      </li>
-      <li>
-        <nuxt-link
-          :to="switchLocalePath('it')"
-          class="block no-underline text-grey-dark hover:text-green pl-30 py-5">
-          Italiano
+          :to="switchLocalePath(locale.code)"
+          class="link-dropdown">
+          {{ locale.name }}
         </nuxt-link>
       </li>
     </ul>

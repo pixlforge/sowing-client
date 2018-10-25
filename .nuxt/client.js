@@ -183,7 +183,7 @@ function resolveComponents(router) {
 }
 
 function callMiddleware (Components, context, layout) {
-  let midd = (function(a){return ["locale-redirect",a,a]}("i18n"))
+  let midd = ["locale-redirect","i18n"]
   let unknownMiddleware = false
 
   // If layout is undefined, only call global middleware

@@ -1,13 +1,16 @@
 <template>
   <div>
-    <div class="container py-100">
-      <h1 class="title-large text-center">Category</h1>
-      <div class="flex flex-wrap justify-between mt-100">
-        
-        <Product
-          v-for="product in products"
-          :key="product.id"
-          :product="product"/>
+    <Header :item="category"/>
+    <div class="container pb-100">
+      <div class="flex flex-wrap justify-start">
+
+        <!-- List all categories -->
+        <Category
+          v-for="subcategory in category.children"
+          :key="subcategory.slug"
+          :category="category"
+          :subcategory="subcategory"
+          class="mx-auto mt-100"/>
 
       </div>
     </div>
@@ -15,23 +18,31 @@
 </template>
 
 <script>
-import Product from "@/components/products/Product";
+import Header from "@/components/Header";
+import Category from "@/components/categories/Category";
+import { mapGetters } from "vuex";
 
 export default {
   components: {
-    Product
+    Header,
+    Category
   },
   data() {
     return {
-      products: []
+      category: {}
     };
   },
   async asyncData({ params, app }) {
-    let res = await app.$axios.$get(`/products?category=${params.slug}`);
+    let res = await app.$axios.$get(`/categories/${params.slug}`);
 
     return {
-      products: res.data
+      category: res.data
     };
+  },
+  computed: {
+    ...mapGetters({
+      locale: "locale"
+    })
   }
 };
 </script>
