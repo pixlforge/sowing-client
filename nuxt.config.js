@@ -1,4 +1,5 @@
 const pkg = require('./package')
+require('dotenv').config();
 
 module.exports = {
   mode: 'universal',
@@ -49,6 +50,7 @@ module.exports = {
     // Doc: https://github.com/nuxt-community/axios-module#usage
     '@nuxtjs/axios',
     'nuxt-fontawesome',
+    ['@nuxtjs/dotenv', {}],
     [
       'nuxt-i18n', {
         locales: [
@@ -96,7 +98,8 @@ module.exports = {
   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
-    baseURL: 'http://sowing.test/api'
+    // baseURL: 'http://sowing.test/api'
+    baseURL: process.env.API_URL
   },
 
   /** 
