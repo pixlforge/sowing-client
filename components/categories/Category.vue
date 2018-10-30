@@ -20,7 +20,7 @@
           }
         })"
         class="block text-base text-green font-semibold text-center no-underline hover:underline p-5 mt-auto">
-        {{ $t("category.link.see-all") }}
+        {{ $t("components.category.link.see-all") }}
       </nuxt-link>
     </div>
   </div>
@@ -45,7 +45,7 @@ export default {
       locale: "locale"
     }),
     alt() {
-      return this.$t("category.img.alt");
+      return this.$t("components.category.img.alt");
     }
   }
 };

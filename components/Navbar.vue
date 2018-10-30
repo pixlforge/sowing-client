@@ -11,12 +11,18 @@
       <Button
         primary
         class="mr-30">
-        Inscription / Créer une boutique
+        <font-awesome-icon
+          :icon="['far', 'rocket']"
+          class="mr-5"/>
+        {{ $t("components.navbar.buttons.register") }}
       </Button>
       <Button
         default
         class="mr-30">
-        Connexion
+        <font-awesome-icon
+          :icon="['far', 'user']"
+          class="mr-5"/>
+        {{ $t("components.navbar.buttons.login") }}
       </Button>
       <ButtonCart/>
     </div>

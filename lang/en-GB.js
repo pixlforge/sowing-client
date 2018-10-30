@@ -1,4 +1,47 @@
 export default {
+  components: {
+    footer: {
+      titles: {
+        categories: 'Categories',
+        language: "Language",
+        "sell-on-sowing": "Sell on Sowing",
+        about: "About",
+        "social-networks": "Social Networks"
+      },
+      links: {
+        login: "Log in",
+        "your-own-store": "Your own store",
+        "new-vendors": "Newest vendors",
+        terms: "Terms of use",
+        payments: "Payment methods",
+        shipments: "Shipments"
+      },
+      disclaimer: {
+        rights: "All rights reserved",
+        "made-with": "Made with",
+        by: "by"
+      }
+    },
+    navbar: {
+      buttons: {
+        login: "Log in",
+        register: "Create an account",
+      }
+    },
+    category: {
+      img: {
+        alt: "Category image"
+      },
+      link: {
+        "see-all": "Show all products"
+      }
+    },
+    product: {
+      img: {
+        alt: "Product image"
+      }
+    }
+  },
   pages: {
     home: {
       titles: {
@@ -24,39 +67,4 @@ export default {
       }
     }
   },
-  footer: {
-    titles: {
-      categories: 'Categories',
-      language: "Language",
-      "sell-on-sowing": "Sell on Sowing",
-      about: "About",
-      "social-networks": "Social Networks"
-    },
-    links: {
-      login: "Log in",
-      "your-own-store": "Your own store",
-      "new-vendors": "Newest vendors",
-      terms: "Terms of use",
-      payments: "Payment methods",
-      shipments: "Shipments"
-    },
-    disclaimer: {
-      rights: "All rights reserved",
-      "made-with": "Made with",
-      by: "by"
-    }
-  },
-  category: {
-    img: {
-      alt: "Category image"
-    },
-    link: {
-      "see-all": "Show all products"
-    }
-  },
-  product: {
-    img: {
-      alt: "Product image"
-    }
-  }
 }

@@ -41,7 +41,7 @@ button {
 }
 
 .btn {
-  @apply outline-none rounded-lg text-14 text-grey font-bold uppercase no-underline px-30 py-12;
+  @apply block outline-none rounded-lg text-14 text-grey font-bold uppercase no-underline px-30 py-12;
 }
 
 .btn:focus {

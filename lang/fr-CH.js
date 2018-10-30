@@ -1,4 +1,47 @@
 export default {
+  components: {
+    category: {
+      img: {
+        alt: "Image de la catégorie"
+      },
+      link: {
+        "see-all": "Voir tous les produits"
+      }
+    },
+    footer: {
+      titles: {
+        categories: 'Catégories',
+        language: "Langue",
+        "sell-on-sowing": "Vendre sur Sowing",
+        about: "À propos",
+        "social-networks": "Réseaux sociaux"
+      },
+      links: {
+        login: "Connexion",
+        "your-own-store": "Votre propre boutique",
+        "new-vendors": "Nouveaux vendeurs",
+        terms: "Conditions d'utilisation",
+        payments: "Modes de paiement",
+        shipments: "Livraisons"
+      },
+      disclaimer: {
+        rights: "Tous droits réservés",
+        "made-with": "Réalisé avec",
+        by: "par"
+      }
+    },
+    navbar: {
+      buttons: {
+        login: "Connexion",
+        register: "Créer un compte",
+      }
+    },
+    product: {
+      img: {
+        alt: "Image du produit"
+      }
+    }
+  },
   pages: {
     home: {
       titles: {
@@ -24,39 +67,4 @@ export default {
       }
     }
   },
-  footer: {
-    titles: {
-      categories: 'Catégories',
-      language: "Langue",
-      "sell-on-sowing": "Vendre sur Sowing",
-      about: "À propos",
-      "social-networks": "Réseaux sociaux"
-    },
-    links: {
-      login: "Connexion",
-      "your-own-store": "Votre propre boutique",
-      "new-vendors": "Nouveaux vendeurs",
-      terms: "Conditions d'utilisation",
-      payments: "Modes de paiement",
-      shipments: "Livraisons"
-    },
-    disclaimer: {
-      rights: "Tous droits réservés",
-      "made-with": "Réalisé avec",
-      by: "par"
-    }
-  },
-  category: {
-    img: {
-      alt: "Image de la catégorie"
-    },
-    link: {
-      "see-all": "Voir tous les produits"
-    }
-  },
-  product: {
-    img: {
-      alt: "Image du produit"
-    }
-  }
 }

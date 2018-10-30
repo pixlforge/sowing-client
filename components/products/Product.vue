@@ -43,7 +43,7 @@ export default {
       locale: "locale"
     }),
     alt() {
-      return this.$t("product.img.alt");
+      return this.$t("components.product.img.alt");
     }
   }
 };

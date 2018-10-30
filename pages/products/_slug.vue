@@ -1,12 +1,12 @@
 <template>
-  <div>
+  <main>
     <div class="container py-100">
       <h1 class="title-large text-center">Products</h1>
       <p class="text-base mt-100">
         {{ products }}
       </p>
     </div>
-  </div>
+  </main>
 </template>
 
 <script>

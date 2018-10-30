@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <main>
     <div class="container">
 
       <!-- Features section -->
@@ -43,15 +43,30 @@
         </div>
       </section>
     </div>
-  </div>
+
+    <!-- Streak register -->
+    <section>
+      <StreakRegister/>
+    </section>
+
+    <!-- Streak newsletter -->
+    <section>
+      <StreakNewsletter/>
+    </section>
+    
+  </main>
 </template>
 
 <script>
 import Feature from "@/components/Feature";
+import StreakRegister from "@/components/streaks/StreakRegister";
+import StreakNewsletter from "@/components/streaks/StreakNewsletter";
 
 export default {
   components: {
-    Feature
+    Feature,
+    StreakRegister,
+    StreakNewsletter
   }
 };
 </script>

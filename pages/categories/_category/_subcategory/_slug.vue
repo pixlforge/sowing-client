@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <main>
     <Header :item="subcategory"/>
     <div class="container pb-100">
       <div class="flex flex-wrap justify-between mt-60">
@@ -13,7 +13,7 @@
 
       </div>
     </div>
-  </div>
+  </main>
 </template>
 
 <script>
