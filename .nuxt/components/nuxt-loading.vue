@@ -19,8 +19,8 @@ export default {
       canSuccess: true,
       throttle: 200,
       duration: 5000,
-      height: '2px',
-      color: '#fff',
+      height: '4px',
+      color: '#5FB881',
       failedColor: 'red',
     }
   },

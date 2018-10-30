@@ -28,7 +28,10 @@ module.exports = {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: {
+    color: '#5FB881',
+    height: '4px'
+  },
 
   /*
   ** Global CSS
@@ -98,7 +101,6 @@ module.exports = {
   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
-    // baseURL: 'http://sowing.test/api'
     baseURL: process.env.API_URL
   },
 
