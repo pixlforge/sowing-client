@@ -40,6 +40,19 @@ export default {
       img: {
         alt: "Produktbild"
       }
+    },
+    streaks: {
+      register: {
+        title: "Verkaufen Sie heute",
+        body: "Starten Sie jetzt mit wenigen Klicks Ihren persönlichen Shop.",
+        button: "Schaffe meinen Shop"
+      },
+      newsletter: {
+        title: "Melden Sie sich für unseren Newsletter an",
+        body: "Schnelle und einfache Registrierung, kein Spam und jederzeit abbestellen.",
+        button: "Anmeldung",
+        placeholder: "ihre.email@adresse.ch"
+      },
     }
   },
   pages: {

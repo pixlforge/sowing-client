@@ -40,6 +40,19 @@ export default {
       img: {
         alt: "Image du produit"
       }
+    },
+    streaks: {
+      register: {
+        title: "Vendez dès aujourd'hui",
+        body: "Lancez votre boutique personnelle facilement en quelques clics dès maintenant.",
+        button: "Créer ma boutique"
+      },
+      newsletter: {
+        title: "Inscrivez-vous à notre newsletter",
+        body: "Inscription rapide, facile, garantie sans spam et désabonnez-vous quand vous le voulez.",
+        button: "Inscription",
+        placeholder: "votre.adresse@email.ch"
+      },
     }
   },
   pages: {

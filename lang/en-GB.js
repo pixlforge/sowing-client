@@ -40,6 +40,19 @@ export default {
       img: {
         alt: "Product image"
       }
+    },
+    streaks: {
+      register: {
+        title: "Sell today",
+        body: "Launch your own store easily in a few clicks now.",
+        button: "Create my store"
+      },
+      newsletter: {
+        title: "Subscribe to our newsletter",
+        body: "Quick, easy registration, no spam, and unsubscribe whenever you want.",
+        button: "Subscribe",
+        placeholder: "your.email@address.ch"
+      },
     }
   },
   pages: {

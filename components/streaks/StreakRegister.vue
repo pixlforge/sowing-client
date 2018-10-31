@@ -12,11 +12,11 @@
         
         <div class="w-full lg:w-1/2 xl:w-2/3 py-110">
           <h3 class="font-cafe text-36 xl:text-48 text-center lg:text-left font-bold text-white">
-            Vendez dès aujourd'hui!
+            {{ $t("components.streaks.register.title") }}
           </h3>
           
           <p class="text-22 xl:text-26 font-semibold text-white text-center lg:text-left mt-30">
-            Lancez votre boutique personnelle facilement en quelques clics dès maintenant.
+            {{ $t("components.streaks.register.body") }}
           </p>
 
           <div class="flex justify-center lg:justify-start mt-40">
@@ -26,7 +26,7 @@
               <font-awesome-icon
                 :icon="['far', 'store']"
                 class="mr-10"/>
-              Créer ma boutique
+              {{ $t("components.streaks.register.button") }}
             </nuxt-link>
           </div>
         </div>

@@ -12,11 +12,11 @@
         
         <div class="w-full lg:w-1/2 xl:w-2/3 py-110">
           <h3 class="font-cafe text-36 xl:text-48 text-center lg:text-left font-bold text-white">
-            Inscrivez-vous à notre newsletter
+            {{ $t("components.streaks.newsletter.title") }}
           </h3>
           
           <p class="text-22 xl:text-26 font-semibold text-white text-center lg:text-left mt-30">
-            Inscription rapide, facile, garantie sans spam et désabonnez-vous quand vous le voulez.
+            {{ $t("components.streaks.newsletter.body") }}
           </p>
 
           <form
@@ -24,10 +24,10 @@
             @submit.prevent>
             <input
               id="email"
+              :placeholder="placeholder"
               type="email"
               name="email"
               class="w-350 text-base rounded-l-lg outline-none focus:shadow-outline pl-15"
-              placeholder="votre.adresse@email.ch"
               required>
             <button
               type="submit"
@@ -36,7 +36,7 @@
               <font-awesome-icon
                 :icon="['far', 'paper-plane']"
                 class="mr-10"/>
-              Inscription
+              {{ $t("components.streaks.newsletter.button") }}
             </button>
           </form>
         </div>
@@ -52,6 +52,11 @@ import Button from "@/components/buttons/Button";
 export default {
   components: {
     Button
+  },
+  computed: {
+    placeholder() {
+      return this.$t("components.streaks.newsletter.placeholder");
+    }
   }
 };
 </script>
