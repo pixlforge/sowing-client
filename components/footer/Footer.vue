@@ -128,7 +128,7 @@
 </template>
 
 <script>
-import Disclaimer from "@/components/Disclaimer";
+import Disclaimer from "@/components/footer/Disclaimer";
 import { mapGetters } from "vuex";
 
 export default {
