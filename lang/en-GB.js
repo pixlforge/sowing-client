@@ -58,7 +58,8 @@ export default {
   pages: {
     home: {
       titles: {
-        features: "All the Sowing advantages for you"
+        features: "All the Sowing advantages for you",
+        reviews: "They gave their opinion"
       },
       features: {
         first: {

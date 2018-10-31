@@ -28,6 +28,10 @@
  */
 @tailwind components;
 
+.avatar-review {
+  @apply w-100 h-100 rounded-full shadow-md;
+}
+
 .section {
   @apply pb-100;
 }

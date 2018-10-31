@@ -58,7 +58,8 @@ export default {
   pages: {
     home: {
       titles: {
-        features: "Tous les avantages Sowing pour vous"
+        features: "Tous les avantages Sowing pour vous",
+        reviews: "Ils ont donné leur avis"
       },
       features: {
         first: {
