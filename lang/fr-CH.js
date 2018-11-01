@@ -59,7 +59,8 @@ export default {
     home: {
       titles: {
         features: "Tous les avantages Sowing pour vous",
-        reviews: "Ils ont donné leur avis"
+        reviews: "Ils ont donné leur avis",
+        categories: "Découvrez nos produits par catégorie"
       },
       features: {
         first: {

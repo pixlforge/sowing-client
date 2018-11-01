@@ -51,6 +51,11 @@
 
     <div class="container">
 
+      <!-- Categories -->
+      <section class="section">
+        <h1 class="title-large text-center mt-100">{{ $t("pages.home.titles.categories") }}</h1>
+      </section>
+
       <!-- Reviews -->
       <section class="section">
         <h1 class="title-large text-center mt-100">{{ $t("pages.home.titles.reviews") }}</h1>
@@ -94,7 +99,6 @@
                 class="avatar-review">
             </template>
           </Review>
-
         </div>
       </section>
     </div>
