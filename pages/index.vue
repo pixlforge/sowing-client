@@ -1,5 +1,15 @@
 <template>
   <main>
+
+    <!-- Featured Categories -->
+    <div class="w-full flex flex-col lg:flex-row">
+      <CardCategoryHuge/>
+      <div class="w-full lg:w-1/2 flex flex-col">
+        <CardCategoryLarge/>
+        <CardCategoryLarge/>
+      </div>
+    </div>
+    
     <div class="container">
       <section class="section">
         
@@ -120,6 +130,8 @@
 import Review from "@/components/Review";
 import Feature from "@/components/Feature";
 import CardShopMedium from "@/components/cards/CardShopMedium";
+import CardCategoryHuge from "@/components/cards/CardCategoryHuge";
+import CardCategoryLarge from "@/components/cards/CardCategoryLarge";
 import CardCategorySmall from "@/components/cards/CardCategorySmall";
 import StreakRegister from "@/components/streaks/StreakRegister";
 import StreakNewsletter from "@/components/streaks/StreakNewsletter";
@@ -135,6 +147,8 @@ export default {
     Review,
     Feature,
     CardShopMedium,
+    CardCategoryHuge,
+    CardCategoryLarge,
     CardCategorySmall,
     StreakRegister,
     StreakNewsletter
