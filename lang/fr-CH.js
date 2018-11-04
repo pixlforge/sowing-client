@@ -57,6 +57,7 @@ export default {
   },
   pages: {
     home: {
+      title: "Accueil",
       titles: {
         features: "Tous les avantages Sowing pour vous",
         shops: "Découvrez nos nouvelles boutiques",
@@ -81,6 +82,6 @@ export default {
           body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam et facere quia aliquid perferendis optio, temporibus quasi error! Ad omnis qui nulla iste aspernatur dolorem dolores ullam tenetur est. Qui."
         },
       }
-    }
+    },
   },
 }

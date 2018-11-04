@@ -57,6 +57,7 @@ export default {
   },
   pages: {
     home: {
+      title: "Home",
       titles: {
         features: "All the Sowing advantages for you",
         shops: "Discover our new shops",

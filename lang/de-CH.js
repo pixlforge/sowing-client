@@ -57,6 +57,7 @@ export default {
   },
   pages: {
     home: {
+      title: "Startseite",
       titles: {
         features: "Alle Sowing Vorteile für Sie",
         shops: "Entdecken Sie unsere neuen Shops",

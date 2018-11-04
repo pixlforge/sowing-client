@@ -22,6 +22,11 @@ import Product from "@/components/products/Product";
 import { mapGetters } from "vuex";
 
 export default {
+  head() {
+    return {
+      title: `${this.title} | ${this.subcategory.name[this.locale]}`
+    };
+  },
   components: {
     Header,
     Product
@@ -41,6 +46,7 @@ export default {
     );
 
     return {
+      title: app.head.title,
       subcategory: subcategory.data,
       products: products.data
     };

@@ -23,6 +23,11 @@ import SubCategory from "@/components/categories/SubCategory";
 import { mapGetters } from "vuex";
 
 export default {
+  head() {
+    return {
+      title: `${this.title} | ${this.category.name[this.locale]}`
+    };
+  },
   components: {
     Header,
     SubCategory
@@ -36,6 +41,7 @@ export default {
     let res = await app.$axios.$get(`/categories/${params.slug}`);
 
     return {
+      title: app.head.title,
       category: res.data
     };
   },
