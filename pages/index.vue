@@ -52,12 +52,21 @@
     <div class="container">
       <section class="section">
         
+        <!-- Shops -->
+        <h1 class="title-large text-center mt-100">{{ $t("pages.home.titles.shops") }}</h1>
+        <div class="flex flex-wrap justify-between mt-20">
+          
+          <CardShopMedium
+            v-for="shop in shops"
+            :key="shop.id"
+            :shop="shop"/>
+        </div>
+
         <!-- Categories -->
         <h1 class="title-large text-center mt-100">{{ $t("pages.home.titles.categories") }}</h1>
         <div class="flex flex-wrap justify-between mt-20">
 
-          <!-- Category -->
-          <Category
+          <CardCategorySmall
             v-for="category in categories"
             :key="category.id"
             :category="category"/>
@@ -67,7 +76,6 @@
         <h1 class="title-large text-center mt-100">{{ $t("pages.home.titles.reviews") }}</h1>
         <div class="w-full xl:w-3/4 xxl:w-1/2 mx-auto mt-100">
 
-          <!-- Review 1 -->
           <Review
             :stars="3"
             name="Marty McFly"
@@ -80,7 +88,6 @@
             </template>
           </Review>
 
-          <!-- Review 2 -->
           <Review
             :stars="4"
             name="Doc Brown"
@@ -93,7 +100,6 @@
             </template>
           </Review>
 
-          <!-- Review 3 -->
           <Review
             :stars="4"
             name="Biff Tannen"
@@ -119,7 +125,8 @@
 <script>
 import Review from "@/components/Review";
 import Feature from "@/components/Feature";
-import Category from "@/components/categories/Category";
+import CardShopMedium from "@/components/cards/CardShopMedium";
+import CardCategorySmall from "@/components/cards/CardCategorySmall";
 import StreakRegister from "@/components/streaks/StreakRegister";
 import StreakNewsletter from "@/components/streaks/StreakNewsletter";
 import { mapGetters } from "vuex";
@@ -128,9 +135,52 @@ export default {
   components: {
     Review,
     Feature,
-    Category,
+    CardShopMedium,
+    CardCategorySmall,
     StreakRegister,
     StreakNewsletter
+  },
+  data() {
+    return {
+      shops: [
+        {
+          id: 1,
+          name: "Petit coin de paradis",
+          description:
+            "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
+          articles: 89,
+          avatar: "https://bulma.io/images/placeholders/1280x960.png",
+          accent: "#546E7A"
+        },
+        {
+          id: 2,
+          name: "Ma super boutique",
+          description:
+            "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
+          articles: 3,
+          avatar: "https://bulma.io/images/placeholders/1280x960.png",
+          accent: "#7E57C2"
+        },
+        {
+          id: 3,
+          name: "Chez Lucette",
+          description:
+            "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
+          articles: 15,
+          avatar: "https://bulma.io/images/placeholders/1280x960.png",
+          accent: "#5C6BC0"
+        },
+        {
+          id: 4,
+          name: "Notre boutique géniale",
+          description:
+            "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
+          articles: 17,
+          avatar: "https://bulma.io/images/placeholders/1280x960.png",
+          accent: "#42A5F5"
+        }
+      ]
+    };
   },
   computed: {
     ...mapGetters({

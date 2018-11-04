@@ -59,8 +59,9 @@ export default {
     home: {
       titles: {
         features: "All the Sowing advantages for you",
+        shops: "Discover our new shops",
+        categories: "Discover our products by category",
         reviews: "They gave their opinion",
-        categories: "Discover our products by category"
       },
       features: {
         first: {
