@@ -1,5 +1,13 @@
 export default {
   components: {
+    category: {
+      img: {
+        alt: "Kategorie Bild"
+      },
+      link: {
+        "see-all": "Siehe all Produkte"
+      }
+    },
     footer: {
       titles: {
         categories: 'Kategorien',
@@ -22,18 +30,19 @@ export default {
         by: "von"
       }
     },
+    forms: {
+      labels: {
+        email: "E-mail Addresse",
+        password: "Passwort"
+      },
+      buttons: {
+        connection: "Einloggen"
+      }
+    },
     navbar: {
       buttons: {
         login: "Einloggen",
         register: "Konto erstellen",
-      }
-    },
-    category: {
-      img: {
-        alt: "Kategorie Bild"
-      },
-      link: {
-        "see-all": "Siehe all Produkte"
       }
     },
     product: {
@@ -55,6 +64,7 @@ export default {
       },
     }
   },
+
   pages: {
     home: {
       title: "Startseite",
@@ -81,6 +91,14 @@ export default {
           title: "Ihre Sicherheit, unsere Mission",
           body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam et facere quia aliquid perferendis optio, temporibus quasi error! Ad omnis qui nulla iste aspernatur dolorem dolores ullam tenetur est. Qui."
         },
+      }
+    },
+
+    login: {
+      title: "Melden Sie sich bei Ihrem Sowing Konto an",
+      links: {
+        password: "Passwort vergessen?",
+        register: "Erstellen Sie ein Sowing Konto"
       }
     }
   },

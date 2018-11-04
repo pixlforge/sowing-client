@@ -1,8 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-const _7e2baf66 = () => import('../pages/products/_slug.vue' /* webpackChunkName: "pages/products/_slug" */).then(m => m.default || m)
+const _1aee37d8 = () => import('../pages/register/index.vue' /* webpackChunkName: "pages/register/index" */).then(m => m.default || m)
+const _508690ee = () => import('../pages/login/index.vue' /* webpackChunkName: "pages/login/index" */).then(m => m.default || m)
 const _3dbde985 = () => import('../pages/categories/_slug.vue' /* webpackChunkName: "pages/categories/_slug" */).then(m => m.default || m)
+const _7e2baf66 = () => import('../pages/products/_slug.vue' /* webpackChunkName: "pages/products/_slug" */).then(m => m.default || m)
 const _382080c1 = () => import('../pages/categories/_category/_subcategory/_slug.vue' /* webpackChunkName: "pages/categories/_category/_subcategory/_slug" */).then(m => m.default || m)
 const _60595394 = () => import('../pages/index.vue' /* webpackChunkName: "pages/index" */).then(m => m.default || m)
 
@@ -66,24 +68,44 @@ export function createRouter () {
     scrollBehavior,
     routes: [
 		{
-			path: "/en/products/:slug?",
-			component: _7e2baf66,
-			name: "products-slug___en"
+			path: "/en/register",
+			component: _1aee37d8,
+			name: "register___en"
 		},
 		{
-			path: "/fr/products/:slug?",
-			component: _7e2baf66,
-			name: "products-slug___fr"
+			path: "/fr/register",
+			component: _1aee37d8,
+			name: "register___fr"
 		},
 		{
-			path: "/de/products/:slug?",
-			component: _7e2baf66,
-			name: "products-slug___de"
+			path: "/de/register",
+			component: _1aee37d8,
+			name: "register___de"
 		},
 		{
-			path: "/it/products/:slug?",
-			component: _7e2baf66,
-			name: "products-slug___it"
+			path: "/it/register",
+			component: _1aee37d8,
+			name: "register___it"
+		},
+		{
+			path: "/en/login",
+			component: _508690ee,
+			name: "login___en"
+		},
+		{
+			path: "/fr/login",
+			component: _508690ee,
+			name: "login___fr"
+		},
+		{
+			path: "/de/login",
+			component: _508690ee,
+			name: "login___de"
+		},
+		{
+			path: "/it/login",
+			component: _508690ee,
+			name: "login___it"
 		},
 		{
 			path: "/en/categories/:slug?",
@@ -104,6 +126,26 @@ export function createRouter () {
 			path: "/it/categories/:slug?",
 			component: _3dbde985,
 			name: "categories-slug___it"
+		},
+		{
+			path: "/en/products/:slug?",
+			component: _7e2baf66,
+			name: "products-slug___en"
+		},
+		{
+			path: "/fr/products/:slug?",
+			component: _7e2baf66,
+			name: "products-slug___fr"
+		},
+		{
+			path: "/de/products/:slug?",
+			component: _7e2baf66,
+			name: "products-slug___de"
+		},
+		{
+			path: "/it/products/:slug?",
+			component: _7e2baf66,
+			name: "products-slug___it"
 		},
 		{
 			path: "/en/categories/:category?/:subcategory?/:slug?",

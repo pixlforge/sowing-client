@@ -8,22 +8,26 @@
       </nuxt-link>
       <Searchbar/>
       <ButtonLanguages class="mr-30"/>
-      <Button
-        primary
-        class="mr-30">
+
+      <!-- Register -->
+      <nuxt-link
+        :to="localePath({ name: 'register' })"
+        class="btn btn-primary mr-30">
         <font-awesome-icon
           :icon="['far', 'rocket']"
           class="mr-5"/>
         {{ $t("components.navbar.buttons.register") }}
-      </Button>
-      <Button
-        default
-        class="mr-30">
+      </nuxt-link>
+
+      <!-- Login -->
+      <nuxt-link
+        :to="localePath({ name: 'login' })"
+        class="btn btn-default mr-30">
         <font-awesome-icon
           :icon="['far', 'user']"
           class="mr-5"/>
         {{ $t("components.navbar.buttons.login") }}
-      </Button>
+      </nuxt-link>
       <ButtonCart/>
     </div>
   </div>

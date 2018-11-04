@@ -6,7 +6,7 @@
     <font-awesome-icon
       :icon="['fas', 'caret-down']"
       class="text-14 text-grey-dark"/>
-    <ul class="dropdown-child list-reset text-left pin-t py-20 ml-37 mt-35">
+    <ul class="dropdown-child list-reset text-left pin-t py-20 ml-37 mt-35 z-20">
       <li
         v-for="locale in $i18n.locales"
         :key="locale.code">

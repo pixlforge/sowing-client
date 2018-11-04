@@ -72,6 +72,31 @@ button {
   @apply shadow;
 }
 
+.btn-disabled,
+.btn-disabled:hover {
+  @apply bg-grey-light text-grey-dark cursor-not-allowed;
+}
+
+.select {
+  @apply block appearance-none w-full rounded-lg bg-grey-lighter outline-none p-10 mt-10;
+}
+
+.select:focus {
+  @apply shadow-outline;
+}
+
+.input-base {
+  @apply block h-42 w-full appearance-none bg-green-lightest rounded-lg text-base px-15 mt-10;
+}
+
+.input-base:focus {
+  @apply outline-none shadow-outline;
+}
+
+.label {
+  @apply block text-14 font-bold uppercase;
+}
+
 .dropdown-parent {
   @apply relative;
 }
@@ -126,6 +151,26 @@ button {
 
 .link-dropdown:hover {
   @apply text-green;
+}
+
+.link-small {
+  @apply text-12 text-grey-lighter no-underline outline-none ;
+}
+
+.link-small:hover {
+  @apply underline;
+}
+
+.link-small:focus {
+  @apply shadow-outline;
+}
+
+.header-title {
+  @apply font-cafe text-48 text-white;
+}
+
+.header-description {
+  @apply text-base text-white font-semibold mt-10;
 }
 
 

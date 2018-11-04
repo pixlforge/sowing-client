@@ -30,6 +30,15 @@ export default {
         by: "par"
       }
     },
+    forms: {
+      labels: {
+        email: "Adresse e-mail",
+        password: "Mot de passe"
+      },
+      buttons: {
+        connection: "Connexion"
+      }
+    },
     navbar: {
       buttons: {
         login: "Connexion",
@@ -55,6 +64,7 @@ export default {
       },
     }
   },
+
   pages: {
     home: {
       title: "Accueil",
@@ -83,5 +93,13 @@ export default {
         },
       }
     },
+
+    login: {
+      title: "Connexion à votre compte Sowing",
+      links: {
+        password: "Mot de passe oublié?",
+        register: "Créer un compte Sowing"
+      }
+    }
   },
 }

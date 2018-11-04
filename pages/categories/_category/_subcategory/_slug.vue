@@ -1,6 +1,15 @@
 <template>
   <main>
-    <Header :item="subcategory"/>
+    <Header>
+      <template slot="title">
+        <h1 class="header-title">{{ subcategory.name[locale] }}</h1>
+      </template>
+      <template slot="description">
+        <p class="header-description">
+          {{ subcategory.description[locale] }}
+        </p>
+      </template>
+    </Header>
     <div class="container pb-100">
       <div class="flex flex-wrap justify-between mt-60">
         

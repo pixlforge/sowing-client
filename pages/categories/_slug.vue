@@ -1,10 +1,19 @@
 <template>
   <main>
-    <Header :item="category"/>
+    <Header>
+      <template slot="title">
+        <h1 class="header-title">{{ category.name[locale] }}</h1>
+      </template>
+      <template slot="description">
+        <p class="header-description">
+          {{ category.description[locale] }}
+        </p>
+      </template>
+    </Header>
     <div class="container pb-100">
       <div class="flex flex-wrap justify-start">
 
-        <!-- List all categories -->
+        <!-- List all sub-categories -->
         <SubCategory
           v-for="subcategory in category.children"
           :key="subcategory.slug"

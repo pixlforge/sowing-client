@@ -1,5 +1,13 @@
 export default {
   components: {
+    category: {
+      img: {
+        alt: "Category image"
+      },
+      link: {
+        "see-all": "Show all products"
+      }
+    },
     footer: {
       titles: {
         categories: 'Categories',
@@ -22,18 +30,19 @@ export default {
         by: "by"
       }
     },
+    forms: {
+      labels: {
+        email: "E-mail address",
+        password: "Password"
+      },
+      buttons: {
+        connection: "Log in"
+      }
+    },
     navbar: {
       buttons: {
         login: "Log in",
         register: "Create an account",
-      }
-    },
-    category: {
-      img: {
-        alt: "Category image"
-      },
-      link: {
-        "see-all": "Show all products"
       }
     },
     product: {
@@ -55,6 +64,7 @@ export default {
       },
     }
   },
+
   pages: {
     home: {
       title: "Home",
@@ -81,6 +91,14 @@ export default {
           title: "Your security, our mission",
           body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam et facere quia aliquid perferendis optio, temporibus quasi error! Ad omnis qui nulla iste aspernatur dolorem dolores ullam tenetur est. Qui."
         },
+      }
+    },
+
+    login: {
+      title: "Log in to your Sowing account",
+      links: {
+        password: "Password forgotten?",
+        register: "Register a Sowing account"
       }
     }
   },
