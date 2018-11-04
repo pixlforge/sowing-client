@@ -5,7 +5,7 @@
       <div class="flex flex-wrap justify-start">
 
         <!-- List all categories -->
-        <Category
+        <SubCategory
           v-for="subcategory in category.children"
           :key="subcategory.slug"
           :category="category"
@@ -19,13 +19,13 @@
 
 <script>
 import Header from "@/components/Header";
-import Category from "@/components/categories/Category";
+import SubCategory from "@/components/categories/SubCategory";
 import { mapGetters } from "vuex";
 
 export default {
   components: {
     Header,
-    Category
+    SubCategory
   },
   data() {
     return {

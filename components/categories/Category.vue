@@ -1,29 +1,11 @@
 <template>
-  <div class="w-350 rounded-lg shadow-md flex flex-col">
-    <div>
-      <img
-        :alt="alt"
-        src="https://bulma.io/images/placeholders/1280x960.png"
-        class="rounded-t-lg">
-    </div>
-    <div class="flex flex-col flex-grow p-20">
-      <h5 class="text-green-darkest font-bold text-28 text-center">{{ subcategory.name[locale] }}</h5>
-      <p class="text-base font-semibold text-grey-lighter text-center leading-tight my-15">
-        {{ subcategory.description[locale] }}
-      </p>
-      <nuxt-link
-        :to="localePath({
-          name: 'categories-category-subcategory-slug',
-          params: {
-            category: category.slug,
-            slug: subcategory.slug
-          }
-        })"
-        class="block text-base text-green font-semibold text-center no-underline hover:underline p-5 mt-auto">
-        {{ $t("components.category.link.see-all") }}
-      </nuxt-link>
-    </div>
-  </div>
+  <nuxt-link
+    :to="localePath({ name: 'categories-slug', params: { slug: category.slug } })"
+    class="relative w-315 h-315 rounded-lg shadow-lg flex justify-center items-center no-underline bg-cover bg-center bg-no-repeat mx-auto mt-80"
+    style="background-image: url(https://bulma.io/images/placeholders/1280x960.png);">
+    <h5 class="text-26 font-bold text-white z-10">{{ category.name[locale] }}</h5>
+    <div class="absolute w-full h-full rounded-lg bg-black opacity-25"/>
+  </nuxt-link>
 </template>
 
 <script>
@@ -34,20 +16,12 @@ export default {
     category: {
       type: Object,
       required: true
-    },
-    subcategory: {
-      type: Object,
-      required: true
     }
   },
   computed: {
     ...mapGetters({
       locale: "locale"
-    }),
-    alt() {
-      return this.$t("components.category.img.alt");
-    }
+    })
   }
 };
 </script>
-

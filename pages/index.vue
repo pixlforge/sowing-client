@@ -50,14 +50,20 @@
     </section>
 
     <div class="container">
-
-      <!-- Categories -->
       <section class="section">
+        
+        <!-- Categories -->
         <h1 class="title-large text-center mt-100">{{ $t("pages.home.titles.categories") }}</h1>
-      </section>
+        <div class="flex flex-wrap justify-between mt-20">
 
-      <!-- Reviews -->
-      <section class="section">
+          <!-- Category -->
+          <Category
+            v-for="category in categories"
+            :key="category.id"
+            :category="category"/>
+        </div>
+
+        <!-- Reviews -->
         <h1 class="title-large text-center mt-100">{{ $t("pages.home.titles.reviews") }}</h1>
         <div class="w-full xl:w-3/4 xxl:w-1/2 mx-auto mt-100">
 
@@ -113,15 +119,23 @@
 <script>
 import Review from "@/components/Review";
 import Feature from "@/components/Feature";
+import Category from "@/components/categories/Category";
 import StreakRegister from "@/components/streaks/StreakRegister";
 import StreakNewsletter from "@/components/streaks/StreakNewsletter";
+import { mapGetters } from "vuex";
 
 export default {
   components: {
     Review,
     Feature,
+    Category,
     StreakRegister,
     StreakNewsletter
+  },
+  computed: {
+    ...mapGetters({
+      categories: "categories"
+    })
   }
 };
 </script>
