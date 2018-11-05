@@ -20,7 +20,7 @@
           }
         })"
         class="block text-base text-green font-semibold text-center no-underline hover:underline p-5 mt-auto">
-        {{ $t("components.category.link.see-all") }}
+        {{ $t("components.category.link.see_all") }}
       </nuxt-link>
     </div>
   </div>

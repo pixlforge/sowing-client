@@ -5,38 +5,43 @@ export default {
         alt: "Image de la catégorie"
       },
       link: {
-        "see-all": "Voir tous les produits"
+        see_all: "Voir tous les produits"
       }
     },
     footer: {
       titles: {
         categories: 'Catégories',
         language: "Langue",
-        "sell-on-sowing": "Vendre sur Sowing",
+        sell_on_sowing: "Vendre sur Sowing",
         about: "À propos",
-        "social-networks": "Réseaux sociaux"
+        social_networks: "Réseaux sociaux"
       },
       links: {
         login: "Connexion",
-        "your-own-store": "Votre propre boutique",
-        "new-vendors": "Nouveaux vendeurs",
+        your_own_store: "Votre propre boutique",
+        new_vendors: "Nouveaux vendeurs",
         terms: "Conditions d'utilisation",
         payments: "Modes de paiement",
         shipments: "Livraisons"
       },
       disclaimer: {
         rights: "Tous droits réservés",
-        "made-with": "Réalisé avec",
+        made_with: "Réalisé avec",
         by: "par"
       }
     },
     forms: {
       labels: {
-        email: "Adresse e-mail",
-        password: "Mot de passe"
+        email: "Email",
+        name: "Nom",
+        password: "Mot de passe",
+        password_confirmation: "Confirmer le mot de passe"
       },
       buttons: {
-        connection: "Connexion"
+        connection: "Connexion",
+        register: "Créer le compte",
+        password_email: "Envoyer un lien pour réinitialiser mon mot de passe",
+        password_reset: "Réinitialiser le mot de passe"
       }
     },
     navbar: {
@@ -64,7 +69,6 @@ export default {
       },
     }
   },
-
   pages: {
     home: {
       title: "Accueil",
@@ -93,13 +97,32 @@ export default {
         },
       }
     },
-
     login: {
       title: "Connexion à votre compte Sowing",
       links: {
         password: "Mot de passe oublié?",
         register: "Créer un compte Sowing"
       }
+    },
+    password_email: {
+      title: "Récupération de compte",
+      paragraphs: {
+        first: "Vous avez oublié le mot de passe de votre compte?",
+        second: "Pas de problème, entrez simplement votre adresse e-mail dans le champ ci-dessous et nous allons vous envoyer un e-mail contenant un lien vous permettant de définir un nouveau mot de passe pour votre compte."
+      }
+    },
+    password_reset: {
+      title: "Réinitialisation de mot de passe"
+    },
+    register: {
+      title: "Enregistrement de votre compte Sowing",
+      links: {
+        terms: "conditions d'utilisation"
+      },
+      terms: "J'ai lu et j'accepte les"
+    },
+    register_success: {
+      title: "Compte créé avec succès!"
     }
   },
 }

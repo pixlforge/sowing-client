@@ -1,10 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-const _1aee37d8 = () => import('../pages/register/index.vue' /* webpackChunkName: "pages/register/index" */).then(m => m.default || m)
 const _508690ee = () => import('../pages/login/index.vue' /* webpackChunkName: "pages/login/index" */).then(m => m.default || m)
-const _3dbde985 = () => import('../pages/categories/_slug.vue' /* webpackChunkName: "pages/categories/_slug" */).then(m => m.default || m)
+const _1aee37d8 = () => import('../pages/register/index.vue' /* webpackChunkName: "pages/register/index" */).then(m => m.default || m)
+const _17283845 = () => import('../pages/register/success.vue' /* webpackChunkName: "pages/register/success" */).then(m => m.default || m)
+const _091687d6 = () => import('../pages/password/email.vue' /* webpackChunkName: "pages/password/email" */).then(m => m.default || m)
+const _03544809 = () => import('../pages/password/reset.vue' /* webpackChunkName: "pages/password/reset" */).then(m => m.default || m)
 const _7e2baf66 = () => import('../pages/products/_slug.vue' /* webpackChunkName: "pages/products/_slug" */).then(m => m.default || m)
+const _3dbde985 = () => import('../pages/categories/_slug.vue' /* webpackChunkName: "pages/categories/_slug" */).then(m => m.default || m)
 const _382080c1 = () => import('../pages/categories/_category/_subcategory/_slug.vue' /* webpackChunkName: "pages/categories/_category/_subcategory/_slug" */).then(m => m.default || m)
 const _60595394 = () => import('../pages/index.vue' /* webpackChunkName: "pages/index" */).then(m => m.default || m)
 
@@ -68,26 +71,6 @@ export function createRouter () {
     scrollBehavior,
     routes: [
 		{
-			path: "/en/register",
-			component: _1aee37d8,
-			name: "register___en"
-		},
-		{
-			path: "/fr/register",
-			component: _1aee37d8,
-			name: "register___fr"
-		},
-		{
-			path: "/de/register",
-			component: _1aee37d8,
-			name: "register___de"
-		},
-		{
-			path: "/it/register",
-			component: _1aee37d8,
-			name: "register___it"
-		},
-		{
 			path: "/en/login",
 			component: _508690ee,
 			name: "login___en"
@@ -108,24 +91,84 @@ export function createRouter () {
 			name: "login___it"
 		},
 		{
-			path: "/en/categories/:slug?",
-			component: _3dbde985,
-			name: "categories-slug___en"
+			path: "/en/register",
+			component: _1aee37d8,
+			name: "register___en"
 		},
 		{
-			path: "/fr/categories/:slug?",
-			component: _3dbde985,
-			name: "categories-slug___fr"
+			path: "/fr/register",
+			component: _1aee37d8,
+			name: "register___fr"
 		},
 		{
-			path: "/de/categories/:slug?",
-			component: _3dbde985,
-			name: "categories-slug___de"
+			path: "/de/register",
+			component: _1aee37d8,
+			name: "register___de"
 		},
 		{
-			path: "/it/categories/:slug?",
-			component: _3dbde985,
-			name: "categories-slug___it"
+			path: "/it/register",
+			component: _1aee37d8,
+			name: "register___it"
+		},
+		{
+			path: "/en/register/success",
+			component: _17283845,
+			name: "register-success___en"
+		},
+		{
+			path: "/fr/register/success",
+			component: _17283845,
+			name: "register-success___fr"
+		},
+		{
+			path: "/de/register/success",
+			component: _17283845,
+			name: "register-success___de"
+		},
+		{
+			path: "/it/register/success",
+			component: _17283845,
+			name: "register-success___it"
+		},
+		{
+			path: "/en/password/email",
+			component: _091687d6,
+			name: "password-email___en"
+		},
+		{
+			path: "/fr/password/email",
+			component: _091687d6,
+			name: "password-email___fr"
+		},
+		{
+			path: "/de/password/email",
+			component: _091687d6,
+			name: "password-email___de"
+		},
+		{
+			path: "/it/password/email",
+			component: _091687d6,
+			name: "password-email___it"
+		},
+		{
+			path: "/en/password/reset",
+			component: _03544809,
+			name: "password-reset___en"
+		},
+		{
+			path: "/fr/password/reset",
+			component: _03544809,
+			name: "password-reset___fr"
+		},
+		{
+			path: "/de/password/reset",
+			component: _03544809,
+			name: "password-reset___de"
+		},
+		{
+			path: "/it/password/reset",
+			component: _03544809,
+			name: "password-reset___it"
 		},
 		{
 			path: "/en/products/:slug?",
@@ -146,6 +189,26 @@ export function createRouter () {
 			path: "/it/products/:slug?",
 			component: _7e2baf66,
 			name: "products-slug___it"
+		},
+		{
+			path: "/en/categories/:slug?",
+			component: _3dbde985,
+			name: "categories-slug___en"
+		},
+		{
+			path: "/fr/categories/:slug?",
+			component: _3dbde985,
+			name: "categories-slug___fr"
+		},
+		{
+			path: "/de/categories/:slug?",
+			component: _3dbde985,
+			name: "categories-slug___de"
+		},
+		{
+			path: "/it/categories/:slug?",
+			component: _3dbde985,
+			name: "categories-slug___it"
 		},
 		{
 			path: "/en/categories/:category?/:subcategory?/:slug?",

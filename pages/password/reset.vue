@@ -2,15 +2,15 @@
   <main>
     <Header>
       <template slot="icon">
-        <font-awesome-icon :icon="['far', 'key']"/>
+        <font-awesome-icon :icon="['far', 'redo-alt']"/>
       </template>
       <template slot="title">
-        <h1 class="header-title">{{ $t("pages.login.title") }}</h1>
+        <h1 class="header-title">{{ $t("pages.password_reset.title") }}</h1>
       </template>
     </Header>
     <div class="container py-100">
       <Card class="w-full md:w-3/4 lg:w-2/3 xxl:w-1/2 mx-auto">
-        <form @submit.prevent="login">
+        <form @submit.prevent="reset">
 
           <!-- Email -->
           <div>
@@ -24,8 +24,7 @@
               v-model="form.email"
               type="email"
               name="email"
-              class="input-base"
-              required>
+              class="input-base">
           </div>
 
           <!-- Password -->
@@ -40,37 +39,34 @@
               v-model="form.password"
               type="password"
               name="password"
-              class="input-base"
-              required>
+              class="input-base">
+          </div>
+
+          <!-- Password confirmation -->
+          <div class="mt-40">
+            <label
+              for="password_confirmation"
+              class="label">
+              {{ $t("components.forms.labels.password_confirmation") }}
+            </label>
+            <input
+              id="password_confirmation"
+              v-model="form.password_confirmation"
+              type="password"
+              name="password_confirmation"
+              class="input-base">
           </div>
 
           <div class="flex justify-center mt-40">
-            
-            <!-- Password forgotten -->
-            <nuxt-link
-              :to="localePath({ name: 'password-email' })"
-              class="link-small mr-20">
-              {{ $t("pages.login.links.password") }}
-            </nuxt-link>
-
-            <!-- Register an account -->
-            <nuxt-link
-              :to="localePath({ name: 'register' })"
-              class="link-small">
-              {{ $t("pages.login.links.register") }}
-            </nuxt-link>
-          </div>
-
-          <div class="flex justify-center mt-20">
             
             <!-- Submit -->
             <button
               type="submit"
               class="btn btn-primary">
               <font-awesome-icon
-                :icon="['far', 'key']"
+                :icon="['far', 'redo-alt']"
                 class="mr-10"/>
-              {{ $t("components.forms.buttons.connection") }}
+              {{ $t("components.forms.buttons.password_reset") }}
             </button>
           </div>
         </form>
@@ -86,7 +82,7 @@ import Header from "@/components/Header";
 export default {
   head() {
     return {
-      title: `${this.title} | ${this.$t("pages.login.title")}`
+      title: `${this.title} | ${this.$t("pages.password_reset.title")}`
     };
   },
   components: {
@@ -97,7 +93,8 @@ export default {
     return {
       form: {
         email: "",
-        password: ""
+        password: "",
+        password_confirmation: ""
       }
     };
   },
@@ -107,8 +104,8 @@ export default {
     };
   },
   methods: {
-    async login() {
-      console.log("login");
+    async reset() {
+      console.log("reset");
     }
   }
 };

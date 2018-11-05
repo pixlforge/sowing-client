@@ -12,31 +12,36 @@ export default {
       titles: {
         categories: 'Kategorien',
         language: "Sprachen",
-        "sell-on-sowing": "Verkaufen auf Sowing",
+        sell_on_sowing: "Verkaufen auf Sowing",
         about: "Über Sowing",
-        "social-networks": "Soziale Netzwerke"
+        social_networks: "Soziale Netzwerke"
       },
       links: {
         login: "Einloggen",
-        "your-own-store": "Ihr eigenes Geschäft",
-        "new-vendors": "Neue Verkäufer",
+        your_own_store: "Ihr eigenes Geschäft",
+        new_vendors: "Neue Verkäufer",
         terms: "Nutzungsbedingungen",
         payments: "Zahlungsmethoden",
         shipments: "Sendungen"
       },
       disclaimer: {
         rights: "Alle Rechte vorbehalten",
-        "made-with": "Gemacht mit",
+        made_with: "Gemacht mit",
         by: "von"
       }
     },
     forms: {
       labels: {
-        email: "E-mail Addresse",
-        password: "Passwort"
+        email: "Email",
+        name: "Name",
+        password: "Passwort",
+        password_confirmation: "Passwort bestätigen"
       },
       buttons: {
-        connection: "Einloggen"
+        connection: "Einloggen",
+        register: "Konto erstellen",
+        password_email: "Senden Sie einen Link, um mein Passwort zurückzusetzen",
+        password_reset: "Passwort zurücksetzen"
       }
     },
     navbar: {
@@ -64,7 +69,6 @@ export default {
       },
     }
   },
-
   pages: {
     home: {
       title: "Startseite",
@@ -93,13 +97,32 @@ export default {
         },
       }
     },
-
     login: {
       title: "Melden Sie sich bei Ihrem Sowing Konto an",
       links: {
         password: "Passwort vergessen?",
         register: "Erstellen Sie ein Sowing Konto"
       }
+    },
+    password_email: {
+      title: "Konto wiederherstellen",
+      paragraphs: {
+        first: "Passwort vergessen?",
+        second: "Kein Problem, geben Sie einfach Ihre E-Mail-Adresse in das Feld unten ein. Wir senden Ihnen eine E-Mail mit einem Link, über den Sie ein neues Passwort für Ihr Konto festlegen können."
+      }
+    },
+    password_reset: {
+      title: "Passwort zurücksetzen"
+    },
+    register: {
+      title: "Registrieren Sie Ihr Sowing Konto",
+      links: {
+        terms: "Nutzungsbedingungen"
+      },
+      terms: "Ich habe gelesen und akzeptiere die"
+    },
+    register_success: {
+      title: "Konto erfolgreich erstellt!"
     }
   },
 }

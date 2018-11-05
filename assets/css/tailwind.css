@@ -166,11 +166,23 @@ button {
 }
 
 .header-title {
-  @apply font-cafe text-48 text-white;
+  @apply font-cafe text-24 text-white;
+}
+
+@screen md {
+  .header-title {
+    @apply text-36;
+  }
+}
+
+@screen lg {
+  .header-title {
+    @apply text-48;
+  }
 }
 
 .header-description {
-  @apply text-base text-white font-semibold mt-10;
+  @apply text-18 text-white font-semibold mt-10;
 }
 
 

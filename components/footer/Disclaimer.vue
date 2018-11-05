@@ -9,7 +9,7 @@
         class="no-underline hover:underline text-white font-cafe uppercase">Sowing</a>.
     </p>
     <p class="mt-5">
-      {{ $t("components.footer.disclaimer.made-with") }}
+      {{ $t("components.footer.disclaimer.made_with") }}
       <font-awesome-icon
         :icon="['fas', 'heart']"
         class="text-red"/>

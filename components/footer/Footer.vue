@@ -22,7 +22,7 @@
 
         <!-- Selling -->
         <div class="w-200 lg:w-1/5 mx-auto mt-50 lg:mt-100">
-          <h5 class="title-small">{{ $t("components.footer.titles.sell-on-sowing") }}</h5>
+          <h5 class="title-small">{{ $t("components.footer.titles.sell_on_sowing") }}</h5>
           <ul class="list-reset leading-normal">
             <li class="mt-10">
               <nuxt-link
@@ -35,14 +35,14 @@
               <nuxt-link
                 :to="localePath({ name: 'index' })"
                 class="footer-link">
-                {{ $t("components.footer.links.your-own-store") }}
+                {{ $t("components.footer.links.your_own_store") }}
               </nuxt-link>
             </li>
             <li>
               <nuxt-link
                 :to="localePath({ name: 'index' })"
                 class="footer-link">
-                {{ $t("components.footer.links.new-vendors") }}
+                {{ $t("components.footer.links.new_vendors") }}
               </nuxt-link>
             </li>
           </ul>
@@ -94,7 +94,7 @@
 
         <!-- Social Networks -->
         <div class="w-200 lg:w-1/5 mx-auto mt-50 lg:mt-100">
-          <h5 class="title-small">{{ $t("components.footer.titles.social-networks") }}</h5>
+          <h5 class="title-small">{{ $t("components.footer.titles.social_networks") }}</h5>
           <ul class="list-reset leading-normal">
             <li class="mt-10">
               <a

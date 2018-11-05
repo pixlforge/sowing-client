@@ -58,7 +58,7 @@
         
         <!-- Shops -->
         <h1 class="title-large text-center mt-100">{{ $t("pages.home.titles.shops") }}</h1>
-        <div class="flex flex-wrap justify-between mt-20">
+        <div class="flex flex-wrap justify-between px-20 mt-20">
           
           <CardShopMedium
             v-for="shop in shops"
@@ -68,7 +68,7 @@
 
         <!-- Categories -->
         <h1 class="title-large text-center mt-100">{{ $t("pages.home.titles.categories") }}</h1>
-        <div class="flex flex-wrap justify-between mt-20">
+        <div class="flex flex-wrap justify-center xxl:justify-between px-20 mt-20 xxl:-mx-10">
 
           <CardCategorySmall
             v-for="category in categories"

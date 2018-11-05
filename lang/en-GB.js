@@ -5,38 +5,43 @@ export default {
         alt: "Category image"
       },
       link: {
-        "see-all": "Show all products"
+        see_all: "Show all products"
       }
     },
     footer: {
       titles: {
         categories: 'Categories',
         language: "Language",
-        "sell-on-sowing": "Sell on Sowing",
+        sell_on_sowing: "Sell on Sowing",
         about: "About",
-        "social-networks": "Social Networks"
+        social_networks: "Social Networks"
       },
       links: {
         login: "Log in",
-        "your-own-store": "Your own store",
-        "new-vendors": "Newest vendors",
+        your_own_store: "Your own store",
+        new_vendors: "Newest vendors",
         terms: "Terms of use",
         payments: "Payment methods",
         shipments: "Shipments"
       },
       disclaimer: {
         rights: "All rights reserved",
-        "made-with": "Made with",
+        made_with: "Made with",
         by: "by"
       }
     },
     forms: {
       labels: {
-        email: "E-mail address",
-        password: "Password"
+        email: "Email",
+        name: "Name",
+        password: "Password",
+        password_confirmation: "Confirm password"
       },
       buttons: {
-        connection: "Log in"
+        connection: "Log in",
+        register: "Create account",
+        password_email: "Send a link to reset my password",
+        password_reset: "Reset password"
       }
     },
     navbar: {
@@ -64,7 +69,6 @@ export default {
       },
     }
   },
-
   pages: {
     home: {
       title: "Home",
@@ -93,13 +97,32 @@ export default {
         },
       }
     },
-
     login: {
       title: "Log in to your Sowing account",
       links: {
         password: "Password forgotten?",
         register: "Register a Sowing account"
       }
+    },
+    password_email: {
+      title: "Account recovery",
+      paragraphs: {
+        first: "Forgot your password?",
+        second: "No problem, simply enter your e-mail address in the field below and we will send you an e-mail containing a link allowing you to set a new password for your account."
+      }
+    },
+    password_reset: {
+      title: "Password reset"
+    },
+    register: {
+      title: "Registering your Sowing account",
+      links: {
+        terms: "terms of use"
+      },
+      terms: "I've read and I accept the"
+    },
+    register_success: {
+      title: "Account created successfully!"
     }
   },
 }
