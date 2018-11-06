@@ -6,9 +6,10 @@ import '../node_modules/@fortawesome/fontawesome-svg-core/styles.css'
 import '../assets/css/tailwind.css'
 
 
+import _77068119 from '../layouts/admin.vue'
 import _6f6c098b from '../layouts/default.vue'
 
-const layouts = { "_default": _6f6c098b }
+const layouts = { "_admin": _77068119,"_default": _6f6c098b }
 
 
 
