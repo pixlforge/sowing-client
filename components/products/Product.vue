@@ -16,7 +16,8 @@
         {{ product.description[locale] }}
       </p>
       <p class="text-24 font-semibold text-green-darkest mt-15">
-        CHF 249.&ndash;
+        {{ product.price.currency }}
+        {{ product.price.amount }}
       </p>
       <div class="flex items-center text-14 text-green mt-15">
         <font-awesome-icon
