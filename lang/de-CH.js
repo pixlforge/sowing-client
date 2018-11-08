@@ -5,7 +5,7 @@ export default {
         alt: "Kategorie Bild"
       },
       link: {
-        "see-all": "Siehe all Produkte"
+        see_all: "Siehe all Produkte"
       }
     },
     footer: {
