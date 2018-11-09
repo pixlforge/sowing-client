@@ -10,20 +10,31 @@
         </p>
       </template>
     </Header>
-    <div class="container pb-100">
-      <p class="text-base mt-100">
-        {{ product }}
-      </p>
+    <div class="container">
+
+      <section class="section pt-100">
+        <form @submit.prevent>
+          <Variation
+            v-for="(variations, type) in product.variations"
+            :key="type"
+            :type="type"
+            :variations="variations"
+            class="mt-20"/>
+        </form>
+      </section>
+
     </div>
   </main>
 </template>
 
 <script>
 import Header from "@/components/Header";
+import Variation from "@/components/products/Variation";
 
 export default {
   components: {
-    Header
+    Header,
+    Variation
   },
   data() {
     return {

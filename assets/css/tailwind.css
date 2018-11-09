@@ -78,7 +78,7 @@ button {
 }
 
 .select {
-  @apply block appearance-none w-full rounded-lg bg-grey-lighter outline-none p-10 mt-10;
+  @apply block h-42 text-base appearance-none w-full rounded-lg bg-green-lightest outline-none px-15 mt-10;
 }
 
 .select:focus {
