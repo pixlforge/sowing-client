@@ -94,7 +94,7 @@ button {
 }
 
 .select {
-  @apply block h-42 text-base appearance-none w-full rounded-lg bg-green-lightest outline-none px-15 mt-10;
+  @apply block h-42 text-base appearance-none w-full rounded-lg bg-green-lightest text-green-darkest outline-none px-15 mt-10;
 }
 
 .select:focus {
@@ -191,6 +191,14 @@ button {
 
 .header-description {
   @apply text-18 text-white font-semibold mt-10;
+}
+
+.product-currency {
+  @apply text-14 font-bold text-green mr-5 mt-5;
+}
+
+.product-price {
+  @apply text-24 font-semibold text-green-darkest;
 }
 
 @screen md {

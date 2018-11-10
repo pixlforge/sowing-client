@@ -1,11 +1,11 @@
 <template>
   <div>
-    <div>
-      <label
-        for=""
-        class="label">
-        {{ variationType }}
-      </label>
+    <label
+      for=""
+      class="label">
+      {{ variationType }}
+    </label>
+    <div class="relative">
       <select
         id=""
         name=""
@@ -18,6 +18,9 @@
           {{ variationName(variation) }}
         </option>
       </select>
+      <font-awesome-icon
+        :icon="['fas', 'caret-down']"
+        class="absolute h-full pin-y pin-r text-base text-green-dark mr-20"/>
     </div>
   </div>
 </template>

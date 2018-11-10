@@ -16,24 +16,7 @@
     <section class="container py-100">
 
       <!-- Product -->
-      <div class="rounded-lg shadow-lg flex">
-        <div class="w-1/3">
-          <img
-            :src="imgUrl"
-            :alt="imgAlt"
-            class="block rounded-l-lg">
-        </div>
-        <div class="w-2/3 p-30">
-          <form @submit.prevent>
-            <Variation
-              v-for="(variations, type) in product.variations"
-              :key="type"
-              :type="type"
-              :variations="variations"
-              class="mt-20"/>
-          </form>
-        </div>
-      </div>
+      <ProductDetails :product="product"/>
 
     </section>
 
@@ -42,16 +25,16 @@
 
 <script>
 import Header from "@/components/Header";
-import Variation from "@/components/products/Variation";
+import ProductDetails from "@/components/products/ProductDetails";
 
 export default {
   components: {
     Header,
-    Variation
+    ProductDetails
   },
   data() {
     return {
-      product: []
+      product: {}
     };
   },
   async asyncData({ params, app }) {
@@ -60,14 +43,6 @@ export default {
     return {
       product: res.data
     };
-  },
-  computed: {
-    imgUrl() {
-      return `https://bulma.io/images/placeholders/1280x960.png`;
-    },
-    imgAlt() {
-      return this.$t("components.product.img.alt");
-    }
   }
 };
 </script>
