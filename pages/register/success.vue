@@ -1,6 +1,8 @@
 <template>
   <main>
-    <div class="container py-100">
+    <section class="container py-100">
+
+      <!-- Success message -->
       <div class="w-full sm:w-2/3 xl:w-1/2 flex flex-col lg:flex-row px-20 md:px-0 mx-auto">
         <div class="w-full lg:w-auto flex justify-center">
           <font-awesome-icon
@@ -13,13 +15,15 @@
         </div>
       </div>
       
+      <!-- Illustration -->
       <div class="w-full sm:w-2/3 xl:w-1/2 px-20 md:px-0 mx-auto mt-100">
         <img
           src="~assets/img/success_smiley.svg"
           alt=""
           class="select-none">
       </div>
-    </div>
+
+    </section>
   </main>
 </template>
 

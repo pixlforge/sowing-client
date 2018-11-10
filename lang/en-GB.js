@@ -67,6 +67,9 @@ export default {
         button: "Subscribe",
         placeholder: "your.email@address.ch"
       },
+    },
+    variations: {
+      selection_label: "Select"
     }
   },
   pages: {

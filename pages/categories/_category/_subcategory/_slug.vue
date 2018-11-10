@@ -1,5 +1,7 @@
 <template>
   <main>
+
+    <!-- Header -->
     <Header>
       <template slot="title">
         <h1 class="header-title">{{ subcategory.name[locale] }}</h1>
@@ -10,10 +12,11 @@
         </p>
       </template>
     </Header>
-    <div class="container pb-100">
+    
+    <section class="container pb-100">
       <div class="flex flex-wrap justify-between mt-60">
         
-        <!-- List all products for the given subcategory -->
+        <!-- Products -->
         <Product
           v-for="product in products"
           :key="product.id"
@@ -21,7 +24,8 @@
           class="mt-40"/>
 
       </div>
-    </div>
+    </section>
+
   </main>
 </template>
 

@@ -28,7 +28,23 @@
  */
 @tailwind components;
 
-.avatar-review {
+/**
+ * Here you would add any of your custom component classes; stuff that you'd
+ * want loaded *before* the utilities so that the utilities could still
+ * override them.
+ *
+ * Example:
+ *
+ * .btn { ... }
+ * .form-input { ... }
+ *
+ * Or if using a preprocessor or `postcss-import`:
+ *
+ * @import "components/buttons";
+ * @import "components/forms";
+ */
+
+ .avatar-review {
   @apply w-100 h-100 rounded-full shadow-md;
 }
 
@@ -125,6 +141,10 @@ button {
   @apply underline;
 }
 
+.card-form {
+  @apply w-full rounded-lg shadow-lg px-30 py-40 mx-auto;
+}
+
 .card-product {
   @apply w-720 flex no-underline text-green-darkest outline-none rounded-lg shadow-md;
 }
@@ -154,7 +174,7 @@ button {
 }
 
 .link-small {
-  @apply text-12 text-grey-lighter no-underline outline-none ;
+  @apply text-14 text-grey-lighter no-underline outline-none;
 }
 
 .link-small:hover {
@@ -169,38 +189,35 @@ button {
   @apply font-cafe text-24 text-white;
 }
 
+.header-description {
+  @apply text-18 text-white font-semibold mt-10;
+}
+
 @screen md {
+  .card-form {
+    @apply w-3/4;
+  }
+
   .header-title {
     @apply text-36;
   }
 }
 
 @screen lg {
+  .card-form {
+    @apply w-2/3;
+  }
+
   .header-title {
     @apply text-48;
   }
 }
 
-.header-description {
-  @apply text-18 text-white font-semibold mt-10;
+@screen xxl {
+  .card-form {
+    @apply w-1/2;
+  }
 }
-
-
-/**
- * Here you would add any of your custom component classes; stuff that you'd
- * want loaded *before* the utilities so that the utilities could still
- * override them.
- *
- * Example:
- *
- * .btn { ... }
- * .form-input { ... }
- *
- * Or if using a preprocessor or `postcss-import`:
- *
- * @import "components/buttons";
- * @import "components/forms";
- */
 
 /**
  * This injects all of Tailwind's utility classes, generated based on your

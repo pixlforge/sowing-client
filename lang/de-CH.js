@@ -67,6 +67,9 @@ export default {
         button: "Anmeldung",
         placeholder: "ihre.email@adresse.ch"
       },
+    },
+    variations: {
+      selection_label: "Auswahl"
     }
   },
   pages: {

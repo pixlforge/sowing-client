@@ -4,18 +4,18 @@
       <label
         for=""
         class="label">
-        {{ variations[0].type.name[locale] }}
+        {{ variationType }}
       </label>
       <select
         id=""
         name=""
         class="select">
-        <option value="">Sélection</option>
+        <option value="">{{ selectionLabel }}</option>
         <option
           v-for="variation in variations"
           :key="variation.id"
           :value="variation.id">
-          {{ variation.name[locale] }}
+          {{ variationName(variation) }}
         </option>
       </select>
     </div>
@@ -39,7 +39,18 @@ export default {
   computed: {
     ...mapGetters({
       locale: "locale"
-    })
+    }),
+    variationType() {
+      return this.variations[0].type.name[this.locale];
+    },
+    selectionLabel() {
+      return this.$t("components.variations.selection_label");
+    }
+  },
+  methods: {
+    variationName(variation) {
+      return variation.name[this.locale];
+    }
   }
 };
 </script>

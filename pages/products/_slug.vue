@@ -1,5 +1,7 @@
 <template>
   <main>
+
+    <!-- Header -->
     <Header>
       <template slot="title">
         <h1 class="header-title">Nom de la boutique</h1>
@@ -10,20 +12,31 @@
         </p>
       </template>
     </Header>
-    <div class="container">
 
-      <section class="section pt-100">
-        <form @submit.prevent>
-          <Variation
-            v-for="(variations, type) in product.variations"
-            :key="type"
-            :type="type"
-            :variations="variations"
-            class="mt-20"/>
-        </form>
-      </section>
+    <section class="container py-100">
 
-    </div>
+      <!-- Product -->
+      <div class="rounded-lg shadow-lg flex">
+        <div class="w-1/3">
+          <img
+            :src="imgUrl"
+            :alt="imgAlt"
+            class="block rounded-l-lg">
+        </div>
+        <div class="w-2/3 p-30">
+          <form @submit.prevent>
+            <Variation
+              v-for="(variations, type) in product.variations"
+              :key="type"
+              :type="type"
+              :variations="variations"
+              class="mt-20"/>
+          </form>
+        </div>
+      </div>
+
+    </section>
+
   </main>
 </template>
 
@@ -47,6 +60,14 @@ export default {
     return {
       product: res.data
     };
+  },
+  computed: {
+    imgUrl() {
+      return `https://bulma.io/images/placeholders/1280x960.png`;
+    },
+    imgAlt() {
+      return this.$t("components.product.img.alt");
+    }
   }
 };
 </script>

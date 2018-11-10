@@ -2,12 +2,10 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 const _508690ee = () => import('../pages/login/index.vue' /* webpackChunkName: "pages/login/index" */).then(m => m.default || m)
-const _56a37d54 = () => import('../pages/admin/index.vue' /* webpackChunkName: "pages/admin/index" */).then(m => m.default || m)
 const _1aee37d8 = () => import('../pages/register/index.vue' /* webpackChunkName: "pages/register/index" */).then(m => m.default || m)
-const _091687d6 = () => import('../pages/password/email.vue' /* webpackChunkName: "pages/password/email" */).then(m => m.default || m)
 const _17283845 = () => import('../pages/register/success.vue' /* webpackChunkName: "pages/register/success" */).then(m => m.default || m)
+const _091687d6 = () => import('../pages/password/email.vue' /* webpackChunkName: "pages/password/email" */).then(m => m.default || m)
 const _03544809 = () => import('../pages/password/reset.vue' /* webpackChunkName: "pages/password/reset" */).then(m => m.default || m)
-const _74588e8d = () => import('../pages/admin/users/index.vue' /* webpackChunkName: "pages/admin/users/index" */).then(m => m.default || m)
 const _7e2baf66 = () => import('../pages/products/_slug.vue' /* webpackChunkName: "pages/products/_slug" */).then(m => m.default || m)
 const _3dbde985 = () => import('../pages/categories/_slug.vue' /* webpackChunkName: "pages/categories/_slug" */).then(m => m.default || m)
 const _382080c1 = () => import('../pages/categories/_category/_subcategory/_slug.vue' /* webpackChunkName: "pages/categories/_category/_subcategory/_slug" */).then(m => m.default || m)
@@ -93,26 +91,6 @@ export function createRouter () {
 			name: "login___it"
 		},
 		{
-			path: "/en/admin",
-			component: _56a37d54,
-			name: "admin___en"
-		},
-		{
-			path: "/fr/admin",
-			component: _56a37d54,
-			name: "admin___fr"
-		},
-		{
-			path: "/de/admin",
-			component: _56a37d54,
-			name: "admin___de"
-		},
-		{
-			path: "/it/admin",
-			component: _56a37d54,
-			name: "admin___it"
-		},
-		{
 			path: "/en/register",
 			component: _1aee37d8,
 			name: "register___en"
@@ -131,26 +109,6 @@ export function createRouter () {
 			path: "/it/register",
 			component: _1aee37d8,
 			name: "register___it"
-		},
-		{
-			path: "/en/password/email",
-			component: _091687d6,
-			name: "password-email___en"
-		},
-		{
-			path: "/fr/password/email",
-			component: _091687d6,
-			name: "password-email___fr"
-		},
-		{
-			path: "/de/password/email",
-			component: _091687d6,
-			name: "password-email___de"
-		},
-		{
-			path: "/it/password/email",
-			component: _091687d6,
-			name: "password-email___it"
 		},
 		{
 			path: "/en/register/success",
@@ -173,6 +131,26 @@ export function createRouter () {
 			name: "register-success___it"
 		},
 		{
+			path: "/en/password/email",
+			component: _091687d6,
+			name: "password-email___en"
+		},
+		{
+			path: "/fr/password/email",
+			component: _091687d6,
+			name: "password-email___fr"
+		},
+		{
+			path: "/de/password/email",
+			component: _091687d6,
+			name: "password-email___de"
+		},
+		{
+			path: "/it/password/email",
+			component: _091687d6,
+			name: "password-email___it"
+		},
+		{
 			path: "/en/password/reset",
 			component: _03544809,
 			name: "password-reset___en"
@@ -191,26 +169,6 @@ export function createRouter () {
 			path: "/it/password/reset",
 			component: _03544809,
 			name: "password-reset___it"
-		},
-		{
-			path: "/en/admin/users",
-			component: _74588e8d,
-			name: "admin-users___en"
-		},
-		{
-			path: "/fr/admin/users",
-			component: _74588e8d,
-			name: "admin-users___fr"
-		},
-		{
-			path: "/de/admin/users",
-			component: _74588e8d,
-			name: "admin-users___de"
-		},
-		{
-			path: "/it/admin/users",
-			component: _74588e8d,
-			name: "admin-users___it"
 		},
 		{
 			path: "/en/products/:slug?",

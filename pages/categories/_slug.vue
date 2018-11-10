@@ -1,5 +1,7 @@
 <template>
   <main>
+
+    <!-- Header -->
     <Header>
       <template slot="title">
         <h1 class="header-title">{{ category.name[locale] }}</h1>
@@ -10,19 +12,21 @@
         </p>
       </template>
     </Header>
-    <div class="container pb-100">
-      <div class="flex flex-wrap justify-start">
 
-        <!-- List all sub-categories -->
+    <section class="container pb-100">
+      <div class="flex flex-wrap justify-center -mx-40">
+
+        <!-- Sub-categories -->
         <SubCategory
           v-for="subcategory in category.children"
           :key="subcategory.slug"
           :category="category"
           :subcategory="subcategory"
-          class="mx-auto mt-100"/>
+          class="mx-20 mt-100"/>
 
       </div>
-    </div>
+    </section>
+
   </main>
 </template>
 
