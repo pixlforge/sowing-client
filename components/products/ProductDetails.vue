@@ -1,13 +1,13 @@
 <template>
   <div class="rounded-lg shadow-lg flex flex-col">
-    <div class="flex">
-      <div class="w-1/2">
+    <div class="flex flex-col lg:flex-row">
+      <div class="w-full lg:w-1/2">
         <img
           :src="imgUrl"
           :alt="imgAlt"
           class="block rounded-tl-lg">
       </div>
-      <div class="w-1/2 p-30">
+      <div class="w-full lg:w-1/2 flex flex-col items-center lg:items-start p-30">
 
         <h2 class="text-46 font-bold text-green-darkest">{{ productName }}</h2>
 
@@ -19,7 +19,7 @@
         </div>
         
         <form
-          class="w-1/2 mt-40"
+          class="w-full md:w-3/4 xxl:w-1/2 mt-40"
           @submit.prevent>
           
           <Variation
@@ -31,7 +31,7 @@
 
           <button
             type="submit"
-            class="btn btn-primary mt-40">
+            class="btn btn-primary mx-auto lg:mx-0 mt-40">
             <font-awesome-icon
               :icon="['far', 'cart-plus']"
               class="mr-10"/>
@@ -40,13 +40,13 @@
         </form>
       </div>
     </div>
-    <div class="w-full bg-green-lightest flex flex-wrap justify-center items-center px-40 pb-40">
+    <div class="w-full bg-green-lightest flex flex-wrap items-center px-20 pb-40">
       <img
-        v-for="n in 5"
+        v-for="n in 13"
         :key="n"
         :src="imgUrl"
         :alt="imgAlt"
-        class="w-200 mx-20 mt-40">
+        class="w-1/2 md:w-1/3 xl:w-1/5 border-l-10 sm:border-l-20 border-r-10 sm:border-r-20 border-green-lightest mt-40">
     </div>
   </div>
 </template>

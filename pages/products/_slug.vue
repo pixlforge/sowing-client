@@ -20,17 +20,26 @@
 
     </section>
 
+    <section>
+
+      <!-- Streak newsletter -->
+      <StreakNewsletter/>
+      
+    </section>
+
   </main>
 </template>
 
 <script>
 import Header from "@/components/Header";
 import ProductDetails from "@/components/products/ProductDetails";
+import StreakNewsletter from "@/components/streaks/StreakNewsletter";
 
 export default {
   components: {
     Header,
-    ProductDetails
+    ProductDetails,
+    StreakNewsletter
   },
   data() {
     return {
