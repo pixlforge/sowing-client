@@ -93,8 +93,9 @@ button {
   @apply bg-grey-light text-grey-dark cursor-not-allowed;
 }
 
-.select {
-  @apply block h-42 text-base appearance-none w-full rounded-lg bg-green-lightest text-green-darkest outline-none px-15 mt-10;
+.select,
+.input-base {
+  @apply block h-42 text-base w-full appearance-none bg-green-lightest rounded-lg text-green-darkest leading-tight outline-none px-15 mt-10;
 }
 
 .select:focus {
@@ -103,10 +104,6 @@ button {
 
 .select-caret {
   @apply absolute h-full pin-y pin-r text-base text-green-dark mr-20;
-}
-
-.input-base {
-  @apply block h-42 w-full appearance-none bg-green-lightest rounded-lg text-base px-15 mt-10;
 }
 
 .input-base:focus {

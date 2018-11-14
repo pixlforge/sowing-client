@@ -69,6 +69,10 @@ export default {
       return this.$t("components.variations.labels.selection");
     },
     selectedVariationId() {
+      if (!this.value) {
+        return "";
+      }
+
       if (!this.findVariation(this.value.id)) {
         return "";
       }
