@@ -13,18 +13,14 @@
       </template>
     </Header>
 
+    <!-- Product details -->
     <section class="container py-100">
-
-      <!-- Product -->
       <ProductDetails :product="product"/>
-
     </section>
 
+    <!-- Streak newsletter -->
     <section>
-
-      <!-- Streak newsletter -->
       <StreakNewsletter/>
-      
     </section>
 
   </main>

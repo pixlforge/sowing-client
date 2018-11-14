@@ -69,7 +69,10 @@ export default {
       },
     },
     variations: {
-      selection_label: "Sélection",
+      labels: {
+        quantity: "Quantité",
+        selection: "Sélection",
+      },
       buttons: {
         add_to_cart: "Ajouter au panier"
       }

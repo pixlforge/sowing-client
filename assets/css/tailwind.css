@@ -101,6 +101,10 @@ button {
   @apply shadow-outline;
 }
 
+.select-caret {
+  @apply absolute h-full pin-y pin-r text-base text-green-dark mr-20;
+}
+
 .input-base {
   @apply block h-42 w-full appearance-none bg-green-lightest rounded-lg text-base px-15 mt-10;
 }

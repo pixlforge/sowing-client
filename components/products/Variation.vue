@@ -1,26 +1,40 @@
 <template>
   <div>
+
+    <!-- Variation label -->
     <label
-      for=""
+      for="variation"
       class="label">
       {{ variationType }}
     </label>
+
+    <!-- Variation select -->
     <div class="relative">
       <select
-        id=""
-        name=""
-        class="select">
+        id="variation"
+        :value="selectedVariationId"
+        name="variation"
+        class="select"
+        @change="changed">
         <option value="">{{ selectionLabel }}</option>
         <option
           v-for="variation in variations"
           :key="variation.id"
           :value="variation.id">
+
+          <!-- Variation name -->
           {{ variationName(variation) }}
+
+          <!-- Price variation -->
+          <template v-if="variation.price_varies">
+            ({{ variation.price.currency }} {{ variation.price.amount }})
+          </template>
+
         </option>
       </select>
       <font-awesome-icon
         :icon="['fas', 'caret-down']"
-        class="absolute h-full pin-y pin-r text-base text-green-dark mr-20"/>
+        class="select-caret"/>
     </div>
   </div>
 </template>
@@ -37,6 +51,11 @@ export default {
     variations: {
       type: Array,
       required: true
+    },
+    value: {
+      type: [Object, String],
+      required: false,
+      default: ""
     }
   },
   computed: {
@@ -47,10 +66,29 @@ export default {
       return this.variations[0].type.name[this.locale];
     },
     selectionLabel() {
-      return this.$t("components.variations.selection_label");
+      return this.$t("components.variations.labels.selection");
+    },
+    selectedVariationId() {
+      if (!this.findVariation(this.value.id)) {
+        return "";
+      }
+
+      return this.value.id;
     }
   },
   methods: {
+    changed(event) {
+      this.$emit("input", this.findVariation(event.target.value));
+    },
+    findVariation(id) {
+      const variation = this.variations.find(variation => variation.id == id);
+
+      if (typeof variation === "undefined") {
+        return null;
+      }
+
+      return variation;
+    },
     variationName(variation) {
       return variation.name[this.locale];
     }
