@@ -28,9 +28,30 @@
           <span class="product-currency">{{ productCurrency }}</span>
           <span class="product-price">{{ productPrice }}</span>
         </div>
-        
+
+        <!-- Total products in stock -->
+        <div
+          v-if="product.in_stock"
+          class="flex items-start text-base text-green-darkest mt-40">
+          <font-awesome-icon
+            :icon="['far', 'boxes']"
+            class="text-green mr-10"/>
+          <span class="font-bold mr-5">{{ product.stock_count }}</span>
+          <span>{{ productsRemaining }}</span>
+        </div>
+
+        <!-- Product is out of stock -->
+        <div
+          v-else
+          class="flex items-start text-base text-red mt-40">
+          <font-awesome-icon
+            :icon="['far', 'boxes']"
+            class="mr-10"/>
+          <span class="font-bold">{{ productOutOfStock }}</span>
+        </div>
+
         <form
-          class="w-full md:w-3/4 xxl:w-1/2 mt-40"
+          class="w-full md:w-3/4 xxl:w-1/2 mt-20"
           @submit.prevent>
           
           <!-- Variations -->
@@ -54,9 +75,15 @@
             <div class="relative">
               <select
                 id="quantity"
+                v-model="form.quantity"
                 name="quantity"
                 class="select">
-                <option value="1">1</option>
+                <option
+                  v-for="n in parseInt(form.variation.stock_count)"
+                  :key="n"
+                  :value="n">
+                  {{ n }}
+                </option>
               </select>
               <font-awesome-icon
                 :icon="['fas', 'caret-down']"
@@ -122,7 +149,7 @@ export default {
       return `https://bulma.io/images/placeholders/1280x960.png`;
     },
     imgAlt() {
-      return this.$t("components.product.img.alt");
+      return this.$t("components.products.img.alt");
     },
     productName() {
       return this.product.name[this.locale];
@@ -138,6 +165,17 @@ export default {
     },
     quantityLabel() {
       return this.$t("components.variations.labels.quantity");
+    },
+    productsRemaining() {
+      return this.$t("components.products.details.remaining");
+    },
+    productOutOfStock() {
+      return this.$t("components.products.details.out_of_stock");
+    }
+  },
+  watch: {
+    "form.variation"() {
+      this.form.quantity = 1;
     }
   }
 };

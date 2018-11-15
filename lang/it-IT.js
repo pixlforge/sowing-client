@@ -50,9 +50,13 @@ export default {
         register: "Crea un account",
       }
     },
-    product: {
+    products: {
       img: {
         alt: "Immagine del prodotto"
+      },
+      details: {
+        remaining: "prodotti in magazzino",
+        out_of_stock: "Esaurito"
       }
     },
     streaks: {
@@ -75,6 +79,9 @@ export default {
       },
       buttons: {
         add_to_cart: "Aggiungi al carrello"
+      },
+      select: {
+        out_of_stock: "Esaurito"
       }
     }
   },

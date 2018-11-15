@@ -50,9 +50,13 @@ export default {
         register: "Konto erstellen",
       }
     },
-    product: {
+    products: {
       img: {
         alt: "Produktbild"
+      },
+      details: {
+        remaining: "Produkte auf Lager",
+        out_of_stock: "Ausverkauft"
       }
     },
     streaks: {
@@ -75,6 +79,9 @@ export default {
       },
       buttons: {
         add_to_cart: "Zum Warenkorb hinzufügen"
+      },
+      select: {
+        out_of_stock: "Ausverkauft"
       }
     }
   },

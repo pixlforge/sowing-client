@@ -16,11 +16,16 @@
         name="variation"
         class="select"
         @change="changed">
-        <option value="">{{ selectionLabel }}</option>
+        <option
+          value=""
+          selected>
+          {{ selectionLabel }}
+        </option>
         <option
           v-for="variation in variations"
           :key="variation.id"
-          :value="variation.id">
+          :value="variation.id"
+          :disabled="!variation.in_stock">
 
           <!-- Variation name -->
           {{ variationName(variation) }}
@@ -28,6 +33,10 @@
           <!-- Price variation -->
           <template v-if="variation.price_varies">
             ({{ variation.price.currency }} {{ variation.price.amount }})
+          </template>
+
+          <template v-if="!variation.in_stock">
+            ({{ outOfStock }})
           </template>
 
         </option>
@@ -62,6 +71,9 @@ export default {
     ...mapGetters({
       locale: "locale"
     }),
+    outOfStock() {
+      return this.$t("components.variations.select.out_of_stock");
+    },
     variationType() {
       return this.variations[0].type.name[this.locale];
     },

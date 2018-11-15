@@ -50,9 +50,13 @@ export default {
         register: "Créer un compte",
       }
     },
-    product: {
+    products: {
       img: {
         alt: "Image du produit"
+      },
+      details: {
+        remaining: "articles en stock",
+        out_of_stock: "Rupture de stock"
       }
     },
     streaks: {
@@ -75,6 +79,9 @@ export default {
       },
       buttons: {
         add_to_cart: "Ajouter au panier"
+      },
+      select: {
+        out_of_stock: "Rupture de stock"
       }
     }
   },
