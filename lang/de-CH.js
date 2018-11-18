@@ -48,6 +48,9 @@ export default {
       buttons: {
         login: "Einloggen",
         register: "Konto erstellen",
+      },
+      user: {
+        logout: "Ausloggen"
       }
     },
     products: {

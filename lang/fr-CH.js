@@ -48,6 +48,9 @@ export default {
       buttons: {
         login: "Connexion",
         register: "Créer un compte",
+      },
+      user: {
+        logout: "Déconnexion"
       }
     },
     products: {

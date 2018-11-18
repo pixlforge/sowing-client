@@ -119,11 +119,11 @@ button {
 }
 
 .dropdown-parent:hover > .dropdown-child {
-  @apply block;
+  @apply block px-30;
 }
 
 .dropdown-child {
-  @apply hidden absolute min-w-150 bg-white shadow rounded-lg;
+  @apply hidden absolute bg-white shadow rounded-lg list-reset text-left pin-t pin-l py-20 mt-35 z-20;
 }
 
 .title-large {
@@ -159,7 +159,7 @@ button {
 }
 
 .link-category:hover {
- @apply underline;
+ @apply text-green;
 }
 
 .link-category:focus {
@@ -167,7 +167,7 @@ button {
 }
 
 .link-dropdown {
-  @apply block no-underline text-grey-dark pl-30 py-5;
+  @apply block no-underline text-grey-dark py-5;
 }
 
 .link-dropdown:hover {
@@ -252,3 +252,29 @@ button {
  * @import "utilities/background-patterns";
  * @import "utilities/skew-transforms";
  */
+
+@responsive {
+  .order-0 {
+    order: 0;
+  }
+  
+  .order-1 {
+    order: 1;
+  }
+  
+  .order-2 {
+    order: 2;
+  }
+  
+  .order-3 {
+    order: 3;
+  }
+  
+  .order-4 {
+    order: 4;
+  }
+
+  .order-5 {
+    order: 5;
+  }
+}

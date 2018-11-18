@@ -86,6 +86,7 @@
 import Header from "@/components/Header";
 
 export default {
+  middleware: "guest",
   head() {
     return {
       title: `${this.title} | ${this.$t("pages.login.title")}`
@@ -109,7 +110,9 @@ export default {
   },
   methods: {
     async login() {
-      console.log("login");
+      await this.$auth.loginWith("local", {
+        data: this.form
+      });
     }
   }
 };

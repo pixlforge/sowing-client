@@ -1,6 +1,6 @@
 <template>
   <div class="bg-green-lightest py-5">
-    <div class="container h-full flex items-center">
+    <div class="container h-full flex items-center px-20">
       <ul class="list-reset w-full flex flex-wrap justify-between -mx-10">
         <li
           v-for="category in categories"
