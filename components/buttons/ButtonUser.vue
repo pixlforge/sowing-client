@@ -20,7 +20,7 @@
 export default {
   computed: {
     username() {
-      return "Raffaella Gigante";
+      return this.$auth.user.name;
     }
   },
   methods: {
