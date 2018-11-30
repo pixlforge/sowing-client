@@ -14,19 +14,38 @@
     </Header>
 
     <section class="container pb-100">
-      <div class="flex flex-wrap justify-center -mx-40">
 
-        <!-- Sub-categories -->
-        <SubCategory
-          v-for="subcategory in category.children"
-          :key="subcategory.slug"
-          :category="category"
-          :subcategory="subcategory"
-          class="mx-20 mt-100"/>
+      <!-- Subcategories with sections -->
+      <template v-if="categoryHasSections">
+        <div
+          v-for="section in category.children"
+          :key="section.id"
+          class="">
+          <h2 class="text-48 text-green-darkest mt-100">{{ section.name[locale] }}</h2>
 
-      </div>
+          <div class="flex flex-wrap justify-center -mx-40">
+            <SubCategory
+              v-for="subcategory in section.children"
+              :key="subcategory.slug"
+              :category="category"
+              :subcategory="subcategory"
+              class="mx-20 mt-100"/>
+          </div>
+        </div>
+      </template>
+
+      <!-- Subcategories without sections -->
+      <template v-else>
+        <div class="flex flex-wrap justify-center -mx-40">
+          <SubCategory
+            v-for="subcategory in category.children"
+            :key="subcategory.slug"
+            :category="category"
+            :subcategory="subcategory"
+            class="mx-20 mt-100"/>
+        </div>
+      </template>
     </section>
-
   </main>
 </template>
 
@@ -61,7 +80,10 @@ export default {
   computed: {
     ...mapGetters({
       locale: "locale"
-    })
+    }),
+    categoryHasSections() {
+      return this.category.children[0].is_section;
+    }
   }
 };
 </script>
