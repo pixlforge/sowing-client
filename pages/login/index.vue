@@ -84,6 +84,7 @@
 
 <script>
 import Header from "@/components/Header";
+import { mapActions } from "vuex";
 
 export default {
   middleware: "guest",
@@ -109,10 +110,15 @@ export default {
     };
   },
   methods: {
+    ...mapActions({
+      getCart: "cart/getCart"
+    }),
     async login() {
       await this.$auth.loginWith("local", {
         data: this.form
       });
+
+      await this.getCart();
     }
   }
 };

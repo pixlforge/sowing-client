@@ -6,13 +6,21 @@
       :icon="['far', 'shopping-cart']"
       class="text-18 text-white"/>
     <div class="number absolute pin-t pin-r w-20 h-20 rounded-full bg-pink-dark text-12 font-bold text-white flex justify-center items-center">
-      13
+      {{ count }}
     </div>
   </a>
 </template>
 
 <script>
-export default {};
+import { mapGetters } from "vuex";
+
+export default {
+  computed: {
+    ...mapGetters({
+      count: "cart/count"
+    })
+  }
+};
 </script>
 
 <style scoped>
