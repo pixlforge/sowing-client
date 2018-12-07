@@ -16,6 +16,7 @@
       <h3 class="text-26 text-green-darkest">
         {{ baseProductName }} &ndash; {{ variationType }} &ndash; {{ variationName }}
       </h3>
+      
       <p class="text-15 text-grey-lighter font-semibold mt-20">
         {{ baseProductDescription }}
       </p>
@@ -24,6 +25,7 @@
     <!-- Price -->
     <td class="text-center">
       <h5 class="text-12 text-grey-lightest uppercase">{{ labelPrice }}</h5>
+
       <div class="h-42 text-base text-green-darkest font-bold mt-20 flex justify-center items-center">
         {{ product.total.currency }} {{ product.total.amount }}
       </div>
@@ -32,12 +34,19 @@
     <!-- Quantity -->
     <td class="text-center">
       <h5 class="text-12 text-grey-lightest uppercase">{{ labelQuantity }}</h5>
+
       <div class="relative mt-20">
         <select
           id="quantity"
+          v-model="quantity"
           name="quantity"
           class="select">
-          <option value="0">0</option>
+          <option
+            v-if="product.quantity == 0"
+            value="0"
+            disabled>
+            0
+          </option>
           <option
             v-for="n in parseInt(product.stock_count)"
             :key="n"
@@ -77,7 +86,9 @@ export default {
     }
   },
   data() {
-    return {};
+    return {
+      quantity: this.product.quantity
+    };
   },
   computed: {
     ...mapGetters({
@@ -105,9 +116,15 @@ export default {
       return this.product.type.name[this.locale];
     }
   },
+  watch: {
+    quantity(quantity) {
+      this.update({ productId: this.product.id, quantity: this.quantity });
+    }
+  },
   methods: {
     ...mapActions({
-      destroy: "cart/destroy"
+      destroy: "cart/destroy",
+      update: "cart/update"
     })
   }
 };
