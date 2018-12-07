@@ -90,7 +90,7 @@ button {
 
 .btn-disabled,
 .btn-disabled:hover {
-  @apply bg-grey-light text-grey-dark cursor-not-allowed;
+  @apply bg-grey-lightest text-white cursor-not-allowed;
 }
 
 .select,
