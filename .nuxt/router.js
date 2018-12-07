@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import { interopDefault } from './utils'
 
+const _1285f351 = () => interopDefault(import('../pages/cart/index.vue' /* webpackChunkName: "pages/cart/index" */))
 const _508690ee = () => interopDefault(import('../pages/login/index.vue' /* webpackChunkName: "pages/login/index" */))
 const _1aee37d8 = () => interopDefault(import('../pages/register/index.vue' /* webpackChunkName: "pages/register/index" */))
 const _091687d6 = () => interopDefault(import('../pages/password/email.vue' /* webpackChunkName: "pages/password/email" */))
@@ -70,6 +71,22 @@ export function createRouter() {
     scrollBehavior,
 
     routes: [{
+      path: "/en/cart",
+      component: _1285f351,
+      name: "cart___en"
+    }, {
+      path: "/fr/cart",
+      component: _1285f351,
+      name: "cart___fr"
+    }, {
+      path: "/de/cart",
+      component: _1285f351,
+      name: "cart___de"
+    }, {
+      path: "/it/cart",
+      component: _1285f351,
+      name: "cart___it"
+    }, {
       path: "/en/login",
       component: _508690ee,
       name: "login___en"

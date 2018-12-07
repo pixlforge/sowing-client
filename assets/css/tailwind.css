@@ -253,6 +253,12 @@ button {
  * @import "utilities/skew-transforms";
  */
 
+ @responsive {
+   .border-spacing-h-40 {
+     border-spacing: 0 4rem;
+   }
+ }
+
 @responsive {
   .order-0 {
     order: 0;

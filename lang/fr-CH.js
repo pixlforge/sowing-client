@@ -1,5 +1,11 @@
 export default {
   components: {
+    cart: {
+      labels: {
+        price: "Prix",
+        quantity: "Quantité"
+      }
+    },
     category: {
       img: {
         alt: "Image de la catégorie"
@@ -89,6 +95,9 @@ export default {
     }
   },
   pages: {
+    cart: {
+      title: "Mon panier"
+    },
     home: {
       title: "Accueil",
       titles: {
