@@ -54,13 +54,20 @@
 
     <!-- Remove control -->
     <td class="text-center">
-      Remove
+      <button
+        role="button"
+        title="Remove"
+        @click="destroy(product.id)">
+        <font-awesome-icon
+          :icon="['far', 'times']"
+          class="text-20 text-grey-lightest hover:text-red transition cursor-pointer"/>
+      </button>
     </td>
   </tr>
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 
 export default {
   props: {
@@ -97,6 +104,11 @@ export default {
     variationType() {
       return this.product.type.name[this.locale];
     }
+  },
+  methods: {
+    ...mapActions({
+      destroy: "cart/destroy"
+    })
   }
 };
 </script>
