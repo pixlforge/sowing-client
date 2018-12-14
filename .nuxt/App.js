@@ -5,10 +5,9 @@ import '../node_modules/@fortawesome/fontawesome-svg-core/styles.css'
 
 import '../assets/css/tailwind.css'
 
-import _77068119 from '../layouts/admin.vue'
 import _6f6c098b from '../layouts/default.vue'
 
-const layouts = { "_admin": _77068119,"_default": _6f6c098b }
+const layouts = { "_default": _6f6c098b }
 
 export default {
   head: {"title":"Sowing","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"My praiseworthy Nuxt.js project"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"}],"style":[],"script":[]},

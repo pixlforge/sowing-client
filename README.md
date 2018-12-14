@@ -1,6 +1,6 @@
-# client
+# Sowing client
 
-> My praiseworthy Nuxt.js project
+> Client for the Sowing api project
 
 ## Build Setup
 
@@ -20,3 +20,12 @@ $ npm run generate
 ```
 
 For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
+
+## Changelog
+
+### December 2018
+
+- li
+- li
+- li
+- li
