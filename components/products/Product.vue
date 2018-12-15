@@ -19,12 +19,12 @@
       </h5>
 
       <!-- Base product description -->
-      <p class="text-16 font-semibold text-grey-lighter leading-tight mt-15">
+      <p class="text-18 font-semibold text-grey-lighter leading-tight mt-15">
         {{ product.description[locale] }}
       </p>
 
       <!-- Base product price and currency -->
-      <p class="text-24 font-semibold text-green-darkest mt-15">
+      <p class="text-20 font-semibold text-green-darkest mt-15">
         {{ product.price.currency }}
         {{ product.price.amount }}
       </p>

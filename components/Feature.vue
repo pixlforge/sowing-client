@@ -6,11 +6,11 @@
           :icon="['far', icon]"
           class="text-48 text-pink-dark"/>
       </div>
-      <h3 class="text-20 text-green-darkest font-semibold text-center uppercase mt-40">
+      <h3 class="text-20 text-green-darkest font-extrabold text-center uppercase mt-40">
         <slot name="title"/>
       </h3>
     </div>
-    <p class="text-16 text-grey-light text-center leading-normal mt-40">
+    <p class="text-16 text-grey-light text-center leading-normal mt-30">
       <slot/>
     </p>
   </div>

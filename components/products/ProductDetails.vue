@@ -19,7 +19,7 @@
         </h2>
 
         <!-- Base product description -->
-        <p class="text-20 font-semibold text-grey-lighter leading-normal mt-40">
+        <p class="text-20 text-grey-lighter leading-normal mt-40">
           {{ productDescription }}
         </p>
 

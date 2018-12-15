@@ -61,7 +61,7 @@ button {
 }
 
 .btn {
-  @apply block outline-none rounded-lg text-12 text-grey font-extrabold uppercase no-underline px-30 py-12;
+  @apply block outline-none rounded-lg text-12 text-grey font-black uppercase no-underline px-30 py-12;
 }
 
 .btn:focus {
@@ -191,11 +191,11 @@ button {
 }
 
 .product-currency {
-  @apply text-14 font-bold text-green mr-5 mt-5;
+  @apply text-14 font-extrabold text-green mr-5 mt-5;
 }
 
 .product-price {
-  @apply text-24 font-semibold text-green-darkest;
+  @apply text-24 font-bold text-green-darkest;
 }
 
 @screen md {
