@@ -23,6 +23,10 @@ export const mutations = {
   },
   SET_EMPTY(state, is_empty) {
     state.meta.is_empty = is_empty;
+  },
+  EMPTY_CART(state) {
+    state.products = [];
+    state.meta.is_empty = true;
   }
 };
 
@@ -48,5 +52,9 @@ export const actions = {
     });
 
     dispatch('getCart');
+  },
+
+  emptyCart({ commit }) {
+    commit('EMPTY_CART');
   }
 };

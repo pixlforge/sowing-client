@@ -22,7 +22,8 @@
     "cross-env": "^5.2.0",
     "nuxt": "^2.3.4",
     "nuxt-fontawesome": "^0.3.0",
-    "nuxt-i18n": "^5.4.4"
+    "nuxt-i18n": "^5.4.4",
+    "nuxt-webfontloader": "^1.0.0"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-pro": "^5.5.0",

@@ -15,6 +15,7 @@ import { createStore } from './store.js'
 import nuxt_plugin_pluginseo_4fd9c185 from 'nuxt_plugin_pluginseo_4fd9c185' // Source: ./nuxt-i18n/plugin.seo.js
 import nuxt_plugin_pluginrouting_1d35dafc from 'nuxt_plugin_pluginrouting_1d35dafc' // Source: ./nuxt-i18n/plugin.routing.js
 import nuxt_plugin_pluginmain_66ed51f3 from 'nuxt_plugin_pluginmain_66ed51f3' // Source: ./nuxt-i18n/plugin.main.js
+import nuxt_plugin_webfontloader_2de9ecec from 'nuxt_plugin_webfontloader_2de9ecec' // Source: ./webfontloader.js (ssr: false)
 import nuxt_plugin_templatesplugin46970679_2d97fc52 from 'nuxt_plugin_templatesplugin46970679_2d97fc52' // Source: ./templates.plugin.46970679.js
 import nuxt_plugin_axios_5e22ed8a from 'nuxt_plugin_axios_5e22ed8a' // Source: ./axios.js
 import nuxt_plugin_plugin_21e02b46 from 'nuxt_plugin_plugin_21e02b46' // Source: ./auth/plugin.js
@@ -162,6 +163,10 @@ async function createApp(ssrContext) {
   if (typeof nuxt_plugin_templatesplugin46970679_2d97fc52 === 'function') await nuxt_plugin_templatesplugin46970679_2d97fc52(app.context, inject)
   if (typeof nuxt_plugin_axios_5e22ed8a === 'function') await nuxt_plugin_axios_5e22ed8a(app.context, inject)
   if (typeof nuxt_plugin_plugin_21e02b46 === 'function') await nuxt_plugin_plugin_21e02b46(app.context, inject)
+
+  if (process.client) {
+    if (typeof nuxt_plugin_webfontloader_2de9ecec === 'function') await nuxt_plugin_webfontloader_2de9ecec(app.context, inject)
+  }
 
   // If server-side, wait for async component to be resolved first
   if (process.server && ssrContext && ssrContext.url) {

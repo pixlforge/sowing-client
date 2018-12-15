@@ -17,6 +17,8 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
+
 export default {
   computed: {
     username() {
@@ -24,8 +26,12 @@ export default {
     }
   },
   methods: {
+    ...mapActions({
+      emptyCart: "cart/emptyCart"
+    }),
     async logout() {
       await this.$auth.logout();
+      await this.emptyCart();
     }
   }
 };

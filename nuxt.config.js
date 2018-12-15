@@ -30,7 +30,7 @@ module.exports = {
   */
   loading: {
     color: '#5FB881',
-    height: '4px'
+    height: '5px'
   },
 
   /*
@@ -54,6 +54,7 @@ module.exports = {
     '@nuxtjs/axios',
     '@nuxtjs/auth',
     'nuxt-fontawesome',
+    'nuxt-webfontloader',
     ['@nuxtjs/dotenv', {}],
     [
       'nuxt-i18n', {
@@ -147,6 +148,15 @@ module.exports = {
         icons: ['fab']
       },
     ],
+  },
+
+  /**
+   * Web font loader configuration
+   */
+  webfontloader: {
+    google: {
+      families: ['Source+Sans+Pro:400,600,700']
+    }
   },
 
   /*

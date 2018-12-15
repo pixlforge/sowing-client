@@ -117,7 +117,6 @@ export default {
       await this.$auth.loginWith("local", {
         data: this.form
       });
-
       await this.getCart();
     }
   }
