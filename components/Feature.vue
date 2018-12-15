@@ -4,13 +4,13 @@
       <div class="w-90 h-90 border-4 border-pink-dark rounded-full flex justify-center items-center">
         <font-awesome-icon
           :icon="['far', icon]"
-          class="text-45 text-pink-dark"/>
+          class="text-48 text-pink-dark"/>
       </div>
-      <h3 class="text-22 text-green-darkest font-semibold text-center uppercase mt-40">
+      <h3 class="text-20 text-green-darkest font-semibold text-center uppercase mt-40">
         <slot name="title"/>
       </h3>
     </div>
-    <p class="text-base text-grey-light text-center leading-normal mt-40">
+    <p class="text-16 text-grey-light text-center leading-normal mt-40">
       <slot/>
     </p>
   </div>

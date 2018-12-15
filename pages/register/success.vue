@@ -7,11 +7,11 @@
         <div class="w-full lg:w-auto flex justify-center">
           <font-awesome-icon
             :icon="['far', 'check-circle']"
-            class="text-100 text-green"/>
+            class="text-72 text-green"/>
         </div>
         <div class="mx-auto mt-40 lg:mt-0">
-          <h1 class="text-54 text-green text-center lg:text-left">Félicitations</h1>
-          <p class="text-28 font-semibold text-green-darkest text-center lg:text-left">Votre compte a été créé avec succès!</p>
+          <h1 class="text-48 text-green text-center lg:text-left">Félicitations</h1>
+          <p class="text-24 font-semibold text-green-darkest text-center lg:text-left">Votre compte a été créé avec succès!</p>
         </div>
       </div>
       

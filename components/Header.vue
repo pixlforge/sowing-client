@@ -2,7 +2,7 @@
   <div class="bg-green">
     <div class="container flex flex-col lg:flex-row items-center py-40">
       <div>
-        <div class="w-110 h-110 rounded-full bg-white flex justify-center items-center text-50 text-green">
+        <div class="w-110 h-110 rounded-full bg-white flex justify-center items-center text-48 text-green">
           <slot name="icon"/>
         </div>
       </div>

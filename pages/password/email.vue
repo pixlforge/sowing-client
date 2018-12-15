@@ -13,11 +13,11 @@
     
     <section class="container py-100">
 
-      <p class="w-full md:w-3/4 lg:w-2/3 xxl:w-1/2 text-base text-center leading-normal mx-auto">
+      <p class="w-full md:w-3/4 lg:w-2/3 xxl:w-1/2 text-16 text-center leading-normal mx-auto">
         {{ $t("pages.password_email.paragraphs.first") }}
       </p>
 
-      <p class="w-full md:w-3/4 lg:w-2/3 xxl:w-1/2 text-base text-center leading-normal mx-auto mt-10">
+      <p class="w-full md:w-3/4 lg:w-2/3 xxl:w-1/2 text-16 text-center leading-normal mx-auto mt-10">
         {{ $t("pages.password_email.paragraphs.second") }}
       </p>
 

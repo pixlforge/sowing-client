@@ -6,7 +6,7 @@
       <h2 class="font-cafe text-36 md:text-48 text-white">
         Savon artisanal
       </h2>
-      <p class="text-base md:text-20 font-semibold text-white mt-10">
+      <p class="text-16 md:text-20 font-semibold text-white mt-10">
         Now let's put some happy little clouds in here. Have fun with it. It looks so good, I might as well not stop.
       </p>
       <nuxt-link

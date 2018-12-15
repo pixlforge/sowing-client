@@ -13,11 +13,11 @@
     <td
       colspan="3"
       class="pl-30">
-      <h3 class="text-26 text-green-darkest">
+      <h3 class="text-24 text-green-darkest">
         {{ baseProductName }} &ndash; {{ variationType }} &ndash; {{ variationName }}
       </h3>
       
-      <p class="text-15 text-grey-lighter font-semibold mt-20">
+      <p class="text-14 text-grey-lighter font-semibold mt-20">
         {{ baseProductDescription }}
       </p>
     </td>

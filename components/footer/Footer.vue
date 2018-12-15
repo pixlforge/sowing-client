@@ -102,7 +102,7 @@
                 class="footer-link flex items-center">
                 <font-awesome-icon
                   :icon="['fab', 'facebook']"
-                  class="text-15 text-green mr-10"/>
+                  class="text-16 text-green mr-10"/>
                 Facebook
               </a>
             </li>
@@ -112,7 +112,7 @@
                 class="footer-link flex items-center">
                 <font-awesome-icon
                   :icon="['fab', 'instagram']"
-                  class="text-15 text-green mr-10"/>
+                  class="text-16 text-green mr-10"/>
                 Instagram
               </a>
             </li>

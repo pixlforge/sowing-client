@@ -14,7 +14,7 @@
       <div class="w-full lg:w-1/2 flex flex-col items-center lg:items-start p-30">
 
         <!-- Base product name -->
-        <h2 class="text-46 font-bold text-green-darkest">
+        <h2 class="text-48 font-bold text-green-darkest">
           {{ productName }}
         </h2>
 
@@ -32,7 +32,7 @@
         <!-- Total products in stock -->
         <div
           v-if="product.in_stock"
-          class="flex items-start text-base text-green-darkest mt-40">
+          class="flex items-start text-16 text-green-darkest mt-40">
           <font-awesome-icon
             :icon="['far', 'boxes']"
             class="text-green mr-10"/>
@@ -43,7 +43,7 @@
         <!-- Product is out of stock -->
         <div
           v-else
-          class="flex items-start text-base text-red mt-40">
+          class="flex items-start text-16 text-red mt-40">
           <font-awesome-icon
             :icon="['far', 'boxes']"
             class="mr-10"/>

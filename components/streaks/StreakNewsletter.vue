@@ -15,7 +15,7 @@
             {{ $t("components.streaks.newsletter.title") }}
           </h3>
           
-          <p class="text-22 xl:text-26 font-semibold text-white text-center lg:text-left mt-30">
+          <p class="text-20 xl:text-26 font-semibold text-white text-center lg:text-left mt-30">
             {{ $t("components.streaks.newsletter.body") }}
           </p>
 
@@ -27,7 +27,7 @@
               :placeholder="placeholder"
               type="email"
               name="email"
-              class="w-350 text-base rounded-l-lg outline-none focus:shadow-outline pl-15"
+              class="w-350 text-16 rounded-l-lg outline-none focus:shadow-outline pl-15"
               required>
             <button
               type="submit"

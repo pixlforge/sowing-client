@@ -8,7 +8,7 @@
     </div>
     <div class="flex flex-col flex-grow p-20">
       <h5 class="text-green-darkest font-bold text-28 text-center">{{ subcategory.name[locale] }}</h5>
-      <p class="text-base font-semibold text-grey-lighter text-center leading-tight my-15">
+      <p class="text-16 font-semibold text-grey-lighter text-center leading-tight my-15">
         {{ subcategory.description[locale] }}
       </p>
       <nuxt-link
@@ -19,7 +19,7 @@
             slug: subcategory.slug
           }
         })"
-        class="block text-base text-green font-semibold text-center no-underline hover:underline p-5 mt-auto">
+        class="block text-16 text-green font-semibold text-center no-underline hover:underline p-5 mt-auto">
         {{ $t("components.category.link.see_all") }}
       </nuxt-link>
     </div>

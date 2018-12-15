@@ -9,12 +9,12 @@
           v-for="(star, index) in stars"
           :key="index"
           :icon="['fas', 'star']"
-          class="text-base text-orange mt-10"/>
+          class="text-16 text-orange mt-10"/>
       </div>
     </div>
     <div class="text-center md:text-left px-20 sm:px-50 mt-40 md:mt-0">
-      <h5 class="text-26 text-green-darkest font-bold">{{ name }}</h5>
-      <p class="text-base text-green-darkest leading-normal mt-20">{{ body }}</p>
+      <h5 class="text-24 text-green-darkest font-bold">{{ name }}</h5>
+      <p class="text-16 text-green-darkest leading-normal mt-20">{{ body }}</p>
     </div>
   </div>
 </template>

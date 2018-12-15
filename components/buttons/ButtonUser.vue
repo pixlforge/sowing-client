@@ -1,5 +1,5 @@
 <template>
-  <button class="dropdown-parent btn shadow flex justify-center items-center px-10 md:px-20">
+  <button class="dropdown-parent btn flex justify-center items-center px-10 md:px-20">
     <font-awesome-icon
       :icon="['far', 'user']"
       class="text-18 mr-10"/>

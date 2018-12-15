@@ -84,10 +84,6 @@ button {
   @apply bg-pink-darker;
 }
 
-/* .btn-default {
-  @apply shadow;
-} */
-
 .btn-disabled,
 .btn-disabled:hover {
   @apply bg-grey-lightest text-white cursor-not-allowed;
@@ -95,7 +91,7 @@ button {
 
 .select,
 .input-base {
-  @apply block h-42 text-base w-full appearance-none bg-green-lightest rounded-lg text-green-darkest leading-tight outline-none px-15 mt-10;
+  @apply block h-42 text-16 w-full appearance-none bg-green-lightest rounded-lg text-green-darkest leading-tight outline-none px-15 mt-10;
 }
 
 .select:focus {
@@ -103,7 +99,7 @@ button {
 }
 
 .select-caret {
-  @apply absolute h-full pin-y pin-r text-base text-green-dark mr-20;
+  @apply absolute h-full pin-y pin-r text-16 text-green-dark mr-20;
 }
 
 .input-base:focus {
@@ -131,7 +127,7 @@ button {
 }
 
 .title-small {
-  @apply text-base text-green-darkest uppercase font-bold;
+  @apply text-16 text-green-darkest uppercase font-bold;
 }
 
 .footer-link {
@@ -155,7 +151,7 @@ button {
 }
 
 .link-category {
- @apply block no-underline text-base font-semibold text-green-darkest outline-none rounded-lg px-10 py-10;
+ @apply block no-underline text-16 font-semibold text-green-darkest outline-none rounded-lg px-10 py-10;
 }
 
 .link-category:hover {

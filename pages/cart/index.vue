@@ -19,7 +19,7 @@
       <div
         v-else
         class="flex flex-col items-center py-40">
-        <p class="text-28 text-green-darkest font-semibold">Votre panier est vide.</p>
+        <p class="text-30 text-green-darkest font-semibold">Votre panier est vide.</p>
 
         <img
           src="~assets/img/empty.svg"

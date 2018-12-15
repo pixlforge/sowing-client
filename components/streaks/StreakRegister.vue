@@ -15,7 +15,7 @@
             {{ $t("components.streaks.register.title") }}
           </h3>
           
-          <p class="text-22 xl:text-26 font-semibold text-white text-center lg:text-left mt-30">
+          <p class="text-20 xl:text-26 font-semibold text-white text-center lg:text-left mt-30">
             {{ $t("components.streaks.register.body") }}
           </p>
 

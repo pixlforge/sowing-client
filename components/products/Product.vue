@@ -14,12 +14,12 @@
     <div class="w-3/5 flex flex-col justify-between p-30">
 
       <!-- Base product name -->
-      <h5 class="text-26 font-bold text-green-darkest">
+      <h5 class="text-24 font-bold text-green-darkest">
         {{ product.name[locale] }}
       </h5>
 
       <!-- Base product description -->
-      <p class="text-base font-semibold text-grey-lighter leading-tight mt-15">
+      <p class="text-16 font-semibold text-grey-lighter leading-tight mt-15">
         {{ product.description[locale] }}
       </p>
 

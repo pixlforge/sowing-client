@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-green flex flex-col justify-center items-center text-white text-12 py-15">
+  <div class="bg-green flex flex-col justify-center items-center text-12 text-white py-15">
     <p>
       &copy; 2018 {{ $t("components.footer.disclaimer.rights") }}
       <a
