@@ -25,7 +25,6 @@ For detailed explanation on how things work, checkout [Nuxt.js docs](https://nux
 
 ### December 2018
 
-- li
-- li
-- li
-- li
+- Le panier est maintenant vidé lorsque l'utilisateur se déconnecte
+- La police *Source Sans Pro* est maintenant chargée de manière plus efficace à l'aide de Nuxt Webfont Loader
+- Installation du module Google Analytics

@@ -56,6 +56,9 @@ module.exports = {
     'nuxt-fontawesome',
     'nuxt-webfontloader',
     ['@nuxtjs/dotenv', {}],
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-131013770-1'
+    }],
     [
       'nuxt-i18n', {
         locales: [
@@ -119,7 +122,7 @@ module.exports = {
           user: { url: '/auth/me', method: 'get', propertyName: 'data' }
         },
         // tokenRequired: true,
-        // tokenType: 'bearer',
+        tokenType: 'bearer',
       }
     },
     redirect: {
