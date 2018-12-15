@@ -14,7 +14,7 @@
     <!-- Form -->
     <section class="container py-100">
       <form
-        class="card-form"
+        class="card-form bg-white"
         @submit.prevent="login">
 
         <!-- Email -->
