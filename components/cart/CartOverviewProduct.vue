@@ -1,38 +1,36 @@
 <template>
-  <tr class="rounded-lg shadow-md mt-40">
+  <div class="relative rounded-lg shadow-md flex items-center p-30 mt-40">
 
     <!-- Product featured image -->
-    <td>
+    <div class="w-1/5">
       <img
         src="https://bulma.io/images/placeholders/1280x960.png"
         alt=""
-        class="block w-full">
-    </td>
+        class="block w-full rounded-lg">
+    </div>
 
     <!-- Name & description -->
-    <td
-      colspan="3"
-      class="pl-30">
-      <h3 class="text-24 text-green-darkest">
+    <div class="w-2/5 pl-30">
+      <h3 class="text-24 text-green-darkest font-extrabold">
         {{ baseProductName }} &ndash; {{ variationType }} &ndash; {{ variationName }}
       </h3>
       
-      <p class="text-14 text-grey-lighter font-semibold mt-20">
+      <p class="text-16 text-grey-lighter font-semibold leading-normal mt-20">
         {{ baseProductDescription }}
       </p>
-    </td>
+    </div>
 
     <!-- Price -->
-    <td class="text-center">
+    <div class="w-1/5 text-center px-20">
       <h5 class="text-12 text-grey-lightest uppercase">{{ labelPrice }}</h5>
 
-      <div class="h-42 text-base text-green-darkest font-bold mt-20 flex justify-center items-center">
+      <div class="h-42 text-16 text-green-darkest font-bold mt-20 flex justify-center items-center">
         {{ product.total.currency }} {{ product.total.amount }}
       </div>
-    </td>
+    </div>
 
     <!-- Quantity -->
-    <td class="text-center">
+    <div class="w-1/5 text-center px-20">
       <h5 class="text-12 text-grey-lightest uppercase">{{ labelQuantity }}</h5>
 
       <div class="relative mt-20">
@@ -59,20 +57,19 @@
           :icon="['fas', 'caret-down']"
           class="select-caret"/>
       </div>
-    </td>
+    </div>
 
     <!-- Remove control -->
-    <td class="text-center">
-      <button
-        role="button"
-        title="Remove"
-        @click="destroy(product.id)">
-        <font-awesome-icon
-          :icon="['far', 'times']"
-          class="text-20 text-grey-lightest hover:text-red transition cursor-pointer"/>
-      </button>
-    </td>
-  </tr>
+    <button
+      role="button"
+      title="Remove"
+      class="absolute pin-t pin-r mt-20 mr-20"
+      @click="destroy(product.id)">
+      <font-awesome-icon
+        :icon="['far', 'times']"
+        class="text-20 text-grey-lightest hover:text-red transition cursor-pointer"/>
+    </button>
+  </div>
 </template>
 
 <script>

@@ -1,7 +1,9 @@
 export const state = () => ({
   products: [],
   meta: {
-    is_empty: true
+    is_empty: true,
+    subtotal: {},
+    total: {}
   }
 });
 
@@ -14,7 +16,13 @@ export const getters = {
   },
   isEmpty(state) {
     return state.meta.is_empty;
-  }
+  },
+  subtotal(state) {
+    return state.meta.subtotal;
+  },
+  total(state) {
+    return state.meta.total;
+  },
 };
 
 export const mutations = {
@@ -27,7 +35,13 @@ export const mutations = {
   EMPTY_CART(state) {
     state.products = [];
     state.meta.is_empty = true;
-  }
+  },
+  SET_SUBTOTAL(state, subtotal) {
+    state.meta.subtotal = subtotal;
+  },
+  SET_TOTAL(state, total) {
+    state.meta.total = total;
+  },
 };
 
 export const actions = {
@@ -36,6 +50,8 @@ export const actions = {
 
     commit('SET_PRODUCTS', res.data.products);
     commit('SET_EMPTY', res.meta.is_empty);
+    commit('SET_SUBTOTAL', res.meta.subtotal);
+    commit('SET_TOTAL', res.meta.total);
 
     return res;
   },

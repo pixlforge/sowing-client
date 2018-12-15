@@ -1,12 +1,10 @@
 <template>
-  <table class="table-fixed border-separate border-spacing-h-40 w-full">
-    <tbody>
-      <CartOverviewProduct
-        v-for="product in products"
-        :key="product.id"
-        :product="product"/>
-    </tbody>
-  </table>
+  <div class="w-full">
+    <CartOverviewProduct
+      v-for="product in products"
+      :key="product.id"
+      :product="product"/>
+  </div>
 </template>
 
 <script>
