@@ -19,7 +19,7 @@
       </h5>
 
       <!-- Base product description -->
-      <p class="text-18 text-grey-lighter leading-tight mt-15">
+      <p class="text-18 text-grey-lighter leading-normal mt-15">
         {{ product.description[locale] }}
       </p>
 
