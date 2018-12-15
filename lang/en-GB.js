@@ -153,4 +153,8 @@ export default {
       title: "Account created successfully!"
     }
   },
+  toasts: {
+    logged_out: "You are now logged out.",
+    welcome: "Welcome back"
+  }
 }

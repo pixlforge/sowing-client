@@ -30,6 +30,8 @@ export default {
       emptyCart: "cart/emptyCart"
     }),
     async logout() {
+      this.$toast.success(`${this.$t("toasts.logged_out")}`);
+      this.$router.push(this.localePath({ name: "index" }));
       await this.$auth.logout();
       await this.emptyCart();
     }

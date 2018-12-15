@@ -16,6 +16,7 @@ import nuxt_plugin_pluginseo_4fd9c185 from 'nuxt_plugin_pluginseo_4fd9c185' // S
 import nuxt_plugin_pluginrouting_1d35dafc from 'nuxt_plugin_pluginrouting_1d35dafc' // Source: ./nuxt-i18n/plugin.routing.js
 import nuxt_plugin_pluginmain_66ed51f3 from 'nuxt_plugin_pluginmain_66ed51f3' // Source: ./nuxt-i18n/plugin.main.js
 import nuxt_plugin_googleanalytics_6f7d1f48 from 'nuxt_plugin_googleanalytics_6f7d1f48' // Source: ./google-analytics.js (ssr: false)
+import nuxt_plugin_toast_2a533a39 from 'nuxt_plugin_toast_2a533a39' // Source: ./toast.js (ssr: false)
 import nuxt_plugin_webfontloader_2de9ecec from 'nuxt_plugin_webfontloader_2de9ecec' // Source: ./webfontloader.js (ssr: false)
 import nuxt_plugin_templatesplugin46970679_2d97fc52 from 'nuxt_plugin_templatesplugin46970679_2d97fc52' // Source: ./templates.plugin.46970679.js
 import nuxt_plugin_axios_5e22ed8a from 'nuxt_plugin_axios_5e22ed8a' // Source: ./axios.js
@@ -167,6 +168,7 @@ async function createApp(ssrContext) {
 
   if (process.client) {
     if (typeof nuxt_plugin_googleanalytics_6f7d1f48 === 'function') await nuxt_plugin_googleanalytics_6f7d1f48(app.context, inject)
+    if (typeof nuxt_plugin_toast_2a533a39 === 'function') await nuxt_plugin_toast_2a533a39(app.context, inject)
     if (typeof nuxt_plugin_webfontloader_2de9ecec === 'function') await nuxt_plugin_webfontloader_2de9ecec(app.context, inject)
   }
 

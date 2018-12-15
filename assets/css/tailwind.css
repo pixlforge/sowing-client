@@ -163,7 +163,7 @@ button {
 }
 
 .link-dropdown {
-  @apply block no-underline text-grey-dark py-5;
+  @apply block no-underline nowrap text-grey-dark py-5;
 }
 
 .link-dropdown:hover {
@@ -279,4 +279,8 @@ button {
   .order-5 {
     order: 5;
   }
+}
+
+.nowrap {
+  white-space: nowrap;
 }

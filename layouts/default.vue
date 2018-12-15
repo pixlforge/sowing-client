@@ -40,4 +40,18 @@ html {
   box-sizing: border-box;
   margin: 0;
 }
+
+.toasted {
+  font-size: 1.8rem !important;
+  font-weight: 400 !important;
+}
+
+.toasted.toasted-primary.success {
+  background-color: #5fb881 !important;
+}
+
+/* .toasted-container.top-right {
+  top: 4% !important;
+  right: 3% !important;
+} */
 </style>

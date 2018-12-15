@@ -55,6 +55,7 @@ module.exports = {
     '@nuxtjs/auth',
     'nuxt-fontawesome',
     'nuxt-webfontloader',
+    '@nuxtjs/toast',
     ['@nuxtjs/dotenv', {}],
     ['@nuxtjs/google-analytics', {
       id: 'UA-131013770-1'
@@ -127,9 +128,9 @@ module.exports = {
     },
     redirect: {
       login: '/auth/login',
-      logout: '/',
+      logout: false,
       callback: '/auth/login',
-      home: '/'
+      home: false
     }
   },
 
@@ -160,6 +161,14 @@ module.exports = {
     google: {
       families: ['Nunito:400,600,700,800']
     }
+  },
+
+  /**
+   * Toasted configuration
+   */
+  toast: {
+    position: 'bottom-right',
+    duration: 5000
   },
 
   /*

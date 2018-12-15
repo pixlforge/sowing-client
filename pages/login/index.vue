@@ -117,7 +117,11 @@ export default {
       await this.$auth.loginWith("local", {
         data: this.form
       });
+      this.$toast.success(
+        `${this.$t("toasts.welcome")}, ${this.$auth.user.name}!`
+      );
       await this.getCart();
+      this.$router.push(this.localePath({ name: "index" }));
     }
   }
 };
