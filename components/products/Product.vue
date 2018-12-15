@@ -19,17 +19,17 @@
       </h5>
 
       <!-- Base product description -->
-      <p class="text-18 font-semibold text-grey-lighter leading-tight mt-15">
+      <p class="text-18 text-grey-lighter leading-tight mt-15">
         {{ product.description[locale] }}
       </p>
 
       <!-- Base product price and currency -->
-      <p class="text-20 font-semibold text-green-darkest mt-15">
-        {{ product.price.currency }}
-        {{ product.price.amount }}
+      <p class="text-20 flex items-start mt-15">
+        <span class="product-currency">{{ productCurrency }}</span>
+        <span class="product-price">{{ productPrice }}</span>
       </p>
 
-      <div class="flex items-center text-14 text-green mt-15">
+      <div class="flex items-start text-14 text-green mt-15">
         <font-awesome-icon
           :icon="['far', 'store']"
           class="mr-10"/>
@@ -56,6 +56,12 @@ export default {
     }),
     alt() {
       return this.$t("components.products.img.alt");
+    },
+    productCurrency() {
+      return this.product.price.currency;
+    },
+    productPrice() {
+      return this.product.price.amount;
     }
   }
 };
