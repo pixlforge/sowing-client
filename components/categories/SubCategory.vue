@@ -7,7 +7,7 @@
         class="rounded-t-lg">
     </div>
     <div class="flex flex-col flex-grow p-20">
-      <h5 class="text-green-darkest font-bold text-28 text-center">{{ subcategory.name[locale] }}</h5>
+      <h5 class="text-green-darkest font-bold text-24 text-center">{{ subcategory.name[locale] }}</h5>
       <p class="text-16 font-semibold text-grey-lighter text-center leading-tight my-15">
         {{ subcategory.description[locale] }}
       </p>

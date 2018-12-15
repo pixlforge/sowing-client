@@ -158,7 +158,7 @@ module.exports = {
    */
   webfontloader: {
     google: {
-      families: ['Source+Sans+Pro:400,600,700']
+      families: ['Nunito:400,600,700,800']
     }
   },
 

@@ -61,7 +61,7 @@ button {
 }
 
 .btn {
-  @apply block outline-none rounded-lg text-14 text-grey font-bold uppercase no-underline px-30 py-12;
+  @apply block outline-none rounded-lg text-12 text-grey font-extrabold uppercase no-underline px-30 py-12;
 }
 
 .btn:focus {
