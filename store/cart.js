@@ -78,6 +78,14 @@ export const actions = {
     dispatch('getCart');
   },
 
+  async store({ dispatch }, variations) {
+    await this.$axios.$post('/cart', {
+      variations
+    });
+
+    dispatch('getCart');
+  },
+
   emptyCart({ commit }) {
     commit('EMPTY_CART');
   }

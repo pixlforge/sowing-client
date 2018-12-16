@@ -155,7 +155,9 @@ export default {
   },
   toasts: {
     cart: {
-      has_changed: "Uno o più articoli nel vostro carrello sono stati aggiornati, vi preghiamo di verificarli prima di ordinare."
+      has_changed: "Uno o più articoli nel vostro carrello sono stati aggiornati, vi preghiamo di verificarli prima di ordinare.",
+      item_added_singular: "aggiunto al carrello!",
+      item_added_plural: "aggiunti al carrello!",
     },
     logged_out: "Ora siete disconnessi.",
     welcome: "Benvenuto"

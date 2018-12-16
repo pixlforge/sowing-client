@@ -15,7 +15,9 @@
       <div class="flex">
 
         <!-- Cart Overview -->
-        <div class="w-3/4 mr-50">
+        <div
+          :class="{ 'w-full mr-0': !products.length }"
+          class="w-3/4 mr-50">
           <CartOverview v-if="products.length"/>
           <div
             v-else
@@ -29,7 +31,9 @@
         </div>
 
         <!-- Sidebar -->
-        <div class="w-1/4 bg-green-lightest rounded-lg flex flex-col justify-between p-30 mt-40">
+        <div
+          v-if="products.length"
+          class="w-1/4 bg-green-lightest rounded-lg flex flex-col justify-between p-30 mt-40">
 
           <div>
             <div class="w-full text-grey-lighter text-14 flex justify-between">

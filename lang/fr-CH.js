@@ -155,7 +155,9 @@ export default {
   },
   toasts: {
     cart: {
-      has_changed: "Un ou plusieurs objets de votre panier ont été modifiés, vous devriez les passer en revue avant de commander"
+      has_changed: "Un ou plusieurs objets de votre panier ont été modifiés, vous devriez les passer en revue avant de commander",
+      item_added_singular: "ajouté au panier!",
+      item_added_plural: "ajoutés au panier!",
     },
     logged_out: "Vous êtes maintenant déconnecté(e)",
     welcome: "Bienvenue",

@@ -155,7 +155,9 @@ export default {
   },
   toasts: {
     cart: {
-      has_changed: "One or more items in your cart have been updated, please review them before ordering."
+      has_changed: "One or more items in your cart have been updated, please review them before ordering.",
+      item_added_singular: "added to cart!",
+      item_added_plural: "added to cart!",
     },
     logged_out: "You are now logged out.",
     welcome: "Welcome back"

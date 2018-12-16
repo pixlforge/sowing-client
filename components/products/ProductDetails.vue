@@ -52,7 +52,7 @@
 
         <form
           class="w-full md:w-3/4 xxl:w-1/2 mt-20"
-          @submit.prevent>
+          @submit.prevent="add">
           
           <!-- Variations -->
           <Variation
@@ -121,7 +121,7 @@
 
 <script>
 import Variation from "@/components/products/Variation";
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 
 export default {
   components: {
@@ -176,6 +176,38 @@ export default {
   watch: {
     "form.variation"() {
       this.form.quantity = 1;
+    }
+  },
+  methods: {
+    ...mapActions({
+      store: "cart/store"
+    }),
+    async add() {
+      await this.store([
+        {
+          id: this.form.variation.id,
+          quantity: this.form.quantity
+        }
+      ]);
+
+      this.$toast.success(
+        `
+          ${this.form.quantity}x
+          ${this.product.name[this.locale]}
+          ${this.form.variation.type.name[this.locale]}
+          ${this.form.variation.name[this.locale]}
+          ${
+            this.form.quantity > 1
+              ? this.$t("toasts.cart.item_added_plural")
+              : this.$t("toasts.cart.item_added_singular")
+          }
+        `
+      );
+
+      this.form = {
+        variation: "",
+        quantity: 1
+      };
     }
   }
 };
