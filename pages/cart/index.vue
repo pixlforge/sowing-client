@@ -11,7 +11,7 @@
       </template>
     </Header>
 
-    <section class="container py-60">
+    <section class="container pt-60 pb-100">
       <div class="flex">
 
         <!-- Cart Overview -->
@@ -74,9 +74,19 @@ import CartOverview from "@/components/cart/CartOverview";
 import { mapGetters } from "vuex";
 
 export default {
+  head() {
+    return {
+      title: `${this.title} | ${this.$t("pages.cart.title")}`
+    };
+  },
   components: {
     Header,
     CartOverview
+  },
+  async asyncData({ app }) {
+    return {
+      title: app.head.title
+    };
   },
   computed: {
     ...mapGetters({
