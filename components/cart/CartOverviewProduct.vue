@@ -15,7 +15,7 @@
         {{ baseProductName }} &ndash; {{ variationType }} &ndash; {{ variationName }}
       </h3>
       
-      <p class="text-16 text-grey-lighter font-semibold leading-normal mt-20">
+      <p class="text-16 text-grey-lighter leading-normal mt-20">
         {{ baseProductDescription }}
       </p>
     </div>
