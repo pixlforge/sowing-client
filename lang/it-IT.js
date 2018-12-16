@@ -154,6 +154,9 @@ export default {
     }
   },
   toasts: {
+    cart: {
+      has_changed: "Uno o più articoli nel vostro carrello sono stati aggiornati, vi preghiamo di verificarli prima di ordinare."
+    },
     logged_out: "Ora siete disconnessi.",
     welcome: "Benvenuto"
   }

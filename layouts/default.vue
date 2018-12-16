@@ -50,8 +50,11 @@ html {
   background-color: #5fb881 !important;
 }
 
-/* .toasted-container.top-right {
-  top: 4% !important;
-  right: 3% !important;
-} */
+.toasted.toasted-primary.info {
+  background-color: #42a5f5 !important;
+}
+
+.toasted.toasted-primary.error {
+  background-color: #e3342f !important;
+}
 </style>

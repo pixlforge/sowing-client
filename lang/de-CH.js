@@ -154,6 +154,9 @@ export default {
     }
   },
   toasts: {
+    cart: {
+      has_changed: "Ein oder mehrere Artikel in Ihrem Warenkorb wurden aktualisiert. Bitte überprüfen Sie sie vor der Bestellung."
+    },
     logged_out: "Sie sind jetzt ausgeloggt.",
     welcome: "Wilkommen"
   }

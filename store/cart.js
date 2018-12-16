@@ -3,7 +3,8 @@ export const state = () => ({
   meta: {
     is_empty: true,
     subtotal: {},
-    total: {}
+    total: {},
+    has_changed: false
   }
 });
 
@@ -23,6 +24,9 @@ export const getters = {
   total(state) {
     return state.meta.total;
   },
+  hasChanged(state) {
+    return state.meta.has_changed;
+  }
 };
 
 export const mutations = {
@@ -42,6 +46,9 @@ export const mutations = {
   SET_TOTAL(state, total) {
     state.meta.total = total;
   },
+  SET_CHANGED(state, has_changed) {
+    state.meta.has_changed = has_changed;
+  },
 };
 
 export const actions = {
@@ -52,6 +59,7 @@ export const actions = {
     commit('SET_EMPTY', res.meta.is_empty);
     commit('SET_SUBTOTAL', res.meta.subtotal);
     commit('SET_TOTAL', res.meta.total);
+    commit('SET_CHANGED', res.meta.has_changed);
 
     return res;
   },

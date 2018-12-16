@@ -154,7 +154,10 @@ export default {
     }
   },
   toasts: {
+    cart: {
+      has_changed: "Un ou plusieurs objets de votre panier ont été modifiés, vous devriez les passer en revue avant de commander"
+    },
     logged_out: "Vous êtes maintenant déconnecté(e)",
-    welcome: "Bienvenue"
+    welcome: "Bienvenue",
   }
 }

@@ -154,6 +154,9 @@ export default {
     }
   },
   toasts: {
+    cart: {
+      has_changed: "One or more items in your cart have been updated, please review them before ordering."
+    },
     logged_out: "You are now logged out.",
     welcome: "Welcome back"
   }

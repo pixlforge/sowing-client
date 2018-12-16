@@ -71,7 +71,7 @@
 <script>
 import Header from "@/components/Header";
 import CartOverview from "@/components/cart/CartOverview";
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 
 export default {
   head() {
@@ -93,11 +93,24 @@ export default {
       is_empty: "cart/isEmpty",
       products: "cart/products",
       subtotal: "cart/subtotal",
-      total: "cart/total"
+      total: "cart/total",
+      has_changed: "cart/hasChanged"
     }),
     pageTitle() {
       return this.$t("pages.cart.title");
     }
+  },
+  mounted() {
+    this.getCart();
+
+    if (this.has_changed) {
+      this.$toast.info(`${this.$t("toasts.cart.has_changed")}`);
+    }
+  },
+  methods: {
+    ...mapActions({
+      getCart: "cart/getCart"
+    })
   }
 };
 </script>
