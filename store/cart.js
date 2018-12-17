@@ -12,18 +12,23 @@ export const getters = {
   products(state) {
     return state.products;
   },
+
   count(state) {
     return state.products.length;
   },
+
   isEmpty(state) {
     return state.meta.is_empty;
   },
+
   subtotal(state) {
     return state.meta.subtotal;
   },
+
   total(state) {
     return state.meta.total;
   },
+
   hasChanged(state) {
     return state.meta.has_changed;
   }
@@ -33,19 +38,24 @@ export const mutations = {
   SET_PRODUCTS(state, products) {
     state.products = products;
   },
+
   SET_EMPTY(state, is_empty) {
     state.meta.is_empty = is_empty;
   },
+
   EMPTY_CART(state) {
     state.products = [];
     state.meta.is_empty = true;
   },
+
   SET_SUBTOTAL(state, subtotal) {
     state.meta.subtotal = subtotal;
   },
+
   SET_TOTAL(state, total) {
     state.meta.total = total;
   },
+
   SET_CHANGED(state, has_changed) {
     state.meta.has_changed = has_changed;
   },

@@ -24,44 +24,47 @@
         </div>
 
         <!-- Sidebar -->
-        <div class="w-1/4 bg-green-lightest rounded-lg flex flex-col justify-between p-30 mt-40">
+        <div class="w-1/4 bg-green-lightest rounded-lg flex flex-col justify-start p-30 mt-40">
 
           <!-- Content -->
           <div>
-            <div>
-              <h5 class="text-20 text-green-darkest">Adresse de livraison</h5>
-            </div>
+            <ShippingAddress
+              :addresses="addresses"/>
 
-            <div class="mt-40">
-              <h5 class="text-20 text-green-darkest">Méthode de livraison</h5>
-            </div>
-
-            <div class="mt-40">
-              <div class="w-full text-grey-lighter text-14 flex justify-between">
-                <div>Sous-total</div>
-                <div>{{ subtotal.currency }} {{ subtotal.amount }}</div>
+            <template v-if="!addressManagersVisible">
+              <div class="mt-40">
+                <h5 class="text-20 text-green-darkest">Méthode de livraison</h5>
               </div>
+            </template>
 
-              <div class="w-full text-grey-lighter text-14 flex justify-between mt-5">
-                <div>Livraison</div>
-                <div>CHF 0.00</div>
-              </div>
+            <template v-if="!addressManagersVisible">
+              <div class="mt-40">
+                <div class="w-full text-grey-lighter text-14 flex justify-between">
+                  <div>Sous-total</div>
+                  <div>{{ subtotal.currency }} {{ subtotal.amount }}</div>
+                </div>
 
-              <div class="w-full text-20 uppercase flex justify-between mt-15">
-                <div class="font-extrabold">Total</div>
-                <div class="font-semibold">{{ total.currency }} {{ total.amount }}</div>
+                <div class="w-full text-grey-lighter text-14 flex justify-between mt-5">
+                  <div>Livraison</div>
+                  <div>CHF 0.00</div>
+                </div>
+
+                <div class="w-full text-20 uppercase flex justify-between mt-15">
+                  <div class="font-bold">Total</div>
+                  <div class="font-bold">{{ total.currency }} {{ total.amount }}</div>
+                </div>
               </div>
-            </div>
+            </template>
           </div>
 
           <!-- Checkout button -->
           <button
-            v-if="products.length"
+            v-if="products.length && !addressManagersVisible"
             :class="{ 'btn-disabled': is_empty }"
             :disabled="is_empty"
             role="button"
             title="Order"
-            class="btn btn-primary">
+            class="btn btn-primary mt-40">
             <font-awesome-icon
               :icon="['far', 'check-circle']"
               class="text-white mr-5"/>
@@ -77,6 +80,7 @@
 <script>
 import Header from "@/components/Header";
 import CartOverview from "@/components/cart/CartOverview";
+import ShippingAddress from "@/components/checkout/addresses/ShippingAddress";
 import { mapGetters, mapActions } from "vuex";
 
 export default {
@@ -87,15 +91,23 @@ export default {
   },
   components: {
     Header,
-    CartOverview
+    CartOverview,
+    ShippingAddress
   },
   transition: {
     name: "fade",
     mode: "out-in"
   },
-  async asyncData({ app }) {
+  data() {
     return {
-      title: app.head.title
+      addresses: []
+    };
+  },
+  async asyncData({ app }) {
+    let addresses = await app.$axios.$get(`/addresses`);
+    return {
+      title: app.head.title,
+      addresses: addresses.data
     };
   },
   computed: {
@@ -104,7 +116,8 @@ export default {
       products: "cart/products",
       subtotal: "cart/subtotal",
       total: "cart/total",
-      has_changed: "cart/hasChanged"
+      has_changed: "cart/hasChanged",
+      addressManagersVisible: "checkout/addressManagersVisible"
     }),
     pageTitle() {
       return this.$t("pages.checkout.title");
