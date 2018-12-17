@@ -87,6 +87,10 @@ export default {
       title: `${this.title} | ${this.$t("pages.password_reset.title")}`
     };
   },
+  transition: {
+    name: "fade",
+    mode: "out-in"
+  },
   components: {
     Header
   },

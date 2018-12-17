@@ -14,7 +14,7 @@
       <div class="w-full lg:w-1/2 flex flex-col items-center lg:items-start p-30">
 
         <!-- Base product name -->
-        <h2 class="text-48 font-bold text-green-darkest">
+        <h2 class="text-36 font-bold text-green-darkest">
           {{ productName }}
         </h2>
 

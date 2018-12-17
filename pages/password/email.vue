@@ -39,7 +39,6 @@
             name="email"
             class="input-base">
         </div>
-
           
         <!-- Submit -->
         <button
@@ -65,6 +64,10 @@ export default {
     return {
       title: `${this.title} | ${this.$t("pages.password_email.title")}`
     };
+  },
+  transition: {
+    name: "fade",
+    mode: "out-in"
   },
   components: {
     Header

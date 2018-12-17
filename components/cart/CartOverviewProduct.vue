@@ -1,5 +1,5 @@
 <template>
-  <div class="relative rounded-lg shadow-md flex items-center p-30 mt-40">
+  <div class="relative bg-white rounded-lg shadow-md flex items-center p-30 mt-40">
 
     <!-- Product featured image -->
     <div class="w-1/5">

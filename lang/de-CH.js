@@ -98,6 +98,9 @@ export default {
     cart: {
       title: "Mein Warenkorb"
     },
+    checkout: {
+      title: "Checkout"
+    },
     home: {
       title: "Startseite",
       titles: {

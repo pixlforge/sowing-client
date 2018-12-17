@@ -12,62 +12,40 @@
     </Header>
 
     <section class="container pt-60 pb-100">
-      <div class="flex">
 
-        <!-- Cart Overview -->
+      <!-- Cart Overview -->
+      <div class="w-full">
+        <CartOverview v-if="products.length"/>
         <div
-          :class="{ 'w-full mr-0': !products.length }"
-          class="w-3/4 mr-50">
-          <CartOverview v-if="products.length"/>
-          <div
-            v-else
-            class="flex flex-col items-center">
-            <p class="text-30 text-green-darkest font-semibold">Votre panier est vide.</p>
-            <img
-              src="~assets/img/empty.svg"
-              alt="Illustration of an empty box"
-              class="block w-1/3 mt-100">
-          </div>
+          v-else
+          class="flex flex-col items-center">
+          <p class="text-30 text-green-darkest font-semibold">Votre panier est vide.</p>
+          <img
+            src="~assets/img/empty.svg"
+            alt="Illustration of an empty box"
+            class="block w-1/3 mt-100">
         </div>
+      </div>
 
-        <!-- Sidebar -->
-        <div
+      <div class="flex justify-center mt-40">
+
+        <!-- Checkout button -->
+        <nuxt-link
           v-if="products.length"
-          class="w-1/4 bg-green-lightest rounded-lg flex flex-col justify-between p-30 mt-40">
-
-          <div>
-            <div class="w-full text-grey-lighter text-14 flex justify-between">
-              <div>Sous-total</div>
-              <div>{{ subtotal.currency }} {{ subtotal.amount }}</div>
-            </div>
-
-            <div class="w-full text-grey-lighter text-14 flex justify-between mt-5">
-              <div>Livraison</div>
-              <div>CHF 0.00</div>
-            </div>
-
-            <div class="w-full text-20 uppercase flex justify-between mt-15">
-              <div class="font-extrabold">Total</div>
-              <div class="font-semibold">{{ total.currency }} {{ total.amount }}</div>
-            </div>
-          </div>
-
-          <!-- Checkout button -->
-          <button
-            v-if="products.length"
-            :class="{ 'btn-disabled': is_empty }"
-            :disabled="is_empty"
-            role="button"
-            title="Checkout"
-            class="btn btn-primary">
-            <font-awesome-icon
-              :icon="['far', 'check-circle']"
-              class="text-white mr-5"/>
-            Commander
-          </button>
-        </div>
+          :to="localePath({ name: 'checkout' })"
+          :class="{ 'btn-disabled': is_empty }"
+          :disabled="is_empty"
+          role="button"
+          title="Checkout"
+          class="btn btn-primary">
+          <font-awesome-icon
+            :icon="['far', 'check-circle']"
+            class="text-white mr-5"/>
+          Commander
+        </nuxt-link>
 
       </div>
+
     </section>
   </main>
 </template>
@@ -80,8 +58,12 @@ import { mapGetters, mapActions } from "vuex";
 export default {
   head() {
     return {
-      title: `${this.title} | ${this.$t("pages.cart.title")}`
+      title: `${this.title} | ${this.pageTitle}`
     };
+  },
+  transition: {
+    name: "fade",
+    mode: "out-in"
   },
   components: {
     Header,

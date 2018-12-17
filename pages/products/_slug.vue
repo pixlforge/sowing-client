@@ -32,6 +32,15 @@ import ProductDetails from "@/components/products/ProductDetails";
 import StreakNewsletter from "@/components/streaks/StreakNewsletter";
 
 export default {
+  head() {
+    return {
+      title: `${this.title} | ${this.product.name[this.locale]}`
+    };
+  },
+  transition: {
+    name: "fade",
+    mode: "out-in"
+  },
   components: {
     Header,
     ProductDetails,

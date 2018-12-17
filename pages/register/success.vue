@@ -34,6 +34,10 @@ export default {
       title: `${this.title} | ${this.$t("pages.register_success.title")}`
     };
   },
+  transition: {
+    name: "fade",
+    mode: "out-in"
+  },
   async asyncData({ app }) {
     return {
       title: app.head.title

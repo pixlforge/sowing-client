@@ -143,6 +143,10 @@ export default {
       title: `${this.title} | ${this.$t("pages.home.title")}`
     };
   },
+  transition: {
+    name: "fade",
+    mode: "out-in"
+  },
   components: {
     Review,
     Feature,
