@@ -99,7 +99,15 @@ export default {
       title: "Mein Warenkorb"
     },
     checkout: {
-      title: "Checkout"
+      change_address: "Adresse ändern?",
+      delivery: "Lieferung",
+      delivery_address: "Lieferadresse",
+      delivery_method: "Liefermethode",
+      order: "Bestellen",
+      payment: "Zahlung",
+      subtotal: "Zwischensumme",
+      title: "Checkout",
+      total: "Gesamt"
     },
     home: {
       title: "Startseite",
@@ -157,6 +165,9 @@ export default {
     }
   },
   toasts: {
+    addresses: {
+      created: "Neue Adresse erfolgreich erstellt!"
+    },
     cart: {
       has_changed: "Ein oder mehrere Artikel in Ihrem Warenkorb wurden aktualisiert. Bitte überprüfen Sie sie vor der Bestellung.",
       item_added_singular: "zum Warenkorb hinzugefügt",

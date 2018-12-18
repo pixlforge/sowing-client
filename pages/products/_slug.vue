@@ -37,10 +37,6 @@ export default {
       title: `${this.title} | ${this.product.name[this.locale]}`
     };
   },
-  transition: {
-    name: "fade",
-    mode: "out-in"
-  },
   components: {
     Header,
     ProductDetails,

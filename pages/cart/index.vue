@@ -61,10 +61,6 @@ export default {
       title: `${this.title} | ${this.pageTitle}`
     };
   },
-  transition: {
-    name: "fade",
-    mode: "out-in"
-  },
   components: {
     Header,
     CartOverview

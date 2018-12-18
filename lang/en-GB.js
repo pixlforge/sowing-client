@@ -99,7 +99,15 @@ export default {
       title: "My cart"
     },
     checkout: {
-      title: "Checkout"
+      change_address: "Change address?",
+      delivery: "Delivery",
+      delivery_address: "Delivery address",
+      delivery_method: "Delivery method",
+      order: "Order",
+      payment: "Payment",
+      subtotal: "Subtotal",
+      title: "Checkout",
+      total: "Total"
     },
     home: {
       title: "Home",
@@ -157,6 +165,9 @@ export default {
     }
   },
   toasts: {
+    addresses: {
+      created: "New address created successfully!"
+    },
     cart: {
       has_changed: "One or more items in your cart have been updated, please review them before ordering.",
       item_added_singular: "added to cart!",

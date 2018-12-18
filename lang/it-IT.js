@@ -99,7 +99,15 @@ export default {
       title: "Il mio carrello"
     },
     checkout: {
-      title: "Checkout"
+      change_address: "Cambia indirizzo?",
+      delivery: "Consegna",
+      delivery_address: "Indirizzo di consegna",
+      delivery_method: "Metodo di consegna",
+      order: "Ordinare",
+      payment: "Pagamento",
+      subtotal: "Totale parziale",
+      title: "Checkout",
+      total: "Totale"
     },
     home: {
       title: "Pagina iniziale",
@@ -157,6 +165,9 @@ export default {
     }
   },
   toasts: {
+    addresses: {
+      created: "Nuovo indirizzo creato con successo!"
+    },
     cart: {
       has_changed: "Uno o più articoli nel vostro carrello sono stati aggiornati, vi preghiamo di verificarli prima di ordinare.",
       item_added_singular: "aggiunto al carrello!",

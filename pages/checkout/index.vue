@@ -16,10 +16,10 @@
 
         <!-- Details -->
         <div class="w-3/4 mr-50">
-          <h2 class="text-36 text-green-darkest mt-40">Paiement</h2>
+          <h2 class="text-36 text-green-darkest mt-40">{{ $t("pages.checkout.payment") }}</h2>
           
           <!-- Cart Overview -->
-          <h2 class="text-36 text-green-darkest mt-100">Mon panier</h2>
+          <h2 class="text-36 text-green-darkest mt-100">{{ $t("pages.cart.title") }}</h2>
           <CartOverview/>
         </div>
 
@@ -33,24 +33,24 @@
 
             <template v-if="!addressManagersVisible">
               <div class="mt-40">
-                <h5 class="text-20 text-green-darkest">Méthode de livraison</h5>
+                <h5 class="text-20 text-green-darkest">{{ $t("pages.checkout.delivery_method") }}</h5>
               </div>
             </template>
 
             <template v-if="!addressManagersVisible">
               <div class="mt-40">
                 <div class="w-full text-grey-lighter text-14 flex justify-between">
-                  <div>Sous-total</div>
+                  <div>{{ $t("pages.checkout.subtotal") }}</div>
                   <div>{{ subtotal.currency }} {{ subtotal.amount }}</div>
                 </div>
 
                 <div class="w-full text-grey-lighter text-14 flex justify-between mt-5">
-                  <div>Livraison</div>
+                  <div>{{ $t("pages.checkout.delivery") }}</div>
                   <div>CHF 0.00</div>
                 </div>
 
                 <div class="w-full text-20 uppercase flex justify-between mt-15">
-                  <div class="font-bold">Total</div>
+                  <div class="font-bold">{{ $t("pages.checkout.total") }}</div>
                   <div class="font-bold">{{ total.currency }} {{ total.amount }}</div>
                 </div>
               </div>
@@ -68,7 +68,7 @@
             <font-awesome-icon
               :icon="['far', 'check-circle']"
               class="text-white mr-5"/>
-            Commander
+            {{ $t("pages.checkout.order") }}
           </button>
         </div>
 
@@ -93,10 +93,6 @@ export default {
     Header,
     CartOverview,
     ShippingAddress
-  },
-  transition: {
-    name: "fade",
-    mode: "out-in"
   },
   data() {
     return {

@@ -40,10 +40,6 @@ export default {
       title: `${this.title} | ${this.subcategory.name[this.locale]}`
     };
   },
-  transition: {
-    name: "fade",
-    mode: "out-in"
-  },
   components: {
     Header,
     Product

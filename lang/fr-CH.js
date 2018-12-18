@@ -99,7 +99,15 @@ export default {
       title: "Mon panier"
     },
     checkout: {
-      title: "Caisse"
+      change_address: "Changer d'adresse?",
+      delivery: "Livraison",
+      delivery_address: "Adresse de livraison",
+      delivery_method: "Méthode de livraison",
+      order: "Commander",
+      payment: "Paiement",
+      subtotal: "Sous-total",
+      title: "Caisse",
+      total: "Total"
     },
     home: {
       title: "Accueil",
@@ -157,6 +165,9 @@ export default {
     }
   },
   toasts: {
+    addresses: {
+      created: "Nouvelle adresse créée avec succès!"
+    },
     cart: {
       has_changed: "Un ou plusieurs objets de votre panier ont été modifiés, vous devriez les passer en revue avant de commander",
       item_added_singular: "ajouté au panier!",

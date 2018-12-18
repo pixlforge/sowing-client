@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="flex flex-col">
     <ul class="list-reset -mt-10">
       <li
         v-for="address in addresses"
@@ -33,11 +33,16 @@
         </ul>
       </li>
     </ul>
+    <button
+      class="btn btn-primary mt-40"
+      @click.prevent="openCreator">
+      Créer une adresse
+    </button>
   </div>
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 
 export default {
   props: {
@@ -56,6 +61,16 @@ export default {
     })
   },
   methods: {
+    ...mapActions({
+      closeAddressSelector: "checkout/closeAddressSelector",
+      openAddressCreator: "checkout/openAddressCreator"
+    }),
+
+    openCreator() {
+      this.closeAddressSelector();
+      this.openAddressCreator();
+    },
+
     selectAddress(address) {
       this.$emit("address:selected", address);
     }

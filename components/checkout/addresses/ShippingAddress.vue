@@ -1,12 +1,16 @@
 <template>
   <div>
-    <h5 class="text-20 text-green-darkest">Adresse de livraison</h5>
+    <h5 class="text-20 text-green-darkest">{{ $t("pages.checkout.delivery_address") }}</h5>
 
-    <template v-if="addressManagersVisible">
+    <template v-if="addressSelector">
       <ShippingAddressSelector
         :addresses="currentAddresses"
         :selected-address="selectedAddress"
         @address:selected="switchAddress"/>
+    </template>
+
+    <template v-if="addressCreator">
+      <ShippingAddressCreator @address:created="addAddress"/>
     </template>
 
     <template v-if="selectedAddress && !addressManagersVisible">
@@ -41,7 +45,7 @@
         <a
           class="text-14 no-underline hover:underline text-green font-bold cursor-pointer"
           @click.prevent="openAddressSelector">
-          Changer d'adresse?
+          {{ $t("pages.checkout.change_address") }}
         </a>
       </div>
     </template>
@@ -51,11 +55,13 @@
 
 <script>
 import ShippingAddressSelector from "@/components/checkout/addresses/ShippingAddressSelector";
+import ShippingAddressCreator from "@/components/checkout/addresses/ShippingAddressCreator";
 import { mapGetters, mapActions } from "vuex";
 
 export default {
   components: {
-    ShippingAddressSelector
+    ShippingAddressSelector,
+    ShippingAddressCreator
   },
   props: {
     addresses: {
@@ -72,8 +78,11 @@ export default {
   computed: {
     ...mapGetters({
       locale: "locale",
+      addressSelector: "checkout/addressSelector",
+      addressCreator: "checkout/addressCreator",
       addressManagersVisible: "checkout/addressManagersVisible"
     }),
+
     defaultAddress() {
       return this.currentAddresses.find(address => address.is_default);
     }
@@ -86,11 +95,20 @@ export default {
   methods: {
     ...mapActions({
       openAddressSelector: "checkout/openAddressSelector",
-      closeAddressSelector: "checkout/closeAddressSelector"
+      closeAddressSelector: "checkout/closeAddressSelector",
+      closeAddressCreator: "checkout/closeAddressCreator"
     }),
+
     switchAddress(address) {
       this.selectedAddress = address;
       this.closeAddressSelector();
+    },
+
+    addAddress(address) {
+      this.currentAddresses.push(address);
+      this.switchAddress(address);
+      this.closeAddressCreator();
+      this.$toast.success(this.$t("toasts.addresses.created"));
     }
   }
 };
