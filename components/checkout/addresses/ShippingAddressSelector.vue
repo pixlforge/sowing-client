@@ -73,6 +73,7 @@ export default {
 
     selectAddress(address) {
       this.$emit("address:selected", address);
+      this.$toast.success(this.$t("toasts.addresses.selected"));
     }
   }
 };

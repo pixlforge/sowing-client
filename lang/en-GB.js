@@ -41,14 +41,23 @@ export default {
         email: "Email",
         name: "Name",
         password: "Password",
-        password_confirmation: "Confirm password"
+        password_confirmation: "Confirm password",
+        first_name: "First name",
+        last_name: "Last name",
+        company_name: "Company",
+        address_line_1: "Address line 1",
+        address_line_2: "Address line 2",
+        postal_code: "Postal code",
+        city: "City",
+        country: "Country"
       },
       buttons: {
         connection: "Log in",
         register: "Create account",
         password_email: "Send a link to reset my password",
         password_reset: "Reset password"
-      }
+      },
+      select: "Select"
     },
     navbar: {
       buttons: {
@@ -166,7 +175,8 @@ export default {
   },
   toasts: {
     addresses: {
-      created: "New address created successfully!"
+      created: "New address created successfully!",
+      selected: "Address selected."
     },
     cart: {
       has_changed: "One or more items in your cart have been updated, please review them before ordering.",
@@ -174,6 +184,7 @@ export default {
       item_added_plural: "added to cart!",
     },
     logged_out: "You are now logged out.",
+    validation: "The form contains errors. Please correct them and try again.",
     welcome: "Welcome back"
   }
 }

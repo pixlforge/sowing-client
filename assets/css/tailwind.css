@@ -126,6 +126,10 @@ button {
   @apply block text-12 font-bold uppercase;
 }
 
+.input-error {
+  @apply text-12 text-red mt-5;
+}
+
 .dropdown-parent {
   @apply relative;
 }

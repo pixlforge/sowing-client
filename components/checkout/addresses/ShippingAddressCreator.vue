@@ -9,15 +9,18 @@
         <label
           for="first_name"
           class="label">
-          First name
+          {{ $t("components.forms.labels.first_name") }}
         </label>
         <input
           id="first_name"
           v-model="form.first_name"
+          :class="{ 'border-red': errors.first_name, 'border-green-lightest': !errors.first_name }"
           type="text"
           name="first_name"
-          class="input-base bg-white shadow-inner"
-          required>
+          class="input-base bg-white shadow-inner border">
+        <template v-if="errors.first_name">
+          <p class="input-error">{{ errors.first_name[0] }}</p>
+        </template>
       </div>
 
       <!-- Last name -->
@@ -25,15 +28,18 @@
         <label
           for="last_name"
           class="label">
-          Last name
+          {{ $t("components.forms.labels.last_name") }}
         </label>
         <input
           id="last_name"
           v-model="form.last_name"
+          :class="{ 'border-red': errors.last_name, 'border-green-lightest': !errors.last_name }"
           type="text"
           name="last_name"
-          class="input-base bg-white shadow-inner"
-          required>
+          class="input-base bg-white shadow-inner border">
+        <template v-if="errors.last_name">
+          <p class="input-error">{{ errors.last_name[0] }}</p>
+        </template>
       </div>
 
       <!-- Company name -->
@@ -41,14 +47,18 @@
         <label
           for="company_name"
           class="label">
-          Company name
+          {{ $t("components.forms.labels.company_name") }}
         </label>
         <input
           id="company_name"
           v-model="form.company_name"
+          :class="{ 'border-red': errors.company_name, 'border-green-lightest': !errors.company_name }"
           type="text"
           name="company_name"
-          class="input-base bg-white shadow-inner">
+          class="input-base bg-white shadow-inner border">
+        <template v-if="errors.company_name">
+          <p class="input-error">{{ errors.company_name[0] }}</p>
+        </template>
       </div>
 
       <!-- Address line 1 -->
@@ -56,15 +66,18 @@
         <label
           for="address_line_1"
           class="label">
-          Address line 1
+          {{ $t("components.forms.labels.address_line_1") }}
         </label>
         <input
           id="address_line_1"
           v-model="form.address_line_1"
+          :class="{ 'border-red': errors.address_line_1, 'border-green-lightest': !errors.address_line_1 }"
           type="text"
           name="address_line_1"
-          class="input-base bg-white shadow-inner"
-          required>
+          class="input-base bg-white shadow-inner border">
+        <template v-if="errors.address_line_1">
+          <p class="input-error">{{ errors.address_line_1[0] }}</p>
+        </template>
       </div>
 
       <!-- Address line 2 -->
@@ -72,14 +85,18 @@
         <label
           for="address_line_2"
           class="label">
-          Address line 2
+          {{ $t("components.forms.labels.address_line_2") }}
         </label>
         <input
           id="address_line_2"
           v-model="form.address_line_2"
+          :class="{ 'border-red': errors.address_line_2, 'border-green-lightest': !errors.address_line_2 }"
           type="text"
           name="address_line_2"
-          class="input-base bg-white shadow-inner">
+          class="input-base bg-white shadow-inner border">
+        <template v-if="errors.address_line_2">
+          <p class="input-error">{{ errors.address_line_2[0] }}</p>
+        </template>
       </div>
 
       <!-- Postal code -->
@@ -87,15 +104,18 @@
         <label
           for="postal_code"
           class="label">
-          Postal code
+          {{ $t("components.forms.labels.postal_code") }}
         </label>
         <input
           id="postal_code"
           v-model="form.postal_code"
+          :class="{ 'border-red': errors.postal_code, 'border-green-lightest': !errors.postal_code }"
           type="text"
           name="postal_code"
-          class="input-base bg-white shadow-inner"
-          required>
+          class="input-base bg-white shadow-inner border">
+        <template v-if="errors.postal_code">
+          <p class="input-error">{{ errors.postal_code[0] }}</p>
+        </template>
       </div>
 
       <!-- City -->
@@ -103,42 +123,25 @@
         <label
           for="city"
           class="label">
-          City
+          {{ $t("components.forms.labels.city") }}
         </label>
         <input
           id="city"
           v-model="form.city"
+          :class="{ 'border-red': errors.city, 'border-green-lightest': !errors.city }"
           type="text"
           name="city"
-          class="input-base bg-white shadow-inner"
-          required>
+          class="input-base bg-white shadow-inner border">
+        <template v-if="errors.city">
+          <p class="input-error">{{ errors.city[0] }}</p>
+        </template>
       </div>
 
       <!-- Country -->
-      <div class="mt-20">
-        <label
-          for="country_id"
-          class="label">
-          Country
-        </label>
-        <div class="relative">
-          <select
-            id="country_id"
-            v-model="form.country_id"
-            name="country_id"
-            class="select bg-white shadow-inner"
-            required>
-            <option
-              :value="4"
-              selected>
-              Switzerland
-            </option>
-          </select>
-          <font-awesome-icon
-            :icon="['fas', 'caret-down']"
-            class="select-caret"/>
-        </div>
-      </div>
+      <CountryDropdown
+        v-model="form.country_id"
+        :errors="errors.country_id"
+        class="mt-20"/>
 
       <!-- Submit -->
       <div class="flex justify-between mt-30">
@@ -158,9 +161,13 @@
 </template>
 
 <script>
+import CountryDropdown from "@/components/forms/CountryDropdown";
 import { mapActions } from "vuex";
 
 export default {
+  components: {
+    CountryDropdown
+  },
   data() {
     return {
       form: {
@@ -173,7 +180,8 @@ export default {
         city: "",
         country_id: "",
         is_default: true
-      }
+      },
+      errors: {}
     };
   },
   methods: {
@@ -182,8 +190,13 @@ export default {
     }),
 
     async store() {
-      let res = await this.$axios.$post("/addresses", this.form);
-      this.$emit("address:created", res.data);
+      try {
+        let res = await this.$axios.$post("/addresses", this.form);
+        this.$emit("address:created", res.data);
+      } catch (e) {
+        this.$toast.error(this.$t("toasts.validation"));
+        this.errors = e.response.data.errors;
+      }
     }
   }
 };

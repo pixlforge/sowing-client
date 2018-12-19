@@ -20,6 +20,7 @@ import nuxt_plugin_toast_2a533a39 from 'nuxt_plugin_toast_2a533a39' // Source: .
 import nuxt_plugin_webfontloader_2de9ecec from 'nuxt_plugin_webfontloader_2de9ecec' // Source: ./webfontloader.js (ssr: false)
 import nuxt_plugin_templatesplugin46970679_2d97fc52 from 'nuxt_plugin_templatesplugin46970679_2d97fc52' // Source: ./templates.plugin.46970679.js
 import nuxt_plugin_axios_5e22ed8a from 'nuxt_plugin_axios_5e22ed8a' // Source: ./axios.js
+import nuxt_plugin_axios_3566aa80 from 'nuxt_plugin_axios_3566aa80' // Source: ../plugins/axios
 import nuxt_plugin_plugin_21e02b46 from 'nuxt_plugin_plugin_21e02b46' // Source: ./auth/plugin.js
 
 // Component: <no-ssr>
@@ -164,6 +165,7 @@ async function createApp(ssrContext) {
   if (typeof nuxt_plugin_pluginmain_66ed51f3 === 'function') await nuxt_plugin_pluginmain_66ed51f3(app.context, inject)
   if (typeof nuxt_plugin_templatesplugin46970679_2d97fc52 === 'function') await nuxt_plugin_templatesplugin46970679_2d97fc52(app.context, inject)
   if (typeof nuxt_plugin_axios_5e22ed8a === 'function') await nuxt_plugin_axios_5e22ed8a(app.context, inject)
+  if (typeof nuxt_plugin_axios_3566aa80 === 'function') await nuxt_plugin_axios_3566aa80(app.context, inject)
   if (typeof nuxt_plugin_plugin_21e02b46 === 'function') await nuxt_plugin_plugin_21e02b46(app.context, inject)
 
   if (process.client) {
