@@ -29,6 +29,7 @@
           <!-- Content -->
           <div>
             <ShippingAddress
+              v-model="form.address_id"
               :addresses="addresses"/>
 
             <template v-if="!addressManagersVisible">
@@ -96,6 +97,9 @@ export default {
   },
   data() {
     return {
+      form: {
+        address_id: ""
+      },
       addresses: []
     };
   },

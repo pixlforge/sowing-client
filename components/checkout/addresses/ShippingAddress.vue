@@ -102,6 +102,7 @@ export default {
     switchAddress(address) {
       this.selectedAddress = address;
       this.closeAddressSelector();
+      this.$emit("input", this.selectedAddress.id);
     },
 
     addAddress(address) {
