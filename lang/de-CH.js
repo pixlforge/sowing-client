@@ -55,7 +55,9 @@ export default {
         connection: "Einloggen",
         register: "Konto erstellen",
         password_email: "Senden Sie einen Link, um mein Passwort zurückzusetzen",
-        password_reset: "Passwort zurücksetzen"
+        password_reset: "Passwort zurücksetzen",
+        create: "Erstellen",
+        cancel: "Stornieren"
       },
       select: "Wählen"
     },
@@ -112,6 +114,7 @@ export default {
       delivery: "Lieferung",
       delivery_address: "Lieferadresse",
       delivery_method: "Liefermethode",
+      new_address: "Neue Adresse",
       order: "Bestellen",
       payment: "Zahlung",
       subtotal: "Zwischensumme",

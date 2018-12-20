@@ -36,7 +36,7 @@
     <button
       class="btn btn-primary mt-40"
       @click.prevent="openCreator">
-      Créer une adresse
+      {{ $t("pages.checkout.new_address") }}
     </button>
   </div>
 </template>

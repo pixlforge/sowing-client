@@ -144,16 +144,16 @@
         class="mt-20"/>
 
       <!-- Submit -->
-      <div class="flex justify-between mt-30">
+      <div class="flex mt-30">
         <button
           type="submit"
-          class="btn btn-primary">
-          Créer l'adresse
+          class="btn btn-primary mr-20">
+          {{ $t("components.forms.buttons.create") }}
         </button>
         <button
           class="btn btn-default"
           @click.prevent="closeAddressCreator">
-          Annuler
+          {{ $t("components.forms.buttons.cancel") }}
         </button>
       </div>
     </form>

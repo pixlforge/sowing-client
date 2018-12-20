@@ -48,14 +48,16 @@ export default {
         address_line_1: "Adresse ligne 1",
         address_line_2: "Adresse ligne 2",
         postal_code: "Code postal",
-        city: "Localité",
+        city: "Ville",
         country: "Pays"
       },
       buttons: {
         connection: "Connexion",
         register: "Créer le compte",
         password_email: "Envoyer un lien pour réinitialiser mon mot de passe",
-        password_reset: "Réinitialiser le mot de passe"
+        password_reset: "Réinitialiser le mot de passe",
+        create: "Créer",
+        cancel: "Annuler"
       },
       select: "Sélectionner"
     },
@@ -112,6 +114,7 @@ export default {
       delivery: "Livraison",
       delivery_address: "Adresse de livraison",
       delivery_method: "Méthode de livraison",
+      new_address: "Nouvelle adresse",
       order: "Commander",
       payment: "Paiement",
       subtotal: "Sous-total",

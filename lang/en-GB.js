@@ -55,7 +55,9 @@ export default {
         connection: "Log in",
         register: "Create account",
         password_email: "Send a link to reset my password",
-        password_reset: "Reset password"
+        password_reset: "Reset password",
+        create: "Create",
+        cancel: "Cancel"
       },
       select: "Select"
     },
@@ -112,6 +114,7 @@ export default {
       delivery: "Delivery",
       delivery_address: "Delivery address",
       delivery_method: "Delivery method",
+      new_address: "New address",
       order: "Order",
       payment: "Payment",
       subtotal: "Subtotal",
