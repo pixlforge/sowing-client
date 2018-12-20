@@ -41,7 +41,7 @@
           <font-awesome-icon
             :icon="['far', 'check-circle']"
             class="text-white mr-5"/>
-          Commander
+          {{ $t("pages.cart.checkout") }}
         </nuxt-link>
 
       </div>

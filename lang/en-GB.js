@@ -107,7 +107,8 @@ export default {
   },
   pages: {
     cart: {
-      title: "My cart"
+      title: "My cart",
+      checkout: "Proceed to checkout"
     },
     checkout: {
       change_address: "Change address?",

@@ -107,7 +107,8 @@ export default {
   },
   pages: {
     cart: {
-      title: "Il mio carrello"
+      title: "Il mio carrello",
+      checkout: "Procedere al checkout"
     },
     checkout: {
       change_address: "Cambia indirizzo?",

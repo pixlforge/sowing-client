@@ -107,7 +107,8 @@ export default {
   },
   pages: {
     cart: {
-      title: "Mein Warenkorb"
+      title: "Mein Warenkorb",
+      checkout: "Zur Kasse"
     },
     checkout: {
       change_address: "Adresse ändern?",
