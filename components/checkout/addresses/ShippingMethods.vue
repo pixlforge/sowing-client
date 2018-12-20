@@ -11,7 +11,6 @@
           @change="$emit('input', $event.target.value)">
           <option
             value=""
-            selected
             disabled>
             {{ $t("components.forms.select") }}
           </option>

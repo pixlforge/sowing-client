@@ -34,7 +34,7 @@
 
             <ShippingMethods
               v-if="!addressManagersVisible"
-              v-model.number="form.shipping_method_id"
+              v-model="shippingMethodId"
               :methods="shippingMethods"
               :errors="errors.shipping_method_id"
               class="mt-40"/>
@@ -48,7 +48,7 @@
 
                 <div class="w-full text-grey-lighter text-14 flex justify-between mt-5">
                   <div>{{ $t("pages.checkout.delivery") }}</div>
-                  <div>CHF 0.00</div>
+                  <div v-if="shippingMethod">{{ shippingMethod.price.currency }} {{ shippingMethod.price.amount }}</div>
                 </div>
 
                 <div class="w-full text-20 uppercase flex justify-between mt-15">
@@ -101,8 +101,7 @@ export default {
   data() {
     return {
       form: {
-        address_id: "",
-        shipping_method_id: ""
+        address_id: ""
       },
       errors: {},
       addresses: [],
@@ -123,22 +122,48 @@ export default {
       subtotal: "cart/subtotal",
       total: "cart/total",
       has_changed: "cart/hasChanged",
+      shippingMethod: "cart/shippingMethod",
       addressManagersVisible: "checkout/addressManagersVisible"
     }),
+
     pageTitle() {
       return this.$t("pages.checkout.title");
+    },
+
+    shippingMethodId: {
+      get() {
+        return this.shippingMethod ? this.shippingMethod.id : "";
+      },
+      set(shippingMethodId) {
+        console.log(shippingMethodId);
+        this.setShippingMethod(
+          this.shippingMethods.find(method => method.id == shippingMethodId)
+        );
+      }
     }
   },
   watch: {
     "form.address_id"(addressId) {
-      this.getShippingMethodsForAddress(addressId);
+      this.getShippingMethodsForAddress(addressId).then(() => {
+        this.setShippingMethod(this.shippingMethods[0]);
+      });
+    },
+
+    shippingMethodId() {
+      this.getCart();
     }
   },
   methods: {
+    ...mapActions({
+      getCart: "cart/getCart",
+      setShippingMethod: "cart/setShippingMethod"
+    }),
+
     async getShippingMethodsForAddress(addressId) {
       try {
         let res = await this.$axios.$get(`/addresses/${addressId}/shipping`);
         this.shippingMethods = res.data;
+        return res;
       } catch (e) {
         this.$toast.error("toasts.general_error");
       }

@@ -1,3 +1,5 @@
+import queryString from 'query-string';
+
 export const state = () => ({
   products: [],
   meta: {
@@ -5,7 +7,8 @@ export const state = () => ({
     subtotal: {},
     total: {},
     has_changed: false
-  }
+  },
+  shippingMethod: null
 });
 
 export const getters = {
@@ -31,6 +34,10 @@ export const getters = {
 
   hasChanged(state) {
     return state.meta.has_changed;
+  },
+
+  shippingMethod(state) {
+    return state.shippingMethod;
   }
 };
 
@@ -59,11 +66,21 @@ export const mutations = {
   SET_CHANGED(state, has_changed) {
     state.meta.has_changed = has_changed;
   },
+
+  SET_SHIPPING_METHOD(state, shippingMethod) {
+    state.shippingMethod = shippingMethod;
+  }
 };
 
 export const actions = {
-  async getCart({ commit }) {
-    let res = await this.$axios.$get(`/cart`);
+  async getCart({ commit, state }) {
+    let query = {};
+
+    if (state.shippingMethod) {
+      query.shipping_method_id = state.shippingMethod.id;
+    }
+
+    let res = await this.$axios.$get(`/cart?${queryString.stringify(query)}`);
 
     commit('SET_PRODUCTS', res.data.products);
     commit('SET_EMPTY', res.meta.is_empty);
@@ -98,5 +115,9 @@ export const actions = {
 
   emptyCart({ commit }) {
     commit('EMPTY_CART');
+  },
+
+  setShippingMethod({ commit }, shippingMethod) {
+    commit('SET_SHIPPING_METHOD', shippingMethod);
   }
 };
