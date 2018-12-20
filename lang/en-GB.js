@@ -187,6 +187,7 @@ export default {
       item_added_singular: "added to cart!",
       item_added_plural: "added to cart!",
     },
+    general_error: "An error has occurred. Please reload the page and try again, please.",
     logged_out: "You are now logged out.",
     validation: "The form contains errors. Please correct them and try again.",
     welcome: "Welcome back"

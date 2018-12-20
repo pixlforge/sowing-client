@@ -187,6 +187,7 @@ export default {
       item_added_singular: "zum Warenkorb hinzugefügt",
       item_added_plural: "zum Warenkorb hinzugefügt",
     },
+    general_error: "Ein Fehler ist aufgetreten. Bitte laden Sie die Seite neu und versuchen Sie es erneut.",
     logged_out: "Sie sind jetzt ausgeloggt.",
     validation: "Das Formular enthält Fehler. Bitte korrigieren Sie sie und versuchen Sie es erneut.",
     welcome: "Wilkommen"

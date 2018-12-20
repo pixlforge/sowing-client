@@ -187,6 +187,7 @@ export default {
       item_added_singular: "ajouté au panier!",
       item_added_plural: "ajoutés au panier!",
     },
+    general_error: "Une erreur est survenue. Veuillez recharger la page et réessayer, svp.",
     logged_out: "Vous êtes maintenant déconnecté(e)",
     validation: "Le formulaire comporte des erreurs. Veuillez, svp, les corriger et réessayer.",
     welcome: "Bienvenue",

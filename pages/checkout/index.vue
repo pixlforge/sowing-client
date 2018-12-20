@@ -32,11 +32,12 @@
               v-model="form.address_id"
               :addresses="addresses"/>
 
-            <template v-if="!addressManagersVisible">
-              <div class="mt-40">
-                <h5 class="text-20 text-green-darkest">{{ $t("pages.checkout.delivery_method") }}</h5>
-              </div>
-            </template>
+            <ShippingMethods
+              v-if="!addressManagersVisible"
+              v-model.number="form.shipping_method_id"
+              :methods="shippingMethods"
+              :errors="errors.shipping_method_id"
+              class="mt-40"/>
 
             <template v-if="!addressManagersVisible">
               <div class="mt-40">
@@ -82,6 +83,7 @@
 import Header from "@/components/Header";
 import CartOverview from "@/components/cart/CartOverview";
 import ShippingAddress from "@/components/checkout/addresses/ShippingAddress";
+import ShippingMethods from "@/components/checkout/addresses/ShippingMethods";
 import { mapGetters, mapActions } from "vuex";
 
 export default {
@@ -93,14 +95,18 @@ export default {
   components: {
     Header,
     CartOverview,
-    ShippingAddress
+    ShippingAddress,
+    ShippingMethods
   },
   data() {
     return {
       form: {
-        address_id: ""
+        address_id: "",
+        shipping_method_id: ""
       },
-      addresses: []
+      errors: {},
+      addresses: [],
+      shippingMethods: []
     };
   },
   async asyncData({ app }) {
@@ -121,6 +127,21 @@ export default {
     }),
     pageTitle() {
       return this.$t("pages.checkout.title");
+    }
+  },
+  watch: {
+    "form.address_id"(addressId) {
+      this.getShippingMethodsForAddress(addressId);
+    }
+  },
+  methods: {
+    async getShippingMethodsForAddress(addressId) {
+      try {
+        let res = await this.$axios.$get(`/addresses/${addressId}/shipping`);
+        this.shippingMethods = res.data;
+      } catch (e) {
+        this.$toast.error("toasts.general_error");
+      }
     }
   }
 };

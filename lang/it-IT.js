@@ -187,6 +187,7 @@ export default {
       item_added_singular: "aggiunto al carrello!",
       item_added_plural: "aggiunti al carrello!",
     },
+    general_error: "C'è stato un errore. Si prega, per favore, di ricaricare la pagina e riprovare.",
     logged_out: "Ora siete disconnessi.",
     validation: "Il modulo contiene errori. Si prega di correggerli e riprovare.",
     welcome: "Benvenuto"
