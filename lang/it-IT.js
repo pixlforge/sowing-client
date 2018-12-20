@@ -42,7 +42,7 @@ export default {
         name: "Nome",
         password: "Password",
         password_confirmation: "Conferma password",
-        first_name: "Conome",
+        first_name: "Nome",
         last_name: "Cognome",
         company_name: "Società",
         address_line_1: "Indirizzo linea 1",
