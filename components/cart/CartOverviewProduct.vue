@@ -64,7 +64,7 @@
       role="button"
       title="Remove"
       class="absolute pin-t pin-r mt-20 mr-20"
-      @click="destroy(product.id)">
+      @click="remove(product.id)">
       <font-awesome-icon
         :icon="['far', 'times']"
         class="text-20 text-grey-lightest hover:text-red transition cursor-pointer"/>
@@ -122,7 +122,15 @@ export default {
     ...mapActions({
       destroy: "cart/destroy",
       update: "cart/update"
-    })
+    }),
+    remove(productId) {
+      this.$toast.success(
+        `${this.baseProductName} ${this.variationType} ${
+          this.variationName
+        } ${this.$t("toasts.cart.product_removed")}`
+      );
+      this.destroy(productId);
+    }
   }
 };
 </script>

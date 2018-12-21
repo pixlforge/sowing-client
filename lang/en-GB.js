@@ -186,6 +186,7 @@ export default {
       has_changed: "One or more items in your cart have been updated, please review them before ordering.",
       item_added_singular: "added to cart!",
       item_added_plural: "added to cart!",
+      product_removed: "removed."
     },
     general_error: "An error has occurred. Please reload the page and try again, please.",
     logged_out: "You are now logged out.",

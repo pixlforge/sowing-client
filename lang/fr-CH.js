@@ -186,6 +186,7 @@ export default {
       has_changed: "Un ou plusieurs objets de votre panier ont été modifiés, vous devriez les passer en revue avant de commander",
       item_added_singular: "ajouté au panier!",
       item_added_plural: "ajoutés au panier!",
+      product_removed: "supprimé."
     },
     general_error: "Une erreur est survenue. Veuillez recharger la page et réessayer, svp.",
     logged_out: "Vous êtes maintenant déconnecté(e)",

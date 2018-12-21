@@ -186,6 +186,7 @@ export default {
       has_changed: "Ein oder mehrere Artikel in Ihrem Warenkorb wurden aktualisiert. Bitte überprüfen Sie sie vor der Bestellung.",
       item_added_singular: "zum Warenkorb hinzugefügt",
       item_added_plural: "zum Warenkorb hinzugefügt",
+      product_removed: "wurde entfernt."
     },
     general_error: "Ein Fehler ist aufgetreten. Bitte laden Sie die Seite neu und versuchen Sie es erneut.",
     logged_out: "Sie sind jetzt ausgeloggt.",

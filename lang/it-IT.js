@@ -186,6 +186,7 @@ export default {
       has_changed: "Uno o più articoli nel vostro carrello sono stati aggiornati, vi preghiamo di verificarli prima di ordinare.",
       item_added_singular: "aggiunto al carrello!",
       item_added_plural: "aggiunti al carrello!",
+      product_removed: "è stato rimosso."
     },
     general_error: "C'è stato un errore. Si prega, per favore, di ricaricare la pagina e riprovare.",
     logged_out: "Ora siete disconnessi.",
