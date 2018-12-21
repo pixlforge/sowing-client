@@ -139,7 +139,6 @@ export default {
         return this.shippingMethod ? this.shippingMethod.id : "";
       },
       set(shippingMethodId) {
-        console.log(shippingMethodId);
         this.setShippingMethod(
           this.shippingMethods.find(method => method.id == shippingMethodId)
         );
