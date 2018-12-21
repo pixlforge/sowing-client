@@ -13,9 +13,9 @@
 
     <section class="container pt-60 pb-100">
       <div class="flex">
-
-        <!-- Details -->
         <div class="w-3/4 mr-50">
+          
+          <!-- Payment -->
           <h2 class="text-36 text-green-darkest mt-40">{{ $t("pages.checkout.payment") }}</h2>
           
           <!-- Cart Overview -->
@@ -26,37 +26,41 @@
         <!-- Sidebar -->
         <div class="w-1/4 bg-green-lightest rounded-lg flex flex-col justify-start p-30 mt-40">
 
-          <!-- Content -->
-          <div>
-            <ShippingAddress
-              v-model="form.address_id"
-              :addresses="addresses"/>
+          <!-- Shipping address -->
+          <ShippingAddress
+            v-model="form.address_id"
+            :addresses="addresses"/>
 
-            <ShippingMethods
-              v-if="!addressManagersVisible"
-              v-model="shippingMethodId"
-              :methods="shippingMethods"
-              :errors="errors.shipping_method_id"
-              class="mt-40"/>
+          <!-- Shipping methods dropdown -->
+          <ShippingMethods
+            v-if="!addressManagersVisible"
+            v-model="shippingMethodId"
+            :methods="shippingMethods"
+            :errors="errors.shipping_method_id"
+            class="mt-40"/>
 
-            <template v-if="!addressManagersVisible">
-              <div class="mt-40">
-                <div class="w-full text-grey-lighter text-14 flex justify-between">
-                  <div>{{ $t("pages.checkout.subtotal") }}</div>
-                  <div>{{ subtotal.currency }} {{ subtotal.amount }}</div>
-                </div>
+          <!-- Price block -->
+          <div
+            v-if="!addressManagersVisible"
+            class="mt-40">
 
-                <div class="w-full text-grey-lighter text-14 flex justify-between mt-5">
-                  <div>{{ $t("pages.checkout.delivery") }}</div>
-                  <div v-if="shippingMethod">{{ shippingMethod.price.currency }} {{ shippingMethod.price.amount }}</div>
-                </div>
+            <!-- Subtotal -->
+            <div class="w-full text-grey-lighter text-14 flex justify-between">
+              <div>{{ $t("pages.checkout.subtotal") }}</div>
+              <div>{{ subtotal.currency }} {{ subtotal.amount }}</div>
+            </div>
 
-                <div class="w-full text-20 uppercase flex justify-between mt-15">
-                  <div class="font-bold">{{ $t("pages.checkout.total") }}</div>
-                  <div class="font-bold">{{ total.currency }} {{ total.amount }}</div>
-                </div>
-              </div>
-            </template>
+            <!-- Shipping -->
+            <div class="w-full text-grey-lighter text-14 flex justify-between mt-5">
+              <div>{{ $t("pages.checkout.delivery") }}</div>
+              <div v-if="shippingMethod">{{ shippingMethod.price.currency }} {{ shippingMethod.price.amount }}</div>
+            </div>
+
+            <!-- Total -->
+            <div class="w-full text-20 uppercase flex justify-between mt-15">
+              <div class="font-bold">{{ $t("pages.checkout.total") }}</div>
+              <div class="font-bold">{{ total.currency }} {{ total.amount }}</div>
+            </div>
           </div>
 
           <!-- Checkout button -->
