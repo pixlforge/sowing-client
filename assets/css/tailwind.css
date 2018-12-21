@@ -143,7 +143,7 @@ button {
 }
 
 .title-large {
-  @apply font-cafe text-48 text-green-darkest font-bold;
+  @apply font-cafe text-48 text-green-darkest font-bold tracking-tight;
 }
 
 .title-small {
@@ -203,7 +203,7 @@ button {
 }
 
 .header-title {
-  @apply font-cafe text-24 text-white;
+  @apply font-cafe text-24 text-white tracking-tight;
 }
 
 .header-description {

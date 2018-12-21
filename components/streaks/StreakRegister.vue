@@ -11,7 +11,7 @@
         </div>
         
         <div class="w-full lg:w-1/2 xl:w-2/3 py-110">
-          <h3 class="font-cafe text-36 xl:text-48 text-center lg:text-left font-bold text-white">
+          <h3 class="title-large text-white">
             {{ $t("components.streaks.register.title") }}
           </h3>
           
