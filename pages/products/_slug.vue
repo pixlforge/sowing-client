@@ -30,6 +30,7 @@
 import Header from "@/components/Header";
 import ProductDetails from "@/components/products/ProductDetails";
 import StreakNewsletter from "@/components/streaks/StreakNewsletter";
+import { mapGetters } from "vuex";
 
 export default {
   head() {
@@ -51,8 +52,14 @@ export default {
     let res = await app.$axios.$get(`/products/${params.slug}`);
 
     return {
+      title: app.head.title,
       product: res.data
     };
+  },
+  computed: {
+    ...mapGetters({
+      locale: "locale"
+    })
   }
 };
 </script>
