@@ -68,9 +68,9 @@
             v-if="products.length && !addressManagersVisible"
             :class="{ 'btn-disabled': is_empty }"
             :disabled="is_empty"
-            role="button"
-            title="Order"
-            class="btn btn-primary mt-40">
+            :title="$t('pages.checkout.order')"
+            class="btn btn-primary mt-40"
+            @click.prevent="order">
             <font-awesome-icon
               :icon="['far', 'check-circle']"
               class="text-white mr-5"/>

@@ -27,6 +27,27 @@
         </div>
       </div>
 
+      <div class="text-24 font-bold flex justify-center mt-100">
+        <span class="mr-10">
+          {{ $t("pages.cart.in_your_cart") }}
+        </span>
+        <span class="text-green mr-10">
+          {{ products.length }}
+        </span>
+        <span class="mr-5">
+          {{ $t("pages.cart.products") }}
+        </span>
+        <span class="mr-5">
+          {{ $t("pages.cart.for") }}
+        </span>
+        <span class="mr-10">
+          {{ subtotal.currency }}
+        </span>
+        <span class="text-green">
+          {{ subtotal.amount }}
+        </span>
+      </div>
+
       <div class="flex justify-center mt-40">
 
         <!-- Checkout button -->
@@ -35,8 +56,7 @@
           :to="localePath({ name: 'checkout' })"
           :class="{ 'btn-disabled': is_empty }"
           :disabled="is_empty"
-          role="button"
-          title="Checkout"
+          :title="$t('pages.cart.checkout')"
           class="btn btn-primary">
           <font-awesome-icon
             :icon="['far', 'check-circle']"

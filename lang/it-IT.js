@@ -108,7 +108,10 @@ export default {
   pages: {
     cart: {
       title: "Il mio carrello",
-      checkout: "Procedere al checkout"
+      checkout: "Procedere al checkout",
+      in_your_cart: "Il vostro carrello contiene",
+      products: "prodotti",
+      for: "per"
     },
     checkout: {
       change_address: "Cambia indirizzo?",

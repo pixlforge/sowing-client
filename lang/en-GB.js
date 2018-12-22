@@ -108,7 +108,10 @@ export default {
   pages: {
     cart: {
       title: "My cart",
-      checkout: "Proceed to checkout"
+      checkout: "Proceed to checkout",
+      in_your_cart: "Your cart contains",
+      products: "products",
+      for: "for"
     },
     checkout: {
       change_address: "Change address?",
