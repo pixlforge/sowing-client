@@ -82,15 +82,18 @@ export default {
       required: true
     }
   },
-  data() {
-    return {
-      quantity: this.product.quantity
-    };
-  },
   computed: {
     ...mapGetters({
       locale: "locale"
     }),
+    quantity: {
+      get() {
+        return this.product.quantity;
+      },
+      set(quantity) {
+        this.update({ productId: this.product.id, quantity });
+      }
+    },
     labelPrice() {
       return this.$t("components.cart.labels.price");
     },
@@ -111,11 +114,6 @@ export default {
     },
     variationType() {
       return this.product.type.name[this.locale];
-    }
-  },
-  watch: {
-    quantity(quantity) {
-      this.update({ productId: this.product.id, quantity: this.quantity });
     }
   },
   methods: {
