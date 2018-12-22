@@ -157,7 +157,8 @@ export default {
   methods: {
     ...mapActions({
       getCart: "cart/getCart",
-      setShippingMethod: "cart/setShippingMethod"
+      setShippingMethod: "cart/setShippingMethod",
+      flash: "alert/flash"
     }),
     async order() {
       this.submitting = true;
@@ -169,6 +170,10 @@ export default {
         this.$toast.success("It worked");
         this.$router.push(this.localePath({ name: "orders" }));
       } catch (e) {
+        this.flash({
+          type: "danger",
+          message: e.response.data.message
+        });
         this.$toast.error(e.response.data.message);
       }
       this.submitting = false;
