@@ -5,6 +5,7 @@ import { interopDefault } from './utils'
 const _1285f351 = () => interopDefault(import('../pages/cart/index.vue' /* webpackChunkName: "pages/cart/index" */))
 const _6f1852f7 = () => interopDefault(import('../pages/checkout/index.vue' /* webpackChunkName: "pages/checkout/index" */))
 const _508690ee = () => interopDefault(import('../pages/login/index.vue' /* webpackChunkName: "pages/login/index" */))
+const _3de5bb56 = () => interopDefault(import('../pages/orders/index.vue' /* webpackChunkName: "pages/orders/index" */))
 const _1aee37d8 = () => interopDefault(import('../pages/register/index.vue' /* webpackChunkName: "pages/register/index" */))
 const _091687d6 = () => interopDefault(import('../pages/password/email.vue' /* webpackChunkName: "pages/password/email" */))
 const _03544809 = () => interopDefault(import('../pages/password/reset.vue' /* webpackChunkName: "pages/password/reset" */))
@@ -119,6 +120,22 @@ export function createRouter() {
       path: "/it/login",
       component: _508690ee,
       name: "login___it"
+    }, {
+      path: "/en/orders",
+      component: _3de5bb56,
+      name: "orders___en"
+    }, {
+      path: "/fr/orders",
+      component: _3de5bb56,
+      name: "orders___fr"
+    }, {
+      path: "/de/orders",
+      component: _3de5bb56,
+      name: "orders___de"
+    }, {
+      path: "/it/orders",
+      component: _3de5bb56,
+      name: "orders___it"
     }, {
       path: "/en/register",
       component: _1aee37d8,

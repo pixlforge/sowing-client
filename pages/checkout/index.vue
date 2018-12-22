@@ -66,8 +66,8 @@
           <!-- Checkout button -->
           <button
             v-if="products.length && !addressManagersVisible"
-            :class="{ 'btn-disabled': is_empty }"
-            :disabled="is_empty"
+            :class="{ 'btn-disabled': is_empty || submitting }"
+            :disabled="is_empty || submitting"
             :title="$t('pages.checkout.order')"
             class="btn btn-primary mt-40"
             @click.prevent="order">
@@ -109,7 +109,8 @@ export default {
       },
       errors: {},
       addresses: [],
-      shippingMethods: []
+      shippingMethods: [],
+      submitting: false
     };
   },
   async asyncData({ app }) {
@@ -129,11 +130,9 @@ export default {
       shippingMethod: "cart/shippingMethod",
       addressManagersVisible: "checkout/addressManagersVisible"
     }),
-
     pageTitle() {
       return this.$t("pages.checkout.title");
     },
-
     shippingMethodId: {
       get() {
         return this.shippingMethod ? this.shippingMethod.id : "";
@@ -151,7 +150,6 @@ export default {
         this.setShippingMethod(this.shippingMethods[0]);
       });
     },
-
     shippingMethodId() {
       this.getCart();
     }
@@ -161,7 +159,22 @@ export default {
       getCart: "cart/getCart",
       setShippingMethod: "cart/setShippingMethod"
     }),
-
+    async order() {
+      this.submitting = true;
+      try {
+        let res = await this.$axios.$post(`/orders`, {
+          ...this.form,
+          shipping_method_id: this.shippingMethodId
+        });
+        this.$toast.success("It worked");
+        this.submitting = false;
+        this.$router.push(this.localePath({ name: "orders" }));
+      } catch (e) {
+        this.$toast.error("It failed");
+        this.submitting = false;
+      }
+      this.getCart();
+    },
     async getShippingMethodsForAddress(addressId) {
       try {
         let res = await this.$axios.$get(`/addresses/${addressId}/shipping`);
