@@ -167,12 +167,11 @@ export default {
           shipping_method_id: this.shippingMethodId
         });
         this.$toast.success("It worked");
-        this.submitting = false;
         this.$router.push(this.localePath({ name: "orders" }));
       } catch (e) {
-        this.$toast.error("It failed");
-        this.submitting = false;
+        this.$toast.error(e.response.data.message);
       }
+      this.submitting = false;
       this.getCart();
     },
     async getShippingMethodsForAddress(addressId) {
