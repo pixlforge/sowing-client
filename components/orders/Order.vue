@@ -26,19 +26,25 @@
       {{ order.subtotal.currency }} {{ order.subtotal.amount }}
     </div>
     <div class="w-1/5 flex justify-center items-start">
-      <span
-        :class="statusClasses"
-        class="badge">
-        {{ order.status }}
-      </span>
+      <component :is="order.status"/>
     </div>
   </div>
 </template>
 
 <script>
+import Completed from "@/components/orders/statuses/Completed";
+import Pending from "@/components/orders/statuses/Pending";
+import Processing from "@/components/orders/statuses/Processing";
+import PaymentFailed from "@/components/orders/statuses/PaymentFailed";
 import { mapGetters } from "vuex";
 
 export default {
+  components: {
+    completed: Completed,
+    pending: Pending,
+    processing: Processing,
+    payment_failed: PaymentFailed
+  },
   props: {
     order: {
       type: Object,
