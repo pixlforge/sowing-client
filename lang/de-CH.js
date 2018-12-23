@@ -178,6 +178,9 @@ export default {
     },
     register_success: {
       title: "Konto erfolgreich erstellt!"
+    },
+    orders: {
+      title: "Meine Bestellungen",
     }
   },
   toasts: {

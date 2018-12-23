@@ -159,7 +159,7 @@ button {
 }
 
 .card-form {
-  @apply w-full bg-white rounded-lg shadow-lg px-30 py-40 mx-auto;
+  @apply w-full bg-white px-30 py-40 mx-auto;
 }
 
 .card-product {
@@ -216,6 +216,26 @@ button {
 
 .product-price {
   @apply text-24 font-bold text-green-darkest;
+}
+
+.badge {
+  @apply text-12 font-extrabold uppercase rounded-full px-20 py-10;
+}
+
+.badge-success {
+  @apply bg-green-lighter text-green-darker;
+}
+
+.badge-info {
+  @apply bg-blue-lighter text-blue-darker;
+}
+
+.badge-danger {
+  @apply bg-red-lighter text-red-darker;
+}
+
+.badge-warning {
+  @apply bg-orange-lighter text-orange-darker;
 }
 
 @screen md {

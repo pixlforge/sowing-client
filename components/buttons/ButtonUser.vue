@@ -6,6 +6,16 @@
     {{ username }}
     <ul class="dropdown-child">
       <li>
+        <nuxt-link
+          :to="localePath({ name: 'orders' })"
+          class="link-dropdown">
+          {{ $t("pages.orders.title") }}
+        </nuxt-link>
+      </li>
+
+      <hr class="border border-green rounded-full -mx-10 my-20">
+
+      <li>
         <a
           class="link-dropdown"
           @click="logout">

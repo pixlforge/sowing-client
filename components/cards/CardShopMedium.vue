@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full md:w-575 bg-white rounded-lg shadow-lg flex flex-col md:flex-row mx-auto mt-100">
+  <div class="w-full md:w-575 bg-white rounded-lg shadow-md flex flex-col md:flex-row mx-auto mt-100">
 
     <!-- Left side -->
     <div
