@@ -1,5 +1,5 @@
 <template>
-  <div class="rounded-lg hover:bg-green-lightest text-16 text-center leading-normal flex px-20 py-40 min-h-160">
+  <div class="rounded-lg hover:bg-grey-faint text-16 text-center leading-normal flex px-20 py-40 min-h-160">
     <div class="w-1/5 flex justify-center">
       #{{ order.id }}
     </div>
