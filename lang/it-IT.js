@@ -159,6 +159,15 @@ export default {
         register: "Crea un Sowing account"
       }
     },
+    orders: {
+      title: "I miei ordini",
+      statuses: {
+        completed: "Completato",
+        pending: "In sospeso",
+        processing: "Trattamento",
+        payment_failed: "Pagamento fallito"
+      },
+    },
     password_email: {
       title: "Recupero dell'account",
       paragraphs: {
@@ -179,14 +188,8 @@ export default {
     register_success: {
       title: "Account creato con successo!"
     },
-    orders: {
-      title: "I miei ordini",
-      statuses: {
-        completed: "Completato",
-        pending: "In sospeso",
-        processing: "Trattamento",
-        payment_failed: "Pagamento fallito"
-      },
+    shop: {
+      title: "Il mio negozio"
     }
   },
   toasts: {

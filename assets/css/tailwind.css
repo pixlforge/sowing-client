@@ -360,3 +360,25 @@ html {
 .toasted.toasted-primary.error {
   background-color: #e3342f !important;
 }
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .3s ease;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+/* Slide transition */
+.slide-enter-active,
+.slide-leave-active {
+  transition: all .3s cubic-bezier(.3,1.42,.81,1.1);
+}
+
+.slide-enter {
+  opacity: 0;
+  transform: translateX(75%);
+}
+
+.slide-leave-to {
+  opacity: 0;
+}

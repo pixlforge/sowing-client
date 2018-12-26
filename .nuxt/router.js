@@ -7,9 +7,12 @@ const _6f1852f7 = () => interopDefault(import('../pages/checkout/index.vue' /* w
 const _508690ee = () => interopDefault(import('../pages/login/index.vue' /* webpackChunkName: "pages/login/index" */))
 const _3de5bb56 = () => interopDefault(import('../pages/orders/index.vue' /* webpackChunkName: "pages/orders/index" */))
 const _1aee37d8 = () => interopDefault(import('../pages/register/index.vue' /* webpackChunkName: "pages/register/index" */))
+const _4b4fffa7 = () => interopDefault(import('../pages/shop/index.vue' /* webpackChunkName: "pages/shop/index" */))
 const _091687d6 = () => interopDefault(import('../pages/password/email.vue' /* webpackChunkName: "pages/password/email" */))
 const _03544809 = () => interopDefault(import('../pages/password/reset.vue' /* webpackChunkName: "pages/password/reset" */))
 const _17283845 = () => interopDefault(import('../pages/register/success.vue' /* webpackChunkName: "pages/register/success" */))
+const _850b6190 = () => interopDefault(import('../pages/shop/create/step-1.vue' /* webpackChunkName: "pages/shop/create/step-1" */))
+const _84ef328e = () => interopDefault(import('../pages/shop/create/step-2.vue' /* webpackChunkName: "pages/shop/create/step-2" */))
 const _3dbde985 = () => interopDefault(import('../pages/categories/_slug.vue' /* webpackChunkName: "pages/categories/_slug" */))
 const _7e2baf66 = () => interopDefault(import('../pages/products/_slug.vue' /* webpackChunkName: "pages/products/_slug" */))
 const _382080c1 = () => interopDefault(import('../pages/categories/_category/_subcategory/_slug.vue' /* webpackChunkName: "pages/categories/_category/_subcategory/_slug" */))
@@ -153,6 +156,22 @@ export function createRouter() {
       component: _1aee37d8,
       name: "register___it"
     }, {
+      path: "/en/shop",
+      component: _4b4fffa7,
+      name: "shop___en"
+    }, {
+      path: "/fr/shop",
+      component: _4b4fffa7,
+      name: "shop___fr"
+    }, {
+      path: "/de/shop",
+      component: _4b4fffa7,
+      name: "shop___de"
+    }, {
+      path: "/it/shop",
+      component: _4b4fffa7,
+      name: "shop___it"
+    }, {
       path: "/en/password/email",
       component: _091687d6,
       name: "password-email___en"
@@ -200,6 +219,38 @@ export function createRouter() {
       path: "/it/register/success",
       component: _17283845,
       name: "register-success___it"
+    }, {
+      path: "/en/shop/create/step-1",
+      component: _850b6190,
+      name: "shop-create-step-1___en"
+    }, {
+      path: "/fr/shop/create/step-1",
+      component: _850b6190,
+      name: "shop-create-step-1___fr"
+    }, {
+      path: "/de/shop/create/step-1",
+      component: _850b6190,
+      name: "shop-create-step-1___de"
+    }, {
+      path: "/it/shop/create/step-1",
+      component: _850b6190,
+      name: "shop-create-step-1___it"
+    }, {
+      path: "/en/shop/create/step-2",
+      component: _84ef328e,
+      name: "shop-create-step-2___en"
+    }, {
+      path: "/fr/shop/create/step-2",
+      component: _84ef328e,
+      name: "shop-create-step-2___fr"
+    }, {
+      path: "/de/shop/create/step-2",
+      component: _84ef328e,
+      name: "shop-create-step-2___de"
+    }, {
+      path: "/it/shop/create/step-2",
+      component: _84ef328e,
+      name: "shop-create-step-2___it"
     }, {
       path: "/en/categories/:slug?",
       component: _3dbde985,
