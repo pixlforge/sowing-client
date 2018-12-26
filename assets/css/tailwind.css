@@ -238,6 +238,36 @@ button {
   @apply bg-orange-lighter text-orange-darker;
 }
 
+.cc-container {
+  @apply relative rounded-lg shadow flex border-4 border-white flex-col items-center cursor-pointer p-40;
+}
+
+.cc-container-selected {
+  @apply border-green shadow-md;
+}
+
+.cc-icon {
+  @apply text-72 text-grey-lighter;
+}
+
+.cc-title {
+  @apply text-20 font-normal mt-20;
+}
+
+.cc-icon-checked {
+  @apply absolute pin-t pin-l text-30 text-green ml-20 mt-20;
+}
+
+.cc-last-four {
+  @apply text-12 text-grey-lighter mt-5;
+}
+
+.cc-icon-selected,
+.cc-title-selected,
+.cc-last-four-selected {
+  @apply text-green;
+}
+
 @screen md {
   .card-form {
     @apply w-3/4;

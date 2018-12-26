@@ -15,8 +15,11 @@
       <div class="flex">
         <div class="w-3/4 mr-50">
           
-          <!-- Payment -->
+          <!-- Payment methods -->
           <h2 class="text-36 text-green-darkest mt-40">{{ $t("pages.checkout.payment") }}</h2>
+          <PaymentMethods
+            :payment-methods="paymentMethods"
+            v-model="form.payment_method_id"/>
           
           <!-- Cart Overview -->
           <h2 class="text-36 text-green-darkest mt-100">{{ $t("pages.cart.title") }}</h2>
@@ -88,6 +91,7 @@ import Header from "@/components/Header";
 import CartOverview from "@/components/cart/CartOverview";
 import ShippingAddress from "@/components/checkout/addresses/ShippingAddress";
 import ShippingMethods from "@/components/checkout/addresses/ShippingMethods";
+import PaymentMethods from "@/components/checkout/paymentMethods/PaymentMethods";
 import { mapGetters, mapActions } from "vuex";
 
 export default {
@@ -100,24 +104,29 @@ export default {
     Header,
     CartOverview,
     ShippingAddress,
-    ShippingMethods
+    ShippingMethods,
+    PaymentMethods
   },
   data() {
     return {
       form: {
-        address_id: ""
+        address_id: "",
+        payment_method_id: ""
       },
       errors: {},
       addresses: [],
       shippingMethods: [],
+      paymentMethods: [],
       submitting: false
     };
   },
   async asyncData({ app }) {
-    let addresses = await app.$axios.$get(`/addresses`);
+    let addresses = await app.$axios.$get("/addresses");
+    let paymentMethods = await app.$axios.$get("/payment-methods");
     return {
       title: app.head.title,
-      addresses: addresses.data
+      addresses: addresses.data,
+      paymentMethods: paymentMethods.data
     };
   },
   computed: {

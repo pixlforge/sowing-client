@@ -14,6 +14,9 @@ export default {
         see_all: "Voir tous les produits"
       }
     },
+    cc: {
+      ending_in: "Se terminant par"
+    },
     footer: {
       titles: {
         categories: 'Catégories',

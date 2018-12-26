@@ -14,6 +14,9 @@ export default {
         see_all: "Siehe all Produkte"
       }
     },
+    cc: {
+      ending_in: "Endet in"
+    },
     footer: {
       titles: {
         categories: 'Kategorien',
