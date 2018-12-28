@@ -423,3 +423,45 @@ html {
 .slide-leave-to {
   opacity: 0;
 }
+
+/* Dropzone */
+
+.vue-dropzone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  border: 2px dashed #dcdcdc !important;
+  border-radius: 5px;
+  font-size: 1.6rem;
+  color: #8d8d8d;
+  min-height: 22rem !important;
+}
+
+.vue-dropzone:hover {
+  background-color: #fff !important;
+}
+
+.dz-image {
+  border-radius: 2rem !important;
+}
+
+.dz-details {
+  background-color: transparent !important;
+}
+
+.dz-message {
+  margin: 0 !important;
+}
+
+.dz-remove {
+  position: absolute !important;
+  bottom: 1rem !important;
+  left: 0;
+  right: 0;
+  border: none !important;
+  margin-left: 0 !important;
+  text-transform: none !important;
+  font-size: 1.2rem !important;
+  letter-spacing: 0 !important;
+}

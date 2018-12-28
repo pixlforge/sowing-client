@@ -5,7 +5,7 @@
       <div class="flex flex-col items-center">
         <h2 class="title-large text-center mt-100">Détails de votre boutique</h2>
 
-        <section class="max-w-1000">
+        <section class="w-full max-w-1000">
           <p class="paragraph-body text-center my-60">
             Parlez-nous de votre boutique. Où est-elle située? Que fait-elle? Décrivez la au mieux afin de lui donner une bonne image, en plus de renseigner efficacement vos visiteurs de vos activités et de vos méthodes.
           </p>

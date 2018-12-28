@@ -23,6 +23,7 @@
     "@nuxtjs/toast": "^3.0.1",
     "cross-env": "^5.2.0",
     "nuxt": "^2.3.4",
+    "nuxt-dropzone": "^0.2.8",
     "nuxt-fontawesome": "^0.3.0",
     "nuxt-i18n": "^5.4.4",
     "nuxt-webfontloader": "^1.0.0",
