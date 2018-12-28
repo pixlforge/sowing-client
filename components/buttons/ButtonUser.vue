@@ -27,7 +27,7 @@
       <!-- Shop create -->
       <li class="mt-10">
         <nuxt-link
-          :to="localePath({ name: 'shop-create-step-1' })"
+          :to="localePath({ name: 'shop-create-terms' })"
           class="btn btn-secondary nowrap">
           <font-awesome-icon
             :icon="['far', 'store']"

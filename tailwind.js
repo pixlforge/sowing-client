@@ -11,7 +11,7 @@ let colors = {
   'grey-light': '#676767',
   'grey-lighter': '#8D8D8D',
   'grey-lightest': '#DCDCDC',
-  'grey-faint': '#FCFCFC',
+  'grey-faint': '#F7F7F7',
   'white': '#ffffff',
 
   'orange-darkest': '#462a16',
@@ -249,6 +249,7 @@ module.exports = {
 
   height: {
     'auto': 'auto',
+    '3': '.3rem',
     '10': '1rem',
     '15': '1.5rem',
     '20': '2rem',
@@ -321,6 +322,9 @@ module.exports = {
     '60': '6rem',
     '80': '8rem',
     '100': '10rem',
+    '600': '60rem',
+    '800': '80rem',
+    '1000': '100rem',
     'full': '100%',
   },
 
@@ -368,7 +372,7 @@ module.exports = {
     '50': '5rem',
     '60': '6rem',
     '80': '8rem',
-    '100': '10rem'
+    '100': '10rem',
   },
 
   negativeMargin: {

@@ -22,7 +22,7 @@
           class="block w-1/2 mt-100">
 
         <nuxt-link
-          :to="localePath({ name: 'shop-create-step-1' })"
+          :to="localePath({ name: 'shop-create-terms' })"
           class="btn btn-primary mt-80">
           <font-awesome-icon
             :icon="['far', 'rocket']"

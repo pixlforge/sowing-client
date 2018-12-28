@@ -1,7 +1,7 @@
 <template>
   <button class="dropdown-parent btn flex justify-center items-center px-10 md:px-20">
     <font-awesome-icon
-      :icon="['far', 'globe-africa']"
+      :icon="['far', 'globe-europe']"
       class="text-18 text-green mr-10"/>
     <font-awesome-icon
       :icon="['fas', 'caret-down']"

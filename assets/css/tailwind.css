@@ -106,6 +106,10 @@ button {
   @apply block h-42 text-16 w-full appearance-none bg-green-lightest rounded-lg text-green-darkest leading-tight outline-none px-15 mt-10;
 }
 
+.textarea-base {
+  @apply block w-full appearance-none bg-green-lightest rounded-lg text-16 text-green-darkest leading-normal outline-none px-15 py-15 mt-10;
+}
+
 .select:hover {
   @apply cursor-pointer;
 }
@@ -266,6 +270,14 @@ button {
 .cc-title-selected,
 .cc-last-four-selected {
   @apply text-green;
+}
+
+.paragraph-title {
+  @apply text-24 leading-normal mt-80;
+}
+
+.paragraph-body {
+  @apply text-18 leading-loose my-20;
 }
 
 @screen md {
