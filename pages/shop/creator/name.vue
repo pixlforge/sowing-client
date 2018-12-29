@@ -24,7 +24,8 @@
             <button
               :disabled="shopExists"
               :class="{ 'btn-disabled': shopExists }"
-              class="btn btn-primary rounded-l-none nowrap">
+              class="btn btn-primary rounded-l-none nowrap"
+              @click.prevent="check">
               <font-awesome-icon
                 :icon="['far', 'rocket']"
                 class="mr-5"/>
@@ -99,6 +100,18 @@ export default {
       setStepName: "shop/setStepName",
       setStepDetails: "shop/setStepDetails"
     }),
+    async check() {
+      if (this.shopName) {
+        try {
+          let res = await this.$axios.$post("/shops/checker", {
+            name: this.shopName
+          });
+          this.$toast.success(`"<em>${this.shopName}</em>" est disponible!`);
+        } catch (e) {
+          this.$toast.error(`"<em>${this.shopName}</em>" est déjà utilisé.`);
+        }
+      }
+    },
     prev() {
       this.$router.push(this.localePath({ name: "shop-creator-terms" }));
     },
