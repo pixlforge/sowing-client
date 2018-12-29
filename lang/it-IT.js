@@ -216,6 +216,9 @@ export default {
     },
     general_error: "C'è stato un errore. Si prega, per favore, di ricaricare la pagina e riprovare.",
     logged_out: "Ora siete disconnessi.",
+    shop: {
+      terms: "Devi prima accettare i termini e le condizioni prima di continuare."
+    },
     validation: "Il modulo contiene errori. Si prega di correggerli e riprovare.",
     welcome: "Benvenuto"
   }

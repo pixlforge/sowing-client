@@ -216,6 +216,9 @@ export default {
     },
     general_error: "An error has occurred. Please reload the page and try again, please.",
     logged_out: "You are now logged out.",
+    shop: {
+      terms: "You must first agree to the terms and conditions before going forward."
+    },
     validation: "The form contains errors. Please correct them and try again.",
     welcome: "Welcome back"
   }

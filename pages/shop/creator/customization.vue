@@ -1,6 +1,5 @@
 <template>
   <main>
-
     <section class="container section">
       <div class="flex flex-col items-center">
         <h2 class="title-large text-center mt-100">Personnalisez votre boutique</h2>
@@ -40,11 +39,10 @@
           <font-awesome-icon
             :icon="['far', 'chevron-circle-right']"
             class="mr-5"/>
-          Terminer la création de ma boutique
+          Finaliser la création de ma boutique
         </button>
       </div>
     </section>
-
   </main>
 </template>
 
@@ -54,7 +52,7 @@ import "vue2-dropzone/dist/vue2Dropzone.css";
 import { mapGetters, mapActions } from "vuex";
 
 export default {
-  layout: "shop-creation",
+  layout: "shop-creator",
   transition: {
     name: "slide",
     mode: "out-in"
@@ -102,13 +100,14 @@ export default {
     };
   },
   mounted() {
-    // Everything is mounted and you can access the dropzone instances
     const dropzoneProfile = this.$refs.dropzoneProfile.dropzone;
     const dropzoneCover = this.$refs.dropzoneCover.dropzone;
+
+    this.setStepDetails(true);
   },
   methods: {
     ...mapActions({
-      setStepCustomization: "shop/setStepCustomization"
+      setStepDetails: "shop/setStepDetails"
     }),
     dzMaxFilesExceeded(file) {
       this.$refs.dropzoneProfile.removeFile(file);
@@ -118,8 +117,7 @@ export default {
     },
     next() {
       if (this.stepName && this.stepDetails) {
-        this.setStepCustomization(true);
-        this.$router.push(this.localePath({ name: "shop-create-done" }));
+        this.$router.push(this.localePath({ name: "shop-creator-done" }));
       }
     }
   }

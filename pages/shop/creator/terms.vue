@@ -75,7 +75,6 @@
         </button>
       </div>
     </section>
-
   </main>
 </template>
 
@@ -106,7 +105,7 @@ export default {
     }),
     next() {
       if (this.terms) {
-        this.$router.push(this.localePath({ name: "shop-create-name" }));
+        this.$router.push(this.localePath({ name: "shop-creator-name" }));
       }
     }
   }

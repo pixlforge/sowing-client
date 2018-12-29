@@ -13,7 +13,6 @@
 
     <section class="container section">
       <div class="flex flex-col items-center mt-100">
-
         <h2 class="text-36">Vous n'avez pas encore créé votre boutique.</h2>
 
         <img
@@ -22,7 +21,7 @@
           class="block w-1/2 mt-100">
 
         <nuxt-link
-          :to="localePath({ name: 'shop-create-terms' })"
+          :to="localePath({ name: 'shop-creator-terms' })"
           class="btn btn-primary mt-80">
           <font-awesome-icon
             :icon="['far', 'rocket']"
@@ -32,7 +31,6 @@
 
       </div>
     </section>
-    
   </main>
 </template>
 

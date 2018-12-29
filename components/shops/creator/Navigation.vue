@@ -7,7 +7,7 @@
         <div class="relative flex flex-grow items-center">
           <div
             class="w-50 h-50 bg-green rounded-full text-24 font-bold text-white flex justify-center items-center cursor-pointer"
-            @click.prevent="toShopCreateName">
+            @click.prevent="toShopCreatorName">
             1
           </div>
           <div
@@ -15,7 +15,7 @@
             class="h-3 flex-grow"/>
           <div
             class="absolute pin-b step-1 text-16 font-semibold text-green cursor-pointer"
-            @click.prevent="toShopCreateName">
+            @click.prevent="toShopCreatorName">
             Nommez votre boutique
           </div>
         </div>
@@ -25,7 +25,7 @@
           <div
             :class="{ 'bg-green': stepName, 'bg-white': !stepName, 'text-white': stepName, 'text-grey-lightest': !stepName }"
             class="w-50 h-50 rounded-full text-24 font-bold flex justify-center items-center cursor-pointer"
-            @click.prevent="toShopCreateDetails">
+            @click.prevent="toShopCreatorDetails">
             2
           </div>
           <div
@@ -34,7 +34,7 @@
           <div
             :class="{ 'text-green': stepName, 'text-grey-lightest': !stepName }"
             class="absolute pin-b step-2 text-16 font-semibold cursor-pointer"
-            @click.prevent="toShopCreateDetails">
+            @click.prevent="toShopCreatorDetails">
             Détails de votre boutique
           </div>
         </div>
@@ -44,7 +44,7 @@
           <div
             :class="{ 'bg-green': stepDetails, 'bg-white': !stepDetails, 'text-white': stepDetails, 'text-grey-lightest': !stepDetails }"
             class="w-50 h-50 rounded-full text-24 font-bold flex justify-center items-center cursor-pointer"
-            @click.prevent="toShopCreateCustomization">
+            @click.prevent="toShopCreatorCustomization">
             3
           </div>
           <div
@@ -53,7 +53,7 @@
           <div
             :class="{ 'text-green': stepDetails, 'text-grey-lightest': !stepDetails }"
             class="absolute pin-b step-3 text-16 font-semibold cursor-pointer"
-            @click.prevent="toShopCreateCustomization">
+            @click.prevent="toShopCreatorCustomization">
             Personnalisez votre boutique
           </div>
         </div>
@@ -63,13 +63,13 @@
           <div
             :class="{ 'bg-green': stepCustomization, 'bg-white': !stepCustomization, 'text-white': stepCustomization, 'text-grey-lightest': !stepCustomization }"
             class="w-50 h-50 rounded-full text-24 font-bold flex justify-center items-center cursor-pointer"
-            @click.prevent="toShopCreateDone">
+            @click.prevent="toShopCreatorDone">
             4
           </div>
           <div
             :class="{ 'text-green': stepCustomization, 'text-grey-lightest': !stepCustomization }"
             class="absolute pin-b step-4 text-16 font-semibold nowrap cursor-pointer"
-            @click.prevent="toShopCreateDone">
+            @click.prevent="toShopCreatorDone">
             Terminé!
           </div>
         </div>
@@ -91,24 +91,24 @@ export default {
     })
   },
   methods: {
-    toShopCreateName() {
-      this.$router.push(this.localePath({ name: "shop-create-name" }));
+    toShopCreatorName() {
+      this.$router.push(this.localePath({ name: "shop-creator-name" }));
     },
-    toShopCreateDetails() {
+    toShopCreatorDetails() {
       if (this.stepName) {
-        this.$router.push(this.localePath({ name: "shop-create-details" }));
+        this.$router.push(this.localePath({ name: "shop-creator-details" }));
       }
     },
-    toShopCreateCustomization() {
+    toShopCreatorCustomization() {
       if (this.stepName && this.stepDetails) {
         this.$router.push(
-          this.localePath({ name: "shop-create-customization" })
+          this.localePath({ name: "shop-creator-customization" })
         );
       }
     },
-    toShopCreateDone() {
+    toShopCreatorDone() {
       if (this.stepName && this.stepDetails && this.stepCustomization)
-        this.$router.push(this.localePath({ name: "shop-create-done" }));
+        this.$router.push(this.localePath({ name: "shop-creator-done" }));
     }
   }
 };

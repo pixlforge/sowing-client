@@ -17,7 +17,7 @@ export const state = () => ({
       de: "",
       it: ""
     },
-    theme_color: "",
+    theme_color: "#5FB881",
     postal_code: "",
     city: "",
     country_id: ""
@@ -36,6 +36,9 @@ export const getters = {
   },
   stepCustomization(state) {
     return state.stepCustomization;
+  },
+  shop(state) {
+    return state.form;
   },
   shopName(state) {
     return state.form.name;
@@ -88,6 +91,9 @@ export const mutations = {
   SET_STEP_CUSTOMIZATION(state, value) {
     state.stepCustomization = value;
   },
+  SET_SHOP(state, shop) {
+    state.form = shop;
+  },
   SET_SHOP_NAME(state, name) {
     state.form.name = name;
   },
@@ -138,6 +144,9 @@ export const actions = {
   },
   setStepCustomization({ commit }, value) {
     commit('SET_STEP_CUSTOMIZATION', value);
+  },
+  setShop({ commit }, shop) {
+    commit('SET_SHOP', shop);
   },
   setShopName({ commit }, name) {
     commit('SET_SHOP_NAME', name);

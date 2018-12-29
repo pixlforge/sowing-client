@@ -1,6 +1,5 @@
 <template>
   <main>
-
     <section class="container section">
       <div class="flex flex-col items-center">
         <h2 class="title-large text-center mt-100">Détails de votre boutique</h2>
@@ -193,17 +192,31 @@
 
         </section>
 
-        <button
-          class="btn btn-primary mt-100"
-          @click.prevent="next">
-          <font-awesome-icon
-            :icon="['far', 'chevron-circle-right']"
-            class="mr-5"/>
-          Personnaliser ma boutique
-        </button>
+        <div class="flex mt-100">
+
+          <!-- Previous -->
+          <button
+            class="btn btn-default mr-20"
+            @click.prevent="prev">
+            <font-awesome-icon
+              :icon="['far', 'chevron-circle-left']"
+              class="mr-5"/>
+            Retour
+          </button>
+
+          <!-- Next -->
+          <button
+            class="btn btn-primary"
+            @click.prevent="store">
+            <font-awesome-icon
+              :icon="['far', 'chevron-circle-right']"
+              class="mr-5"/>
+            Créer ma boutique
+          </button>
+
+        </div>
       </div>
     </section>
-
   </main>
 </template>
 
@@ -211,7 +224,7 @@
 import { mapGetters, mapActions } from "vuex";
 
 export default {
-  layout: "shop-creation",
+  layout: "shop-creator",
   transition: {
     name: "slide",
     mode: "out-in"
@@ -224,7 +237,9 @@ export default {
   computed: {
     ...mapGetters({
       locale: "locale",
+      terms: "shop/terms",
       stepName: "shop/stepName",
+      shop: "shop/shop",
       shopPostalCode: "shop/shopPostalCode",
       shopCity: "shop/shopCity",
       shopCountryId: "shop/shopCountryId",
@@ -329,9 +344,13 @@ export default {
   created() {
     this.getCountries();
   },
+  mounted() {
+    this.setStepName(true);
+  },
   methods: {
     ...mapActions({
-      setStepDetails: "shop/setStepDetails",
+      setStepName: "shop/setStepName",
+      setShop: "shop/setShop",
       setShopPostalCode: "shop/setShopPostalCode",
       setShopCity: "shop/setShopCity",
       setShopCountryId: "shop/setShopCountryId",
@@ -344,13 +363,30 @@ export default {
       setShopLongDescriptionDe: "shop/setShopLongDescriptionDe",
       setShopLongDescriptionIt: "shop/setShopLongDescriptionIt"
     }),
-    next() {
-      if (this.stepName) {
-        this.setStepDetails(true);
-        this.$router.push(
-          this.localePath({ name: "shop-create-customization" })
-        );
+    async store() {
+      try {
+        if (this.terms) {
+          let res = await this.$axios.$post("/shops", this.shop);
+          this.setShop(res.data);
+          this.$toast.success(
+            "Votre nouvelle boutique a été créée avec succès!"
+          );
+          this.next();
+        } else {
+          this.$toast.error(this.$t("toasts.shop.terms"));
+        }
+      } catch (e) {
+        console.log(e.response.data.errors);
+        this.$toast.error(this.$t("toasts.validation"));
       }
+    },
+    prev() {
+      this.$router.push(this.localePath({ name: "shop-creator-name" }));
+    },
+    next() {
+      this.$router.push(
+        this.localePath({ name: "shop-creator-customization" })
+      );
     },
     async getCountries() {
       let res = await this.$axios.$get("/countries");

@@ -216,6 +216,9 @@ export default {
     },
     general_error: "Une erreur est survenue. Veuillez recharger la page et réessayer, svp.",
     logged_out: "Vous êtes maintenant déconnecté(e)",
+    shop: {
+      terms: "Vous devez d'abord accepter les conditions générales avant de continuer."
+    },
     validation: "Le formulaire comporte des erreurs. Veuillez, svp, les corriger et réessayer.",
     welcome: "Bienvenue",
   }

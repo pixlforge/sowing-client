@@ -11,11 +11,11 @@ const _4b4fffa7 = () => interopDefault(import('../pages/shop/index.vue' /* webpa
 const _091687d6 = () => interopDefault(import('../pages/password/email.vue' /* webpackChunkName: "pages/password/email" */))
 const _03544809 = () => interopDefault(import('../pages/password/reset.vue' /* webpackChunkName: "pages/password/reset" */))
 const _17283845 = () => interopDefault(import('../pages/register/success.vue' /* webpackChunkName: "pages/register/success" */))
-const _3032108a = () => interopDefault(import('../pages/shop/create/customization.vue' /* webpackChunkName: "pages/shop/create/customization" */))
-const _503bceaa = () => interopDefault(import('../pages/shop/create/details.vue' /* webpackChunkName: "pages/shop/create/details" */))
-const _5cf39c4a = () => interopDefault(import('../pages/shop/create/done.vue' /* webpackChunkName: "pages/shop/create/done" */))
-const _f519725a = () => interopDefault(import('../pages/shop/create/name.vue' /* webpackChunkName: "pages/shop/create/name" */))
-const _5be66f6f = () => interopDefault(import('../pages/shop/create/terms.vue' /* webpackChunkName: "pages/shop/create/terms" */))
+const _5f01cd05 = () => interopDefault(import('../pages/shop/creator/customization.vue' /* webpackChunkName: "pages/shop/creator/customization" */))
+const _d76a3918 = () => interopDefault(import('../pages/shop/creator/details.vue' /* webpackChunkName: "pages/shop/creator/details" */))
+const _1ff7cbc0 = () => interopDefault(import('../pages/shop/creator/done.vue' /* webpackChunkName: "pages/shop/creator/done" */))
+const _48777649 = () => interopDefault(import('../pages/shop/creator/name.vue' /* webpackChunkName: "pages/shop/creator/name" */))
+const _0d2fa28e = () => interopDefault(import('../pages/shop/creator/terms.vue' /* webpackChunkName: "pages/shop/creator/terms" */))
 const _3dbde985 = () => interopDefault(import('../pages/categories/_slug.vue' /* webpackChunkName: "pages/categories/_slug" */))
 const _7e2baf66 = () => interopDefault(import('../pages/products/_slug.vue' /* webpackChunkName: "pages/products/_slug" */))
 const _382080c1 = () => interopDefault(import('../pages/categories/_category/_subcategory/_slug.vue' /* webpackChunkName: "pages/categories/_category/_subcategory/_slug" */))
@@ -223,85 +223,85 @@ export function createRouter() {
       component: _17283845,
       name: "register-success___it"
     }, {
-      path: "/en/shop/create/customization",
-      component: _3032108a,
-      name: "shop-create-customization___en"
+      path: "/en/shop/creator/customization",
+      component: _5f01cd05,
+      name: "shop-creator-customization___en"
     }, {
-      path: "/fr/shop/create/customization",
-      component: _3032108a,
-      name: "shop-create-customization___fr"
+      path: "/fr/shop/creator/customization",
+      component: _5f01cd05,
+      name: "shop-creator-customization___fr"
     }, {
-      path: "/de/shop/create/customization",
-      component: _3032108a,
-      name: "shop-create-customization___de"
+      path: "/de/shop/creator/customization",
+      component: _5f01cd05,
+      name: "shop-creator-customization___de"
     }, {
-      path: "/it/shop/create/customization",
-      component: _3032108a,
-      name: "shop-create-customization___it"
+      path: "/it/shop/creator/customization",
+      component: _5f01cd05,
+      name: "shop-creator-customization___it"
     }, {
-      path: "/en/shop/create/details",
-      component: _503bceaa,
-      name: "shop-create-details___en"
+      path: "/en/shop/creator/details",
+      component: _d76a3918,
+      name: "shop-creator-details___en"
     }, {
-      path: "/fr/shop/create/details",
-      component: _503bceaa,
-      name: "shop-create-details___fr"
+      path: "/fr/shop/creator/details",
+      component: _d76a3918,
+      name: "shop-creator-details___fr"
     }, {
-      path: "/de/shop/create/details",
-      component: _503bceaa,
-      name: "shop-create-details___de"
+      path: "/de/shop/creator/details",
+      component: _d76a3918,
+      name: "shop-creator-details___de"
     }, {
-      path: "/it/shop/create/details",
-      component: _503bceaa,
-      name: "shop-create-details___it"
+      path: "/it/shop/creator/details",
+      component: _d76a3918,
+      name: "shop-creator-details___it"
     }, {
-      path: "/en/shop/create/done",
-      component: _5cf39c4a,
-      name: "shop-create-done___en"
+      path: "/en/shop/creator/done",
+      component: _1ff7cbc0,
+      name: "shop-creator-done___en"
     }, {
-      path: "/fr/shop/create/done",
-      component: _5cf39c4a,
-      name: "shop-create-done___fr"
+      path: "/fr/shop/creator/done",
+      component: _1ff7cbc0,
+      name: "shop-creator-done___fr"
     }, {
-      path: "/de/shop/create/done",
-      component: _5cf39c4a,
-      name: "shop-create-done___de"
+      path: "/de/shop/creator/done",
+      component: _1ff7cbc0,
+      name: "shop-creator-done___de"
     }, {
-      path: "/it/shop/create/done",
-      component: _5cf39c4a,
-      name: "shop-create-done___it"
+      path: "/it/shop/creator/done",
+      component: _1ff7cbc0,
+      name: "shop-creator-done___it"
     }, {
-      path: "/en/shop/create/name",
-      component: _f519725a,
-      name: "shop-create-name___en"
+      path: "/en/shop/creator/name",
+      component: _48777649,
+      name: "shop-creator-name___en"
     }, {
-      path: "/fr/shop/create/name",
-      component: _f519725a,
-      name: "shop-create-name___fr"
+      path: "/fr/shop/creator/name",
+      component: _48777649,
+      name: "shop-creator-name___fr"
     }, {
-      path: "/de/shop/create/name",
-      component: _f519725a,
-      name: "shop-create-name___de"
+      path: "/de/shop/creator/name",
+      component: _48777649,
+      name: "shop-creator-name___de"
     }, {
-      path: "/it/shop/create/name",
-      component: _f519725a,
-      name: "shop-create-name___it"
+      path: "/it/shop/creator/name",
+      component: _48777649,
+      name: "shop-creator-name___it"
     }, {
-      path: "/en/shop/create/terms",
-      component: _5be66f6f,
-      name: "shop-create-terms___en"
+      path: "/en/shop/creator/terms",
+      component: _0d2fa28e,
+      name: "shop-creator-terms___en"
     }, {
-      path: "/fr/shop/create/terms",
-      component: _5be66f6f,
-      name: "shop-create-terms___fr"
+      path: "/fr/shop/creator/terms",
+      component: _0d2fa28e,
+      name: "shop-creator-terms___fr"
     }, {
-      path: "/de/shop/create/terms",
-      component: _5be66f6f,
-      name: "shop-create-terms___de"
+      path: "/de/shop/creator/terms",
+      component: _0d2fa28e,
+      name: "shop-creator-terms___de"
     }, {
-      path: "/it/shop/create/terms",
-      component: _5be66f6f,
-      name: "shop-create-terms___it"
+      path: "/it/shop/creator/terms",
+      component: _0d2fa28e,
+      name: "shop-creator-terms___it"
     }, {
       path: "/en/categories/:slug?",
       component: _3dbde985,

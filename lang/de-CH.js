@@ -216,6 +216,9 @@ export default {
     },
     general_error: "Ein Fehler ist aufgetreten. Bitte laden Sie die Seite neu und versuchen Sie es erneut.",
     logged_out: "Sie sind jetzt ausgeloggt.",
+    shop: {
+      terms: "Sie müssen zunächst den Nutzungsbedingungen zustimmen, bevor Sie fortfahren."
+    },
     validation: "Das Formular enthält Fehler. Bitte korrigieren Sie sie und versuchen Sie es erneut.",
     welcome: "Wilkommen"
   }
