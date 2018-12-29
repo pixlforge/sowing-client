@@ -110,8 +110,10 @@ button {
   @apply block w-full appearance-none bg-green-lightest rounded-lg text-16 text-green-darkest leading-normal outline-none px-15 py-15 mt-10;
 }
 
-.select:hover {
-  @apply cursor-pointer;
+.input-disabled,
+.select-disabled,
+.textarea-disabled {
+  @apply bg-grey-faint text-grey-lighter cursor-not-allowed;
 }
 
 .select:focus {

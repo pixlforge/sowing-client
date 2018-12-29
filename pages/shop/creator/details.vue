@@ -20,6 +20,8 @@
             <div class="w-1/2 flex items-center">
               <input
                 v-model="localPostalCode"
+                :disabled="shopExists"
+                :class="{ 'input-disabled': shopExists }"
                 type="text"
                 placeholder="e.g. 3000"
                 class="input-base mt-0">
@@ -34,6 +36,8 @@
             <div class="w-1/2 flex items-center">
               <input
                 v-model="localCity"
+                :disabled="shopExists"
+                :class="{ 'input-disabled': shopExists }"
                 type="text"
                 placeholder="e.g. Bern"
                 class="input-base mt-0">
@@ -49,6 +53,8 @@
               <div class="relative w-full">
                 <select
                   v-model="localCountry"
+                  :disabled="shopExists"
+                  :class="{ 'select-disabled': shopExists }"
                   class="select mt-0">
                   <option
                     value=""
@@ -64,6 +70,7 @@
                   </option>
                 </select>
                 <font-awesome-icon
+                  v-show="!shopExists"
                   :icon="['fas', 'caret-down']"
                   class="select-caret"/>
               </div>
@@ -80,6 +87,8 @@
             <div class="w-1/2 flex items-center">
               <input
                 v-model="localShortDescriptionFr"
+                :disabled="shopExists"
+                :class="{ 'input-disabled': shopExists }"
                 type="text"
                 placeholder="e.g. Description courte en français"
                 class="input-base mt-0">
@@ -94,6 +103,8 @@
             <div class="w-1/2 flex items-center">
               <textarea
                 v-model="localLongDescriptionFr"
+                :disabled="shopExists"
+                :class="{ 'textarea-disabled': shopExists }"
                 placeholder="e.g. Description longue en français"
                 rows="10"
                 class="textarea-base mt-0"/>
@@ -110,6 +121,8 @@
             <div class="w-1/2 flex items-center">
               <input
                 v-model="localShortDescriptionEn"
+                :disabled="shopExists"
+                :class="{ 'input-disabled': shopExists }"
                 type="text"
                 placeholder="e.g. Description courte en anglais"
                 class="input-base mt-0">
@@ -124,6 +137,8 @@
             <div class="w-1/2 flex items-center">
               <textarea
                 v-model="localLongDescriptionEn"
+                :disabled="shopExists"
+                :class="{ 'textarea-disabled': shopExists }"
                 placeholder="e.g. Description longue en anglais"
                 rows="10"
                 class="textarea-base mt-0"/>
@@ -140,6 +155,8 @@
             <div class="w-1/2 flex items-center">
               <input
                 v-model="localShortDescriptionDe"
+                :disabled="shopExists"
+                :class="{ 'input-disabled': shopExists }"
                 type="text"
                 placeholder="e.g. Description courte en allemand"
                 class="input-base">
@@ -154,6 +171,8 @@
             <div class="w-1/2 flex items-center">
               <textarea
                 v-model="localLongDescriptionDe"
+                :disabled="shopExists"
+                :class="{ 'textarea-disabled': shopExists }"
                 placeholder="e.g. Description longue en allemand"
                 rows="10"
                 class="textarea-base mt-0"/>
@@ -170,6 +189,8 @@
             <div class="w-1/2 flex items-center">
               <input
                 v-model="localShortDescriptionIt"
+                :disabled="shopExists"
+                :class="{ 'input-disabled': shopExists }"
                 type="text"
                 placeholder="e.g. Description courte en italien"
                 class="input-base">
@@ -184,6 +205,8 @@
             <div class="w-1/2 flex items-center">
               <textarea
                 v-model="localLongDescriptionIt"
+                :disabled="shopExists"
+                :class="{ 'textarea-disabled': shopExists }"
                 placeholder="e.g. Description longue en italien"
                 rows="10"
                 class="textarea-base mt-0"/>
@@ -211,7 +234,7 @@
             <font-awesome-icon
               :icon="['far', 'chevron-circle-right']"
               class="mr-5"/>
-            Créer ma boutique
+            Personnaliser ma boutique
           </button>
 
         </div>
@@ -239,7 +262,9 @@ export default {
       locale: "locale",
       terms: "shop/terms",
       stepName: "shop/stepName",
+      stepDetails: "shop/stepDetails",
       shop: "shop/shop",
+      shopExists: "shop/shopExists",
       shopPostalCode: "shop/shopPostalCode",
       shopCity: "shop/shopCity",
       shopCountryId: "shop/shopCountryId",
@@ -345,12 +370,19 @@ export default {
     this.getCountries();
   },
   mounted() {
+    if (!this.shopExists && this.$auth.user.has_shop) {
+      this.getShop();
+      this.setStepDetails(true);
+    }
+
     this.setStepName(true);
   },
   methods: {
     ...mapActions({
       setStepName: "shop/setStepName",
+      setStepDetails: "shop/setStepDetails",
       setShop: "shop/setShop",
+      getShop: "shop/getShop",
       setShopPostalCode: "shop/setShopPostalCode",
       setShopCity: "shop/setShopCity",
       setShopCountryId: "shop/setShopCountryId",
@@ -364,20 +396,24 @@ export default {
       setShopLongDescriptionIt: "shop/setShopLongDescriptionIt"
     }),
     async store() {
-      try {
-        if (this.terms) {
-          let res = await this.$axios.$post("/shops", this.shop);
-          this.setShop(res.data);
-          this.$toast.success(
-            "Votre nouvelle boutique a été créée avec succès!"
-          );
-          this.next();
-        } else {
-          this.$toast.error(this.$t("toasts.shop.terms"));
+      if (this.stepDetails) {
+        this.next();
+      } else {
+        try {
+          if (this.terms) {
+            let res = await this.$axios.$post("/shops", this.shop);
+            this.setShop(res.data);
+            this.$toast.success(
+              "Votre nouvelle boutique a été créée avec succès!"
+            );
+            this.next();
+          } else {
+            this.$toast.error(this.$t("toasts.shop.terms"));
+          }
+        } catch (e) {
+          console.log(e.response.data.errors);
+          this.$toast.error(this.$t("toasts.validation"));
         }
-      } catch (e) {
-        console.log(e.response.data.errors);
-        this.$toast.error(this.$t("toasts.validation"));
       }
     },
     prev() {

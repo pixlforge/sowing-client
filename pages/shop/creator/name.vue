@@ -15,11 +15,15 @@
             <input
               id="name"
               v-model="localShopName"
+              :disabled="shopExists"
+              :class="{ 'input-disabled': shopExists }"
               name="name"
               type="text"
               placeholder="Nom de votre boutique"
               class="input-base rounded-r-none mt-0">
             <button
+              :disabled="shopExists"
+              :class="{ 'btn-disabled': shopExists }"
               class="btn btn-primary rounded-l-none nowrap">
               <font-awesome-icon
                 :icon="['far', 'rocket']"
@@ -68,7 +72,9 @@ export default {
   },
   computed: {
     ...mapGetters({
-      shopName: "shop/shopName"
+      shopName: "shop/shopName",
+      stepDetails: "shop/stepDetails",
+      shopExists: "shop/shopExists"
     }),
     localShopName: {
       get() {
@@ -79,9 +85,19 @@ export default {
       }
     }
   },
+  mounted() {
+    if (!this.shopExists && this.$auth.user.has_shop) {
+      this.getShop();
+      this.setStepName(true);
+      this.setStepDetails(true);
+    }
+  },
   methods: {
     ...mapActions({
-      setShopName: "shop/setShopName"
+      setShopName: "shop/setShopName",
+      getShop: "shop/getShop",
+      setStepName: "shop/setStepName",
+      setStepDetails: "shop/setStepDetails"
     }),
     prev() {
       this.$router.push(this.localePath({ name: "shop-creator-terms" }));
