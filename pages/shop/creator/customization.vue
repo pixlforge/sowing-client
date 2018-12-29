@@ -69,7 +69,8 @@ export default {
   computed: {
     ...mapGetters({
       stepName: "shop/stepName",
-      stepDetails: "shop/stepDetails"
+      stepDetails: "shop/stepDetails",
+      shopExistsInStore: "shop/shopExistsInStore"
     })
   },
   created() {
@@ -103,11 +104,19 @@ export default {
     const dropzoneProfile = this.$refs.dropzoneProfile.dropzone;
     const dropzoneCover = this.$refs.dropzoneCover.dropzone;
 
+    this.setStepName(true);
     this.setStepDetails(true);
+
+    if (!this.shopExistsInStore) {
+      this.hydrateShop();
+    }
   },
   methods: {
     ...mapActions({
-      setStepDetails: "shop/setStepDetails"
+      setShop: "shop/setShop",
+      setStepName: "shop/setStepName",
+      setStepDetails: "shop/setStepDetails",
+      hydrateShop: "shop/hydrateShop"
     }),
     dzMaxFilesExceeded(file) {
       this.$refs.dropzoneProfile.removeFile(file);

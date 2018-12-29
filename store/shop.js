@@ -40,6 +40,9 @@ export const getters = {
   shop(state) {
     return state.form;
   },
+  shopExistsInStore(state) {
+    return state.form.id;
+  },
   shopName(state) {
     return state.form.name;
   },
@@ -183,5 +186,9 @@ export const actions = {
   },
   setShopLongDescriptionIt({ commit }, description) {
     commit('SET_SHOP_LONG_DESCRIPTION_IT', description);
+  },
+  async hydrateShop({ dispatch }) {
+    let res = await this.$axios.$get("/user/shop");
+    dispatch('setShop', res.data);
   },
 };
