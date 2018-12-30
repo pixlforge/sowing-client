@@ -9,7 +9,7 @@
         <label
           for="first_name"
           class="label">
-          {{ $t("components.forms.labels.first_name") }}
+          {{ $t("forms.labels.first_name") }}
         </label>
         <input
           id="first_name"
@@ -28,7 +28,7 @@
         <label
           for="last_name"
           class="label">
-          {{ $t("components.forms.labels.last_name") }}
+          {{ $t("forms.labels.last_name") }}
         </label>
         <input
           id="last_name"
@@ -47,7 +47,7 @@
         <label
           for="company_name"
           class="label">
-          {{ $t("components.forms.labels.company_name") }}
+          {{ $t("forms.labels.company_name") }}
         </label>
         <input
           id="company_name"
@@ -66,7 +66,7 @@
         <label
           for="address_line_1"
           class="label">
-          {{ $t("components.forms.labels.address_line_1") }}
+          {{ $t("forms.labels.address_line_1") }}
         </label>
         <input
           id="address_line_1"
@@ -85,7 +85,7 @@
         <label
           for="address_line_2"
           class="label">
-          {{ $t("components.forms.labels.address_line_2") }}
+          {{ $t("forms.labels.address_line_2") }}
         </label>
         <input
           id="address_line_2"
@@ -104,7 +104,7 @@
         <label
           for="postal_code"
           class="label">
-          {{ $t("components.forms.labels.postal_code") }}
+          {{ $t("forms.labels.postal_code") }}
         </label>
         <input
           id="postal_code"
@@ -123,7 +123,7 @@
         <label
           for="city"
           class="label">
-          {{ $t("components.forms.labels.city") }}
+          {{ $t("forms.labels.city") }}
         </label>
         <input
           id="city"
@@ -148,12 +148,12 @@
         <button
           type="submit"
           class="btn btn-primary mr-20">
-          {{ $t("components.forms.buttons.create") }}
+          {{ $t("buttons.create") }}
         </button>
         <button
           class="btn btn-default"
           @click.prevent="closeAddressCreator">
-          {{ $t("components.forms.buttons.cancel") }}
+          {{ $t("buttons.cancel") }}
         </button>
       </div>
     </form>

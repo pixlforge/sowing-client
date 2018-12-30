@@ -14,7 +14,7 @@
     <p
       :class="{ 'cc-last-four-selected': selectedPaymentMethod }"
       class="cc-last-four">
-      {{ $t("components.cc.ending_in") }} {{ paymentMethod.last_four }}
+      {{ $t("credit_cards.ending_in") }} {{ paymentMethod.last_four }}
     </p>
     <font-awesome-icon
       v-if="selectedPaymentMethod"

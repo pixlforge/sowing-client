@@ -5,7 +5,7 @@
 
         <!-- Categories -->
         <div class="w-200 lg:w-1/5 mx-auto mt-50 lg:mt-100">
-          <h5 class="title-small mb-10">{{ $t('components.footer.titles.categories') }}</h5>
+          <h5 class="title-small mb-10">{{ $t('footer.titles.categories') }}</h5>
           <ul class="list-reset leading-normal">
             <li
               v-for="category in categories"
@@ -22,27 +22,27 @@
 
         <!-- Selling -->
         <div class="w-200 lg:w-1/5 mx-auto mt-50 lg:mt-100">
-          <h5 class="title-small">{{ $t("components.footer.titles.sell_on_sowing") }}</h5>
+          <h5 class="title-small">{{ $t("footer.titles.sell_on_sowing") }}</h5>
           <ul class="list-reset leading-normal">
             <li class="mt-10">
               <nuxt-link
                 :to="localePath({ name: 'index' })"
                 class="footer-link">
-                {{ $t("components.footer.links.login") }}
+                {{ $t("footer.links.login") }}
               </nuxt-link>
             </li>
             <li>
               <nuxt-link
                 :to="localePath({ name: 'index' })"
                 class="footer-link">
-                {{ $t("components.footer.links.your_own_store") }}
+                {{ $t("footer.links.your_own_store") }}
               </nuxt-link>
             </li>
             <li>
               <nuxt-link
                 :to="localePath({ name: 'index' })"
                 class="footer-link">
-                {{ $t("components.footer.links.new_vendors") }}
+                {{ $t("footer.links.new_vendors") }}
               </nuxt-link>
             </li>
           </ul>
@@ -50,27 +50,27 @@
 
         <!-- About -->
         <div class="w-200 lg:w-1/5 mx-auto mt-50 lg:mt-100">
-          <h5 class="title-small">{{ $t("components.footer.titles.about") }}</h5>
+          <h5 class="title-small">{{ $t("footer.titles.about") }}</h5>
           <ul class="list-reset leading-normal">
             <li class="mt-10">
               <nuxt-link
                 :to="localePath({ name: 'index' })"
                 class="footer-link">
-                {{ $t("components.footer.links.terms") }}
+                {{ $t("footer.links.terms") }}
               </nuxt-link>
             </li>
             <li>
               <nuxt-link
                 :to="localePath({ name: 'index' })"
                 class="footer-link">
-                {{ $t("components.footer.links.payments") }}
+                {{ $t("footer.links.payments") }}
               </nuxt-link>
             </li>
             <li>
               <nuxt-link
                 :to="localePath({ name: 'index' })"
                 class="footer-link">
-                {{ $t("components.footer.links.shipments") }}
+                {{ $t("footer.links.shipments") }}
               </nuxt-link>
             </li>
           </ul>
@@ -78,7 +78,7 @@
 
         <!-- Languages -->
         <div class="w-200 lg:w-1/5 mx-auto mt-50 lg:mt-100">
-          <h5 class="title-small mb-10">{{ $t("components.footer.titles.language") }}</h5>
+          <h5 class="title-small mb-10">{{ $t("footer.titles.language") }}</h5>
           <ul class="list-reset leading-normal">
             <li
               v-for="locale in $i18n.locales"
@@ -94,7 +94,7 @@
 
         <!-- Social Networks -->
         <div class="w-200 lg:w-1/5 mx-auto mt-50 lg:mt-100">
-          <h5 class="title-small">{{ $t("components.footer.titles.social_networks") }}</h5>
+          <h5 class="title-small">{{ $t("footer.titles.social_networks") }}</h5>
           <ul class="list-reset leading-normal">
             <li class="mt-10">
               <a

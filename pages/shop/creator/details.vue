@@ -408,7 +408,7 @@ export default {
             );
             this.next();
           } else {
-            this.$toast.error(this.$t("toasts.shop.terms"));
+            this.$toast.error(this.$t("toasts.terms"));
           }
         } catch (e) {
           console.log(e.response.data.errors);

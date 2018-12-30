@@ -97,7 +97,7 @@
               <font-awesome-icon
                 :icon="['far', 'cart-plus']"
                 class="mr-10"/>
-              {{ $t("components.variations.buttons.add_to_cart") }}
+              {{ $t("buttons.add_to_cart") }}
             </button>
           </div>
 

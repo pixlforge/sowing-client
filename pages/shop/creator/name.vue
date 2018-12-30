@@ -2,12 +2,10 @@
   <main>
     <section class="container section">
       <div class="flex flex-col items-center">
-        <h2 class="title-large text-center mt-100">Nommez votre boutique</h2>
+        <h2 class="title-large text-center mt-100">{{ $t("pages.shop.creator.name.title") }}</h2>
 
         <section class="max-w-1000">
-          <p class="paragraph-body text-center my-60">
-            Donnez à votre boutique un nom unique, marquant et qui incite les visiteurs à s'intéresser à vos produits. Une identité forte est un bon moyen pour construire une boutique attirante et reconnue.
-          </p>
+          <p class="paragraph-body text-center my-60">{{ $t("pages.shop.creator.name.paragraph") }}</p>
         </section>
 
         <section class="w-full max-w-600">

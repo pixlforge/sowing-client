@@ -1,4 +1,25 @@
 export default {
+
+  /**
+   * Buttons
+   */
+  buttons: {
+    add_to_cart: "Zum Warenkorb hinzufügen",
+    connection: "Einloggen",
+    create_account: "Konto erstellen",
+    create_my_shop: "Schaffe meinen Shop",
+    password_email: "Senden Sie einen Link, um mein Passwort zurückzusetzen",
+    password_reset: "Passwort zurücksetzen",
+    create: "Erstellen",
+    cancel: "Stornieren",
+    login: "Einloggen",
+    register: "Konto erstellen",
+    subscribe: "Anmeldung"
+  },
+
+  /**
+   * Components
+   */
   components: {
     cart: {
       labels: {
@@ -14,69 +35,7 @@ export default {
         see_all: "Siehe all Produkte"
       }
     },
-    cc: {
-      ending_in: "Endet in"
-    },
-    dropzone: {
-      dict_remove_file: "Löschen",
-      dict_cancel_upload: "Stornieren",
-      dict_cancel_upload_confirmation: "Möchten Sie den Upload wirklich abbrechen?",
-      dict_default_message: "Ziehen Sie ein Bild hierher, um es herunterzuladen, oder klicken Sie, um es auszuwählen.",
-      dict_fallback_message: "Ihr Browser ist zu alt oder nicht kompatibel.",
-      dict_file_too_big: "Diese Datei ist zu groß.",
-    },
-    footer: {
-      titles: {
-        categories: 'Kategorien',
-        language: "Sprachen",
-        sell_on_sowing: "Verkaufen auf Sowing",
-        about: "Über Sowing",
-        social_networks: "Soziale Netzwerke"
-      },
-      links: {
-        login: "Einloggen",
-        your_own_store: "Ihr eigenes Geschäft",
-        new_vendors: "Neue Verkäufer",
-        terms: "Nutzungsbedingungen",
-        payments: "Zahlungsmethoden",
-        shipments: "Sendungen"
-      },
-      disclaimer: {
-        rights: "Alle Rechte vorbehalten",
-        made_with: "Gemacht mit",
-        by: "von"
-      }
-    },
-    forms: {
-      labels: {
-        email: "Email",
-        name: "Name",
-        password: "Passwort",
-        password_confirmation: "Passwort bestätigen",
-        first_name: "Vorname",
-        last_name: "Nachname",
-        company_name: "Firma",
-        address_line_1: "Anschrift Zeile 1",
-        address_line_2: "Anschrift Zeile 2",
-        postal_code: "Postleitzahl",
-        city: "Ort",
-        country: "Land"
-      },
-      buttons: {
-        connection: "Einloggen",
-        register: "Konto erstellen",
-        password_email: "Senden Sie einen Link, um mein Passwort zurückzusetzen",
-        password_reset: "Passwort zurücksetzen",
-        create: "Erstellen",
-        cancel: "Stornieren"
-      },
-      select: "Wählen"
-    },
     navbar: {
-      buttons: {
-        login: "Einloggen",
-        register: "Konto erstellen",
-      },
       user: {
         logout: "Ausloggen"
       }
@@ -90,32 +49,86 @@ export default {
         out_of_stock: "Ausverkauft"
       }
     },
-    streaks: {
-      register: {
-        title: "Verkaufen Sie heute",
-        body: "Starten Sie jetzt mit wenigen Klicks Ihren persönlichen Shop.",
-        button: "Schaffe meinen Shop"
-      },
-      newsletter: {
-        title: "Melden Sie sich für unseren Newsletter an",
-        body: "Schnelle und einfache Registrierung, kein Spam und jederzeit abbestellen.",
-        button: "Anmeldung",
-        placeholder: "ihre.email@adresse.ch"
-      },
-    },
     variations: {
       labels: {
         quantity: "Menge",
         selection: "Auswahl",
-      },
-      buttons: {
-        add_to_cart: "Zum Warenkorb hinzufügen"
       },
       select: {
         out_of_stock: "Ausverkauft"
       }
     }
   },
+
+  /**
+   * Credit Cards
+   */
+  credit_cards: {
+    ending_in: "Endet in"
+  },
+
+  /**
+   * Dropzone
+   */
+  dropzone: {
+    dict_remove_file: "Löschen",
+    dict_cancel_upload: "Stornieren",
+    dict_cancel_upload_confirmation: "Möchten Sie den Upload wirklich abbrechen?",
+    dict_default_message: "Ziehen Sie ein Bild hierher, um es herunterzuladen, oder klicken Sie, um es auszuwählen.",
+    dict_fallback_message: "Ihr Browser ist zu alt oder nicht kompatibel.",
+    dict_file_too_big: "Diese Datei ist zu groß.",
+  },
+
+  /**
+   * Footer
+   */
+  footer: {
+    titles: {
+      categories: 'Kategorien',
+      language: "Sprachen",
+      sell_on_sowing: "Verkaufen auf Sowing",
+      about: "Über Sowing",
+      social_networks: "Soziale Netzwerke"
+    },
+    links: {
+      login: "Einloggen",
+      your_own_store: "Ihr eigenes Geschäft",
+      new_vendors: "Neue Verkäufer",
+      terms: "Nutzungsbedingungen",
+      payments: "Zahlungsmethoden",
+      shipments: "Sendungen"
+    },
+    disclaimer: {
+      rights: "Alle Rechte vorbehalten",
+      made_with: "Gemacht mit",
+      by: "von"
+    }
+  },
+
+  /**
+   * Forms
+   */
+  forms: {
+    labels: {
+      email: "Email",
+      name: "Name",
+      password: "Passwort",
+      password_confirmation: "Passwort bestätigen",
+      first_name: "Vorname",
+      last_name: "Nachname",
+      company_name: "Firma",
+      address_line_1: "Anschrift Zeile 1",
+      address_line_2: "Anschrift Zeile 2",
+      postal_code: "Postleitzahl",
+      city: "Ort",
+      country: "Land"
+    },
+    select: "Wählen"
+  },
+
+  /**
+   * Pages
+   */
   pages: {
     cart: {
       title: "Mein Warenkorb",
@@ -200,9 +213,34 @@ export default {
       title: "Konto erfolgreich erstellt!"
     },
     shop: {
-      title: "Mein Geschäft"
+      title: "Mein Shop",
+      creator: {
+        name: {
+          title: "Benennen Sie Ihren Shop",
+          paragraph: "Geben Sie Ihrem Shop einen eindeutigen Namen, der den Ton angibt und Besucher dazu anregt, sich für Ihre Produkte zu interessieren. Eine starke Identität ist eine gute Möglichkeit, ein attraktives und anerkanntes Shop aufzubauen."
+        }
+      }
     }
   },
+
+  /**
+   * Streaks
+   */
+  streaks: {
+    register: {
+      title: "Verkaufen Sie heute",
+      body: "Starten Sie jetzt mit wenigen Klicks Ihren persönlichen Shop.",
+    },
+    newsletter: {
+      title: "Melden Sie sich für unseren Newsletter an",
+      body: "Schnelle und einfache Registrierung, kein Spam und jederzeit abbestellen.",
+      placeholder: "ihre.email@adresse.ch"
+    },
+  },
+
+  /**
+   * Toasts
+   */
   toasts: {
     addresses: {
       created: "Neue Adresse erfolgreich erstellt!",
@@ -216,9 +254,7 @@ export default {
     },
     general_error: "Ein Fehler ist aufgetreten. Bitte laden Sie die Seite neu und versuchen Sie es erneut.",
     logged_out: "Sie sind jetzt ausgeloggt.",
-    shop: {
-      terms: "Sie müssen zunächst den Nutzungsbedingungen zustimmen, bevor Sie fortfahren."
-    },
+    terms: "Sie müssen zunächst den Nutzungsbedingungen zustimmen, bevor Sie fortfahren.",
     validation: "Das Formular enthält Fehler. Bitte korrigieren Sie sie und versuchen Sie es erneut.",
     welcome: "Wilkommen"
   }

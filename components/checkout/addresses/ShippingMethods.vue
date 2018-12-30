@@ -12,7 +12,7 @@
           <option
             value=""
             disabled>
-            {{ $t("components.forms.select") }}
+            {{ $t("forms.select") }}
           </option>
           <option
             v-for="method in methods"

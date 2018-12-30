@@ -3,7 +3,7 @@
     <label
       for="country"
       class="label">
-      {{ $t("components.forms.labels.country") }}
+      {{ $t("forms.labels.country") }}
     </label>
     <div class="relative">
       <select
@@ -16,7 +16,7 @@
           value=""
           selected
           disabled>
-          {{ $t("components.forms.select") }}
+          {{ $t("forms.select") }}
         </option>
         <option
           v-for="country in countries"

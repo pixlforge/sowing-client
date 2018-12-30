@@ -22,7 +22,7 @@
           <label
             for="email"
             class="label">
-            {{ $t("components.forms.labels.email") }}
+            {{ $t("forms.labels.email") }}
           </label>
           <input
             id="email"
@@ -38,7 +38,7 @@
           <label
             for="password"
             class="label">
-            {{ $t("components.forms.labels.password") }}
+            {{ $t("forms.labels.password") }}
           </label>
           <input
             id="password"
@@ -73,7 +73,7 @@
           <font-awesome-icon
             :icon="['far', 'key']"
             class="mr-10"/>
-          {{ $t("components.forms.buttons.connection") }}
+          {{ $t("buttons.connection") }}
         </button>
 
       </form>

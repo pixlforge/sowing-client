@@ -22,7 +22,7 @@
           <label
             for="name"
             class="label">
-            {{ $t("components.forms.labels.name") }}
+            {{ $t("forms.labels.name") }}
           </label>
           <input
             id="name"
@@ -37,7 +37,7 @@
           <label
             for="email"
             class="label">
-            {{ $t("components.forms.labels.email") }}
+            {{ $t("forms.labels.email") }}
           </label>
           <input
             id="email"
@@ -52,7 +52,7 @@
           <label
             for="password"
             class="label">
-            {{ $t("components.forms.labels.password") }}
+            {{ $t("forms.labels.password") }}
           </label>
           <input
             id="password"
@@ -67,7 +67,7 @@
           <label
             for="password_confirmation"
             class="label">
-            {{ $t("components.forms.labels.password_confirmation") }}
+            {{ $t("forms.labels.password_confirmation") }}
           </label>
           <input
             id="password_confirmation"
@@ -81,7 +81,7 @@
           <label for="terms">
             <input
               id="terms"
-              v-model="form.terms"
+              v-model="terms"
               type="checkbox"
               name="terms"
               class="text-20 mr-10">
@@ -100,7 +100,7 @@
           <font-awesome-icon
             :icon="['far', 'user']"
             class="mr-10"/>
-          {{ $t("components.forms.buttons.register") }}
+          {{ $t("buttons.create_account") }}
         </button>
         
       </form>
@@ -127,9 +127,9 @@ export default {
         name: "",
         email: "",
         password: "",
-        password_confirmation: "",
-        terms: false
-      }
+        password_confirmation: ""
+      },
+      terms: false
     };
   },
   async asyncData({ app }) {
@@ -139,7 +139,17 @@ export default {
   },
   methods: {
     async register() {
-      this.$router.push(this.localePath({ name: "register-success" }));
+      if (!this.terms) {
+        this.$toast.error(this.$t("toasts.terms"));
+        return;
+      }
+      try {
+        let res = await this.$axios.$post("/auth/register", { ...this.form });
+        this.$toast.success(`${this.$t("toasts.welcome")} ${res.data.name}!`);
+        this.$router.push(this.localePath({ name: "register-success" }));
+      } catch (e) {
+        this.$toast.error(this.$t("toasts.validation"));
+      }
     }
   }
 };

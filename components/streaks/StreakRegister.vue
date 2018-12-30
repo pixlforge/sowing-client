@@ -12,11 +12,11 @@
         
         <div class="w-full lg:w-1/2 xl:w-2/3 py-110">
           <h3 class="title-large text-white">
-            {{ $t("components.streaks.register.title") }}
+            {{ $t("streaks.register.title") }}
           </h3>
           
           <p class="text-20 xl:text-26 font-semibold text-white text-center lg:text-left mt-30">
-            {{ $t("components.streaks.register.body") }}
+            {{ $t("streaks.register.body") }}
           </p>
 
           <div class="flex justify-center lg:justify-start mt-40">
@@ -26,7 +26,7 @@
               <font-awesome-icon
                 :icon="['far', 'store']"
                 class="mr-10"/>
-              {{ $t("components.streaks.register.button") }}
+              {{ $t("buttons.create_my_shop") }}
             </nuxt-link>
           </div>
         </div>

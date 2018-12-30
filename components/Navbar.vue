@@ -25,7 +25,7 @@
       <font-awesome-icon
         :icon="['far', 'rocket']"
         class="mr-5"/>
-      {{ $t("components.navbar.buttons.register") }}
+      {{ $t("buttons.register") }}
     </nuxt-link>
       
     <!-- Login -->
@@ -36,7 +36,7 @@
       <font-awesome-icon
         :icon="['far', 'user']"
         class="mr-5"/>
-      {{ $t("components.navbar.buttons.login") }}
+      {{ $t("buttons.login") }}
     </nuxt-link>
 
     <!-- User -->

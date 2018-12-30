@@ -1,4 +1,25 @@
 export default {
+
+  /**
+   * Buttons
+   */
+  buttons: {
+    add_to_cart: "Add to cart",
+    connection: "Log in",
+    create_account: "Create account",
+    create_my_shop: "Create my shop",
+    password_email: "Send a link to reset my password",
+    password_reset: "Reset password",
+    create: "Create",
+    cancel: "Cancel",
+    login: "Log in",
+    register: "Create an account",
+    subscribe: "Subscribe"
+  },
+
+  /**
+   * Components
+   */
   components: {
     cart: {
       labels: {
@@ -14,69 +35,7 @@ export default {
         see_all: "Show all products"
       }
     },
-    cc: {
-      ending_in: "Ending in"
-    },
-    dropzone: {
-      dict_remove_file: "Remove",
-      dict_cancel_upload: "Cancel",
-      dict_cancel_upload_confirmation: "Are you sure you want to cancel the upload?",
-      dict_default_message: "Drag and drop an image here to download or click to choose your image.",
-      dict_fallback_message: "Your browser is too old or incompatible.",
-      dict_file_too_big: "This file is too large.",
-    },
-    footer: {
-      titles: {
-        categories: 'Categories',
-        language: "Language",
-        sell_on_sowing: "Sell on Sowing",
-        about: "About",
-        social_networks: "Social Networks"
-      },
-      links: {
-        login: "Log in",
-        your_own_store: "Your own store",
-        new_vendors: "Newest vendors",
-        terms: "Terms of use",
-        payments: "Payment methods",
-        shipments: "Shipments"
-      },
-      disclaimer: {
-        rights: "All rights reserved",
-        made_with: "Made with",
-        by: "by"
-      }
-    },
-    forms: {
-      labels: {
-        email: "Email",
-        name: "Name",
-        password: "Password",
-        password_confirmation: "Confirm password",
-        first_name: "First name",
-        last_name: "Last name",
-        company_name: "Company",
-        address_line_1: "Address line 1",
-        address_line_2: "Address line 2",
-        postal_code: "Postal code",
-        city: "City",
-        country: "Country"
-      },
-      buttons: {
-        connection: "Log in",
-        register: "Create account",
-        password_email: "Send a link to reset my password",
-        password_reset: "Reset password",
-        create: "Create",
-        cancel: "Cancel"
-      },
-      select: "Select"
-    },
     navbar: {
-      buttons: {
-        login: "Log in",
-        register: "Create an account",
-      },
       user: {
         logout: "Log out"
       }
@@ -90,32 +49,86 @@ export default {
         out_of_stock: "Out of stock"
       }
     },
-    streaks: {
-      register: {
-        title: "Sell today",
-        body: "Launch your own store easily in a few clicks now.",
-        button: "Create my store"
-      },
-      newsletter: {
-        title: "Subscribe to our newsletter",
-        body: "Quick, easy registration, no spam, and unsubscribe whenever you want.",
-        button: "Subscribe",
-        placeholder: "your.email@address.ch"
-      },
-    },
     variations: {
       labels: {
         quantity: "Quantity",
         selection: "Select",
-      },
-      buttons: {
-        add_to_cart: "Add to cart"
       },
       select: {
         out_of_stock: "Out of stock"
       }
     }
   },
+
+  /**
+   * Credit Cards
+   */
+  credit_cards: {
+    ending_in: "Ending in"
+  },
+
+  /**
+   * Dropzone
+   */
+  dropzone: {
+    dict_remove_file: "Remove",
+    dict_cancel_upload: "Cancel",
+    dict_cancel_upload_confirmation: "Are you sure you want to cancel the upload?",
+    dict_default_message: "Drag and drop an image here to download or click to choose your image.",
+    dict_fallback_message: "Your browser is too old or incompatible.",
+    dict_file_too_big: "This file is too large.",
+  },
+
+  /**
+   * Footer
+   */
+  footer: {
+    titles: {
+      categories: 'Categories',
+      language: "Language",
+      sell_on_sowing: "Sell on Sowing",
+      about: "About",
+      social_networks: "Social Networks"
+    },
+    links: {
+      login: "Log in",
+      your_own_store: "Your own store",
+      new_vendors: "Newest vendors",
+      terms: "Terms of use",
+      payments: "Payment methods",
+      shipments: "Shipments"
+    },
+    disclaimer: {
+      rights: "All rights reserved",
+      made_with: "Made with",
+      by: "by"
+    }
+  },
+
+  /**
+   * Forms
+   */
+  forms: {
+    labels: {
+      email: "Email",
+      name: "Name",
+      password: "Password",
+      password_confirmation: "Confirm password",
+      first_name: "First name",
+      last_name: "Last name",
+      company_name: "Company",
+      address_line_1: "Address line 1",
+      address_line_2: "Address line 2",
+      postal_code: "Postal code",
+      city: "City",
+      country: "Country"
+    },
+    select: "Select"
+  },
+
+  /**
+   * Pages
+   */
   pages: {
     cart: {
       title: "My cart",
@@ -200,9 +213,34 @@ export default {
       title: "Account created successfully!"
     },
     shop: {
-      title: "My shop"
+      title: "My shop",
+      creator: {
+        name: {
+          title: "Name your shop",
+          paragraph: "Give your store a unique name that sets the tone and encourages visitors to take an interest in your products. A strong identity is a good way to build an attractive and recognized shop."
+        }
+      }
     }
   },
+
+  /**
+   * Streaks
+   */
+  streaks: {
+    register: {
+      title: "Sell today",
+      body: "Launch your own store easily in a few clicks now.",
+    },
+    newsletter: {
+      title: "Subscribe to our newsletter",
+      body: "Quick, easy registration, no spam, and unsubscribe whenever you want.",
+      placeholder: "your.email@address.ch"
+    },
+  },
+
+  /**
+   * Toasts
+   */
   toasts: {
     addresses: {
       created: "New address created successfully!",
@@ -216,9 +254,7 @@ export default {
     },
     general_error: "An error has occurred. Please reload the page and try again, please.",
     logged_out: "You are now logged out.",
-    shop: {
-      terms: "You must first agree to the terms and conditions before going forward."
-    },
+    terms: "You must first agree to the terms and conditions before going forward.",
     validation: "The form contains errors. Please correct them and try again.",
     welcome: "Welcome back"
   }

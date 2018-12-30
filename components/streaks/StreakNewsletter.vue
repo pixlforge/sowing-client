@@ -12,11 +12,11 @@
         
         <div class="w-full lg:w-1/2 xl:w-2/3 py-110">
           <h3 class="title-large text-white">
-            {{ $t("components.streaks.newsletter.title") }}
+            {{ $t("streaks.newsletter.title") }}
           </h3>
           
           <p class="text-20 xl:text-26 font-semibold text-white text-center lg:text-left mt-30">
-            {{ $t("components.streaks.newsletter.body") }}
+            {{ $t("streaks.newsletter.body") }}
           </p>
 
           <form
@@ -36,7 +36,7 @@
               <font-awesome-icon
                 :icon="['far', 'paper-plane']"
                 class="mr-10"/>
-              {{ $t("components.streaks.newsletter.button") }}
+              {{ $t("buttons.subscribe") }}
             </button>
           </form>
         </div>
@@ -55,7 +55,7 @@ export default {
   },
   computed: {
     placeholder() {
-      return this.$t("components.streaks.newsletter.placeholder");
+      return this.$t("streaks.newsletter.placeholder");
     }
   }
 };

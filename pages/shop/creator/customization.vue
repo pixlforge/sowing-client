@@ -78,16 +78,16 @@ export default {
       maxFiles: 1,
       maxFilesize: 2,
       addRemoveLinks: true,
-      dictRemoveFile: this.$t("components.dropzone.dict_remove_file"),
-      dictCancelUpload: this.$t("components.dropzone.dict_cancel_upload"),
+      dictRemoveFile: this.$t("dropzone.dict_remove_file"),
+      dictCancelUpload: this.$t("dropzone.dict_cancel_upload"),
       dictCancelUploadConfirmation: this.$t(
-        "components.dropzone.dict_cancel_upload_confirmation"
+        "dropzone.dict_cancel_upload_confirmation"
       ),
       dictDefaultMessage: `<span>${this.$t(
-        "components.dropzone.dict_default_message"
+        "dropzone.dict_default_message"
       )}</span>`,
-      dictFallbackMessage: this.$t("components.dropzone.dict_fallback_message"),
-      dictFileTooBig: this.$t("components.dropzone.dict_file_too_big")
+      dictFallbackMessage: this.$t("dropzone.dict_fallback_message"),
+      dictFileTooBig: this.$t("dropzone.dict_file_too_big")
     };
 
     this.optionsForAvatar = {
