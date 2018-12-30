@@ -5,6 +5,8 @@ export default {
    */
   buttons: {
     add_to_cart: "Zum Warenkorb hinzufügen",
+    back: "Zurück",
+    check_availability: "Verfügbarkeit prüfen",
     connection: "Einloggen",
     create_account: "Konto erstellen",
     create_my_shop: "Schaffe meinen Shop",
@@ -14,7 +16,8 @@ export default {
     cancel: "Stornieren",
     login: "Einloggen",
     register: "Konto erstellen",
-    subscribe: "Anmeldung"
+    subscribe: "Anmeldung",
+    to_my_shop_details: "Zu meinen Shopdetails"
   },
 
   /**
@@ -253,6 +256,8 @@ export default {
       product_removed: "wurde entfernt."
     },
     general_error: "Ein Fehler ist aufgetreten. Bitte laden Sie die Seite neu und versuchen Sie es erneut.",
+    is_already_in_use: "wird bereits verwendet",
+    is_available: "ist verfügbar",
     logged_out: "Sie sind jetzt ausgeloggt.",
     terms: "Sie müssen zunächst den Nutzungsbedingungen zustimmen, bevor Sie fortfahren.",
     validation: "Das Formular enthält Fehler. Bitte korrigieren Sie sie und versuchen Sie es erneut.",

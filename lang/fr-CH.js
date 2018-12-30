@@ -5,6 +5,8 @@ export default {
    */
   buttons: {
     add_to_cart: "Ajouter au panier",
+    back: "Retour",
+    check_availability: "Vérifier la disponibilité",
     connection: "Connexion",
     create_account: "Créer le compte",
     create_my_shop: "Créer ma boutique",
@@ -14,7 +16,8 @@ export default {
     cancel: "Annuler",
     login: "Connexion",
     register: "Créer un compte",
-    subscribe: "Inscription"
+    subscribe: "Inscription",
+    to_my_shop_details: "Vers les détails de ma boutique"
   },
 
   /**
@@ -253,6 +256,8 @@ export default {
       product_removed: "supprimé."
     },
     general_error: "Une erreur est survenue. Veuillez recharger la page et réessayer, svp.",
+    is_already_in_use: "est déjà utilisé",
+    is_available: "est disponible",
     logged_out: "Vous êtes maintenant déconnecté(e)",
     terms: "Vous devez d'abord accepter les conditions d'utilisation avant de continuer.",
     validation: "Le formulaire comporte des erreurs. Veuillez, svp, les corriger et réessayer.",

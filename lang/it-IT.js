@@ -5,6 +5,8 @@ export default {
    */
   buttons: {
     add_to_cart: "Aggiungi al carrello",
+    back: "Indietro",
+    check_availability: "Verificare la disponibilità",
     connection: "Accedi",
     create_account: "Crea un account",
     create_my_shop: "Crea il mio negozio",
@@ -14,7 +16,8 @@ export default {
     cancel: "Annulla",
     login: "Accesso",
     register: "Crea un account",
-    subscribe: "Iscrizione"
+    subscribe: "Iscrizione",
+    to_my_shop_details: "Verso i dettagli del mio negozio"
   },
 
   /**
@@ -253,6 +256,8 @@ export default {
       product_removed: "è stato rimosso."
     },
     general_error: "C'è stato un errore. Si prega, per favore, di ricaricare la pagina e riprovare.",
+    is_already_in_use: "è già in uso",
+    is_available: "è disponibile",
     logged_out: "Ora siete disconnessi.",
     terms: "Devi prima accettare i termini e le condizioni prima di continuare.",
     validation: "Il modulo contiene errori. Si prega di correggerli e riprovare.",

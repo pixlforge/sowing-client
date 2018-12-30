@@ -27,7 +27,7 @@
               <font-awesome-icon
                 :icon="['far', 'rocket']"
                 class="mr-5"/>
-              Vérifier la disponibilité
+              {{ $t("buttons.check_availability") }}
             </button>
           </div>
         </section>
@@ -41,7 +41,7 @@
             <font-awesome-icon
               :icon="['far', 'chevron-circle-left']"
               class="mr-5"/>
-            Retour
+            {{ $t("buttons.back") }}
           </button>
 
           <!-- Next -->
@@ -51,7 +51,7 @@
             <font-awesome-icon
               :icon="['far', 'chevron-circle-right']"
               class="mr-5"/>
-            Vers les détails de ma boutique
+            {{ $t("buttons.to_my_shop_details") }}
           </button>
 
         </div>
@@ -104,9 +104,15 @@ export default {
           let res = await this.$axios.$post("/shops/checker", {
             name: this.shopName
           });
-          this.$toast.success(`"<em>${this.shopName}</em>" est disponible!`);
+          this.$toast.success(
+            `"<em>${this.shopName}</em>" ${this.$t("toasts.is_available")}!`
+          );
         } catch (e) {
-          this.$toast.error(`"<em>${this.shopName}</em>" est déjà utilisé.`);
+          this.$toast.error(
+            `"<em>${this.shopName}</em>" ${this.$t(
+              "toasts.is_already_in_use"
+            )}.`
+          );
         }
       }
     },
