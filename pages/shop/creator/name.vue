@@ -2,10 +2,10 @@
   <main>
     <section class="container section">
       <div class="flex flex-col items-center">
-        <h2 class="title-large text-center mt-100">{{ $t("pages.shop.creator.name.title") }}</h2>
+        <h2 class="title-large text-center mt-100">{{ $t("shop_creator.steps.name.title") }}</h2>
 
         <section class="max-w-1000">
-          <p class="paragraph-body text-center my-60">{{ $t("pages.shop.creator.name.paragraph") }}</p>
+          <p class="paragraph-body text-center my-60">{{ $t("shop_creator.steps.name.paragraph") }}</p>
         </section>
 
         <section class="w-full max-w-600">
@@ -15,9 +15,9 @@
               v-model="localShopName"
               :disabled="shopExists"
               :class="{ 'input-disabled': shopExists }"
+              :placeholder="$t('shop_creator.steps.name.placeholder')"
               name="name"
               type="text"
-              placeholder="Nom de votre boutique"
               class="input-base rounded-r-none mt-0">
             <button
               :disabled="shopExists"

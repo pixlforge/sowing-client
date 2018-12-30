@@ -16,7 +16,7 @@
           <div
             class="absolute pin-b step-1 text-16 font-semibold text-green cursor-pointer"
             @click.prevent="toShopCreatorName">
-            Nommez votre boutique
+            {{ $t("shop_creator.navigation.name") }}
           </div>
         </div>
 
@@ -35,7 +35,7 @@
             :class="{ 'text-green': stepName, 'text-grey-lightest': !stepName }"
             class="absolute pin-b step-2 text-16 font-semibold cursor-pointer"
             @click.prevent="toShopCreatorDetails">
-            Détails de votre boutique
+            {{ $t("shop_creator.navigation.details") }}
           </div>
         </div>
 
@@ -54,7 +54,7 @@
             :class="{ 'text-green': stepDetails, 'text-grey-lightest': !stepDetails }"
             class="absolute pin-b step-3 text-16 font-semibold cursor-pointer"
             @click.prevent="toShopCreatorCustomization">
-            Personnalisez votre boutique
+            {{ $t("shop_creator.navigation.customize") }}
           </div>
         </div>
 
@@ -70,7 +70,7 @@
             :class="{ 'text-green': stepCustomization, 'text-grey-lightest': !stepCustomization }"
             class="absolute pin-b step-4 text-16 font-semibold nowrap cursor-pointer"
             @click.prevent="toShopCreatorDone">
-            Terminé!
+            {{ $t("shop_creator.navigation.done") }}
           </div>
         </div>
 

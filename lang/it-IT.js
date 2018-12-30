@@ -217,12 +217,25 @@ export default {
     },
     shop: {
       title: "Il mio negozio",
-      creator: {
-        name: {
-          title: "Date un nome al vostro negozio",
-          paragraph: "Date al vostro negozio un nome unico che dà il tono e incoraggia i visitatori ad interessarsi ai vostri prodotti. Una forte identità è un buon modo per costruire un negozio attraente e riconosciuto."
-        }
-      }
+    }
+  },
+
+  /**
+   * Shop Creator
+   */
+  shop_creator: {
+    navigation: {
+      name: "Date un nome al vostro negozio",
+      details: "Dettagli del vostro negozio",
+      customize: "Personalizzate il vostro negozio",
+      done: "Fatto!"
+    },
+    steps: {
+      name: {
+        title: "Date un nome al vostro negozio",
+        paragraph: "Date al vostro negozio un nome unico che dà il tono e incoraggia i visitatori ad interessarsi ai vostri prodotti. Una forte identità è un buon modo per costruire un negozio attraente e riconosciuto.",
+        placeholder: "Nome del vostro negozio"
+      },
     }
   },
 

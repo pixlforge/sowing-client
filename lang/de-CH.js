@@ -217,12 +217,25 @@ export default {
     },
     shop: {
       title: "Mein Shop",
-      creator: {
-        name: {
-          title: "Benennen Sie Ihren Shop",
-          paragraph: "Geben Sie Ihrem Shop einen eindeutigen Namen, der den Ton angibt und Besucher dazu anregt, sich für Ihre Produkte zu interessieren. Eine starke Identität ist eine gute Möglichkeit, ein attraktives und anerkanntes Shop aufzubauen."
-        }
-      }
+    }
+  },
+
+  /**
+   * Shop Creator
+   */
+  shop_creator: {
+    navigation: {
+      name: "Benennen Sie Ihren Shop",
+      details: "Ihre Shopdetails",
+      customize: "Passen Sie Ihren Shop an",
+      done: "Erledigt!"
+    },
+    steps: {
+      name: {
+        title: "Benennen Sie Ihren Shop",
+        paragraph: "Geben Sie Ihrem Shop einen eindeutigen Namen, der den Ton angibt und Besucher dazu anregt, sich für Ihre Produkte zu interessieren. Eine starke Identität ist eine gute Möglichkeit, ein attraktives und anerkanntes Shop aufzubauen.",
+        placeholder: "Der Name Ihres Shops"
+      },
     }
   },
 

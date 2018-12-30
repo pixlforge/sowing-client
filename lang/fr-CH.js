@@ -217,12 +217,25 @@ export default {
     },
     shop: {
       title: "Ma boutique",
-      creator: {
-        name: {
-          title: "Nommez votre boutique",
-          paragraph: "Donnez à votre boutique un nom unique, marquant et qui incite les visiteurs à s'intéresser à vos produits. Une identité forte est un bon moyen pour construire une boutique attirante et reconnue."
-        }
-      }
+    }
+  },
+
+  /**
+   * Shop Creator
+   */
+  shop_creator: {
+    navigation: {
+      name: "Nommez votre boutique",
+      details: "Détails de votre boutique",
+      customize: "Personnalisez votre boutique",
+      done: "Terminé!"
+    },
+    steps: {
+      name: {
+        title: "Nommez votre boutique",
+        paragraph: "Donnez à votre boutique un nom unique, marquant et qui incite les visiteurs à s'intéresser à vos produits. Une identité forte est un bon moyen pour construire une boutique attirante et reconnue.",
+        placeholder: "Le nom de votre boutique"
+      },
     }
   },
 

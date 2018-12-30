@@ -217,12 +217,25 @@ export default {
     },
     shop: {
       title: "My shop",
-      creator: {
-        name: {
-          title: "Name your shop",
-          paragraph: "Give your store a unique name that sets the tone and encourages visitors to take an interest in your products. A strong identity is a good way to build an attractive and recognized shop."
-        }
-      }
+    }
+  },
+
+  /**
+   * Shop Creator
+   */
+  shop_creator: {
+    navigation: {
+      name: "Name your shop",
+      details: "Your shop details",
+      customize: "Customize your shop",
+      done: "Done!"
+    },
+    steps: {
+      name: {
+        title: "Name your shop",
+        paragraph: "Give your store a unique name that sets the tone and encourages visitors to take an interest in your products. A strong identity is a good way to build an attractive and recognized shop.",
+        placeholder: "The name of your shop"
+      },
     }
   },
 
