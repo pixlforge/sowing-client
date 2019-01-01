@@ -11,27 +11,29 @@
         </section>
 
         <!-- Profile image -->
-        <section class="w-full max-w-1000 mt-100">
-          <h5 class="text-24">Image de profil</h5>
-          <dropzone
-            id="dropzoneProfile"
-            ref="dropzoneProfile"
-            :options="optionsForAvatar"
-            :destroy-dropzone="true"
-            @vdropzone-max-files-exceeded="dzMaxFilesExceeded"/>
-        </section>
+        <template v-if="shop.id">
+          <section class="w-full max-w-1000 mt-100">
+            <h5 class="text-24">Image de profil</h5>
+            <dropzone
+              id="dropzoneProfile"
+              ref="dropzoneProfile"
+              :options="optionsForAvatar"
+              :destroy-dropzone="true"
+              @vdropzone-max-files-exceeded="dzMaxFilesExceeded"/>
+          </section>
 
-        <section class="w-full max-w-1000 mt-100">
+          <section class="w-full max-w-1000 mt-100">
 
-          <!-- Cover image -->
-          <h5 class="text-24">Image de couverture</h5>
-          <dropzone
-            id="dropzoneCover"
-            ref="dropzoneCover"
-            :options="optionsForCover"
-            :destroy-dropzone="true"
-            @vdropzone-max-files-exceeded="dzMaxFilesExceeded"/>
-        </section>
+            <!-- Cover image -->
+            <h5 class="text-24">Image de couverture</h5>
+            <dropzone
+              id="dropzoneCover"
+              ref="dropzoneCover"
+              :options="optionsForCover"
+              :destroy-dropzone="true"
+              @vdropzone-max-files-exceeded="dzMaxFilesExceeded"/>
+          </section>
+        </template>
 
         <button
           class="btn btn-primary mt-100"
@@ -62,47 +64,48 @@ export default {
   },
   data() {
     return {
-      optionsForAvatar: {},
-      optionsForCover: {}
+      dzOptions: {
+        maxFiles: 1,
+        maxFilesize: 2,
+        addRemoveLinks: true,
+        dictRemoveFile: this.$t("dropzone.dict_remove_file"),
+        dictCancelUpload: this.$t("dropzone.dict_cancel_upload"),
+        dictCancelUploadConfirmation: this.$t(
+          "dropzone.dict_cancel_upload_confirmation"
+        ),
+        dictDefaultMessage: `<span>${this.$t(
+          "dropzone.dict_default_message"
+        )}</span>`,
+        dictFallbackMessage: this.$t("dropzone.dict_fallback_message"),
+        dictFileTooBig: this.$t("dropzone.dict_file_too_big")
+      }
     };
   },
   computed: {
     ...mapGetters({
       stepName: "shop/stepName",
       stepDetails: "shop/stepDetails",
-      shopExists: "shop/shopExists"
-    })
-  },
-  created() {
-    const options = {
-      maxFiles: 1,
-      maxFilesize: 2,
-      addRemoveLinks: true,
-      dictRemoveFile: this.$t("dropzone.dict_remove_file"),
-      dictCancelUpload: this.$t("dropzone.dict_cancel_upload"),
-      dictCancelUploadConfirmation: this.$t(
-        "dropzone.dict_cancel_upload_confirmation"
-      ),
-      dictDefaultMessage: `<span>${this.$t(
-        "dropzone.dict_default_message"
-      )}</span>`,
-      dictFallbackMessage: this.$t("dropzone.dict_fallback_message"),
-      dictFileTooBig: this.$t("dropzone.dict_file_too_big")
-    };
-
-    this.optionsForAvatar = {
-      ...options,
-      url: `${process.env.API_URL}/shop/image/upload`
-    };
-
-    this.optionsForCover = {
-      ...options,
-      url: `${process.env.API_URL}/shop/image/upload`
-    };
+      shopExists: "shop/shopExists",
+      shop: "shop/shop"
+    }),
+    optionsForAvatar() {
+      return {
+        ...this.dzOptions,
+        url: `${process.env.API_URL}/shops/${this.shop.slug}/image`
+      };
+    },
+    optionsForCover() {
+      return {
+        ...this.dzOptions,
+        url: `${process.env.API_URL}/shop/image/upload`
+      };
+    }
   },
   mounted() {
-    const dropzoneProfile = this.$refs.dropzoneProfile.dropzone;
-    const dropzoneCover = this.$refs.dropzoneCover.dropzone;
+    if (this.shop.id) {
+      const dropzoneProfile = this.$refs.dropzoneProfile.dropzone;
+      const dropzoneCover = this.$refs.dropzoneCover.dropzone;
+    }
 
     if (!this.shopExists && this.$auth.user.has_shop) {
       this.getShop();
