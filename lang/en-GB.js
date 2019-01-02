@@ -272,6 +272,8 @@ export default {
     is_already_in_use: "is already in use",
     is_available: "is available",
     logged_out: "You are now logged out.",
+    shop_avatar_updated: "The avatar of your shop has been updated successfully!",
+    shop_cover_updated: "The cover of your shop has been updated successfully!",
     terms: "You must first agree to the terms and conditions before going forward.",
     validation: "The form contains errors. Please correct them and try again.",
     welcome: "Welcome back"

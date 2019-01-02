@@ -272,6 +272,8 @@ export default {
     is_already_in_use: "è già in uso",
     is_available: "è disponibile",
     logged_out: "Ora siete disconnessi.",
+    shop_avatar_updated: "L'avatar del vostro negozio è stato aggiornato con successo!",
+    shop_cover_updated: "La copertina del vostro negozio è stata aggiornata con successo!",
     terms: "Devi prima accettare i termini e le condizioni prima di continuare.",
     validation: "Il modulo contiene errori. Si prega di correggerli e riprovare.",
     welcome: "Benvenuto"

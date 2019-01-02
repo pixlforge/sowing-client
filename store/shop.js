@@ -20,8 +20,12 @@ export const state = () => ({
     theme_color: "#5FB881",
     postal_code: "",
     city: "",
-    country_id: ""
-  }
+    country_id: "",
+    media: {
+      avatar: "",
+      cover: ""
+    }
+  },
 });
 
 export const getters = {
@@ -79,6 +83,12 @@ export const getters = {
   shopLongDescriptionIt(state) {
     return state.form.description_long.it;
   },
+  shopAvatar(state) {
+    return state.form.media.avatar;
+  },
+  shopCover(state) {
+    return state.form.media.cover;
+  }
 };
 
 export const mutations = {
@@ -96,6 +106,12 @@ export const mutations = {
   },
   SET_SHOP(state, shop) {
     state.form = shop;
+  },
+  SET_AVATAR(state, url) {
+    state.form.media.avatar = url;
+  },
+  SET_COVER(state, url) {
+    state.form.media.cover = url;
   },
   SET_SHOP_NAME(state, name) {
     state.form.name = name;
@@ -150,6 +166,12 @@ export const actions = {
   },
   setShop({ commit }, shop) {
     commit('SET_SHOP', shop);
+  },
+  setAvatar({ commit }, url) {
+    commit('SET_AVATAR', url);
+  },
+  setCover({ commit }, url) {
+    commit('SET_COVER', url);
   },
   setShopName({ commit }, name) {
     commit('SET_SHOP_NAME', name);

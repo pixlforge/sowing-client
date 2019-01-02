@@ -19,7 +19,8 @@
               ref="dropzoneProfile"
               :options="optionsForAvatar"
               :destroy-dropzone="true"
-              @vdropzone-max-files-exceeded="dzMaxFilesExceeded"/>
+              @vdropzone-max-files-exceeded="dzMaxFilesExceeded"
+              @vdropzone-success="updateShop"/>
           </section>
 
           <section class="w-full max-w-1000 mt-100">
@@ -31,7 +32,8 @@
               ref="dropzoneCover"
               :options="optionsForCover"
               :destroy-dropzone="true"
-              @vdropzone-max-files-exceeded="dzMaxFilesExceeded"/>
+              @vdropzone-max-files-exceeded="dzMaxFilesExceeded"
+              @vdropzone-success="updateShop"/>
           </section>
         </template>
 
@@ -65,6 +67,9 @@ export default {
   data() {
     return {
       dzOptions: {
+        headers: {
+          Authorization: this.$auth.getToken("local")
+        },
         maxFiles: 1,
         maxFilesize: 2,
         addRemoveLinks: true,
@@ -91,13 +96,15 @@ export default {
     optionsForAvatar() {
       return {
         ...this.dzOptions,
-        url: `${process.env.API_URL}/shops/${this.shop.slug}/image`
+        url: `${process.env.API_URL}/images/${
+          this.shop.slug
+        }/upload?type=avatar`
       };
     },
     optionsForCover() {
       return {
         ...this.dzOptions,
-        url: `${process.env.API_URL}/shop/image/upload`
+        url: `${process.env.API_URL}/images/${this.shop.slug}/upload?type=cover`
       };
     }
   },
@@ -117,6 +124,8 @@ export default {
   methods: {
     ...mapActions({
       getShop: "shop/getShop",
+      setAvatar: "shop/setAvatar",
+      setCover: "shop/setCover",
       setStepName: "shop/setStepName",
       setStepDetails: "shop/setStepDetails"
     }),
@@ -125,6 +134,16 @@ export default {
       this.$toast.error(
         "Vous devez d'abord supprimer ou annuler l'image existante."
       );
+    },
+    updateShop(file, res) {
+      if (res.media.type === "avatar") {
+        this.setAvatar(res.media.url);
+        this.$toast.success(this.$t("toasts.shop_avatar_updated"));
+      }
+      if (res.media.type === "cover") {
+        this.setCover(res.media.url);
+        this.$toast.success(this.$t("toasts.shop_cover_updated"));
+      }
     },
     next() {
       if (this.stepName && this.stepDetails) {
