@@ -60,7 +60,7 @@
                     value=""
                     selected
                     disabled>
-                    {{ $t("components.forms.select") }}
+                    {{ $t("forms.select") }}
                   </option>
                   <option
                     v-for="country in countries"
