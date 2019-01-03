@@ -46,6 +46,9 @@
 
           <!-- Next -->
           <button
+            :style="btnStyle"
+            :disabled="!shopName"
+            :class="{ 'btn-disabled': !shopName }"
             class="btn btn-primary"
             @click.prevent="next">
             <font-awesome-icon
@@ -73,7 +76,8 @@ export default {
     ...mapGetters({
       shopName: "shop/shopName",
       stepDetails: "shop/stepDetails",
-      shopExists: "shop/shopExists"
+      shopExists: "shop/shopExists",
+      shopTheme: "shop/shopTheme"
     }),
     localShopName: {
       get() {
@@ -82,6 +86,12 @@ export default {
       set(name) {
         this.setShopName(name);
       }
+    },
+    btnStyle() {
+      if (!this.shopName) {
+        return "";
+      }
+      return `background-color: ${this.shopTheme}`;
     }
   },
   mounted() {

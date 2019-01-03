@@ -13,7 +13,7 @@
             <font-awesome-icon
               :icon="['far', 'chevron-circle-left']"
               class="mr-5"/>
-            Retour
+            {{ $t("buttons.back") }}
           </button>
 
           <!-- Next -->
@@ -23,7 +23,7 @@
             <font-awesome-icon
               :icon="['far', 'chevron-circle-right']"
               class="mr-5"/>
-            Terminer
+            {{ $t("buttons.finish") }}
           </button>
         </div>
       </div>

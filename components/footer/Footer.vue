@@ -118,23 +118,15 @@
             </li>
           </ul>
         </div>
-
       </div>
     </div>
-
-    <Disclaimer/>
-    
   </div>
 </template>
 
 <script>
-import Disclaimer from "@/components/footer/Disclaimer";
 import { mapGetters } from "vuex";
 
 export default {
-  components: {
-    Disclaimer
-  },
   computed: {
     ...mapGetters({
       categories: "categories",

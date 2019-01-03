@@ -6,15 +6,18 @@ export default {
   buttons: {
     add_to_cart: "Zum Warenkorb hinzufügen",
     back: "Zurück",
+    cancel: "Stornieren",
     check_availability: "Verfügbarkeit prüfen",
     connection: "Einloggen",
+    create: "Erstellen",
     create_account: "Konto erstellen",
     create_my_shop: "Schaffe meinen Shop",
+    customize_my_shop: "Passen Sie meinen Shop an",
+    finalize_shop_creation: "Beenden Sie die Erstellung meines Shops",
+    finish: "Fertig",
+    login: "Einloggen",
     password_email: "Senden Sie einen Link, um mein Passwort zurückzusetzen",
     password_reset: "Passwort zurücksetzen",
-    create: "Erstellen",
-    cancel: "Stornieren",
-    login: "Einloggen",
     register: "Konto erstellen",
     subscribe: "Anmeldung",
     to_my_shop_details: "Zu meinen Shopdetails"
@@ -113,6 +116,8 @@ export default {
    */
   forms: {
     labels: {
+      avatar: "Avatar",
+      cover_image: "Titelbild",
       email: "Email",
       name: "Name",
       password: "Passwort",
@@ -124,9 +129,22 @@ export default {
       address_line_2: "Anschrift Zeile 2",
       postal_code: "Postleitzahl",
       city: "Ort",
-      country: "Land"
+      country: "Land",
+      description_short: "Kurze Beschreibung",
+      description_long: "Ausführliche Beschreibung",
+      theme_selection: "Themenauswahl"
     },
     select: "Wählen"
+  },
+
+  /**
+   * Languages
+   */
+  languages: {
+    french: "französisch",
+    english: "englisch",
+    german: "deutsch",
+    italian: "italienisch",
   },
 
   /**
@@ -236,6 +254,16 @@ export default {
         paragraph: "Geben Sie Ihrem Shop einen eindeutigen Namen, der den Ton angibt und Besucher dazu anregt, sich für Ihre Produkte zu interessieren. Eine starke Identität ist eine gute Möglichkeit, ein attraktives und anerkanntes Shop aufzubauen.",
         placeholder: "Der Name Ihres Shops"
       },
+      details: {
+        title: "Details zu Ihrem Shop",
+        paragraph: "Erzählen Sie uns von Ihrem Geschäft. Wo liegt es Was hat es zu bieten? Beschreiben Sie es so gut wie möglich, um Ihrem Shop ein gutes Image zu geben und Ihre Besucher effektiv über Ihre Aktivitäten und Methoden zu informieren.",
+        description_short_description: "Beschreibung in einem Satz Ihres Shops. In der Regel wird der Titel Ihres Shops überall dort angezeigt, wo er angezeigt wird.",
+        description_long_description: "Detaillierte Beschreibung Ihres Shops. Dies wird nur auf der Profilseite Ihres Shops angezeigt.",
+      },
+      customization: {
+        title: "Personalisieren Sie Ihren Shop",
+        paragraph: "Personalisieren Sie Ihren Shop, um ihm eine einzigartige Identität zu verleihen!",
+      }
     }
   },
 

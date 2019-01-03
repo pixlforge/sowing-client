@@ -6,15 +6,18 @@ export default {
   buttons: {
     add_to_cart: "Add to cart",
     back: "Back",
+    cancel: "Cancel",
     check_availability: "Check availability",
     connection: "Log in",
+    create: "Create",
     create_account: "Create account",
     create_my_shop: "Create my shop",
+    customize_my_shop: "Customize my shop",
+    finalize_shop_creation: "Finalize the creation of my shop",
+    finish: "Finish",
+    login: "Log in",
     password_email: "Send a link to reset my password",
     password_reset: "Reset password",
-    create: "Create",
-    cancel: "Cancel",
-    login: "Log in",
     register: "Create an account",
     subscribe: "Subscribe",
     to_my_shop_details: "To my shop details"
@@ -113,6 +116,8 @@ export default {
    */
   forms: {
     labels: {
+      avatar: "Avatar",
+      cover_image: "Cover image",
       email: "Email",
       name: "Name",
       password: "Password",
@@ -124,9 +129,22 @@ export default {
       address_line_2: "Address line 2",
       postal_code: "Postal code",
       city: "City",
-      country: "Country"
+      country: "Country",
+      description_short: "Short description",
+      description_long: "Detailed description",
+      theme_selection: "Theme selection"
     },
     select: "Select"
+  },
+
+  /**
+   * Languages
+   */
+  languages: {
+    french: "french",
+    english: "english",
+    german: "german",
+    italian: "italian",
   },
 
   /**
@@ -236,6 +254,16 @@ export default {
         paragraph: "Give your store a unique name that sets the tone and encourages visitors to take an interest in your products. A strong identity is a good way to build an attractive and recognized shop.",
         placeholder: "The name of your shop"
       },
+      details: {
+        title: "Details of your shop",
+        paragraph: "Tell us about your shop. Where is it located? What does it have to offer? Describe it as best you can to give your shop a good image, in addition to effectively inform your visitors of your activities and methods.",
+        description_short_description: "Description in one sentence of your shop. It usually accompanies the title of your shop wherever it is displayed.",
+        description_long_description: "Detailed description of your shop. This is displayed only on the profile page of your shop.",
+      },
+      customization: {
+        title: "Customize your shop",
+        paragraph: "Customize your shop to give it a unique identity!",
+      }
     }
   },
 

@@ -209,7 +209,7 @@ button {
 }
 
 .header-title {
-  @apply font-cafe text-24 text-white tracking-tight;
+  @apply font-cafe text-24 text-white tracking-tight capitalize;
 }
 
 .header-description {

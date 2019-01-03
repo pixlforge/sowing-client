@@ -6,15 +6,22 @@
         <!-- Name -->
         <div class="relative flex flex-grow items-center">
           <div
-            class="w-50 h-50 bg-green rounded-full text-24 font-bold text-white flex justify-center items-center cursor-pointer"
+            :style="`background-color: ${shopTheme}`"
+            class="w-50 h-50 rounded-full text-24 font-bold text-white flex justify-center items-center cursor-pointer"
             @click.prevent="toShopCreatorName">
             1
           </div>
+          <template v-if="stepName">
+            <div
+              :style="`background-color: ${shopTheme}`"
+              class="h-3 flex-grow"/>
+          </template>
+          <template v-else>
+            <div class="h-3 bg-white flex-grow"/>
+          </template>
           <div
-            :class="{ 'bg-green': stepName, 'bg-white': !stepName }"
-            class="h-3 flex-grow"/>
-          <div
-            class="absolute pin-b step-1 text-16 font-semibold text-green cursor-pointer"
+            :style="`color: ${shopTheme}`"
+            class="absolute pin-b step-1 text-16 font-semibold cursor-pointer"
             @click.prevent="toShopCreatorName">
             {{ $t("shop_creator.navigation.name") }}
           </div>
@@ -22,56 +29,109 @@
 
         <!-- Details -->
         <div class="relative flex flex-grow items-center">
-          <div
-            :class="{ 'bg-green': stepName, 'bg-white': !stepName, 'text-white': stepName, 'text-grey-lightest': !stepName }"
-            class="w-50 h-50 rounded-full text-24 font-bold flex justify-center items-center cursor-pointer"
-            @click.prevent="toShopCreatorDetails">
-            2
-          </div>
-          <div
-            :class="{ 'bg-green': stepDetails, 'bg-white': !stepDetails }"
-            class="h-3 flex-grow"/>
-          <div
-            :class="{ 'text-green': stepName, 'text-grey-lightest': !stepName }"
-            class="absolute pin-b step-2 text-16 font-semibold cursor-pointer"
-            @click.prevent="toShopCreatorDetails">
-            {{ $t("shop_creator.navigation.details") }}
-          </div>
+          <template v-if="stepName">
+            <div
+              :style="`background-color: ${shopTheme};`"
+              class="w-50 h-50 text-white rounded-full text-24 font-bold flex justify-center items-center cursor-pointer"
+              @click.prevent="toShopCreatorDetails">
+              2
+            </div>
+          </template>
+          <template v-else>
+            <div class="w-50 h-50 bg-white text-grey-lightest rounded-full text-24 font-bold flex justify-center items-center cursor-pointer">
+              2
+            </div>
+          </template>
+          <template v-if="stepDetails">
+            <div
+              :style="`background-color: ${shopTheme}`"
+              class="h-3 flex-grow"/>
+          </template>
+          <template v-else>
+            <div class="h-3 bg-white flex-grow"/>
+          </template>
+          <template v-if="stepName">
+            <div
+              :style="`color: ${shopTheme};`"
+              class="absolute pin-b step-2 text-16 font-semibold cursor-pointer"
+              @click.prevent="toShopCreatorDetails">
+              {{ $t("shop_creator.navigation.details") }}
+            </div>
+          </template>
+          <template v-else>
+            <div class="absolute pin-b step-2 text-16 font-semibold text-grey-lightest text-grey-lightest cursor-pointer">
+              {{ $t("shop_creator.navigation.details") }}
+            </div>
+          </template>
         </div>
 
         <!-- Customize -->
         <div class="relative flex flex-grow items-center">
-          <div
-            :class="{ 'bg-green': stepDetails, 'bg-white': !stepDetails, 'text-white': stepDetails, 'text-grey-lightest': !stepDetails }"
-            class="w-50 h-50 rounded-full text-24 font-bold flex justify-center items-center cursor-pointer"
-            @click.prevent="toShopCreatorCustomization">
-            3
-          </div>
-          <div
-            :class="{ 'bg-green': stepCustomization, 'bg-white': !stepCustomization }"
-            class="h-3 flex-grow"/>
-          <div
-            :class="{ 'text-green': stepDetails, 'text-grey-lightest': !stepDetails }"
-            class="absolute pin-b step-3 text-16 font-semibold cursor-pointer"
-            @click.prevent="toShopCreatorCustomization">
-            {{ $t("shop_creator.navigation.customize") }}
-          </div>
+          <template v-if="stepDetails">
+            <div
+              :style="`background-color: ${shopTheme}`"
+              class="w-50 h-50 text-white rounded-full text-24 font-bold flex justify-center items-center cursor-pointer"
+              @click.prevent="toShopCreatorCustomization">
+              3
+            </div>
+          </template>
+          <template v-else>
+            <div class="w-50 h-50 bg-white text-grey-lightest rounded-full text-24 font-bold flex justify-center items-center cursor-pointer">
+              3
+            </div>
+          </template>
+          <template v-if="stepCustomization">
+            <div
+              :style="`background-color: ${shopTheme}`"
+              class="h-3 flex-grow"/>
+          </template>
+          <template v-else>
+            <div class="h-3 bg-white flex-grow"/>
+          </template>
+          <template v-if="stepDetails">
+            <div
+              :style="`color: ${shopTheme};`"
+              class="absolute pin-b step-2 text-16 font-semibold cursor-pointer"
+              @click.prevent="toShopCreatorCustomization">
+              {{ $t("shop_creator.navigation.customize") }}
+            </div>
+          </template>
+          <template v-else>
+            <div class="absolute pin-b step-3 text-16 font-semibold text-grey-lightest text-grey-lightest cursor-pointer">
+              {{ $t("shop_creator.navigation.customize") }}
+            </div>
+          </template>
         </div>
 
         <!-- Done -->
         <div class="relative flex items-center">
-          <div
-            :class="{ 'bg-green': stepCustomization, 'bg-white': !stepCustomization, 'text-white': stepCustomization, 'text-grey-lightest': !stepCustomization }"
-            class="w-50 h-50 rounded-full text-24 font-bold flex justify-center items-center cursor-pointer"
-            @click.prevent="toShopCreatorDone">
-            4
-          </div>
-          <div
-            :class="{ 'text-green': stepCustomization, 'text-grey-lightest': !stepCustomization }"
-            class="absolute pin-b step-4 text-16 font-semibold nowrap cursor-pointer"
-            @click.prevent="toShopCreatorDone">
-            {{ $t("shop_creator.navigation.done") }}
-          </div>
+          <template v-if="stepCustomization">
+            <div
+              :style="`background-color: ${shopTheme}`"
+              class="w-50 h-50 text-white rounded-full text-24 font-bold flex justify-center items-center cursor-pointer"
+              @click.prevent="toShopCreatorDone">
+              4
+            </div>
+          </template>
+          <template v-else>
+            <div class="w-50 h-50 bg-white text-grey-lightest rounded-full text-24 font-bold flex justify-center items-center cursor-pointer">
+              4
+            </div>
+          </template>
+
+          <template v-if="stepCustomization">
+            <div
+              :style="`color: ${shopTheme};`"
+              class="absolute pin-b step-4 text-16 font-semibold nowrap cursor-pointer"
+              @click.prevent="toShopCreatorDone">
+              {{ $t("shop_creator.navigation.done") }}
+            </div>
+          </template>
+          <template v-else>
+            <div class="absolute pin-b step-4 text-16 font-semibold text-grey-lightest text-grey-lightest cursor-pointer">
+              {{ $t("shop_creator.navigation.done") }}
+            </div>
+          </template>
         </div>
 
       </div>
@@ -87,7 +147,8 @@ export default {
     ...mapGetters({
       stepName: "shop/stepName",
       stepDetails: "shop/stepDetails",
-      stepCustomization: "shop/stepCustomization"
+      stepCustomization: "shop/stepCustomization",
+      shopTheme: "shop/shopTheme"
     })
   },
   methods: {

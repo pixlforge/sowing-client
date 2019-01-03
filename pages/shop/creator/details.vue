@@ -2,12 +2,10 @@
   <main>
     <section class="container section">
       <div class="flex flex-col items-center">
-        <h2 class="title-large text-center mt-100">Détails de votre boutique</h2>
+        <h2 class="title-large text-center mt-100">{{ $t("shop_creator.steps.details.title") }}</h2>
 
         <section class="w-full max-w-1000">
-          <p class="paragraph-body text-center my-60">
-            Parlez-nous de votre boutique. Où est-elle située? Que fait-elle? Décrivez la au mieux afin de lui donner une bonne image, en plus de renseigner efficacement vos visiteurs de vos activités et de vos méthodes.
-          </p>
+          <p class="paragraph-body text-center my-60">{{ $t("shop_creator.steps.details.paragraph") }}</p>
         </section>
 
         <section class="w-full max-w-1000">
@@ -15,7 +13,7 @@
           <!-- Postal code -->
           <div class="w-full flex mt-100">
             <div class="w-1/2 flex items-center">
-              <h5 class="text-24">Code postal</h5>
+              <h5 class="text-24">{{ $t("forms.labels.postal_code") }}</h5>
             </div>
             <div class="w-1/2 flex items-center">
               <input
@@ -23,7 +21,6 @@
                 :disabled="shopExists"
                 :class="{ 'input-disabled': shopExists }"
                 type="text"
-                placeholder="e.g. 3000"
                 class="input-base mt-0">
             </div>
           </div>
@@ -31,7 +28,7 @@
           <!-- City -->
           <div class="w-full flex mt-50">
             <div class="w-1/2 flex items-center">
-              <h5 class="text-24">Ville</h5>
+              <h5 class="text-24">{{ $t("forms.labels.city") }}</h5>
             </div>
             <div class="w-1/2 flex items-center">
               <input
@@ -39,7 +36,6 @@
                 :disabled="shopExists"
                 :class="{ 'input-disabled': shopExists }"
                 type="text"
-                placeholder="e.g. Bern"
                 class="input-base mt-0">
             </div>
           </div>
@@ -47,7 +43,7 @@
           <!-- Country -->
           <div class="w-full flex mt-50">
             <div class="w-1/2 flex items-center">
-              <h5 class="text-24">Pays</h5>
+              <h5 class="text-24">{{ $t("forms.labels.country") }}</h5>
             </div>
             <div class="w-1/2">
               <div class="relative w-full">
@@ -81,31 +77,33 @@
 
           <!-- Short description FR -->
           <div class="w-full flex mt-50">
-            <div class="w-1/2 flex items-center">
-              <h5 class="text-24">Description courte (français)</h5>
+            <div class="w-1/2">
+              <h5 class="text-24 leading-normal">{{ $t("forms.labels.description_short") }}</h5>
+              <p class="text-16 leading-normal capitalize my-5">{{ $t("languages.french") }}</p>
+              <p class="text-16 text-grey-lighter leading-normal my-5">{{ $t("shop_creator.steps.details.description_short_description") }}</p>
             </div>
-            <div class="w-1/2 flex items-center">
+            <div class="w-1/2">
               <input
                 v-model="localShortDescriptionFr"
                 :disabled="shopExists"
                 :class="{ 'input-disabled': shopExists }"
                 type="text"
-                placeholder="e.g. Description courte en français"
                 class="input-base mt-0">
             </div>
           </div>
 
           <!-- Long description FR -->
           <div class="w-full flex mt-50">
-            <div class="w-1/2 flex items-start">
-              <h5 class="text-24">Description longue (français)</h5>
+            <div class="w-1/2">
+              <h5 class="text-24">{{ $t("forms.labels.description_long") }}</h5>
+              <p class="text-16 leading-normal capitalize my-5">{{ $t("languages.french") }}</p>
+              <p class="text-16 text-grey-lighter leading-normal my-5">{{ $t("shop_creator.steps.details.description_long_description") }}</p>
             </div>
-            <div class="w-1/2 flex items-center">
+            <div class="w-1/2">
               <textarea
                 v-model="localLongDescriptionFr"
                 :disabled="shopExists"
                 :class="{ 'textarea-disabled': shopExists }"
-                placeholder="e.g. Description longue en français"
                 rows="10"
                 class="textarea-base mt-0"/>
             </div>
@@ -115,31 +113,33 @@
 
           <!-- Short description EN -->
           <div class="w-full flex mt-50">
-            <div class="w-1/2 flex items-center">
-              <h5 class="text-24">Description courte (anglais)</h5>
+            <div class="w-1/2">
+              <h5 class="text-24 leading-normal">{{ $t("forms.labels.description_short") }}</h5>
+              <p class="text-16 leading-normal capitalize my-5">{{ $t("languages.english") }}</p>
+              <p class="text-16 text-grey-lighter leading-normal my-5">{{ $t("shop_creator.steps.details.description_short_description") }}</p>
             </div>
-            <div class="w-1/2 flex items-center">
+            <div class="w-1/2">
               <input
                 v-model="localShortDescriptionEn"
                 :disabled="shopExists"
                 :class="{ 'input-disabled': shopExists }"
                 type="text"
-                placeholder="e.g. Description courte en anglais"
                 class="input-base mt-0">
             </div>
           </div>
 
           <!-- Long description EN -->
           <div class="w-full flex mt-50">
-            <div class="w-1/2 flex items-start">
-              <h5 class="text-24">Description longue (anglais)</h5>
+            <div class="w-1/2">
+              <h5 class="text-24">{{ $t("forms.labels.description_long") }}</h5>
+              <p class="text-16 leading-normal capitalize my-5">{{ $t("languages.english") }}</p>
+              <p class="text-16 text-grey-lighter leading-normal my-5">{{ $t("shop_creator.steps.details.description_long_description") }}</p>
             </div>
-            <div class="w-1/2 flex items-center">
+            <div class="w-1/2">
               <textarea
                 v-model="localLongDescriptionEn"
                 :disabled="shopExists"
                 :class="{ 'textarea-disabled': shopExists }"
-                placeholder="e.g. Description longue en anglais"
                 rows="10"
                 class="textarea-base mt-0"/>
             </div>
@@ -149,31 +149,33 @@
 
           <!-- Short description DE -->
           <div class="w-full flex mt-50">
-            <div class="w-1/2 flex items-center">
-              <h5 class="text-24">Description courte (allemand)</h5>
+            <div class="w-1/2">
+              <h5 class="text-24 leading-normal">{{ $t("forms.labels.description_short") }}</h5>
+              <p class="text-16 leading-normal capitalize my-5">{{ $t("languages.german") }}</p>
+              <p class="text-16 text-grey-lighter leading-normal my-5">{{ $t("shop_creator.steps.details.description_short_description") }}</p>
             </div>
-            <div class="w-1/2 flex items-center">
+            <div class="w-1/2">
               <input
                 v-model="localShortDescriptionDe"
                 :disabled="shopExists"
                 :class="{ 'input-disabled': shopExists }"
                 type="text"
-                placeholder="e.g. Description courte en allemand"
                 class="input-base">
             </div>
           </div>
 
           <!-- Long description DE -->
           <div class="w-full flex mt-50">
-            <div class="w-1/2 flex items-start">
-              <h5 class="text-24">Description longue (allemand)</h5>
+            <div class="w-1/2">
+              <h5 class="text-24">{{ $t("forms.labels.description_long") }}</h5>
+              <p class="text-16 leading-normal capitalize my-5">{{ $t("languages.german") }}</p>
+              <p class="text-16 text-grey-lighter leading-normal my-5">{{ $t("shop_creator.steps.details.description_long_description") }}</p>
             </div>
-            <div class="w-1/2 flex items-center">
+            <div class="w-1/2">
               <textarea
                 v-model="localLongDescriptionDe"
                 :disabled="shopExists"
                 :class="{ 'textarea-disabled': shopExists }"
-                placeholder="e.g. Description longue en allemand"
                 rows="10"
                 class="textarea-base mt-0"/>
             </div>
@@ -183,31 +185,33 @@
 
           <!-- Short description IT -->
           <div class="w-full flex mt-50">
-            <div class="w-1/2 flex items-center">
-              <h5 class="text-24">Description courte (italien)</h5>
+            <div class="w-1/2">
+              <h5 class="text-24 leading-normal">{{ $t("forms.labels.description_short") }}</h5>
+              <p class="text-16 leading-normal capitalize my-5">{{ $t("languages.italian") }}</p>
+              <p class="text-16 text-grey-lighter leading-normal my-5">{{ $t("shop_creator.steps.details.description_short_description") }}</p>
             </div>
-            <div class="w-1/2 flex items-center">
+            <div class="w-1/2">
               <input
                 v-model="localShortDescriptionIt"
                 :disabled="shopExists"
                 :class="{ 'input-disabled': shopExists }"
                 type="text"
-                placeholder="e.g. Description courte en italien"
                 class="input-base">
             </div>
           </div>
 
           <!-- Long description IT -->
           <div class="w-full flex mt-50">
-            <div class="w-1/2 flex items-start">
-              <h5 class="text-24">Description longue (italien)</h5>
+            <div class="w-1/2">
+              <h5 class="text-24">{{ $t("forms.labels.description_long") }}</h5>
+              <p class="text-16 leading-normal capitalize my-5">{{ $t("languages.italian") }}</p>
+              <p class="text-16 text-grey-lighter leading-normal my-5">{{ $t("shop_creator.steps.details.description_long_description") }}</p>
             </div>
-            <div class="w-1/2 flex items-center">
+            <div class="w-1/2">
               <textarea
                 v-model="localLongDescriptionIt"
                 :disabled="shopExists"
                 :class="{ 'textarea-disabled': shopExists }"
-                placeholder="e.g. Description longue en italien"
                 rows="10"
                 class="textarea-base mt-0"/>
             </div>
@@ -224,17 +228,19 @@
             <font-awesome-icon
               :icon="['far', 'chevron-circle-left']"
               class="mr-5"/>
-            Retour
+            {{ $t("buttons.back") }}
           </button>
 
           <!-- Next -->
           <button
+            :style="btnStyle"
+            :class="{ 'btn-disabled': !shopPostalCode || !shopCity || !shopCountryId }"
             class="btn btn-primary"
             @click.prevent="store">
             <font-awesome-icon
               :icon="['far', 'chevron-circle-right']"
               class="mr-5"/>
-            Personnaliser ma boutique
+            {{ $t("buttons.customize_my_shop") }}
           </button>
 
         </div>
@@ -275,7 +281,8 @@ export default {
       shopLongDescriptionFr: "shop/shopLongDescriptionFr",
       shopLongDescriptionEn: "shop/shopLongDescriptionEn",
       shopLongDescriptionDe: "shop/shopLongDescriptionDe",
-      shopLongDescriptionIt: "shop/shopLongDescriptionIt"
+      shopLongDescriptionIt: "shop/shopLongDescriptionIt",
+      shopTheme: "shop/shopTheme"
     }),
     localPostalCode: {
       get() {
@@ -364,6 +371,12 @@ export default {
       set(description) {
         this.setShopLongDescriptionIt(description);
       }
+    },
+    btnStyle() {
+      if (!this.shopPostalCode || !this.shopCity || !this.shopCountryId) {
+        return "";
+      }
+      return `background-color: ${this.shopTheme}`;
     }
   },
   created() {

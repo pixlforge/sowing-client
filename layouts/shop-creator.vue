@@ -7,23 +7,31 @@
       v-if="shopCover"
       :style="`background-image: url('${shopCover}');`"
       class="block w-full h-350 bg-center bg-no-repeat bg-cover"/>
-    <Header>
+    <Header :style="`background-color: ${shopTheme}`">
       <template slot="icon">
         <div
           v-if="shopAvatar"
           :style="`background-image: url('${shopAvatar}');`"
           class="block w-110 h-110 rounded-full bg-center bg-no-repeat bg-cover"/>
-        <font-awesome-icon
+        <div
           v-else
-          :icon="['far', 'store']"/>
+          :style="iconStyle">
+          <font-awesome-icon
+            :icon="['far', 'store']"
+            class="block"/>
+        </div>
       </template>
       <template slot="title">
-        <h1 class="header-title">{{ $t("pages.shop.title") }}</h1>
+        <h1 class="header-title">
+          <template v-if="shopName">{{ shopName }}</template>
+          <template v-else>{{ $t("pages.shop.title") }}</template>
+        </h1>
       </template>
     </Header>
     <Navigation/>
     <nuxt/>
     <Footer/>
+    <Disclaimer :style="`background-color: ${shopTheme}`"/>
   </div>
 </template>
 
@@ -34,6 +42,7 @@ import Categories from "@/components/categories/Categories";
 import Header from "@/components/Header";
 import Navigation from "@/components/shops/creator/Navigation";
 import Footer from "@/components/footer/Footer";
+import Disclaimer from "@/components/footer/Disclaimer";
 import { mapGetters } from "vuex";
 
 export default {
@@ -43,13 +52,19 @@ export default {
     Categories,
     Header,
     Navigation,
-    Footer
+    Footer,
+    Disclaimer
   },
   computed: {
     ...mapGetters({
+      shopName: "shop/shopName",
       shopAvatar: "shop/shopAvatar",
-      shopCover: "shop/shopCover"
-    })
+      shopCover: "shop/shopCover",
+      shopTheme: "shop/shopTheme"
+    }),
+    iconStyle() {
+      return `color: ${this.shopTheme}`;
+    }
   }
 };
 </script>

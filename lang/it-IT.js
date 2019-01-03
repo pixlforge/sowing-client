@@ -6,16 +6,19 @@ export default {
   buttons: {
     add_to_cart: "Aggiungi al carrello",
     back: "Indietro",
+    cancel: "Annulla",
     check_availability: "Verificare la disponibilità",
     connection: "Accedi",
-    create_account: "Crea un account",
-    create_my_shop: "Crea il mio negozio",
+    create: "Creare",
+    create_account: "Creare l'account",
+    create_my_shop: "Creare il mio negozio",
+    customize_my_shop: "Personalizzare il mio negozio",
+    finalize_shop_creation: "Finalizzare la creazione del mio negozio",
+    finish: "Finire",
+    login: "Accesso",
     password_email: "Invia un link per reimpostare la mia password",
     password_reset: "Reimpostare la password",
-    create: "Creare",
-    cancel: "Annulla",
-    login: "Accesso",
-    register: "Crea un account",
+    register: "Creare un account",
     subscribe: "Iscrizione",
     to_my_shop_details: "Verso i dettagli del mio negozio"
   },
@@ -77,7 +80,7 @@ export default {
     dict_remove_file: "Rimuovere",
     dict_cancel_upload: "Annulla",
     dict_cancel_upload_confirmation: "Siete sicuri di voler annullare il caricamento?",
-    dict_default_message: "Trascina e rilascia qui un'immagine da scaricare o fate un clic per scegliere la vostra immagine.",
+    dict_default_message: "Trascinate e rilasciate qui un'immagine da scaricare o fate un clic per scegliere la vostra immagine.",
     dict_fallback_message: "Il vostro navigatore è troppo vecchio o incompatibile.",
     dict_file_too_big: "Questo file è troppo grande.",
   },
@@ -113,6 +116,8 @@ export default {
    */
   forms: {
     labels: {
+      avatar: "Avatar",
+      cover_image: "Immagine di copertina",
       email: "Email",
       name: "Nome",
       password: "Password",
@@ -124,9 +129,22 @@ export default {
       address_line_2: "Indirizzo linea 2",
       postal_code: "Codice postale",
       city: "Città",
-      country: "Paese"
+      country: "Paese",
+      description_short: "Breve descrizione",
+      description_long: "Descrizione dettagliata",
+      theme_selection: "Selezione del tema"
     },
     select: "Selezionare"
+  },
+
+  /**
+   * Languages
+   */
+  languages: {
+    french: "francese",
+    english: "inglese",
+    german: "tedesco",
+    italian: "italiano",
   },
 
   /**
@@ -236,6 +254,16 @@ export default {
         paragraph: "Date al vostro negozio un nome unico che dà il tono e incoraggia i visitatori ad interessarsi ai vostri prodotti. Una forte identità è un buon modo per costruire un negozio attraente e riconosciuto.",
         placeholder: "Nome del vostro negozio"
       },
+      details: {
+        title: "Dettagli del vostro negozio",
+        paragraph: "Parlateci del vostro negozio. Dove si trova? Cosa ha da offrire? Descrivite al meglio per dargli una buona immagine, oltre ad informare efficacemente i vostri visitatori delle vostre attività e metodi.",
+        description_short_description: "Descrizione in una frase del vostro negozio. Di solito accompagna il titolo del vostro negozio ovunque quest'ultimo è visibile.",
+        description_long_description: "Descrizione dettagliata del vostro negozio. Quest'ultimo è visibile solo sulla pagina del profilo del vostro negozio.",
+      },
+      customization: {
+        title: "Personalizzate il vostro negozio",
+        paragraph: "Personalizzate il vostro negozio per dargli un'identità unica!",
+      }
     }
   },
 

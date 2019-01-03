@@ -6,15 +6,18 @@ export default {
   buttons: {
     add_to_cart: "Ajouter au panier",
     back: "Retour",
+    cancel: "Annuler",
     check_availability: "Vérifier la disponibilité",
     connection: "Connexion",
+    create: "Créer",
     create_account: "Créer le compte",
     create_my_shop: "Créer ma boutique",
+    customize_my_shop: "Personnaliser ma boutique",
+    finalize_shop_creation: "Finaliser la création de ma boutique",
+    finish: "Terminer",
+    login: "Connexion",
     password_email: "Envoyer un lien pour réinitialiser mon mot de passe",
     password_reset: "Réinitialiser le mot de passe",
-    create: "Créer",
-    cancel: "Annuler",
-    login: "Connexion",
     register: "Créer un compte",
     subscribe: "Inscription",
     to_my_shop_details: "Vers les détails de ma boutique"
@@ -113,6 +116,8 @@ export default {
    */
   forms: {
     labels: {
+      avatar: "Avatar",
+      cover_image: "Image de couverture",
       email: "Email",
       name: "Nom",
       password: "Mot de passe",
@@ -124,9 +129,22 @@ export default {
       address_line_2: "Adresse ligne 2",
       postal_code: "Code postal",
       city: "Ville",
-      country: "Pays"
+      country: "Pays",
+      description_short: "Description courte",
+      description_long: "Description détaillée",
+      theme_selection: "Sélection du thème"
     },
     select: "Sélectionner"
+  },
+
+  /**
+   * Languages
+   */
+  languages: {
+    french: "français",
+    english: "anglais",
+    german: "allemand",
+    italian: "italien",
   },
 
   /**
@@ -236,6 +254,16 @@ export default {
         paragraph: "Donnez à votre boutique un nom unique, marquant et qui incite les visiteurs à s'intéresser à vos produits. Une identité forte est un bon moyen pour construire une boutique attirante et reconnue.",
         placeholder: "Le nom de votre boutique"
       },
+      details: {
+        title: "Détails de votre boutique",
+        paragraph: "Parlez-nous de votre boutique. Où est-elle située? Que fait-elle? Décrivez la au mieux afin de lui donner une bonne image, en plus de renseigner efficacement vos visiteurs de vos activités et de vos méthodes.",
+        description_short_description: "Description en une phrase de votre boutique. Elle accompagne habituellement le titre de votre boutique partout où celle-ci est affichée.",
+        description_long_description: "Description détaillée de votre boutique. Celle-ci n'est affichée que sur la page de profil de votre boutique.",
+      },
+      customization: {
+        title: "Personnalisez votre boutique",
+        paragraph: "Personnalisez votre boutique pour lui donner une identité unique!",
+      }
     }
   },
 

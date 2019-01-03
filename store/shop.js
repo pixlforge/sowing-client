@@ -26,6 +26,16 @@ export const state = () => ({
       cover: ""
     }
   },
+  themes: [
+    { name: "green", value: "#5FB881" },
+    { name: "pink", value: "#F06292" },
+    { name: "purple", value: "#7E57C2" },
+    { name: "indigo", value: "#5C6BC0" },
+    { name: "blue", value: "#42A5F5" },
+    { name: "brown", value: "#795548" },
+    { name: "grey", value: "#424242" },
+    { name: "slate", value: "#546E7A" }
+  ]
 });
 
 export const getters = {
@@ -83,12 +93,18 @@ export const getters = {
   shopLongDescriptionIt(state) {
     return state.form.description_long.it;
   },
+  availableThemes(state) {
+    return state.themes;
+  },
+  shopTheme(state) {
+    return state.form.theme_color;
+  },
   shopAvatar(state) {
     return state.form.media.avatar;
   },
   shopCover(state) {
     return state.form.media.cover;
-  }
+  },
 };
 
 export const mutations = {
@@ -103,12 +119,6 @@ export const mutations = {
   },
   SET_STEP_CUSTOMIZATION(state, value) {
     state.stepCustomization = value;
-  },
-  SET_SHOP(state, shop) {
-    state.form = shop;
-  },
-  SET_AVATAR(state, url) {
-    state.form.media.avatar = url;
   },
   SET_COVER(state, url) {
     state.form.media.cover = url;
@@ -148,6 +158,15 @@ export const mutations = {
   },
   SET_SHOP_LONG_DESCRIPTION_IT(state, description) {
     state.form.description_long.it = description;
+  },
+  SET_SHOP_THEME(state, theme) {
+    state.form.theme_color = theme;
+  },
+  SET_SHOP(state, shop) {
+    state.form = shop;
+  },
+  SET_AVATAR(state, url) {
+    state.form.media.avatar = url;
   },
 };
 
@@ -208,6 +227,9 @@ export const actions = {
   },
   setShopLongDescriptionIt({ commit }, description) {
     commit('SET_SHOP_LONG_DESCRIPTION_IT', description);
+  },
+  async setShopTheme({ commit }, theme) {
+    commit('SET_SHOP_THEME', theme);
   },
   async getShop({ dispatch }) {
     let res = await this.$axios.$get("/user/shop");

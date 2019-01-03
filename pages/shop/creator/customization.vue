@@ -2,18 +2,17 @@
   <main>
     <section class="container section">
       <div class="flex flex-col items-center">
-        <h2 class="title-large text-center mt-100">Personnalisez votre boutique</h2>
+        <h2 class="title-large text-center mt-100">{{ $t("shop_creator.steps.customization.title") }}</h2>
 
         <section class="w-full max-w-1000">
-          <p class="paragraph-body text-center mt-60">
-            Personnalisez votre boutique pour lui donner un identité unique!
-          </p>
+          <p class="paragraph-body text-center mt-60">{{ $t("shop_creator.steps.customization.paragraph") }}</p>
         </section>
 
-        <!-- Profile image -->
         <template v-if="shop.id">
+          
+          <!-- Profile image -->
           <section class="w-full max-w-1000 mt-100">
-            <h5 class="text-24">Image de profil</h5>
+            <h5 class="text-24">{{ $t("forms.labels.avatar") }}</h5>
             <dropzone
               id="dropzoneProfile"
               ref="dropzoneProfile"
@@ -23,10 +22,9 @@
               @vdropzone-success="updateShop"/>
           </section>
 
+          <!-- Cover image -->
           <section class="w-full max-w-1000 mt-100">
-
-            <!-- Cover image -->
-            <h5 class="text-24">Image de couverture</h5>
+            <h5 class="text-24">{{ $t("forms.labels.cover_image") }}</h5>
             <dropzone
               id="dropzoneCover"
               ref="dropzoneCover"
@@ -37,13 +35,30 @@
           </section>
         </template>
 
+        <section class="w-full max-w-1000 flex mt-100">
+          <div class="w-1/3">
+            <h5 class="text-24">{{ $t("forms.labels.theme_selection") }}</h5>
+          </div>
+          <div class="w-2/3">
+            <ul class="list-reset flex justify-between">
+              <li
+                v-for="theme in availableThemes"
+                :key="theme.name">
+                <Tile :theme="theme"/>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Next -->
         <button
+          :style="`background-color: ${shopTheme}`"
           class="btn btn-primary mt-100"
           @click.prevent="next">
           <font-awesome-icon
             :icon="['far', 'chevron-circle-right']"
             class="mr-5"/>
-          Finaliser la création de ma boutique
+          {{ $t("buttons.finalize_shop_creation") }}
         </button>
       </div>
     </section>
@@ -53,6 +68,7 @@
 <script>
 import Dropzone from "nuxt-dropzone";
 import "vue2-dropzone/dist/vue2Dropzone.css";
+import Tile from "@/components/themes/Tile";
 import { mapGetters, mapActions } from "vuex";
 
 export default {
@@ -62,7 +78,8 @@ export default {
     mode: "out-in"
   },
   components: {
-    Dropzone
+    Dropzone,
+    Tile
   },
   data() {
     return {
@@ -91,7 +108,9 @@ export default {
       stepName: "shop/stepName",
       stepDetails: "shop/stepDetails",
       shopExists: "shop/shopExists",
-      shop: "shop/shop"
+      shop: "shop/shop",
+      availableThemes: "shop/availableThemes",
+      shopTheme: "shop/shopTheme"
     }),
     optionsForAvatar() {
       return {
