@@ -1,7 +1,7 @@
 <template>
   <div class="bg-green flex flex-col justify-center items-center text-12 text-white py-15">
     <p>
-      &copy; 2018 {{ $t("footer.disclaimer.rights") }}
+      &copy; 2018 &ndash; {{ currentYear }} {{ $t("footer.disclaimer.rights") }}
       <a
         href="https://www.sowing.ch/"
         target="_blank"
@@ -22,3 +22,13 @@
     </p>
   </div>
 </template>
+
+<script>
+export default {
+  computed: {
+    currentYear() {
+      return new Date().getFullYear();
+    }
+  }
+};
+</script>
