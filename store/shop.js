@@ -1,8 +1,8 @@
 export const state = () => ({
   terms: false,
-  stepName: false,
-  stepDetails: false,
-  stepCustomization: false,
+  step_name: false,
+  step_details: false,
+  step_customization: false,
   form: {
     name: "",
     description_short: {
@@ -17,7 +17,7 @@ export const state = () => ({
       de: "",
       it: ""
     },
-    theme_color: "#5FB881",
+    theme: "green",
     postal_code: "",
     city: "",
     country_id: "",
@@ -26,16 +26,7 @@ export const state = () => ({
       cover: ""
     }
   },
-  themes: [
-    { name: "green", value: "#5FB881" },
-    { name: "pink", value: "#F06292" },
-    { name: "purple", value: "#7E57C2" },
-    { name: "indigo", value: "#5C6BC0" },
-    { name: "blue", value: "#42A5F5" },
-    { name: "brown", value: "#795548" },
-    { name: "grey", value: "#424242" },
-    { name: "slate", value: "#546E7A" }
-  ]
+  available_themes: ["green", "pink", "purple", "indigo", "blue", "brown", "grey", "slate"]
 });
 
 export const getters = {
@@ -43,13 +34,13 @@ export const getters = {
     return state.terms;
   },
   stepName(state) {
-    return state.stepName;
+    return state.step_name;
   },
   stepDetails(state) {
-    return state.stepDetails;
+    return state.step_details;
   },
   stepCustomization(state) {
-    return state.stepCustomization;
+    return state.step_customization;
   },
   shop(state) {
     return state.form;
@@ -94,10 +85,10 @@ export const getters = {
     return state.form.description_long.it;
   },
   availableThemes(state) {
-    return state.themes;
+    return state.available_themes;
   },
   shopTheme(state) {
-    return state.form.theme_color;
+    return state.form.theme;
   },
   shopAvatar(state) {
     return state.form.media.avatar;
@@ -112,13 +103,13 @@ export const mutations = {
     state.terms = terms;
   },
   SET_STEP_NAME(state, value) {
-    state.stepName = value;
+    state.step_name = value;
   },
   SET_STEP_DETAILS(state, value) {
-    state.stepDetails = value;
+    state.step_details = value;
   },
   SET_STEP_CUSTOMIZATION(state, value) {
-    state.stepCustomization = value;
+    state.step_customization = value;
   },
   SET_COVER(state, url) {
     state.form.media.cover = url;
@@ -160,7 +151,7 @@ export const mutations = {
     state.form.description_long.it = description;
   },
   SET_SHOP_THEME(state, theme) {
-    state.form.theme_color = theme;
+    state.form.theme = theme;
   },
   SET_SHOP(state, shop) {
     state.form = shop;

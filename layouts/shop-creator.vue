@@ -7,7 +7,7 @@
       v-if="shopCover"
       :style="`background-image: url('${shopCover}');`"
       class="block w-full h-350 bg-center bg-no-repeat bg-cover"/>
-    <Header :style="`background-color: ${shopTheme}`">
+    <Header :class="bgTheme">
       <template slot="icon">
         <div
           v-if="shopAvatar"
@@ -15,7 +15,7 @@
           class="block w-110 h-110 rounded-full bg-center bg-no-repeat bg-cover"/>
         <div
           v-else
-          :style="iconStyle">
+          :class="textTheme">
           <font-awesome-icon
             :icon="['far', 'store']"
             class="block"/>
@@ -31,7 +31,7 @@
     <Navigation/>
     <nuxt/>
     <Footer/>
-    <Disclaimer :style="`background-color: ${shopTheme}`"/>
+    <Disclaimer :class="bgTheme"/>
   </div>
 </template>
 
@@ -62,8 +62,11 @@ export default {
       shopCover: "shop/shopCover",
       shopTheme: "shop/shopTheme"
     }),
-    iconStyle() {
-      return `color: ${this.shopTheme}`;
+    bgTheme() {
+      return `bg-${this.shopTheme}`;
+    },
+    textTheme() {
+      return `text-${this.shopTheme}`;
     }
   }
 };

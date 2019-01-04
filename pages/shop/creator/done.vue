@@ -18,7 +18,8 @@
 
           <!-- Next -->
           <button
-            class="btn btn-primary"
+            :class="btnTheme"
+            class="btn"
             @click.prevent="next">
             <font-awesome-icon
               :icon="['far', 'chevron-circle-right']"
@@ -44,8 +45,12 @@ export default {
     ...mapGetters({
       stepName: "shop/stepName",
       stepDetails: "shop/stepDetails",
-      stepCustomization: "shop/stepCustomization"
-    })
+      stepCustomization: "shop/stepCustomization",
+      shopTheme: "shop/shopTheme"
+    }),
+    btnTheme() {
+      return `btn-${this.shopTheme}`;
+    }
   },
   mounted() {
     this.setStepCustomization(true);

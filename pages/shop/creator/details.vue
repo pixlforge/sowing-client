@@ -233,7 +233,6 @@
 
           <!-- Next -->
           <button
-            :style="btnStyle"
             :class="{ 'btn-disabled': !shopPostalCode || !shopCity || !shopCountryId }"
             class="btn btn-primary"
             @click.prevent="store">
@@ -371,12 +370,6 @@ export default {
       set(description) {
         this.setShopLongDescriptionIt(description);
       }
-    },
-    btnStyle() {
-      if (!this.shopPostalCode || !this.shopCity || !this.shopCountryId) {
-        return "";
-      }
-      return `background-color: ${this.shopTheme}`;
     }
   },
   created() {

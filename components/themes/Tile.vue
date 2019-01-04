@@ -1,10 +1,10 @@
 <template>
   <div
-    :style="`background-color: ${theme.value}`"
-    class="w-60 h-60 bg-green rounded-lg flex justify-center items-center cursor-pointer"
-    @click.prevent="setShopTheme(theme.value)">
+    :class="bgTheme"
+    class="w-60 h-60 rounded-lg flex justify-center items-center cursor-pointer"
+    @click.prevent="setShopTheme(theme)">
     <font-awesome-icon
-      v-if="theme.value === shopTheme"
+      v-if="theme === shopTheme"
       :icon="['far', 'check-circle']"
       class="text-24 text-white"/>
   </div>
@@ -16,14 +16,17 @@ import { mapGetters, mapActions } from "vuex";
 export default {
   props: {
     theme: {
-      type: Object,
+      type: String,
       required: true
     }
   },
   computed: {
     ...mapGetters({
       shopTheme: "shop/shopTheme"
-    })
+    }),
+    bgTheme() {
+      return `bg-${this.theme}`;
+    }
   },
   methods: {
     ...mapActions({

@@ -42,8 +42,8 @@
           <div class="w-2/3">
             <ul class="list-reset flex justify-between">
               <li
-                v-for="theme in availableThemes"
-                :key="theme.name">
+                v-for="(theme, index) in availableThemes"
+                :key="index">
                 <Tile :theme="theme"/>
               </li>
             </ul>
@@ -52,8 +52,8 @@
 
         <!-- Next -->
         <button
-          :style="`background-color: ${shopTheme}`"
-          class="btn btn-primary mt-100"
+          :class="btnTheme"
+          class="btn mt-100"
           @click.prevent="next">
           <font-awesome-icon
             :icon="['far', 'chevron-circle-right']"
@@ -112,6 +112,9 @@ export default {
       availableThemes: "shop/availableThemes",
       shopTheme: "shop/shopTheme"
     }),
+    btnTheme() {
+      return `btn-${this.shopTheme}`;
+    },
     optionsForAvatar() {
       return {
         ...this.dzOptions,

@@ -21,7 +21,7 @@
               class="input-base rounded-r-none mt-0">
             <button
               :disabled="shopExists"
-              :class="{ 'btn-disabled': shopExists }"
+              :class="shopExists ? 'btn-disabled' : btnTheme"
               class="btn btn-primary rounded-l-none nowrap"
               @click.prevent="check">
               <font-awesome-icon
@@ -46,10 +46,9 @@
 
           <!-- Next -->
           <button
-            :style="btnStyle"
             :disabled="!shopName"
-            :class="{ 'btn-disabled': !shopName }"
-            class="btn btn-primary"
+            :class="shopName ? btnTheme : 'btn-disabled'"
+            class="btn"
             @click.prevent="next">
             <font-awesome-icon
               :icon="['far', 'chevron-circle-right']"
@@ -79,6 +78,9 @@ export default {
       shopExists: "shop/shopExists",
       shopTheme: "shop/shopTheme"
     }),
+    btnTheme() {
+      return `btn-${this.shopTheme}`;
+    },
     localShopName: {
       get() {
         return this.shopName;
@@ -86,12 +88,6 @@ export default {
       set(name) {
         this.setShopName(name);
       }
-    },
-    btnStyle() {
-      if (!this.shopName) {
-        return "";
-      }
-      return `background-color: ${this.shopTheme}`;
     }
   },
   mounted() {
