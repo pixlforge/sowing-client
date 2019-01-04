@@ -33,4 +33,3 @@ export default {
   line-height: 0;
 }
 </style>
-

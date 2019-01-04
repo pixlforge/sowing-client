@@ -34,7 +34,9 @@
     "autoprefixer": "^8.6.4",
     "babel-eslint": "^8.2.1",
     "eslint": "^5.10.0",
+    "eslint-config-prettier": "^3.3.0",
     "eslint-loader": "^2.0.0",
+    "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-vue": "^4.0.0",
     "nodemon": "^1.18.9",
     "tailwindcss": "^0.7.0"

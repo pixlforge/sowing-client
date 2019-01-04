@@ -134,4 +134,3 @@ export default {
   transform: translate(-10%, 3rem);
 }
 </style>
-

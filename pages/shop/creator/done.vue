@@ -4,6 +4,8 @@
       <div class="flex flex-col items-center">
         <h2 class="title-large text-center mt-100">Terminé!</h2>
 
+        <Success class="block w-1/2 mt-100"/>
+
         <div class="flex mt-100">
 
           <!-- Previous -->
@@ -33,6 +35,7 @@
 </template>
 
 <script>
+import Success from "@/components/illustrations/Success";
 import { mapGetters, mapActions } from "vuex";
 
 export default {
@@ -40,6 +43,9 @@ export default {
   transition: {
     name: "slide",
     mode: "out-in"
+  },
+  components: {
+    Success
   },
   computed: {
     ...mapGetters({
@@ -72,4 +78,3 @@ export default {
   }
 };
 </script>
-

@@ -1,4 +1,4 @@
-import queryString from 'query-string';
+import queryString from "query-string";
 
 export const state = () => ({
   products: [],
@@ -82,11 +82,11 @@ export const actions = {
 
     let res = await this.$axios.$get(`/cart?${queryString.stringify(query)}`);
 
-    commit('SET_PRODUCTS', res.data.products);
-    commit('SET_EMPTY', res.meta.is_empty);
-    commit('SET_SUBTOTAL', res.meta.subtotal);
-    commit('SET_TOTAL', res.meta.total);
-    commit('SET_CHANGED', res.meta.has_changed);
+    commit("SET_PRODUCTS", res.data.products);
+    commit("SET_EMPTY", res.meta.is_empty);
+    commit("SET_SUBTOTAL", res.meta.subtotal);
+    commit("SET_TOTAL", res.meta.total);
+    commit("SET_CHANGED", res.meta.has_changed);
 
     return res;
   },
@@ -94,7 +94,7 @@ export const actions = {
   async destroy({ dispatch }, productId) {
     await this.$axios.$delete(`/cart/${productId}`);
 
-    dispatch('getCart');
+    dispatch("getCart");
   },
 
   async update({ dispatch }, { productId, quantity }) {
@@ -102,22 +102,22 @@ export const actions = {
       quantity
     });
 
-    dispatch('getCart');
+    dispatch("getCart");
   },
 
   async store({ dispatch }, variations) {
-    await this.$axios.$post('/cart', {
+    await this.$axios.$post("/cart", {
       variations
     });
 
-    dispatch('getCart');
+    dispatch("getCart");
   },
 
   emptyCart({ commit }) {
-    commit('EMPTY_CART');
+    commit("EMPTY_CART");
   },
 
   setShippingMethod({ commit }, shippingMethod) {
-    commit('SET_SHIPPING_METHOD', shippingMethod);
+    commit("SET_SHIPPING_METHOD", shippingMethod);
   }
 };

@@ -1,5 +1,4 @@
 export default {
-
   /**
    * Buttons
    */
@@ -58,7 +57,7 @@ export default {
     variations: {
       labels: {
         quantity: "Quantité",
-        selection: "Sélection",
+        selection: "Sélection"
       },
       select: {
         out_of_stock: "Rupture de stock"
@@ -79,10 +78,12 @@ export default {
   dropzone: {
     dict_remove_file: "Supprimer",
     dict_cancel_upload: "Annuler",
-    dict_cancel_upload_confirmation: "Êtes-vous certain de vouloir annuler le téléchargement?",
-    dict_default_message: "Glissez-déposez une image ici pour la télécharger ou cliquez pour choisir votre image.",
+    dict_cancel_upload_confirmation:
+      "Êtes-vous certain de vouloir annuler le téléchargement?",
+    dict_default_message:
+      "Glissez-déposez une image ici pour la télécharger ou cliquez pour choisir votre image.",
     dict_fallback_message: "Votre navigateur est trop ancien ou incompatible.",
-    dict_file_too_big: "Ce fichier est trop volumineux.",
+    dict_file_too_big: "Ce fichier est trop volumineux."
   },
 
   /**
@@ -90,7 +91,7 @@ export default {
    */
   footer: {
     titles: {
-      categories: 'Catégories',
+      categories: "Catégories",
       language: "Langue",
       sell_on_sowing: "Vendre sur Sowing",
       about: "À propos",
@@ -144,7 +145,7 @@ export default {
     french: "français",
     english: "anglais",
     german: "allemand",
-    italian: "italien",
+    italian: "italien"
   },
 
   /**
@@ -176,25 +177,29 @@ export default {
         features: "Tous les avantages Sowing pour vous",
         shops: "Découvrez nos nouvelles boutiques",
         categories: "Découvrez nos produits par catégorie",
-        reviews: "Ils ont donné leur avis",
+        reviews: "Ils ont donné leur avis"
       },
       features: {
         first: {
           title: "Sowing est unique en Suisse",
-          body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam et facere quia aliquid perferendis optio, temporibus quasi error! Ad omnis qui nulla iste aspernatur dolorem dolores ullam tenetur est. Qui."
+          body:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam et facere quia aliquid perferendis optio, temporibus quasi error! Ad omnis qui nulla iste aspernatur dolorem dolores ullam tenetur est. Qui."
         },
         second: {
           title: "Une visibilité inédite pour vous",
-          body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam et facere quia aliquid perferendis optio, temporibus quasi error! Ad omnis qui nulla iste aspernatur dolorem dolores ullam tenetur est. Qui."
+          body:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam et facere quia aliquid perferendis optio, temporibus quasi error! Ad omnis qui nulla iste aspernatur dolorem dolores ullam tenetur est. Qui."
         },
         third: {
           title: "Sowing est indépendant",
-          body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam et facere quia aliquid perferendis optio, temporibus quasi error! Ad omnis qui nulla iste aspernatur dolorem dolores ullam tenetur est. Qui."
+          body:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam et facere quia aliquid perferendis optio, temporibus quasi error! Ad omnis qui nulla iste aspernatur dolorem dolores ullam tenetur est. Qui."
         },
         fourth: {
           title: "Votre sécurité, notre mission",
-          body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam et facere quia aliquid perferendis optio, temporibus quasi error! Ad omnis qui nulla iste aspernatur dolorem dolores ullam tenetur est. Qui."
-        },
+          body:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam et facere quia aliquid perferendis optio, temporibus quasi error! Ad omnis qui nulla iste aspernatur dolorem dolores ullam tenetur est. Qui."
+        }
       }
     },
     login: {
@@ -211,13 +216,14 @@ export default {
         pending: "En attente",
         processing: "Traitement",
         payment_failed: "Paiement a échoué"
-      },
+      }
     },
     password_email: {
       title: "Récupération de compte",
       paragraphs: {
         first: "Vous avez oublié le mot de passe de votre compte?",
-        second: "Pas de problème, entrez simplement votre adresse e-mail dans le champ ci-dessous et nous allons vous envoyer un e-mail contenant un lien vous permettant de définir un nouveau mot de passe pour votre compte."
+        second:
+          "Pas de problème, entrez simplement votre adresse e-mail dans le champ ci-dessous et nous allons vous envoyer un e-mail contenant un lien vous permettant de définir un nouveau mot de passe pour votre compte."
       }
     },
     password_reset: {
@@ -234,7 +240,7 @@ export default {
       title: "Compte créé avec succès!"
     },
     shop: {
-      title: "Ma boutique",
+      title: "Ma boutique"
     }
   },
 
@@ -251,18 +257,23 @@ export default {
     steps: {
       name: {
         title: "Nommez votre boutique",
-        paragraph: "Donnez à votre boutique un nom unique, marquant et qui incite les visiteurs à s'intéresser à vos produits. Une identité forte est un bon moyen pour construire une boutique attirante et reconnue.",
+        paragraph:
+          "Donnez à votre boutique un nom unique, marquant et qui incite les visiteurs à s'intéresser à vos produits. Une identité forte est un bon moyen pour construire une boutique attirante et reconnue.",
         placeholder: "Le nom de votre boutique"
       },
       details: {
         title: "Détails de votre boutique",
-        paragraph: "Parlez-nous de votre boutique. Où est-elle située? Que fait-elle? Décrivez la au mieux afin de lui donner une bonne image, en plus de renseigner efficacement vos visiteurs de vos activités et de vos méthodes.",
-        description_short_description: "Description en une phrase de votre boutique. Elle accompagne habituellement le titre de votre boutique partout où celle-ci est affichée.",
-        description_long_description: "Description détaillée de votre boutique. Celle-ci n'est affichée que sur la page de profil de votre boutique.",
+        paragraph:
+          "Parlez-nous de votre boutique. Où est-elle située? Que fait-elle? Décrivez la au mieux afin de lui donner une bonne image, en plus de renseigner efficacement vos visiteurs de vos activités et de vos méthodes.",
+        description_short_description:
+          "Description en une phrase de votre boutique. Elle accompagne habituellement le titre de votre boutique partout où celle-ci est affichée.",
+        description_long_description:
+          "Description détaillée de votre boutique. Celle-ci n'est affichée que sur la page de profil de votre boutique."
       },
       customization: {
         title: "Personnalisez votre boutique",
-        paragraph: "Personnalisez votre boutique pour lui donner une identité unique!",
+        paragraph:
+          "Personnalisez votre boutique pour lui donner une identité unique!"
       }
     }
   },
@@ -273,13 +284,15 @@ export default {
   streaks: {
     register: {
       title: "Vendez dès aujourd'hui",
-      body: "Lancez votre boutique personnelle facilement en quelques clics dès maintenant.",
+      body:
+        "Lancez votre boutique personnelle facilement en quelques clics dès maintenant."
     },
     newsletter: {
       title: "Inscrivez-vous à notre newsletter",
-      body: "Inscription rapide, facile, garantie sans spam et désabonnez-vous quand vous le voulez.",
+      body:
+        "Inscription rapide, facile, garantie sans spam et désabonnez-vous quand vous le voulez.",
       placeholder: "votre.adresse@email.ch"
-    },
+    }
   },
 
   /**
@@ -291,20 +304,26 @@ export default {
       selected: "Adresse sélectionnée."
     },
     cart: {
-      has_changed: "Un ou plusieurs objets de votre panier ont été modifiés, vous devriez les passer en revue avant de commander",
+      has_changed:
+        "Un ou plusieurs objets de votre panier ont été modifiés, vous devriez les passer en revue avant de commander",
       item_added_singular: "ajouté au panier!",
       item_added_plural: "ajoutés au panier!",
       product_removed: "supprimé."
     },
-    general_error: "Une erreur est survenue. Veuillez recharger la page et réessayer, svp.",
+    general_error:
+      "Une erreur est survenue. Veuillez recharger la page et réessayer, svp.",
     is_already_in_use: "est déjà utilisé",
     is_available: "est disponible",
     logged_out: "Vous êtes maintenant déconnecté(e)",
-    shop_avatar_updated: "L'avatar de votre boutique à été mis à jour avec succès!",
-    shop_cover_updated: "La couverture de votre boutique a été mise à jour avec succès!",
-    terms: "Vous devez d'abord accepter les conditions d'utilisation avant de continuer.",
+    shop_avatar_updated:
+      "L'avatar de votre boutique à été mis à jour avec succès!",
+    shop_cover_updated:
+      "La couverture de votre boutique a été mise à jour avec succès!",
+    terms:
+      "Vous devez d'abord accepter les conditions d'utilisation avant de continuer.",
     theme_updated: "Le thème de votre boutique a été mis à jour!",
-    validation: "Le formulaire comporte des erreurs. Veuillez, svp, les corriger et réessayer.",
-    welcome: "Bienvenue",
+    validation:
+      "Le formulaire comporte des erreurs. Veuillez, svp, les corriger et réessayer.",
+    welcome: "Bienvenue"
   }
-}
+};

@@ -24,23 +24,23 @@ export const mutations = {
 
   SET_ADDRESS_CREATOR(state, value) {
     state.addressCreatorIsOpen = value;
-  },
-}
+  }
+};
 
 export const actions = {
   openAddressSelector({ commit }) {
-    commit('SET_ADDRESS_SELECTOR', true);
+    commit("SET_ADDRESS_SELECTOR", true);
   },
 
   closeAddressSelector({ commit }) {
-    commit('SET_ADDRESS_SELECTOR', false);
+    commit("SET_ADDRESS_SELECTOR", false);
   },
 
   openAddressCreator({ commit }) {
-    commit('SET_ADDRESS_CREATOR', true);
+    commit("SET_ADDRESS_CREATOR", true);
   },
 
   closeAddressCreator({ commit }) {
-    commit('SET_ADDRESS_CREATOR', false);
-  },
+    commit("SET_ADDRESS_CREATOR", false);
+  }
 };

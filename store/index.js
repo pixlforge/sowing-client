@@ -19,12 +19,12 @@ export const mutations = {
 
 export const actions = {
   async nuxtServerInit({ commit, dispatch }) {
-    let res = await this.$axios.$get('/categories');
+    let res = await this.$axios.$get("/categories");
 
-    commit('SET_CATEGORIES', res.data);
+    commit("SET_CATEGORIES", res.data);
 
     if (this.$auth.loggedIn) {
-      await dispatch('cart/getCart');
+      await dispatch("cart/getCart");
     }
   }
 };

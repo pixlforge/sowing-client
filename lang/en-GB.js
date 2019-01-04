@@ -1,5 +1,4 @@
 export default {
-
   /**
    * Buttons
    */
@@ -58,7 +57,7 @@ export default {
     variations: {
       labels: {
         quantity: "Quantity",
-        selection: "Select",
+        selection: "Select"
       },
       select: {
         out_of_stock: "Out of stock"
@@ -79,10 +78,12 @@ export default {
   dropzone: {
     dict_remove_file: "Remove",
     dict_cancel_upload: "Cancel",
-    dict_cancel_upload_confirmation: "Are you sure you want to cancel the upload?",
-    dict_default_message: "Drag and drop an image here to download or click to choose your image.",
+    dict_cancel_upload_confirmation:
+      "Are you sure you want to cancel the upload?",
+    dict_default_message:
+      "Drag and drop an image here to download or click to choose your image.",
     dict_fallback_message: "Your browser is too old or incompatible.",
-    dict_file_too_big: "This file is too large.",
+    dict_file_too_big: "This file is too large."
   },
 
   /**
@@ -90,7 +91,7 @@ export default {
    */
   footer: {
     titles: {
-      categories: 'Categories',
+      categories: "Categories",
       language: "Language",
       sell_on_sowing: "Sell on Sowing",
       about: "About",
@@ -144,7 +145,7 @@ export default {
     french: "french",
     english: "english",
     german: "german",
-    italian: "italian",
+    italian: "italian"
   },
 
   /**
@@ -176,25 +177,29 @@ export default {
         features: "All the Sowing advantages for you",
         shops: "Discover our new shops",
         categories: "Discover our products by category",
-        reviews: "They gave their opinion",
+        reviews: "They gave their opinion"
       },
       features: {
         first: {
           title: "Sowing is unique in Switzerland",
-          body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam et facere quia aliquid perferendis optio, temporibus quasi error! Ad omnis qui nulla iste aspernatur dolorem dolores ullam tenetur est. Qui."
+          body:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam et facere quia aliquid perferendis optio, temporibus quasi error! Ad omnis qui nulla iste aspernatur dolorem dolores ullam tenetur est. Qui."
         },
         second: {
           title: "An unprecedented visibility for you",
-          body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam et facere quia aliquid perferendis optio, temporibus quasi error! Ad omnis qui nulla iste aspernatur dolorem dolores ullam tenetur est. Qui."
+          body:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam et facere quia aliquid perferendis optio, temporibus quasi error! Ad omnis qui nulla iste aspernatur dolorem dolores ullam tenetur est. Qui."
         },
         third: {
           title: "Sowing is independent",
-          body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam et facere quia aliquid perferendis optio, temporibus quasi error! Ad omnis qui nulla iste aspernatur dolorem dolores ullam tenetur est. Qui."
+          body:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam et facere quia aliquid perferendis optio, temporibus quasi error! Ad omnis qui nulla iste aspernatur dolorem dolores ullam tenetur est. Qui."
         },
         fourth: {
           title: "Your security, our mission",
-          body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam et facere quia aliquid perferendis optio, temporibus quasi error! Ad omnis qui nulla iste aspernatur dolorem dolores ullam tenetur est. Qui."
-        },
+          body:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam et facere quia aliquid perferendis optio, temporibus quasi error! Ad omnis qui nulla iste aspernatur dolorem dolores ullam tenetur est. Qui."
+        }
       }
     },
     login: {
@@ -211,13 +216,14 @@ export default {
         pending: "Pending",
         processing: "Processing",
         payment_failed: "Payment Failed"
-      },
+      }
     },
     password_email: {
       title: "Account recovery",
       paragraphs: {
         first: "Forgot your password?",
-        second: "No problem, simply enter your e-mail address in the field below and we will send you an e-mail containing a link allowing you to set a new password for your account."
+        second:
+          "No problem, simply enter your e-mail address in the field below and we will send you an e-mail containing a link allowing you to set a new password for your account."
       }
     },
     password_reset: {
@@ -234,7 +240,7 @@ export default {
       title: "Account created successfully!"
     },
     shop: {
-      title: "My shop",
+      title: "My shop"
     }
   },
 
@@ -251,18 +257,22 @@ export default {
     steps: {
       name: {
         title: "Name your shop",
-        paragraph: "Give your store a unique name that sets the tone and encourages visitors to take an interest in your products. A strong identity is a good way to build an attractive and recognized shop.",
+        paragraph:
+          "Give your store a unique name that sets the tone and encourages visitors to take an interest in your products. A strong identity is a good way to build an attractive and recognized shop.",
         placeholder: "The name of your shop"
       },
       details: {
         title: "Details of your shop",
-        paragraph: "Tell us about your shop. Where is it located? What does it have to offer? Describe it as best you can to give your shop a good image, in addition to effectively inform your visitors of your activities and methods.",
-        description_short_description: "Description in one sentence of your shop. It usually accompanies the title of your shop wherever it is displayed.",
-        description_long_description: "Detailed description of your shop. This is displayed only on the profile page of your shop.",
+        paragraph:
+          "Tell us about your shop. Where is it located? What does it have to offer? Describe it as best you can to give your shop a good image, in addition to effectively inform your visitors of your activities and methods.",
+        description_short_description:
+          "Description in one sentence of your shop. It usually accompanies the title of your shop wherever it is displayed.",
+        description_long_description:
+          "Detailed description of your shop. This is displayed only on the profile page of your shop."
       },
       customization: {
         title: "Customize your shop",
-        paragraph: "Customize your shop to give it a unique identity!",
+        paragraph: "Customize your shop to give it a unique identity!"
       }
     }
   },
@@ -273,13 +283,14 @@ export default {
   streaks: {
     register: {
       title: "Sell today",
-      body: "Launch your own store easily in a few clicks now.",
+      body: "Launch your own store easily in a few clicks now."
     },
     newsletter: {
       title: "Subscribe to our newsletter",
-      body: "Quick, easy registration, no spam, and unsubscribe whenever you want.",
+      body:
+        "Quick, easy registration, no spam, and unsubscribe whenever you want.",
       placeholder: "your.email@address.ch"
-    },
+    }
   },
 
   /**
@@ -291,20 +302,24 @@ export default {
       selected: "Address selected."
     },
     cart: {
-      has_changed: "One or more items in your cart have been updated, please review them before ordering.",
+      has_changed:
+        "One or more items in your cart have been updated, please review them before ordering.",
       item_added_singular: "added to cart!",
       item_added_plural: "added to cart!",
       product_removed: "removed."
     },
-    general_error: "An error has occurred. Please reload the page and try again, please.",
+    general_error:
+      "An error has occurred. Please reload the page and try again, please.",
     is_already_in_use: "is already in use",
     is_available: "is available",
     logged_out: "You are now logged out.",
-    shop_avatar_updated: "The avatar of your shop has been updated successfully!",
+    shop_avatar_updated:
+      "The avatar of your shop has been updated successfully!",
     shop_cover_updated: "The cover of your shop has been updated successfully!",
-    terms: "You must first agree to the terms and conditions before going forward.",
+    terms:
+      "You must first agree to the terms and conditions before going forward.",
     theme_updated: "The theme of your shop has been updated!",
     validation: "The form contains errors. Please correct them and try again.",
     welcome: "Welcome back"
   }
-}
+};

@@ -26,10 +26,10 @@ export const mutations = {
 
 export const actions = {
   flash({ commit }, content) {
-    commit('SET_TYPE', content.type);
-    commit('SET_MESSAGE', content.message);
+    commit("SET_TYPE", content.type);
+    commit("SET_MESSAGE", content.message);
   },
   close({ commit }) {
-    commit('EMPTY_MESSAGE');
+    commit("EMPTY_MESSAGE");
   }
 };

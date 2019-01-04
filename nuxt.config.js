@@ -1,104 +1,100 @@
-const pkg = require('./package')
-require('dotenv').config();
+const pkg = require("./package");
+require("dotenv").config();
 
 module.exports = {
-  mode: 'universal',
+  mode: "universal",
 
   /*
-  ** Headers of the page
-  */
+   ** Headers of the page
+   */
   head: {
     title: "Sowing",
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
+      { charset: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { hid: "description", name: "description", content: pkg.description }
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
 
   router: {
-    middleware: [
-      'locale-redirect'
-    ]
+    middleware: ["locale-redirect"]
   },
 
   /*
-  ** Customize the progress-bar color
-  */
+   ** Customize the progress-bar color
+   */
   loading: {
-    color: '#5FB881',
-    height: '5px'
+    color: "#5FB881",
+    height: "5px"
   },
 
   /*
-  ** Global CSS
-  */
-  css: [
-    '~/assets/css/tailwind.css'
-  ],
+   ** Global CSS
+   */
+  css: ["~/assets/css/tailwind.css"],
 
   /*
-  ** Plugins to load before mounting the App
-  */
-  plugins: [
-    '~/plugins/axios'
-  ],
+   ** Plugins to load before mounting the App
+   */
+  plugins: ["~/plugins/axios"],
 
   /*
-  ** Nuxt.js modules
-  */
+   ** Nuxt.js modules
+   */
   modules: [
     // Doc: https://github.com/nuxt-community/axios-module#usage
-    '@nuxtjs/axios',
-    '@nuxtjs/auth',
-    'nuxt-fontawesome',
-    'nuxt-webfontloader',
-    '@nuxtjs/toast',
-    ['@nuxtjs/dotenv', {}],
-    ['@nuxtjs/google-analytics', {
-      id: 'UA-131013770-1'
-    }],
+    "@nuxtjs/axios",
+    "@nuxtjs/auth",
+    "nuxt-fontawesome",
+    "nuxt-webfontloader",
+    "@nuxtjs/toast",
+    ["@nuxtjs/dotenv", {}],
     [
-      'nuxt-i18n', {
+      "@nuxtjs/google-analytics",
+      {
+        id: "UA-131013770-1"
+      }
+    ],
+    [
+      "nuxt-i18n",
+      {
         locales: [
           {
-            name: 'English',
-            code: 'en',
-            iso: 'en-GB',
-            file: 'en-GB.js'
+            name: "English",
+            code: "en",
+            iso: "en-GB",
+            file: "en-GB.js"
           },
           {
-            name: 'Français',
-            code: 'fr',
-            iso: 'fr-CH',
-            file: 'fr-CH.js'
+            name: "Français",
+            code: "fr",
+            iso: "fr-CH",
+            file: "fr-CH.js"
           },
           {
-            name: 'Deutsch',
-            code: 'de',
-            iso: 'de-CH',
-            file: 'de-CH.js'
+            name: "Deutsch",
+            code: "de",
+            iso: "de-CH",
+            file: "de-CH.js"
           },
           {
-            name: 'Italiano',
-            code: 'it',
-            iso: 'it-IT',
-            file: 'it-IT.js'
+            name: "Italiano",
+            code: "it",
+            iso: "it-IT",
+            file: "it-IT.js"
           }
         ],
-        strategy: 'prefix',
-        defaultLocale: 'fr',
+        strategy: "prefix",
+        defaultLocale: "fr",
         vueI18n: {
-          fallbackLocale: 'fr',
+          fallbackLocale: "fr"
         },
         lazy: true,
-        langDir: 'lang/',
+        langDir: "lang/",
         detectBrowserLanguage: {
           useCookie: true,
-          cookieKey: 'i18n_redirected'
+          cookieKey: "i18n_redirected"
         }
       }
     ]
@@ -119,40 +115,44 @@ module.exports = {
     strategies: {
       local: {
         endpoints: {
-          login: { url: '/auth/login', method: 'post', propertyName: 'meta.token' },
-          logout: { url: '/auth/logout', method: 'post' },
-          user: { url: '/auth/me', method: 'get', propertyName: 'data' }
+          login: {
+            url: "/auth/login",
+            method: "post",
+            propertyName: "meta.token"
+          },
+          logout: { url: "/auth/logout", method: "post" },
+          user: { url: "/auth/me", method: "get", propertyName: "data" }
         },
         // tokenRequired: true,
-        tokenType: 'bearer',
+        tokenType: "bearer"
       }
     },
     redirect: {
-      login: '/auth/login',
+      login: "/auth/login",
       logout: false,
-      callback: '/auth/login',
+      callback: "/auth/login",
       home: false
     }
   },
 
-  /** 
+  /**
    * Font Awesome configuration
    */
   fontawesome: {
     imports: [
       {
-        set: '@fortawesome/pro-regular-svg-icons',
-        icons: ['far']
+        set: "@fortawesome/pro-regular-svg-icons",
+        icons: ["far"]
       },
       {
-        set: '@fortawesome/pro-solid-svg-icons',
-        icons: ['fas']
+        set: "@fortawesome/pro-solid-svg-icons",
+        icons: ["fas"]
       },
       {
-        set: '@fortawesome/free-brands-svg-icons',
-        icons: ['fab']
-      },
-    ],
+        set: "@fortawesome/free-brands-svg-icons",
+        icons: ["fab"]
+      }
+    ]
   },
 
   /**
@@ -160,7 +160,7 @@ module.exports = {
    */
   webfontloader: {
     google: {
-      families: ['Nunito:300,400,600,700,800']
+      families: ["Nunito:300,400,600,700,800"]
     }
   },
 
@@ -168,27 +168,27 @@ module.exports = {
    * Toasted configuration
    */
   toast: {
-    position: 'bottom-right',
+    position: "bottom-right",
     duration: 6000
   },
 
   /*
-  ** Build configuration
-  */
+   ** Build configuration
+   */
   build: {
     /*
-    ** You can extend webpack config here
-    */
+     ** You can extend webpack config here
+     */
     extend(config, ctx) {
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
-          enforce: 'pre',
+          enforce: "pre",
           test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
+          loader: "eslint-loader",
           exclude: /(node_modules)/
-        })
+        });
       }
     }
   }
-}
+};

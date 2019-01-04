@@ -1,5 +1,4 @@
 export default {
-
   /**
    * Buttons
    */
@@ -58,7 +57,7 @@ export default {
     variations: {
       labels: {
         quantity: "Quantità",
-        selection: "Selezione",
+        selection: "Selezione"
       },
       select: {
         out_of_stock: "Esaurito"
@@ -79,10 +78,13 @@ export default {
   dropzone: {
     dict_remove_file: "Rimuovere",
     dict_cancel_upload: "Annulla",
-    dict_cancel_upload_confirmation: "Siete sicuri di voler annullare il caricamento?",
-    dict_default_message: "Trascinate e rilasciate qui un'immagine da scaricare o fate un clic per scegliere la vostra immagine.",
-    dict_fallback_message: "Il vostro navigatore è troppo vecchio o incompatibile.",
-    dict_file_too_big: "Questo file è troppo grande.",
+    dict_cancel_upload_confirmation:
+      "Siete sicuri di voler annullare il caricamento?",
+    dict_default_message:
+      "Trascinate e rilasciate qui un'immagine da scaricare o fate un clic per scegliere la vostra immagine.",
+    dict_fallback_message:
+      "Il vostro navigatore è troppo vecchio o incompatibile.",
+    dict_file_too_big: "Questo file è troppo grande."
   },
 
   /**
@@ -90,7 +92,7 @@ export default {
    */
   footer: {
     titles: {
-      categories: 'Categorie',
+      categories: "Categorie",
       language: "Lingua",
       sell_on_sowing: "Vendere su Sowing",
       about: "Informazioni",
@@ -144,7 +146,7 @@ export default {
     french: "francese",
     english: "inglese",
     german: "tedesco",
-    italian: "italiano",
+    italian: "italiano"
   },
 
   /**
@@ -176,25 +178,29 @@ export default {
         features: "Tutti i vantaggi Sowing per voi",
         shops: "Scoprite i nostri nuovi negozi",
         categories: "Scopri i nostri prodotti per categoria",
-        reviews: "Hanno dato la loro opinione",
+        reviews: "Hanno dato la loro opinione"
       },
       features: {
         first: {
           title: "Sowing è unico in Svizzera",
-          body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam et facere quia aliquid perferendis optio, temporibus quasi error! Ad omnis qui nulla iste aspernatur dolorem dolores ullam tenetur est. Qui."
+          body:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam et facere quia aliquid perferendis optio, temporibus quasi error! Ad omnis qui nulla iste aspernatur dolorem dolores ullam tenetur est. Qui."
         },
         second: {
           title: "Una visibilità senza precedenti per voi",
-          body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam et facere quia aliquid perferendis optio, temporibus quasi error! Ad omnis qui nulla iste aspernatur dolorem dolores ullam tenetur est. Qui."
+          body:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam et facere quia aliquid perferendis optio, temporibus quasi error! Ad omnis qui nulla iste aspernatur dolorem dolores ullam tenetur est. Qui."
         },
         third: {
           title: "Sowing è indipendente",
-          body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam et facere quia aliquid perferendis optio, temporibus quasi error! Ad omnis qui nulla iste aspernatur dolorem dolores ullam tenetur est. Qui."
+          body:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam et facere quia aliquid perferendis optio, temporibus quasi error! Ad omnis qui nulla iste aspernatur dolorem dolores ullam tenetur est. Qui."
         },
         fourth: {
           title: "La vostra sicurezza, la nostra missione",
-          body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam et facere quia aliquid perferendis optio, temporibus quasi error! Ad omnis qui nulla iste aspernatur dolorem dolores ullam tenetur est. Qui."
-        },
+          body:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam et facere quia aliquid perferendis optio, temporibus quasi error! Ad omnis qui nulla iste aspernatur dolorem dolores ullam tenetur est. Qui."
+        }
       }
     },
     login: {
@@ -211,13 +217,14 @@ export default {
         pending: "In sospeso",
         processing: "Trattamento",
         payment_failed: "Pagamento fallito"
-      },
+      }
     },
     password_email: {
       title: "Recupero dell'account",
       paragraphs: {
         first: "Hai dimenticato la password?",
-        second: "Nessun problema, inserite semplicemente il vostro indirizzo e-mail nel campo sottostante e vi invieremo una e-mail contenente un link che vi permetterà di impostare una nuova password per il vostro account."
+        second:
+          "Nessun problema, inserite semplicemente il vostro indirizzo e-mail nel campo sottostante e vi invieremo una e-mail contenente un link che vi permetterà di impostare una nuova password per il vostro account."
       }
     },
     password_reset: {
@@ -234,7 +241,7 @@ export default {
       title: "Account creato con successo!"
     },
     shop: {
-      title: "Il mio negozio",
+      title: "Il mio negozio"
     }
   },
 
@@ -251,18 +258,23 @@ export default {
     steps: {
       name: {
         title: "Date un nome al vostro negozio",
-        paragraph: "Date al vostro negozio un nome unico che dà il tono e incoraggia i visitatori ad interessarsi ai vostri prodotti. Una forte identità è un buon modo per costruire un negozio attraente e riconosciuto.",
+        paragraph:
+          "Date al vostro negozio un nome unico che dà il tono e incoraggia i visitatori ad interessarsi ai vostri prodotti. Una forte identità è un buon modo per costruire un negozio attraente e riconosciuto.",
         placeholder: "Nome del vostro negozio"
       },
       details: {
         title: "Dettagli del vostro negozio",
-        paragraph: "Parlateci del vostro negozio. Dove si trova? Cosa ha da offrire? Descrivite al meglio per dargli una buona immagine, oltre ad informare efficacemente i vostri visitatori delle vostre attività e metodi.",
-        description_short_description: "Descrizione in una frase del vostro negozio. Di solito accompagna il titolo del vostro negozio ovunque quest'ultimo è visibile.",
-        description_long_description: "Descrizione dettagliata del vostro negozio. Quest'ultimo è visibile solo sulla pagina del profilo del vostro negozio.",
+        paragraph:
+          "Parlateci del vostro negozio. Dove si trova? Cosa ha da offrire? Descrivite al meglio per dargli una buona immagine, oltre ad informare efficacemente i vostri visitatori delle vostre attività e metodi.",
+        description_short_description:
+          "Descrizione in una frase del vostro negozio. Di solito accompagna il titolo del vostro negozio ovunque quest'ultimo è visibile.",
+        description_long_description:
+          "Descrizione dettagliata del vostro negozio. Quest'ultimo è visibile solo sulla pagina del profilo del vostro negozio."
       },
       customization: {
         title: "Personalizzate il vostro negozio",
-        paragraph: "Personalizzate il vostro negozio per dargli un'identità unica!",
+        paragraph:
+          "Personalizzate il vostro negozio per dargli un'identità unica!"
       }
     }
   },
@@ -273,13 +285,14 @@ export default {
   streaks: {
     register: {
       title: "Vendi oggi",
-      body: "Avvia facilmente il vostro negozio personale in pochi clic.",
+      body: "Avvia facilmente il vostro negozio personale in pochi clic."
     },
     newsletter: {
       title: "Iscrivitevi alla nostra newsletter",
-      body: "Registrazione rapida, semplice, senza spam e annullamento dell'iscrizione quando vuoi.",
+      body:
+        "Registrazione rapida, semplice, senza spam e annullamento dell'iscrizione quando vuoi.",
       placeholder: "vostro.email@indirizzo.ch"
-    },
+    }
   },
 
   /**
@@ -291,20 +304,26 @@ export default {
       selected: "Indirizzo selezionato."
     },
     cart: {
-      has_changed: "Uno o più articoli nel vostro carrello sono stati aggiornati, vi preghiamo di verificarli prima di ordinare.",
+      has_changed:
+        "Uno o più articoli nel vostro carrello sono stati aggiornati, vi preghiamo di verificarli prima di ordinare.",
       item_added_singular: "aggiunto al carrello!",
       item_added_plural: "aggiunti al carrello!",
       product_removed: "è stato rimosso."
     },
-    general_error: "C'è stato un errore. Si prega, per favore, di ricaricare la pagina e riprovare.",
+    general_error:
+      "C'è stato un errore. Si prega, per favore, di ricaricare la pagina e riprovare.",
     is_already_in_use: "è già in uso",
     is_available: "è disponibile",
     logged_out: "Ora siete disconnessi.",
-    shop_avatar_updated: "L'avatar del vostro negozio è stato aggiornato con successo!",
-    shop_cover_updated: "La copertina del vostro negozio è stata aggiornata con successo!",
-    terms: "Devi prima accettare i termini e le condizioni prima di continuare.",
+    shop_avatar_updated:
+      "L'avatar del vostro negozio è stato aggiornato con successo!",
+    shop_cover_updated:
+      "La copertina del vostro negozio è stata aggiornata con successo!",
+    terms:
+      "Devi prima accettare i termini e le condizioni prima di continuare.",
     theme_updated: "Il tema del vostro negozio è stato aggiornato!",
-    validation: "Il modulo contiene errori. Si prega di correggerli e riprovare.",
+    validation:
+      "Il modulo contiene errori. Si prega di correggerli e riprovare.",
     welcome: "Benvenuto"
   }
-}
+};
