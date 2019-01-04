@@ -100,9 +100,11 @@
               <a
                 href="#"
                 class="footer-link flex items-center">
-                <font-awesome-icon
-                  :icon="['fab', 'facebook']"
-                  class="text-16 text-green mr-10"/>
+                <div :class="textTheme">
+                  <font-awesome-icon
+                    :icon="['fab', 'facebook']"
+                    class="block text-16 mr-10"/>
+                </div>
                 Facebook
               </a>
             </li>
@@ -110,9 +112,11 @@
               <a
                 href="#"
                 class="footer-link flex items-center">
-                <font-awesome-icon
-                  :icon="['fab', 'instagram']"
-                  class="text-16 text-green mr-10"/>
+                <div :class="textTheme">
+                  <font-awesome-icon
+                    :icon="['fab', 'instagram']"
+                    class="block text-16 mr-10"/>
+                </div>
                 Instagram
               </a>
             </li>
@@ -129,9 +133,13 @@ import { mapGetters } from "vuex";
 export default {
   computed: {
     ...mapGetters({
+      locale: "locale",
       categories: "categories",
-      locale: "locale"
-    })
+      shopTheme: "shop/shopTheme"
+    }),
+    textTheme() {
+      return `text-${this.shopTheme}`;
+    }
   }
 };
 </script>
