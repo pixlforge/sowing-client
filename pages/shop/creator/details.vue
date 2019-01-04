@@ -233,8 +233,8 @@
 
           <!-- Next -->
           <button
-            :class="{ 'btn-disabled': !shopPostalCode || !shopCity || !shopCountryId }"
-            class="btn btn-primary"
+            :class="!shopPostalCode || !shopCity || !shopCountryId ? 'btn-disabled' : btnTheme"
+            class="btn"
             @click.prevent="store">
             <font-awesome-icon
               :icon="['far', 'chevron-circle-right']"
@@ -370,6 +370,9 @@ export default {
       set(description) {
         this.setShopLongDescriptionIt(description);
       }
+    },
+    btnTheme() {
+      return `btn-${this.shopTheme}`;
     }
   },
   created() {
