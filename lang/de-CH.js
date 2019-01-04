@@ -5,6 +5,7 @@ export default {
   buttons: {
     add_to_cart: "Zum Warenkorb hinzufügen",
     back: "Zurück",
+    begin_shop_creation: "Beginnen Sie mit der Erstellung meines Shops",
     cancel: "Stornieren",
     check_availability: "Verfügbarkeit prüfen",
     connection: "Einloggen",
@@ -241,6 +242,13 @@ export default {
     },
     shop: {
       title: "Mein Shop"
+    },
+    terms: {
+      title: "Nutzungsbedingungen",
+      approve:
+        "Ich habe die Nutzungsbedingungen von Sowing gelesen und stimme ihnen zu",
+      must_approve:
+        "Sie müssen die Bedingungen akzeptieren, bevor Sie fortfahren"
     }
   },
 

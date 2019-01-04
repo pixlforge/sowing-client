@@ -5,6 +5,7 @@ export default {
   buttons: {
     add_to_cart: "Add to cart",
     back: "Back",
+    begin_shop_creation: "Start the creation of my shop",
     cancel: "Cancel",
     check_availability: "Check availability",
     connection: "Log in",
@@ -241,6 +242,11 @@ export default {
     },
     shop: {
       title: "My shop"
+    },
+    terms: {
+      title: "Terms of use",
+      approve: "I have read and agree to the Sowing terms of use",
+      must_approve: "You must accept the terms before proceeding"
     }
   },
 

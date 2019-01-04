@@ -13,7 +13,7 @@
 
     <section class="container section">
       <div class="flex flex-col items-center">
-        <h2 class="title-large text-center mt-100">Conditions Générales de Vente</h2>
+        <h2 class="title-large text-center mt-100">{{ $t("pages.terms.title") }}</h2>
 
         <section class="max-w-1000">
           
@@ -58,9 +58,11 @@
               type="checkbox"
               name="terms"
               class="mr-10">
-            J'ai lu et j'accepte les Conditions Générales de vente de Sowing
+            {{ $t("pages.terms.approve") }}
           </label>
-          <small class="block text-grey-lighter">Vous devez accepter les conditions avant de continuer</small>
+          <small class="block text-grey-lighter">
+            {{ $t("pages.terms.must_approve") }}
+          </small>
         </div>
 
         <button
@@ -71,7 +73,7 @@
           <font-awesome-icon
             :icon="['far', 'chevron-circle-right']"
             class="mr-5"/>
-          Commencer la création de ma boutique
+          {{ $t("buttons.begin_shop_creation") }}
         </button>
       </div>
     </section>

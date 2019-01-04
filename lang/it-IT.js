@@ -5,6 +5,7 @@ export default {
   buttons: {
     add_to_cart: "Aggiungi al carrello",
     back: "Indietro",
+    begin_shop_creation: "Iniziare la creazione del mio negozio",
     cancel: "Annulla",
     check_availability: "Verificare la disponibilità",
     connection: "Accedi",
@@ -242,6 +243,11 @@ export default {
     },
     shop: {
       title: "Il mio negozio"
+    },
+    terms: {
+      title: "Condizioni d'uso",
+      approve: "Ho letto e accetto i termini di utilizzo di Sowing",
+      must_approve: "Devi accettare i termini prima di procedere"
     }
   },
 
