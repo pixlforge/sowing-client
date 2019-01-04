@@ -139,6 +139,10 @@ export default {
       this.$router.push(this.localePath({ name: "shop-creator-terms" }));
     },
     async next() {
+      if (this.shopExists) {
+        this.$router.push(this.localePath({ name: "shop-creator-details" }));
+        return;
+      }
       try {
         await this.$axios.$post("/shops/checker", {
           name: this.shopName
