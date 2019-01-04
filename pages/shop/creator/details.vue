@@ -8,14 +8,14 @@
           <p class="paragraph-body text-center my-60">{{ $t("shop_creator.steps.details.paragraph") }}</p>
         </section>
 
-        <section class="w-full max-w-1000">
+        <section class="w-full max-w-600 lg:max-w-1000">
 
           <!-- Postal code -->
-          <div class="w-full flex mt-100">
-            <div class="w-1/2 flex">
-              <h5 class="text-24">{{ $t("forms.labels.postal_code") }}</h5>
+          <div class="w-full flex flex-col lg:flex-row mt-100">
+            <div class="w-full lg:w-1/2 flex items-start lg:pr-10">
+              <h5 class="text-24 leading-normal">{{ $t("forms.labels.postal_code") }}</h5>
             </div>
-            <div class="w-1/2 flex flex-col items-start">
+            <div class="w-full lg:w-1/2 flex flex-col items-start lg:pl-10">
               <input
                 v-model="localPostalCode"
                 :disabled="shopExists"
@@ -29,11 +29,11 @@
           </div>
 
           <!-- City -->
-          <div class="w-full flex mt-50">
-            <div class="w-1/2 flex">
-              <h5 class="text-24">{{ $t("forms.labels.city") }}</h5>
+          <div class="w-full flex flex-col lg:flex-row mt-50">
+            <div class="w-full lg:w-1/2 flex items-start lg:pr-10">
+              <h5 class="text-24 leading-normal">{{ $t("forms.labels.city") }}</h5>
             </div>
-            <div class="w-1/2 flex flex-col items-start">
+            <div class="w-full lg:w-1/2 flex flex-col items-start lg:pl-10">
               <input
                 v-model="localCity"
                 :disabled="shopExists"
@@ -47,11 +47,11 @@
           </div>
 
           <!-- Country -->
-          <div class="w-full flex mt-50">
-            <div class="w-1/2 flex">
-              <h5 class="text-24">{{ $t("forms.labels.country") }}</h5>
+          <div class="w-full flex flex-col lg:flex-row mt-50">
+            <div class="w-full lg:w-1/2 flex items-center lg:pr-10">
+              <h5 class="text-24 leading-normal">{{ $t("forms.labels.country") }}</h5>
             </div>
-            <div class="w-1/2 flex flex-col items-start">
+            <div class="w-full lg:w-1/2 flex flex-col items-start lg:pl-10">
               <div class="relative w-full">
                 <select
                   v-model="localCountry"
@@ -82,16 +82,16 @@
             </div>
           </div>
 
-          <hr class="border border-green-lightest my-100">
+          <hr class="border border-green-lightest my-50 lg:my-100">
 
           <!-- Short description FR -->
-          <div class="w-full flex mt-50">
-            <div class="w-1/2">
+          <div class="w-full flex flex-col lg:flex-row mt-50">
+            <div class="w-full lg:w-1/2 lg:pr-10">
               <h5 class="text-24 leading-normal">{{ $t("forms.labels.description_short") }}</h5>
               <p class="text-16 leading-normal capitalize my-5">{{ $t("languages.french") }}</p>
               <p class="text-16 text-grey-lighter leading-normal my-5">{{ $t("shop_creator.steps.details.description_short_description") }}</p>
             </div>
-            <div class="w-1/2">
+            <div class="w-full lg:w-1/2 lg:pl-10">
               <input
                 v-model="localShortDescriptionFr"
                 :disabled="shopExists"
@@ -102,13 +102,13 @@
           </div>
 
           <!-- Long description FR -->
-          <div class="w-full flex mt-50">
-            <div class="w-1/2">
-              <h5 class="text-24">{{ $t("forms.labels.description_long") }}</h5>
+          <div class="w-full flex flex-col lg:flex-row mt-50">
+            <div class="w-full lg:w-1/2 lg:pr-10">
+              <h5 class="text-24 leading-normal">{{ $t("forms.labels.description_long") }}</h5>
               <p class="text-16 leading-normal capitalize my-5">{{ $t("languages.french") }}</p>
               <p class="text-16 text-grey-lighter leading-normal my-5">{{ $t("shop_creator.steps.details.description_long_description") }}</p>
             </div>
-            <div class="w-1/2">
+            <div class="w-full lg:w-1/2 lg:pl-10">
               <textarea
                 v-model="localLongDescriptionFr"
                 :disabled="shopExists"
@@ -118,16 +118,16 @@
             </div>
           </div>
 
-          <hr class="border border-green-lightest my-100">
+          <hr class="border border-green-lightest my-50 lg:my-100">
 
           <!-- Short description EN -->
-          <div class="w-full flex mt-50">
-            <div class="w-1/2">
+          <div class="w-full flex flex-col lg:flex-row mt-50">
+            <div class="w-full lg:w-1/2 lg:pr-10">
               <h5 class="text-24 leading-normal">{{ $t("forms.labels.description_short") }}</h5>
               <p class="text-16 leading-normal capitalize my-5">{{ $t("languages.english") }}</p>
               <p class="text-16 text-grey-lighter leading-normal my-5">{{ $t("shop_creator.steps.details.description_short_description") }}</p>
             </div>
-            <div class="w-1/2">
+            <div class="w-full lg:w-1/2 lg:pl-10">
               <input
                 v-model="localShortDescriptionEn"
                 :disabled="shopExists"
@@ -138,13 +138,13 @@
           </div>
 
           <!-- Long description EN -->
-          <div class="w-full flex mt-50">
-            <div class="w-1/2">
-              <h5 class="text-24">{{ $t("forms.labels.description_long") }}</h5>
+          <div class="w-full flex flex-col lg:flex-row mt-50">
+            <div class="w-full lg:w-1/2 lg:pr-10">
+              <h5 class="text-24 leading-normal">{{ $t("forms.labels.description_long") }}</h5>
               <p class="text-16 leading-normal capitalize my-5">{{ $t("languages.english") }}</p>
               <p class="text-16 text-grey-lighter leading-normal my-5">{{ $t("shop_creator.steps.details.description_long_description") }}</p>
             </div>
-            <div class="w-1/2">
+            <div class="w-full lg:w-1/2 lg:pl-10">
               <textarea
                 v-model="localLongDescriptionEn"
                 :disabled="shopExists"
@@ -154,16 +154,16 @@
             </div>
           </div>
 
-          <hr class="border border-green-lightest my-100">
+          <hr class="border border-green-lightest my-50 lg:my-100">
 
           <!-- Short description DE -->
-          <div class="w-full flex mt-50">
-            <div class="w-1/2">
+          <div class="w-full flex flex-col lg:flex-row mt-50">
+            <div class="w-full lg:w-1/2 lg:pr-10">
               <h5 class="text-24 leading-normal">{{ $t("forms.labels.description_short") }}</h5>
               <p class="text-16 leading-normal capitalize my-5">{{ $t("languages.german") }}</p>
               <p class="text-16 text-grey-lighter leading-normal my-5">{{ $t("shop_creator.steps.details.description_short_description") }}</p>
             </div>
-            <div class="w-1/2">
+            <div class="w-full lg:w-1/2 lg:pl-10">
               <input
                 v-model="localShortDescriptionDe"
                 :disabled="shopExists"
@@ -174,13 +174,13 @@
           </div>
 
           <!-- Long description DE -->
-          <div class="w-full flex mt-50">
-            <div class="w-1/2">
-              <h5 class="text-24">{{ $t("forms.labels.description_long") }}</h5>
+          <div class="w-full flex flex-col lg:flex-row mt-50">
+            <div class="w-full lg:w-1/2 lg:pr-10">
+              <h5 class="text-24 leading-normal">{{ $t("forms.labels.description_long") }}</h5>
               <p class="text-16 leading-normal capitalize my-5">{{ $t("languages.german") }}</p>
               <p class="text-16 text-grey-lighter leading-normal my-5">{{ $t("shop_creator.steps.details.description_long_description") }}</p>
             </div>
-            <div class="w-1/2">
+            <div class="w-full lg:w-1/2 lg:pl-10">
               <textarea
                 v-model="localLongDescriptionDe"
                 :disabled="shopExists"
@@ -190,16 +190,16 @@
             </div>
           </div>
 
-          <hr class="border border-green-lightest my-100">
+          <hr class="border border-green-lightest my-50 lg:my-100">
 
           <!-- Short description IT -->
-          <div class="w-full flex mt-50">
-            <div class="w-1/2">
+          <div class="w-full flex flex-col lg:flex-row mt-50">
+            <div class="w-full lg:w-1/2 lg:pr-10">
               <h5 class="text-24 leading-normal">{{ $t("forms.labels.description_short") }}</h5>
               <p class="text-16 leading-normal capitalize my-5">{{ $t("languages.italian") }}</p>
               <p class="text-16 text-grey-lighter leading-normal my-5">{{ $t("shop_creator.steps.details.description_short_description") }}</p>
             </div>
-            <div class="w-1/2">
+            <div class="w-full lg:w-1/2 lg:pl-10">
               <input
                 v-model="localShortDescriptionIt"
                 :disabled="shopExists"
@@ -210,13 +210,13 @@
           </div>
 
           <!-- Long description IT -->
-          <div class="w-full flex mt-50">
-            <div class="w-1/2">
-              <h5 class="text-24">{{ $t("forms.labels.description_long") }}</h5>
+          <div class="w-full flex flex-col lg:flex-row mt-50">
+            <div class="w-full lg:w-1/2 lg:pr-10">
+              <h5 class="text-24 leading-normal">{{ $t("forms.labels.description_long") }}</h5>
               <p class="text-16 leading-normal capitalize my-5">{{ $t("languages.italian") }}</p>
               <p class="text-16 text-grey-lighter leading-normal my-5">{{ $t("shop_creator.steps.details.description_long_description") }}</p>
             </div>
-            <div class="w-1/2">
+            <div class="w-full lg:w-1/2 lg:pl-10">
               <textarea
                 v-model="localLongDescriptionIt"
                 :disabled="shopExists"
@@ -228,11 +228,11 @@
 
         </section>
 
-        <div class="flex mt-100">
+        <div class="flex flex-col md:flex-row mt-100">
 
           <!-- Previous -->
           <button
-            class="btn btn-default mr-20"
+            class="btn btn-default md:mr-20"
             @click.prevent="prev">
             <font-awesome-icon
               :icon="['far', 'chevron-circle-left']"
@@ -243,7 +243,7 @@
           <!-- Next -->
           <button
             :class="!shopPostalCode || !shopCity || !shopCountryId ? 'btn-disabled' : btnTheme"
-            class="btn"
+            class="btn mt-20 md:mt-0"
             @click.prevent="store">
             <font-awesome-icon
               :icon="['far', 'chevron-circle-right']"
