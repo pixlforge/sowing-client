@@ -82,7 +82,7 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 
 export default {
   computed: {
@@ -100,24 +100,32 @@ export default {
     }
   },
   methods: {
+    ...mapActions({
+      close: "alert/close"
+    }),
     toShopCreatorName() {
+      this.close();
       this.$router.push(this.localePath({ name: "shop-creator-name" }));
     },
     toShopCreatorDetails() {
       if (this.stepName) {
+        this.close();
         this.$router.push(this.localePath({ name: "shop-creator-details" }));
       }
     },
     toShopCreatorCustomization() {
       if (this.stepName && this.stepDetails) {
+        this.close();
         this.$router.push(
           this.localePath({ name: "shop-creator-customization" })
         );
       }
     },
     toShopCreatorDone() {
-      if (this.stepName && this.stepDetails && this.stepCustomization)
+      if (this.stepName && this.stepDetails && this.stepCustomization) {
+        this.close();
         this.$router.push(this.localePath({ name: "shop-creator-done" }));
+      }
     }
   }
 };

@@ -98,6 +98,8 @@ export default {
   },
   methods: {
     ...mapActions({
+      flash: "alert/flash",
+      close: "alert/close",
       getShop: "shop/getShop",
       setShopName: "shop/setShopName",
       setStepName: "shop/setStepName",
@@ -112,20 +114,49 @@ export default {
           this.$toast.success(
             `"<em>${this.shopName}</em>" ${this.$t("toasts.is_available")}!`
           );
+          this.flash({
+            type: "success",
+            message: `"<em>${this.shopName}</em>" ${this.$t(
+              "toasts.is_available"
+            )}!`
+          });
         } catch (e) {
           this.$toast.error(
             `"<em>${this.shopName}</em>" ${this.$t(
               "toasts.is_already_in_use"
             )}.`
           );
+          this.flash({
+            type: "danger",
+            message: `"<em>${this.shopName}</em>" ${this.$t(
+              "toasts.is_already_in_use"
+            )}!`
+          });
         }
       }
     },
     prev() {
       this.$router.push(this.localePath({ name: "shop-creator-terms" }));
     },
-    next() {
-      this.$router.push(this.localePath({ name: "shop-creator-details" }));
+    async next() {
+      try {
+        await this.$axios.$post("/shops/checker", {
+          name: this.shopName
+        });
+        this.close();
+        this.$router.push(this.localePath({ name: "shop-creator-details" }));
+      } catch (e) {
+        this.setStepName(false);
+        this.$toast.error(
+          `"<em>${this.shopName}</em>" ${this.$t("toasts.is_already_in_use")}.`
+        );
+        this.flash({
+          type: "danger",
+          message: `"<em>${this.shopName}</em>" ${this.$t(
+            "toasts.is_already_in_use"
+          )}!`
+        });
+      }
     }
   }
 };

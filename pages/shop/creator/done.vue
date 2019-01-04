@@ -89,7 +89,7 @@ export default {
     },
     next() {
       if (this.stepName && this.stepDetails && this.stepCustomization) {
-        this.$router.push(this.localePath({ name: "shop-creator-terms" }));
+        this.$router.push(this.localePath({ name: "shop" }));
       }
     }
   }

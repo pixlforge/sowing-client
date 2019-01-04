@@ -12,46 +12,52 @@
 
           <!-- Postal code -->
           <div class="w-full flex mt-100">
-            <div class="w-1/2 flex items-center">
+            <div class="w-1/2 flex">
               <h5 class="text-24">{{ $t("forms.labels.postal_code") }}</h5>
             </div>
-            <div class="w-1/2 flex items-center">
+            <div class="w-1/2 flex flex-col items-start">
               <input
                 v-model="localPostalCode"
                 :disabled="shopExists"
-                :class="{ 'input-disabled': shopExists }"
+                :class="{ 'input-disabled': shopExists, 'border-red': errors.postal_code }"
                 type="text"
-                class="input-base mt-0">
+                class="input-base border border-green-lightest mt-0">
+              <template v-if="errors.postal_code">
+                <p class="input-error">{{ errors.postal_code[0] }}</p>
+              </template>
             </div>
           </div>
 
           <!-- City -->
           <div class="w-full flex mt-50">
-            <div class="w-1/2 flex items-center">
+            <div class="w-1/2 flex">
               <h5 class="text-24">{{ $t("forms.labels.city") }}</h5>
             </div>
-            <div class="w-1/2 flex items-center">
+            <div class="w-1/2 flex flex-col items-start">
               <input
                 v-model="localCity"
                 :disabled="shopExists"
-                :class="{ 'input-disabled': shopExists }"
+                :class="{ 'input-disabled': shopExists, 'border-red': errors.city }"
                 type="text"
-                class="input-base mt-0">
+                class="input-base border border-green-lightest mt-0">
+              <template v-if="errors.city">
+                <p class="input-error">{{ errors.city[0] }}</p>
+              </template>
             </div>
           </div>
 
           <!-- Country -->
           <div class="w-full flex mt-50">
-            <div class="w-1/2 flex items-center">
+            <div class="w-1/2 flex">
               <h5 class="text-24">{{ $t("forms.labels.country") }}</h5>
             </div>
-            <div class="w-1/2">
+            <div class="w-1/2 flex flex-col items-start">
               <div class="relative w-full">
                 <select
                   v-model="localCountry"
                   :disabled="shopExists"
-                  :class="{ 'select-disabled': shopExists }"
-                  class="select mt-0">
+                  :class="{ 'select-disabled': shopExists, 'border-red': errors.country_id }"
+                  class="select border border-green-lightest mt-0">
                   <option
                     value=""
                     selected
@@ -69,6 +75,9 @@
                   v-show="!shopExists"
                   :icon="['fas', 'caret-down']"
                   class="select-caret"/>
+                <template v-if="errors.country_id">
+                  <p class="input-error">{{ errors.country_id[0] }}</p>
+                </template>
               </div>
             </div>
           </div>
@@ -258,7 +267,8 @@ export default {
   },
   data() {
     return {
-      countries: []
+      countries: [],
+      errors: {}
     };
   },
   computed: {
@@ -419,7 +429,7 @@ export default {
             this.$toast.error(this.$t("toasts.terms"));
           }
         } catch (e) {
-          console.log(e.response.data.errors);
+          this.errors = e.response.data.errors;
           this.$toast.error(this.$t("toasts.validation"));
         }
       }

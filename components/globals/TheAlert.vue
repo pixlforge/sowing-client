@@ -4,7 +4,9 @@
     :class="{ 'bg-blue': type === 'info', 'bg-red': type === 'danger', 'bg-green': type === 'success', 'bg-orange': type === 'warning' }"
     class="py-40">
     <div class="container relative flex justify-center items-center">
-      <p class="text-20 font-bold text-white text-center">{{ alert }}</p>
+      <p
+        class="text-20 font-bold text-white text-center"
+        v-html="alert"/>
       <button
         class="absolute pin-r text-24 text-white hover:text-grey-lightest p-10"
         @click.prevent="close">
