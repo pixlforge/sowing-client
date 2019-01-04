@@ -2,7 +2,14 @@
   <main>
     <section class="container section">
       <div class="flex flex-col items-center">
-        <h2 class="title-large text-center mt-100">Terminé!</h2>
+        <h2 class="title-large text-center mt-100">{{ $t("shop_creator.steps.done.title") }}</h2>
+
+        <section class="w-full max-w-1000">
+          <p class="paragraph-body text-center mt-60">
+            {{ $t("shop_creator.steps.done.paragraph") }}<br>
+            {{ $t("shop_creator.steps.done.provision_shop") }}
+          </p>
+        </section>
 
         <Success class="block w-1/2 mt-100"/>
 
@@ -50,19 +57,29 @@ export default {
   computed: {
     ...mapGetters({
       stepName: "shop/stepName",
+      shopTheme: "shop/shopTheme",
+      shopExists: "shop/shopExists",
       stepDetails: "shop/stepDetails",
-      stepCustomization: "shop/stepCustomization",
-      shopTheme: "shop/shopTheme"
+      stepCustomization: "shop/stepCustomization"
     }),
     btnTheme() {
       return `btn-${this.shopTheme}`;
     }
   },
   mounted() {
+    if (!this.shopExists && this.$auth.user.has_shop) {
+      this.getShop();
+    }
+
+    this.setStepName(true);
+    this.setStepDetails(true);
     this.setStepCustomization(true);
   },
   methods: {
     ...mapActions({
+      getShop: "shop/getShop",
+      setStepName: "shop/setStepName",
+      setStepDetails: "shop/setStepDetails",
       setStepCustomization: "shop/setStepCustomization"
     }),
     prev() {

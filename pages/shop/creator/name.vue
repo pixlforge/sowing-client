@@ -55,7 +55,6 @@
               class="mr-5"/>
             {{ $t("buttons.to_my_shop_details") }}
           </button>
-
         </div>
       </div>
     </section>
@@ -74,9 +73,9 @@ export default {
   computed: {
     ...mapGetters({
       shopName: "shop/shopName",
-      stepDetails: "shop/stepDetails",
+      shopTheme: "shop/shopTheme",
       shopExists: "shop/shopExists",
-      shopTheme: "shop/shopTheme"
+      stepDetails: "shop/stepDetails"
     }),
     btnTheme() {
       return `btn-${this.shopTheme}`;
@@ -99,8 +98,8 @@ export default {
   },
   methods: {
     ...mapActions({
-      setShopName: "shop/setShopName",
       getShop: "shop/getShop",
+      setShopName: "shop/setShopName",
       setStepName: "shop/setStepName",
       setStepDetails: "shop/setStepDetails"
     }),

@@ -50,16 +50,30 @@
           </div>
         </section>
 
-        <!-- Next -->
-        <button
-          :class="btnTheme"
-          class="btn mt-100"
-          @click.prevent="next">
-          <font-awesome-icon
-            :icon="['far', 'chevron-circle-right']"
-            class="mr-5"/>
-          {{ $t("buttons.finalize_shop_creation") }}
-        </button>
+        <div class="flex mt-100">
+
+          <!-- Previous -->
+          <button
+            class="btn btn-default mr-20"
+            @click.prevent="prev">
+            <font-awesome-icon
+              :icon="['far', 'chevron-circle-left']"
+              class="mr-5"/>
+            {{ $t("buttons.back") }}
+          </button>
+
+          <!-- Next -->
+          <button
+            :class="btnTheme"
+            class="btn"
+            @click.prevent="next">
+            <font-awesome-icon
+              :icon="['far', 'chevron-circle-right']"
+              class="mr-5"/>
+            {{ $t("buttons.finalize_shop_creation") }}
+          </button>
+        </div>
+
       </div>
     </section>
   </main>
@@ -67,8 +81,8 @@
 
 <script>
 import Dropzone from "nuxt-dropzone";
-import "vue2-dropzone/dist/vue2Dropzone.css";
 import Tile from "@/components/themes/Tile";
+import "vue2-dropzone/dist/vue2Dropzone.css";
 import { mapGetters, mapActions } from "vuex";
 
 export default {
@@ -105,12 +119,12 @@ export default {
   },
   computed: {
     ...mapGetters({
-      stepName: "shop/stepName",
-      stepDetails: "shop/stepDetails",
-      shopExists: "shop/shopExists",
       shop: "shop/shop",
-      availableThemes: "shop/availableThemes",
-      shopTheme: "shop/shopTheme"
+      stepName: "shop/stepName",
+      shopTheme: "shop/shopTheme",
+      shopExists: "shop/shopExists",
+      stepDetails: "shop/stepDetails",
+      availableThemes: "shop/availableThemes"
     }),
     btnTheme() {
       return `btn-${this.shopTheme}`;
@@ -146,8 +160,8 @@ export default {
   methods: {
     ...mapActions({
       getShop: "shop/getShop",
-      setAvatar: "shop/setAvatar",
       setCover: "shop/setCover",
+      setAvatar: "shop/setAvatar",
       setStepName: "shop/setStepName",
       setStepDetails: "shop/setStepDetails"
     }),
@@ -166,6 +180,9 @@ export default {
         this.setCover(res.media.url);
         this.$toast.success(this.$t("toasts.shop_cover_updated"));
       }
+    },
+    prev() {
+      this.$router.push(this.localePath({ name: "shop-creator-details" }));
     },
     next() {
       if (this.stepName && this.stepDetails) {

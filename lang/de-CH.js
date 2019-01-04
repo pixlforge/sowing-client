@@ -274,6 +274,13 @@ export default {
         title: "Personalisieren Sie Ihren Shop",
         paragraph:
           "Personalisieren Sie Ihren Shop, um ihm eine einzigartige Identität zu verleihen!"
+      },
+      done: {
+        title: "Terminé!",
+        paragraph:
+          "Vous avez maintenant terminé la création de votre boutique. Félicitations!",
+        provision_shop:
+          "Vous pouvrez dès à présent approvisionner votre boutique en y ajoutant des produits."
       }
     }
   },

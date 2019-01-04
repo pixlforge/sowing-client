@@ -274,6 +274,13 @@ export default {
         title: "Personnalisez votre boutique",
         paragraph:
           "Personnalisez votre boutique pour lui donner une identité unique!"
+      },
+      done: {
+        title: "Terminé!",
+        paragraph:
+          "Vous avez maintenant terminé la création de votre boutique. Félicitations!",
+        provision_shop:
+          "Vous pouvrez dès à présent approvisionner votre boutique en y ajoutant des produits."
       }
     }
   },

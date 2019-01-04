@@ -241,7 +241,6 @@
               class="mr-5"/>
             {{ $t("buttons.customize_my_shop") }}
           </button>
-
         </div>
       </div>
     </section>
@@ -265,23 +264,23 @@ export default {
   computed: {
     ...mapGetters({
       locale: "locale",
+      shop: "shop/shop",
       terms: "shop/terms",
       stepName: "shop/stepName",
-      stepDetails: "shop/stepDetails",
-      shop: "shop/shop",
-      shopExists: "shop/shopExists",
-      shopPostalCode: "shop/shopPostalCode",
       shopCity: "shop/shopCity",
+      shopTheme: "shop/shopTheme",
+      shopExists: "shop/shopExists",
+      stepDetails: "shop/stepDetails",
       shopCountryId: "shop/shopCountryId",
-      shopShortDescriptionFr: "shop/shopShortDescriptionFr",
-      shopShortDescriptionEn: "shop/shopShortDescriptionEn",
-      shopShortDescriptionDe: "shop/shopShortDescriptionDe",
-      shopShortDescriptionIt: "shop/shopShortDescriptionIt",
+      shopPostalCode: "shop/shopPostalCode",
       shopLongDescriptionFr: "shop/shopLongDescriptionFr",
       shopLongDescriptionEn: "shop/shopLongDescriptionEn",
       shopLongDescriptionDe: "shop/shopLongDescriptionDe",
       shopLongDescriptionIt: "shop/shopLongDescriptionIt",
-      shopTheme: "shop/shopTheme"
+      shopShortDescriptionFr: "shop/shopShortDescriptionFr",
+      shopShortDescriptionEn: "shop/shopShortDescriptionEn",
+      shopShortDescriptionDe: "shop/shopShortDescriptionDe",
+      shopShortDescriptionIt: "shop/shopShortDescriptionIt"
     }),
     localPostalCode: {
       get() {
@@ -388,21 +387,21 @@ export default {
   },
   methods: {
     ...mapActions({
-      setStepName: "shop/setStepName",
-      setStepDetails: "shop/setStepDetails",
       setShop: "shop/setShop",
       getShop: "shop/getShop",
-      setShopPostalCode: "shop/setShopPostalCode",
+      setStepName: "shop/setStepName",
       setShopCity: "shop/setShopCity",
+      setStepDetails: "shop/setStepDetails",
       setShopCountryId: "shop/setShopCountryId",
-      setShopShortDescriptionFr: "shop/setShopShortDescriptionFr",
-      setShopShortDescriptionEn: "shop/setShopShortDescriptionEn",
-      setShopShortDescriptionDe: "shop/setShopShortDescriptionDe",
-      setShopShortDescriptionIt: "shop/setShopShortDescriptionIt",
+      setShopPostalCode: "shop/setShopPostalCode",
       setShopLongDescriptionFr: "shop/setShopLongDescriptionFr",
       setShopLongDescriptionEn: "shop/setShopLongDescriptionEn",
       setShopLongDescriptionDe: "shop/setShopLongDescriptionDe",
-      setShopLongDescriptionIt: "shop/setShopLongDescriptionIt"
+      setShopLongDescriptionIt: "shop/setShopLongDescriptionIt",
+      setShopShortDescriptionFr: "shop/setShopShortDescriptionFr",
+      setShopShortDescriptionEn: "shop/setShopShortDescriptionEn",
+      setShopShortDescriptionDe: "shop/setShopShortDescriptionDe",
+      setShopShortDescriptionIt: "shop/setShopShortDescriptionIt"
     }),
     async store() {
       if (this.stepDetails) {

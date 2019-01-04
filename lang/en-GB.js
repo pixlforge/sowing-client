@@ -273,6 +273,13 @@ export default {
       customization: {
         title: "Customize your shop",
         paragraph: "Customize your shop to give it a unique identity!"
+      },
+      done: {
+        title: "Terminé!",
+        paragraph:
+          "Vous avez maintenant terminé la création de votre boutique. Félicitations!",
+        provision_shop:
+          "Vous pouvrez dès à présent approvisionner votre boutique en y ajoutant des produits."
       }
     }
   },

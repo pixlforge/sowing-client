@@ -275,6 +275,13 @@ export default {
         title: "Personalizzate il vostro negozio",
         paragraph:
           "Personalizzate il vostro negozio per dargli un'identità unica!"
+      },
+      done: {
+        title: "Terminé!",
+        paragraph:
+          "Vous avez maintenant terminé la création de votre boutique. Félicitations!",
+        provision_shop:
+          "Vous pouvrez dès à présent approvisionner votre boutique en y ajoutant des produits."
       }
     }
   },
