@@ -245,8 +245,8 @@ export const actions = {
     commit('SET_SHOP_LONG_DESCRIPTION_IT', description);
   },
   async setShopTheme({ commit, dispatch }, theme) {
-    await dispatch('updateShop');
     commit('SET_SHOP_THEME', theme);
+    await dispatch('updateShop');
   },
   async updateShop({ state }) {
     await this.$axios.$patch(`/shops/${state.form.slug}`, state.form);
