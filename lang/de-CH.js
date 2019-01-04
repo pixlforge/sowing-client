@@ -257,9 +257,9 @@ export default {
    */
   shop_creator: {
     navigation: {
-      name: "Benennen Sie Ihren Shop",
-      details: "Ihre Shopdetails",
-      customize: "Passen Sie Ihren Shop an",
+      name: "Name",
+      details: "Einzelheiten",
+      customize: "Thema",
       done: "Erledigt!"
     },
     steps: {

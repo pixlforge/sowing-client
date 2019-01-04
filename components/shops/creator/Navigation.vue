@@ -1,6 +1,6 @@
 <template>
   <div class="bg-green-lightest">
-    <div class="container pt-60 pb-100">
+    <div class="container pt-60 pb-60 lg:pb-80">
       <div class="flex">
 
         <!-- Name -->
@@ -16,7 +16,7 @@
             class="h-3 flex-grow"/>
           <div
             :class="textTheme"
-            class="absolute pin-b step-1 text-16 font-semibold cursor-pointer"
+            class="hidden lg:block w-110 absolute pin-b step-1 text-16 text-center font-semibold cursor-pointer"
             @click.prevent="toShopCreatorName">
             {{ $t("shop_creator.navigation.name") }}
           </div>
@@ -35,7 +35,7 @@
             class="h-3 flex-grow"/>
           <div
             :class="stepName ? textTheme : 'text-grey-lightest'"
-            class="absolute pin-b step-2 text-16 font-semibold cursor-pointer"
+            class="hidden lg:block w-110 absolute pin-b step-2 text-16 text-center font-semibold cursor-pointer"
             @click.prevent="toShopCreatorDetails">
             {{ $t("shop_creator.navigation.details") }}
           </div>
@@ -54,7 +54,7 @@
             class="h-3 flex-grow"/>
           <div
             :class="stepDetails ? textTheme : 'text-grey-lightest'"
-            class="absolute pin-b step-2 text-16 font-semibold cursor-pointer"
+            class="hidden lg:block w-110 absolute pin-b step-3 text-16 text-center font-semibold cursor-pointer"
             @click.prevent="toShopCreatorCustomization">
             {{ $t("shop_creator.navigation.customize") }}
           </div>
@@ -70,7 +70,7 @@
           </div>
           <div
             :class="stepCustomization ? textTheme : 'text-grey-lightest'"
-            class="absolute pin-b step-2 text-16 font-semibold cursor-pointer"
+            class="hidden lg:block w-110 absolute pin-b step-4 text-16 text-center font-semibold cursor-pointer"
             @click.prevent="toShopCreatorDone">
             {{ $t("shop_creator.navigation.done") }}
           </div>
@@ -134,11 +134,8 @@ export default {
 <style scoped>
 .step-1,
 .step-2,
-.step-3 {
-  transform: translate(-35%, 3rem);
-}
-
+.step-3,
 .step-4 {
-  transform: translate(-10%, 3rem);
+  transform: translate(-25%, 3rem);
 }
 </style>
