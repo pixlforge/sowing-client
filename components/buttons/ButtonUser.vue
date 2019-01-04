@@ -36,7 +36,7 @@
         </nuxt-link>
       </li>
 
-      <hr class="border border-green rounded-full -mx-10 my-20">
+      <hr class="border border-green rounded-full my-20">
 
       <!-- Logout -->
       <li>
