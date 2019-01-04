@@ -8,8 +8,8 @@
           <p class="paragraph-body text-center my-60">{{ $t("shop_creator.steps.name.paragraph") }}</p>
         </section>
 
-        <section class="w-full max-w-600">
-          <div class="flex">
+        <section class="w-full max-w-400 md:max-w-600">
+          <div class="flex flex-col md:flex-row">
             <input
               id="name"
               v-model="localShopName"
@@ -18,11 +18,11 @@
               :placeholder="$t('shop_creator.steps.name.placeholder')"
               name="name"
               type="text"
-              class="input-base rounded-r-none mt-0">
+              class="input-base md:rounded-r-none mt-0">
             <button
               :disabled="shopExists"
               :class="shopExists ? 'btn-disabled' : btnTheme"
-              class="btn btn-primary rounded-l-none nowrap"
+              class="btn btn-primary md:rounded-l-none nowrap mt-20 md:mt-0"
               @click.prevent="check">
               <font-awesome-icon
                 :icon="['far', 'rocket']"
@@ -32,11 +32,11 @@
           </div>
         </section>
 
-        <div class="flex mt-100">
+        <div class="flex flex-col md:flex-row mt-100">
 
           <!-- Previous -->
           <button
-            class="btn btn-default mr-20"
+            class="btn btn-default md:mr-20"
             @click.prevent="prev">
             <font-awesome-icon
               :icon="['far', 'chevron-circle-left']"
@@ -48,7 +48,7 @@
           <button
             :disabled="!shopName"
             :class="shopName ? btnTheme : 'btn-disabled'"
-            class="btn"
+            class="btn mt-20 md:mt-0"
             @click.prevent="next">
             <font-awesome-icon
               :icon="['far', 'chevron-circle-right']"
