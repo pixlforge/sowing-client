@@ -1,7 +1,7 @@
 @font-face {
-  font-family: 'Louis George Cafe Bold';
-  src: url('~assets/fonts/louis_george_cafe_bold-webfont.woff2') format('woff2'),
-       url('~assets/fonts/louis_george_cafe_bold-webfont.woff') format('woff');
+  font-family: "Louis George Cafe Bold";
+  src: url("~assets/fonts/louis_george_cafe_bold-webfont.woff2") format("woff2"),
+    url("~assets/fonts/louis_george_cafe_bold-webfont.woff") format("woff");
   font-weight: bold;
   font-style: normal;
 }
@@ -44,7 +44,7 @@
  * @import "components/forms";
  */
 
- .avatar-review {
+.avatar-review {
   @apply w-100 h-100 rounded-full shadow-md;
 }
 
@@ -57,7 +57,7 @@ button {
 }
 
 .transition {
-  transition: background-color .15s ease-out;
+  transition: background-color 0.15s ease-out;
 }
 
 .btn {
@@ -210,7 +210,7 @@ button {
 }
 
 .title-large {
-  @apply font-cafe text-48 text-green-darkest font-bold tracking-tight;
+  @apply font-cafe text-30 text-green-darkest font-bold tracking-tight;
 }
 
 .title-small {
@@ -238,15 +238,15 @@ button {
 }
 
 .link-category {
- @apply block no-underline text-16 font-semibold text-green-darkest outline-none rounded-lg px-10 py-10;
+  @apply block no-underline text-16 font-semibold text-green-darkest outline-none rounded-lg px-10 py-10;
 }
 
 .link-category:hover {
- @apply text-green;
+  @apply text-green;
 }
 
 .link-category:focus {
- @apply shadow-outline;
+  @apply shadow-outline;
 }
 
 .link-dropdown {
@@ -344,6 +344,10 @@ button {
 }
 
 @screen md {
+  .title-large {
+    @apply text-48;
+  }
+
   .card-form {
     @apply w-3/4;
   }
@@ -394,29 +398,29 @@ button {
  * @import "utilities/skew-transforms";
  */
 
- @responsive {
-   .border-spacing-h-40 {
-     border-spacing: 0 4rem;
-   }
- }
+@responsive {
+  .border-spacing-h-40 {
+    border-spacing: 0 4rem;
+  }
+}
 
 @responsive {
   .order-0 {
     order: 0;
   }
-  
+
   .order-1 {
     order: 1;
   }
-  
+
   .order-2 {
     order: 2;
   }
-  
+
   .order-3 {
     order: 3;
   }
-  
+
   .order-4 {
     order: 4;
   }
@@ -466,17 +470,19 @@ html {
   background-color: #e3342f !important;
 }
 
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .3s ease;
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
 }
-.fade-enter, .fade-leave-to {
+.fade-enter,
+.fade-leave-to {
   opacity: 0;
 }
 
 /* Slide transition */
 .slide-enter-active,
 .slide-leave-active {
-  transition: all .2s ease-out;
+  transition: all 0.2s ease-out;
 }
 
 .slide-enter {
