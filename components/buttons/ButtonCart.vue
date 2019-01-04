@@ -1,7 +1,8 @@
 <template>
   <nuxt-link
     :to="localePath({ name: 'cart' })"
-    class="block relative w-40 h-40 bg-green hover:bg-green-dark outline-none focus:shadow-outline rounded-full flex justify-center items-center">
+    :class="btnTheme"
+    class="block relative w-40 h-40 outline-none focus:shadow-outline rounded-full flex justify-center items-center">
     <font-awesome-icon
       :icon="['far', 'shopping-cart']"
       class="text-18 text-white"/>
@@ -17,8 +18,12 @@ import { mapGetters } from "vuex";
 export default {
   computed: {
     ...mapGetters({
-      count: "cart/count"
-    })
+      count: "cart/count",
+      shopTheme: "shop/shopTheme"
+    }),
+    btnTheme() {
+      return `btn-${this.shopTheme}`;
+    }
   }
 };
 </script>

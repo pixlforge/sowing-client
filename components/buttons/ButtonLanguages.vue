@@ -1,8 +1,12 @@
 <template>
   <button class="dropdown-parent btn flex justify-center items-center px-10 md:px-20">
-    <font-awesome-icon
-      :icon="['far', 'globe-europe']"
-      class="text-18 text-green mr-10"/>
+    <div
+      :class="textTheme"
+      class="mr-10">
+      <font-awesome-icon
+        :icon="['far', 'globe-europe']"
+        class="text-18"/>
+    </div>
     <font-awesome-icon
       :icon="['fas', 'caret-down']"
       class="text-14 text-grey-dark"/>
@@ -21,6 +25,17 @@
 </template>
 
 <script>
-export default {};
+import { mapGetters } from "vuex";
+
+export default {
+  computed: {
+    ...mapGetters({
+      shopTheme: "shop/shopTheme"
+    }),
+    textTheme() {
+      return `text-${this.shopTheme}`;
+    }
+  }
+};
 </script>
 

@@ -43,7 +43,7 @@ import Header from "@/components/Header";
 import Navigation from "@/components/shops/creator/Navigation";
 import Footer from "@/components/footer/Footer";
 import Disclaimer from "@/components/footer/Disclaimer";
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 
 export default {
   components: {
@@ -68,6 +68,14 @@ export default {
     textTheme() {
       return `text-${this.shopTheme}`;
     }
+  },
+  destroyed() {
+    this.resetShop();
+  },
+  methods: {
+    ...mapActions({
+      resetShop: "shop/resetShop"
+    })
   }
 };
 </script>

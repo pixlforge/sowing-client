@@ -159,6 +159,31 @@ export const mutations = {
   SET_AVATAR(state, url) {
     state.form.media.avatar = url;
   },
+  RESET_SHOP(state) {
+    state.form = {
+      name: "",
+      description_short: {
+        en: "",
+        fr: "",
+        de: "",
+        it: ""
+      },
+      description_long: {
+        en: "",
+        fr: "",
+        de: "",
+        it: ""
+      },
+      theme: "green",
+      postal_code: "",
+      city: "",
+      country_id: "",
+      media: {
+        avatar: "",
+        cover: ""
+      }
+    };
+  },
 };
 
 export const actions = {
@@ -219,11 +244,18 @@ export const actions = {
   setShopLongDescriptionIt({ commit }, description) {
     commit('SET_SHOP_LONG_DESCRIPTION_IT', description);
   },
-  async setShopTheme({ commit }, theme) {
+  async setShopTheme({ commit, dispatch }, theme) {
+    await dispatch('updateShop');
     commit('SET_SHOP_THEME', theme);
+  },
+  async updateShop({ state }) {
+    await this.$axios.$patch(`/shops/${state.form.slug}`, state.form);
   },
   async getShop({ dispatch }) {
     let res = await this.$axios.$get("/user/shop");
     dispatch('setShop', res.data);
   },
+  resetShop({ commit }) {
+    commit('RESET_SHOP');
+  }
 };
