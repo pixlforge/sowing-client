@@ -1,4 +1,4 @@
-export const state = () => ({
+const initialState = {
   terms: false,
   step_name: false,
   step_details: false,
@@ -25,7 +25,11 @@ export const state = () => ({
       avatar: "",
       cover: ""
     }
-  },
+  }
+};
+
+export const state = () => ({
+  ...initialState,
   available_themes: [
     "green",
     "pink",
@@ -169,29 +173,7 @@ export const mutations = {
     state.shop.media.avatar = url;
   },
   RESET_SHOP(state) {
-    state.shop = {
-      name: "",
-      description_short: {
-        en: "",
-        fr: "",
-        de: "",
-        it: ""
-      },
-      description_long: {
-        en: "",
-        fr: "",
-        de: "",
-        it: ""
-      },
-      theme: "green",
-      postal_code: "",
-      city: "",
-      country_id: "",
-      media: {
-        avatar: "",
-        cover: ""
-      }
-    };
+    Object.assign(state, initialState);
   }
 };
 
