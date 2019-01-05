@@ -12,16 +12,16 @@
 
           <!-- Postal code -->
           <div class="w-full flex flex-col lg:flex-row mt-100">
-            <div class="w-full lg:w-1/2 flex items-start lg:pr-10">
+            <div class="w-full lg:w-1/2 lg:pr-10">
               <h5 class="text-24 leading-normal">{{ $t("forms.labels.postal_code") }}</h5>
             </div>
-            <div class="w-full lg:w-1/2 flex flex-col items-start lg:pl-10">
+            <div class="w-full lg:w-1/2 lg:pl-10">
               <input
                 v-model="localPostalCode"
                 :disabled="shopExists"
                 :class="{ 'input-disabled': shopExists, 'border-red': errors.postal_code }"
                 type="text"
-                class="input-base border border-green-lightest mt-0">
+                class="input-base border border-green-lightest mt-20 lg:mt-0">
               <template v-if="errors.postal_code">
                 <p class="input-error">{{ errors.postal_code[0] }}</p>
               </template>
@@ -30,16 +30,16 @@
 
           <!-- City -->
           <div class="w-full flex flex-col lg:flex-row mt-50">
-            <div class="w-full lg:w-1/2 flex items-start lg:pr-10">
+            <div class="w-full lg:w-1/2 lg:pr-10">
               <h5 class="text-24 leading-normal">{{ $t("forms.labels.city") }}</h5>
             </div>
-            <div class="w-full lg:w-1/2 flex flex-col items-start lg:pl-10">
+            <div class="w-full lg:w-1/2 lg:pl-10">
               <input
                 v-model="localCity"
                 :disabled="shopExists"
                 :class="{ 'input-disabled': shopExists, 'border-red': errors.city }"
                 type="text"
-                class="input-base border border-green-lightest mt-0">
+                class="input-base border border-green-lightest mt-20 lg:mt-0">
               <template v-if="errors.city">
                 <p class="input-error">{{ errors.city[0] }}</p>
               </template>
@@ -48,16 +48,16 @@
 
           <!-- Country -->
           <div class="w-full flex flex-col lg:flex-row mt-50">
-            <div class="w-full lg:w-1/2 flex items-center lg:pr-10">
+            <div class="w-full lg:w-1/2 lg:pr-10">
               <h5 class="text-24 leading-normal">{{ $t("forms.labels.country") }}</h5>
             </div>
-            <div class="w-full lg:w-1/2 flex flex-col items-start lg:pl-10">
+            <div class="w-full lg:w-1/2 lg:pl-10">
               <div class="relative w-full">
                 <select
                   v-model="localCountry"
                   :disabled="shopExists"
                   :class="{ 'select-disabled': shopExists, 'border-red': errors.country_id }"
-                  class="select border border-green-lightest mt-0">
+                  class="select border border-green-lightest mt-20 lg:mt-0">
                   <option
                     value=""
                     selected
@@ -97,7 +97,7 @@
                 :disabled="shopExists"
                 :class="{ 'input-disabled': shopExists }"
                 type="text"
-                class="input-base mt-0">
+                class="input-base mt-20 lg:mt-0">
             </div>
           </div>
 
@@ -114,7 +114,7 @@
                 :disabled="shopExists"
                 :class="{ 'textarea-disabled': shopExists }"
                 rows="10"
-                class="textarea-base mt-0"/>
+                class="textarea-base mt-20 lg:mt-0"/>
             </div>
           </div>
 
@@ -133,7 +133,7 @@
                 :disabled="shopExists"
                 :class="{ 'input-disabled': shopExists }"
                 type="text"
-                class="input-base mt-0">
+                class="input-base mt-20 lg:mt-0">
             </div>
           </div>
 
@@ -150,7 +150,7 @@
                 :disabled="shopExists"
                 :class="{ 'textarea-disabled': shopExists }"
                 rows="10"
-                class="textarea-base mt-0"/>
+                class="textarea-base mt-20 lg:mt-0"/>
             </div>
           </div>
 
@@ -169,7 +169,7 @@
                 :disabled="shopExists"
                 :class="{ 'input-disabled': shopExists }"
                 type="text"
-                class="input-base">
+                class="input-base mt-20 lg:mt-0">
             </div>
           </div>
 
@@ -186,7 +186,7 @@
                 :disabled="shopExists"
                 :class="{ 'textarea-disabled': shopExists }"
                 rows="10"
-                class="textarea-base mt-0"/>
+                class="textarea-base mt-20 lg:mt-0"/>
             </div>
           </div>
 
@@ -205,7 +205,7 @@
                 :disabled="shopExists"
                 :class="{ 'input-disabled': shopExists }"
                 type="text"
-                class="input-base">
+                class="input-base mt-20 lg:mt-0">
             </div>
           </div>
 
@@ -222,7 +222,7 @@
                 :disabled="shopExists"
                 :class="{ 'textarea-disabled': shopExists }"
                 rows="10"
-                class="textarea-base mt-0"/>
+                class="textarea-base mt-20 lg:mt-0"/>
             </div>
           </div>
 
