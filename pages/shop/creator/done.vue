@@ -11,13 +11,13 @@
           </p>
         </section>
 
-        <Success class="block w-1/2 mt-100"/>
+        <Success class="block w-full md:w-1/2 mt-100"/>
 
-        <div class="flex mt-100">
+        <div class="flex flex-col md:flex-row mt-100">
 
           <!-- Previous -->
           <button
-            class="btn btn-default mr-20"
+            class="btn btn-default order-1 md:order-0 md:mr-20 mt-20 md:mt-0"
             @click.prevent="prev">
             <font-awesome-icon
               :icon="['far', 'chevron-circle-left']"
@@ -28,7 +28,7 @@
           <!-- Next -->
           <button
             :class="btnTheme"
-            class="btn"
+            class="btn order-0 md:order-1"
             @click.prevent="next">
             <font-awesome-icon
               :icon="['far', 'chevron-circle-right']"

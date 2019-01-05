@@ -36,7 +36,7 @@
 
           <!-- Previous -->
           <button
-            class="btn btn-default md:mr-20"
+            class="btn btn-default order-1 md:order-0 md:mr-20 mt-20 md:mt-0"
             @click.prevent="prev">
             <font-awesome-icon
               :icon="['far', 'chevron-circle-left']"
@@ -48,7 +48,7 @@
           <button
             :disabled="!shopName"
             :class="shopName ? btnTheme : 'btn-disabled'"
-            class="btn mt-20 md:mt-0"
+            class="btn order-0 md:order-1"
             @click.prevent="next">
             <font-awesome-icon
               :icon="['far', 'chevron-circle-right']"

@@ -232,7 +232,7 @@
 
           <!-- Previous -->
           <button
-            class="btn btn-default md:mr-20"
+            class="btn btn-default order-1 md:order-0 md:mr-20 mt-20 md:mt-0"
             @click.prevent="prev">
             <font-awesome-icon
               :icon="['far', 'chevron-circle-left']"
@@ -243,7 +243,7 @@
           <!-- Next -->
           <button
             :class="!shopPostalCode || !shopCity || !shopCountryId ? 'btn-disabled' : btnTheme"
-            class="btn mt-20 md:mt-0"
+            class="btn order-0 md:order-1"
             @click.prevent="store">
             <font-awesome-icon
               :icon="['far', 'chevron-circle-right']"
