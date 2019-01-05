@@ -3,7 +3,7 @@ export const state = () => ({
   step_name: false,
   step_details: false,
   step_customization: false,
-  form: {
+  shop: {
     name: "",
     description_short: {
       en: "",
@@ -52,58 +52,58 @@ export const getters = {
     return state.step_customization;
   },
   shop(state) {
-    return state.form;
+    return state.shop;
   },
   shopExists(state) {
-    return state.form.id;
+    return state.shop.id;
   },
   shopName(state) {
-    return state.form.name;
+    return state.shop.name;
   },
   shopPostalCode(state) {
-    return state.form.postal_code;
+    return state.shop.postal_code;
   },
   shopCity(state) {
-    return state.form.city;
+    return state.shop.city;
   },
   shopCountryId(state) {
-    return state.form.country_id;
+    return state.shop.country_id;
   },
   shopShortDescriptionFr(state) {
-    return state.form.description_short.fr;
+    return state.shop.description_short.fr;
   },
   shopLongDescriptionFr(state) {
-    return state.form.description_long.fr;
+    return state.shop.description_long.fr;
   },
   shopShortDescriptionEn(state) {
-    return state.form.description_short.en;
+    return state.shop.description_short.en;
   },
   shopLongDescriptionEn(state) {
-    return state.form.description_long.en;
+    return state.shop.description_long.en;
   },
   shopShortDescriptionDe(state) {
-    return state.form.description_short.de;
+    return state.shop.description_short.de;
   },
   shopLongDescriptionDe(state) {
-    return state.form.description_long.de;
+    return state.shop.description_long.de;
   },
   shopShortDescriptionIt(state) {
-    return state.form.description_short.it;
+    return state.shop.description_short.it;
   },
   shopLongDescriptionIt(state) {
-    return state.form.description_long.it;
+    return state.shop.description_long.it;
   },
   availableThemes(state) {
     return state.available_themes;
   },
   shopTheme(state) {
-    return state.form.theme;
+    return state.shop.theme;
   },
   shopAvatar(state) {
-    return state.form.media.avatar;
+    return state.shop.media.avatar;
   },
   shopCover(state) {
-    return state.form.media.cover;
+    return state.shop.media.cover;
   }
 };
 
@@ -121,55 +121,55 @@ export const mutations = {
     state.step_customization = value;
   },
   SET_COVER(state, url) {
-    state.form.media.cover = url;
+    state.shop.media.cover = url;
   },
   SET_SHOP_NAME(state, name) {
-    state.form.name = name;
+    state.shop.name = name;
   },
   SET_SHOP_POSTAL_CODE(state, postalCode) {
-    state.form.postal_code = postalCode;
+    state.shop.postal_code = postalCode;
   },
   SET_SHOP_CITY(state, city) {
-    state.form.city = city;
+    state.shop.city = city;
   },
   SET_SHOP_COUNTRY_ID(state, countryId) {
-    state.form.country_id = countryId;
+    state.shop.country_id = countryId;
   },
   SET_SHOP_SHORT_DESCRIPTION_FR(state, description) {
-    state.form.description_short.fr = description;
+    state.shop.description_short.fr = description;
   },
   SET_SHOP_LONG_DESCRIPTION_FR(state, description) {
-    state.form.description_long.fr = description;
+    state.shop.description_long.fr = description;
   },
   SET_SHOP_SHORT_DESCRIPTION_EN(state, description) {
-    state.form.description_short.en = description;
+    state.shop.description_short.en = description;
   },
   SET_SHOP_LONG_DESCRIPTION_EN(state, description) {
-    state.form.description_long.en = description;
+    state.shop.description_long.en = description;
   },
   SET_SHOP_SHORT_DESCRIPTION_DE(state, description) {
-    state.form.description_short.de = description;
+    state.shop.description_short.de = description;
   },
   SET_SHOP_LONG_DESCRIPTION_DE(state, description) {
-    state.form.description_long.de = description;
+    state.shop.description_long.de = description;
   },
   SET_SHOP_SHORT_DESCRIPTION_IT(state, description) {
-    state.form.description_short.it = description;
+    state.shop.description_short.it = description;
   },
   SET_SHOP_LONG_DESCRIPTION_IT(state, description) {
-    state.form.description_long.it = description;
+    state.shop.description_long.it = description;
   },
   SET_SHOP_THEME(state, theme) {
-    state.form.theme = theme;
+    state.shop.theme = theme;
   },
   SET_SHOP(state, shop) {
-    state.form = shop;
+    state.shop = shop;
   },
   SET_AVATAR(state, url) {
-    state.form.media.avatar = url;
+    state.shop.media.avatar = url;
   },
   RESET_SHOP(state) {
-    state.form = {
+    state.shop = {
       name: "",
       description_short: {
         en: "",
@@ -258,7 +258,7 @@ export const actions = {
     await dispatch("updateShop");
   },
   async updateShop({ state }) {
-    await this.$axios.$patch(`/shops/${state.form.slug}`, state.form);
+    await this.$axios.$patch(`/shops/${state.shop.slug}`, state.shop);
   },
   async getShop({ dispatch }) {
     let res = await this.$axios.$get("/user/shop");
