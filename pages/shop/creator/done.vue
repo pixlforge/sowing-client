@@ -46,6 +46,11 @@ import Success from "@/components/illustrations/Success";
 import { mapGetters, mapActions } from "vuex";
 
 export default {
+  head() {
+    return {
+      title: `${this.title} | ${this.$t("shop_creator.steps.done.title")}`
+    };
+  },
   layout: "shop-creator",
   transition: {
     name: "slide",
@@ -53,6 +58,11 @@ export default {
   },
   components: {
     Success
+  },
+  async asyncData({ app }) {
+    return {
+      title: app.head.title
+    };
   },
   computed: {
     ...mapGetters({

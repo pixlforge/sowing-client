@@ -38,8 +38,18 @@
 import Header from "@/components/Header";
 
 export default {
+  head() {
+    return {
+      title: `${this.title} | ${this.$t("pages.shop.title")}`
+    };
+  },
   components: {
     Header
+  },
+  async asyncData({ app }) {
+    return {
+      title: app.head.title
+    };
   }
 };
 </script>

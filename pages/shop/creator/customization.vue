@@ -87,6 +87,13 @@ import "vue2-dropzone/dist/vue2Dropzone.css";
 import { mapGetters, mapActions } from "vuex";
 
 export default {
+  head() {
+    return {
+      title: `${this.title} | ${this.$t(
+        "shop_creator.steps.customization.title"
+      )}`
+    };
+  },
   layout: "shop-creator",
   transition: {
     name: "slide",
@@ -116,6 +123,11 @@ export default {
         dictFallbackMessage: this.$t("dropzone.dict_fallback_message"),
         dictFileTooBig: this.$t("dropzone.dict_file_too_big")
       }
+    };
+  },
+  async asyncData({ app }) {
+    return {
+      title: app.head.title
     };
   },
   computed: {

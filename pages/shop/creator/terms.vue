@@ -85,6 +85,11 @@ import Header from "@/components/Header";
 import { mapGetters, mapActions } from "vuex";
 
 export default {
+  head() {
+    return {
+      title: `${this.title} | ${this.$t("pages.terms.title")}`
+    };
+  },
   components: {
     Header
   },
@@ -100,6 +105,11 @@ export default {
         this.setTerms(terms);
       }
     }
+  },
+  async asyncData({ app }) {
+    return {
+      title: app.head.title
+    };
   },
   methods: {
     ...mapActions({

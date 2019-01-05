@@ -65,6 +65,11 @@
 import { mapGetters, mapActions } from "vuex";
 
 export default {
+  head() {
+    return {
+      title: `${this.title} | ${this.$t("shop_creator.steps.name.title")}`
+    };
+  },
   layout: "shop-creator",
   transition: {
     name: "slide",
@@ -88,6 +93,11 @@ export default {
         this.setShopName(name);
       }
     }
+  },
+  async asyncData({ app }) {
+    return {
+      title: app.head.title
+    };
   },
   mounted() {
     if (!this.shopExists && this.$auth.user.has_shop) {

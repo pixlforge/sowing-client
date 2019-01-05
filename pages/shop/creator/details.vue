@@ -260,6 +260,11 @@
 import { mapGetters, mapActions } from "vuex";
 
 export default {
+  head() {
+    return {
+      title: `${this.title} | ${this.$t("shop_creator.steps.details.title")}`
+    };
+  },
   layout: "shop-creator",
   transition: {
     name: "slide",
@@ -269,6 +274,11 @@ export default {
     return {
       countries: [],
       errors: {}
+    };
+  },
+  async asyncData({ app }) {
+    return {
+      title: app.head.title
     };
   },
   computed: {
