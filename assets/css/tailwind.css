@@ -201,12 +201,8 @@ button {
   @apply relative;
 }
 
-.dropdown-parent:hover > .dropdown-child {
-  @apply block px-30;
-}
-
 .dropdown-child {
-  @apply hidden absolute bg-white shadow rounded-lg list-reset text-left pin-t pin-l py-20 mt-35 z-20;
+  @apply hidden absolute bg-white shadow rounded-lg list-reset text-left pin-t pin-l px-30 py-20 mt-45;
 }
 
 .title-large {
@@ -250,7 +246,7 @@ button {
 }
 
 .link-dropdown {
-  @apply block no-underline nowrap text-grey-dark py-5;
+  @apply block text-12 text-grey font-extrabold uppercase no-underline nowrap text-grey-dark py-5;
 }
 
 .link-dropdown:hover {
@@ -270,7 +266,7 @@ button {
 }
 
 .header-title {
-  @apply font-cafe text-24 text-white tracking-tight capitalize;
+  @apply font-cafe text-24 text-white tracking-tight;
 }
 
 .header-description {

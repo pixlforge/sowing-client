@@ -1,10 +1,18 @@
 <template>
-  <button class="dropdown-parent btn flex justify-center items-center px-10 md:px-20">
-    <font-awesome-icon
-      :icon="['far', 'user']"
-      class="text-18 mr-10"/>
-    {{ username }}
-    <ul class="dropdown-child leading-normal">
+  <div class="dropdown-parent">
+    <button
+      ref="dropdownMenu"
+      class="btn flex justify-center items-center px-10 md:px-20"
+      @click.prevent="toggleDropdown">
+      <font-awesome-icon
+        :icon="['far', 'user']"
+        class="text-18 mr-10"/>
+      {{ username }}
+    </button>
+
+    <ul
+      :class="{ 'block': dropdownIsOpen }"
+      class="dropdown-child leading-normal">
 
       <!-- Orders -->
       <li>
@@ -47,22 +55,52 @@
         </a>
       </li>
     </ul>
-  </button>
+  </div>
 </template>
 
 <script>
 import { mapActions } from "vuex";
 
 export default {
+  data() {
+    return {
+      dropdownIsOpen: false
+    };
+  },
   computed: {
     username() {
       return this.$auth.user.name;
     }
   },
+  mounted() {
+    const escapeHandler = event => {
+      if (event.key === "Escape" && this.dropdownIsOpen) {
+        this.dropdownIsOpen = false;
+      }
+    };
+    document.addEventListener("keydown", escapeHandler);
+
+    const clickHandler = event => {
+      let element = this.$refs.dropdownMenu;
+      let target = event.target;
+      if (element !== target && !element.contains(target)) {
+        this.dropdownIsOpen = false;
+      }
+    };
+    document.addEventListener("click", clickHandler);
+
+    this.$once("hook:destroyed", () => {
+      document.removeEventListener("keydown", escapeHandler);
+      document.removeEventListener("click", clickHandler);
+    });
+  },
   methods: {
     ...mapActions({
       emptyCart: "cart/emptyCart"
     }),
+    toggleDropdown() {
+      this.dropdownIsOpen = !this.dropdownIsOpen;
+    },
     async logout() {
       this.$toast.success(`${this.$t("toasts.logged_out")}`);
       this.$router.push(this.localePath({ name: "index" }));
