@@ -8,6 +8,9 @@ export const getters = {
   },
   locale(state) {
     return state.i18n.locale;
+  },
+  userHasShop(state) {
+    return state.auth.user.has_shop;
   }
 };
 

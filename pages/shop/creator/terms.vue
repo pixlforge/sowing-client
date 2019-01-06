@@ -7,7 +7,7 @@
         <font-awesome-icon :icon="['far', 'store']"/>
       </template>
       <template slot="title">
-        <h1 class="header-title">{{ $t("pages.shop.title") }}</h1>
+        <h1 class="header-title">{{ $t("pages.shop.creation") }}</h1>
       </template>
     </Header>
 

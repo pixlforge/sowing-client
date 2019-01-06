@@ -110,6 +110,7 @@ export default {
     ...mapActions({
       flash: "alert/flash",
       close: "alert/close",
+      setShop: "shop/setShop",
       getShop: "shop/getShop",
       setShopName: "shop/setShopName",
       setStepName: "shop/setStepName",

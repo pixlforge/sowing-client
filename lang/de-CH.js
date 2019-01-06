@@ -241,7 +241,13 @@ export default {
       title: "Konto erfolgreich erstellt!"
     },
     shop: {
-      title: "Mein Shop"
+      title: "Verwaltung Ihres Shops",
+      creation: "Schaffung meines Shops",
+      not_created_yet: "Sie haben noch keinen Shop angelegt",
+      creation_cta_line_1:
+        "Erstellen Sie noch heute Ihren eigenen Online-Shop!",
+      creation_cta_line_2:
+        "Mit dem Assistenten für die Shop-Erstellung von Sowing ist das ganz einfach. Lassen Sie sich einfach führen."
     },
     terms: {
       title: "Nutzungsbedingungen",

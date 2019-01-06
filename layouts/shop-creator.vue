@@ -24,7 +24,7 @@
       <template slot="title">
         <h1 class="header-title">
           <template v-if="shopName">{{ shopName }}</template>
-          <template v-else>{{ $t("pages.shop.title") }}</template>
+          <template v-else>{{ $t("pages.shop.creation") }}</template>
         </h1>
       </template>
     </Header>

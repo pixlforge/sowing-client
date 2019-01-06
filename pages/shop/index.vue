@@ -12,30 +12,48 @@
     </Header>
 
     <section class="container section">
-      <div class="flex flex-col items-center mt-100">
-        <h2 class="text-36">Vous n'avez pas encore créé votre boutique.</h2>
+      <div class="flex flex-col items-center">
 
-        <img
-          src="~assets/img/under_construction.svg"
-          alt=""
-          class="block w-1/2 mt-100">
+        <!-- User owns a shop -->
+        <template v-if="userHasShop">
+          <h2 class="title-large text-center mt-100">Nom de la boutique</h2>
+        </template>
+        
+        <!-- User does not own a shop -->
+        <template v-else>
+          <h2 class="title-large text-center mt-100">{{ $t("pages.shop.not_created_yet") }}</h2>
 
-        <nuxt-link
-          :to="localePath({ name: 'shop-creator-terms' })"
-          class="btn btn-primary mt-80">
-          <font-awesome-icon
-            :icon="['far', 'rocket']"
-            class="mr-10"/>
-          Créer ma boutique
-        </nuxt-link>
+          <section class="w-full max-w-1000">
+            <p class="paragraph-body text-center mt-60">
+              {{ $t("pages.shop.creation_cta_line_1") }}<br>
+              {{ $t("pages.shop.creation_cta_line_2") }}
+            </p>
+          </section>
+
+          <img
+            src="~assets/img/under_construction.svg"
+            alt=""
+            class="block w-full md:w-1/2 mt-100">
+
+          <nuxt-link
+            :to="localePath({ name: 'shop-creator-terms' })"
+            class="btn btn-primary mt-100">
+            <font-awesome-icon
+              :icon="['far', 'rocket']"
+              class="mr-10"/>
+            {{ $t("buttons.create_my_shop") }}
+          </nuxt-link>
+        </template>
 
       </div>
     </section>
+
   </main>
 </template>
 
 <script>
 import Header from "@/components/Header";
+import { mapGetters } from "vuex";
 
 export default {
   head() {
@@ -50,6 +68,11 @@ export default {
     return {
       title: app.head.title
     };
+  },
+  computed: {
+    ...mapGetters({
+      userHasShop: "userHasShop"
+    })
   }
 };
 </script>
