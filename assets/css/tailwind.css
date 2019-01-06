@@ -246,7 +246,7 @@ button {
 }
 
 .link-dropdown {
-  @apply block text-12 text-grey font-extrabold uppercase no-underline nowrap text-grey-dark py-5;
+  @apply block text-12 text-grey font-extrabold uppercase no-underline nowrap text-grey-dark py-5 cursor-pointer;
 }
 
 .link-dropdown:hover {
