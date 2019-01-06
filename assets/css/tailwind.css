@@ -202,7 +202,7 @@ button {
 }
 
 .dropdown-child {
-  @apply hidden absolute bg-white shadow rounded-lg list-reset text-left pin-t pin-l px-30 py-20 mt-45;
+  @apply hidden absolute bg-white shadow rounded-lg list-reset text-left pin-t pin-l px-30 py-20 mt-45 z-20;
 }
 
 .title-large {
