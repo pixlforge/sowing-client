@@ -6,7 +6,7 @@
         :key="method.id"
         class="w-300 mx-20 mt-40">
         <component
-          :is="method.card_type"
+          :is="method.card_type_slug"
           :payment-method="method"
           :selected-payment-method="selectedPaymentMethod.id === method.id"
           @click.native="switchPaymentMethod(method)"/>
@@ -16,15 +16,15 @@
 </template>
 
 <script>
-import Mastercard from "@/components/checkout/paymentMethods/cards/Mastercard";
+import MasterCard from "@/components/checkout/paymentMethods/cards/MasterCard";
 import Visa from "@/components/checkout/paymentMethods/cards/Visa";
 import Amex from "@/components/checkout/paymentMethods/cards/Amex";
 
 export default {
   components: {
-    mastercard: Mastercard,
+    mastercard: MasterCard,
     visa: Visa,
-    amex: Amex
+    "american-express": Amex
   },
   props: {
     paymentMethods: {
