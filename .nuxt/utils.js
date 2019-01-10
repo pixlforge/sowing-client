@@ -129,7 +129,7 @@ export async function setContext(app, context) {
       payload: context.payload,
       error: context.error,
       base: '/',
-      env: {"API_URL":"http://sowing.test/api","CLIENT_URL":"http://localhost:3000"}
+      env: {"API_URL":"http://sowing.test/api","CLIENT_URL":"http://localhost:3000","STRIPE_PUBLIC_KEY":"pk_test_ZqbFEvgY1hidolj3Eu3hZ6RV"}
     }
     // Only set once
     if (context.req) app.context.req = context.req

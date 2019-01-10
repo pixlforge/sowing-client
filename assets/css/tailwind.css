@@ -310,7 +310,7 @@ button {
 }
 
 .cc-icon {
-  @apply text-72 text-grey-lighter;
+  @apply text-72 text-grey-lightest;
 }
 
 .cc-title {

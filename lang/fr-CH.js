@@ -3,6 +3,7 @@ export default {
    * Buttons
    */
   buttons: {
+    add: "Ajouter",
     add_to_cart: "Ajouter au panier",
     back: "Retour",
     begin_shop_creation: "Commencer la création de ma boutique",

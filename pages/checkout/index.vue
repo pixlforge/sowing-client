@@ -19,7 +19,8 @@
           <h2 class="text-36 text-green-darkest mt-40">{{ $t("pages.checkout.payment") }}</h2>
           <PaymentMethods
             :payment-methods="paymentMethods"
-            v-model="form.payment_method_id"/>
+            v-model="form.payment_method_id"
+            @payment-method:added="addPaymentMethod"/>
           
           <!-- Cart Overview -->
           <h2 class="text-36 text-green-darkest mt-100">{{ $t("pages.cart.title") }}</h2>
@@ -196,6 +197,9 @@ export default {
       } catch (e) {
         this.$toast.error("toasts.general_error");
       }
+    },
+    addPaymentMethod(method) {
+      this.paymentMethods.push(method);
     }
   }
 };
