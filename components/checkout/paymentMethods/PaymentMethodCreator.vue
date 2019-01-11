@@ -49,7 +49,7 @@ export default {
   data() {
     return {
       storing: false,
-      showing: true,
+      showing: false,
       stripe: {},
       card: {},
       options: {
