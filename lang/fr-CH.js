@@ -316,6 +316,14 @@ export default {
   },
 
   /**
+   * Stripe
+   */
+  stripe: {
+    add_a_card:
+      "Ajoutez une carte de crédit ou de débit en entrant les informations correspondantes ci-dessous."
+  },
+
+  /**
    * Toasts
    */
   toasts: {
@@ -330,6 +338,8 @@ export default {
       item_added_plural: "ajoutés au panier!",
       product_removed: "supprimé."
     },
+    cc_added:
+      "La carte de crédit ou débit a été ajoutée à votre compte avec succès!",
     general_error:
       "Une erreur est survenue. Veuillez recharger la page et réessayer, svp.",
     is_already_in_use: "est déjà utilisé",

@@ -10,20 +10,24 @@
     </button>
     <form
       v-show="showing"
-      class="w-full h-full flex flex-col justify-between items-center"
+      class="w-full h-full flex flex-col items-center"
       @submit.prevent="store">
-      <div
-        id="elements"
-        class="w-full mt-80"/>
-      <div class="flex">
+      <div class="w-full mt-20">
+        <label
+          for="elements"
+          class="block text-14 leading-normal mb-20">
+          {{ $t("stripe.add_a_card") }}
+        </label>
+        <div
+          id="elements"
+          class="bg-green-lightest rounded-lg pl-10 py-10"/>
+      </div>
+      <div class="flex mt-20">
         <button
           :disabled="storing"
           :class="{ 'btn-disabled': storing }"
           type="submit"
           class="btn btn-primary mr-10">
-          <font-awesome-icon
-            :icon="['far', 'plus']"
-            class="mr-5"/>
           {{ $t("buttons.add") }}
         </button>
         <button
@@ -45,13 +49,14 @@ export default {
   data() {
     return {
       storing: false,
-      showing: false,
+      showing: true,
       stripe: {},
       card: {},
       options: {
         style: {
           base: {
-            fontSize: "16px"
+            fontSize: "16px",
+            iconColor: "#8D8D8D"
           }
         }
       }
@@ -76,17 +81,17 @@ export default {
       const { token, error } = await this.stripe.createToken(this.card);
 
       if (error) {
-        //
+        this.$toast.error(this.$t("toasts.general_error"));
       } else {
         let res = await this.$axios.$post("/payment-methods", {
           token: token.id
         });
-
+        this.$toast.success(this.$t("toasts.cc_added"));
         this.$emit("payment-method:added", res.data);
         this.card.clear();
+        this.showing = false;
       }
 
-      this.showing = false;
       this.storing = false;
     }
   }
