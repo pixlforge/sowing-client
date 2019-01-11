@@ -2,7 +2,7 @@
   <div class="w-full h-full flex flex-col justify-center items-center">
     <button
       v-if="!showing"
-      class="bg-grey-lightest hover:bg-green text-white w-80 h-80 rounded-full p-0"
+      class="bg-grey-lightest hover:bg-green transition text-white w-80 h-80 rounded-full p-0"
       @click.prevent="showing = true">
       <font-awesome-icon
         :icon="['far', 'plus']"

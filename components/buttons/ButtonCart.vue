@@ -2,7 +2,7 @@
   <nuxt-link
     :to="localePath({ name: 'cart' })"
     :class="btnTheme"
-    class="block relative w-40 h-40 outline-none focus:shadow-outline rounded-full flex justify-center items-center">
+    class="block relative w-40 h-40 outline-none focus:shadow-outline rounded-full transition flex justify-center items-center">
     <font-awesome-icon
       :icon="['far', 'shopping-cart']"
       class="text-18 text-white"/>

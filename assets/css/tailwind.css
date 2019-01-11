@@ -56,12 +56,8 @@ button {
   outline: none !important;
 }
 
-.transition {
-  transition: background-color 0.15s ease-out;
-}
-
 .btn {
-  @apply block outline-none rounded-lg text-12 text-grey font-extrabold text-center uppercase no-underline px-30 py-12;
+  @apply block outline-none rounded-lg text-12 text-grey font-extrabold text-center uppercase transition no-underline px-30 py-12;
 }
 
 .btn:hover {
@@ -234,7 +230,7 @@ button {
 }
 
 .link-category {
-  @apply block no-underline text-16 font-semibold text-green-darkest outline-none rounded-lg px-10 py-10;
+  @apply block no-underline text-16 font-semibold text-green-darkest transition outline-none rounded-lg px-10 py-10;
 }
 
 .link-category:hover {
@@ -246,7 +242,7 @@ button {
 }
 
 .link-dropdown {
-  @apply block text-12 text-grey font-extrabold uppercase no-underline nowrap text-grey-dark py-5 cursor-pointer;
+  @apply block text-12 text-grey font-extrabold uppercase no-underline nowrap text-grey-dark transition py-5 cursor-pointer;
 }
 
 .link-dropdown:hover {
@@ -302,19 +298,31 @@ button {
 }
 
 .cc-container {
-  @apply relative rounded-lg shadow flex border-4 border-white flex-col items-center cursor-pointer p-40;
+  @apply relative rounded-lg flex border-4 border-white transition flex-col items-center cursor-pointer p-40;
+}
+
+.cc-container:hover > .cc-icon {
+  @apply text-grey-light;
+}
+
+.cc-container-selected:hover > .cc-icon {
+  @apply text-green;
 }
 
 .cc-container-selected {
-  @apply border-green shadow-md;
+  @apply border-green shadow-lg;
+}
+
+.cc-container-selected:hover {
+  @apply shadow-lg;
 }
 
 .cc-icon {
-  @apply text-72 text-grey-lightest;
+  @apply text-72 text-grey-lightest transition;
 }
 
 .cc-title {
-  @apply text-20 font-normal mt-20;
+  @apply text-20 font-normal transition mt-20;
 }
 
 .cc-icon-checked {
@@ -322,7 +330,7 @@ button {
 }
 
 .cc-last-four {
-  @apply text-12 text-grey-lighter mt-5;
+  @apply text-12 text-grey-lighter transition mt-5;
 }
 
 .cc-icon-selected,
@@ -529,4 +537,10 @@ html {
   text-transform: none !important;
   font-size: 1.2rem !important;
   letter-spacing: 0 !important;
+}
+
+.transition {
+  transition-property: background-color, color, border-color, box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-out;
 }
