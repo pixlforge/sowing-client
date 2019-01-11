@@ -39,6 +39,8 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
   data() {
     return {
@@ -46,7 +48,7 @@ export default {
       showing: false,
       stripe: {},
       card: {},
-      styles: {
+      options: {
         style: {
           base: {
             fontSize: "16px"
@@ -55,10 +57,17 @@ export default {
       }
     };
   },
+  computed: {
+    ...mapGetters({
+      locale: "locale"
+    })
+  },
   mounted() {
     this.stripe = Stripe(process.env.STRIPE_PUBLIC_KEY);
 
-    this.card = this.stripe.elements().create("card", this.styles);
+    this.card = this.stripe
+      .elements({ locale: this.locale })
+      .create("card", this.options);
     this.card.mount("#elements");
   },
   methods: {
