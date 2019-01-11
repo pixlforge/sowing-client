@@ -320,7 +320,7 @@ export default {
    */
   stripe: {
     add_a_card:
-      "Aggiungi una carta di credito o di debito inserendo le informazioni corrispondenti di seguito."
+      "Aggiungete una carta di credito o di debito inserendo le informazioni corrispondenti qui sotto."
   },
 
   /**

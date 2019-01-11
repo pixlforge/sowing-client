@@ -339,7 +339,7 @@ export default {
       product_removed: "supprimé."
     },
     cc_added:
-      "La carte de crédit ou débit a été ajoutée à votre compte avec succès!",
+      "La carte de crédit ou de débit a été ajoutée à votre compte avec succès!",
     general_error:
       "Une erreur est survenue. Veuillez recharger la page et réessayer, svp.",
     is_already_in_use: "est déjà utilisé",
