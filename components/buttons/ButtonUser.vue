@@ -2,12 +2,12 @@
   <div class="dropdown-parent">
     <button
       ref="dropdownMenu"
-      class="btn flex justify-center items-center px-10 md:px-20"
+      class="btn btn-default flex justify-center items-center px-10 md:px-20 py-10"
       @click.prevent="toggleDropdown">
-      <font-awesome-icon
-        :icon="['far', 'user']"
-        class="text-18 mr-10"/>
       {{ username }}
+      <font-awesome-icon
+        :icon="['fas', 'caret-down']"
+        class="text-16 ml-15"/>
     </button>
 
     <ul

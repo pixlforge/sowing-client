@@ -21,7 +21,7 @@
     <nuxt-link
       v-if="!loggedIn"
       :to="localePath({ name: 'register' })"
-      class="btn btn-primary w-full md:w-auto text-center md:order-4 xl:order-3 md:mr-20 xl:mr-30 mt-20 lg:mt-0">
+      class="btn btn-secondary w-full md:w-auto text-center md:order-4 xl:order-3 md:mr-20 xl:mr-30 mt-20 lg:mt-0">
       <font-awesome-icon
         :icon="['far', 'rocket']"
         class="mr-5"/>
@@ -32,10 +32,7 @@
     <nuxt-link
       v-if="!loggedIn"
       :to="localePath({ name: 'login' })"
-      class="btn w-full md:w-auto text-center md:order-5 lg:order-4 lg:mr-20 xl:mr-30 mt-10 md:mt-20 lg:mt-0">
-      <font-awesome-icon
-        :icon="['far', 'user']"
-        class="mr-5"/>
+      class="btn btn-default w-full md:w-auto text-center md:order-5 lg:order-4 lg:mr-20 xl:mr-30 mt-10 md:mt-20 lg:mt-0">
       {{ $t("buttons.login") }}
     </nuxt-link>
 

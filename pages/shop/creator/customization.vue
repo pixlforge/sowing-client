@@ -55,7 +55,7 @@
 
           <!-- Previous -->
           <button
-            class="btn btn-default order-1 md:order-0 md:mr-20 mt-20 md:mt-0"
+            class="btn order-1 md:order-0 md:mr-20 mt-20 md:mt-0"
             @click.prevent="prev">
             <font-awesome-icon
               :icon="['far', 'chevron-circle-left']"

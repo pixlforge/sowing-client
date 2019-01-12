@@ -151,7 +151,7 @@
           {{ $t("buttons.create") }}
         </button>
         <button
-          class="btn btn-default"
+          class="btn"
           @click.prevent="closeAddressCreator">
           {{ $t("buttons.cancel") }}
         </button>

@@ -17,7 +17,7 @@
 
           <!-- Previous -->
           <button
-            class="btn btn-default order-1 md:order-0 md:mr-20 mt-20 md:mt-0"
+            class="btn order-1 md:order-0 md:mr-20 mt-20 md:mt-0"
             @click.prevent="prev">
             <font-awesome-icon
               :icon="['far', 'chevron-circle-left']"
@@ -71,7 +71,8 @@ export default {
       shopTheme: "shop/shopTheme",
       shopExists: "shop/shopExists",
       stepDetails: "shop/stepDetails",
-      stepCustomization: "shop/stepCustomization"
+      stepCustomization: "shop/stepCustomization",
+      stepConnect: "shop/setConnect"
     }),
     btnTheme() {
       return `btn-${this.shopTheme}`;
@@ -85,21 +86,26 @@ export default {
     this.setStepName(true);
     this.setStepDetails(true);
     this.setStepCustomization(true);
+    this.setStepConnect(true);
   },
   methods: {
     ...mapActions({
       getShop: "shop/getShop",
       setStepName: "shop/setStepName",
       setStepDetails: "shop/setStepDetails",
-      setStepCustomization: "shop/setStepCustomization"
+      setStepCustomization: "shop/setStepCustomization",
+      setStepConnect: "shop/setStepConnect"
     }),
     prev() {
-      this.$router.push(
-        this.localePath({ name: "shop-creator-customization" })
-      );
+      this.$router.push(this.localePath({ name: "shop-creator-connect" }));
     },
     next() {
-      if (this.stepName && this.stepDetails && this.stepCustomization) {
+      if (
+        this.stepName &&
+        this.stepDetails &&
+        this.stepCustomization &&
+        this.stepConnect
+      ) {
         this.$router.push(this.localePath({ name: "shop" }));
       }
     }

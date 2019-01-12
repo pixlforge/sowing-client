@@ -11,7 +11,7 @@
       </p>
       <nuxt-link
         :to="localePath({ name: 'index' })"
-        class="btn btn-secondary mt-40">
+        class="btn btn-primary mt-40">
         Voir les produits
       </nuxt-link>
     </div>

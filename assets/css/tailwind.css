@@ -57,11 +57,7 @@ button {
 }
 
 .btn {
-  @apply block outline-none rounded-lg text-12 text-grey font-extrabold text-center uppercase transition no-underline px-30 py-12;
-}
-
-.btn:hover {
-  @apply text-green;
+  @apply block outline-none rounded-lg text-12 text-grey-lighter font-extrabold text-center uppercase transition no-underline px-30 py-12;
 }
 
 .btn:focus {
@@ -86,7 +82,7 @@ button {
 
 .btn-default,
 .btn-default:hover {
-  @apply text-grey-lighter;
+  @apply text-grey border border-grey-lightest;
 }
 
 .btn-disabled,

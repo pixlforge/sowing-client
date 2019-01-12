@@ -2,18 +2,16 @@
   <div class="dropdown-parent">
     <button
       ref="dropdownMenu"
-      class="btn flex justify-center items-center px-10 md:px-20"
+      class="btn btn-default flex justify-center items-center px-10 md:px-20 py-10"
       @click.prevent="toggleDropdown">
-      <div
-        :class="textTheme"
-        class="mr-10">
+      <div :class="textTheme">
         <font-awesome-icon
           :icon="['far', 'globe-europe']"
-          class="text-18"/>
+          class="text-16"/>
       </div>
       <font-awesome-icon
         :icon="['fas', 'caret-down']"
-        class="text-14 text-grey-dark"/>
+        class="text-16 ml-15"/>
     </button>
 
     <ul

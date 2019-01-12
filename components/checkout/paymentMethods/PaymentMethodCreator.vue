@@ -33,7 +33,7 @@
         <button
           :disabled="storing"
           type="submit"
-          class="btn btn-default"
+          class="btn"
           @click.prevent="showing = false">
           {{ $t("buttons.cancel") }}
         </button>
