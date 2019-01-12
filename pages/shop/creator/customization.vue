@@ -200,7 +200,7 @@ export default {
     },
     next() {
       if (this.stepName && this.stepDetails) {
-        this.$router.push(this.localePath({ name: "shop-creator-done" }));
+        this.$router.push(this.localePath({ name: "shop-creator-connect" }));
       }
     }
   }

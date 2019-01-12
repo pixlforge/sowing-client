@@ -3,6 +3,7 @@ const initialState = {
   step_name: false,
   step_details: false,
   step_customization: false,
+  step_connect: false,
   shop: {
     name: "",
     description_short: {
@@ -54,6 +55,9 @@ export const getters = {
   },
   stepCustomization(state) {
     return state.step_customization;
+  },
+  stepConnect(state) {
+    return state.step_connect;
   },
   shop(state) {
     return state.shop;
@@ -124,6 +128,9 @@ export const mutations = {
   SET_STEP_CUSTOMIZATION(state, value) {
     state.step_customization = value;
   },
+  SET_STEP_CONNECT(state, value) {
+    state.step_connect = value;
+  },
   SET_COVER(state, url) {
     state.shop.media.cover = url;
   },
@@ -189,6 +196,9 @@ export const actions = {
   },
   setStepCustomization({ commit }, value) {
     commit("SET_STEP_CUSTOMIZATION", value);
+  },
+  setStepConnect({ commit }, value) {
+    commit("SET_STEP_CONNECT", value);
   },
   setShop({ commit }, shop) {
     commit("SET_SHOP", shop);

@@ -60,17 +60,36 @@
           </div>
         </div>
 
-        <!-- Done -->
-        <div class="relative flex items-center">
+        <!-- Connect -->
+        <div class="relative flex flex-grow items-center">
           <div
             :class="stepCustomization ? `${bgTheme} text-white` : 'bg-white text-grey-lightest'"
             class="w-50 h-50 rounded-full text-24 font-bold flex justify-center items-center cursor-pointer"
-            @click.prevent="toShopCreatorDone">
+            @click.prevent="toShopCreatorConnect">
             4
           </div>
           <div
+            :class="stepConnect ? bgTheme : 'bg-white'"
+            class="h-3 flex-grow"/>
+          <div
             :class="stepCustomization ? textTheme : 'text-grey-lightest'"
-            class="hidden lg:block w-110 absolute pin-b step-4 text-16 text-center font-semibold cursor-pointer"
+            class="hidden lg:block w-110 absolute pin-b step-3 text-16 text-center font-semibold cursor-pointer"
+            @click.prevent="toShopCreatorConnect">
+            {{ $t("shop_creator.navigation.connect") }}
+          </div>
+        </div>
+
+        <!-- Done -->
+        <div class="relative flex items-center">
+          <div
+            :class="stepConnect ? `${bgTheme} text-white` : 'bg-white text-grey-lightest'"
+            class="w-50 h-50 rounded-full text-24 font-bold flex justify-center items-center cursor-pointer"
+            @click.prevent="toShopCreatorDone">
+            5
+          </div>
+          <div
+            :class="stepConnect ? textTheme : 'text-grey-lightest'"
+            class="hidden lg:block w-110 absolute pin-b step-5 text-16 text-center font-semibold cursor-pointer"
             @click.prevent="toShopCreatorDone">
             {{ $t("shop_creator.navigation.done") }}
           </div>
@@ -90,6 +109,7 @@ export default {
       stepName: "shop/stepName",
       stepDetails: "shop/stepDetails",
       stepCustomization: "shop/stepCustomization",
+      stepConnect: "shop/stepConnect",
       shopTheme: "shop/shopTheme"
     }),
     bgTheme() {
@@ -121,8 +141,19 @@ export default {
         );
       }
     },
-    toShopCreatorDone() {
+    toShopCreatorConnect() {
       if (this.stepName && this.stepDetails && this.stepCustomization) {
+        this.close();
+        this.$router.push(this.localePath({ name: "shop-creator-connect" }));
+      }
+    },
+    toShopCreatorDone() {
+      if (
+        this.stepName &&
+        this.stepDetails &&
+        this.stepCustomization &&
+        this.stepConnect
+      ) {
         this.close();
         this.$router.push(this.localePath({ name: "shop-creator-done" }));
       }
@@ -135,7 +166,8 @@ export default {
 .step-1,
 .step-2,
 .step-3,
-.step-4 {
+.step-4,
+.step-5 {
   transform: translate(-25%, 3rem);
 }
 </style>

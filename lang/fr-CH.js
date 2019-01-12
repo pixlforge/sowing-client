@@ -265,6 +265,7 @@ export default {
       name: "Nom",
       details: "Détails",
       customize: "Thème",
+      connect: "Marchand",
       done: "Terminé!"
     },
     steps: {
@@ -287,6 +288,11 @@ export default {
         title: "Personnalisez votre boutique",
         paragraph:
           "Personnalisez votre boutique pour lui donner une identité unique!"
+      },
+      connect: {
+        title: "Créez ou liez votre compte marchand",
+        paragraph:
+          "Créer ou liez un compte Stripe existant sur lequel virer les recettes de vos ventes."
       },
       done: {
         title: "Terminé!",

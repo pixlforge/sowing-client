@@ -11,6 +11,7 @@ const _4b4fffa7 = () => interopDefault(import('../pages/shop/index.vue' /* webpa
 const _091687d6 = () => interopDefault(import('../pages/password/email.vue' /* webpackChunkName: "pages/password/email" */))
 const _03544809 = () => interopDefault(import('../pages/password/reset.vue' /* webpackChunkName: "pages/password/reset" */))
 const _17283845 = () => interopDefault(import('../pages/register/success.vue' /* webpackChunkName: "pages/register/success" */))
+const _7432d61c = () => interopDefault(import('../pages/shop/creator/connect.vue' /* webpackChunkName: "pages/shop/creator/connect" */))
 const _5f01cd05 = () => interopDefault(import('../pages/shop/creator/customization.vue' /* webpackChunkName: "pages/shop/creator/customization" */))
 const _d76a3918 = () => interopDefault(import('../pages/shop/creator/details.vue' /* webpackChunkName: "pages/shop/creator/details" */))
 const _1ff7cbc0 = () => interopDefault(import('../pages/shop/creator/done.vue' /* webpackChunkName: "pages/shop/creator/done" */))
@@ -222,6 +223,22 @@ export function createRouter() {
       path: "/it/register/success",
       component: _17283845,
       name: "register-success___it"
+    }, {
+      path: "/en/shop/creator/connect",
+      component: _7432d61c,
+      name: "shop-creator-connect___en"
+    }, {
+      path: "/fr/shop/creator/connect",
+      component: _7432d61c,
+      name: "shop-creator-connect___fr"
+    }, {
+      path: "/de/shop/creator/connect",
+      component: _7432d61c,
+      name: "shop-creator-connect___de"
+    }, {
+      path: "/it/shop/creator/connect",
+      component: _7432d61c,
+      name: "shop-creator-connect___it"
     }, {
       path: "/en/shop/creator/customization",
       component: _5f01cd05,

@@ -267,6 +267,7 @@ export default {
       name: "Name",
       details: "Einzelheiten",
       customize: "Thema",
+      connect: "Händler",
       done: "Erledigt!"
     },
     steps: {
@@ -289,6 +290,11 @@ export default {
         title: "Personalisieren Sie Ihren Shop",
         paragraph:
           "Personalisieren Sie Ihren Shop, um ihm eine einzigartige Identität zu verleihen!"
+      },
+      connect: {
+        title: "Erstellen Sie oder verknüpfen Sie Ihr Händlerkonto",
+        paragraph:
+          "Erstellen oder verknüpfen Sie ein vorhandenes Stripe-Konto, auf das Sie den Umsatz aus Ihren Verkäufen übertragen möchten."
       },
       done: {
         title: "Terminé!",

@@ -264,6 +264,7 @@ export default {
       name: "Name",
       details: "Details",
       customize: "Theme",
+      connect: "Merchant",
       done: "Done!"
     },
     steps: {
@@ -285,6 +286,11 @@ export default {
       customization: {
         title: "Customize your shop",
         paragraph: "Customize your shop to give it a unique identity!"
+      },
+      connect: {
+        title: "Create or link your merchant account",
+        paragraph:
+          "Create or link an existing Stripe account on which to transfer revenue from your sales."
       },
       done: {
         title: "Terminé!",

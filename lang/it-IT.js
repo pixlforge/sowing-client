@@ -266,6 +266,7 @@ export default {
       name: "Nome",
       details: "Dettagli",
       customize: "Tema",
+      connect: "Mercante",
       done: "Fatto!"
     },
     steps: {
@@ -288,6 +289,11 @@ export default {
         title: "Personalizzate il vostro negozio",
         paragraph:
           "Personalizzate il vostro negozio per dargli un'identità unica!"
+      },
+      connect: {
+        title: "Create o collega il vostro account commerciante",
+        paragraph:
+          "Create o collegate un account Stripe esistente su cui trasferire le entrate dalle vendite."
       },
       done: {
         title: "Terminé!",
