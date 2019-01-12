@@ -56,6 +56,7 @@ import Header from "@/components/Header";
 import { mapGetters } from "vuex";
 
 export default {
+  middleware: ["authenticated"],
   head() {
     return {
       title: `${this.title} | ${this.$t("pages.shop.title")}`

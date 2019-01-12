@@ -113,6 +113,7 @@
 import Header from "@/components/Header";
 
 export default {
+  middleware: ["guest"],
   head() {
     return {
       title: `${this.title} | ${this.$t("pages.register.title")}`

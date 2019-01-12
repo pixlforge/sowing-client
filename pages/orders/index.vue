@@ -38,14 +38,15 @@ import Header from "@/components/Header";
 import Order from "@/components/orders/Order";
 
 export default {
-  components: {
-    Header,
-    Order
-  },
+  middleware: ["authenticated"],
   head() {
     return {
       title: `${this.title} | ${this.$t("pages.orders.title")}`
     };
+  },
+  components: {
+    Header,
+    Order
   },
   data() {
     return {

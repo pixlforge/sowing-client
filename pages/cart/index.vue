@@ -76,6 +76,7 @@ import CartOverview from "@/components/cart/CartOverview";
 import { mapGetters, mapActions } from "vuex";
 
 export default {
+  middleware: ["authenticated"],
   head() {
     return {
       title: `${this.title} | ${this.pageTitle}`

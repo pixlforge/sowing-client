@@ -87,7 +87,7 @@ import Header from "@/components/Header";
 import { mapActions } from "vuex";
 
 export default {
-  middleware: "guest",
+  middleware: ["guest"],
   head() {
     return {
       title: `${this.title} | ${this.$t("pages.login.title")}`
@@ -117,11 +117,18 @@ export default {
       await this.$auth.loginWith("local", {
         data: this.form
       });
+
+      if (this.$route.query.redirect) {
+        this.$router.push(this.$route.query.redirect);
+      } else {
+        this.$router.push(this.localePath({ name: "index" }));
+      }
+
       this.$toast.success(
         `${this.$t("toasts.welcome")}, ${this.$auth.user.name}!`
       );
+
       await this.getCart();
-      this.$router.push(this.localePath({ name: "index" }));
     }
   }
 };

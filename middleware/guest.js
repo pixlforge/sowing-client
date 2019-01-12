@@ -1,5 +1,5 @@
-export default function({ store, redirect }) {
-  if (store.state.auth.loggedIn) {
-    redirect("301", "/");
+export default function({ app, redirect }) {
+  if (app.$auth.loggedIn) {
+    return redirect(app.localePath("index"));
   }
 }

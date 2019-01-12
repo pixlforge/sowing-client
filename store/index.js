@@ -10,7 +10,9 @@ export const getters = {
     return state.i18n.locale;
   },
   userHasShop(state) {
-    return state.auth.user.has_shop;
+    if (state.auth.user) {
+      return state.auth.user.has_shop;
+    }
   }
 };
 

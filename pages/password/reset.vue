@@ -22,7 +22,7 @@
           <label
             for="email"
             class="label">
-            {{ $t("components.forms.labels.email") }}
+            {{ $t("forms.labels.email") }}
           </label>
           <input
             id="email"
@@ -37,7 +37,7 @@
           <label
             for="password"
             class="label">
-            {{ $t("components.forms.labels.password") }}
+            {{ $t("forms.labels.password") }}
           </label>
           <input
             id="password"
@@ -52,7 +52,7 @@
           <label
             for="password_confirmation"
             class="label">
-            {{ $t("components.forms.labels.password_confirmation") }}
+            {{ $t("forms.labels.password_confirmation") }}
           </label>
           <input
             id="password_confirmation"
@@ -69,7 +69,7 @@
           <font-awesome-icon
             :icon="['far', 'redo-alt']"
             class="mr-10"/>
-          {{ $t("components.forms.buttons.password_reset") }}
+          {{ $t("buttons.password_reset") }}
         </button>
 
       </form>
@@ -82,6 +82,7 @@
 import Header from "@/components/Header";
 
 export default {
+  middleware: ["guest"],
   head() {
     return {
       title: `${this.title} | ${this.$t("pages.password_reset.title")}`

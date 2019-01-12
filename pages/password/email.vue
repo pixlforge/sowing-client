@@ -31,7 +31,7 @@
           <label
             for="email"
             class="label">
-            {{ $t("components.forms.labels.email") }}
+            {{ $t("forms.labels.email") }}
           </label>
           <input
             id="email"
@@ -47,7 +47,7 @@
           <font-awesome-icon
             :icon="['far', 'redo-alt']"
             class="mr-10"/>
-          {{ $t("components.forms.buttons.password_email") }}
+          {{ $t("buttons.password_email") }}
         </button>
 
       </form>
@@ -60,6 +60,7 @@
 import Header from "@/components/Header";
 
 export default {
+  middleware: ["guest"],
   head() {
     return {
       title: `${this.title} | ${this.$t("pages.password_email.title")}`

@@ -260,6 +260,7 @@
 import { mapGetters, mapActions } from "vuex";
 
 export default {
+  middleware: ["authenticated"],
   head() {
     return {
       title: `${this.title} | ${this.$t("shop_creator.steps.details.title")}`

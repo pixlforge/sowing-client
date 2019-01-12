@@ -96,6 +96,7 @@ import PaymentMethods from "@/components/checkout/paymentMethods/PaymentMethods"
 import { mapGetters, mapActions } from "vuex";
 
 export default {
+  middleware: ["authenticated"],
   head() {
     return {
       title: `${this.title} | ${this.pageTitle}`
