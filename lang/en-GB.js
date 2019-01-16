@@ -17,6 +17,7 @@ export default {
     finalize_shop_creation: "Finalize the creation of my shop",
     finish: "Finish",
     login: "Log in",
+    next: "Next",
     password_email: "Send a link to reset my password",
     password_reset: "Reset password",
     register: "Create an account",

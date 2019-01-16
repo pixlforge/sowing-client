@@ -248,7 +248,7 @@
             <font-awesome-icon
               :icon="['far', 'chevron-circle-right']"
               class="mr-5"/>
-            {{ $t("buttons.customize_my_shop") }}
+            {{ $t("buttons.next") }}
           </button>
         </div>
       </div>

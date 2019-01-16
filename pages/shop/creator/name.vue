@@ -53,7 +53,7 @@
             <font-awesome-icon
               :icon="['far', 'chevron-circle-right']"
               class="mr-5"/>
-            {{ $t("buttons.to_my_shop_details") }}
+            {{ $t("buttons.next") }}
           </button>
         </div>
       </div>
