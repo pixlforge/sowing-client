@@ -370,7 +370,8 @@ module.exports = {
     "50": "5rem",
     "60": "6rem",
     "80": "8rem",
-    "100": "10rem"
+    "100": "10rem",
+    "150": "15rem"
   },
 
   negativeMargin: {

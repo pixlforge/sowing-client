@@ -4,11 +4,15 @@
       <div class="flex flex-col items-center">
         <h2 class="title-large text-center mt-100">{{ $t("shop_creator.steps.connect.title") }}</h2>
 
-        <section class="max-w-1000 px-20">
-          <p class="paragraph-body text-center my-60">{{ $t("shop_creator.steps.connect.paragraph") }}</p>
+        <section
+          v-if="!shopStripeUserId || !shopStripePublishableKey"
+          class="max-w-1000 px-20">
+          <p class="paragraph-body text-center mt-60">{{ $t("shop_creator.steps.connect.paragraph") }}</p>
         </section>
 
-        <section class="w-full max-w-400 md:max-w-600">
+        <section
+          v-if="!shopStripeUserId || !shopStripePublishableKey"
+          class="w-full max-w-400 md:max-w-600 mt-60 mb-100">
           <a
             :href="stripeConnectOAuthUrl"
             :class="btnTheme"
@@ -20,7 +24,23 @@
           </a>
         </section>
 
-        <div class="flex flex-col md:flex-row mt-100">
+        <section
+          v-if="shopStripeUserId && shopStripePublishableKey"
+          class="w-full sm:w-2/3 xl:w-1/2 flex flex-col lg:flex-row px-20 md:px-0 mx-auto my-150">
+          <div class="w-full lg:w-auto flex justify-center">
+            <font-awesome-icon
+              :icon="['far', 'check-circle']"
+              class="text-72 text-green"/>
+          </div>
+          <div class="mx-auto mt-40 lg:mt-0">
+            <h1 class="text-48 text-green text-center lg:text-left">Félicitations</h1>
+            <p class="text-24 font-semibold text-green-darkest text-center lg:text-left">
+              Votre compte Stripe a bien été associé à votre boutique!
+            </p>
+          </div>
+        </section>
+
+        <div class="flex flex-col md:flex-row">
 
           <!-- Previous -->
           <button
@@ -79,14 +99,18 @@ export default {
       return `btn-${this.shopTheme}`;
     },
     stripeConnectOAuthUrl() {
-      return `https://dashboard.stripe.com/oauth/authorize?response_type=code&state=abc&client_id=${
+      return `https://dashboard.stripe.com/oauth/authorize?response_type=code&client_id=${
         process.env.STRIPE_CONNECT
       }&scope=read_write`;
     }
   },
-  mounted() {
+  async mounted() {
     if (!this.shopExists && this.$auth.user.has_shop) {
-      this.getShop();
+      await this.getShop();
+
+      if (this.$route.query.code && !this.shopStripeUserId) {
+        this.requestTokens(this.$route.query.code);
+      }
     }
 
     this.setStepName(true);
@@ -100,6 +124,14 @@ export default {
       setStepDetails: "shop/setStepDetails",
       setStepCustomization: "shop/setStepCustomization"
     }),
+    async requestTokens(code) {
+      try {
+        await this.$axios.$post("/shops/connect", {
+          code: code
+        });
+        await this.getShop();
+      } catch (e) {}
+    },
     prev() {
       this.$router.push(
         this.localePath({ name: "shop-creator-customization" })

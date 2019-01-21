@@ -72,7 +72,7 @@ export default {
       shopExists: "shop/shopExists",
       stepDetails: "shop/stepDetails",
       stepCustomization: "shop/stepCustomization",
-      stepConnect: "shop/setConnect"
+      stepConnect: "shop/stepConnect"
     }),
     btnTheme() {
       return `btn-${this.shopTheme}`;
