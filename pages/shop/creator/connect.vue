@@ -9,7 +9,15 @@
         </section>
 
         <section class="w-full max-w-400 md:max-w-600">
-          Stripe Connect
+          <a
+            :href="stripeConnectOAuthUrl"
+            :class="btnTheme"
+            class="btn flex justify-center items-center text-14 py-15">
+            <font-awesome-icon
+              :icon="['fab', 'cc-stripe']"
+              class="text-24 mr-10"/>
+            Connecter ma boutique avec Stripe
+          </a>
         </section>
 
         <div class="flex flex-col md:flex-row mt-100">
@@ -26,7 +34,8 @@
 
           <!-- Next -->
           <button
-            :class="btnTheme"
+            :disabled="!shopStripeUserId || !shopStripePublishableKey"
+            :class="!shopStripeUserId || !shopStripePublishableKey ? 'btn-disabled' : btnTheme"
             class="btn order-0 md:order-1"
             @click.prevent="next">
             <font-awesome-icon
@@ -62,10 +71,17 @@ export default {
   },
   computed: {
     ...mapGetters({
-      shopTheme: "shop/shopTheme"
+      shopTheme: "shop/shopTheme",
+      shopStripeUserId: "shop/shopStripeUserId",
+      shopStripePublishableKey: "shop/shopStripePublishableKey"
     }),
     btnTheme() {
       return `btn-${this.shopTheme}`;
+    },
+    stripeConnectOAuthUrl() {
+      return `https://dashboard.stripe.com/oauth/authorize?response_type=code&state=abc&client_id=${
+        process.env.STRIPE_CONNECT
+      }&scope=read_write`;
     }
   },
   mounted() {

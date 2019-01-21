@@ -22,6 +22,8 @@ const initialState = {
     postal_code: "",
     city: "",
     country_id: "",
+    stripe_user_id: "",
+    stripe_publishable_key: "",
     media: {
       avatar: "",
       cover: ""
@@ -112,6 +114,12 @@ export const getters = {
   },
   shopCover(state) {
     return state.shop.media.cover;
+  },
+  shopStripeUserId(state) {
+    return state.shop.stripe_user_id;
+  },
+  shopStripePublishableKey(state) {
+    return state.shop.stripe_publishable_key;
   }
 };
 
