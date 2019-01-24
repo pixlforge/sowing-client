@@ -218,7 +218,7 @@ button {
 }
 
 .card-product {
-  @apply w-720 flex no-underline text-green-darkest outline-none rounded-lg shadow-md;
+  @apply w-720 flex no-underline text-green-darkest outline-none rounded-lg shadow-lg;
 }
 
 .card-product:focus {

@@ -1,22 +1,26 @@
 <template>
-  <nuxt-link
-    :to="localePath({ name: 'products-slug', params: { slug: product.slug } })"
-    class="card-product">
+  <div class="card-product">
 
     <!-- Product featured image -->
     <div class="w-2/5">
-      <img
-        :alt="alt"
-        src="https://bulma.io/images/placeholders/1280x960.png"
-        class="block rounded-l-lg">
+      <nuxt-link :to="localePath({ name: 'products-slug', params: { slug: product.slug } })">
+        <img
+          :alt="alt"
+          src="https://bulma.io/images/placeholders/1280x960.png"
+          class="block rounded-l-lg">
+      </nuxt-link>
     </div>
 
     <div class="w-3/5 flex flex-col justify-between p-30">
 
       <!-- Base product name -->
-      <h5 class="text-24 font-bold text-green-darkest">
-        {{ product.name[locale] }}
-      </h5>
+      <nuxt-link
+        :to="localePath({ name: 'products-slug', params: { slug: product.slug } })"
+        class="no-underline">
+        <h5 class="text-24 font-bold text-green-darkest">
+          {{ product.name[locale] }}
+        </h5>
+      </nuxt-link>
 
       <!-- Base product description -->
       <p class="text-18 text-grey-lighter leading-normal mt-15">
@@ -33,11 +37,15 @@
         <font-awesome-icon
           :icon="['far', 'store']"
           class="mr-10"/>
-        <p class="font-semibold">Petit coin de paradis</p>
+        <nuxt-link
+          :to="localePath({ name: 'shop-slug-details', params: { slug: product.shop.slug } })"
+          class="text-green font-semibold no-underline hover:underline">
+          {{ shopName }}
+        </nuxt-link>
       </div>
       
     </div>
-  </nuxt-link>
+  </div>
 </template>
 
 <script>
@@ -62,6 +70,9 @@ export default {
     },
     productPrice() {
       return this.product.price.amount;
+    },
+    shopName() {
+      return this.product.shop.name;
     }
   }
 };

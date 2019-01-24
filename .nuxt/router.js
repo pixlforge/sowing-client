@@ -19,6 +19,7 @@ const _48777649 = () => interopDefault(import('../pages/shop/creator/name.vue' /
 const _0d2fa28e = () => interopDefault(import('../pages/shop/creator/terms.vue' /* webpackChunkName: "pages/shop/creator/terms" */))
 const _3dbde985 = () => interopDefault(import('../pages/categories/_slug.vue' /* webpackChunkName: "pages/categories/_slug" */))
 const _7e2baf66 = () => interopDefault(import('../pages/products/_slug.vue' /* webpackChunkName: "pages/products/_slug" */))
+const _e17ff5dc = () => interopDefault(import('../pages/shop/_slug/details.vue' /* webpackChunkName: "pages/shop/_slug/details" */))
 const _382080c1 = () => interopDefault(import('../pages/categories/_category/_subcategory/_slug.vue' /* webpackChunkName: "pages/categories/_category/_subcategory/_slug" */))
 const _60595394 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
@@ -351,6 +352,22 @@ export function createRouter() {
       path: "/it/products/:slug?",
       component: _7e2baf66,
       name: "products-slug___it"
+    }, {
+      path: "/en/shop/:slug/details",
+      component: _e17ff5dc,
+      name: "shop-slug-details___en"
+    }, {
+      path: "/fr/shop/:slug/details",
+      component: _e17ff5dc,
+      name: "shop-slug-details___fr"
+    }, {
+      path: "/de/shop/:slug/details",
+      component: _e17ff5dc,
+      name: "shop-slug-details___de"
+    }, {
+      path: "/it/shop/:slug/details",
+      component: _e17ff5dc,
+      name: "shop-slug-details___it"
     }, {
       path: "/en/categories/:category?/:subcategory?/:slug?",
       component: _382080c1,

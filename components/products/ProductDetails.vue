@@ -107,7 +107,7 @@
     </div>
 
     <!-- Additional product images -->
-    <div class="w-full bg-green-lightest flex flex-wrap items-center px-20 pb-40">
+    <div class="w-full bg-green-lightest rounded-b-lg flex flex-wrap items-center px-20 pb-40">
       <img
         v-for="n in 13"
         :key="n"

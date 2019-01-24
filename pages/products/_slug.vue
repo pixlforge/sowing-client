@@ -4,11 +4,13 @@
     <!-- Header -->
     <Header>
       <template slot="title">
-        <h1 class="header-title">Nom de la boutique</h1>
+        <h1 class="header-title">
+          {{ product.shop.name }}
+        </h1>
       </template>
       <template slot="description">
         <p class="header-description">
-          Description de la boutique
+          {{ product.shop.description_short[locale] }}
         </p>
       </template>
     </Header>
