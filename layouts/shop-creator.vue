@@ -3,10 +3,9 @@
     <TheAlert/>
     <Navbar/>
     <Categories/>
-    <div
+    <Cover
       v-if="shopCover"
-      :style="`background-image: url('${shopCover}');`"
-      class="block w-full h-350 bg-center bg-no-repeat bg-cover"/>
+      :shop-cover="shopCover"/>
     <Header :class="bgTheme">
       <template slot="icon">
         <div
@@ -43,6 +42,7 @@ import Header from "@/components/Header";
 import Navigation from "@/components/shops/creator/Navigation";
 import Footer from "@/components/footer/Footer";
 import Disclaimer from "@/components/footer/Disclaimer";
+import Cover from "@/components/shops/Cover";
 import { mapGetters, mapActions } from "vuex";
 
 export default {
@@ -53,7 +53,8 @@ export default {
     Header,
     Navigation,
     Footer,
-    Disclaimer
+    Disclaimer,
+    Cover
   },
   computed: {
     ...mapGetters({
