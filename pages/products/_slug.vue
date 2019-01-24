@@ -2,16 +2,37 @@
   <main>
 
     <!-- Header -->
-    <Header>
+    <Header :class="bgTheme">
+      <template slot="icon">
+        <div
+          v-if="shopAvatar"
+          :style="`background-image: url('${shopAvatar}');`"
+          class="block w-110 h-110 rounded-full bg-center bg-no-repeat bg-cover"/>
+        <div
+          v-else
+          :class="textTheme">
+          <font-awesome-icon
+            :icon="['far', 'store']"
+            class="block"/>
+        </div>
+      </template>
       <template slot="title">
-        <h1 class="header-title">
-          {{ product.shop.name }}
-        </h1>
+        <nuxt-link
+          :to="localePath({ name: 'shop-slug-details', params: { slug: product.shop.slug } })"
+          class="no-underline">
+          <h1 class="header-title">
+            {{ product.shop.name }}
+          </h1>
+        </nuxt-link>
       </template>
       <template slot="description">
-        <p class="header-description">
-          {{ product.shop.description_short[locale] }}
-        </p>
+        <nuxt-link
+          :to="localePath({ name: 'shop-slug-details', params: { slug: product.shop.slug } })"
+          class="no-underline">
+          <p class="header-description">
+            {{ product.shop.description_short[locale] }}
+          </p>
+        </nuxt-link>
       </template>
     </Header>
 
@@ -32,7 +53,7 @@
 import Header from "@/components/Header";
 import ProductDetails from "@/components/products/ProductDetails";
 import StreakNewsletter from "@/components/streaks/StreakNewsletter";
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 
 export default {
   head() {
@@ -47,20 +68,43 @@ export default {
   },
   data() {
     return {
-      product: {}
+      product: {},
+      shop: {}
     };
   },
   async asyncData({ params, app }) {
-    let res = await app.$axios.$get(`/products/${params.slug}`);
+    let product = await app.$axios.$get(`/products/${params.slug}`);
+    let shop = await app.$axios.$get(`/shops/${product.data.shop.slug}`);
 
     return {
       title: app.head.title,
-      product: res.data
+      product: product.data,
+      shop: shop.data
     };
   },
   computed: {
     ...mapGetters({
-      locale: "locale"
+      locale: "locale",
+      shopAvatar: "shop/shopAvatar",
+      shopTheme: "shop/shopTheme"
+    }),
+    bgTheme() {
+      return `bg-${this.shopTheme}`;
+    },
+    textTheme() {
+      return `text-${this.shopTheme}`;
+    }
+  },
+  mounted() {
+    this.setShop(this.shop);
+  },
+  destroyed() {
+    this.resetShop();
+  },
+  methods: {
+    ...mapActions({
+      setShop: "shop/setShop",
+      resetShop: "shop/resetShop"
     })
   }
 };
