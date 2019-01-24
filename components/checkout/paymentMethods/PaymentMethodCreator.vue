@@ -68,7 +68,7 @@ export default {
     })
   },
   mounted() {
-    this.stripe = Stripe(process.env.STRIPE_PUBLIC_KEY);
+    this.stripe = Stripe(process.env.STRIPE_PUBLIC);
 
     this.card = this.stripe
       .elements({ locale: this.locale })
