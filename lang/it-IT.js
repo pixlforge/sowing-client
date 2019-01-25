@@ -18,7 +18,7 @@ export default {
     finish: "Finire",
     login: "Accesso",
     next: "Avanti",
-    password_email: "Invia un link per reimpostare la mia password",
+    password_email: "Mandami un link",
     password_reset: "Reimpostare la password",
     register: "Creare un account",
     subscribe: "Iscrizione",

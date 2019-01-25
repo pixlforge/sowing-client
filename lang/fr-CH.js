@@ -18,7 +18,7 @@ export default {
     finish: "Terminer",
     login: "Connexion",
     next: "Suivant",
-    password_email: "Envoyer un lien pour réinitialiser mon mot de passe",
+    password_email: "Envoyez-moi un lien",
     password_reset: "Réinitialiser le mot de passe",
     register: "Créer un compte",
     subscribe: "Inscription",

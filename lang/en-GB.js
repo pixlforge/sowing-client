@@ -18,7 +18,7 @@ export default {
     finish: "Finish",
     login: "Log in",
     next: "Next",
-    password_email: "Send a link to reset my password",
+    password_email: "Send me a link",
     password_reset: "Reset password",
     register: "Create an account",
     subscribe: "Subscribe",
