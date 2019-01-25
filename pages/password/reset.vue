@@ -13,8 +13,9 @@
     
     <!-- Form -->
     <section class="container py-100">
+
       <form
-        class="card-form"
+        class="card-form max-w-500"
         @submit.prevent="reset">
 
         <!-- Email -->
