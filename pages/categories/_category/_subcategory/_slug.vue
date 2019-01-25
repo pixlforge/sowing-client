@@ -13,7 +13,7 @@
       </template>
     </Header>
     
-    <section class="container pb-100">
+    <section class="container section mt-150">
       <div class="flex flex-wrap justify-between mt-60">
         
         <!-- Products -->

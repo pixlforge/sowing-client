@@ -11,7 +11,7 @@
       </template>
     </Header>
 
-    <section class="container pt-60 pb-100">
+    <section class="container section mt-150">
 
       <!-- Cart Overview -->
       <div class="w-full">
@@ -27,7 +27,7 @@
         </div>
       </div>
 
-      <div class="text-24 font-bold flex justify-center mt-100">
+      <div class="text-24 font-semibold flex justify-center mt-100">
         <span class="mr-10">
           {{ $t("pages.cart.in_your_cart") }}
         </span>

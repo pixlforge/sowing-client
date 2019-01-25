@@ -13,7 +13,7 @@
       </template>
     </Header>
 
-    <section class="container px-40 pb-100">
+    <section class="container section px-40">
 
       <!-- Subcategories with sections -->
       <template v-if="categoryHasSections">
@@ -21,7 +21,7 @@
           v-for="section in category.children"
           :key="section.id"
           class="">
-          <h2 class="text-48 text-green-darkest mt-100">{{ section.name[locale] }}</h2>
+          <h2 class="text-48 text-green-darkest mt-150">{{ section.name[locale] }}</h2>
 
           <div class="flex flex-wrap justify-center -mx-40 mt-60">
             <div
@@ -38,7 +38,7 @@
 
       <!-- Subcategories without sections -->
       <template v-else>
-        <div class="flex flex-wrap justify-center -mx-40 mt-60">
+        <div class="flex flex-wrap justify-center -mx-40 mt-100">
           <div
             v-for="subcategory in category.children"
             :key="subcategory.slug"

@@ -2,7 +2,7 @@
   <main>
     <section class="container section">
       <div class="flex flex-col items-center">
-        <h2 class="title-large text-center mt-100">{{ $t("shop_creator.steps.details.title") }}</h2>
+        <h2 class="title-large text-center mt-150">{{ $t("shop_creator.steps.details.title") }}</h2>
 
         <section class="w-full max-w-1000">
           <p class="paragraph-body text-center my-60">{{ $t("shop_creator.steps.details.paragraph") }}</p>

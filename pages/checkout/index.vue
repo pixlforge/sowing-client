@@ -11,7 +11,7 @@
       </template>
     </Header>
 
-    <section class="container pt-60 pb-100">
+    <section class="container section mt-150">
       <div class="flex">
         <div class="w-3/4 mr-50">
           

@@ -11,7 +11,7 @@
       </template>
     </Header>
     
-    <section class="container py-100">
+    <section class="container section mt-150">
 
       <p class="w-full md:w-3/4 lg:w-2/3 xxl:w-1/2 text-16 text-center leading-normal mx-auto">
         {{ $t("pages.password_email.paragraphs.first") }}

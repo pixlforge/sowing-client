@@ -13,7 +13,7 @@
 
     <section class="container section">
       <div class="flex flex-col items-center">
-        <h2 class="title-large text-center mt-100">{{ $t("pages.terms.title") }}</h2>
+        <h2 class="title-large text-center mt-150">{{ $t("pages.terms.title") }}</h2>
 
         <section class="max-w-1000">
           

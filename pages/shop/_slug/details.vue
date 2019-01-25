@@ -47,7 +47,7 @@
 
     <!-- Content -->
     <section class="container section">
-      <h2 class="title-large text-center mt-100">{{ $t("pages.shop_details.welcome") }}</h2>
+      <h2 class="title-large text-center mt-150">{{ $t("pages.shop_details.welcome") }}</h2>
 
       <section class="max-w-1000 px-20 mx-auto">
         <p
@@ -71,7 +71,7 @@
     </section>
 
     <section class="container section">
-      <h2 class="title-large text-center mt-100">{{ $t("pages.shop_details.interested") }}</h2>
+      <h2 class="title-large text-center mt-150">{{ $t("pages.shop_details.interested") }}</h2>
 
       <div class="flex justify-center mt-80">
         <a

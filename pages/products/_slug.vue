@@ -37,7 +37,7 @@
     </Header>
 
     <!-- Product details -->
-    <section class="container py-100">
+    <section class="container section mt-150">
       <ProductDetails :product="product"/>
     </section>
 

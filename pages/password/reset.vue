@@ -12,7 +12,7 @@
     </Header>
     
     <!-- Form -->
-    <section class="container py-100">
+    <section class="container section mt-150">
 
       <form
         class="max-w-500 mx-auto"
