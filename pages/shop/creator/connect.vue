@@ -16,10 +16,11 @@
           <a
             :href="stripeConnectOAuthUrl"
             :class="btnTheme"
-            class="btn flex justify-center items-center text-14 py-15">
+            class="btn btn-large">
             <font-awesome-icon
               :icon="['fab', 'cc-stripe']"
               class="text-24 mr-10"/>
+            <!-- TODO: Translate -->
             Connecter ma boutique avec Stripe
           </a>
         </section>
