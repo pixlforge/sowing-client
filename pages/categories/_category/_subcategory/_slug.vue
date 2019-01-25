@@ -20,8 +20,7 @@
         <Product
           v-for="product in products"
           :key="product.id"
-          :product="product"
-          class="mt-40"/>
+          :product="product"/>
 
       </div>
     </section>

@@ -23,7 +23,7 @@
 
       <!-- Form -->
       <form
-        class="card-form max-w-500 mt-40"
+        class="max-w-500 mx-auto mt-40"
         @submit.prevent="send">
 
         <!-- Email -->
