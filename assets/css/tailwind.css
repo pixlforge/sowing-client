@@ -64,6 +64,10 @@ button {
   @apply shadow-outline;
 }
 
+.btn-large {
+  @apply flex justify-center items-center text-14 py-15;
+}
+
 .btn-primary {
   @apply bg-green text-white;
 }
