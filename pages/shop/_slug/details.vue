@@ -90,11 +90,6 @@
       <StreakRegister/>
     </section>
 
-    <!-- Newsletter CTA -->
-    <section>
-      <StreakNewsletter/>
-    </section>
-    
   </main>
 </template>
 
@@ -102,20 +97,18 @@
 import Header from "@/components/Header";
 import Cover from "@/components/shops/Cover";
 import StreakRegister from "@/components/streaks/StreakRegister";
-import StreakNewsletter from "@/components/streaks/StreakNewsletter";
 import { mapGetters, mapActions } from "vuex";
 
 export default {
   head() {
     return {
-      title: `${this.title} | ${this.shopName}`
+      title: `${this.title} | ${this.shop.name}`
     };
   },
   components: {
     Header,
     Cover,
-    StreakRegister,
-    StreakNewsletter
+    StreakRegister
   },
   data() {
     return {
