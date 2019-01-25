@@ -1,0 +1,34 @@
+.select,
+.input-base {
+  @apply block h-42 text-16 w-full appearance-none bg-green-lightest rounded-lg text-green-darkest leading-tight outline-none px-15 mt-10;
+}
+
+.textarea-base {
+  @apply block w-full appearance-none bg-green-lightest rounded-lg text-16 text-green-darkest leading-normal outline-none px-15 py-15 mt-10;
+}
+
+.input-disabled,
+.select-disabled,
+.textarea-disabled {
+  @apply bg-grey-faint text-grey-lighter cursor-not-allowed;
+}
+
+.select:focus {
+  @apply shadow-outline;
+}
+
+.select-caret {
+  @apply absolute h-full pin-y pin-r text-16 text-green-dark mr-20;
+}
+
+.input-base:focus {
+  @apply outline-none shadow-outline;
+}
+
+.label {
+  @apply block text-12 font-bold uppercase;
+}
+
+.input-error {
+  @apply text-12 text-red mt-5;
+}

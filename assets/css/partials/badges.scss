@@ -1,0 +1,19 @@
+.badge {
+  @apply text-12 font-extrabold uppercase rounded-full px-20 py-10;
+}
+
+.badge-success {
+  @apply bg-green-lighter text-green-darker;
+}
+
+.badge-info {
+  @apply bg-blue-lighter text-blue-darker;
+}
+
+.badge-danger {
+  @apply bg-red-lighter text-red-darker;
+}
+
+.badge-warning {
+  @apply bg-orange-lighter text-orange-darker;
+}

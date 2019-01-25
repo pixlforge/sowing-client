@@ -1,0 +1,16 @@
+.toasted {
+  font-size: 1.8rem !important;
+  font-weight: 400 !important;
+}
+
+.toasted.toasted-primary.success {
+  background-color: #5fb881 !important;
+}
+
+.toasted.toasted-primary.info {
+  background-color: #42a5f5 !important;
+}
+
+.toasted.toasted-primary.error {
+  background-color: #e3342f !important;
+}

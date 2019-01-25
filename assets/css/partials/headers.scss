@@ -1,0 +1,19 @@
+.header-title {
+  @apply font-cafe text-24 text-white tracking-tight;
+}
+
+.header-description {
+  @apply text-18 text-white font-semibold mt-10;
+}
+
+@screen md {
+  .header-title {
+    @apply text-36;
+  }
+}
+
+@screen lg {
+  .header-title {
+    @apply text-48;
+  }
+}

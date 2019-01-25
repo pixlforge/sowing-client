@@ -1,0 +1,27 @@
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: all 0.2s ease-out;
+}
+
+.slide-enter {
+  transform: translateX(100%);
+}
+
+.slide-leave-to {
+  opacity: 0;
+}
+
+.transition {
+  transition-property: background-color, color, border-color, box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-out;
+}

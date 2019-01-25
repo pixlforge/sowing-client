@@ -1,0 +1,31 @@
+.link-category {
+  @apply block no-underline text-16 font-semibold text-green-darkest transition outline-none rounded-lg px-10 py-10;
+}
+
+.link-category:hover {
+  @apply text-green;
+}
+
+.link-category:focus {
+  @apply shadow-outline;
+}
+
+.link-dropdown {
+  @apply block text-12 text-grey font-extrabold uppercase no-underline nowrap text-grey-dark transition py-5 cursor-pointer;
+}
+
+.link-dropdown:hover {
+  @apply text-green;
+}
+
+.link-small {
+  @apply text-14 text-grey-lighter no-underline outline-none;
+}
+
+.link-small:hover {
+  @apply underline;
+}
+
+.link-small:focus {
+  @apply shadow-outline;
+}

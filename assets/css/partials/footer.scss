@@ -1,0 +1,7 @@
+.footer-link {
+  @apply no-underline text-green-darkest text-14;
+}
+
+.footer-link:hover {
+  @apply underline;
+}

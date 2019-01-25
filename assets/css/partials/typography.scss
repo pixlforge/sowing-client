@@ -1,0 +1,25 @@
+.paragraph-title {
+  @apply text-24 leading-normal mt-80;
+}
+
+.paragraph-body {
+  @apply text-18 leading-loose my-20;
+}
+
+.title-large {
+  @apply font-cafe text-30 text-green-darkest font-bold tracking-tight;
+}
+
+.title-small {
+  @apply text-16 text-green-darkest uppercase font-bold;
+}
+
+@screen md {
+  .title-large {
+    @apply text-48;
+  }
+}
+
+.nowrap {
+  white-space: nowrap;
+}

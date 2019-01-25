@@ -1,0 +1,7 @@
+.card-product {
+  @apply flex no-underline text-green-darkest outline-none rounded-lg shadow-lg;
+}
+
+.card-product:focus {
+  @apply shadow-outline;
+}
