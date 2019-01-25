@@ -106,6 +106,11 @@ import StreakNewsletter from "@/components/streaks/StreakNewsletter";
 import { mapGetters, mapActions } from "vuex";
 
 export default {
+  head() {
+    return {
+      title: `${this.title} | ${this.shopName}`
+    };
+  },
   components: {
     Header,
     Cover,
