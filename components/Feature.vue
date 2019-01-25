@@ -10,7 +10,7 @@
         <slot name="title"/>
       </h3>
     </div>
-    <p class="text-16 text-grey-light text-center leading-normal mt-30">
+    <p class="text-16 text-grey-light text-center leading-loose mt-30">
       <slot/>
     </p>
   </div>
