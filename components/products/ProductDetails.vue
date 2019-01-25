@@ -107,13 +107,16 @@
     </div>
 
     <!-- Additional product images -->
-    <div class="w-full bg-green-lightest rounded-b-lg flex flex-wrap items-center px-20 pb-40">
-      <img
+    <div class="w-full bg-green-lightest rounded-b-lg flex flex-wrap items-center p-20">
+      <div
         v-for="n in 13"
         :key="n"
-        :src="imgUrl"
-        :alt="imgAlt"
-        class="w-1/2 md:w-1/3 xl:w-1/5 border-l-10 sm:border-l-20 border-r-10 sm:border-r-20 border-green-lightest mt-40">
+        class="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 xxl:w-1/5 p-20">
+        <img
+          :src="imgUrl"
+          :alt="imgAlt"
+          class="block rounded-lg">
+      </div>
     </div>
 
   </div>
