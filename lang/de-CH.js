@@ -21,6 +21,7 @@ export default {
     password_email: "Schicken Sie mir einen Link",
     password_reset: "Passwort zurücksetzen",
     register: "Konto erstellen",
+    see_all_articles: "Alle Artikel anzeigen",
     subscribe: "Anmeldung",
     to_my_shop_details: "Zu meinen Shopdetails"
   },
@@ -250,6 +251,10 @@ export default {
         "Erstellen Sie noch heute Ihren eigenen Online-Shop!",
       creation_cta_line_2:
         "Mit dem Assistenten für die Shop-Erstellung von Sowing ist das ganz einfach. Lassen Sie sich einfach führen."
+    },
+    shop_details: {
+      welcome: "Herzlich Willkommen in unserem Shop",
+      interested: "Die Artikel dieses Shops interessieren mich!"
     },
     terms: {
       title: "Nutzungsbedingungen",

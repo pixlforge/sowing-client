@@ -45,15 +45,54 @@
       </template>
     </Header>
 
+    <!-- Content -->
     <section class="container section">
-      <h2 class="title-large text-center mt-100">Bienvenue dans notre boutique!</h2>
+      <h2 class="title-large text-center mt-100">{{ $t("pages.shop_details.welcome") }}</h2>
 
       <section class="max-w-1000 px-20 mx-auto">
-        <p class="paragraph-body text-center my-60">
-          {{ shop.description_long[locale] }}
-        </p>
+        <p
+          class="paragraph-body text-center my-60"
+          v-html="shop.description_long[locale]"/>
       </section>
-      
+    </section>
+
+    <section class="container section">
+      <div class="flex flex-wrap justify-center items-start -m-20">
+        <div
+          v-for="n in 10"
+          :key="n"
+          class="w-full sm:w-1/2 lg:w-1/3 xxl:w-1/4 p-20">  
+          <img
+            :src="imgUrl"
+            :alt="imgAlt"
+            class="rounded-lg">
+        </div>
+      </div>
+    </section>
+
+    <section class="container section">
+      <h2 class="title-large text-center mt-100">{{ $t("pages.shop_details.interested") }}</h2>
+
+      <div class="flex justify-center mt-80">
+        <a
+          :class="btnTheme"
+          class="btn btn-large">
+          <font-awesome-icon
+            :icon="['far', 'search']"
+            class="mr-10"/>
+          {{ $t("buttons.see_all_articles") }}
+        </a>
+      </div>
+    </section>
+
+    <!-- Register CTA -->
+    <section>
+      <StreakRegister/>
+    </section>
+
+    <!-- Newsletter CTA -->
+    <section>
+      <StreakNewsletter/>
     </section>
     
   </main>
@@ -62,12 +101,16 @@
 <script>
 import Header from "@/components/Header";
 import Cover from "@/components/shops/Cover";
+import StreakRegister from "@/components/streaks/StreakRegister";
+import StreakNewsletter from "@/components/streaks/StreakNewsletter";
 import { mapGetters, mapActions } from "vuex";
 
 export default {
   components: {
     Header,
-    Cover
+    Cover,
+    StreakRegister,
+    StreakNewsletter
   },
   data() {
     return {
@@ -95,6 +138,15 @@ export default {
     },
     textTheme() {
       return `text-${this.shopTheme}`;
+    },
+    btnTheme() {
+      return `btn-${this.shopTheme}`;
+    },
+    imgUrl() {
+      return `https://bulma.io/images/placeholders/1280x960.png`;
+    },
+    imgAlt() {
+      return this.$t("components.products.img.alt");
     }
   },
   mounted() {

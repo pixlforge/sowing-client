@@ -21,6 +21,7 @@ export default {
     password_email: "Mandami un link",
     password_reset: "Reimpostare la password",
     register: "Creare un account",
+    see_all_articles: "Vedi tutti gli articoli",
     subscribe: "Iscrizione",
     to_my_shop_details: "Verso i dettagli del mio negozio"
   },
@@ -251,6 +252,10 @@ export default {
         "Create oggi il vostro negozio online gratuitamente!",
       creation_cta_line_2:
         "Con l'assistente alla creazione di negozio Sowing, è molto semplice, basta lasciarsi guidare."
+    },
+    shop_details: {
+      welcome: "Benvenuto nel nostro negozio",
+      interested: "Gli articoli di questo negozio mi interessano!"
     },
     terms: {
       title: "Condizioni d'uso",

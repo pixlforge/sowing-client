@@ -21,6 +21,7 @@ export default {
     password_email: "Send me a link",
     password_reset: "Reset password",
     register: "Create an account",
+    see_all_articles: "See all articles",
     subscribe: "Subscribe",
     to_my_shop_details: "To my shop details"
   },
@@ -249,6 +250,10 @@ export default {
       creation_cta_line_1: "Create your own online shop for free today!",
       creation_cta_line_2:
         "It's very easy with the Sowing shop creation assistant, just let yourself be guided."
+    },
+    shop_details: {
+      welcome: "Welcome to our shop",
+      interested: "The articles of this shop interest me!"
     },
     terms: {
       title: "Terms of use",
