@@ -24,7 +24,7 @@
       </li>
 
       <!-- Shop -->
-      <li>
+      <li v-if="userHasShop">
         <nuxt-link
           :to="localePath({ name: 'shop' })"
           class="link-dropdown">
@@ -33,18 +33,20 @@
       </li>
 
       <!-- Shop create -->
-      <li class="mt-10">
+      <li
+        v-else
+        class="mt-10">
         <nuxt-link
           :to="localePath({ name: 'shop-creator-terms' })"
           class="btn btn-secondary nowrap">
           <font-awesome-icon
             :icon="['far', 'store']"
             class="mr-10"/>
-          Créer une boutique
+          {{ $t("buttons.create_my_shop") }}
         </nuxt-link>
       </li>
 
-      <hr class="border border-green rounded-full my-20">
+      <hr class="border border-grey-lightest rounded-full my-20">
 
       <!-- Logout -->
       <li>
@@ -59,7 +61,7 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 
 export default {
   data() {
@@ -68,6 +70,9 @@ export default {
     };
   },
   computed: {
+    ...mapGetters({
+      userHasShop: "userHasShop"
+    }),
     username() {
       return this.$auth.user.name;
     }
