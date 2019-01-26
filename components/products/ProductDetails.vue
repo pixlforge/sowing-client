@@ -7,7 +7,7 @@
         <img
           :src="imgUrl"
           :alt="imgAlt"
-          class="block rounded-tl-lg">
+          class="block w-full rounded-tl-lg">
       </div>
 
       <!-- Product content -->
@@ -149,7 +149,7 @@ export default {
       locale: "locale"
     }),
     imgUrl() {
-      return `https://bulma.io/images/placeholders/1280x960.png`;
+      return require("@/assets/img/placeholders/category.svg");
     },
     imgAlt() {
       return this.$t("components.products.img.alt");

@@ -2,8 +2,8 @@
   <div class="rounded-lg shadow-lg">
     <img
       :alt="alt"
-      src="https://bulma.io/images/placeholders/1280x960.png"
-      class="block rounded-t-lg">
+      :src="imgSrc"
+      class="block w-full rounded-t-lg">
 
     <div class="flex flex-col flex-grow p-20">
       <h5 class="text-green-darkest font-bold text-24 text-center">{{ subcategory.name[locale] }}</h5>
@@ -47,6 +47,9 @@ export default {
     }),
     alt() {
       return this.$t("components.category.img.alt");
+    },
+    imgSrc() {
+      return require("@/assets/img/placeholders/category.svg");
     }
   }
 };

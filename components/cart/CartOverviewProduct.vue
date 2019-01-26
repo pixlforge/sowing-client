@@ -4,8 +4,8 @@
     <!-- Product featured image -->
     <div class="w-1/5">
       <img
-        src="https://bulma.io/images/placeholders/1280x960.png"
-        alt=""
+        :src="imgUrl"
+        :alt="imgAlt"
         class="block w-full rounded-lg">
     </div>
 
@@ -93,6 +93,12 @@ export default {
       set(quantity) {
         this.update({ productId: this.product.id, quantity });
       }
+    },
+    imgUrl() {
+      return require("@/assets/img/placeholders/category.svg");
+    },
+    imgAlt() {
+      return this.$t("components.products.img.alt");
     },
     labelPrice() {
       return this.$t("components.cart.labels.price");

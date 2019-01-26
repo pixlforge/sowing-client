@@ -1,7 +1,7 @@
 <template>
   <div
-    class="relative w-full lg:w-1/2 h-700 bg-cover bg-center bg-no-repeat flex items-end"
-    style="background-image: url(https://bulma.io/images/placeholders/1280x960.png)">
+    :style="imgUrl"
+    class="relative w-full lg:w-1/2 h-700 bg-cover bg-center bg-no-repeat flex items-end">
     <div class="flex flex-col items-start px-60 pb-50 z-10">
       <h2 class="title-large text-white">
         Vêtements pour bébé
@@ -20,5 +20,12 @@
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    imgUrl() {
+      const img = require("@/assets/img/placeholders/product.svg");
+      return `background-image: url(${img})`;
+    }
+  }
+};
 </script>

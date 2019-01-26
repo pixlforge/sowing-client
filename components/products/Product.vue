@@ -6,7 +6,7 @@
       <nuxt-link :to="localePath({ name: 'products-slug', params: { slug: product.slug } })">
         <img
           :alt="alt"
-          src="https://bulma.io/images/placeholders/1280x960.png"
+          :src="imgSrc"
           class="block rounded-l-lg">
       </nuxt-link>
     </div>
@@ -64,6 +64,9 @@ export default {
     }),
     alt() {
       return this.$t("components.products.img.alt");
+    },
+    imgSrc() {
+      return require("@/assets/img/placeholders/product.svg");
     },
     productCurrency() {
       return this.product.price.currency;

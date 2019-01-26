@@ -13,14 +13,16 @@
       </template>
     </Header>
     
-    <section class="container section mt-150">
-      <div class="flex flex-wrap justify-between mt-60">
-        
-        <!-- Products -->
-        <Product
+    <section class="container section mt-120">
+      <div class="flex flex-wrap justify-between -mx-40">
+
+        <!-- Products -->        
+        <div
           v-for="product in products"
           :key="product.id"
-          :product="product"/>
+          class="w-1/2 p-40">
+          <Product :product="product"/>
+        </div>
 
       </div>
     </section>
