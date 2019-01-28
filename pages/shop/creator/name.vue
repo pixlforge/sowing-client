@@ -7,30 +7,9 @@
         <section class="max-w-1000 px-20">
           <p class="paragraph-body text-center my-60">{{ $t("shop_creator.steps.name.paragraph") }}</p>
         </section>
-
-        <section class="w-full max-w-400 md:max-w-600">
-          <div class="flex flex-col md:flex-row">
-            <input
-              id="name"
-              v-model="localShopName"
-              :disabled="shopExists"
-              :class="{ 'input-disabled': shopExists }"
-              :placeholder="$t('shop_creator.steps.name.placeholder')"
-              name="name"
-              type="text"
-              class="input-base md:rounded-r-none mt-0">
-            <button
-              :disabled="shopExists"
-              :class="shopExists ? 'btn-disabled' : btnTheme"
-              class="btn btn-primary md:rounded-l-none nowrap mt-20 md:mt-0"
-              @click.prevent="check">
-              <font-awesome-icon
-                :icon="['far', 'rocket']"
-                class="mr-5"/>
-              {{ $t("buttons.check_availability") }}
-            </button>
-          </div>
-        </section>
+        
+        <!-- Shop Creator Name -->
+        <AppShopCreatorName/>
 
         <div class="flex flex-col md:flex-row mt-100">
 
@@ -62,6 +41,8 @@
 </template>
 
 <script>
+import AppShopCreatorName from "@/components/shops/creator/AppShopCreatorName";
+import theming from "@/mixins/theming";
 import { mapGetters, mapActions } from "vuex";
 
 export default {
@@ -76,38 +57,34 @@ export default {
     name: "slide",
     mode: "out-in"
   },
+  components: {
+    AppShopCreatorName
+  },
+  mixins: [theming],
+  async asyncData({ app, store }) {
+    let shop = await app.$axios.$get("/user/shop");
+    if (shop.data) {
+      store.dispatch("shop/setShop", shop.data);
+    }
+
+    return {
+      title: app.head.title
+    };
+  },
   computed: {
     ...mapGetters({
       terms: "shop/terms",
       shopName: "shop/shopName",
-      shopTheme: "shop/shopTheme",
       shopExists: "shop/shopExists",
       stepDetails: "shop/stepDetails"
-    }),
-    btnTheme() {
-      return `btn-${this.shopTheme}`;
-    },
-    localShopName: {
-      get() {
-        return this.shopName;
-      },
-      set(name) {
-        this.setShopName(name);
-      }
-    }
-  },
-  async asyncData({ app }) {
-    return {
-      title: app.head.title
-    };
+    })
   },
   mounted() {
     if (!this.terms) {
       return this.$router.push(this.localePath("shop-creator-terms"));
     }
 
-    if (!this.shopExists && this.$auth.user.has_shop) {
-      this.getShop();
+    if (this.$auth.user.has_shop) {
       this.setStepName(true);
       this.setStepDetails(true);
     }
@@ -117,41 +94,9 @@ export default {
       flash: "alert/flash",
       close: "alert/close",
       setShop: "shop/setShop",
-      getShop: "shop/getShop",
-      setShopName: "shop/setShopName",
       setStepName: "shop/setStepName",
       setStepDetails: "shop/setStepDetails"
     }),
-    async check() {
-      if (this.shopName) {
-        try {
-          let res = await this.$axios.$post("/shops/checker", {
-            name: this.shopName
-          });
-          this.$toast.success(
-            `"<em>${this.shopName}</em>" ${this.$t("toasts.is_available")}!`
-          );
-          this.flash({
-            type: "success",
-            message: `"<em>${this.shopName}</em>" ${this.$t(
-              "toasts.is_available"
-            )}!`
-          });
-        } catch (e) {
-          this.$toast.error(
-            `"<em>${this.shopName}</em>" ${this.$t(
-              "toasts.is_already_in_use"
-            )}.`
-          );
-          this.flash({
-            type: "danger",
-            message: `"<em>${this.shopName}</em>" ${this.$t(
-              "toasts.is_already_in_use"
-            )}!`
-          });
-        }
-      }
-    },
     prev() {
       this.$router.push(this.localePath({ name: "shop-creator-terms" }));
     },
@@ -160,6 +105,7 @@ export default {
         this.$router.push(this.localePath({ name: "shop-creator-details" }));
         return;
       }
+
       try {
         await this.$axios.$post("/shops/checker", {
           name: this.shopName
