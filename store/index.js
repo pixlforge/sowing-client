@@ -1,5 +1,6 @@
 export const state = () => ({
-  categories: []
+  categories: [],
+  user: {}
 });
 
 export const getters = {
@@ -19,6 +20,9 @@ export const getters = {
 export const mutations = {
   SET_CATEGORIES(state, categories) {
     state.categories = categories;
+  },
+  SET_USER_HAS_SHOP(state, value) {
+    state.auth.user.has_shop = value;
   }
 };
 
@@ -31,5 +35,8 @@ export const actions = {
     if (this.$auth.loggedIn) {
       await dispatch("cart/getCart");
     }
+  },
+  setUserHasShop({ commit }, value) {
+    commit("SET_USER_HAS_SHOP", value);
   }
 };

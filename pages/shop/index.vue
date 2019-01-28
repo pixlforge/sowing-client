@@ -70,6 +70,12 @@
                 <AppShopName/>
               </div>
 
+              <!-- Shop details -->
+              <h3 class="text-24 font-semibold mt-100">Détails</h3>
+              <div class="rounded-lg shadow-lg p-40 mt-40">
+                <AppShopDetails :countries="countries"/>
+              </div>
+
             </section>
           </div>
         </template>
@@ -107,9 +113,10 @@
 </template>
 
 <script>
-import AppShopCover from "@/components/shops/AppShopCover";
 import Header from "@/components/Header";
+import AppShopCover from "@/components/shops/AppShopCover";
 import AppShopName from "@/components/shops/AppShopName";
+import AppShopDetails from "@/components/shops/AppShopDetails";
 import theming from "@/mixins/theming";
 import { mapGetters, mapActions } from "vuex";
 
@@ -121,19 +128,27 @@ export default {
     };
   },
   components: {
-    AppShopCover,
     Header,
-    AppShopName
+    AppShopCover,
+    AppShopName,
+    AppShopDetails
   },
   mixins: [theming],
+  data() {
+    return {
+      countries: []
+    };
+  },
   async asyncData({ app, store }) {
     let shop = await app.$axios.$get("/user/shop");
+    let countries = await app.$axios.$get("/countries");
 
     if (shop.data) {
       store.dispatch("shop/setShop", shop.data);
     }
 
     return {
+      countries: countries.data,
       title: app.head.title
     };
   },
