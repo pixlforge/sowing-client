@@ -2,7 +2,7 @@
   <main>
     
     <!-- Cover -->
-    <Cover
+    <AppShopCover
       v-if="shopCover"
       :shop-cover="shopCover"/>
 
@@ -95,7 +95,7 @@
 
 <script>
 import Header from "@/components/Header";
-import Cover from "@/components/shops/Cover";
+import AppShopCover from "@/components/shops/AppShopCover";
 import StreakRegister from "@/components/streaks/StreakRegister";
 import { mapGetters, mapActions } from "vuex";
 
@@ -107,7 +107,7 @@ export default {
   },
   components: {
     Header,
-    Cover,
+    AppShopCover,
     StreakRegister
   },
   data() {

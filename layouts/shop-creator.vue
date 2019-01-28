@@ -3,7 +3,7 @@
     <TheAlert/>
     <Navbar/>
     <Categories/>
-    <Cover
+    <AppShopCover
       v-if="shopCover"
       :shop-cover="shopCover"/>
     <Header :class="bgTheme">
@@ -27,7 +27,7 @@
         </h1>
       </template>
     </Header>
-    <Navigation/>
+    <AppShopCreatorNavigation/>
     <nuxt/>
     <Footer/>
     <Disclaimer :class="bgTheme"/>
@@ -39,10 +39,10 @@ import TheAlert from "@/components/globals/TheAlert";
 import Navbar from "@/components/Navbar";
 import Categories from "@/components/categories/Categories";
 import Header from "@/components/Header";
-import Navigation from "@/components/shops/creator/Navigation";
+import AppShopCreatorNavigation from "@/components/shops/creator/AppShopCreatorNavigation";
 import Footer from "@/components/footer/Footer";
 import Disclaimer from "@/components/footer/Disclaimer";
-import Cover from "@/components/shops/Cover";
+import AppShopCover from "@/components/shops/AppShopCover";
 import { mapGetters, mapActions } from "vuex";
 
 export default {
@@ -51,10 +51,10 @@ export default {
     Navbar,
     Categories,
     Header,
-    Navigation,
+    AppShopCreatorNavigation,
     Footer,
     Disclaimer,
-    Cover
+    AppShopCover
   },
   computed: {
     ...mapGetters({
