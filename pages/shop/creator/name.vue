@@ -63,6 +63,7 @@ export default {
   mixins: [theming],
   async asyncData({ app, store }) {
     let shop = await app.$axios.$get("/user/shop");
+
     if (shop.data) {
       store.dispatch("shop/setShop", shop.data);
     }
