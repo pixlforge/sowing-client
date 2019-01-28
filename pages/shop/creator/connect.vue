@@ -74,7 +74,7 @@
 import { mapGetters, mapActions } from "vuex";
 
 export default {
-  middleware: ["authenticated"],
+  middleware: ["authenticated", "hasShop"],
   head() {
     return {
       title: `${this.title} | ${this.$t("shop_creator.steps.connect.title")}`

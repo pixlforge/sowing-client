@@ -87,7 +87,7 @@ import "vue2-dropzone/dist/vue2Dropzone.css";
 import { mapGetters, mapActions } from "vuex";
 
 export default {
-  middleware: ["authenticated"],
+  middleware: ["authenticated", "hasShop"],
   head() {
     return {
       title: `${this.title} | ${this.$t(

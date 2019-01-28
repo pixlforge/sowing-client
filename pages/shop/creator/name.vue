@@ -78,6 +78,7 @@ export default {
   },
   computed: {
     ...mapGetters({
+      terms: "shop/terms",
       shopName: "shop/shopName",
       shopTheme: "shop/shopTheme",
       shopExists: "shop/shopExists",
@@ -101,6 +102,10 @@ export default {
     };
   },
   mounted() {
+    if (!this.terms) {
+      return this.$router.push(this.localePath("shop-creator-terms"));
+    }
+
     if (!this.shopExists && this.$auth.user.has_shop) {
       this.getShop();
       this.setStepName(true);

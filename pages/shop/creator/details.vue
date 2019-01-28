@@ -399,6 +399,10 @@ export default {
     this.getCountries();
   },
   mounted() {
+    if (!this.terms) {
+      return this.$router.push(this.localePath("shop-creator-terms"));
+    }
+
     if (!this.shopExists && this.$auth.user.has_shop) {
       this.getShop();
       this.setStepDetails(true);
