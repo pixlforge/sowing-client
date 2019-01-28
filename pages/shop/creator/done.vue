@@ -43,6 +43,7 @@
 
 <script>
 import Success from "@/components/illustrations/Success";
+import theming from "@/mixins/theming";
 import { mapGetters, mapActions } from "vuex";
 
 export default {
@@ -60,6 +61,7 @@ export default {
   components: {
     Success
   },
+  mixins: [theming],
   async asyncData({ app }) {
     return {
       title: app.head.title
@@ -68,15 +70,11 @@ export default {
   computed: {
     ...mapGetters({
       stepName: "shop/stepName",
-      shopTheme: "shop/shopTheme",
       shopExists: "shop/shopExists",
       stepDetails: "shop/stepDetails",
       stepCustomization: "shop/stepCustomization",
       stepConnect: "shop/stepConnect"
-    }),
-    btnTheme() {
-      return `btn-${this.shopTheme}`;
-    }
+    })
   },
   mounted() {
     if (!this.shopExists && this.$auth.user.has_shop) {

@@ -84,6 +84,7 @@
 import Dropzone from "nuxt-dropzone";
 import Tile from "@/components/themes/Tile";
 import "vue2-dropzone/dist/vue2Dropzone.css";
+import theming from "@/mixins/theming";
 import { mapGetters, mapActions } from "vuex";
 
 export default {
@@ -104,6 +105,7 @@ export default {
     Dropzone,
     Tile
   },
+  mixins: [theming],
   data() {
     return {
       dzOptions: {
@@ -135,14 +137,10 @@ export default {
     ...mapGetters({
       shop: "shop/shop",
       stepName: "shop/stepName",
-      shopTheme: "shop/shopTheme",
       shopExists: "shop/shopExists",
       stepDetails: "shop/stepDetails",
       availableThemes: "shop/availableThemes"
     }),
-    btnTheme() {
-      return `btn-${this.shopTheme}`;
-    },
     optionsForAvatar() {
       return {
         ...this.dzOptions,

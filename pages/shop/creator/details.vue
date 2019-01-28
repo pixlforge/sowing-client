@@ -257,6 +257,7 @@
 </template>
 
 <script>
+import theming from "@/mixins/theming";
 import { mapGetters, mapActions } from "vuex";
 
 export default {
@@ -271,6 +272,7 @@ export default {
     name: "slide",
     mode: "out-in"
   },
+  mixins: [theming],
   data() {
     return {
       countries: [],
@@ -289,7 +291,6 @@ export default {
       terms: "shop/terms",
       stepName: "shop/stepName",
       shopCity: "shop/shopCity",
-      shopTheme: "shop/shopTheme",
       shopExists: "shop/shopExists",
       stepDetails: "shop/stepDetails",
       shopCountryId: "shop/shopCountryId",
@@ -390,9 +391,6 @@ export default {
       set(description) {
         this.setShopLongDescriptionIt(description);
       }
-    },
-    btnTheme() {
-      return `btn-${this.shopTheme}`;
     }
   },
   created() {

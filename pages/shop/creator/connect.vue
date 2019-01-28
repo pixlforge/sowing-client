@@ -71,6 +71,7 @@
 </template>
 
 <script>
+import theming from "@/mixins/theming";
 import { mapGetters, mapActions } from "vuex";
 
 export default {
@@ -85,6 +86,7 @@ export default {
     name: "slide",
     mode: "out-in"
   },
+  mixins: [theming],
   async asyncData({ app }) {
     return {
       title: app.head.title
@@ -92,13 +94,9 @@ export default {
   },
   computed: {
     ...mapGetters({
-      shopTheme: "shop/shopTheme",
       shopStripeUserId: "shop/shopStripeUserId",
       shopStripePublishableKey: "shop/shopStripePublishableKey"
     }),
-    btnTheme() {
-      return `btn-${this.shopTheme}`;
-    },
     stripeConnectOAuthUrl() {
       return `https://dashboard.stripe.com/oauth/authorize?response_type=code&client_id=${
         process.env.STRIPE_CONNECT

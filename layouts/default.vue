@@ -15,6 +15,7 @@ import Navbar from "@/components/Navbar";
 import Categories from "@/components/categories/Categories";
 import Footer from "@/components/footer/Footer";
 import Disclaimer from "@/components/footer/Disclaimer";
+import theming from "@/mixins/theming";
 import { mapGetters, mapActions } from "vuex";
 
 export default {
@@ -25,16 +26,6 @@ export default {
     Footer,
     Disclaimer
   },
-  computed: {
-    ...mapGetters({
-      shopTheme: "shop/shopTheme"
-    }),
-    bgTheme() {
-      return `bg-${this.shopTheme}`;
-    },
-    textTheme() {
-      return `text-${this.shopTheme}`;
-    }
-  }
+  mixins: [theming]
 };
 </script>

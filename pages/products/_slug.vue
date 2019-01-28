@@ -53,6 +53,7 @@
 import Header from "@/components/Header";
 import ProductDetails from "@/components/products/ProductDetails";
 import StreakNewsletter from "@/components/streaks/StreakNewsletter";
+import theming from "@/mixins/theming";
 import { mapGetters, mapActions } from "vuex";
 
 export default {
@@ -66,6 +67,7 @@ export default {
     ProductDetails,
     StreakNewsletter
   },
+  mixins: [theming],
   data() {
     return {
       product: {},
@@ -85,15 +87,8 @@ export default {
   computed: {
     ...mapGetters({
       locale: "locale",
-      shopAvatar: "shop/shopAvatar",
-      shopTheme: "shop/shopTheme"
-    }),
-    bgTheme() {
-      return `bg-${this.shopTheme}`;
-    },
-    textTheme() {
-      return `text-${this.shopTheme}`;
-    }
+      shopAvatar: "shop/shopAvatar"
+    })
   },
   mounted() {
     this.setShop(this.shop);

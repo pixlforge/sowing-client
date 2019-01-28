@@ -97,6 +97,7 @@
 import Header from "@/components/Header";
 import AppShopCover from "@/components/shops/AppShopCover";
 import StreakRegister from "@/components/streaks/StreakRegister";
+import theming from "@/mixins/theming";
 import { mapGetters, mapActions } from "vuex";
 
 export default {
@@ -110,6 +111,7 @@ export default {
     AppShopCover,
     StreakRegister
   },
+  mixins: [theming],
   data() {
     return {
       shop: {}
@@ -128,18 +130,8 @@ export default {
       locale: "locale",
       shopAvatar: "shop/shopAvatar",
       shopCover: "shop/shopCover",
-      shopTheme: "shop/shopTheme",
       shopName: "shop/shopName"
     }),
-    bgTheme() {
-      return `bg-${this.shopTheme}`;
-    },
-    textTheme() {
-      return `text-${this.shopTheme}`;
-    },
-    btnTheme() {
-      return `btn-${this.shopTheme}`;
-    },
     imgUrl() {
       return `https://bulma.io/images/placeholders/1280x960.png`;
     },

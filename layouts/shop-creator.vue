@@ -43,6 +43,7 @@ import AppShopCreatorNavigation from "@/components/shops/creator/AppShopCreatorN
 import Footer from "@/components/footer/Footer";
 import Disclaimer from "@/components/footer/Disclaimer";
 import AppShopCover from "@/components/shops/AppShopCover";
+import theming from "@/mixins/theming";
 import { mapGetters, mapActions } from "vuex";
 
 export default {
@@ -56,19 +57,13 @@ export default {
     Disclaimer,
     AppShopCover
   },
+  mixins: [theming],
   computed: {
     ...mapGetters({
       shopName: "shop/shopName",
       shopAvatar: "shop/shopAvatar",
-      shopCover: "shop/shopCover",
-      shopTheme: "shop/shopTheme"
-    }),
-    bgTheme() {
-      return `bg-${this.shopTheme}`;
-    },
-    textTheme() {
-      return `text-${this.shopTheme}`;
-    }
+      shopCover: "shop/shopCover"
+    })
   },
   destroyed() {
     this.resetShop();
