@@ -1,5 +1,5 @@
 <template>
-  <section class="w-full max-w-400 md:max-w-600">
+  <section class="w-full">
     <div class="flex flex-col md:flex-row">
       <input
         id="name"

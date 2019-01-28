@@ -39,7 +39,7 @@ import TheAlert from "@/components/globals/TheAlert";
 import Navbar from "@/components/Navbar";
 import Categories from "@/components/categories/Categories";
 import Header from "@/components/Header";
-import AppShopCreatorNavigation from "@/components/shops/creator/AppShopCreatorNavigation";
+import AppShopNavigation from "@/components/shops/AppShopNavigation";
 import Footer from "@/components/footer/Footer";
 import Disclaimer from "@/components/footer/Disclaimer";
 import AppShopCover from "@/components/shops/AppShopCover";
@@ -52,7 +52,7 @@ export default {
     Navbar,
     Categories,
     Header,
-    AppShopCreatorNavigation,
+    AppShopNavigation,
     Footer,
     Disclaimer,
     AppShopCover

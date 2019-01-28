@@ -1,6 +1,11 @@
 <template>
   <main>
 
+    <!-- Cover -->
+    <AppShopCover
+      v-if="shopCover"
+      :shop-cover="shopCover"/>
+
     <!-- Header -->
     <Header :class="bgTheme">
       <template slot="icon">
@@ -22,6 +27,27 @@
           <template v-else>{{ $t("pages.shop.title") }}</template>
         </h1>
       </template>
+      <template
+        v-if="shop.id"
+        slot="description">
+        <p class="header-description">
+          {{ shop.description_short[locale] }}
+        </p>
+
+        <ul class="list-reset text-14 text-white leading-normal mt-15">
+          <li>
+            <font-awesome-icon
+              :icon="['far', 'map-marker-alt']"
+              class="mr-5"/>
+            {{ shop.postal_code }} {{ shop.city }}
+          </li>
+          <li
+            v-if="shop.country"
+            class="ml-20">
+            {{ shop.country.name[locale] }}
+          </li>
+        </ul>
+      </template>
     </Header>
 
     <section class="container section">
@@ -30,6 +56,22 @@
         <!-- User owns a shop -->
         <template v-if="userHasShop">
           <h2 class="title-large text-center mt-100">{{ $t("pages.shop.title") }}</h2>
+
+          <div class="w-full flex justify-between mt-100">
+            <aside class="w-1/5">
+              Menu
+            </aside>
+
+            <section class="w-4/5">
+
+              <!-- Shop name -->
+              <h3 class="text-24 font-semibold">Nom</h3>
+              <div class="rounded-lg shadow-lg p-40 mt-40">
+                <AppShopName/>
+              </div>
+
+            </section>
+          </div>
         </template>
         
         <!-- User does not own a shop -->
@@ -65,7 +107,10 @@
 </template>
 
 <script>
+import AppShopCover from "@/components/shops/AppShopCover";
 import Header from "@/components/Header";
+import AppShopName from "@/components/shops/AppShopName";
+import theming from "@/mixins/theming";
 import { mapGetters, mapActions } from "vuex";
 
 export default {
@@ -76,34 +121,31 @@ export default {
     };
   },
   components: {
-    Header
+    AppShopCover,
+    Header,
+    AppShopName
   },
-  data() {
-    return {
-      currentShop: {}
-    };
-  },
-  async asyncData({ app }) {
+  mixins: [theming],
+  async asyncData({ app, store }) {
     let shop = await app.$axios.$get("/user/shop");
 
+    if (shop.data) {
+      store.dispatch("shop/setShop", shop.data);
+    }
+
     return {
-      currentShop: shop.data,
       title: app.head.title
     };
   },
   computed: {
     ...mapGetters({
+      locale: "locale",
       userHasShop: "userHasShop",
-      shopTheme: "shop/shopTheme",
+      shop: "shop/shop",
       shopName: "shop/shopName",
-      shopAvatar: "shop/shopAvatar"
-    }),
-    bgTheme() {
-      return `bg-${this.shopTheme}`;
-    },
-    textTheme() {
-      return `text-${this.shopTheme}`;
-    }
+      shopAvatar: "shop/shopAvatar",
+      shopCover: "shop/shopCover"
+    })
   },
   mounted() {
     if (this.currentShop) {

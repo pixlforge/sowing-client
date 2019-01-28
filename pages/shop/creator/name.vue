@@ -8,8 +8,8 @@
           <p class="paragraph-body text-center my-60">{{ $t("shop_creator.steps.name.paragraph") }}</p>
         </section>
         
-        <!-- Shop Creator Name -->
-        <AppShopCreatorName/>
+        <!-- Shop name -->
+        <AppShopName class="max-w-400 md:max-w-600"/>
 
         <div class="flex flex-col md:flex-row mt-100">
 
@@ -41,7 +41,7 @@
 </template>
 
 <script>
-import AppShopCreatorName from "@/components/shops/creator/AppShopCreatorName";
+import AppShopName from "@/components/shops/AppShopName";
 import theming from "@/mixins/theming";
 import { mapGetters, mapActions } from "vuex";
 
@@ -58,7 +58,7 @@ export default {
     mode: "out-in"
   },
   components: {
-    AppShopCreatorName
+    AppShopName
   },
   mixins: [theming],
   async asyncData({ app, store }) {
