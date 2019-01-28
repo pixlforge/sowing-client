@@ -27,7 +27,7 @@
         </h1>
       </template>
     </Header>
-    <AppShopCreatorNavigation/>
+    <AppShopNavigation/>
     <nuxt/>
     <Footer/>
     <Disclaimer :class="bgTheme"/>
