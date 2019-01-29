@@ -25,7 +25,7 @@
     "nuxt": "^2.3.4",
     "nuxt-dropzone": "^0.2.8",
     "nuxt-fontawesome": "^0.3.0",
-    "nuxt-i18n": "^5.4.4",
+    "nuxt-i18n": "^5.3.0",
     "nuxt-webfontloader": "^1.0.0",
     "query-string": "^6.2.0"
   },
