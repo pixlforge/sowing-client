@@ -1,11 +1,8 @@
 <template>
   <svg
-    width="133px"
-    height="25px"
-    viewBox="0 0 133 25"
-    version="1.1"
-    xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink="http://www.w3.org/1999/xlink">
+    width="133px" 
+    height="25px" 
+    viewBox="0 0 133 25">
     <title>Logo Sowing</title>
     <g
       id="Symbols"

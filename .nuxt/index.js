@@ -1,9 +1,8 @@
 import Vue from 'vue'
 import Meta from 'vue-meta'
 import { createRouter } from './router.js'
-import NoSSR from './components/no-ssr.js'
+import NoSsr from './components/no-ssr.js'
 import NuxtChild from './components/nuxt-child.js'
-import NuxtLink from './components/nuxt-link.js'
 import NuxtError from './components/nuxt-error.vue'
 import Nuxt from './components/nuxt.js'
 import App from './App.js'
@@ -12,27 +11,27 @@ import { createStore } from './store.js'
 
 /* Plugins */
 
-import nuxt_plugin_pluginseo_4fd9c185 from 'nuxt_plugin_pluginseo_4fd9c185' // Source: ./nuxt-i18n/plugin.seo.js
-import nuxt_plugin_pluginrouting_1d35dafc from 'nuxt_plugin_pluginrouting_1d35dafc' // Source: ./nuxt-i18n/plugin.routing.js
-import nuxt_plugin_pluginmain_66ed51f3 from 'nuxt_plugin_pluginmain_66ed51f3' // Source: ./nuxt-i18n/plugin.main.js
-import nuxt_plugin_googleanalytics_6f7d1f48 from 'nuxt_plugin_googleanalytics_6f7d1f48' // Source: ./google-analytics.js (ssr: false)
-import nuxt_plugin_toast_2a533a39 from 'nuxt_plugin_toast_2a533a39' // Source: ./toast.js (ssr: false)
-import nuxt_plugin_webfontloader_2de9ecec from 'nuxt_plugin_webfontloader_2de9ecec' // Source: ./webfontloader.js (ssr: false)
-import nuxt_plugin_templatesplugin46970679_2d97fc52 from 'nuxt_plugin_templatesplugin46970679_2d97fc52' // Source: ./templates.plugin.46970679.js
-import nuxt_plugin_axios_5e22ed8a from 'nuxt_plugin_axios_5e22ed8a' // Source: ./axios.js
-import nuxt_plugin_axios_3566aa80 from 'nuxt_plugin_axios_3566aa80' // Source: ../plugins/axios
-import nuxt_plugin_plugin_21e02b46 from 'nuxt_plugin_plugin_21e02b46' // Source: ./auth/plugin.js
+import nuxt_plugin_pluginseo_4fd9c185 from 'nuxt_plugin_pluginseo_4fd9c185' // Source: ./nuxt-i18n/plugin.seo.js (mode: 'all')
+import nuxt_plugin_pluginrouting_1d35dafc from 'nuxt_plugin_pluginrouting_1d35dafc' // Source: ./nuxt-i18n/plugin.routing.js (mode: 'all')
+import nuxt_plugin_pluginmain_66ed51f3 from 'nuxt_plugin_pluginmain_66ed51f3' // Source: ./nuxt-i18n/plugin.main.js (mode: 'all')
+import nuxt_plugin_googleanalytics_6f7d1f48 from 'nuxt_plugin_googleanalytics_6f7d1f48' // Source: ./google-analytics.js (mode: 'client')
+import nuxt_plugin_toast_2a533a39 from 'nuxt_plugin_toast_2a533a39' // Source: ./toast.js (mode: 'client')
+import nuxt_plugin_webfontloader_2de9ecec from 'nuxt_plugin_webfontloader_2de9ecec' // Source: ./webfontloader.js (mode: 'client')
+import nuxt_plugin_templatesplugin46970679_2d97fc52 from 'nuxt_plugin_templatesplugin46970679_2d97fc52' // Source: ./templates.plugin.46970679.js (mode: 'all')
+import nuxt_plugin_axios_5e22ed8a from 'nuxt_plugin_axios_5e22ed8a' // Source: ./axios.js (mode: 'all')
+import nuxt_plugin_axios_3566aa80 from 'nuxt_plugin_axios_3566aa80' // Source: ../plugins/axios (mode: 'all')
+import nuxt_plugin_plugin_21e02b46 from 'nuxt_plugin_plugin_21e02b46' // Source: ./auth/plugin.js (mode: 'all')
 
-// Component: <no-ssr>
-Vue.component(NoSSR.name, NoSSR)
+// Component: <NoSsr>
+Vue.component(NoSsr.name, NoSsr)
 
-// Component: <nuxt-child>
+// Component: <NuxtChild>
 Vue.component(NuxtChild.name, NuxtChild)
+Vue.component('NChild', NuxtChild)
 
-// Component: <nuxt-link>
-Vue.component(NuxtLink.name, NuxtLink)
+// Component NuxtLink is imported in server.js or client.js
 
-// Component: <nuxt>`
+// Component: <Nuxt>`
 Vue.component(Nuxt.name, Nuxt)
 
 // vue-meta configuration
