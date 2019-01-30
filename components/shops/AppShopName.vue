@@ -4,15 +4,15 @@
       <input
         id="name"
         v-model="localShopName"
-        :disabled="shopExists"
-        :class="{ 'input-disabled': shopExists }"
+        :disabled="shopExists && !editable"
+        :class="{ 'input-disabled': shopExists && !editable }"
         :placeholder="$t('shop_creator.steps.name.placeholder')"
         name="name"
         type="text"
         class="input-base md:rounded-r-none mt-0">
       <button
-        :disabled="shopExists || !shopName"
-        :class="shopExists || !shopName ? 'btn-disabled' : btnTheme"
+        :disabled="(shopExists || !shopName) && !editable"
+        :class="(shopExists || !shopName) && !editable ? 'btn-disabled' : btnTheme"
         class="btn btn-primary md:rounded-l-none nowrap mt-20 md:mt-0"
         @click.prevent="check">
         <font-awesome-icon
@@ -30,6 +30,13 @@ import { mapGetters, mapActions } from "vuex";
 
 export default {
   mixins: [theming],
+  props: {
+    editable: {
+      type: Boolean,
+      required: false,
+      default: false
+    }
+  },
   computed: {
     ...mapGetters({
       shopName: "shop/shopName",

@@ -64,20 +64,29 @@
 
             <section class="w-4/5">
 
-              <!-- Shop name -->
-              <h3 class="text-24 font-semibold">Nom</h3>
-              <div class="rounded-lg shadow-lg p-40 mt-40">
-                <AppShopName/>
-              </div>
-
               <!-- Shop details -->
-              <h3 class="text-24 font-semibold mt-100">Détails</h3>
+              <h3 class="text-30 font-bold">Détails</h3>
               <div class="rounded-lg shadow-lg p-40 mt-40">
-                <AppShopDetails :countries="countries"/>
+                <AppShopDetails
+                  :countries="countries"
+                  :errors="errors"
+                  editable/>
+
+                <div class="flex justify-end">
+                  <button
+                    :class="btnTheme"
+                    class="btn mt-100"
+                    @click.prevent="update">
+                    <font-awesome-icon
+                      :icon="['far', 'check']"
+                      class="mr-5"/>
+                    {{ $t("buttons.update") }}
+                  </button>
+                </div>
               </div>
 
               <!-- Shop Customization -->
-              <h3 class="text-24 font-semibold mt-100">Thème</h3>
+              <h3 class="text-30 font-bold mt-100">Thème</h3>
               <div class="rounded-lg shadow-lg p-40 mt-40">
                 <AppShopCustomization/>
               </div>
@@ -121,7 +130,6 @@
 <script>
 import Header from "@/components/Header";
 import AppShopCover from "@/components/shops/AppShopCover";
-import AppShopName from "@/components/shops/AppShopName";
 import AppShopDetails from "@/components/shops/AppShopDetails";
 import AppShopCustomization from "@/components/shops/AppShopCustomization";
 import theming from "@/mixins/theming";
@@ -137,14 +145,14 @@ export default {
   components: {
     Header,
     AppShopCover,
-    AppShopName,
     AppShopDetails,
     AppShopCustomization
   },
   mixins: [theming],
   data() {
     return {
-      countries: []
+      countries: [],
+      errors: {}
     };
   },
   async asyncData({ app, store }) {
@@ -177,8 +185,18 @@ export default {
   },
   methods: {
     ...mapActions({
-      setShop: "shop/setShop"
-    })
+      setShop: "shop/setShop",
+      updateShop: "shop/updateShop"
+    }),
+    async update() {
+      try {
+        let res = await this.updateShop();
+        this.$toast.success("Votre boutique a été mise à jour avec succès!");
+      } catch (e) {
+        this.errors = e.response.data.errors;
+        this.$toast.error(this.$t("toasts.validation"));
+      }
+    }
   }
 };
 </script>

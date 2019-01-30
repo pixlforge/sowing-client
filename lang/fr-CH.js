@@ -23,7 +23,8 @@ export default {
     register: "Créer un compte",
     see_all_articles: "Voir tous les articles",
     subscribe: "Inscription",
-    to_my_shop_details: "Vers les détails de ma boutique"
+    to_my_shop_details: "Vers les détails de ma boutique",
+    update: "Mettre à jour"
   },
 
   /**

@@ -11,7 +11,8 @@
         <!-- Shop details -->
         <AppShopDetails
           :countries="countries"
-          class="max-w-600 lg:max-w-1000"/>
+          :errors="errors"
+          class="max-w-600 lg:max-w-1000 mt-100"/>
 
         <div class="flex flex-col md:flex-row mt-100">
 
@@ -27,6 +28,7 @@
 
           <!-- Next -->
           <button
+            :disabled="!shopPostalCode || !shopCity || !shopCountryId"
             :class="!shopPostalCode || !shopCity || !shopCountryId ? 'btn-disabled' : btnTheme"
             class="btn order-0 md:order-1"
             @click.prevent="store">
@@ -64,7 +66,8 @@ export default {
   mixins: [theming],
   data() {
     return {
-      countries: []
+      countries: [],
+      errors: {}
     };
   },
   async asyncData({ app }) {
