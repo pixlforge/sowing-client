@@ -76,6 +76,12 @@
                 <AppShopDetails :countries="countries"/>
               </div>
 
+              <!-- Shop Customization -->
+              <h3 class="text-24 font-semibold mt-100">Thème</h3>
+              <div class="rounded-lg shadow-lg p-40 mt-40">
+                <AppShopCustomization/>
+              </div>
+
             </section>
           </div>
         </template>
@@ -117,6 +123,7 @@ import Header from "@/components/Header";
 import AppShopCover from "@/components/shops/AppShopCover";
 import AppShopName from "@/components/shops/AppShopName";
 import AppShopDetails from "@/components/shops/AppShopDetails";
+import AppShopCustomization from "@/components/shops/AppShopCustomization";
 import theming from "@/mixins/theming";
 import { mapGetters, mapActions } from "vuex";
 
@@ -131,7 +138,8 @@ export default {
     Header,
     AppShopCover,
     AppShopName,
-    AppShopDetails
+    AppShopDetails,
+    AppShopCustomization
   },
   mixins: [theming],
   data() {
