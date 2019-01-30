@@ -183,10 +183,14 @@ export default {
       this.setShop(this.currentShop);
     }
   },
+  destroyed() {
+    this.resetShop();
+  },
   methods: {
     ...mapActions({
       setShop: "shop/setShop",
-      updateShop: "shop/updateShop"
+      updateShop: "shop/updateShop",
+      resetShop: "shop/resetShop"
     }),
     async update() {
       try {
