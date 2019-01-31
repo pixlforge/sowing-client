@@ -14,7 +14,7 @@
     </div>
     <div class="text-center md:text-left px-20 sm:px-50 mt-40 md:mt-0">
       <h5 class="text-24 text-green-darkest font-bold">{{ name }}</h5>
-      <p class="text-16 text-green-darkest leading-normal mt-20">{{ body }}</p>
+      <p class="text-16 text-green-darkest leading-loose mt-20">{{ body }}</p>
     </div>
   </div>
 </template>
