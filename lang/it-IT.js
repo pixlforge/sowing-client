@@ -362,6 +362,8 @@ export default {
       "L'avatar del vostro negozio è stato aggiornato con successo!",
     shop_cover_updated:
       "La copertina del vostro negozio è stata aggiornata con successo!",
+    subscribed:
+      "Grazie! Riceverete un'email per confermare la vostra iscrizione alla newsletter!",
     terms:
       "Devi prima accettare i termini e le condizioni prima di continuare.",
     theme_updated: "Il tema del vostro negozio è stato aggiornato!",

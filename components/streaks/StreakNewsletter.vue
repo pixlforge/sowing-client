@@ -20,24 +20,35 @@
           </p>
 
           <form
-            class="flex justify-center lg:justify-start mt-40"
-            @submit.prevent>
-            <input
-              id="email"
-              :placeholder="placeholder"
-              type="email"
-              name="email"
-              class="w-350 text-16 rounded-l-lg outline-none focus:shadow-outline pl-15"
-              required>
-            <button
-              type="submit"
-              role="button"
-              class="btn btn-primary rounded-l-none">
-              <font-awesome-icon
-                :icon="['far', 'paper-plane']"
-                class="mr-10"/>
-              {{ $t("buttons.subscribe") }}
-            </button>
+            class="relative mt-40"
+            @submit.prevent="subscribe">
+            
+            <div class="flex justify-center lg:justify-start">
+              <input
+                id="email"
+                v-model="email"
+                :placeholder="placeholder"
+                type="email"
+                name="email"
+                class="w-350 text-16 rounded-l-lg outline-none focus:shadow-outline pl-15"
+                required>
+
+              <button
+                type="submit"
+                role="button"
+                class="btn btn-primary rounded-l-none">
+                <font-awesome-icon
+                  :icon="['far', 'paper-plane']"
+                  class="mr-10"/>
+                {{ $t("buttons.subscribe") }}
+              </button>
+            </div>
+
+            <p
+              v-if="errors.email"
+              class="absolute w-full text-center lg:text-left text-14 text-white mt-5">
+              {{ errors.email[0] }}
+            </p>
           </form>
         </div>
 
@@ -47,15 +58,32 @@
 </template>
 
 <script>
-import Button from "@/components/buttons/Button";
-
 export default {
-  components: {
-    Button
+  data() {
+    return {
+      email: "",
+      errors: {}
+    };
   },
   computed: {
     placeholder() {
       return this.$t("streaks.newsletter.placeholder");
+    }
+  },
+  methods: {
+    async subscribe() {
+      this.errors = {};
+
+      try {
+        await this.$axios.$post("/newsletter/subscribe", {
+          email: this.email
+        });
+        this.$toast.success(this.$t("toasts.subscribed"));
+        this.email = "";
+      } catch (e) {
+        this.errors = e.response.data.errors;
+        this.$toast.error(this.$t("toasts.validation"));
+      }
     }
   }
 };

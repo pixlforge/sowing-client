@@ -362,6 +362,8 @@ export default {
       "L'avatar de votre boutique à été mis à jour avec succès!",
     shop_cover_updated:
       "La couverture de votre boutique a été mise à jour avec succès!",
+    subscribed:
+      "Merci! Vous allez recevoir un email pour confirmer votre inscription à la newsletter!",
     terms:
       "Vous devez d'abord accepter les conditions d'utilisation avant de continuer.",
     theme_updated: "Le thème de votre boutique a été mis à jour!",
