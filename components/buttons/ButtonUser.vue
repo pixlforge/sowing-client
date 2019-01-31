@@ -19,6 +19,9 @@
         <nuxt-link
           :to="localePath({ name: 'orders' })"
           class="link-dropdown">
+          <font-awesome-icon
+            :icon="['far', 'shipping-fast']"
+            class="mr-5"/>
           {{ $t("pages.orders.title") }}
         </nuxt-link>
       </li>
@@ -28,6 +31,9 @@
         <nuxt-link
           :to="localePath({ name: 'shop' })"
           class="link-dropdown">
+          <font-awesome-icon
+            :icon="['far', 'store']"
+            class="mr-5"/>
           {{ $t("pages.shop.title") }}
         </nuxt-link>
       </li>
@@ -46,13 +52,16 @@
         </nuxt-link>
       </li>
 
-      <hr class="border border-grey-lightest rounded-full my-20">
+      <hr class="border-t border-grey-lightest rounded-full my-20">
 
       <!-- Logout -->
       <li>
         <a
-          class="link-dropdown"
+          class="link-dropdown text-pink-dark"
           @click="logout">
+          <font-awesome-icon
+            :icon="['far', 'sign-out']"
+            class="mr-5"/>
           {{ $t("components.navbar.user.logout") }}
         </a>
       </li>
