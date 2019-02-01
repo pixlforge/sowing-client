@@ -35,7 +35,7 @@
             required
             autofocus>
           <template v-if="errors.email">
-            <p class="input-error">{{ errors.email[0] }}</p>
+            <p class="input-error">{{ errors.email }}</p>
           </template>
         </div>
 
@@ -55,7 +55,7 @@
             class="input-base border"
             required>
           <template v-if="errors.password">
-            <p class="input-error">{{ errors.password[0] }}</p>
+            <p class="input-error">{{ errors.password }}</p>
           </template>
         </div>
 
