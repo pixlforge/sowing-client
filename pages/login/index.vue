@@ -18,7 +18,7 @@
         @submit.prevent="login">
 
         <!-- Email -->
-        <div>
+        <div class="form-group">
           <label
             for="email"
             class="label">
@@ -26,15 +26,21 @@
           </label>
           <input
             id="email"
+            ref="autofocus"
             v-model="form.email"
+            :class="{ 'border-red': errors.email, 'border-green-lightest': !errors.email }"
             type="email"
             name="email"
-            class="input-base"
-            required>
+            class="input-base border"
+            required
+            autofocus>
+          <template v-if="errors.email">
+            <p class="input-error">{{ errors.email[0] }}</p>
+          </template>
         </div>
 
         <!-- Password -->
-        <div class="mt-40">
+        <div class="form-group mt-40">
           <label
             for="password"
             class="label">
@@ -43,10 +49,14 @@
           <input
             id="password"
             v-model="form.password"
+            :class="{ 'border-red': errors.password, 'border-green-lightest': !errors.password }"
             type="password"
             name="password"
-            class="input-base"
+            class="input-base border"
             required>
+          <template v-if="errors.password">
+            <p class="input-error">{{ errors.password[0] }}</p>
+          </template>
         </div>
 
         <div class="flex justify-center mt-40">
@@ -101,7 +111,8 @@ export default {
       form: {
         email: "",
         password: ""
-      }
+      },
+      errors: {}
     };
   },
   async asyncData({ app }) {
@@ -109,26 +120,36 @@ export default {
       title: app.head.title
     };
   },
+  mounted() {
+    this.$refs.autofocus.focus();
+  },
   methods: {
     ...mapActions({
       getCart: "cart/getCart"
     }),
     async login() {
-      await this.$auth.loginWith("local", {
-        data: this.form
-      });
+      this.errors = {};
 
-      if (this.$route.query.redirect) {
-        this.$router.push(this.$route.query.redirect);
-      } else {
-        this.$router.push(this.localePath({ name: "index" }));
+      try {
+        await this.$auth.loginWith("local", {
+          data: this.form
+        });
+
+        if (this.$route.query.redirect) {
+          this.$router.push(this.$route.query.redirect);
+        } else {
+          this.$router.push(this.localePath({ name: "index" }));
+        }
+
+        this.$toast.success(
+          `${this.$t("toasts.welcome")}, ${this.$auth.user.name}!`
+        );
+
+        await this.getCart();
+      } catch (e) {
+        this.errors = e.response.data.errors;
+        this.$toast.error(this.$t("toasts.validation"));
       }
-
-      this.$toast.success(
-        `${this.$t("toasts.welcome")}, ${this.$auth.user.name}!`
-      );
-
-      await this.getCart();
     }
   }
 };
