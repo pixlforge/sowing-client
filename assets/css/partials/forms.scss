@@ -30,5 +30,9 @@
 }
 
 .input-error {
-  @apply text-12 text-red mt-5;
+  @apply absolute text-12 text-red mt-5;
+}
+
+.form-group {
+  @apply relative;
 }
