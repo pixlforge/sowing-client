@@ -1,9 +1,9 @@
 <template>
   <nuxt-link
     :to="localePath({ name: 'products-slug', params: { slug: result.slug } })"
-    class="no-underline text-green-darkest">
+    class="no-underline text-green-darkest group">
 
-    <div class="transition bg-green-lightest rounded-lg flex items-center p-20 my-10">
+    <div class="bg-green-lightest group-hover:bg-green group-hover:text-white rounded-lg flex items-center p-20 my-10">
       <font-awesome-icon
         :icon="['fas', 'box-alt']"
         class="text-30 ml-5 mr-40"/>

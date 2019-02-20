@@ -4,7 +4,7 @@
     class="no-underline">
     <div
       :class="`bg-${result.theme} hover:bg-${result.theme}-dark`"
-      class="transition rounded-lg flex items-center p-20 my-10">
+      class="rounded-lg flex items-center p-20 my-10">
       <font-awesome-icon
         :icon="['fas', 'store']"
         class="text-30 text-white mr-40"/>
