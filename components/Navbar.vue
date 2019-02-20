@@ -1,64 +1,70 @@
 <template>
-  <div class="container flex flex-wrap md:justify-center items-center px-20 py-30">
+  <div class="container flex justify-between items-center px-20 py-30">
 
     <!-- Logo -->
-    <nuxt-link
-      :to="localePath({ name: 'index' })"
-      class="md:order-0 md:mr-20 xl:mr-30">
+    <nuxt-link :to="localePath({ name: 'index' })">
       <Logo/>
     </nuxt-link>
 
-    <!-- Languages -->
-    <ButtonLanguages class="ml-auto md:order-2 mr-30 lg:mr-20 xl:mr-30"/>
-
-    <!-- Cart -->
-    <ButtonCart class="md:order-3 lg:order-5"/>
-
-    <!-- Searchbar -->
-    <Searchbar class="w-full md:w-350 lg:w-250 xl:w-350 md:order-1 mt-20 md:mt-0"/>
-
-    <!-- Register -->
-    <nuxt-link
-      v-if="!loggedIn"
-      :to="localePath({ name: 'register' })"
-      class="btn btn-secondary w-full md:w-auto text-center md:order-4 xl:order-3 md:mr-20 xl:mr-30 mt-20 lg:mt-0">
-      <font-awesome-icon
-        :icon="['far', 'rocket']"
-        class="mr-5"/>
-      {{ $t("buttons.register") }}
-    </nuxt-link>
+    <div class="flex">
       
-    <!-- Login -->
-    <nuxt-link
-      v-if="!loggedIn"
-      :to="localePath({ name: 'login' })"
-      class="btn btn-default w-full md:w-auto text-center md:order-5 lg:order-4 lg:mr-20 xl:mr-30 mt-10 md:mt-20 lg:mt-0">
-      {{ $t("buttons.login") }}
-    </nuxt-link>
+      <!-- Languages -->
+      <ButtonLanguages class="mr-20"/>
 
-    <!-- User -->
-    <ButtonUser
-      v-if="loggedIn"
-      class="w-full md:w-auto text-center md:order-5 lg:order-4 lg:mr-20 xl:mr-30 mt-10 md:mt-20 lg:mt-0"/>
+      <!-- Login -->
+      <nuxt-link
+        v-if="!loggedIn"
+        :to="localePath({ name: 'login' })"
+        class="btn btn-default w-full md:w-auto text-center mr-20">
+        {{ $t("buttons.login") }}
+      </nuxt-link>
+
+      <!-- Register -->
+      <nuxt-link
+        v-if="!loggedIn"
+        :to="localePath({ name: 'register' })"
+        class="btn btn-secondary w-full md:w-auto text-center mr-20">
+        <font-awesome-icon
+          :icon="['far', 'rocket']"
+          class="mr-5"/>
+        {{ $t("buttons.register") }}
+      </nuxt-link>
+        
+      <!-- User -->
+      <ButtonUser
+        v-if="loggedIn"
+        class="w-full md:w-auto text-center mr-20"/>
+
+      <!-- Searchbar -->
+      <!-- <Searchbar class="w-full md:w-350 lg:w-250 xl:w-350 md:order-1 mt-20 md:mt-0"/> -->
+
+      <!-- Search page link -->
+      <ButtonSearch class="mr-20"/>
+
+      <!-- Cart page link -->
+      <ButtonCart class=""/>
+    </div>
 
   </div>
 </template>
 
 <script>
 import Logo from "@/components/Logo";
-import Searchbar from "@/components/Searchbar";
 import Button from "@/components/buttons/Button";
+import Searchbar from "@/components/search/Searchbar";
 import ButtonCart from "@/components/buttons/ButtonCart";
 import ButtonUser from "@/components/buttons/ButtonUser";
+import ButtonSearch from "@/components/search/ButtonSearch";
 import ButtonLanguages from "@/components/buttons/ButtonLanguages";
 
 export default {
   components: {
     Logo,
-    Searchbar,
     Button,
+    Searchbar,
     ButtonCart,
     ButtonUser,
+    ButtonSearch,
     ButtonLanguages
   },
   computed: {

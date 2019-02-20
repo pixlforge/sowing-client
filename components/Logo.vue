@@ -32,16 +32,10 @@
 </template>
 
 <script>
+import theming from "@/mixins/theming";
 import { mapGetters } from "vuex";
 
 export default {
-  computed: {
-    ...mapGetters({
-      shopTheme: "shop/shopTheme"
-    }),
-    textTheme() {
-      return `text-${this.shopTheme}`;
-    }
-  }
+  mixins: [theming]
 };
 </script>
