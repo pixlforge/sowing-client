@@ -23,47 +23,17 @@
 
       <div class="flex mt-60">
 
-        <!-- Products -->
-        <ais-index
-          :app-id="api.id"
-          :api-key="api.key"
+        <!-- Product search results -->
+        <Result
           :query="query"
           index-name="products"
-          class="w-1/2 pr-10">
-          <ais-results :results-per-page="5">
-            <template slot-scope="{ result }">
-              <ResultProduct :result="result"/>
-            </template>
-          </ais-results>
-          <ais-pagination>
-            <template slot-scope="{ value, active }">
-              <div :class="{ 'ais-pagination__link--active': active }">
-                {{ value }}
-              </div>
-            </template>
-          </ais-pagination>
-        </ais-index>
-
-        <!-- Shops -->
-        <ais-index
-          :app-id="api.id"
-          :api-key="api.key"
+          class="w-1/2 pr-10"/>
+        
+        <!-- Shop search results -->
+        <Result
           :query="query"
           index-name="shops"
-          class="w-1/2 pl-10">
-          <ais-results :results-per-page="5">
-            <template slot-scope="{ result }">
-              <ResultShop :result="result"/>
-            </template>
-          </ais-results>
-          <ais-pagination>
-            <template slot-scope="{ value, active }">
-              <div :class="{ 'ais-pagination__link--active': active }">
-                {{ value }}
-              </div>
-            </template>
-          </ais-pagination>
-        </ais-index>
+          class="w-1/2 pl-10"/>
 
       </div>
     </section>
@@ -72,22 +42,16 @@
 
 <script>
 import Header from "@/components/Header";
-import ResultShop from "@/components/search/ResultShop";
-import ResultProduct from "@/components/search/ResultProduct";
+import Result from "@/components/search/Result";
 import { mapGetters } from 'vuex';
 
 export default {
   components: {
     Header,
-    ResultShop,
-    ResultProduct
+    Result
   },
   data() {
     return {
-      api: {
-        id: process.env.ALGOLIA_APP_ID,
-        key: process.env.ALGOLIA_SECRET
-      },
       query: ""
     }
   },
