@@ -245,6 +245,10 @@ export default {
     register_success: {
       title: "Account creato con successo!"
     },
+    search: {
+      title: "Ricerca",
+      placeholder: "Cercate prodotti e negozi"
+    },
     shop: {
       title: "Gestione del vostro negozio",
       creation: "Creazione del mio negozio",

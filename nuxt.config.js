@@ -38,7 +38,7 @@ module.exports = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ["~/plugins/axios"],
+  plugins: ["~/plugins/axios", "~/plugins/vue-instantsearch"],
 
   /*
    ** Nuxt.js modules

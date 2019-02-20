@@ -7,6 +7,7 @@ const _6f1852f7 = () => interopDefault(import('../pages/checkout/index.vue' /* w
 const _508690ee = () => interopDefault(import('../pages/login/index.vue' /* webpackChunkName: "pages/login/index" */))
 const _3de5bb56 = () => interopDefault(import('../pages/orders/index.vue' /* webpackChunkName: "pages/orders/index" */))
 const _1aee37d8 = () => interopDefault(import('../pages/register/index.vue' /* webpackChunkName: "pages/register/index" */))
+const _5c4b334e = () => interopDefault(import('../pages/search/index.vue' /* webpackChunkName: "pages/search/index" */))
 const _4b4fffa7 = () => interopDefault(import('../pages/shop/index.vue' /* webpackChunkName: "pages/shop/index" */))
 const _091687d6 = () => interopDefault(import('../pages/password/email.vue' /* webpackChunkName: "pages/password/email" */))
 const _03544809 = () => interopDefault(import('../pages/password/reset.vue' /* webpackChunkName: "pages/password/reset" */))
@@ -163,6 +164,22 @@ export function createRouter() {
       path: "/it/register",
       component: _1aee37d8,
       name: "register___it"
+    }, {
+      path: "/en/search",
+      component: _5c4b334e,
+      name: "search___en"
+    }, {
+      path: "/fr/search",
+      component: _5c4b334e,
+      name: "search___fr"
+    }, {
+      path: "/de/search",
+      component: _5c4b334e,
+      name: "search___de"
+    }, {
+      path: "/it/search",
+      component: _5c4b334e,
+      name: "search___it"
     }, {
       path: "/en/shop",
       component: _4b4fffa7,

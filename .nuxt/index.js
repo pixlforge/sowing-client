@@ -20,6 +20,7 @@ import nuxt_plugin_webfontloader_2de9ecec from 'nuxt_plugin_webfontloader_2de9ec
 import nuxt_plugin_templatesplugin46970679_2d97fc52 from 'nuxt_plugin_templatesplugin46970679_2d97fc52' // Source: ./templates.plugin.46970679.js (mode: 'all')
 import nuxt_plugin_axios_5e22ed8a from 'nuxt_plugin_axios_5e22ed8a' // Source: ./axios.js (mode: 'all')
 import nuxt_plugin_axios_3566aa80 from 'nuxt_plugin_axios_3566aa80' // Source: ../plugins/axios (mode: 'all')
+import nuxt_plugin_vueinstantsearch_9a9113e8 from 'nuxt_plugin_vueinstantsearch_9a9113e8' // Source: ../plugins/vue-instantsearch (mode: 'all')
 import nuxt_plugin_plugin_21e02b46 from 'nuxt_plugin_plugin_21e02b46' // Source: ./auth/plugin.js (mode: 'all')
 
 // Component: <NoSsr>
@@ -165,6 +166,7 @@ async function createApp(ssrContext) {
   if (typeof nuxt_plugin_templatesplugin46970679_2d97fc52 === 'function') await nuxt_plugin_templatesplugin46970679_2d97fc52(app.context, inject)
   if (typeof nuxt_plugin_axios_5e22ed8a === 'function') await nuxt_plugin_axios_5e22ed8a(app.context, inject)
   if (typeof nuxt_plugin_axios_3566aa80 === 'function') await nuxt_plugin_axios_3566aa80(app.context, inject)
+  if (typeof nuxt_plugin_vueinstantsearch_9a9113e8 === 'function') await nuxt_plugin_vueinstantsearch_9a9113e8(app.context, inject)
   if (typeof nuxt_plugin_plugin_21e02b46 === 'function') await nuxt_plugin_plugin_21e02b46(app.context, inject)
 
   if (process.client) {

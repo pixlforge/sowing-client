@@ -244,6 +244,10 @@ export default {
     register_success: {
       title: "Account created successfully!"
     },
+    search: {
+      title: "Search",
+      placeholder: "Search for products and shops"
+    },
     shop: {
       title: "Management of my shop",
       creation: "Creation of my shop",
