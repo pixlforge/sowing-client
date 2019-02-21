@@ -307,7 +307,8 @@ module.exports = {
     "160": "16rem",
     "221": "22.1rem",
     full: "100%",
-    screen: "100vh"
+    screen: "100vh",
+    "half-screen": "50vh"
   },
 
   maxWidth: {

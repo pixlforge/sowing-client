@@ -11,7 +11,7 @@
       </template>
     </Header>
     
-    <section class="container section mt-150">
+    <section class="container min-h-half-screen section mt-150">
 
       <!-- Search field -->
       <div class="max-w-800 mx-auto">
