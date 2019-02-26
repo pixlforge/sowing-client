@@ -21,7 +21,7 @@
           class="input-base text-30 p-30">
       </div>
 
-      <div class="flex mt-60">
+      <div class="flex mt-100">
 
         <!-- Product search results -->
         <Result

@@ -5,18 +5,41 @@
     :query="query"
     :index-name="indexName"
     class="w-1/2 pr-10">
-    <ais-results :results-per-page="5">
+    <ais-stats class="text-center">
+      <template slot-scope="{ totalResults }">
+        <h3 class="text-24 font-bold mb-5">
+          <template v-if="indexName === 'products'">
+            Produits
+          </template>
+          <template v-else>
+            Boutiques
+          </template>
+        </h3>
+        <small class="text-14">
+          {{ totalResults }} trouvé(es)
+        </small>
+      </template>
+    </ais-stats>
+    <ais-no-results class="-mt-5">
+      <template>
+        <p class="text-24 font-bold">
+          <template v-if="indexName === 'products'">
+            Aucun produit trouvé.
+          </template>
+          <template v-else>
+            Aucune boutique trouvée.
+          </template>
+        </p>
+      </template>
+    </ais-no-results>
+    <ais-results
+      :results-per-page="5"
+      class="mt-40">
       <component
         slot-scope="{ result }"
         :is="indexName"
         :result="result"/>
     </ais-results>
-    <ais-no-results>
-      <template slot-scope="props">
-        Aucun résultat pour la recherche:<br>
-        <strong>{{ props.query }}</strong>
-      </template>
-    </ais-no-results>
     <ais-pagination>
       <template slot-scope="{ value, active }">
         <div :class="{ 'ais-pagination__link--active': active }">
@@ -24,11 +47,6 @@
         </div>
       </template>
     </ais-pagination>
-    <ais-stats class="text-12 text-center mt-20">
-      <template slot-scope="{ totalResults, resultStart, resultEnd }">
-        Résultats <strong>{{ resultStart }}</strong> à <strong>{{ resultEnd }}</strong> / <strong>{{ totalResults }}</strong> total.
-      </template>
-    </ais-stats>
   </ais-index>
 </template>
 
