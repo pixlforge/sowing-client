@@ -11,6 +11,12 @@
         :is="indexName"
         :result="result"/>
     </ais-results>
+    <ais-no-results>
+      <template slot-scope="props">
+        Aucun résultat pour la recherche:<br>
+        <strong>{{ props.query }}</strong>
+      </template>
+    </ais-no-results>
     <ais-pagination>
       <template slot-scope="{ value, active }">
         <div :class="{ 'ais-pagination__link--active': active }">
