@@ -46,6 +46,11 @@ import Result from "@/components/search/Result";
 import { mapGetters } from 'vuex';
 
 export default {
+  head() {
+    return {
+      title: `${this.title} | ${this.$t("pages.search.title")}`
+    };
+  },
   components: {
     Header,
     Result
@@ -54,6 +59,11 @@ export default {
     return {
       query: ""
     }
+  },
+  async asyncData({ app }) {
+    return {
+      title: app.head.title
+    };
   },
   computed: {
     ...mapGetters({
