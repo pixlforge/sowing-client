@@ -9,14 +9,14 @@
       <template slot-scope="{ totalResults }">
         <h3 class="text-24 font-bold mb-5">
           <template v-if="indexName === 'products'">
-            Produits
+            {{ $t("pages.search.products") }}
           </template>
           <template v-else>
-            Boutiques
+            {{ $t("pages.search.shops") }}
           </template>
         </h3>
         <small class="text-14">
-          {{ totalResults }} trouvé(es)
+          {{ totalResults }} {{ $t("pages.search.results_found") }}
         </small>
       </template>
     </ais-stats>
@@ -24,10 +24,10 @@
       <template>
         <p class="text-24 font-bold">
           <template v-if="indexName === 'products'">
-            Aucun produit trouvé.
+            {{ $t("pages.search.no_product_found") }}
           </template>
           <template v-else>
-            Aucune boutique trouvée.
+            {{ $t("pages.search.no_shop_found") }}
           </template>
         </p>
       </template>
