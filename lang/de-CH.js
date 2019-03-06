@@ -272,6 +272,9 @@ export default {
         "Ich habe die Nutzungsbedingungen von Sowing gelesen und stimme ihnen zu",
       must_approve:
         "Sie müssen die Bedingungen akzeptieren, bevor Sie fortfahren"
+    },
+    verify: {
+      title: "Bestätigung der E-Mail-Adresse"
     }
   },
 

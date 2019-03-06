@@ -271,6 +271,9 @@ export default {
       title: "Condizioni d'uso",
       approve: "Ho letto e accetto i termini di utilizzo di Sowing",
       must_approve: "Devi accettare i termini prima di procedere"
+    },
+    verify: {
+      title: "Verifica dell'indirizzo email"
     }
   },
 
