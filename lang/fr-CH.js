@@ -352,6 +352,7 @@ export default {
    * Toasts
    */
   toasts: {
+    account_confirmed: "Merci! Votre compte est maintenant vérifié.",
     addresses: {
       created: "Nouvelle adresse créée avec succès!",
       selected: "Adresse sélectionnée."

@@ -10,6 +10,7 @@
         <h1 class="header-title">{{ $t("pages.verify.title") }}</h1>
       </template>
     </Header>
+    
     Verify your account
   </main>
 </template>
@@ -43,7 +44,12 @@ export default {
         return;
       }
 
-      console.log(token);
+      try {
+        await this.$axios.$post('/auth/verify', { token });
+        this.$toast.success(this.$t("toasts.account_confirmed"));
+      } catch (e) {
+        this.$toast.error(e.response.data.errors.token);
+      }
     }
   }
 }

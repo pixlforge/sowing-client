@@ -349,6 +349,7 @@ export default {
    * Toasts
    */
   toasts: {
+    account_confirmed: "Thank you! Your account is now verified.",
     addresses: {
       created: "New address created successfully!",
       selected: "Address selected."
