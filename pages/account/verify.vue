@@ -10,8 +10,11 @@
         <h1 class="header-title">{{ $t("pages.verify.title") }}</h1>
       </template>
     </Header>
-    
-    Verify your account
+
+    <section class="container section mt-150">
+      Verify your account
+    </section>
+
   </main>
 </template>
 

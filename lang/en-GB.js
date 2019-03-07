@@ -242,7 +242,9 @@ export default {
       terms: "I've read and I accept the"
     },
     register_success: {
-      title: "Account created successfully!"
+      title: "Account created successfully!",
+      congratulations: "Congratulations!",
+      account_created: "Your account has been successfully created!"
     },
     search: {
       title: "Search",

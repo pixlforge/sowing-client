@@ -242,7 +242,9 @@ export default {
       terms: "Ich habe gelesen und akzeptiere die"
     },
     register_success: {
-      title: "Konto erfolgreich erstellt!"
+      title: "Konto erfolgreich erstellt!",
+      congratulations: "Herzliche Glückwünsche!",
+      account_created: "Ihr Konto wurde erfolgreich erstellt!"
     },
     search: {
       title: "Suche",
