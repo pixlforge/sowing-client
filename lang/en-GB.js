@@ -273,7 +273,9 @@ export default {
       must_approve: "You must accept the terms before proceeding"
     },
     verify: {
-      title: "Email address verification"
+      title: "Email address verification",
+      success: "Verification completed!",
+      fail: "Oops..."
     }
   },
 

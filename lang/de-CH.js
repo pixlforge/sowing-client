@@ -276,7 +276,9 @@ export default {
         "Sie müssen die Bedingungen akzeptieren, bevor Sie fortfahren"
     },
     verify: {
-      title: "Bestätigung der E-Mail-Adresse"
+      title: "Bestätigung der E-Mail-Adresse",
+      success: "Überprüfung abgeschlossen!",
+      fail: "Oops..."
     }
   },
 

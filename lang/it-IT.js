@@ -275,7 +275,9 @@ export default {
       must_approve: "Devi accettare i termini prima di procedere"
     },
     verify: {
-      title: "Verifica dell'indirizzo email"
+      title: "Verifica dell'indirizzo email",
+      success: "Verifica completata!",
+      fail: "Oops..."
     }
   },
 
