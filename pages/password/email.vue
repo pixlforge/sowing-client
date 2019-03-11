@@ -7,15 +7,16 @@
         <font-awesome-icon :icon="['far', 'redo-alt']"/>
       </template>
       <template slot="title">
-        <h1 class="header-title">{{ $t("pages.password_email.title") }}</h1>
+        <h1 class="header__title">{{ $t("pages.password_email.title") }}</h1>
       </template>
     </Header>
     
+    <!-- Content -->
     <section class="container section mt-150">
 
-      <p class="w-full md:w-3/4 lg:w-2/3 xxl:w-1/2 text-16 text-center leading-normal mx-auto">
+      <h2 class="title-large">
         {{ $t("pages.password_email.paragraphs.first") }}
-      </p>
+      </h2>
 
       <p class="w-full md:w-3/4 lg:w-2/3 xxl:w-1/2 text-16 text-center leading-normal mx-auto mt-10">
         {{ $t("pages.password_email.paragraphs.second") }}
