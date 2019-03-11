@@ -1,0 +1,73 @@
+.form {
+  &__container {
+    @apply mx-auto;
+
+    &--narrow {
+      @apply max-w-500;
+    }
+  }
+
+  &__group {
+    @apply relative mt-40;
+
+    &--first {
+      @apply mt-0;
+    }
+  }
+
+  &__label {
+    @apply block text-12 font-bold uppercase;
+  }
+
+  &__input {
+    @apply block h-42 text-16 w-full appearance-none bg-green-lightest rounded-lg text-green-darkest leading-tight outline-none border-green-lightest border px-15 mt-10;
+
+    &:focus {
+      @apply shadow-outline;
+    }
+  }
+
+  &__feedback {
+    @apply absolute text-12 text-red mt-5;
+  }
+
+  &__links {
+    @apply flex justify-center mt-40;
+  }
+
+  &__link {
+    @apply text-14 text-grey-lighter no-underline outline-none ml-20;
+
+    &:hover {
+      @apply underline;
+    }
+
+    &:focus {
+      @apply shadow-outline rounded-lg;
+    }
+
+    &--first {
+      @apply ml-0;
+    }
+  }
+
+  &__checkbox-group {
+    @apply mt-40;
+  }
+
+  &__checkbox-input {
+    @apply text-20 mr-10;
+  }
+
+  &__checkbox-label {
+    @apply text-14 text-grey-lighter select-none cursor-pointer;
+  }
+
+  &__checkbox-link {
+    @apply text-14 text-green no-underline select-none;
+
+    &:hover {
+      @apply underline;
+    }
+  }
+}

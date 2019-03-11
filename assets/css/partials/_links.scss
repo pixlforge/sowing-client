@@ -17,15 +17,3 @@
 .link-dropdown:hover {
   @apply text-green;
 }
-
-.link-small {
-  @apply text-14 text-grey-lighter no-underline outline-none;
-}
-
-.link-small:hover {
-  @apply underline;
-}
-
-.link-small:focus {
-  @apply shadow-outline;
-}

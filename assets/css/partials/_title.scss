@@ -1,3 +1,17 @@
 .title {
+  &__large {
+    @apply font-cafe text-30 text-green-darkest font-bold tracking-tight;
   
+    @screen md {
+      @apply text-48;
+    }
+
+    &--center {
+      @apply text-center;
+    }
+  }
+
+  &--center {
+    @apply text-center;
+  }
 }

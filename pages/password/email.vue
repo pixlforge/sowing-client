@@ -12,48 +12,45 @@
     </Header>
     
     <!-- Content -->
-    <section class="container section mt-150">
-
-      <h2 class="title-large">
+    <section class="section__container container">
+      <h2 class="title__large title--center">
         {{ $t("pages.password_email.paragraphs.first") }}
       </h2>
 
-      <p class="w-full md:w-3/4 lg:w-2/3 xxl:w-1/2 text-16 text-center leading-normal mx-auto mt-10">
+      <p class="paragraph__large  paragraph--center">
         {{ $t("pages.password_email.paragraphs.second") }}
       </p>
 
       <!-- Form -->
       <form
-        class="max-w-500 mx-auto mt-40"
+        class="form__container form__container--narrow"
         @submit.prevent="send">
 
         <!-- Email -->
         <div>
           <label
             for="email"
-            class="label">
+            class="form__label">
             {{ $t("forms.labels.email") }}
           </label>
           <input
             id="email"
             type="email"
             name="email"
-            class="input-base">
+            class="form__input">
         </div>
           
         <!-- Submit -->
         <button
           type="submit"
-          class="btn btn-primary mx-auto mt-40">
+          class="button button__primary button--centered button--spaced">
           <font-awesome-icon
             :icon="['far', 'redo-alt']"
             class="mr-10"/>
           {{ $t("buttons.password_email") }}
         </button>
-
       </form>
     </section>
-
   </main>
 </template>
 

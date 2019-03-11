@@ -36,23 +36,29 @@
  * @import "components/forms";
  */
 
-@import "partials/avatars.scss";
-@import "partials/badges.scss";
-@import "partials/base.scss";
-@import "partials/buttons.scss";
-@import "partials/cards.scss";
-@import "partials/credit-cards.scss";
-@import "partials/dropdowns.scss";
-@import "partials/footer.scss";
-@import "partials/forms.scss";
-@import "partials/links.scss";
-@import "partials/products.scss";
-@import "partials/search.scss";
-@import "partials/subcategories.scss";
-@import "partials/typography.scss";
+@import "partials/avatars";
+@import "partials/badges";
+@import "partials/base";
+@import "partials/buttons";
+@import "partials/cards";
+@import "partials/credit-cards";
+@import "partials/dropdowns";
+@import "partials/footer";
+@import "partials/forms";
+@import "partials/links";
+@import "partials/products";
+@import "partials/search";
+@import "partials/subcategories";
+@import "partials/typography";
 
-@import "partials/header.scss";
-@import "partials/title.scss";
+@import "partials/button";
+@import "partials/form";
+@import "partials/header";
+@import "partials/icon";
+@import "partials/illustration";
+@import "partials/paragraph";
+@import "partials/section";
+@import "partials/title";
 
 /**
  * This injects all of Tailwind's utility classes, generated based on your

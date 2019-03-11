@@ -25,10 +25,6 @@ html {
   margin: 0;
 }
 
-.section {
-  @apply pb-150;
-}
-
 @responsive {
   .border-spacing-h-40 {
     border-spacing: 0 4rem;
@@ -59,4 +55,8 @@ html {
   .order-5 {
     order: 5;
   }
+}
+
+.nowrap {
+  white-space: nowrap;
 }

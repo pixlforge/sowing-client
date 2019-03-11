@@ -1,0 +1,17 @@
+.icon {
+  &__group {
+    @apply text-center mb-60;
+  }
+
+  &__icon {
+    @apply text-72;
+
+    &--success {
+      @apply text-green;
+    }
+
+    &--danger {
+      @apply text-red;
+    }
+  }
+}

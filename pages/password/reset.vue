@@ -7,22 +7,21 @@
         <font-awesome-icon :icon="['far', 'redo-alt']"/>
       </template>
       <template slot="title">
-        <h1 class="header-title">{{ $t("pages.password_reset.title") }}</h1>
+        <h1 class="header__title">{{ $t("pages.password_reset.title") }}</h1>
       </template>
     </Header>
     
     <!-- Form -->
-    <section class="container section mt-150">
-
+    <section class="section__container container">
       <form
-        class="max-w-500 mx-auto"
+        class="form__container form__container--narrow"
         @submit.prevent="reset">
 
         <!-- Email -->
-        <div>
+        <div class="form__group form__group--first">
           <label
             for="email"
-            class="label">
+            class="form__label">
             {{ $t("forms.labels.email") }}
           </label>
           <input
@@ -30,14 +29,14 @@
             v-model="form.email"
             type="email"
             name="email"
-            class="input-base">
+            class="form__input">
         </div>
 
         <!-- Password -->
-        <div class="mt-40">
+        <div class="form__group">
           <label
             for="password"
-            class="label">
+            class="form__label">
             {{ $t("forms.labels.password") }}
           </label>
           <input
@@ -45,14 +44,14 @@
             v-model="form.password"
             type="password"
             name="password"
-            class="input-base">
+            class="form__input">
         </div>
 
         <!-- Password confirmation -->
-        <div class="mt-40">
+        <div class="form__group">
           <label
             for="password_confirmation"
-            class="label">
+            class="form__label">
             {{ $t("forms.labels.password_confirmation") }}
           </label>
           <input
@@ -60,22 +59,20 @@
             v-model="form.password_confirmation"
             type="password"
             name="password_confirmation"
-            class="input-base">
+            class="form__input">
         </div>
 
         <!-- Submit -->
         <button
           type="submit"
-          class="btn btn-primary mx-auto mt-40">
+          class="button button__primary button--centered button--spaced">
           <font-awesome-icon
             :icon="['far', 'redo-alt']"
             class="mr-10"/>
           {{ $t("buttons.password_reset") }}
         </button>
-
       </form>
     </section>
-
   </main>
 </template>
 

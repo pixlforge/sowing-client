@@ -1,0 +1,24 @@
+.button {
+  @apply block outline-none rounded-lg text-12 text-grey-lighter font-extrabold text-center uppercase transition no-underline px-30 py-12;
+  outline: none !important;
+
+  &:focus {
+    @apply shadow-outline;
+  }
+
+  &__primary {
+    @apply bg-green text-white;
+
+    &:hover {
+      @apply bg-green-dark text-white;
+    }
+  }
+
+  &--centered {
+    @apply mx-auto;
+  }
+
+  &--spaced {
+    @apply mt-40;
+  }
+}

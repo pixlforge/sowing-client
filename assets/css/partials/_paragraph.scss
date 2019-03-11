@@ -1,0 +1,9 @@
+.paragraph {
+  &__large {
+    @apply w-full max-w-800 text-18 leading-relaxed mx-auto my-60;
+  }
+
+  &--center {
+    @apply text-center;
+  }
+}

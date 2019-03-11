@@ -1,5 +1,4 @@
-.select,
-.input-base {
+.select {
   @apply block h-42 text-16 w-full appearance-none bg-green-lightest rounded-lg text-green-darkest leading-tight outline-none px-15 mt-10;
 }
 
@@ -19,20 +18,4 @@
 
 .select-caret {
   @apply absolute h-full pin-y pin-r text-16 text-green-dark mr-20;
-}
-
-.input-base:focus {
-  @apply outline-none shadow-outline;
-}
-
-.label {
-  @apply block text-12 font-bold uppercase;
-}
-
-.input-error {
-  @apply absolute text-12 text-red mt-5;
-}
-
-.form-group {
-  @apply relative;
 }

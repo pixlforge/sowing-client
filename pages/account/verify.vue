@@ -7,23 +7,23 @@
         <font-awesome-icon :icon="['far', 'shield-check']"/>
       </template>
       <template slot="title">
-        <h1 class="header-title">{{ $t("pages.verify.title") }}</h1>
+        <h1 class="header__title">{{ $t("pages.verify.title") }}</h1>
       </template>
     </Header>
 
     <!-- Content -->
-    <section class="container section mt-150">
-      <div class="text-center">
+    <section class="section__container container">
+      <div class="icon__group">
         <font-awesome-icon
           v-if="verificationSuccessful"
           :icon="['far', 'check-circle']"
-          class="text-72 text-green"/>
+          class="icon__icon icon__icon--success"/>
         <font-awesome-icon
           v-if="verificationFailed"
           :icon="['far', 'exclamation-triangle']"
-          class="text-72 text-red"/>
+          class="icon__icon icon__icon--danger"/>
       </div>
-      <h2 class="title-large text-center mt-40">
+      <h2 class="title__large title--center">
         <template v-if="verificationSuccessful">
           {{ $t("pages.verify.success") }}
         </template>
@@ -31,7 +31,7 @@
           {{ $t("pages.verify.fail") }}
         </template>
       </h2>
-      <p class="max-w-600 text-20 text-center leading-normal mx-auto mt-40">
+      <p class="paragraph__large paragraph--center">
         <template v-if="verificationSuccessful">
           {{ $t("toasts.account_confirmed") }}
         </template>
@@ -41,17 +41,17 @@
       </p>
 
       <!-- Illustration -->
-      <div class="w-full sm:w-2/3 xl:w-1/2 px-20 md:px-0 mx-auto mt-100">
+      <div class="illustration__container">
         <img
           v-if="verificationSuccessful"
           src="~assets/img/success2.svg"
           alt="Illustration of a successful action"
-          class="select-none">
+          class="illustration__image">
         <img
           v-if="verificationFailed"
           src="~assets/img/warning.svg"
           alt="Illustration of an unsuccessful action"
-          class="select-none">
+          class="illustration__image">
       </div>
     </section>
 
@@ -92,7 +92,8 @@ export default {
     }
   },
   mounted() {
-    this.verifyEmailAddress();
+    // this.verifyEmailAddress();
+    this.verified = true;
   },
   methods: {
     async verifyEmailAddress() {

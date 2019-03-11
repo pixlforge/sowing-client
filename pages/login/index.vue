@@ -7,71 +7,71 @@
         <font-awesome-icon :icon="['far', 'key']"/>
       </template>
       <template slot="title">
-        <h1 class="header-title">{{ $t("pages.login.title") }}</h1>
+        <h1 class="header__title">{{ $t("pages.login.title") }}</h1>
       </template>
     </Header>
     
     <!-- Form -->
-    <section class="container section mt-150">
+    <section class="section__container container">
       <form
-        class="max-w-500 mx-auto"
+        class="form__container form__container--narrow"
         @submit.prevent="login">
 
         <!-- Email -->
-        <div class="form-group">
+        <div class="form__group form__group--first">
           <label
             for="email"
-            class="label">
+            class="form__label">
             {{ $t("forms.labels.email") }}
           </label>
           <input
             id="email"
             ref="autofocus"
             v-model="form.email"
-            :class="{ 'border-red': errors.email, 'border-green-lightest': !errors.email }"
+            :class="{ 'border-red': errors.email }"
             type="email"
             name="email"
-            class="input-base border"
+            class="form__input"
             required
             autofocus>
           <template v-if="errors.email">
-            <p class="input-error">{{ errors.email }}</p>
+            <p class="form__feedback">{{ errors.email }}</p>
           </template>
         </div>
 
         <!-- Password -->
-        <div class="form-group mt-40">
+        <div class="form__group">
           <label
             for="password"
-            class="label">
+            class="form__label">
             {{ $t("forms.labels.password") }}
           </label>
           <input
             id="password"
             v-model="form.password"
-            :class="{ 'border-red': errors.password, 'border-green-lightest': !errors.password }"
+            :class="{ 'border-red': errors.password }"
             type="password"
             name="password"
-            class="input-base border"
+            class="form__input"
             required>
           <template v-if="errors.password">
-            <p class="input-error">{{ errors.password }}</p>
+            <p class="form__feedback">{{ errors.password }}</p>
           </template>
         </div>
 
-        <div class="flex justify-center mt-40">
+        <div class="form__links">
           
           <!-- Password forgotten -->
           <nuxt-link
             :to="localePath({ name: 'password-email' })"
-            class="link-small mr-20">
+            class="form__link form__link--first">
             {{ $t("pages.login.links.password") }}
           </nuxt-link>
 
           <!-- Register an account -->
           <nuxt-link
             :to="localePath({ name: 'register' })"
-            class="link-small">
+            class="form__link">
             {{ $t("pages.login.links.register") }}
           </nuxt-link>
         </div>
@@ -79,16 +79,14 @@
         <!-- Submit -->
         <button
           type="submit"
-          class="btn btn-primary mx-auto mt-40">
+          class="button button__primary button--centered button--spaced">
           <font-awesome-icon
             :icon="['far', 'key']"
             class="mr-10"/>
           {{ $t("buttons.connection") }}
         </button>
-
       </form>
     </section>
-
   </main>
 </template>
 

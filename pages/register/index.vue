@@ -7,83 +7,83 @@
         <font-awesome-icon :icon="['far', 'user-plus']"/>
       </template>
       <template slot="title">
-        <h1 class="header-title">{{ $t("pages.register.title") }}</h1>
+        <h1 class="header__title">{{ $t("pages.register.title") }}</h1>
       </template>
     </Header>
 
     <!-- Form -->
-    <section class="container section mt-150">
+    <section class="section__container container">
       <form
-        class="max-w-500 mx-auto"
+        class="form__container form__container--narrow"
         @submit.prevent="register">
 
         <!-- Name -->
-        <div class="form-group">
+        <div class="form__group form__group--first">
           <label
             for="name"
-            class="label">
+            class="form__label">
             {{ $t("forms.labels.name") }}
           </label>
           <input
             id="name"
             ref="autofocus"
             v-model="form.name"
-            :class="{ 'border-red': errors.name, 'border-green-lightest': !errors.name }"
+            :class="{ 'border-red': errors.name }"
             type="text"
             name="name"
-            class="input-base border"
+            class="form__input"
             required
             autofocus>
           <template v-if="errors.name">
-            <p class="input-error">{{ errors.name[0] }}</p>
+            <p class="form__feedback">{{ errors.name[0] }}</p>
           </template>
         </div>
 
         <!-- Email -->
-        <div class="form-group mt-40">
+        <div class="form__group">
           <label
             for="email"
-            class="label">
+            class="form__label">
             {{ $t("forms.labels.email") }}
           </label>
           <input
             id="email"
             v-model="form.email"
-            :class="{ 'border-red': errors.email, 'border-green-lightest': !errors.email }"
+            :class="{ 'border-red': errors.email }"
             type="email"
             name="email"
-            class="input-base border"
+            class="form__input"
             required>
           <template v-if="errors.email">
-            <p class="input-error">{{ errors.email[0] }}</p>
+            <p class="form__feedback">{{ errors.email[0] }}</p>
           </template>
         </div>
 
         <!-- Password -->
-        <div class="form-group mt-40">
+        <div class="form__group">
           <label
             for="password"
-            class="label">
+            class="form__label">
             {{ $t("forms.labels.password") }}
           </label>
           <input
             id="password"
             v-model="form.password"
-            :class="{ 'border-red': errors.password, 'border-green-lightest': !errors.password }"
+            :class="{ 'border-red': errors.password }"
             type="password"
             name="password"
-            class="input-base border"
+            class="form__input"
             required>
           <template v-if="errors.password">
-            <p class="input-error">{{ errors.password[0] }}</p>
+            <p class="form__feedback">{{ errors.password[0] }}</p>
           </template>
         </div>
 
         <!-- Password confirmation -->
-        <div class="form-group mt-40">
+        <div class="form__group">
           <label
             for="password_confirmation"
-            class="label">
+            class="form__label">
             {{ $t("forms.labels.password_confirmation") }}
           </label>
           <input
@@ -91,23 +91,23 @@
             v-model="form.password_confirmation"
             type="password"
             name="password_confirmation"
-            class="input-base border border-green-lightest"
+            class="form__input"
             required>
         </div>
 
         <!-- Terms -->
-        <div class="mt-40">
+        <div class="form__checkbox-group">
           <label for="terms">
             <input
               id="terms"
               v-model="terms"
               type="checkbox"
               name="terms"
-              class="text-20 mr-10">
-            <span class="text-14 text-grey-lighter select-none cursor-pointer">{{ $t("pages.register.terms") }}</span>
+              class="form__checkbox-input">
+            <span class="form__checkbox-label">{{ $t("pages.register.terms") }}</span>
             <nuxt-link
               :to="localePath({ name: 'index' })"
-              class="text-14 text-green no-underline hover:underline select-none">{{ $t("pages.register.links.terms") }}</nuxt-link>.
+              class="form__checkbox-link">{{ $t("pages.register.links.terms") }}</nuxt-link>.
           </label>
         </div>
           
@@ -116,7 +116,7 @@
           :disabled="!terms"
           :class="{ 'btn-disabled': !terms }"
           type="submit"
-          class="btn btn-primary mx-auto mt-40">
+          class="button button__primary button--centered button--spaced">
           <font-awesome-icon
             :icon="['far', 'user']"
             class="mr-10"/>
