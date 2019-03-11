@@ -45,12 +45,14 @@
 @import "partials/dropdowns.scss";
 @import "partials/footer.scss";
 @import "partials/forms.scss";
-@import "partials/headers.scss";
 @import "partials/links.scss";
 @import "partials/products.scss";
 @import "partials/search.scss";
 @import "partials/subcategories.scss";
 @import "partials/typography.scss";
+
+@import "partials/header.scss";
+@import "partials/title.scss";
 
 /**
  * This injects all of Tailwind's utility classes, generated based on your
