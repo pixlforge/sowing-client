@@ -25,10 +25,26 @@
     &:focus {
       @apply shadow-outline;
     }
+
+    &--grouped {
+      @apply w-350 rounded-r-none pl-15 mt-0;
+    }
   }
 
   &__feedback {
     @apply absolute text-12 text-red mt-5;
+
+    &--white {
+      @apply text-white;
+    }
+
+    &--centered {
+      @apply w-full text-center;
+
+      @screen lg {
+        @apply text-left;
+      }
+    }
   }
 
   &__links {

@@ -1,5 +1,5 @@
 .button {
-  @apply block outline-none rounded-lg text-12 text-grey-lighter font-extrabold text-center uppercase transition no-underline px-30 py-12;
+  @apply block outline-none rounded-lg text-12 text-grey-lighter font-extrabold text-center uppercase transition no-underline nowrap px-30 py-12;
   outline: none !important;
 
   &:focus {
@@ -139,5 +139,9 @@
 
   &--large {
     @apply flex justify-center items-center text-14 py-15;
+  }
+  
+  &--grouped {
+    @apply rounded-l-none;
   }
 }

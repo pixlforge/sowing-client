@@ -51,6 +51,7 @@
     <!-- Streak register -->
     <section>
       <StreakRegister/>
+      <StreakNewsletter/>
     </section>
 
     <!-- Shops -->

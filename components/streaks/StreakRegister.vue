@@ -1,36 +1,33 @@
 <template>
-  <div class="bg-green">
-    <div class="container">
-      <div class="flex items-center">
+  <div class="streak__background--green">
+    <div class="streak__container container">
         
-        <div class="hidden lg:block lg:w-1/2 xl:w-1/3">
-          <img
-            src="~assets/img/rocket.svg"
-            alt=""
-            class="block w-full">
-        </div>
+      <div class="streak__illustration-container">
+        <img
+          src="~assets/img/rocket.svg"
+          alt="Illustration representing a rocket"
+          class="streak__illustration streak__illustration--register">
+      </div>
         
-        <div class="w-full lg:w-1/2 xl:w-2/3 py-110">
-          <h3 class="title-large text-white">
-            {{ $t("streaks.register.title") }}
-          </h3>
+      <div class="streak__content">
+        <h3 class="title__large title--white">
+          {{ $t("streaks.register.title") }}
+        </h3>
           
-          <p class="text-20 xl:text-26 font-semibold text-white text-center lg:text-left mt-30">
-            {{ $t("streaks.register.body") }}
-          </p>
+        <p class="streak__body">
+          {{ $t("streaks.register.body") }}
+        </p>
 
-          <div class="flex justify-center lg:justify-start mt-40">
-            <nuxt-link
-              :to="localePath({ name: 'index' })"
-              class="btn btn-secondary">
-              <font-awesome-icon
-                :icon="['far', 'store']"
-                class="mr-10"/>
-              {{ $t("buttons.create_my_shop") }}
-            </nuxt-link>
-          </div>
+        <div class="streak__controls">
+          <nuxt-link
+            :to="localePath({ name: 'index' })"
+            class="button button__secondary">
+            <font-awesome-icon
+              :icon="['far', 'store']"
+              class="mr-10"/>
+            {{ $t("buttons.create_my_shop") }}
+          </nuxt-link>
         </div>
-
       </div>
     </div>
   </div>
