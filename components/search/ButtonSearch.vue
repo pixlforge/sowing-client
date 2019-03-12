@@ -2,10 +2,10 @@
   <nuxt-link
     :to="localePath({ name: 'search' })"
     :class="btnTheme"
-    class="block w-40 h-40 outline-none focus:shadow-outline rounded-full transition flex justify-center items-center">
+    class="button__round">
     <font-awesome-icon
       :icon="['far', 'search']"
-      class="text-18 text-white"/>
+      class="button__icon--large"/>
   </nuxt-link>
 </template>
 

@@ -10,7 +10,122 @@
     @apply bg-green text-white;
 
     &:hover {
-      @apply bg-green-dark text-white;
+      @apply bg-green-dark;
+    }
+  }
+
+  &__secondary {
+    @apply bg-pink-dark text-white;
+
+    &:hover {
+      @apply bg-pink-darker;
+    }
+  }
+
+  &__default,
+  &__default:hover {
+    @apply text-grey border border-grey-lightest;
+  }
+
+  &__disabled,
+  &__disabled:hover {
+    @apply bg-grey-lightest text-white cursor-not-allowed;
+  }
+
+  &__green {
+    @apply bg-green text-white;
+
+    &:hover {
+      @apply bg-green-dark;
+    }
+  }
+
+  &__pink {
+    @apply bg-pink text-white;
+
+    &:hover {
+      @apply bg-pink-dark;
+    }
+  }
+
+  &__purple {
+    @apply bg-purple text-white;
+
+    &:hover {
+      @apply bg-purple-dark;
+    }
+  }
+
+  &__indigo {
+    @apply bg-indigo text-white;
+
+    &:hover {
+      @apply bg-indigo-dark;
+    }
+  }
+
+  &__blue {
+    @apply bg-blue text-white;
+
+    &:hover {
+      @apply bg-blue-dark;
+    }
+  }
+
+  &__brown {
+    @apply bg-brown text-white;
+
+    &:hover {
+      @apply bg-brown-dark;
+    }
+  }
+
+  &__grey {
+    @apply bg-grey text-white;
+
+    &:hover {
+      @apply bg-grey-dark;
+    }
+  }
+
+  &__slate {
+    @apply bg-slate text-white;
+
+    &:hover {
+      @apply bg-slate-dark;
+    }
+  }
+
+  &__icon {
+    @apply text-16;
+
+    &--large {
+      @apply text-18;
+    }
+  }
+
+  &__caret {
+    @apply text-16 ml-15;
+  }
+
+  &__round {
+    @apply block relative w-40 h-40 outline-none rounded-full transition flex justify-center items-center;
+
+    &:focus {
+      @apply shadow-outline;
+    }
+  }
+
+  &__badge {
+    @apply absolute pin-t pin-r w-20 h-20 rounded-full bg-pink-dark text-12 font-bold text-white flex justify-center items-center;
+    line-height: 0;
+  }
+
+  &--navbar {
+    @apply flex justify-center items-center px-10 py-10;
+
+    @screen md {
+      @apply px-20;
     }
   }
 
@@ -20,5 +135,9 @@
 
   &--spaced {
     @apply mt-40;
+  }
+
+  &--large {
+    @apply flex justify-center items-center text-14 py-15;
   }
 }

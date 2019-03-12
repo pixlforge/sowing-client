@@ -1,0 +1,21 @@
+.dropdown {
+  &__parent {
+    @apply relative;
+  }
+
+  &__child {
+    @apply hidden absolute bg-white shadow rounded-lg list-reset text-left pin-t pin-l px-30 py-20 mt-50 z-20;
+  }
+
+  &__link {
+    @apply block text-12 text-grey font-extrabold leading-normal uppercase no-underline nowrap text-grey-dark transition py-5 cursor-pointer;
+
+    &:hover {
+      @apply text-green;
+    }
+  }
+
+  &__divider {
+    @apply border-t border-grey-lightest rounded-full my-20;
+  }
+}

@@ -1,21 +1,21 @@
 <template>
-  <div class="container flex justify-between items-center px-20 py-30">
+  <nav class="navbar__container container">
 
     <!-- Logo -->
     <nuxt-link :to="localePath({ name: 'index' })">
       <Logo/>
     </nuxt-link>
 
-    <div class="flex">
+    <div class="navbar__menu">
       
       <!-- Languages -->
-      <ButtonLanguages class="mr-20"/>
+      <ButtonLanguages class="navbar__languages"/>
 
       <!-- Login -->
       <nuxt-link
         v-if="!loggedIn"
         :to="localePath({ name: 'login' })"
-        class="btn btn-default w-full md:w-auto text-center mr-20">
+        class="button button__default mr-20">
         {{ $t("buttons.login") }}
       </nuxt-link>
 
@@ -23,7 +23,7 @@
       <nuxt-link
         v-if="!loggedIn"
         :to="localePath({ name: 'register' })"
-        class="btn btn-secondary w-full md:w-auto text-center mr-20">
+        class="button button__secondary mr-20">
         <font-awesome-icon
           :icon="['far', 'rocket']"
           class="mr-5"/>
@@ -33,19 +33,16 @@
       <!-- User -->
       <ButtonUser
         v-if="loggedIn"
-        class="w-full md:w-auto text-center mr-20"/>
-
-      <!-- Searchbar -->
-      <!-- <Searchbar class="w-full md:w-350 lg:w-250 xl:w-350 md:order-1 mt-20 md:mt-0"/> -->
+        class="mr-20"/>
 
       <!-- Search page link -->
       <ButtonSearch class="mr-20"/>
 
       <!-- Cart page link -->
-      <ButtonCart class=""/>
+      <ButtonCart/>
     </div>
 
-  </div>
+  </nav>
 </template>
 
 <script>

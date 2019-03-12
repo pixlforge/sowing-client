@@ -1,28 +1,28 @@
 <template>
-  <div class="dropdown-parent">
+  <div class="dropdown__parent">
     <button
       ref="dropdownMenu"
-      class="btn btn-default flex justify-center items-center px-10 md:px-20 py-10"
+      class="button button__default button--navbar"
       @click.prevent="toggleDropdown">
       <div :class="textTheme">
         <font-awesome-icon
           :icon="['far', 'globe-europe']"
-          class="text-16"/>
+          class="button__icon"/>
       </div>
       <font-awesome-icon
         :icon="['fas', 'caret-down']"
-        class="text-16 ml-15"/>
+        class="button__caret"/>
     </button>
 
     <ul
       :class="{ 'block': dropdownIsOpen }"
-      class="dropdown-child leading-normal">
+      class="dropdown__child">
       <li
         v-for="locale in $i18n.locales"
         :key="locale.code">
         <nuxt-link
           :to="switchLocalePath(locale.code)"
-          class="link-dropdown">
+          class="dropdown__link">
           {{ locale.name }}
         </nuxt-link>
       </li>

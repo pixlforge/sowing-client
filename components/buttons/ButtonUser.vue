@@ -1,24 +1,24 @@
 <template>
-  <div class="dropdown-parent">
+  <div class="dropdown__parent">
     <button
       ref="dropdownMenu"
-      class="btn btn-default flex justify-center items-center px-10 md:px-20 py-10"
+      class="button button__default button--navbar"
       @click.prevent="toggleDropdown">
       {{ username }}
       <font-awesome-icon
         :icon="['fas', 'caret-down']"
-        class="text-16 ml-15"/>
+        class="button__caret"/>
     </button>
 
     <ul
       :class="{ 'block': dropdownIsOpen }"
-      class="dropdown-child leading-normal">
+      class="dropdown__child">
 
       <!-- Orders -->
       <li>
         <nuxt-link
           :to="localePath({ name: 'orders' })"
-          class="link-dropdown">
+          class="dropdown__link">
           <font-awesome-icon
             :icon="['far', 'shipping-fast']"
             class="mr-5"/>
@@ -30,7 +30,7 @@
       <li v-if="userHasShop">
         <nuxt-link
           :to="localePath({ name: 'shop' })"
-          class="link-dropdown">
+          class="dropdown__link">
           <font-awesome-icon
             :icon="['far', 'store']"
             class="mr-5"/>
@@ -44,7 +44,7 @@
         class="mt-10">
         <nuxt-link
           :to="localePath({ name: 'shop-creator-terms' })"
-          class="btn btn-secondary nowrap">
+          class="button button__secondary nowrap">
           <font-awesome-icon
             :icon="['far', 'store']"
             class="mr-10"/>
@@ -52,12 +52,12 @@
         </nuxt-link>
       </li>
 
-      <hr class="border-t border-grey-lightest rounded-full my-20">
+      <hr class="dropdown__divider">
 
       <!-- Logout -->
       <li>
         <a
-          class="link-dropdown text-pink-dark"
+          class="dropdown__link text-pink-dark"
           @click="logout">
           <font-awesome-icon
             :icon="['far', 'sign-out']"
