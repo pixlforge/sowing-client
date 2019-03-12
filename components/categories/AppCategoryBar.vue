@@ -1,13 +1,13 @@
 <template>
-  <div class="bg-green-lightest py-5">
-    <div class="container h-full flex items-center px-20">
-      <ul class="list-reset w-full flex flex-wrap justify-between -mx-10">
+  <div class="category-bar__background">
+    <div class="category-bar__container container">
+      <ul class="category-bar__list">
         <li
           v-for="category in categories"
           :key="category.slug">
           <nuxt-link
             :to="localePath({ name: 'categories-slug', params: { slug: category.slug } })"
-            class="link-category">
+            class="category-bar__link">
             {{ category.name[locale] }}
           </nuxt-link>
         </li>

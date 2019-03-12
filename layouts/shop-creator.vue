@@ -2,7 +2,7 @@
   <div>
     <TheAlert/>
     <Navbar/>
-    <Categories/>
+    <AppCategoryBar/>
     <AppShopCover
       v-if="shopCover"
       :shop-cover="shopCover"/>
@@ -37,7 +37,7 @@
 <script>
 import TheAlert from "@/components/globals/TheAlert";
 import Navbar from "@/components/Navbar";
-import Categories from "@/components/categories/Categories";
+import AppCategoryBar from "@/components/categories/AppCategoryBar";
 import Header from "@/components/Header";
 import AppShopNavigation from "@/components/shops/AppShopNavigation";
 import Footer from "@/components/footer/Footer";
@@ -50,7 +50,7 @@ export default {
   components: {
     TheAlert,
     Navbar,
-    Categories,
+    AppCategoryBar,
     Header,
     AppShopNavigation,
     Footer,

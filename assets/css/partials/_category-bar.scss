@@ -1,0 +1,25 @@
+.category-bar {
+  &__background {
+    @apply bg-green-lightest py-5;
+  }
+
+  &__container {
+    @apply h-full flex items-center px-20;
+  }
+
+  &__list {
+    @apply list-reset w-full flex flex-wrap justify-between -mx-10;
+  }
+
+  &__link {
+    @apply block no-underline text-16 font-semibold text-green-darkest transition outline-none rounded-lg px-10 py-10;
+
+    &:hover {
+      @apply text-green;
+    }
+
+    &:focus {
+      @apply shadow-outline;
+    }
+  }
+}

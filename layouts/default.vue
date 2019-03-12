@@ -2,7 +2,7 @@
   <div>
     <TheAlert/>
     <Navbar/>
-    <Categories/>
+    <AppCategoryBar/>
     <nuxt/>
     <Footer/>
     <Disclaimer :class="bgTheme"/>
@@ -12,7 +12,7 @@
 <script>
 import TheAlert from "@/components/globals/TheAlert";
 import Navbar from "@/components/Navbar";
-import Categories from "@/components/categories/Categories";
+import AppCategoryBar from "@/components/categories/AppCategoryBar";
 import Footer from "@/components/footer/Footer";
 import Disclaimer from "@/components/footer/Disclaimer";
 import theming from "@/mixins/theming";
@@ -22,7 +22,7 @@ export default {
   components: {
     TheAlert,
     Navbar,
-    Categories,
+    AppCategoryBar,
     Footer,
     Disclaimer
   },
