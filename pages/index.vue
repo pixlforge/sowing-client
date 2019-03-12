@@ -51,15 +51,16 @@
     <!-- Streak register -->
     <section>
       <StreakRegister/>
-      <StreakNewsletter/>
     </section>
 
     <!-- Shops -->
-    <section class="container section">
-      <h1 class="title-large text-center mt-150">{{ $t("pages.home.titles.shops") }}</h1>
-      <div class="flex flex-wrap justify-between px-20 mt-20">
-        
-        <CardShopMedium
+    <section class="section__container container">
+      <h1 class="title__large title--center">
+        {{ $t("pages.home.titles.shops") }}
+      </h1>
+
+      <div class="shop-card__wrapper">
+        <AppShopCard
           v-for="shop in shops"
           :key="shop.id"
           :shop="shop"/>
@@ -131,9 +132,9 @@
 <script>
 import Review from "@/components/Review";
 import Feature from "@/components/Feature";
-import CardShopMedium from "@/components/cards/CardShopMedium";
-import FeaturedCategoryLarge from "@/components/cards/FeaturedCategoryLarge";
-import FeaturedCategorySmall from "@/components/cards/FeaturedCategorySmall";
+import AppShopCard from "@/components/shops/AppShopCard";
+import FeaturedCategoryLarge from "@/components/categories/FeaturedCategoryLarge";
+import FeaturedCategorySmall from "@/components/categories/FeaturedCategorySmall";
 import CardCategorySmall from "@/components/cards/CardCategorySmall";
 import StreakRegister from "@/components/streaks/StreakRegister";
 import StreakNewsletter from "@/components/streaks/StreakNewsletter";
@@ -148,7 +149,7 @@ export default {
   components: {
     Review,
     Feature,
-    CardShopMedium,
+    AppShopCard,
     FeaturedCategoryLarge,
     FeaturedCategorySmall,
     CardCategorySmall,
