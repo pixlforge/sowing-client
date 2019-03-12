@@ -4,30 +4,32 @@
     <!-- Header -->
     <Header>
       <template slot="title">
-        <h1 class="header-title">{{ category.name[locale] }}</h1>
+        <h1 class="header__title">{{ category.name[locale] }}</h1>
       </template>
       <template slot="description">
-        <p class="header-description">
+        <p class="header__description">
           {{ category.description[locale] }}
         </p>
       </template>
     </Header>
 
-    <section class="container section px-40">
+    <!-- Content -->
+    <section class="section__container container">
 
       <!-- Subcategories with sections -->
       <template v-if="categoryHasSections">
         <div
           v-for="section in category.children"
-          :key="section.id"
-          class="">
-          <h2 class="text-48 text-green-darkest mt-150">{{ section.name[locale] }}</h2>
+          :key="section.id">
+          <h2 class="subcategory__section">
+            {{ section.name[locale] }}
+          </h2>
 
-          <div class="flex flex-wrap justify-center -mx-40 mt-60">
+          <div class="subcategory__wrapper">
             <div
               v-for="subcategory in section.children"
               :key="subcategory.slug"
-              class="subcategory-container">
+              class="subcategory__container">
               <SubCategory
                 :category="category"
                 :subcategory="subcategory"/>
@@ -38,11 +40,11 @@
 
       <!-- Subcategories without sections -->
       <template v-else>
-        <div class="flex flex-wrap justify-center -mx-40 mt-100">
+        <div class="subcategory__wrapper">
           <div
             v-for="subcategory in category.children"
             :key="subcategory.slug"
-            class="subcategory-container">
+            class="subcategory__container">
             <SubCategory
               :category="category"
               :subcategory="subcategory"/>
