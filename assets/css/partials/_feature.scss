@@ -1,0 +1,33 @@
+.feature {
+  &__wrapper {
+    @apply flex flex-wrap justify-between -mx-20;
+  }
+
+  &__container {
+    @apply w-full px-20 mx-auto mt-100;
+
+    @screen md {
+      @apply w-1/2;
+    }
+
+    @screen xxl {
+      @apply w-1/4;
+    }
+  }
+
+  &__icon-container {
+    @apply w-90 h-90 border-4 border-pink-dark rounded-full flex justify-center items-center mx-auto;
+  }
+
+  &__icon {
+    @apply text-48 text-pink-dark;
+  }
+
+  &__title {
+    @apply text-20 text-green-darkest font-extrabold text-center uppercase mt-40;
+  }
+
+  &__body {
+    @apply text-16 text-grey-light text-center leading-loose mt-30;
+  }
+}

@@ -11,9 +11,12 @@
     </section>
     
     <!-- Features -->
-    <section class="container section">
-      <h1 class="title-large text-center mt-150">{{ $t("pages.home.titles.features") }}</h1>
-      <div class="flex flex-wrap justify-between">
+    <section class="section__container container">
+      <h1 class="title__large title--center">
+        {{ $t("pages.home.titles.features") }}
+      </h1>
+
+      <div class="feature__wrapper">
 
         <Feature icon="lightbulb">
           <template slot="title">
