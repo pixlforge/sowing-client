@@ -82,10 +82,12 @@
     </section>
 
     <!-- Reviews -->
-    <section class="container section">
-      <h1 class="title-large text-center mt-150">{{ $t("pages.home.titles.reviews") }}</h1>
-      <div class="w-full xl:w-3/4 xxl:w-1/2 mx-auto mt-100">
+    <section class="section__container container">
+      <h1 class="title__large title--center">
+        {{ $t("pages.home.titles.reviews") }}
+      </h1>
 
+      <div class="review__wrapper">
         <Review
           :stars="3"
           name="Marty McFly"
@@ -94,7 +96,7 @@
             <img
               src="~assets/img/reviews/avatars/marty.jpg"
               alt="Avatar Marty McFly"
-              class="avatar-review">
+              class="review__avatar">
           </template>
         </Review>
 
@@ -106,7 +108,7 @@
             <img
               src="~assets/img/reviews/avatars/doc.png"
               alt="Avatar Doc Brown"
-              class="avatar-review">
+              class="review__avatar">
           </template>
         </Review>
 
@@ -118,7 +120,7 @@
             <img
               src="~assets/img/reviews/avatars/biff.jpg"
               alt="Avatar Biff Tannen"
-              class="avatar-review">
+              class="review__avatar">
           </template>
         </Review>
       </div>

@@ -1,4 +1,16 @@
 .review {
+  &__wrapper {
+    @apply w-full mx-auto mt-100;
+
+    @screen xl {
+      @apply w-3/4;
+    }
+
+    @screen xxl {
+      @apply w-1/2;
+    }
+  }
+
   &__container {
     @apply w-full flex flex-col mt-50;
 
@@ -11,8 +23,12 @@
     @apply flex flex-col items-center;
   }
 
-  &__avatar {
+  &__avatar-container {
     @apply w-100;
+  }
+
+  &__avatar {
+    @apply w-100 h-100 rounded-full shadow-md;
   }
 
   &__rating {

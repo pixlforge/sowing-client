@@ -1,7 +1,7 @@
 <template>
   <div class="review__container">
     <div class="review__meta">
-      <div class="review__avatar">
+      <div class="review__avatar-container">
         <slot name="avatar"/>
       </div>
       <div class="review__rating">
