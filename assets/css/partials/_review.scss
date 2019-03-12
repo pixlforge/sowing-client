@@ -1,0 +1,45 @@
+.review {
+  &__container {
+    @apply w-full flex flex-col mt-50;
+
+    @screen md {
+      @apply flex-row;
+    }
+  }
+
+  &__meta {
+    @apply flex flex-col items-center;
+  }
+
+  &__avatar {
+    @apply w-100;
+  }
+
+  &__rating {
+    @apply flex justify-center;
+  }
+
+  &__star {
+    @apply text-16 text-orange mt-10;
+  }
+
+  &__content {
+    @apply text-center px-20 mt-40;
+
+    @screen sm {
+      @apply px-50;
+    }
+
+    @screen md {
+      @apply text-left mt-0;
+    }
+  }
+
+  &__name {
+    @apply text-24 text-green-darkest font-bold;
+  }
+
+  &__body {
+    @apply text-16 text-green-darkest leading-loose mt-20;
+  }
+}

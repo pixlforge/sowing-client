@@ -1,20 +1,20 @@
 <template>
-  <div class="w-full flex flex-col md:flex-row mt-50">
-    <div class="flex flex-col items-center">
-      <div class="w-100">
+  <div class="review__container">
+    <div class="review__meta">
+      <div class="review__avatar">
         <slot name="avatar"/>
       </div>
-      <div class="flex justify-center">
+      <div class="review__rating">
         <font-awesome-icon
           v-for="(star, index) in stars"
           :key="index"
           :icon="['fas', 'star']"
-          class="text-16 text-orange mt-10"/>
+          class="review__star"/>
       </div>
     </div>
-    <div class="text-center md:text-left px-20 sm:px-50 mt-40 md:mt-0">
-      <h5 class="text-24 text-green-darkest font-bold">{{ name }}</h5>
-      <p class="text-16 text-green-darkest leading-loose mt-20">{{ body }}</p>
+    <div class="review__content">
+      <h5 class="review__name">{{ name }}</h5>
+      <p class="review__body">{{ body }}</p>
     </div>
   </div>
 </template>
