@@ -1,21 +1,21 @@
 <template>
   <div
     :style="imgUrl"
-    class="relative w-full lg:w-1/2 h-700 bg-cover bg-center bg-no-repeat flex items-end">
-    <div class="flex flex-col items-start px-60 pb-50 z-10">
-      <h2 class="title-large text-white">
+    class="featured-category__container featured-category__container--large">
+    <div class="featured-category__content">
+      <h2 class="title__large title--white">
         Vêtements pour bébé
       </h2>
-      <p class="text-16 md:text-20 font-semibold text-white mt-10">
+      <p class="featured-category__description">
         Now let's put some happy little clouds in here. Have fun with it. It looks so good, I might as well not stop.
       </p>
       <nuxt-link
         :to="localePath({ name: 'index' })"
-        class="btn btn-primary mt-40">
+        class="button button__primary button--spaced">
         Voir les produits
       </nuxt-link>
     </div>
-    <div class="absolute w-full h-full bg-black opacity-25"/>
+    <div class="featured-category__mask"/>
   </div>
 </template>
 

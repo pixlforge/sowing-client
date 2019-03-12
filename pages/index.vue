@@ -2,22 +2,22 @@
   <main>
 
     <!-- Featured Categories -->
-    <section class="w-full flex flex-col lg:flex-row">
-      <CardCategoryHuge/>
-      <div class="w-full lg:w-1/2 flex flex-col">
-        <CardCategoryLarge/>
-        <CardCategoryLarge/>
+    <section class="featured-category__wrapper">
+      <FeaturedCategoryLarge/>
+      <div class="featured-category__wrapper featured-category__wrapper--small">
+        <FeaturedCategorySmall/>
+        <FeaturedCategorySmall/>
       </div>
     </section>
     
     <!-- Features -->
     <section class="section__container container">
+
       <h1 class="title__large title--center">
         {{ $t("pages.home.titles.features") }}
       </h1>
 
       <div class="feature__wrapper">
-
         <Feature icon="lightbulb">
           <template slot="title">
             {{ $t("pages.home.features.first.title") }}
@@ -131,8 +131,8 @@
 import Review from "@/components/Review";
 import Feature from "@/components/Feature";
 import CardShopMedium from "@/components/cards/CardShopMedium";
-import CardCategoryHuge from "@/components/cards/CardCategoryHuge";
-import CardCategoryLarge from "@/components/cards/CardCategoryLarge";
+import FeaturedCategoryLarge from "@/components/cards/FeaturedCategoryLarge";
+import FeaturedCategorySmall from "@/components/cards/FeaturedCategorySmall";
 import CardCategorySmall from "@/components/cards/CardCategorySmall";
 import StreakRegister from "@/components/streaks/StreakRegister";
 import StreakNewsletter from "@/components/streaks/StreakNewsletter";
@@ -148,8 +148,8 @@ export default {
     Review,
     Feature,
     CardShopMedium,
-    CardCategoryHuge,
-    CardCategoryLarge,
+    FeaturedCategoryLarge,
+    FeaturedCategorySmall,
     CardCategorySmall,
     StreakRegister,
     StreakNewsletter
