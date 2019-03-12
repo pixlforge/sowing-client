@@ -68,11 +68,13 @@
     </section>
 
     <!-- Categories -->
-    <section class="container section">
-      <h1 class="title-large text-center mt-150">{{ $t("pages.home.titles.categories") }}</h1>
-      <div class="flex flex-wrap justify-center xxl:justify-between px-20 mt-20 xxl:-mx-10">
+    <section class="section__container container">
+      <h1 class="title__large title--center">
+        {{ $t("pages.home.titles.categories") }}
+      </h1>
 
-        <CardCategorySmall
+      <div class="category-card__wrapper">
+        <AppCategoryCard
           v-for="category in categories"
           :key="category.id"
           :category="category"/>
@@ -135,7 +137,7 @@ import Feature from "@/components/Feature";
 import AppShopCard from "@/components/shops/AppShopCard";
 import FeaturedCategoryLarge from "@/components/categories/FeaturedCategoryLarge";
 import FeaturedCategorySmall from "@/components/categories/FeaturedCategorySmall";
-import CardCategorySmall from "@/components/cards/CardCategorySmall";
+import AppCategoryCard from "@/components/categories/AppCategoryCard";
 import StreakRegister from "@/components/streaks/StreakRegister";
 import StreakNewsletter from "@/components/streaks/StreakNewsletter";
 import { mapGetters } from "vuex";
@@ -152,7 +154,7 @@ export default {
     AppShopCard,
     FeaturedCategoryLarge,
     FeaturedCategorySmall,
-    CardCategorySmall,
+    AppCategoryCard,
     StreakRegister,
     StreakNewsletter
   },
