@@ -1,9 +1,11 @@
 <template>
-  <div class="w-full">
+  <div class="shop-creator__section">
 
     <!-- Profile image -->
-    <section class="w-full max-w-1000">
-      <h5 class="text-24">{{ $t("forms.labels.avatar") }}</h5>
+    <section class="shop-customization__group shop-customization__group--first">
+      <h5 class="shop-customization__label">
+        {{ $t("forms.labels.avatar") }}
+      </h5>
       <dropzone
         id="dropzoneProfile"
         ref="dropzoneProfile"
@@ -14,8 +16,10 @@
     </section>
 
     <!-- Cover image -->
-    <section class="w-full max-w-1000 mt-100">
-      <h5 class="text-24">{{ $t("forms.labels.cover_image") }}</h5>
+    <section class="shop-customization__group">
+      <h5 class="shop-customization__label">
+        {{ $t("forms.labels.cover_image") }}
+      </h5>
       <dropzone
         id="dropzoneCover"
         ref="dropzoneCover"
@@ -25,16 +29,18 @@
         @vdropzone-success="updateShop"/>
     </section>
 
-    <section class="w-full max-w-1000 flex flex-col lg:flex-row mt-100">
-      <div class="w-full lg:w-1/3">
-        <h5 class="text-24">{{ $t("forms.labels.theme_selection") }}</h5>
+    <section class="shop-customization__group shop-customization__group--last">
+      <div class="shop-customization__label-container">
+        <h5 class="shop-customization__label">
+          {{ $t("forms.labels.theme_selection") }}
+        </h5>
       </div>
-      <div class="w-full lg:w-2/3">
-        <ul class="list-reset flex flex-wrap justify-start lg:justify-between -mx-10 lg:-mx-0">
+      <div class="shop-customization__list-container">
+        <ul class="shop-customization__list">
           <li
             v-for="(theme, index) in availableThemes"
             :key="index"
-            class="mx-10 lg:mx-0 mt-20 lg:mt-0">
+            class="shop-customization__list-item">
             <Tile :theme="theme"/>
           </li>
         </ul>

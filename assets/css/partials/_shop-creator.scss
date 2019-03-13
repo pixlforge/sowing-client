@@ -2,7 +2,7 @@
   &__section {
     @apply w-full;
   }
-  
+
   &__name-section {
     @apply w-full flex flex-col;
 
@@ -33,5 +33,9 @@
     @screen lg {
       @apply max-w-1000;
     }
+  }
+
+  &__customization-component {
+    @apply flex flex-col items-center mt-100;
   }
 }
