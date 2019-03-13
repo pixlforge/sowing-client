@@ -62,7 +62,11 @@
   }
 
   &__controls {
-    @apply flex justify-center mt-40;
+    @apply flex flex-col justify-center mt-40;
+
+    @screen md {
+      @apply flex-row;
+    }
 
     @screen lg {
       @apply justify-start;

@@ -121,6 +121,22 @@
     line-height: 0;
   }
 
+  &__previous {
+    @apply order-1 mt-20;
+
+    @screen md {
+      @apply order-0 mr-20 mt-0;
+    }
+  }
+
+  &__next {
+    @apply order-0;
+
+    @screen md {
+      @apply order-1;
+    }
+  }
+
   &--navbar {
     @apply flex justify-center items-center px-10 py-10;
 
@@ -146,6 +162,10 @@
   }
   
   &--grouped {
-    @apply rounded-l-none;
+    @apply mt-20;
+
+    @screen md {
+      @apply rounded-l-none mt-0;
+    }
   }
 }

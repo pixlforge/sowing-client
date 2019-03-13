@@ -1,26 +1,24 @@
 <template>
-  <section class="w-full">
-    <div class="flex flex-col md:flex-row">
-      <input
-        id="name"
-        v-model="localShopName"
-        :disabled="shopExists && !editable"
-        :class="{ 'input-disabled': shopExists && !editable }"
-        :placeholder="$t('shop_creator.steps.name.placeholder')"
-        name="name"
-        type="text"
-        class="input-base md:rounded-r-none mt-0">
-      <button
-        :disabled="(shopExists || !shopName) && !editable"
-        :class="(shopExists || !shopName) && !editable ? 'btn-disabled' : btnTheme"
-        class="btn btn-primary md:rounded-l-none nowrap mt-20 md:mt-0"
-        @click.prevent="check">
-        <font-awesome-icon
-          :icon="['far', 'rocket']"
-          class="mr-5"/>
-        {{ $t("buttons.check_availability") }}
-      </button>
-    </div>
+  <section class="shop-creator__section">
+    <input
+      id="name"
+      v-model="localShopName"
+      :disabled="shopExists && !editable"
+      :class="{ 'form__input--disabled': shopExists && !editable }"
+      :placeholder="$t('shop_creator.steps.name.placeholder')"
+      name="name"
+      type="text"
+      class="form__input form__input--grouped">
+    <button
+      :disabled="(shopExists || !shopName) && !editable"
+      :class="(shopExists || !shopName) && !editable ? 'button__disabled' : btnTheme"
+      class="button button--grouped"
+      @click.prevent="check">
+      <font-awesome-icon
+        :icon="['far', 'rocket']"
+        class="mr-5"/>
+      {{ $t("buttons.check_availability") }}
+    </button>
   </section>
 </template>
 

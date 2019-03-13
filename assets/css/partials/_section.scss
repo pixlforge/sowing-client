@@ -2,4 +2,8 @@
   &__container {
     @apply my-150;
   }
+
+  &__centered {
+    @apply flex flex-col items-center;
+  }
 }

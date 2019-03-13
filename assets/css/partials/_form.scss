@@ -27,7 +27,15 @@
     }
 
     &--grouped {
-      @apply w-350 rounded-r-none pl-15 mt-0;
+      @apply w-full pl-15 mt-0;
+
+      @screen md {
+        @apply w-350 rounded-r-none;
+      }
+    }
+
+    &--disabled {
+      @apply bg-grey-faint text-grey-lighter cursor-not-allowed;
     }
   }
 

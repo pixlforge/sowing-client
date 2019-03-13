@@ -1,0 +1,25 @@
+.shop-creator {
+  &__section {
+    @apply w-full flex flex-col;
+
+    @screen md {
+      @apply flex-row;
+    }
+  }
+
+  &__controls {
+    @apply flex flex-col mt-100;
+
+    @screen md {
+      @apply flex-row;
+    }
+  }
+
+  &__name-component {
+    @apply max-w-400 mt-60;
+
+    @screen md {
+      @apply max-w-600;
+    }
+  }
+}

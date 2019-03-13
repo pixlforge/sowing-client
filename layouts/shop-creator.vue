@@ -11,7 +11,7 @@
         <div
           v-if="shopAvatar"
           :style="`background-image: url('${shopAvatar}');`"
-          class="block w-110 h-110 rounded-full bg-center bg-no-repeat bg-cover"/>
+          class="header__avatar header__avatar--picture"/>
         <div
           v-else
           :class="textTheme">
@@ -21,7 +21,7 @@
         </div>
       </template>
       <template slot="title">
-        <h1 class="header-title">
+        <h1 class="header__title">
           <template v-if="shopName">{{ shopName }}</template>
           <template v-else>{{ $t("pages.shop.creation") }}</template>
         </h1>

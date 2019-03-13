@@ -7,6 +7,10 @@
     @apply w-full max-w-800 text-18 leading-relaxed mx-auto my-60;
   }
 
+  &--narrow {
+    @apply max-w-1000;
+  }
+
   &--center {
     @apply text-center;
   }
