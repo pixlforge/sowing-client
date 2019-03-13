@@ -1,0 +1,42 @@
+.shop-navigation {
+  &__background {
+    @apply bg-green-lightest;
+  }
+
+  &__container {
+    @apply flex pt-60 pb-60;
+
+    @screen lg {
+      @apply pb-80;
+    }
+  }
+
+  &__group {
+    @apply relative flex flex-grow items-center;
+
+    &--last {
+      @apply flex-initial;
+    }
+  }
+
+  &__line {
+    @apply h-3 flex-grow;
+  }
+
+  &__oval {
+    @apply w-50 h-50 rounded-full text-24 font-bold flex justify-center items-center cursor-pointer;
+
+    &--first {
+      @apply text-white;
+    }
+  }
+
+  &__label {
+    @apply hidden w-110 absolute pin-b text-16 text-center font-semibold cursor-pointer;
+    transform: translate(-25%, 3rem);
+
+    @screen lg {
+      @apply block;
+    }
+  }
+}
