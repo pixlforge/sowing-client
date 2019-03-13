@@ -136,6 +136,10 @@
   &--spaced {
     @apply mt-40;
   }
+  
+  &--spaced-large {
+    @apply mt-80;
+  }
 
   &--large {
     @apply flex justify-center items-center text-14 py-15;

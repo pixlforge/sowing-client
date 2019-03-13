@@ -1,0 +1,29 @@
+.terms {
+  &__wrapper {
+    @apply flex flex-col items-center;
+  }
+
+  &__controls {
+    @apply flex flex-col items-center;
+  }
+
+  &__checkbox-container {
+    @apply text-18 text-center leading-normal mt-80;
+  }
+
+  &__checkbox-label {
+    @apply select-none;
+  }
+
+  &__checkbox-input {
+    @apply mr-10;
+  }
+
+  &__checkbox-subtitle {
+    @apply block text-grey-lighter;
+  }
+
+  &__section {
+    @apply max-w-1000;
+  }
+}

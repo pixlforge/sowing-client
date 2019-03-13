@@ -18,4 +18,12 @@
   &--white {
     @apply text-white;
   }
+
+  &__medium {
+    @apply text-24 leading-normal mt-80;
+  }
+
+  &__small {
+    @apply text-16 text-green-darkest uppercase font-bold;
+  }
 }

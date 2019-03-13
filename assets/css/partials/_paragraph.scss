@@ -1,4 +1,8 @@
 .paragraph {
+  &__group {
+    @apply mt-80;
+  }
+
   &__large {
     @apply w-full max-w-800 text-18 leading-relaxed mx-auto my-60;
   }
@@ -9,5 +13,9 @@
 
   &--white {
     @apply text-white;
+  }
+
+  &__medium {
+    @apply text-18 leading-loose my-20;
   }
 }

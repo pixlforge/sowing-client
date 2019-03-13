@@ -7,31 +7,31 @@
         <font-awesome-icon :icon="['far', 'store']"/>
       </template>
       <template slot="title">
-        <h1 class="header-title">{{ $t("pages.shop.creation") }}</h1>
+        <h1 class="header__title">{{ $t("pages.shop.creation") }}</h1>
       </template>
     </Header>
 
     <!-- Page contents -->
-    <section class="container section">
+    <section class="section__container container">
       
       <!-- Terms -->
       <AppTerms/>
 
       <!-- Controls -->
-      <div class="flex flex-col items-center">
-        <div class="text-18 text-center leading-normal mt-80">
+      <div class="terms__controls">
+        <div class="terms__checkbox-container">
           <label
             for="terms"
-            class="select-none">
+            class="terms__checkbox-label">
             <input
               id="terms"
               v-model="localTerms"
               type="checkbox"
               name="terms"
-              class="mr-10">
+              class="terms__checkbox-input">
             {{ $t("pages.terms.approve") }}
           </label>
-          <small class="block text-grey-lighter">
+          <small class="terms__checkbox-subtitle">
             {{ $t("pages.terms.must_approve") }}
           </small>
         </div>
@@ -39,7 +39,7 @@
         <button
           :disabled="!terms"
           :class="{ 'btn-disabled': !terms }"
-          class="btn btn-primary mt-80"
+          class="button button__primary button--spaced-large"
           @click.prevent="next">
           <font-awesome-icon
             :icon="['far', 'chevron-circle-right']"
@@ -48,7 +48,6 @@
         </button>
       </div>
     </section>
-
   </main>
 </template>
 
