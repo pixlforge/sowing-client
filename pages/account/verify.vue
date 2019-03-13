@@ -13,6 +13,8 @@
 
     <!-- Content -->
     <section class="section__container container">
+
+      <!-- Icon -->
       <div class="icon__group">
         <font-awesome-icon
           v-if="verificationSuccessful"
@@ -23,6 +25,8 @@
           :icon="['far', 'exclamation-triangle']"
           class="icon__icon icon__icon--danger"/>
       </div>
+
+      <!-- Title -->
       <h2 class="title__large title--center">
         <template v-if="verificationSuccessful">
           {{ $t("pages.verify.success") }}
@@ -31,6 +35,8 @@
           {{ $t("pages.verify.fail") }}
         </template>
       </h2>
+
+      <!-- Paragraph -->
       <p class="paragraph__large paragraph--center">
         <template v-if="verificationSuccessful">
           {{ $t("toasts.account_confirmed") }}
