@@ -6,7 +6,7 @@
           {{ $t("shop_creator.steps.name.title") }}
         </h2>
 
-        <p class="paragraph__medium paragraph--center paragraph--narrow">
+        <p class="paragraph__medium paragraph--center paragraph--narrow paragraph--spaced">
           {{ $t("shop_creator.steps.name.paragraph") }}
         </p>
         

@@ -1,5 +1,9 @@
 .shop-creator {
   &__section {
+    @apply w-full;
+  }
+  
+  &__name-section {
     @apply w-full flex flex-col;
 
     @screen md {
@@ -20,6 +24,14 @@
 
     @screen md {
       @apply max-w-600;
+    }
+  }
+
+  &__details-component {
+    @apply max-w-600 mt-100;
+
+    @screen lg {
+      @apply max-w-1000;
     }
   }
 }

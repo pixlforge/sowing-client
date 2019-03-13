@@ -1,5 +1,5 @@
 <template>
-  <section class="shop-creator__section">
+  <section class="shop-creator__name-section">
     <input
       id="name"
       v-model="localShopName"

@@ -1,54 +1,64 @@
 <template>
-  <section class="w-full">
+  <section class="shop-creator__section">
 
     <!-- Postal code -->
-    <div class="w-full flex flex-col lg:flex-row">
-      <div class="w-full lg:w-1/2 lg:pr-10">
-        <h5 class="text-24 leading-normal">{{ $t("forms.labels.postal_code") }}</h5>
+    <div class="form__inline-group form__inline-group--first">
+      <div class="form__inline-group-left-side">
+        <h5 class="form__inline-group-label">
+          {{ $t("forms.labels.postal_code") }}
+        </h5>
       </div>
-      <div class="w-full lg:w-1/2 lg:pl-10">
+      <div class="form__inline-group-right-side">
         <input
           v-model="localPostalCode"
           :disabled="shopExistsAndNotEditable"
-          :class="{ 'input-disabled': shopExistsAndNotEditable, 'border-red': errors.postal_code }"
+          :class="{ 'form__input--disabled': shopExistsAndNotEditable, 'border-red': errors.postal_code }"
           type="text"
-          class="input-base border border-green-lightest mt-20 lg:mt-0">
+          class="form__input form__input--inline">
         <template v-if="errors.postal_code">
-          <p class="input-error">{{ errors.postal_code[0] }}</p>
+          <p class="form__feedback">
+            {{ errors.postal_code[0] }}
+          </p>
         </template>
       </div>
     </div>
 
     <!-- City -->
-    <div class="w-full flex flex-col lg:flex-row mt-50">
-      <div class="w-full lg:w-1/2 lg:pr-10">
-        <h5 class="text-24 leading-normal">{{ $t("forms.labels.city") }}</h5>
+    <div class="form__inline-group">
+      <div class="form__inline-group-left-side">
+        <h5 class="form__inline-group-label">
+          {{ $t("forms.labels.city") }}
+        </h5>
       </div>
-      <div class="w-full lg:w-1/2 lg:pl-10">
+      <div class="form__inline-group-right-side">
         <input
           v-model="localCity"
           :disabled="shopExistsAndNotEditable"
-          :class="{ 'input-disabled': shopExistsAndNotEditable, 'border-red': errors.city }"
+          :class="{ 'form__input--disabled': shopExistsAndNotEditable, 'border-red': errors.city }"
           type="text"
-          class="input-base border border-green-lightest mt-20 lg:mt-0">
+          class="form__input form__input--inline">
         <template v-if="errors.city">
-          <p class="input-error">{{ errors.city[0] }}</p>
+          <p class="form__feedback">
+            {{ errors.city[0] }}
+          </p>
         </template>
       </div>
     </div>
 
     <!-- Country -->
-    <div class="w-full flex flex-col lg:flex-row mt-50">
-      <div class="w-full lg:w-1/2 lg:pr-10">
-        <h5 class="text-24 leading-normal">{{ $t("forms.labels.country") }}</h5>
+    <div class="form__inline-group">
+      <div class="form__inline-group-left-side">
+        <h5 class="form__inline-group-label">
+          {{ $t("forms.labels.country") }}
+        </h5>
       </div>
-      <div class="w-full lg:w-1/2 lg:pl-10">
-        <div class="relative w-full">
+      <div class="form__inline-group-right-side">
+        <div class="form__select-group">
           <select
             v-model="localCountry"
             :disabled="shopExistsAndNotEditable"
-            :class="{ 'select-disabled': shopExistsAndNotEditable, 'border-red': errors.country_id }"
-            class="select border border-green-lightest mt-20 lg:mt-0">
+            :class="{ 'form__select--disabled': shopExistsAndNotEditable, 'border-red': errors.country_id }"
+            class="form__select form__select--inline">
             <option
               value=""
               selected
@@ -65,9 +75,11 @@
           <font-awesome-icon
             v-show="!shopExists || editable"
             :icon="['fas', 'caret-down']"
-            class="select-caret"/>
+            class="form__select-caret"/>
           <template v-if="errors.country_id">
-            <p class="input-error">{{ errors.country_id[0] }}</p>
+            <p class="form__feedback">
+              {{ errors.country_id[0] }}
+            </p>
           </template>
         </div>
       </div>
@@ -76,144 +88,192 @@
     <hr class="border border-green-lightest my-50 lg:my-100">
 
     <!-- Short description FR -->
-    <div class="w-full flex flex-col lg:flex-row mt-50">
-      <div class="w-full lg:w-1/2 lg:pr-10">
-        <h5 class="text-24 leading-normal">{{ $t("forms.labels.description_short") }}</h5>
-        <p class="text-16 leading-normal capitalize my-5">{{ $t("languages.french") }}</p>
-        <p class="text-16 text-grey-lighter leading-normal my-5">{{ $t("shop_creator.steps.details.description_short_description") }}</p>
+    <div class="form__inline-group">
+      <div class="form__inline-group-left-side">
+        <h5 class="form__inline-group-label">
+          {{ $t("forms.labels.description_short") }}
+        </h5>
+        <p class="form__inline-group-info">
+          {{ $t("languages.french") }}
+        </p>
+        <p class="form__inline-group-description">
+          {{ $t("shop_creator.steps.details.description_short_description") }}
+        </p>
       </div>
-      <div class="w-full lg:w-1/2 lg:pl-10">
+      <div class="form__inline-group-right-side">
         <input
           v-model="localShortDescriptionFr"
           :disabled="shopExistsAndNotEditable"
-          :class="{ 'input-disabled': shopExistsAndNotEditable }"
+          :class="{ 'form__input--disabled': shopExistsAndNotEditable }"
           type="text"
-          class="input-base mt-20 lg:mt-0">
+          class="form__input form__input--inline">
       </div>
     </div>
 
     <!-- Long description FR -->
-    <div class="w-full flex flex-col lg:flex-row mt-50">
-      <div class="w-full lg:w-1/2 lg:pr-10">
-        <h5 class="text-24 leading-normal">{{ $t("forms.labels.description_long") }}</h5>
-        <p class="text-16 leading-normal capitalize my-5">{{ $t("languages.french") }}</p>
-        <p class="text-16 text-grey-lighter leading-normal my-5">{{ $t("shop_creator.steps.details.description_long_description") }}</p>
+    <div class="form__inline-group">
+      <div class="form__inline-group-left-side">
+        <h5 class="form__inline-group-label">
+          {{ $t("forms.labels.description_long") }}
+        </h5>
+        <p class="form__inline-group-info">
+          {{ $t("languages.french") }}
+        </p>
+        <p class="form__inline-group-description">
+          {{ $t("shop_creator.steps.details.description_long_description") }}
+        </p>
       </div>
-      <div class="w-full lg:w-1/2 lg:pl-10">
+      <div class="form__inline-group-right-side">
         <textarea
           v-model="localLongDescriptionFr"
           :disabled="shopExistsAndNotEditable"
-          :class="{ 'textarea-disabled': shopExistsAndNotEditable }"
+          :class="{ 'form__textarea--disabled': shopExistsAndNotEditable }"
           rows="10"
-          class="textarea-base mt-20 lg:mt-0"/>
+          class="form__textarea form__textarea--inline"/>
       </div>
     </div>
 
     <hr class="border border-green-lightest my-50 lg:my-100">
 
     <!-- Short description EN -->
-    <div class="w-full flex flex-col lg:flex-row mt-50">
-      <div class="w-full lg:w-1/2 lg:pr-10">
-        <h5 class="text-24 leading-normal">{{ $t("forms.labels.description_short") }}</h5>
-        <p class="text-16 leading-normal capitalize my-5">{{ $t("languages.english") }}</p>
-        <p class="text-16 text-grey-lighter leading-normal my-5">{{ $t("shop_creator.steps.details.description_short_description") }}</p>
+    <div class="form__inline-group">
+      <div class="form__inline-group-left-side">
+        <h5 class="form__inline-group-label">
+          {{ $t("forms.labels.description_short") }}
+        </h5>
+        <p class="form__inline-group-info">
+          {{ $t("languages.english") }}
+        </p>
+        <p class="form__inline-group-description">
+          {{ $t("shop_creator.steps.details.description_short_description") }}
+        </p>
       </div>
-      <div class="w-full lg:w-1/2 lg:pl-10">
+      <div class="form__inline-group-right-side">
         <input
           v-model="localShortDescriptionEn"
           :disabled="shopExistsAndNotEditable"
-          :class="{ 'input-disabled': shopExistsAndNotEditable }"
+          :class="{ 'form__input--disabled': shopExistsAndNotEditable }"
           type="text"
-          class="input-base mt-20 lg:mt-0">
+          class="form__input form__input--inline">
       </div>
     </div>
 
     <!-- Long description EN -->
-    <div class="w-full flex flex-col lg:flex-row mt-50">
-      <div class="w-full lg:w-1/2 lg:pr-10">
-        <h5 class="text-24 leading-normal">{{ $t("forms.labels.description_long") }}</h5>
-        <p class="text-16 leading-normal capitalize my-5">{{ $t("languages.english") }}</p>
-        <p class="text-16 text-grey-lighter leading-normal my-5">{{ $t("shop_creator.steps.details.description_long_description") }}</p>
+    <div class="form__inline-group">
+      <div class="form__inline-group-left-side">
+        <h5 class="form__inline-group-label">
+          {{ $t("forms.labels.description_long") }}
+        </h5>
+        <p class="form__inline-group-info">
+          {{ $t("languages.english") }}
+        </p>
+        <p class="form__inline-group-description">
+          {{ $t("shop_creator.steps.details.description_long_description") }}
+        </p>
       </div>
-      <div class="w-full lg:w-1/2 lg:pl-10">
+      <div class="form__inline-group-right-side">
         <textarea
           v-model="localLongDescriptionEn"
           :disabled="shopExistsAndNotEditable"
-          :class="{ 'textarea-disabled': shopExistsAndNotEditable }"
+          :class="{ 'form__textarea--disabled': shopExistsAndNotEditable }"
           rows="10"
-          class="textarea-base mt-20 lg:mt-0"/>
+          class="form__textarea form__textarea--inline"/>
       </div>
     </div>
 
     <hr class="border border-green-lightest my-50 lg:my-100">
 
     <!-- Short description DE -->
-    <div class="w-full flex flex-col lg:flex-row mt-50">
-      <div class="w-full lg:w-1/2 lg:pr-10">
-        <h5 class="text-24 leading-normal">{{ $t("forms.labels.description_short") }}</h5>
-        <p class="text-16 leading-normal capitalize my-5">{{ $t("languages.german") }}</p>
-        <p class="text-16 text-grey-lighter leading-normal my-5">{{ $t("shop_creator.steps.details.description_short_description") }}</p>
+    <div class="form__inline-group">
+      <div class="form__inline-group-left-side">
+        <h5 class="form__inline-group-label">
+          {{ $t("forms.labels.description_short") }}
+        </h5>
+        <p class="form__inline-group-info">
+          {{ $t("languages.german") }}
+        </p>
+        <p class="form__inline-group-description">
+          {{ $t("shop_creator.steps.details.description_short_description") }}
+        </p>
       </div>
-      <div class="w-full lg:w-1/2 lg:pl-10">
+      <div class="form__inline-group-right-side">
         <input
           v-model="localShortDescriptionDe"
           :disabled="shopExistsAndNotEditable"
-          :class="{ 'input-disabled': shopExistsAndNotEditable }"
+          :class="{ 'form__input--disabled': shopExistsAndNotEditable }"
           type="text"
-          class="input-base mt-20 lg:mt-0">
+          class="form__input form__input--inline">
       </div>
     </div>
 
     <!-- Long description DE -->
-    <div class="w-full flex flex-col lg:flex-row mt-50">
-      <div class="w-full lg:w-1/2 lg:pr-10">
-        <h5 class="text-24 leading-normal">{{ $t("forms.labels.description_long") }}</h5>
-        <p class="text-16 leading-normal capitalize my-5">{{ $t("languages.german") }}</p>
-        <p class="text-16 text-grey-lighter leading-normal my-5">{{ $t("shop_creator.steps.details.description_long_description") }}</p>
+    <div class="form__inline-group">
+      <div class="form__inline-group-left-side">
+        <h5 class="form__inline-group-label">
+          {{ $t("forms.labels.description_long") }}
+        </h5>
+        <p class="form__inline-group-info">
+          {{ $t("languages.german") }}
+        </p>
+        <p class="form__inline-group-description">
+          {{ $t("shop_creator.steps.details.description_long_description") }}
+        </p>
       </div>
-      <div class="w-full lg:w-1/2 lg:pl-10">
+      <div class="form__inline-group-right-side">
         <textarea
           v-model="localLongDescriptionDe"
           :disabled="shopExistsAndNotEditable"
-          :class="{ 'textarea-disabled': shopExistsAndNotEditable }"
+          :class="{ 'form__textarea--disabled': shopExistsAndNotEditable }"
           rows="10"
-          class="textarea-base mt-20 lg:mt-0"/>
+          class="form__textarea form__textarea--inline"/>
       </div>
     </div>
 
     <hr class="border border-green-lightest my-50 lg:my-100">
 
     <!-- Short description IT -->
-    <div class="w-full flex flex-col lg:flex-row mt-50">
-      <div class="w-full lg:w-1/2 lg:pr-10">
-        <h5 class="text-24 leading-normal">{{ $t("forms.labels.description_short") }}</h5>
-        <p class="text-16 leading-normal capitalize my-5">{{ $t("languages.italian") }}</p>
-        <p class="text-16 text-grey-lighter leading-normal my-5">{{ $t("shop_creator.steps.details.description_short_description") }}</p>
+    <div class="form__inline-group">
+      <div class="form__inline-group-left-side">
+        <h5 class="form__inline-group-label">
+          {{ $t("forms.labels.description_short") }}
+        </h5>
+        <p class="form__inline-group-info">
+          {{ $t("languages.italian") }}
+        </p>
+        <p class="form__inline-group-description">
+          {{ $t("shop_creator.steps.details.description_short_description") }}
+        </p>
       </div>
-      <div class="w-full lg:w-1/2 lg:pl-10">
+      <div class="form__inline-group-right-side">
         <input
           v-model="localShortDescriptionIt"
           :disabled="shopExistsAndNotEditable"
-          :class="{ 'input-disabled': shopExistsAndNotEditable }"
+          :class="{ 'form__input--disabled': shopExistsAndNotEditable }"
           type="text"
-          class="input-base mt-20 lg:mt-0">
+          class="form__input form__input--inline">
       </div>
     </div>
 
     <!-- Long description IT -->
-    <div class="w-full flex flex-col lg:flex-row mt-50">
-      <div class="w-full lg:w-1/2 lg:pr-10">
-        <h5 class="text-24 leading-normal">{{ $t("forms.labels.description_long") }}</h5>
-        <p class="text-16 leading-normal capitalize my-5">{{ $t("languages.italian") }}</p>
-        <p class="text-16 text-grey-lighter leading-normal my-5">{{ $t("shop_creator.steps.details.description_long_description") }}</p>
+    <div class="form__inline-group">
+      <div class="form__inline-group-left-side">
+        <h5 class="form__inline-group-label">
+          {{ $t("forms.labels.description_long") }}
+        </h5>
+        <p class="form__inline-group-info">
+          {{ $t("languages.italian") }}
+        </p>
+        <p class="form__inline-group-description">
+          {{ $t("shop_creator.steps.details.description_long_description") }}
+        </p>
       </div>
-      <div class="w-full lg:w-1/2 lg:pl-10">
+      <div class="form__inline-group-right-side">
         <textarea
           v-model="localLongDescriptionIt"
           :disabled="shopExistsAndNotEditable"
-          :class="{ 'textarea-disabled': shopExistsAndNotEditable }"
+          :class="{ 'form__textarea--disabled': shopExistsAndNotEditable }"
           rows="10"
-          class="textarea-base mt-20 lg:mt-0"/>
+          class="form__textarea form__textarea--inline"/>
       </div>
     </div>
 
