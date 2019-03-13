@@ -1,14 +1,16 @@
 <template>
   <main>
-    <section class="container section">
-      <div class="flex flex-col items-center">
-        <h2 class="title-large text-center mt-150">{{ $t("shop_creator.steps.connect.title") }}</h2>
+    <section class="section__container container">
+      <div class="section__centered">
+        <h2 class="title__large title--center">
+          {{ $t("shop_creator.steps.connect.title") }}
+        </h2>
 
-        <section
+        <p
           v-if="!shopStripeUserId || !shopStripePublishableKey"
-          class="max-w-1000 px-20">
-          <p class="paragraph-body text-center mt-60">{{ $t("shop_creator.steps.connect.paragraph") }}</p>
-        </section>
+          class="paragraph__medium paragraph--center paragraph--narrow paragraph--spaced">
+          {{ $t("shop_creator.steps.connect.paragraph") }}
+        </p>
 
         <section
           v-if="!shopStripeUserId || !shopStripePublishableKey"
@@ -16,7 +18,7 @@
           <a
             :href="stripeConnectOAuthUrl"
             :class="btnTheme"
-            class="btn btn-large">
+            class="button button--large">
             <font-awesome-icon
               :icon="['fab', 'cc-stripe']"
               class="text-24 mr-10"/>
@@ -25,10 +27,29 @@
           </a>
         </section>
 
+        <!-- class="w-full sm:w-2/3 xl:w-1/2 flex flex-col lg:flex-row px-20 md:px-0 mx-auto my-150" -->
         <section
           v-if="shopStripeUserId && shopStripePublishableKey"
-          class="w-full sm:w-2/3 xl:w-1/2 flex flex-col lg:flex-row px-20 md:px-0 mx-auto my-150">
-          <div class="w-full lg:w-auto flex justify-center">
+          class="mt-150">
+
+          <!-- Icon -->
+          <div class="icon__group">
+            <font-awesome-icon
+              :icon="['far', 'check-circle']"
+              class="icon__icon icon__icon--success"/>
+          </div>
+
+          <!-- Title -->
+          <h2 class="title__large title--center">
+            Félicitations!
+          </h2>
+
+          <!-- Paragraph -->
+          <p class="paragraph__large paragraph--center">
+            Votre compte Stripe a bien été associé à votre boutique!
+          </p>
+
+          <!-- <div class="w-full lg:w-auto flex justify-center">
             <font-awesome-icon
               :icon="['far', 'check-circle']"
               class="text-72 text-green"/>
@@ -38,14 +59,14 @@
             <p class="text-24 font-semibold text-green-darkest text-center lg:text-left">
               Votre compte Stripe a bien été associé à votre boutique!
             </p>
-          </div>
+          </div> -->
         </section>
 
-        <div class="flex flex-col md:flex-row">
+        <div class="shop-creator__controls">
 
           <!-- Previous -->
           <button
-            class="btn order-1 md:order-0 md:mr-20 mt-20 md:mt-0"
+            class="button button__previous"
             @click.prevent="prev">
             <font-awesome-icon
               :icon="['far', 'chevron-circle-left']"
@@ -56,8 +77,8 @@
           <!-- Next -->
           <button
             :disabled="!shopStripeUserId || !shopStripePublishableKey"
-            :class="!shopStripeUserId || !shopStripePublishableKey ? 'btn-disabled' : btnTheme"
-            class="btn order-0 md:order-1"
+            :class="!shopStripeUserId || !shopStripePublishableKey ? 'button__disabled' : btnTheme"
+            class="button button__next"
             @click.prevent="next">
             <font-awesome-icon
               :icon="['far', 'chevron-circle-right']"
