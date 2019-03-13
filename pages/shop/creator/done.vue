@@ -1,23 +1,23 @@
 <template>
   <main>
-    <section class="container section">
-      <div class="flex flex-col items-center">
-        <h2 class="title-large text-center mt-150">{{ $t("shop_creator.steps.done.title") }}</h2>
+    <section class="section__container container">
+      <div class="section__centered">
+        <h2 class="title__large title--center">
+          {{ $t("shop_creator.steps.done.title") }}
+        </h2>
 
-        <section class="w-full max-w-1000">
-          <p class="paragraph-body text-center mt-60">
-            {{ $t("shop_creator.steps.done.paragraph") }}<br>
-            {{ $t("shop_creator.steps.done.provision_shop") }}
-          </p>
-        </section>
+        <p class="paragraph__medium paragraph--center paragraph--narrow paragraph--spaced">
+          {{ $t("shop_creator.steps.done.paragraph") }}<br>
+          {{ $t("shop_creator.steps.done.provision_shop") }}
+        </p>
 
-        <Success class="block w-full md:w-1/2 mt-100"/>
+        <Success class="shop-creator__done-illustration"/>
 
-        <div class="flex flex-col md:flex-row mt-100">
+        <div class="shop-creator__controls">
 
           <!-- Previous -->
           <button
-            class="btn order-1 md:order-0 md:mr-20 mt-20 md:mt-0"
+            class="button button__previous"
             @click.prevent="prev">
             <font-awesome-icon
               :icon="['far', 'chevron-circle-left']"
@@ -28,7 +28,7 @@
           <!-- Next -->
           <button
             :class="btnTheme"
-            class="btn order-0 md:order-1"
+            class="button button__next"
             @click.prevent="next">
             <font-awesome-icon
               :icon="['far', 'chevron-circle-right']"

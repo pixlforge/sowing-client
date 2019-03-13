@@ -38,4 +38,12 @@
   &__customization-component {
     @apply flex flex-col items-center mt-100;
   }
+
+  &__done-illustration {
+    @apply block w-full mt-100;
+
+    @screen md {
+      @apply w-1/2;
+    }
+  }
 }
