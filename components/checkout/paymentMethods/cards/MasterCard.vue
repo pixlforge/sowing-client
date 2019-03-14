@@ -1,25 +1,25 @@
 <template>
   <div
-    :class="{ 'cc-container-selected': selectedPaymentMethod }"
-    class="cc-container">
+    :class="{ 'credit-card__container--selected': selectedPaymentMethod }"
+    class="credit-card__container">
     <font-awesome-icon
       :icon="['fab', 'cc-mastercard']"
-      :class="{ 'cc-icon-selected': selectedPaymentMethod }"
-      class="cc-icon"/>
+      :class="{ 'credit-card__icon--selected': selectedPaymentMethod }"
+      class="credit-card__icon"/>
     <h5
-      :class="{ 'cc-title-selected': selectedPaymentMethod }"
-      class="cc-title">
+      :class="{ 'credit-card__title--selected': selectedPaymentMethod }"
+      class="credit-card__title">
       Mastercard
     </h5>
     <p
-      :class="{ 'cc-last-four-selected': selectedPaymentMethod }"
-      class="cc-last-four">
+      :class="{ 'credit-card__last-four--selected': selectedPaymentMethod }"
+      class="credit-card__last-four">
       {{ $t("credit_cards.ending_in") }} {{ paymentMethod.last_four }}
     </p>
     <font-awesome-icon
       v-if="selectedPaymentMethod"
       :icon="['far', 'check-circle']"
-      class="cc-icon-checked"/>
+      class="credit-card__icon-checked"/>
   </div>
 </template>
 
