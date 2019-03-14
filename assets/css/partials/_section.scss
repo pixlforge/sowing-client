@@ -1,6 +1,10 @@
 .section {
   &__container {
     @apply my-150;
+
+    &--min-h-half-screen {
+      @apply min-h-half-screen;
+    }
   }
 
   &__centered {

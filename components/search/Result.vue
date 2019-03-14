@@ -4,10 +4,10 @@
     :api-key="api.key"
     :query="query"
     :index-name="indexName"
-    class="w-1/2 pr-10">
-    <ais-stats class="text-center">
+    class="search__index">
+    <ais-stats class="search__ais-stats">
       <template slot-scope="{ totalResults }">
-        <h3 class="text-24 font-bold mb-5">
+        <h3 class="search__index-name">
           <template v-if="indexName === 'products'">
             {{ $t("pages.search.products") }}
           </template>
@@ -15,14 +15,14 @@
             {{ $t("pages.search.shops") }}
           </template>
         </h3>
-        <small class="text-14">
+        <small class="search__results">
           {{ totalResults }} {{ $t("pages.search.results_found") }}
         </small>
       </template>
     </ais-stats>
-    <ais-no-results class="-mt-5">
+    <ais-no-results class="search__ais-no-results">
       <template>
-        <p class="text-24 font-bold">
+        <p class="search__ais-no-results-label">
           <template v-if="indexName === 'products'">
             {{ $t("pages.search.no_product_found") }}
           </template>
@@ -34,7 +34,7 @@
     </ais-no-results>
     <ais-results
       :results-per-page="5"
-      class="mt-40">
+      class="search__ais-results">
       <component
         slot-scope="{ result }"
         :is="indexName"

@@ -34,3 +34,93 @@
 .ais-no-results {
   @apply text-16 text-center leading-normal;
 }
+
+.search {
+  &__index {
+    @apply w-1/2 pr-10;
+  }
+
+  &__ais-stats {
+    @apply text-center;
+  }
+
+  &__index-name {
+    @apply text-24 font-bold mb-5;
+  }
+
+  &__results {
+    @apply text-14;
+  }
+
+  &__ais-no-results {
+    @apply -mt-5;
+  }
+
+  &__ais-no-results-label {
+    @apply -mt-5;
+  }
+
+  &__ais-results {
+    @apply mt-40;
+  }
+
+  &__input-group {
+    @apply max-w-800 mx-auto;
+  }
+
+  &__results-wrapper {
+    @apply flex mt-100;
+  }
+
+  &__results-component {
+    @apply w-1/2;
+
+    &--left {
+      @apply pr-10;
+    }
+
+    &--left {
+      @apply pl-10;
+    }
+  }
+
+  &__result-link {
+    @apply no-underline;
+
+    &--product {
+      @apply text-green-darkest;
+    }
+  }
+
+  &__result-content {
+    @apply rounded-lg flex items-center p-20 my-10;
+
+    &--product {
+      @apply bg-green-lightest;
+    }
+  }
+
+  &__result-icon {
+    @apply text-30 text-white ml-5 mr-40;
+
+    &--product {
+      @apply text-green-darkest;
+    }
+  }
+
+  &__result-name {
+    @apply text-24 text-white;
+
+    &--product {
+      @apply text-green-darkest;
+    }
+  }
+
+  &__result-description {
+    @apply text-16 text-white leading-normal mt-10;
+
+    &--product {
+      @apply text-green-darkest;
+    }
+  }
+}

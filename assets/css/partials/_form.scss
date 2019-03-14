@@ -123,6 +123,10 @@
     &--disabled {
       @apply bg-grey-faint text-grey-lighter cursor-not-allowed;
     }
+
+    &--large {
+      @apply text-30 p-30 mt-0;
+    }
   }
 
   &__feedback {

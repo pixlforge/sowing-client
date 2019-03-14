@@ -1,22 +1,20 @@
 <template>
   <nuxt-link
     :to="localePath({ name: 'products-slug', params: { slug: result.slug } })"
-    class="no-underline text-green-darkest group">
-
-    <div class="bg-green-lightest group-hover:bg-green group-hover:text-white rounded-lg flex items-center p-20 my-10">
+    class="search__result-link search__result-link--product group">
+    <div class="search__result-content search__result-content--product group-hover:bg-green group-hover:text-white">
       <font-awesome-icon
         :icon="['fas', 'box-alt']"
-        class="text-30 ml-5 mr-40"/>
+        class="search__result-icon search__result-icon--product"/>
       <div>
-        <h5 class="text-24">
+        <h5 class="search__result-name search__result-name--product">
           {{ result.name[locale] }}
         </h5>
-        <p class="text-16 leading-normal mt-10">
+        <p class="search__result-description search__result-description--product">
           {{ result.description[locale] }}
         </p>
       </div>
     </div>
-
   </nuxt-link>
 </template>
 

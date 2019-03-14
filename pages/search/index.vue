@@ -7,33 +7,33 @@
         <font-awesome-icon :icon="['far', 'search']"/>
       </template>
       <template slot="title">
-        <h1 class="header-title">{{ $t("pages.search.title") }}</h1>
+        <h1 class="header__title">{{ $t("pages.search.title") }}</h1>
       </template>
     </Header>
     
-    <section class="container min-h-half-screen section mt-150">
+    <section class="section__container section__container--min-h-half-screen container">
 
       <!-- Search field -->
-      <div class="max-w-800 mx-auto">
+      <div class="search__input-group">
         <input
           v-model="query"
           :placeholder="$t('pages.search.placeholder')"
-          class="input-base text-30 p-30">
+          class="form__input form__input--large">
       </div>
 
-      <div class="flex mt-100">
+      <div class="search__results-wrapper">
 
         <!-- Product search results -->
         <Result
           :query="query"
           index-name="products"
-          class="w-1/2 pr-10"/>
+          class="search__results-component search__results-component--left"/>
         
         <!-- Shop search results -->
         <Result
           :query="query"
           index-name="shops"
-          class="w-1/2 pl-10"/>
+          class="search__results-component search__results-component--right"/>
 
       </div>
     </section>

@@ -1,19 +1,19 @@
 <template>
   <nuxt-link
     :to="localePath({ name: 'shop-slug-details', params: { slug: result.slug } })"
-    class="no-underline">
+    class="search__result-link">
     <div
       :class="`bg-${result.theme} hover:bg-${result.theme}-dark`"
-      class="rounded-lg flex items-center p-20 my-10">
+      class="search__result-content">
       <font-awesome-icon
         :icon="['fas', 'store']"
-        class="text-30 text-white mr-40"/>
+        class="search__result-icon"/>
       <div>
-        <h5 class="text-24 text-white">
+        <h5 class="search__result-name">
           {{ result.name }}
         </h5>
         <p
-          class="text-16 text-white leading-normal mt-10"
+          class="search__result-description"
           v-html="result.description_short[locale]"/>
       </div>
     </div>
