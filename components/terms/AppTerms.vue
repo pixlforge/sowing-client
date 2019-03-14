@@ -1,12 +1,12 @@
 <template>
   <div class="terms__wrapper">
-    <h2 class="title__large">
+    <h2 class="title__main">
       {{ $t("pages.terms.title") }}
     </h2>
 
     <section class="terms__section">
       <div class="paragraph__group">
-        <h3 class="title__medium">
+        <h3 class="title__large">
           Titre des conditions
         </h3>
         <p class="paragraph__medium">
@@ -18,7 +18,7 @@
       </div>
 
       <div class="paragraph__group">
-        <h3 class="title__medium">
+        <h3 class="title__large">
           Titre des conditions
         </h3>
         <p class="paragraph__medium">
@@ -30,7 +30,7 @@
       </div>
 
       <div class="paragraph__group">
-        <h3 class="title__medium">
+        <h3 class="title__large">
           Titre des conditions
         </h3>
         <p class="paragraph__medium">
@@ -42,7 +42,7 @@
       </div>
 
       <div class="paragraph__group">
-        <h3 class="title__medium">
+        <h3 class="title__large">
           Titre des conditions
         </h3>
         <p class="paragraph__medium">

@@ -10,7 +10,7 @@
       </div>
         
       <div class="streak__content">
-        <h3 class="title__large title--white">
+        <h3 class="title__main title--white">
           {{ $t("streaks.register.title") }}
         </h3>
           

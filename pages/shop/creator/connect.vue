@@ -2,7 +2,7 @@
   <main>
     <section class="section__container container">
       <div class="section__centered">
-        <h2 class="title__large title--center">
+        <h2 class="title__main title--center">
           {{ $t("shop_creator.steps.connect.title") }}
         </h2>
 
@@ -40,7 +40,7 @@
           </div>
 
           <!-- Title -->
-          <h2 class="title__large title--center">
+          <h2 class="title__main title--center">
             Félicitations!
           </h2>
 

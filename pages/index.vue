@@ -13,7 +13,7 @@
     <!-- Features -->
     <section class="section__container container">
 
-      <h1 class="title__large title--center">
+      <h1 class="title__main title--center">
         {{ $t("pages.home.titles.features") }}
       </h1>
 
@@ -55,7 +55,7 @@
 
     <!-- Shops -->
     <section class="section__container container">
-      <h1 class="title__large title--center">
+      <h1 class="title__main title--center">
         {{ $t("pages.home.titles.shops") }}
       </h1>
 
@@ -69,7 +69,7 @@
 
     <!-- Categories -->
     <section class="section__container container">
-      <h1 class="title__large title--center">
+      <h1 class="title__main title--center">
         {{ $t("pages.home.titles.categories") }}
       </h1>
 
@@ -83,7 +83,7 @@
 
     <!-- Reviews -->
     <section class="section__container container">
-      <h1 class="title__large title--center">
+      <h1 class="title__main title--center">
         {{ $t("pages.home.titles.reviews") }}
       </h1>
 

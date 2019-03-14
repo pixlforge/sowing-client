@@ -1,5 +1,5 @@
 .title {
-  &__large {
+  &__main {
     @apply font-cafe text-30 text-green-darkest font-bold tracking-tight;
   
     @screen md {
@@ -11,19 +11,23 @@
     }
   }
 
+  &__large {
+    @apply text-24 text-green-darkest leading-normal mt-80;
+  }
+
+  &__medium {
+    @apply text-20 text-green-darkest leading-normal;
+  }
+
+  &__small {
+    @apply text-16 text-green-darkest uppercase font-bold;
+  }
+
   &--center {
     @apply text-center;
   }
 
   &--white {
     @apply text-white;
-  }
-
-  &__medium {
-    @apply text-24 leading-normal mt-80;
-  }
-
-  &__small {
-    @apply text-16 text-green-darkest uppercase font-bold;
   }
 }

@@ -19,7 +19,7 @@
         <div
           v-else
           class="section__centered">
-          <p class="title__large title--centered">
+          <p class="title__main title--centered">
             Votre panier est vide.
           </p>
           <img

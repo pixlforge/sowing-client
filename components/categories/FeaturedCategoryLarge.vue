@@ -3,7 +3,7 @@
     :style="imgUrl"
     class="featured-category__container featured-category__container--large">
     <div class="featured-category__content">
-      <h2 class="title__large title--white">
+      <h2 class="title__main title--white">
         Vêtements pour bébé
       </h2>
       <p class="featured-category__description">

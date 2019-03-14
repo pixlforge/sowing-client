@@ -3,7 +3,7 @@
     :style="imgUrl"
     class="featured-category__container">
     <div class="featured-category__content">
-      <h2 class="title__large title--white">
+      <h2 class="title__main title--white">
         Savon artisanal
       </h2>
       <p class="featured-category__description">

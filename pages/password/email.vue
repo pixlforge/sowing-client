@@ -13,7 +13,7 @@
     
     <!-- Content -->
     <section class="section__container container">
-      <h2 class="title__large title--center">
+      <h2 class="title__main title--center">
         {{ $t("pages.password_email.paragraphs.first") }}
       </h2>
 

@@ -27,7 +27,7 @@
       </div>
 
       <!-- Title -->
-      <h2 class="title__large title--center">
+      <h2 class="title__main title--center">
         <template v-if="verificationSuccessful">
           {{ $t("pages.verify.success") }}
         </template>
