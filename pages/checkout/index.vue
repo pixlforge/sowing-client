@@ -7,28 +7,32 @@
         <font-awesome-icon :icon="['far', 'cash-register']"/>
       </template>
       <template slot="title">
-        <h1 class="header-title">{{ pageTitle }}</h1>
+        <h1 class="header__title">{{ pageTitle }}</h1>
       </template>
     </Header>
 
-    <section class="container section mt-150">
-      <div class="flex">
-        <div class="w-3/4 mr-50">
+    <section class="section__container container">
+      <div class="checkout__section">
+        <div class="checkout__content">
           
           <!-- Payment methods -->
-          <h2 class="text-36 text-green-darkest mt-40">{{ $t("pages.checkout.payment") }}</h2>
+          <h2 class="checkout__payment-methods">
+            {{ $t("pages.checkout.payment") }}
+          </h2>
           <PaymentMethods
             :payment-methods="paymentMethods"
             v-model="form.payment_method_id"
             @payment-method:added="addPaymentMethod"/>
           
           <!-- Cart Overview -->
-          <h2 class="text-36 text-green-darkest mt-100">{{ $t("pages.cart.title") }}</h2>
+          <h2 class="checkout__cart-overview">
+            {{ $t("pages.cart.title") }}
+          </h2>
           <CartOverview/>
         </div>
 
         <!-- Sidebar -->
-        <div class="w-1/4 bg-green-lightest rounded-lg flex flex-col justify-start p-30 mt-40">
+        <div class="checkout__sidebar">
 
           <!-- Shipping address -->
           <ShippingAddress
@@ -46,38 +50,48 @@
           <!-- Price block -->
           <div
             v-if="!addressManagersVisible"
-            class="mt-40">
+            class="checkout__price-container">
 
             <!-- Subtotal -->
-            <div class="w-full text-grey-lighter text-14 flex justify-between">
-              <div>{{ $t("pages.checkout.subtotal") }}</div>
-              <div>{{ subtotal.currency }} {{ subtotal.amount }}</div>
+            <div class="checkout__subtotal">
+              <div>
+                {{ $t("pages.checkout.subtotal") }}
+              </div>
+              <div>
+                {{ subtotal.currency }} {{ subtotal.amount }}
+              </div>
             </div>
 
             <!-- Shipping -->
-            <div class="w-full text-grey-lighter text-14 flex justify-between mt-5">
+            <div class="checkout__shipping">
               <div>{{ $t("pages.checkout.delivery") }}</div>
-              <div v-if="shippingMethod">{{ shippingMethod.price.currency }} {{ shippingMethod.price.amount }}</div>
+              <div v-if="shippingMethod">
+                {{ shippingMethod.price.currency }} {{ shippingMethod.price.amount }}
+              </div>
             </div>
 
             <!-- Total -->
-            <div class="w-full text-20 uppercase flex justify-between mt-15">
-              <div class="font-bold">{{ $t("pages.checkout.total") }}</div>
-              <div class="font-bold">{{ total.currency }} {{ total.amount }}</div>
+            <div class="checkout__total">
+              <div>
+                {{ $t("pages.checkout.total") }}
+              </div>
+              <div>
+                {{ total.currency }} {{ total.amount }}
+              </div>
             </div>
           </div>
 
           <!-- Checkout button -->
           <button
             v-if="products.length && !addressManagersVisible"
-            :class="{ 'btn-disabled': is_empty || submitting }"
+            :class="{ 'button__disabled': is_empty || submitting }"
             :disabled="is_empty || submitting"
             :title="$t('pages.checkout.order')"
-            class="btn btn-primary mt-40"
+            class="button button__primary button--spaced"
             @click.prevent="order">
             <font-awesome-icon
               :icon="['far', 'check-circle']"
-              class="text-white mr-5"/>
+              class="button__icon button__icon--small"/>
             {{ $t("pages.checkout.order") }}
           </button>
         </div>

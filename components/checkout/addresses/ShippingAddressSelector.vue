@@ -1,41 +1,40 @@
 <template>
-  <div class="flex flex-col">
-    <ul class="list-reset -mt-10">
+  <div>
+    <ul class="list__address list__address--push-top">
       <li
         v-for="address in addresses"
         :key="address.id"
         :class="{ 'border-green': address.id == selectedAddress.id, 'border-green-lightest': address.id != selectedAddress.id }"
-        class="text-14 border-l-4 hover:border-green cursor-pointer -ml-14"
+        class="list__item-bordered"
         @click.prevent="selectAddress(address)">
-        <ul class="list-reset pl-10 mt-20">
-          <li class="text-14 leading-normal">
+        <ul class="list__address list__address--selector">
+          <li>
             {{ address.first_name }} {{ address.last_name }}
           </li>
-          <li
-            v-if="address.company_name"
-            class="text-14 leading-normal">
+          <li v-if="address.company_name">
             {{ address.company_name }}
           </li>
-          <li class="text-14 leading-normal">
+          <li>
             {{ address.address_line_1 }}
           </li>
-          <li
-            v-if="address.address_line_2"
-            class="text-14 leading-normal">
+          <li v-if="address.address_line_2">
             {{ address.address_line_2 }}
           </li>
-          <li class="text-14 leading-normal">
+          <li>
             {{ address.country.code }} &ndash; {{ address.postal_code }} {{ address.city }}
           </li>
-          <li class="text-14 leading-normal">
+          <li>
             ({{ address.country.name[locale] }})
           </li>
         </ul>
       </li>
     </ul>
     <button
-      class="btn btn-primary mt-40"
+      class="button button__primary button--centered button--spaced"
       @click.prevent="openCreator">
+      <font-awesome-icon
+        :icon="['far', 'plus']"
+        class="button__icon button__icon--small"/>
       {{ $t("pages.checkout.new_address") }}
     </button>
   </div>

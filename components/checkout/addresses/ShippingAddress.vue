@@ -1,54 +1,48 @@
 <template>
   <div>
-    <h5 class="text-20 text-green-darkest">{{ $t("pages.checkout.delivery_address") }}</h5>
+    <h5 class="title__medium">
+      {{ $t("pages.checkout.delivery_address") }}
+    </h5>
 
-    <template v-if="addressSelector">
-      <ShippingAddressSelector
-        :addresses="currentAddresses"
-        :selected-address="selectedAddress"
-        @address:selected="switchAddress"/>
-    </template>
+    <ShippingAddressSelector
+      v-if="addressSelector"
+      :addresses="currentAddresses"
+      :selected-address="selectedAddress"
+      @address:selected="switchAddress"/>
 
-    <template v-if="addressCreator">
-      <ShippingAddressCreator @address:created="addAddress"/>
-    </template>
+    <ShippingAddressCreator
+      v-if="addressCreator"
+      @address:created="addAddress"/>
 
-    <template v-if="selectedAddress && !addressManagersVisible">
-      <ul class="list-reset mt-10">
-        <li class="text-14 leading-normal">
-          {{ selectedAddress.first_name }} {{ selectedAddress.last_name }}
-        </li>
-        <li
-          v-if="selectedAddress.company_name"
-          class="text-14 leading-normal">
-          {{ selectedAddress.company_name }}
-        </li>
-        <li class="text-14 leading-normal">
-          {{ selectedAddress.address_line_1 }}
-        </li>
-        <li
-          v-if="selectedAddress.address_line_2"
-          class="text-14 leading-normal">
-          {{ selectedAddress.address_line_2 }}
-        </li>
-        <li class="text-14 leading-normal">
-          {{ selectedAddress.country.code }} &ndash; {{ selectedAddress.postal_code }} {{ selectedAddress.city }}
-        </li>
-        <li class="text-14 leading-normal">
-          ({{ selectedAddress.country.name[locale] }})
-        </li>
-      </ul>
-    </template>
+    <ul
+      v-if="selectedAddress && !addressManagersVisible"
+      class="list__address">
+      <li>
+        {{ selectedAddress.first_name }} {{ selectedAddress.last_name }}
+      </li>
+      <li v-if="selectedAddress.company_name">
+        {{ selectedAddress.company_name }}
+      </li>
+      <li>
+        {{ selectedAddress.address_line_1 }}
+      </li>
+      <li v-if="selectedAddress.address_line_2">
+        {{ selectedAddress.address_line_2 }}
+      </li>
+      <li>
+        {{ selectedAddress.country.code }} &ndash; {{ selectedAddress.postal_code }} {{ selectedAddress.city }}
+      </li>
+      <li>
+        ({{ selectedAddress.country.name[locale] }})
+      </li>
+    </ul>
 
-    <template v-if="!addressManagersVisible">
-      <div class="flex justify-between mt-20">
-        <a
-          class="text-14 no-underline hover:underline text-green font-bold cursor-pointer"
-          @click.prevent="openAddressSelector">
-          {{ $t("pages.checkout.change_address") }}
-        </a>
-      </div>
-    </template>
+    <a
+      v-if="!addressManagersVisible"
+      class="link__block"
+      @click.prevent="openAddressSelector">
+      {{ $t("pages.checkout.change_address") }}
+    </a>
 
   </div>
 </template>

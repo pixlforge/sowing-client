@@ -1,0 +1,37 @@
+.checkout {
+  &__section {
+    @apply flex;
+  }
+
+  &__content {
+    @apply w-3/4 mr-50;
+  }
+
+  &__sidebar {
+    @apply w-1/4 bg-green-lightest rounded-lg flex flex-col justify-start p-30 mt-40;
+  }
+
+  &__payment-methods {
+    @apply text-36 text-green-darkest mt-40;
+  }
+
+  &__cart-overview {
+    @apply text-36 text-green-darkest mt-100;
+  }
+
+  &__price-container {
+    @apply mt-40;
+  }
+
+  &__subtotal {
+    @apply w-full text-grey-lighter text-14 flex justify-between;
+  }
+
+  &__shipping {
+    @apply w-full text-grey-lighter text-14 flex justify-between mt-5;
+  }
+
+  &__total {
+    @apply w-full text-20 font-bold uppercase flex justify-between mt-15;
+  }
+}
