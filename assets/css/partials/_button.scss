@@ -97,10 +97,14 @@
   }
 
   &__icon {
-    @apply text-16;
+    @apply text-16 mr-5;
 
     &--large {
       @apply text-18;
+    }
+
+    &--small {
+      @apply text-14;
     }
   }
 

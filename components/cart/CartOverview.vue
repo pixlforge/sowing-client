@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full">
+  <div>
     <CartOverviewProduct
       v-for="product in products"
       :key="product.id"

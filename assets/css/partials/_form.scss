@@ -57,6 +57,10 @@
 
   &__select-group {
     @apply relative w-full;
+
+    &--spaced {
+      @apply mt-20;
+    }
   }
 
   &__select {

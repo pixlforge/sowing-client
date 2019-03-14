@@ -1,0 +1,53 @@
+.cart-product {
+  &__container {
+    @apply relative bg-white rounded-lg shadow-md flex items-center p-30 mt-40;
+  }
+
+  &__featured-image-container {
+    @apply w-1/5;
+  }
+
+  &__featured-image {
+    @apply block w-full rounded-lg;
+  }
+
+  &__info-container {
+    @apply w-2/5 pl-30;
+  }
+
+  &__name {
+    @apply text-24 text-green-darkest font-extrabold;
+  }
+
+  &__description {
+    @apply text-16 text-grey-lighter leading-normal mt-20;
+  }
+
+  &__price-container {
+    @apply w-1/5 text-center px-20;
+  }
+
+  &__label {
+    @apply text-12 text-grey-lightest uppercase;
+  }
+
+  &__price {
+    @apply h-42 text-16 text-green-darkest font-bold mt-20 flex justify-center items-center;
+  }
+
+  &__quantity-container {
+    @apply w-1/5 text-center px-20;
+  }
+
+  &__delete-button {
+    @apply absolute pin-t pin-r mt-20 mr-20;
+  }
+
+  &__delete-button-icon {
+    @apply text-20 text-grey-lightest transition cursor-pointer;
+
+    &:hover {
+      @apply text-red;
+    }
+  }
+}

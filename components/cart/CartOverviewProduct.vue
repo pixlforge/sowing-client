@@ -1,44 +1,48 @@
 <template>
-  <div class="relative bg-white rounded-lg shadow-md flex items-center p-30 mt-40">
+  <div class="cart-product__container">
 
     <!-- Product featured image -->
-    <div class="w-1/5">
+    <div class="cart-product__featured-image-container">
       <img
         :src="imgUrl"
         :alt="imgAlt"
-        class="block w-full rounded-lg">
+        class="cart-product__featured-image">
     </div>
 
     <!-- Name & description -->
-    <div class="w-2/5 pl-30">
-      <h3 class="text-24 text-green-darkest font-extrabold">
+    <div class="cart-product__info-container">
+      <h3 class="cart-product__name">
         {{ baseProductName }} &ndash; {{ variationType }} &ndash; {{ variationName }}
       </h3>
       
-      <p class="text-16 text-grey-lighter leading-normal mt-20">
+      <p class="cart-product__description">
         {{ baseProductDescription }}
       </p>
     </div>
 
     <!-- Price -->
-    <div class="w-1/5 text-center px-20">
-      <h5 class="text-12 text-grey-lightest uppercase">{{ labelPrice }}</h5>
+    <div class="cart-product__price-container">
+      <h5 class="cart-product__label">
+        {{ labelPrice }}
+      </h5>
 
-      <div class="h-42 text-16 text-green-darkest font-bold mt-20 flex justify-center items-center">
+      <div class="cart-product__price">
         {{ product.total.currency }} {{ product.total.amount }}
       </div>
     </div>
 
     <!-- Quantity -->
-    <div class="w-1/5 text-center px-20">
-      <h5 class="text-12 text-grey-lightest uppercase">{{ labelQuantity }}</h5>
+    <div class="cart-product__quantity-container">
+      <h5 class="cart-product__label">
+        {{ labelQuantity }}
+      </h5>
 
-      <div class="relative mt-20">
+      <div class="form__select-group form__select-group--spaced">
         <select
           id="quantity"
           v-model="quantity"
           name="quantity"
-          class="select">
+          class="form__select">
           <option
             v-if="product.quantity == 0"
             value="0"
@@ -55,7 +59,7 @@
         </select>
         <font-awesome-icon
           :icon="['fas', 'caret-down']"
-          class="select-caret"/>
+          class="form__select-caret"/>
       </div>
     </div>
 
@@ -63,11 +67,11 @@
     <button
       role="button"
       title="Remove"
-      class="absolute pin-t pin-r mt-20 mr-20"
+      class="cart-product__delete-button"
       @click="remove(product.id)">
       <font-awesome-icon
         :icon="['far', 'times']"
-        class="text-20 text-grey-lightest hover:text-red transition cursor-pointer"/>
+        class="cart-product__delete-button-icon"/>
     </button>
   </div>
 </template>

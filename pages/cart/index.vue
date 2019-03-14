@@ -7,63 +7,57 @@
         <font-awesome-icon :icon="['far', 'shopping-cart']"/>
       </template>
       <template slot="title">
-        <h1 class="header-title">{{ pageTitle }}</h1>
+        <h1 class="header__title">{{ pageTitle }}</h1>
       </template>
     </Header>
 
-    <section class="container section mt-150">
+    <section class="section__container container">
 
       <!-- Cart Overview -->
-      <div class="w-full">
+      <div>
         <CartOverview v-if="products.length"/>
         <div
           v-else
-          class="flex flex-col items-center">
-          <p class="text-30 text-green-darkest font-semibold">Votre panier est vide.</p>
+          class="section__centered">
+          <p class="title__large title--centered">
+            Votre panier est vide.
+          </p>
           <img
             src="~assets/img/empty.svg"
             alt="Illustration of an empty box"
-            class="block w-1/3 mt-100">
+            class="cart__illustration">
         </div>
       </div>
 
-      <div class="text-24 font-semibold flex justify-center mt-100">
-        <span class="mr-10">
-          {{ $t("pages.cart.in_your_cart") }}
-        </span>
-        <span class="text-green mr-10">
+      <div
+        v-if="products.length"
+        class="cart__products">
+        {{ $t("pages.cart.in_your_cart") }}
+        <span class="cart__product-emphasis">
           {{ products.length }}
         </span>
-        <span class="mr-5">
-          {{ $t("pages.cart.products") }}
-        </span>
-        <span class="mr-5">
-          {{ $t("pages.cart.for") }}
-        </span>
-        <span class="mr-10">
-          {{ subtotal.currency }}
-        </span>
-        <span class="text-green">
+        {{ $t("pages.cart.products") }}
+        {{ $t("pages.cart.for") }}
+        {{ subtotal.currency }}
+        <span class="cart__product-emphasis">
           {{ subtotal.amount }}
         </span>
       </div>
 
-      <div class="flex justify-center mt-40">
-
-        <!-- Checkout button -->
+      <!-- Checkout button -->
+      <div class="cart__checkout-button-container">
         <nuxt-link
           v-if="products.length"
           :to="localePath({ name: 'checkout' })"
-          :class="{ 'btn-disabled': is_empty }"
+          :class="{ 'button__disabled': is_empty }"
           :disabled="is_empty"
           :title="$t('pages.cart.checkout')"
-          class="btn btn-primary">
+          class="button button__primary">
           <font-awesome-icon
             :icon="['far', 'check-circle']"
-            class="text-white mr-5"/>
+            class="button__icon button__icon--small"/>
           {{ $t("pages.cart.checkout") }}
         </nuxt-link>
-
       </div>
 
     </section>
