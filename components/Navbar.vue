@@ -48,7 +48,6 @@
 <script>
 import Logo from "@/components/Logo";
 import Button from "@/components/buttons/Button";
-import Searchbar from "@/components/search/Searchbar";
 import ButtonCart from "@/components/buttons/ButtonCart";
 import ButtonUser from "@/components/buttons/ButtonUser";
 import ButtonSearch from "@/components/search/ButtonSearch";
@@ -58,7 +57,6 @@ export default {
   components: {
     Logo,
     Button,
-    Searchbar,
     ButtonCart,
     ButtonUser,
     ButtonSearch,
