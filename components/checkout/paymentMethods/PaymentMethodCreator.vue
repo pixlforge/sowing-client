@@ -1,39 +1,39 @@
 <template>
-  <div class="w-full h-full flex flex-col justify-center items-center">
+  <div class="payment-method-creator__container">
     <button
       v-if="!showing"
-      class="bg-grey-lightest hover:bg-green transition text-white w-80 h-80 rounded-full p-0"
+      class="payment-method-creator__button"
       @click.prevent="showing = true">
       <font-awesome-icon
         :icon="['far', 'plus']"
-        class="text-36"/>
+        class="payment-method-creator__button-icon"/>
     </button>
     <form
       v-show="showing"
-      class="w-full h-full flex flex-col items-center"
+      class="payment-method-creator__form"
       @submit.prevent="store">
-      <div class="w-full mt-20">
+      <div class="payment-method-creator__form-body">
         <label
           for="elements"
-          class="block text-14 leading-normal mb-20">
+          class="payment-method-creator__label">
           {{ $t("stripe.add_a_card") }}
         </label>
         <div
           id="elements"
-          class="bg-green-lightest rounded-lg pl-10 py-10"/>
+          class="payment-method-creator__input"/>
       </div>
-      <div class="flex mt-20">
+      <div class="payment-method-creator__controls">
         <button
           :disabled="storing"
           :class="{ 'btn-disabled': storing }"
           type="submit"
-          class="btn btn-primary mr-10">
+          class="button button__primary button--spaced-right">
           {{ $t("buttons.add") }}
         </button>
         <button
           :disabled="storing"
           type="submit"
-          class="btn"
+          class="button"
           @click.prevent="showing = false">
           {{ $t("buttons.cancel") }}
         </button>

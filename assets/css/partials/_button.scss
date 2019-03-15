@@ -161,6 +161,10 @@
     @apply mt-80;
   }
 
+  &--spaced-right {
+    @apply mr-10;
+  }
+
   &--large {
     @apply flex justify-center items-center text-14 py-15;
   }

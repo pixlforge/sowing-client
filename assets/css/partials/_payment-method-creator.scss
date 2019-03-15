@@ -1,0 +1,37 @@
+.payment-method-creator {
+  &__container {
+    @apply w-full h-full min-h-221 flex flex-col justify-center items-center;
+  }
+
+  &__controls {
+    @apply flex mt-20;
+  }
+
+  &__button {
+    @apply bg-grey-lightest transition text-white w-80 h-80 rounded-full p-0;
+
+    &:hover {
+      @apply bg-green;
+    }
+  }
+
+  &__button-icon {
+    @apply text-36;
+  }
+
+  &__form {
+    @apply w-full h-full flex flex-col items-center;
+  }
+
+  &__form-body {
+    @apply w-full mt-20;
+  }
+
+  &__label {
+    @apply block text-14 leading-normal mb-20;
+  }
+
+  &__input {
+    @apply bg-green-lightest rounded-lg pl-10 py-10;
+  }
+}
