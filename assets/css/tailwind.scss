@@ -36,13 +36,13 @@
  * @import "components/forms";
  */
 
-@import "partials/badges";
-@import "partials/cards";
-@import "partials/products";
-
-/* BEM */
-
+ @import "partials/cards";
+ @import "partials/products";
+ 
+ /* BEM */
+ 
 @import "partials/alert";
+@import "partials/badge";
 @import "partials/base";
 @import "partials/button";
 @import "partials/cart";

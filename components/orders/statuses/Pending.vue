@@ -1,5 +1,5 @@
 <template>
-  <span class="badge badge-warning">
+  <span class="badge__primary badge__primary--warning">
     {{ $t("pages.orders.statuses.pending") }}
   </span>
 </template>
