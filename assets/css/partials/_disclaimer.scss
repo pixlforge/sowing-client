@@ -1,0 +1,29 @@
+.disclaimer {
+  &__container {
+    @apply bg-green flex flex-col justify-center items-center text-12 text-white py-15;
+  }
+
+  &__brand-link {
+    @apply no-underline text-white font-cafe uppercase;
+
+    &:hover {
+      @apply underline;
+    }
+  }
+
+  &__link {
+    @apply no-underline text-white font-semibold;
+
+    &:hover {
+      @apply underline;
+    }
+  }
+
+  &__heart-icon {
+    @apply text-red;
+  }
+
+  &__made-by {
+    @apply mt-5;
+  }
+}

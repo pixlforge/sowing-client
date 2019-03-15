@@ -1,24 +1,24 @@
 <template>
-  <div class="bg-green flex flex-col justify-center items-center text-12 text-white py-15">
+  <div class="disclaimer__container">
     <p>
-      &copy; 2018 &ndash; {{ currentYear }} {{ $t("footer.disclaimer.rights") }}
+      &copy; {{ currentYear }} {{ $t("footer.disclaimer.rights") }}
       <a
         href="https://www.sowing.ch/"
         target="_blank"
         rel="noopener noreferrer"
-        class="no-underline hover:underline text-white font-cafe uppercase">Sowing</a>.
+        class="disclaimer__brand-link">Sowing</a>.
     </p>
-    <p class="mt-5">
+    <p class="disclaimer__made-by">
       {{ $t("footer.disclaimer.made_with") }}
       <font-awesome-icon
         :icon="['fas', 'heart']"
-        class="text-red"/>
+        class="disclaimer__heart-icon"/>
       {{ $t("footer.disclaimer.by") }}
       <a
         href="https://www.pixlforge.ch/"
         target="_blank"
         rel="noopener noreferrer"
-        class="no-underline hover:underline text-white font-semibold">Pixlforge</a>.
+        class="disclaimer__link">Pixlforge</a>.
     </p>
   </div>
 </template>
