@@ -7,11 +7,11 @@
         <font-awesome-icon :icon="['far', 'shipping-fast']"/>
       </template>
       <template slot="title">
-        <h1 class="header-title">{{ $t("pages.orders.title") }}</h1>
+        <h1 class="header__title">{{ $t("pages.orders.title") }}</h1>
       </template>
     </Header>
 
-    <section class="container section">
+    <section class="section__container container">
       
       <div
         v-if="orders.length"
