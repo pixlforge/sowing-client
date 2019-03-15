@@ -176,4 +176,10 @@
       @apply rounded-l-none mt-0;
     }
   }
+
+  &--aligned-left-lg {
+    @screen lg {
+      @apply mx-0;
+    }
+  }
 }

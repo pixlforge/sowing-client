@@ -7,20 +7,20 @@
         <div
           v-if="shopAvatar"
           :style="`background-image: url('${shopAvatar}');`"
-          class="block w-110 h-110 rounded-full bg-center bg-no-repeat bg-cover"/>
+          class="header__avatar header__avatar--picture"/>
         <div
           v-else
           :class="textTheme">
           <font-awesome-icon
             :icon="['far', 'store']"
-            class="block"/>
+            class="header__icon"/>
         </div>
       </template>
       <template slot="title">
         <nuxt-link
           :to="localePath({ name: 'shop-slug-details', params: { slug: product.shop.slug } })"
-          class="no-underline">
-          <h1 class="header-title">
+          class="product-details__link">
+          <h1 class="header__title">
             {{ product.shop.name }}
           </h1>
         </nuxt-link>
@@ -28,8 +28,8 @@
       <template slot="description">
         <nuxt-link
           :to="localePath({ name: 'shop-slug-details', params: { slug: product.shop.slug } })"
-          class="no-underline">
-          <p class="header-description">
+          class="product-details__link">
+          <p class="header__description">
             {{ product.shop.description_short[locale] }}
           </p>
         </nuxt-link>
@@ -37,7 +37,7 @@
     </Header>
 
     <!-- Product details -->
-    <section class="container section mt-150">
+    <section class="section__container container">
       <ProductDetails :product="product"/>
     </section>
 

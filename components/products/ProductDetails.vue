@@ -1,57 +1,67 @@
 <template>
-  <div class="rounded-lg shadow-lg flex flex-col">
-    <div class="flex flex-col lg:flex-row">
+  <div class="product-details__container">
+    <div class="product-details__main">
 
       <!-- Product featured image -->
-      <div class="w-full lg:w-1/2">
+      <div class="product-details__featured-image-container">
         <img
           :src="imgUrl"
           :alt="imgAlt"
-          class="block w-full rounded-tl-lg">
+          class="product-details__featured-image">
       </div>
 
       <!-- Product content -->
-      <div class="w-full lg:w-1/2 flex flex-col items-center lg:items-start p-30">
+      <div class="product-details__content">
 
         <!-- Base product name -->
-        <h2 class="text-36 font-bold text-green-darkest">
+        <h2 class="product-details__name">
           {{ productName }}
         </h2>
 
         <!-- Base product description -->
-        <p class="text-20 text-grey-lighter leading-normal mt-40">
+        <p class="product-details__description">
           {{ productDescription }}
         </p>
 
         <!-- Base product price and currency -->
-        <div class="flex items-start mt-40">
-          <span class="product-currency">{{ productCurrency }}</span>
-          <span class="product-price">{{ productPrice }}</span>
+        <div class="product-details__price-container">
+          <span class="product__currency">
+            {{ productCurrency }}
+          </span>
+          <span class="product__price">
+            {{ productPrice }}
+          </span>
         </div>
 
         <!-- Total products in stock -->
         <div
           v-if="product.in_stock"
-          class="flex items-start text-16 text-green-darkest mt-40">
+          class="product-details__stock-container">
           <font-awesome-icon
             :icon="['far', 'boxes']"
-            class="text-green mr-10"/>
-          <span class="font-bold mr-5">{{ product.stock_count }}</span>
-          <span>{{ productsRemaining }}</span>
+            class="product-details__icon product-details__icon--green"/>
+          <span class="product-details__stock-count">
+            {{ product.stock_count }}
+          </span>
+          <span>
+            {{ productsRemaining }}
+          </span>
         </div>
 
         <!-- Product is out of stock -->
         <div
           v-else
-          class="flex items-start text-16 text-red mt-40">
+          class="produce-details__out-of-stock-container">
           <font-awesome-icon
             :icon="['far', 'boxes']"
-            class="mr-10"/>
-          <span class="font-bold">{{ productOutOfStock }}</span>
+            class="product-details__icon"/>
+          <span class="product-details__stock-count product-details__stock-count--no-margin">
+            {{ productOutOfStock }}
+          </span>
         </div>
 
         <form
-          class="w-full md:w-3/4 xxl:w-1/2 mt-20"
+          class="product-details__variation-container"
           @submit.prevent="add">
           
           <!-- Variations -->
@@ -60,24 +70,23 @@
             :key="type"
             :type="type"
             :variations="variations"
-            v-model="form.variation"
-            class="mt-20"/>
+            v-model="form.variation"/>
 
           <!-- Quantity -->
           <div
             v-if="form.variation"
-            class="mt-20">
+            class="form__group form__group--tight">
             <label
               for="quantity"
-              class="label">
+              class="form__label">
               {{ quantityLabel }}
             </label>
-            <div class="relative">
+            <div class="form__select-group">
               <select
                 id="quantity"
                 v-model="form.quantity"
                 name="quantity"
-                class="select">
+                class="form__select">
                 <option
                   v-for="n in parseInt(form.variation.stock_count)"
                   :key="n"
@@ -87,16 +96,16 @@
               </select>
               <font-awesome-icon
                 :icon="['fas', 'caret-down']"
-                class="select-caret"/>
+                class="form__select-caret"/>
             </div>
 
             <!-- Submit -->
             <button
               type="submit"
-              class="btn btn-primary mx-auto lg:mx-0 mt-20">
+              class="button button__primary button--centered button--spaced button--aligned-left-lg">
               <font-awesome-icon
                 :icon="['far', 'cart-plus']"
-                class="mr-10"/>
+                class="button__icon button__icon--small"/>
               {{ $t("buttons.add_to_cart") }}
             </button>
           </div>
@@ -107,15 +116,15 @@
     </div>
 
     <!-- Additional product images -->
-    <div class="w-full bg-green-lightest rounded-b-lg flex flex-wrap items-center p-20">
+    <div class="product-details__additional-images-container">
       <div
         v-for="n in 13"
         :key="n"
-        class="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 xxl:w-1/5 p-20">
+        class="product-details__additional-images">
         <img
           :src="imgUrl"
           :alt="imgAlt"
-          class="block rounded-lg">
+          class="product-details__image">
       </div>
     </div>
 
