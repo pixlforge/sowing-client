@@ -1,127 +1,138 @@
 <template>
-  <div>
-    <div class="bg-green-lightest">
-      <div class="container flex flex-wrap pb-100">
+  <div class="footer__background">
+    <div class="footer__container container">
 
-        <!-- Categories -->
-        <div class="w-200 lg:w-1/5 mx-auto mt-50 lg:mt-100">
-          <h5 class="title-small mb-10">{{ $t('footer.titles.categories') }}</h5>
-          <ul class="list-reset leading-normal">
-            <li
-              v-for="category in categories"
-              :key="category.slug"
-              class="mx-10 xl:mx-0">
-              <nuxt-link
-                :to="localePath({ name: 'categories-slug', params: { slug: category.slug } })"
-                class="footer-link">
-                {{ category.name[locale] }}
-              </nuxt-link>
-            </li>
-          </ul>
-        </div>
+      <!-- Categories -->
+      <div class="footer__column">
+        <h5 class="title__smaller">
+          {{ $t('footer.titles.categories') }}
+        </h5>
+        <ul class="footer__list">
+          <li
+            v-for="category in categories"
+            :key="category.slug">
+            <nuxt-link
+              :to="localePath({ name: 'categories-slug', params: { slug: category.slug } })"
+              class="footer__link">
+              {{ category.name[locale] }}
+            </nuxt-link>
+          </li>
+        </ul>
+      </div>
 
-        <!-- Selling -->
-        <div class="w-200 lg:w-1/5 mx-auto mt-50 lg:mt-100">
-          <h5 class="title-small">{{ $t("footer.titles.sell_on_sowing") }}</h5>
-          <ul class="list-reset leading-normal">
-            <li class="mt-10">
-              <nuxt-link
-                :to="localePath({ name: 'index' })"
-                class="footer-link">
-                {{ $t("footer.links.login") }}
-              </nuxt-link>
-            </li>
-            <li>
-              <nuxt-link
-                :to="localePath({ name: 'index' })"
-                class="footer-link">
-                {{ $t("footer.links.your_own_store") }}
-              </nuxt-link>
-            </li>
-            <li>
-              <nuxt-link
-                :to="localePath({ name: 'index' })"
-                class="footer-link">
-                {{ $t("footer.links.new_vendors") }}
-              </nuxt-link>
-            </li>
-          </ul>
-        </div>
+      <!-- Selling -->
+      <div class="footer__column">
+        <h5 class="title__smaller">
+          {{ $t("footer.titles.sell_on_sowing") }}
+        </h5>
+        <ul class="footer__list">
+          <li>
+            <nuxt-link
+              :to="localePath({ name: 'index' })"
+              class="footer__link">
+              {{ $t("footer.links.login") }}
+            </nuxt-link>
+          </li>
+          <li>
+            <nuxt-link
+              :to="localePath({ name: 'index' })"
+              class="footer__link">
+              {{ $t("footer.links.your_own_store") }}
+            </nuxt-link>
+          </li>
+          <li>
+            <nuxt-link
+              :to="localePath({ name: 'index' })"
+              class="footer__link">
+              {{ $t("footer.links.new_vendors") }}
+            </nuxt-link>
+          </li>
+        </ul>
+      </div>
 
-        <!-- About -->
-        <div class="w-200 lg:w-1/5 mx-auto mt-50 lg:mt-100">
-          <h5 class="title-small">{{ $t("footer.titles.about") }}</h5>
-          <ul class="list-reset leading-normal">
-            <li class="mt-10">
-              <nuxt-link
-                :to="localePath({ name: 'index' })"
-                class="footer-link">
-                {{ $t("footer.links.terms") }}
-              </nuxt-link>
-            </li>
-            <li>
-              <nuxt-link
-                :to="localePath({ name: 'index' })"
-                class="footer-link">
-                {{ $t("footer.links.payments") }}
-              </nuxt-link>
-            </li>
-            <li>
-              <nuxt-link
-                :to="localePath({ name: 'index' })"
-                class="footer-link">
-                {{ $t("footer.links.shipments") }}
-              </nuxt-link>
-            </li>
-          </ul>
-        </div>
+      <!-- About -->
+      <div class="footer__column">
+        <h5 class="title__smaller">
+          {{ $t("footer.titles.about") }}
+        </h5>
+        <ul class="footer__list">
+          <li>
+            <nuxt-link
+              :to="localePath({ name: 'index' })"
+              class="footer__link">
+              {{ $t("footer.links.terms") }}
+            </nuxt-link>
+          </li>
+          <li>
+            <nuxt-link
+              :to="localePath({ name: 'index' })"
+              class="footer__link">
+              {{ $t("footer.links.payments") }}
+            </nuxt-link>
+          </li>
+          <li>
+            <nuxt-link
+              :to="localePath({ name: 'index' })"
+              class="footer__link">
+              {{ $t("footer.links.shipments") }}
+            </nuxt-link>
+          </li>
+        </ul>
+      </div>
 
-        <!-- Languages -->
-        <div class="w-200 lg:w-1/5 mx-auto mt-50 lg:mt-100">
-          <h5 class="title-small mb-10">{{ $t("footer.titles.language") }}</h5>
-          <ul class="list-reset leading-normal">
-            <li
-              v-for="locale in $i18n.locales"
-              :key="locale.code">
-              <nuxt-link
-                :to="switchLocalePath(locale.code)"
-                class="footer-link">
-                {{ locale.name }}
-              </nuxt-link>
-            </li>
-          </ul>
-        </div>
+      <!-- Languages -->
+      <div class="footer__column">
+        <h5 class="title__smaller">
+          {{ $t("footer.titles.language") }}
+        </h5>
+        <ul class="footer__list">
+          <li
+            v-for="locale in $i18n.locales"
+            :key="locale.code">
+            <nuxt-link
+              :to="switchLocalePath(locale.code)"
+              class="footer__link">
+              {{ locale.name }}
+            </nuxt-link>
+          </li>
+        </ul>
+      </div>
 
-        <!-- Social Networks -->
-        <div class="w-200 lg:w-1/5 mx-auto mt-50 lg:mt-100">
-          <h5 class="title-small">{{ $t("footer.titles.social_networks") }}</h5>
-          <ul class="list-reset leading-normal">
-            <li class="mt-10">
-              <a
-                href="#"
-                class="footer-link flex items-center">
-                <div :class="textTheme">
-                  <font-awesome-icon
-                    :icon="['fab', 'facebook']"
-                    class="block text-16 mr-10"/>
-                </div>
-                Facebook
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                class="footer-link flex items-center">
-                <div :class="textTheme">
-                  <font-awesome-icon
-                    :icon="['fab', 'instagram']"
-                    class="block text-16 mr-10"/>
-                </div>
-                Instagram
-              </a>
-            </li>
-          </ul>
-        </div>
+      <!-- Social Networks -->
+      <div class="footer__column">
+        <h5 class="title__smaller">
+          {{ $t("footer.titles.social_networks") }}
+        </h5>
+        <ul class="footer__list">
+          <li>
+            <a
+              href="https://www.facebook.com/Sowingch-1065130827008521/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="footer__link footer__link--social">
+              <div :class="textTheme">
+                <font-awesome-icon
+                  :icon="['fab', 'facebook']"
+                  class="footer__social-icon"/>
+              </div>
+              Facebook
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.instagram.com/sowing.ch/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="footer__link footer__link--social">
+              <div :class="textTheme">
+                <font-awesome-icon
+                  :icon="['fab', 'instagram']"
+                  class="footer__social-icon"/>
+              </div>
+              Instagram
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
   </div>

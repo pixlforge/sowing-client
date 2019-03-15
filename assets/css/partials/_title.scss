@@ -23,6 +23,10 @@
     @apply text-16 text-green-darkest uppercase font-bold;
   }
 
+  &__smaller {
+    @apply text-14 text-green-darkest uppercase font-bold;
+  }
+
   &--center {
     @apply text-center;
   }

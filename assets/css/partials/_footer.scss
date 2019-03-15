@@ -1,7 +1,37 @@
-.footer-link {
-  @apply no-underline text-green-darkest text-14;
-}
+.footer {
+  &__background {
+    @apply bg-green-lightest;
+  }
 
-.footer-link:hover {
-  @apply underline;
+  &__container {
+    @apply flex flex-wrap pb-100;
+  }
+
+  &__column {
+    @apply w-1/3 mx-auto mt-50;
+
+    @screen lg {
+      @apply w-1/5 mt-100;
+    }
+  }
+
+  &__list {
+    @apply list-reset leading-normal mt-10;
+  }
+
+  &__link {
+    @apply no-underline text-green-darkest text-14;
+
+    &:hover {
+      @apply underline;
+    }
+
+    &--social {
+      @apply flex items-center;
+    }
+  }
+
+  &__social-icon {
+    @apply block text-16 mr-10;
+  }
 }
