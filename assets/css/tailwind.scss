@@ -36,11 +36,6 @@
  * @import "components/forms";
  */
 
- @import "partials/cards";
- @import "partials/products";
- 
- /* BEM */
- 
 @import "partials/alert";
 @import "partials/badge";
 @import "partials/base";
@@ -66,6 +61,7 @@
 @import "partials/paragraph";
 @import "partials/payment-method";
 @import "partials/payment-method-creator";
+@import "partials/product";
 @import "partials/review";
 @import "partials/search";
 @import "partials/section";

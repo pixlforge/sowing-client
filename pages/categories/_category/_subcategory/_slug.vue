@@ -4,23 +4,21 @@
     <!-- Header -->
     <Header>
       <template slot="title">
-        <h1 class="header-title">{{ subcategory.name[locale] }}</h1>
+        <h1 class="header__title">{{ subcategory.name[locale] }}</h1>
       </template>
       <template slot="description">
-        <p class="header-description">
-          {{ subcategory.description[locale] }}
-        </p>
+        <p class="header__description">{{ subcategory.description[locale] }}</p>
       </template>
     </Header>
     
-    <section class="container section mt-120">
-      <div class="flex flex-wrap justify-between -mx-40">
+    <section class="section__container container">
+      <div class="product__wrapper">
 
-        <!-- Products -->        
+        <!-- Products -->
         <div
           v-for="product in products"
           :key="product.id"
-          class="w-1/2 p-40">
+          class="product__container">
           <Product :product="product"/>
         </div>
 

@@ -1,45 +1,50 @@
 <template>
-  <div class="card-product">
+  <div class="product__body">
 
     <!-- Product featured image -->
-    <div class="w-2/5">
+    <div class="product__featured-image-container">
       <nuxt-link :to="localePath({ name: 'products-slug', params: { slug: product.slug } })">
         <img
           :alt="alt"
           :src="imgSrc"
-          class="block rounded-l-lg">
+          class="product__featured-image">
       </nuxt-link>
     </div>
 
-    <div class="w-3/5 flex flex-col justify-between p-30">
+    <!-- Content -->
+    <div class="product__content">
 
       <!-- Base product name -->
       <nuxt-link
         :to="localePath({ name: 'products-slug', params: { slug: product.slug } })"
-        class="no-underline">
-        <h5 class="text-24 font-bold text-green-darkest">
+        class="product__name-link">
+        <h5 class="product__name">
           {{ product.name[locale] }}
         </h5>
       </nuxt-link>
 
       <!-- Base product description -->
-      <p class="text-18 text-grey-lighter leading-normal mt-15">
+      <p class="product__description">
         {{ product.description[locale] }}
       </p>
 
       <!-- Base product price and currency -->
-      <p class="text-20 flex items-start mt-15">
-        <span class="product-currency">{{ productCurrency }}</span>
-        <span class="product-price">{{ productPrice }}</span>
+      <p class="product__price-container">
+        <span class="product__currency">
+          {{ productCurrency }}
+        </span>
+        <span class="product__price">
+          {{ productPrice }}
+        </span>
       </p>
 
-      <div class="flex items-start text-14 text-green mt-15">
+      <div class="product__meta">
         <font-awesome-icon
           :icon="['far', 'store']"
-          class="mr-10"/>
+          class="product__meta-icon"/>
         <nuxt-link
           :to="localePath({ name: 'shop-slug-details', params: { slug: product.shop.slug } })"
-          class="text-green font-semibold no-underline hover:underline">
+          class="product__meta-link">
           {{ shopName }}
         </nuxt-link>
       </div>
