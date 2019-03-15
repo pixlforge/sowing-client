@@ -2,13 +2,13 @@
   <div
     v-if="alert"
     :class="{ 'bg-blue': type === 'info', 'bg-red': type === 'danger', 'bg-green': type === 'success', 'bg-orange': type === 'warning' }"
-    class="py-40">
-    <div class="container relative flex justify-center items-center">
+    class="alert__background">
+    <div class="alert__container container">
       <p
-        class="text-20 font-bold text-white text-center"
+        class="alert__message"
         v-html="alert"/>
       <button
-        class="absolute pin-r text-24 text-white hover:text-grey-lightest p-10"
+        class="alert__close-button"
         @click.prevent="close">
         <font-awesome-icon
           :icon="['fas', 'times']"/>

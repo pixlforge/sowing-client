@@ -1,0 +1,21 @@
+.alert {
+  &__background {
+    @apply py-40;
+  }
+
+  &__container {
+    @apply relative flex justify-center items-center;
+  }
+
+  &__message {
+    @apply text-20 font-bold text-white text-center;
+  }
+
+  &__close-button {
+    @apply absolute pin-r text-24 text-white p-10;
+
+    &:hover {
+      @apply text-grey-lightest;
+    }
+  }
+}
