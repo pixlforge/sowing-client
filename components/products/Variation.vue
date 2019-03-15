@@ -4,17 +4,17 @@
     <!-- Variation label -->
     <label
       for="variation"
-      class="label">
+      class="form__label">
       {{ variationType }}
     </label>
 
     <!-- Variation select -->
-    <div class="relative">
+    <div class="form__select-group">
       <select
         id="variation"
         :value="selectedVariationId"
         name="variation"
-        class="select"
+        class="form__select"
         @change="changed">
         <option
           value=""
@@ -43,7 +43,7 @@
       </select>
       <font-awesome-icon
         :icon="['fas', 'caret-down']"
-        class="select-caret"/>
+        class="form__select-caret"/>
     </div>
   </div>
 </template>

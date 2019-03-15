@@ -87,23 +87,24 @@
     @apply w-full p-20;
 
     @screen sm {
-      @appy w-1/2;
+      @apply w-1/2;
     }
 
     @screen lg {
-      @appy w-1/3;
+      @apply w-1/3;
     }
 
     @screen xl {
-      @appy w-1/4;
+      @apply w-1/4;
     }
+
     @screen xxl {
-      @appy w-1/5;
+      @apply w-1/5;
     }
   }
 
   &__image {
-    @apply block rounded-lg;
+    @apply block rounded-lg mx-auto;
   }
 
   &__link {

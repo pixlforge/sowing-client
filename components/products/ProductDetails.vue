@@ -70,7 +70,8 @@
             :key="type"
             :type="type"
             :variations="variations"
-            v-model="form.variation"/>
+            v-model="form.variation"
+            class="mb-20"/>
 
           <!-- Quantity -->
           <div
