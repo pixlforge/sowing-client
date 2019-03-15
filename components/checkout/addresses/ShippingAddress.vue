@@ -15,7 +15,7 @@
       @address:created="addAddress"/>
 
     <ul
-      v-if="selectedAddress && !addressManagersVisible"
+      v-if="selectedAddress && selectedAddress.country && !addressManagersVisible"
       class="list__address">
       <li>
         {{ selectedAddress.first_name }} {{ selectedAddress.last_name }}
@@ -37,11 +37,20 @@
       </li>
     </ul>
 
+    <!-- Change address -->
     <a
-      v-if="!addressManagersVisible"
+      v-if="addresses.length && !addressManagersVisible"
       class="link__block"
       @click.prevent="openAddressSelector">
       {{ $t("pages.checkout.change_address") }}
+    </a>
+
+    <!-- Add an address -->
+    <a
+      v-if="!addresses.length && !addressManagersVisible"
+      class="link__block"
+      @click.prevent="openAddressCreator">
+      {{ $t("pages.checkout.add_address") }}
     </a>
 
   </div>
@@ -90,6 +99,7 @@ export default {
     ...mapActions({
       openAddressSelector: "checkout/openAddressSelector",
       closeAddressSelector: "checkout/closeAddressSelector",
+      openAddressCreator: "checkout/openAddressCreator",
       closeAddressCreator: "checkout/closeAddressCreator"
     }),
 

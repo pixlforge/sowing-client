@@ -165,6 +165,7 @@ export default {
       for: "pour"
     },
     checkout: {
+      add_address: "Ajouter une adresse",
       change_address: "Changer d'adresse?",
       delivery: "Livraison",
       delivery_address: "Adresse de livraison",
