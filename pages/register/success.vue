@@ -1,42 +1,58 @@
 <template>
   <main>
-    <section class="container py-150">
+    
+    <!-- Header -->
+    <Header>
+      <template slot="icon">
+        <font-awesome-icon :icon="['far', 'user-plus']"/>
+      </template>
+      <template slot="title">
+        <h1 class="header__title">{{ $t("pages.register.title") }}</h1>
+      </template>
+    </Header>
 
-      <!-- Success message -->
-      <div class="w-full sm:w-2/3 xl:w-1/2 flex flex-col lg:flex-row px-20 md:px-0 mx-auto">
-        <div class="w-full lg:w-auto flex justify-center">
+    <!-- Content -->
+    <section class="section__container container">
+      <div class="section__centered">
+        
+        <!-- Icon -->
+        <div class="icon__group">
           <font-awesome-icon
             :icon="['far', 'check-circle']"
-            class="text-72 text-green"/>
+            class="icon__icon icon__icon--success"/>
         </div>
-        <div class="mx-auto mt-40 lg:mt-0">
-          <h1 class="text-48 text-green text-center lg:text-left">
-            {{ $t("pages.register_success.congratulations") }}
-          </h1>
-          <p class="text-24 font-semibold text-green-darkest text-center lg:text-left">
-            {{ $t("pages.register_success.account_created") }}
-          </p>
-        </div>
-      </div>
-      
-      <!-- Illustration -->
-      <div class="w-full sm:w-2/3 xl:w-1/2 px-20 md:px-0 mx-auto mt-150">
-        <img
-          src="~assets/img/success_smiley.svg"
-          alt=""
-          class="select-none">
-      </div>
 
+        <h2 class="title__main title--center">
+          {{ $t("pages.register_success.congratulations") }}
+        </h2>
+
+        <p class="paragraph__medium paragraph--center paragraph--narrow paragraph--spaced">
+          {{ $t("pages.register_success.account_created") }}
+        </p>
+
+        <!-- Illustration -->
+        <div class="illustration__container">
+          <img
+            src="~assets/img/success_smiley.svg"
+            alt=""
+            class="illustration__image">
+        </div>
+      </div>
     </section>
   </main>
 </template>
 
 <script>
+import Header from "@/components/Header";
+
 export default {
   head() {
     return {
       title: `${this.title} | ${this.$t("pages.register_success.title")}`
     };
+  },
+  components: {
+    Header
   },
   async asyncData({ app }) {
     return {
