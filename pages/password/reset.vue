@@ -68,7 +68,7 @@
           class="button button__primary button--centered button--spaced">
           <font-awesome-icon
             :icon="['far', 'redo-alt']"
-            class="mr-10"/>
+            class="button__icon button__icon--small"/>
           {{ $t("buttons.password_reset") }}
         </button>
       </form>

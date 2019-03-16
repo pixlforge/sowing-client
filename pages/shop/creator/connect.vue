@@ -27,7 +27,6 @@
           </a>
         </section>
 
-        <!-- class="w-full sm:w-2/3 xl:w-1/2 flex flex-col lg:flex-row px-20 md:px-0 mx-auto my-150" -->
         <section
           v-if="shopStripeUserId && shopStripePublishableKey"
           class="mt-150">
@@ -58,7 +57,7 @@
             @click.prevent="prev">
             <font-awesome-icon
               :icon="['far', 'chevron-circle-left']"
-              class="mr-5"/>
+              class="button__icon button__icon--small"/>
             {{ $t("buttons.back") }}
           </button>
 
@@ -70,7 +69,7 @@
             @click.prevent="next">
             <font-awesome-icon
               :icon="['far', 'chevron-circle-right']"
-              class="mr-5"/>
+              class="button__icon button__icon--small"/>
             {{ $t("buttons.finalize_shop_creation") }}
           </button>
         </div>

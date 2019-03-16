@@ -43,7 +43,7 @@
           @click.prevent="next">
           <font-awesome-icon
             :icon="['far', 'chevron-circle-right']"
-            class="mr-5"/>
+            class="button__icon button__icon--small"/>
           {{ $t("buttons.begin_shop_creation") }}
         </button>
       </div>

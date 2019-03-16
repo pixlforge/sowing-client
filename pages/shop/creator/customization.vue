@@ -23,7 +23,7 @@
             @click.prevent="prev">
             <font-awesome-icon
               :icon="['far', 'chevron-circle-left']"
-              class="mr-5"/>
+              class="button__icon button__icon--small"/>
             {{ $t("buttons.back") }}
           </button>
 
@@ -34,7 +34,7 @@
             @click.prevent="next">
             <font-awesome-icon
               :icon="['far', 'chevron-circle-right']"
-              class="mr-5"/>
+              class="button__icon button__icon--small"/>
             {{ $t("buttons.next") }}
           </button>
         </div>

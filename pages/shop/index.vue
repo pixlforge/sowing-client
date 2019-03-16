@@ -124,7 +124,7 @@
             class="button button__primary button--spaced-large">
             <font-awesome-icon
               :icon="['far', 'rocket']"
-              class="mr-10"/>
+              class="button__icon button__icon--small"/>
             {{ $t("buttons.create_my_shop") }}
           </nuxt-link>
         </template>

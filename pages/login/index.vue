@@ -82,7 +82,7 @@
           class="button button__primary button--centered button--spaced">
           <font-awesome-icon
             :icon="['far', 'key']"
-            class="mr-10"/>
+            class="button__icon button__icon--small"/>
           {{ $t("buttons.connection") }}
         </button>
       </form>
