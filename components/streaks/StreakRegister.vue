@@ -32,13 +32,3 @@
     </div>
   </div>
 </template>
-
-<script>
-import Button from "@/components/buttons/Button";
-
-export default {
-  components: {
-    Button
-  }
-};
-</script>

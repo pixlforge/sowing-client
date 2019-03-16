@@ -48,18 +48,6 @@
           <p class="paragraph__large paragraph--center">
             Votre compte Stripe a bien été associé à votre boutique!
           </p>
-
-          <!-- <div class="w-full lg:w-auto flex justify-center">
-            <font-awesome-icon
-              :icon="['far', 'check-circle']"
-              class="text-72 text-green"/>
-          </div>
-          <div class="mx-auto mt-40 lg:mt-0">
-            <h1 class="text-48 text-green text-center lg:text-left">Félicitations</h1>
-            <p class="text-24 font-semibold text-green-darkest text-center lg:text-left">
-              Votre compte Stripe a bien été associé à votre boutique!
-            </p>
-          </div> -->
         </section>
 
         <div class="shop-creator__controls">
