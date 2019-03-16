@@ -10,6 +10,7 @@ export default {
     cancel: "Annulla",
     check_availability: "Verificare la disponibilità",
     connection: "Accedi",
+    connect_with_stripe: "Collega il mio negozio a Stripe",
     create: "Creare",
     create_account: "Creare l'account",
     create_my_shop: "Creare il mio negozio",

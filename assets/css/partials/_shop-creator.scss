@@ -46,4 +46,12 @@
       @apply w-1/2;
     }
   }
+
+  &__stripe-button-container {
+    @apply w-full max-w-400 mt-60 mb-100;
+
+    @screen md {
+      @apply max-w-600;
+    }
+  }
 }

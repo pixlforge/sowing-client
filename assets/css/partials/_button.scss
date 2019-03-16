@@ -99,6 +99,10 @@
   &__icon {
     @apply text-16 mr-5;
 
+    &--larger {
+      @apply text-24 mr-10;
+    }
+
     &--large {
       @apply text-18;
     }

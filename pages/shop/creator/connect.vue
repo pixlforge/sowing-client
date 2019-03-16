@@ -14,16 +14,15 @@
 
         <section
           v-if="!shopStripeUserId || !shopStripePublishableKey"
-          class="w-full max-w-400 md:max-w-600 mt-60 mb-100">
+          class="shop-creator__stripe-button-container">
           <a
             :href="stripeConnectOAuthUrl"
             :class="btnTheme"
             class="button button--large">
             <font-awesome-icon
               :icon="['fab', 'cc-stripe']"
-              class="text-24 mr-10"/>
-            <!-- TODO: Translate -->
-            Connecter ma boutique avec Stripe
+              class="button__icon button__icon--larger"/>
+            {{ $t("buttons.connect_with_stripe") }}
           </a>
         </section>
 
