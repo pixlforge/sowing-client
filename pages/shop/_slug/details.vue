@@ -12,26 +12,26 @@
         <div
           v-if="shopAvatar"
           :style="`background-image: url('${shopAvatar}');`"
-          class="block w-110 h-110 rounded-full bg-center bg-no-repeat bg-cover"/>
+          class="header__avatar header__avatar--picture"/>
         <div
           v-else
           :class="textTheme">
           <font-awesome-icon
             :icon="['far', 'store']"
-            class="block"/>
+            class="header__icon"/>
         </div>
       </template>
       <template slot="title">
-        <h1 class="header-title">
+        <h1 class="header__title">
           {{ shopName }}
         </h1>
       </template>
       <template slot="description">
-        <p class="header-description">
+        <p class="header__description">
           {{ shop.description_short[locale] }}
         </p>
 
-        <ul class="list-reset text-14 text-white leading-normal mt-15">
+        <ul class="list__address list__address--white">
           <li>
             <font-awesome-icon
               :icon="['far', 'map-marker-alt']"
@@ -46,40 +46,42 @@
     </Header>
 
     <!-- Content -->
-    <section class="container section">
-      <h2 class="title-large text-center mt-150">{{ $t("pages.shop_details.welcome") }}</h2>
+    <section class="section__container container">
+      <h2 class="title__main title--center">
+        {{ $t("pages.shop_details.welcome") }}
+      </h2>
 
-      <section class="max-w-1000 px-20 mx-auto">
-        <p
-          class="paragraph-body text-center my-60"
-          v-html="shop.description_long[locale]"/>
-      </section>
+      <p
+        class="paragraph__large paragraph--center paragraph--narrow"
+        v-html="shop.description_long[locale]"/>
     </section>
 
-    <section class="container section">
-      <div class="flex flex-wrap justify-center items-start -m-20">
+    <section class="section__container container">
+      <div class="shop-details__images-section">
         <div
           v-for="n in 10"
           :key="n"
-          class="w-full sm:w-1/2 lg:w-1/3 xxl:w-1/4 p-20">  
+          class="shop-details__images-container">
           <img
             :src="imgUrl"
             :alt="imgAlt"
-            class="rounded-lg">
+            class="shop-details__image">
         </div>
       </div>
     </section>
 
-    <section class="container section">
-      <h2 class="title-large text-center mt-150">{{ $t("pages.shop_details.interested") }}</h2>
+    <section class="section__container">
+      <h2 class="title__main title--center">
+        {{ $t("pages.shop_details.interested") }}
+      </h2>
 
-      <div class="flex justify-center mt-80">
+      <div class="shop-details__interested">
         <a
           :class="btnTheme"
-          class="btn btn-large">
+          class="button button--large">
           <font-awesome-icon
             :icon="['far', 'search']"
-            class="mr-10"/>
+            class="button__icon"/>
           {{ $t("buttons.see_all_articles") }}
         </a>
       </div>

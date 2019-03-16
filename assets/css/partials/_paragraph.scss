@@ -12,7 +12,7 @@
   }
 
   &--narrow {
-    @apply max-w-1000;
+    @apply max-w-1000 mx-auto;
   }
 
   &--center {
@@ -25,5 +25,9 @@
 
   &--spaced {
     @apply mt-60;
+  }
+
+  &--spaced-large {
+    @apply mt-80;
   }
 }
