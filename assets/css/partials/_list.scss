@@ -9,6 +9,10 @@
     &--selector {
       @apply pl-10 mt-20;
     }
+
+    &--white {
+      @apply text-white;
+    }
   }
 
   &__item-bordered {

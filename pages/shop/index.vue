@@ -12,17 +12,17 @@
         <div
           v-if="shopAvatar"
           :style="`background-image: url('${shopAvatar}');`"
-          class="block w-110 h-110 rounded-full bg-center bg-no-repeat bg-cover"/>
+          class="header__avatar header__avatar--picture"/>
         <div
           v-else
           :class="textTheme">
           <font-awesome-icon
             :icon="['far', 'store']"
-            class="block"/>
+            class="header__icon"/>
         </div>
       </template>
       <template slot="title">
-        <h1 class="header-title">
+        <h1 class="header__title">
           <template v-if="shopName">{{ shopName }}</template>
           <template v-else>{{ $t("pages.shop.title") }}</template>
         </h1>
@@ -30,11 +30,11 @@
       <template
         v-if="shop.id"
         slot="description">
-        <p class="header-description">
+        <p class="header__description">
           {{ shop.description_short[locale] }}
         </p>
 
-        <ul class="list-reset text-14 text-white leading-normal mt-15">
+        <ul class="list__address list__address--white">
           <li>
             <font-awesome-icon
               :icon="['far', 'map-marker-alt']"
@@ -50,44 +50,50 @@
       </template>
     </Header>
 
-    <section class="container section">
-      <div class="flex flex-col items-center">
+    <section class="section__container container">
+      <div class="section__centered">
 
         <!-- User owns a shop -->
         <template v-if="userHasShop">
-          <h2 class="title-large text-center mt-100">{{ $t("pages.shop.title") }}</h2>
+          <h2 class="title__main title--center">
+            {{ $t("pages.shop.title") }}
+          </h2>
 
-          <div class="w-full flex justify-between mt-100">
-            <aside class="w-1/5">
+          <div class="shop__columns-wrapper">
+            <aside class="shop__menu">
               Menu
             </aside>
 
-            <section class="w-4/5">
+            <section class="shop__content">
 
               <!-- Shop details -->
-              <h3 class="text-30 font-bold">Détails</h3>
-              <div class="rounded-lg shadow-lg p-40 mt-40">
+              <h3 class="title__larger">
+                Détails
+              </h3>
+              <div class="shop__section">
                 <AppShopDetails
                   :countries="countries"
                   :errors="errors"
                   editable/>
 
-                <div class="flex justify-end">
+                <div class="shop__controls">
                   <button
                     :class="btnTheme"
-                    class="btn mt-100"
+                    class="button button--spaced-larger"
                     @click.prevent="update">
                     <font-awesome-icon
                       :icon="['far', 'check']"
-                      class="mr-5"/>
+                      class="button__icon button__icon--small"/>
                     {{ $t("buttons.update") }}
                   </button>
                 </div>
               </div>
 
               <!-- Shop Customization -->
-              <h3 class="text-30 font-bold mt-100">Thème</h3>
-              <div class="rounded-lg shadow-lg p-40 mt-40">
+              <h3 class="title__larger">
+                Thème
+              </h3>
+              <div class="shop__section shop__section--last">
                 <AppShopCustomization/>
               </div>
 
@@ -97,23 +103,25 @@
         
         <!-- User does not own a shop -->
         <template v-else>
-          <h2 class="title-large text-center mt-100">{{ $t("pages.shop.not_created_yet") }}</h2>
+          <h2 class="title__main title--center">
+            {{ $t("pages.shop.not_created_yet") }}
+          </h2>
 
-          <section class="w-full max-w-1000">
-            <p class="paragraph-body text-center mt-60">
-              {{ $t("pages.shop.creation_cta_line_1") }}<br>
-              {{ $t("pages.shop.creation_cta_line_2") }}
-            </p>
-          </section>
+          <p class="paragraph__large paragraph--center">
+            {{ $t("pages.shop.creation_cta_line_1") }}<br>
+            {{ $t("pages.shop.creation_cta_line_2") }}
+          </p>
 
-          <img
-            src="~assets/img/under_construction.svg"
-            alt=""
-            class="block w-full md:w-1/2 mt-100">
+          <div class="illustration__container">
+            <img
+              src="~assets/img/under_construction.svg"
+              alt="Illustration of a building under construction"
+              class="illustration__image">
+          </div>
 
           <nuxt-link
             :to="localePath({ name: 'shop-creator-terms' })"
-            class="btn btn-primary mt-100">
+            class="button button__primary button--spaced-large">
             <font-awesome-icon
               :icon="['far', 'rocket']"
               class="mr-10"/>

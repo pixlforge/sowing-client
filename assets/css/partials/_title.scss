@@ -5,10 +5,10 @@
     @screen md {
       @apply text-48;
     }
+  }
 
-    &--center {
-      @apply text-center;
-    }
+  &__larger {
+    @apply text-30 font-bold leading-normal;
   }
 
   &__large {

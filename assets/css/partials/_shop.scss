@@ -1,0 +1,25 @@
+.shop {
+  &__columns-wrapper {
+    @apply w-full flex mt-100;
+  }
+
+  &__menu {
+    @apply w-1/5;
+  }
+
+  &__content {
+    @apply w-4/5;
+  }
+
+  &__section {
+    @apply rounded-lg shadow-lg p-40 mt-20 mb-100;
+
+    &--last {
+      @apply mb-0;
+    }
+  }
+
+  &__controls {
+    @apply flex justify-end;
+  }
+}
