@@ -10,7 +10,7 @@ const _1aee37d8 = () => interopDefault(import('../pages/register/index.vue' /* w
 const _5c4b334e = () => interopDefault(import('../pages/search/index.vue' /* webpackChunkName: "pages/search/index" */))
 const _4b4fffa7 = () => interopDefault(import('../pages/shop/index.vue' /* webpackChunkName: "pages/shop/index" */))
 const _cca6246e = () => interopDefault(import('../pages/account/verify.vue' /* webpackChunkName: "pages/account/verify" */))
-const _091687d6 = () => interopDefault(import('../pages/password/email.vue' /* webpackChunkName: "pages/password/email" */))
+const _88e6ee4e = () => interopDefault(import('../pages/password/forgot.vue' /* webpackChunkName: "pages/password/forgot" */))
 const _03544809 = () => interopDefault(import('../pages/password/reset.vue' /* webpackChunkName: "pages/password/reset" */))
 const _17283845 = () => interopDefault(import('../pages/register/success.vue' /* webpackChunkName: "pages/register/success" */))
 const _7432d61c = () => interopDefault(import('../pages/shop/creator/connect.vue' /* webpackChunkName: "pages/shop/creator/connect" */))
@@ -214,21 +214,21 @@ export function createRouter() {
       component: _cca6246e,
       name: "account-verify___it"
     }, {
-      path: "/en/password/email",
-      component: _091687d6,
-      name: "password-email___en"
+      path: "/en/password/forgot",
+      component: _88e6ee4e,
+      name: "password-forgot___en"
     }, {
-      path: "/fr/password/email",
-      component: _091687d6,
-      name: "password-email___fr"
+      path: "/fr/password/forgot",
+      component: _88e6ee4e,
+      name: "password-forgot___fr"
     }, {
-      path: "/de/password/email",
-      component: _091687d6,
-      name: "password-email___de"
+      path: "/de/password/forgot",
+      component: _88e6ee4e,
+      name: "password-forgot___de"
     }, {
-      path: "/it/password/email",
-      component: _091687d6,
-      name: "password-email___it"
+      path: "/it/password/forgot",
+      component: _88e6ee4e,
+      name: "password-forgot___it"
     }, {
       path: "/en/password/reset",
       component: _03544809,

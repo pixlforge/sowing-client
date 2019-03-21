@@ -63,7 +63,7 @@
           
           <!-- Password forgotten -->
           <nuxt-link
-            :to="localePath({ name: 'password-email' })"
+            :to="localePath({ name: 'password-forgot' })"
             class="form__link form__link--first">
             {{ $t("pages.login.links.password") }}
           </nuxt-link>
