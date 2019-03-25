@@ -35,6 +35,7 @@
           </label>
           <input
             id="email"
+            v-model="email"
             type="email"
             name="email"
             class="form__input">
@@ -67,6 +68,12 @@ export default {
   components: {
     Header
   },
+  data() {
+    return {
+      email: "",
+      errors: {}
+    };
+  },
   async asyncData({ app }) {
     return {
       title: app.head.title
@@ -74,7 +81,14 @@ export default {
   },
   methods: {
     async send() {
-      this.$router.push(this.localePath({ name: "password-reset" }));
+      try {
+        let res = await this.$axios.$post('/auth/forgot', { email: this.email });
+        this.$toast.success(res.message);
+        this.email = "";
+      } catch (e) {
+        this.errors = e.response.data.errors;
+        this.$toast.error(this.errors.email);
+      }
     }
   }
 };
