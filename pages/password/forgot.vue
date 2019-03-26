@@ -36,9 +36,13 @@
           <input
             id="email"
             v-model="email"
+            :class="{ 'border-red': errors.email }"
             type="email"
             name="email"
             class="form__input">
+          <template v-if="errors.email">
+            <p class="form__feedback">{{ errors.email }}</p>
+          </template>
         </div>
           
         <!-- Submit -->
