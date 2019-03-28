@@ -88,7 +88,7 @@ export default {
       try {
         let res = await this.$axios.$post('/auth/forgot', { email: this.email });
         this.$toast.success(res.message);
-        this.email = "";
+        this.$router.push(this.localePath({ name: 'login' }));
       } catch (e) {
         this.errors = e.response.data.errors;
         this.$toast.error(this.errors.email);
