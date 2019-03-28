@@ -27,9 +27,13 @@
           <input
             id="email"
             v-model="form.email"
+            :class="{ 'border-red': errors.email }"
             type="email"
             name="email"
             class="form__input">
+          <template v-if="errors.email">
+            <p class="form__feedback">{{ errors.email[0] }}</p>
+          </template>
         </div>
 
         <!-- Password -->
@@ -45,6 +49,9 @@
             type="password"
             name="password"
             class="form__input">
+          <template v-if="errors.email">
+            <p class="form__feedback">{{ errors.password[0] }}</p>
+          </template>
         </div>
 
         <!-- Password confirmation -->
@@ -78,6 +85,7 @@
 
 <script>
 import Header from "@/components/Header";
+import { mapActions } from 'vuex';
 
 export default {
   middleware: ["guest"],
@@ -92,10 +100,12 @@ export default {
   data() {
     return {
       form: {
+        token: null,
         email: "",
         password: "",
-        password_confirmation: ""
-      }
+        password_confirmation: "",
+      },
+      errors: {}
     };
   },
   async asyncData({ app }) {
@@ -103,9 +113,30 @@ export default {
       title: app.head.title
     };
   },
+  mounted() {
+    this.form.token = this.$route.query.token;
+  },
   methods: {
+    ...mapActions({
+      flash: "alert/flash"
+    }),
     async reset() {
-      console.log("reset");
+      if (!this.form.token) {
+        return;
+      }
+
+      try {
+        let res = await this.$axios.$post('/auth/reset', this.form);
+        this.$toast.success(res.message);
+        this.flash({ message: res.message, type: 'success' });
+        this.$router.push(this.localePath({ name: 'login' }));
+      } catch (e) {
+        this.errors = e.response.data.errors;
+
+        for (let error in this.errors) {
+          this.$toast.error(this.errors[error]);
+        }
+      }
     }
   }
 };
