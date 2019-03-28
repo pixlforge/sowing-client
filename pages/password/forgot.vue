@@ -61,6 +61,7 @@
 
 <script>
 import Header from "@/components/Header";
+import { mapActions } from 'vuex';
 
 export default {
   middleware: ["guest"],
@@ -84,10 +85,14 @@ export default {
     };
   },
   methods: {
+    ...mapActions({
+      flash: "alert/flash"
+    }),
     async send() {
       try {
         let res = await this.$axios.$post('/auth/forgot', { email: this.email });
         this.$toast.success(res.message);
+        this.flash({ message: res.message, type: 'success' });
         this.$router.push(this.localePath({ name: 'login' }));
       } catch (e) {
         this.errors = e.response.data.errors;
