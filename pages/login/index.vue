@@ -146,7 +146,7 @@ export default {
         await this.getCart();
       } catch (e) {
         this.errors = e.response.data.errors;
-        this.$toast.error(this.$t("toasts.validation"));
+        this.$toast.error(this.errors.email);
       }
     }
   }
