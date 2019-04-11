@@ -109,7 +109,8 @@ export default {
       new_vendors: "Newest vendors",
       terms: "Terms of use",
       payments: "Payment methods",
-      shipments: "Shipments"
+      shipments: "Shipments",
+      faq: "FAQ"
     },
     disclaimer: {
       rights: "All rights reserved",

@@ -110,7 +110,8 @@ export default {
       new_vendors: "Nuovi venditori",
       terms: "Condizioni d'uso",
       payments: "Metodi di pagamento",
-      shipments: "Spedizioni"
+      shipments: "Spedizioni",
+      faq: "Domande frequenti"
     },
     disclaimer: {
       rights: "Tutti i diritti riservati",

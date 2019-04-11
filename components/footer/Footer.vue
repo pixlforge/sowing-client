@@ -77,6 +77,13 @@
               {{ $t("footer.links.shipments") }}
             </nuxt-link>
           </li>
+          <li>
+            <nuxt-link
+              :to="localePath({ name: 'faq' })"
+              class="footer__link">
+              {{ $t("footer.links.faq") }}
+            </nuxt-link>
+          </li>
         </ul>
       </div>
 
