@@ -178,6 +178,9 @@ export default {
       title: "Checkout",
       total: "Gesamt"
     },
+    faq: {
+      title: "Häufig gestellte Fragen"
+    },
     home: {
       title: "Startseite",
       titles: {

@@ -178,6 +178,9 @@ export default {
       title: "Caisse",
       total: "Total"
     },
+    faq: {
+      title: "Foire Aux Questions"
+    },
     home: {
       title: "Accueil",
       titles: {
