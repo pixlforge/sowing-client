@@ -1,4 +1,7 @@
 const pkg = require("./package");
+const join = require('path').join
+const tailwindJS = join(__dirname, 'tailwind.config.js')
+
 require("dotenv").config();
 
 module.exports = {
@@ -190,6 +193,12 @@ module.exports = {
           exclude: /(node_modules)/
         });
       }
+    },
+    postcss: {
+      plugins: [
+        require('tailwindcss')(tailwindJS),
+        require('autoprefixer')
+      ]
     }
   }
 };
