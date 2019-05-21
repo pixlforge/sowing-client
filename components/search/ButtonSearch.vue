@@ -2,6 +2,7 @@
   <nuxt-link
     :to="localePath({ name: 'search' })"
     :class="btnTheme"
+    :aria-label="$t('aria.links.search')"
     class="button__round">
     <font-awesome-icon
       :icon="['far', 'search']"

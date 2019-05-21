@@ -27,6 +27,7 @@
               id="email"
               v-model="email"
               :placeholder="placeholder"
+              :aria-label="$t('aria.inputs.email')"
               type="email"
               name="email"
               class="form__input form__input--grouped"

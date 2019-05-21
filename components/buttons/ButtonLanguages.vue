@@ -2,6 +2,7 @@
   <div class="dropdown__parent">
     <button
       ref="dropdownMenu"
+      :aria-label="$t('aria.buttons.languages')"
       class="button button__default button--navbar"
       @click.prevent="toggleDropdown">
       <div :class="textTheme">

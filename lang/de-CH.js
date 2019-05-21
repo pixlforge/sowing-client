@@ -1,5 +1,20 @@
 export default {
   /**
+   * ARIA
+   */
+  aria: {
+    buttons: {
+      languages: "Sprachen"
+    },
+    inputs: {
+      email: "E-Mail-Adresse",
+    },
+    links: {
+      search: "Suche"
+    }
+  },
+
+  /**
    * Buttons
    */
   buttons: {
