@@ -122,7 +122,8 @@ async function createApp(ssrContext) {
     payload: ssrContext ? ssrContext.payload : undefined,
     req: ssrContext ? ssrContext.req : undefined,
     res: ssrContext ? ssrContext.res : undefined,
-    beforeRenderFns: ssrContext ? ssrContext.beforeRenderFns : undefined
+    beforeRenderFns: ssrContext ? ssrContext.beforeRenderFns : undefined,
+    ssrContext
   })
 
   const inject = function (key, value) {
@@ -160,19 +161,48 @@ async function createApp(ssrContext) {
 
   // Plugin execution
 
-  if (typeof nuxt_plugin_pluginseo_21a6a585 === 'function') await nuxt_plugin_pluginseo_21a6a585(app.context, inject)
-  if (typeof nuxt_plugin_pluginrouting_941e8208 === 'function') await nuxt_plugin_pluginrouting_941e8208(app.context, inject)
-  if (typeof nuxt_plugin_pluginmain_6286241a === 'function') await nuxt_plugin_pluginmain_6286241a(app.context, inject)
-  if (typeof nuxt_plugin_templatesplugin78f7ea79_bee685ac === 'function') await nuxt_plugin_templatesplugin78f7ea79_bee685ac(app.context, inject)
-  if (typeof nuxt_plugin_axios_30aa898a === 'function') await nuxt_plugin_axios_30aa898a(app.context, inject)
-  if (typeof nuxt_plugin_axios_3566aa80 === 'function') await nuxt_plugin_axios_3566aa80(app.context, inject)
-  if (typeof nuxt_plugin_vueinstantsearch_9a9113e8 === 'function') await nuxt_plugin_vueinstantsearch_9a9113e8(app.context, inject)
-  if (typeof nuxt_plugin_plugin_017a7174 === 'function') await nuxt_plugin_plugin_017a7174(app.context, inject)
+  if (typeof nuxt_plugin_pluginseo_21a6a585 === 'function') {
+    await nuxt_plugin_pluginseo_21a6a585(app.context, inject)
+  }
 
-  if (process.client) {
-    if (typeof nuxt_plugin_googleanalytics_2c20545c === 'function') await nuxt_plugin_googleanalytics_2c20545c(app.context, inject)
-    if (typeof nuxt_plugin_toast_064a538e === 'function') await nuxt_plugin_toast_064a538e(app.context, inject)
-    if (typeof nuxt_plugin_webfontloader_0f92b4ec === 'function') await nuxt_plugin_webfontloader_0f92b4ec(app.context, inject)
+  if (typeof nuxt_plugin_pluginrouting_941e8208 === 'function') {
+    await nuxt_plugin_pluginrouting_941e8208(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_pluginmain_6286241a === 'function') {
+    await nuxt_plugin_pluginmain_6286241a(app.context, inject)
+  }
+
+  if (process.client && typeof nuxt_plugin_googleanalytics_2c20545c === 'function') {
+    await nuxt_plugin_googleanalytics_2c20545c(app.context, inject)
+  }
+
+  if (process.client && typeof nuxt_plugin_toast_064a538e === 'function') {
+    await nuxt_plugin_toast_064a538e(app.context, inject)
+  }
+
+  if (process.client && typeof nuxt_plugin_webfontloader_0f92b4ec === 'function') {
+    await nuxt_plugin_webfontloader_0f92b4ec(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_templatesplugin78f7ea79_bee685ac === 'function') {
+    await nuxt_plugin_templatesplugin78f7ea79_bee685ac(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_axios_30aa898a === 'function') {
+    await nuxt_plugin_axios_30aa898a(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_axios_3566aa80 === 'function') {
+    await nuxt_plugin_axios_3566aa80(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_vueinstantsearch_9a9113e8 === 'function') {
+    await nuxt_plugin_vueinstantsearch_9a9113e8(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_plugin_017a7174 === 'function') {
+    await nuxt_plugin_plugin_017a7174(app.context, inject)
   }
 
   // If server-side, wait for async component to be resolved first

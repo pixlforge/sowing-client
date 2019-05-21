@@ -125,7 +125,7 @@
   }
 
   &__badge {
-    @apply absolute pin-t pin-r w-20 h-20 rounded-full bg-pink-dark text-12 font-bold text-white flex justify-center items-center;
+    @apply absolute top-0 right-0 w-20 h-20 rounded-full bg-pink-dark text-12 font-bold text-white flex justify-center items-center;
     line-height: 0;
   }
 
@@ -133,12 +133,12 @@
     @apply order-1 mt-20;
 
     @screen md {
-      @apply order-0 mr-20 mt-0;
+      @apply order-none mr-20 mt-0;
     }
   }
 
   &__next {
-    @apply order-0;
+    @apply order-none;
 
     @screen md {
       @apply order-1;

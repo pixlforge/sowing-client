@@ -94,7 +94,7 @@
   }
 
   &__select-caret {
-    @apply absolute h-full pin-y pin-r text-16 text-green-dark mr-20;
+    @apply absolute h-full inset-y-0 right-0 text-16 text-green-dark mr-20;
   }
 
   &__textarea {

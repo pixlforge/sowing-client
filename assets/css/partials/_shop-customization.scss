@@ -36,10 +36,10 @@
   }
 
   &__list {
-    @apply list-reset flex flex-wrap justify-start -mx-10;
+    @apply flex flex-wrap justify-start -mx-10;
 
     @screen lg {
-      @apply justify-between -mx-0;
+      @apply justify-between mx-0;
     }
   }
 

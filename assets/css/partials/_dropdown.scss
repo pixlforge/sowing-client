@@ -4,7 +4,7 @@
   }
 
   &__child {
-    @apply hidden absolute bg-white shadow rounded-lg list-reset text-left pin-t pin-l px-30 py-20 mt-50 z-20;
+    @apply hidden absolute bg-white shadow rounded-lg text-left top-0 left-0 px-30 py-20 mt-50 z-20;
   }
 
   &__link {

@@ -1,17 +1,15 @@
-
-const files = require.context('@/middleware', false, /^\.\/(?!-)[^.]+\.(js|mjs|ts)$/)
-const filenames = files.keys()
-
-function getModule(filename) {
-  const file = files(filename)
-  return file.default || file
-}
 const middleware = {}
 
-// Generate the middleware
-for (const filename of filenames) {
-  const name = filename.replace(/^\.\//, '').replace(/\.(js|mjs|ts)$/, '')
-  middleware[name] = getModule(filename)
-}
+middleware['authenticated'] = require('../middleware/authenticated.js');
+middleware['authenticated'] = middleware['authenticated'].default || middleware['authenticated']
+
+middleware['guest'] = require('../middleware/guest.js');
+middleware['guest'] = middleware['guest'].default || middleware['guest']
+
+middleware['hasShop'] = require('../middleware/hasShop.js');
+middleware['hasShop'] = middleware['hasShop'].default || middleware['hasShop']
+
+middleware['locale-redirect'] = require('../middleware/locale-redirect.js');
+middleware['locale-redirect'] = middleware['locale-redirect'].default || middleware['locale-redirect']
 
 export default middleware

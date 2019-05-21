@@ -1,6 +1,6 @@
 .list {
   &__address {
-    @apply list-reset text-14 leading-normal mt-10;
+    @apply text-14 leading-normal mt-10;
 
     &--push-top {
       @apply -mt-10;

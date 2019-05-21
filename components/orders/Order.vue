@@ -7,7 +7,7 @@
       {{ order.created_at }}
     </div>
     <div class="w-1/5 flex justify-center">
-      <ul class="list-reset text-left">
+      <ul class="text-left">
         <li
           v-for="variation in variations"
           :key="variation.id">

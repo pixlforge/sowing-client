@@ -40,7 +40,7 @@
   }
 
   &__delete-button {
-    @apply absolute pin-t pin-r mt-20 mr-20;
+    @apply absolute top-0 right-0 mt-20 mr-20;
   }
 
   &__delete-button-icon {
