@@ -41,7 +41,7 @@ export default {
   middleware: ["authenticated"],
   head() {
     return {
-      title: `${this.title} | ${this.$t("pages.orders.title")}`
+      title: `${this.$t("pages.orders.title")} | ${this.title}`
     };
   },
   components: {

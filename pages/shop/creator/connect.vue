@@ -85,7 +85,7 @@ export default {
   middleware: ["authenticated", "hasShop"],
   head() {
     return {
-      title: `${this.title} | ${this.$t("shop_creator.steps.connect.title")}`
+      title: `${this.$t("shop_creator.steps.connect.title")} | ${this.title}`
     };
   },
   layout: "shop-creator",

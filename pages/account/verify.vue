@@ -71,7 +71,7 @@ export default {
   middleware: ["authenticated"],
   head() {
     return {
-      title: `${this.title} | ${this.$t("pages.verify.title")}`
+      title: `${this.$t("pages.verify.title")} | ${this.title}`
     };
   },
   components: {

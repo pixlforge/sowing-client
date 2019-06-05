@@ -105,7 +105,7 @@ import { mapGetters, mapActions } from "vuex";
 export default {
   head() {
     return {
-      title: `${this.title} | ${this.shop.name}`
+      title: `${this.shop.name} | ${this.title}`
     };
   },
   components: {

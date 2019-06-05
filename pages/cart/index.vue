@@ -73,7 +73,7 @@ export default {
   middleware: ["authenticated"],
   head() {
     return {
-      title: `${this.title} | ${this.pageTitle}`
+      title: `${this.pageTitle} | ${this.title}`
     };
   },
   components: {

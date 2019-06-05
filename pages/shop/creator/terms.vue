@@ -60,7 +60,7 @@ export default {
   middleware: ["authenticated"],
   head() {
     return {
-      title: `${this.title} | ${this.$t("pages.terms.title")}`
+      title: `${this.$t("pages.terms.title")} | ${this.title}`
     };
   },
   components: {

@@ -67,7 +67,7 @@ export default {
   middleware: ["guest"],
   head() {
     return {
-      title: `${this.title} | ${this.$t("pages.password_email.title")}`
+      title: `${this.$t("pages.password_email.title")} | ${this.title}`
     };
   },
   components: {

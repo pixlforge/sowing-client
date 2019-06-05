@@ -91,7 +91,7 @@ export default {
   middleware: ["guest"],
   head() {
     return {
-      title: `${this.title} | ${this.$t("pages.password_reset.title")}`
+      title: `${this.$t("pages.password_reset.title")} | ${this.title}`
     };
   },
   components: {

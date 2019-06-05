@@ -48,7 +48,7 @@ import { mapGetters } from 'vuex';
 export default {
   head() {
     return {
-      title: `${this.title} | ${this.$t("pages.search.title")}`
+      title: `${this.$t("pages.search.title")} | ${this.title}`
     };
   },
   components: {

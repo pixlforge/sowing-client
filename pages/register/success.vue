@@ -48,7 +48,7 @@ import Header from "@/components/Header";
 export default {
   head() {
     return {
-      title: `${this.title} | ${this.$t("pages.register_success.title")}`
+      title: `${this.$t("pages.register_success.title")} | ${this.title}`
     };
   },
   components: {

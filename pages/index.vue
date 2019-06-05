@@ -147,7 +147,7 @@ import { mapGetters } from "vuex";
 export default {
   head() {
     return {
-      title: `${this.title} | ${this.$t("pages.home.title")}`
+      title: `${this.$t("pages.home.title")} | ${this.title}`
     };
   },
   components: {

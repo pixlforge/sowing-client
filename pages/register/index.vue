@@ -135,7 +135,7 @@ export default {
   middleware: ["guest"],
   head() {
     return {
-      title: `${this.title} | ${this.$t("pages.register.title")}`
+      title: `${this.$t("pages.register.title")} | ${this.title}`
     };
   },
   components: {

@@ -50,7 +50,7 @@ export default {
   middleware: ["authenticated", "hasShop"],
   head() {
     return {
-      title: `${this.title} | ${this.$t("shop_creator.steps.done.title")}`
+      title: `${this.$t("shop_creator.steps.done.title")} | ${this.title}`
     };
   },
   layout: "shop-creator",

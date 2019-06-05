@@ -67,7 +67,7 @@ import StreakNewsletter from "@/components/streaks/StreakNewsletter";
 export default {
   head() {
     return {
-      title: `${this.title} | ${this.$t("pages.login.title")}`
+      title: `${this.$t("pages.faq.title")} | ${this.title}`
     };
   },
   components: {

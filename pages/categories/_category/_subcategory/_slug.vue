@@ -36,7 +36,7 @@ import { mapGetters } from "vuex";
 export default {
   head() {
     return {
-      title: `${this.title} | ${this.subcategory.name[this.locale]}`
+      title: `${this.subcategory.name[this.locale]} | ${this.title}`
     };
   },
   components: {

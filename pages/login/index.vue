@@ -100,7 +100,7 @@ export default {
   middleware: ["guest"],
   head() {
     return {
-      title: `${this.title} | ${this.$t("pages.login.title")}`
+      title: `${this.$t("pages.login.title")} | ${this.title}`
     };
   },
   components: {

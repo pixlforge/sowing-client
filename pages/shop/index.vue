@@ -147,7 +147,7 @@ export default {
   middleware: ["authenticated"],
   head() {
     return {
-      title: `${this.title} | ${this.$t("pages.shop.title")}`
+      title: `${this.$t("pages.shop.title")} | ${this.title}`
     };
   },
   components: {

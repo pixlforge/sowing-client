@@ -59,7 +59,7 @@ import { mapGetters, mapActions } from "vuex";
 export default {
   head() {
     return {
-      title: `${this.title} | ${this.product.name[this.locale]}`
+      title: `${this.product.name[this.locale]} | ${this.title}`
     };
   },
   components: {
