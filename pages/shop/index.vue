@@ -159,7 +159,6 @@ export default {
   mixins: [theming],
   data() {
     return {
-      countries: [],
       errors: {}
     };
   },
@@ -167,11 +166,8 @@ export default {
     let shop = await app.$axios.$get("/user/shop");
     let countries = await app.$axios.$get("/countries");
 
-    if (shop.data) {
-      store.dispatch("shop/setShop", shop.data);
-    }
-
     return {
+      shopData: shop.data,
       countries: countries.data,
       title: app.head.title
     };
@@ -187,9 +183,7 @@ export default {
     })
   },
   mounted() {
-    if (this.currentShop) {
-      this.setShop(this.currentShop);
-    }
+    this.setShop(this.shopData);
   },
   destroyed() {
     this.resetShop();
