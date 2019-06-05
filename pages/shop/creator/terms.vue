@@ -37,8 +37,8 @@
         </div>
 
         <button
-          :disabled="!terms"
-          :class="{ 'btn-disabled': !terms }"
+          :disabled="!userAgreesToTerms"
+          :class="{ 'button__disabled': !userAgreesToTerms }"
           class="button button__primary button--spaced-large"
           @click.prevent="next">
           <font-awesome-icon
@@ -78,6 +78,9 @@ export default {
       set(terms) {
         this.setTerms(terms);
       }
+    },
+    userAgreesToTerms() {
+      return this.localTerms;
     }
   },
   async asyncData({ app }) {
