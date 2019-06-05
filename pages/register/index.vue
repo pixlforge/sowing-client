@@ -113,8 +113,8 @@
           
         <!-- Submit -->
         <button
-          :disabled="!terms"
-          :class="{ 'btn-disabled': !terms }"
+          :disabled="missingCredentials"
+          :class="{ 'button__disabled': missingCredentials }"
           type="submit"
           class="button button__primary button--centered button--spaced">
           <font-awesome-icon
@@ -157,6 +157,15 @@ export default {
     return {
       title: app.head.title
     };
+  },
+  computed: {
+    missingCredentials() {
+      return !this.form.name ||
+        !this.form.email ||
+        this.form.password.length < 8 ||
+        this.form.password_confirmation.length < 8 ||
+        !this.terms;
+    }
   },
   mounted() {
     this.$refs.autofocus.focus();
