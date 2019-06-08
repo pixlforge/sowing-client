@@ -9,7 +9,6 @@ const _1f7774ee = () => interopDefault(import('../pages/login/index.vue' /* webp
 const _4d115756 = () => interopDefault(import('../pages/orders/index.vue' /* webpackChunkName: "pages/orders/index" */))
 const _3584ffd8 = () => interopDefault(import('../pages/register/index.vue' /* webpackChunkName: "pages/register/index" */))
 const _3df3fb4e = () => interopDefault(import('../pages/search/index.vue' /* webpackChunkName: "pages/search/index" */))
-const _28b29ba7 = () => interopDefault(import('../pages/shop/index.vue' /* webpackChunkName: "pages/shop/index" */))
 const _e73cec6e = () => interopDefault(import('../pages/account/verify.vue' /* webpackChunkName: "pages/account/verify" */))
 const _1f6b6cd9 = () => interopDefault(import('../pages/password/forgot.vue' /* webpackChunkName: "pages/password/forgot" */))
 const _13ee37ee = () => interopDefault(import('../pages/password/reset.vue' /* webpackChunkName: "pages/password/reset" */))
@@ -20,6 +19,8 @@ const _07cb0118 = () => interopDefault(import('../pages/shop/creator/details.vue
 const _07adafc0 = () => interopDefault(import('../pages/shop/creator/done.vue' /* webpackChunkName: "pages/shop/creator/done" */))
 const _302d5a49 = () => interopDefault(import('../pages/shop/creator/name.vue' /* webpackChunkName: "pages/shop/creator/name" */))
 const _086ecab9 = () => interopDefault(import('../pages/shop/creator/terms.vue' /* webpackChunkName: "pages/shop/creator/terms" */))
+const _c6f278fa = () => interopDefault(import('../pages/shop/management/dashboard.vue' /* webpackChunkName: "pages/shop/management/dashboard" */))
+const _b659241e = () => interopDefault(import('../pages/shop/management/details.vue' /* webpackChunkName: "pages/shop/management/details" */))
 const _55bb8585 = () => interopDefault(import('../pages/categories/_slug.vue' /* webpackChunkName: "pages/categories/_slug" */))
 const _98c27766 = () => interopDefault(import('../pages/products/_slug.vue' /* webpackChunkName: "pages/products/_slug" */))
 const _c372bddc = () => interopDefault(import('../pages/shop/_slug/details.vue' /* webpackChunkName: "pages/shop/_slug/details" */))
@@ -213,22 +214,6 @@ export function createRouter() {
       component: _3df3fb4e,
       name: "search___it"
     }, {
-      path: "/en/shop",
-      component: _28b29ba7,
-      name: "shop___en"
-    }, {
-      path: "/fr/shop",
-      component: _28b29ba7,
-      name: "shop___fr"
-    }, {
-      path: "/de/shop",
-      component: _28b29ba7,
-      name: "shop___de"
-    }, {
-      path: "/it/shop",
-      component: _28b29ba7,
-      name: "shop___it"
-    }, {
       path: "/en/account/verify",
       component: _e73cec6e,
       name: "account-verify___en"
@@ -389,6 +374,38 @@ export function createRouter() {
       component: _086ecab9,
       name: "shop-creator-terms___it"
     }, {
+      path: "/en/shop/management/dashboard",
+      component: _c6f278fa,
+      name: "shop-management-dashboard___en"
+    }, {
+      path: "/fr/shop/management/dashboard",
+      component: _c6f278fa,
+      name: "shop-management-dashboard___fr"
+    }, {
+      path: "/de/shop/management/dashboard",
+      component: _c6f278fa,
+      name: "shop-management-dashboard___de"
+    }, {
+      path: "/it/shop/management/dashboard",
+      component: _c6f278fa,
+      name: "shop-management-dashboard___it"
+    }, {
+      path: "/en/shop/management/details",
+      component: _b659241e,
+      name: "shop-management-details___en"
+    }, {
+      path: "/fr/shop/management/details",
+      component: _b659241e,
+      name: "shop-management-details___fr"
+    }, {
+      path: "/de/shop/management/details",
+      component: _b659241e,
+      name: "shop-management-details___de"
+    }, {
+      path: "/it/shop/management/details",
+      component: _b659241e,
+      name: "shop-management-details___it"
+    }, {
       path: "/en/categories/:slug?",
       component: _55bb8585,
       name: "categories-slug___en"
@@ -421,19 +438,19 @@ export function createRouter() {
       component: _98c27766,
       name: "products-slug___it"
     }, {
-      path: "/en/shop/:slug/details",
+      path: "/en/shop/:slug?/details",
       component: _c372bddc,
       name: "shop-slug-details___en"
     }, {
-      path: "/fr/shop/:slug/details",
+      path: "/fr/shop/:slug?/details",
       component: _c372bddc,
       name: "shop-slug-details___fr"
     }, {
-      path: "/de/shop/:slug/details",
+      path: "/de/shop/:slug?/details",
       component: _c372bddc,
       name: "shop-slug-details___de"
     }, {
-      path: "/it/shop/:slug/details",
+      path: "/it/shop/:slug?/details",
       component: _c372bddc,
       name: "shop-slug-details___it"
     }, {

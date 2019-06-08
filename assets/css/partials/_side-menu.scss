@@ -1,10 +1,10 @@
 .side-menu {
   &__list {
-    @apply bg-green-lightest rounded-lg text-16;
+    @apply rounded-lg text-16;
   }
 
-  &__list-item {
-    @apply rounded-lg pl-20 py-12;
+  &__link {
+    @apply block rounded-lg pl-20 py-12;
 
     &:hover,
     &--active {

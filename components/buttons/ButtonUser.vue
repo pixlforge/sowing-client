@@ -29,7 +29,7 @@
       <!-- Shop -->
       <li v-if="userHasShop">
         <nuxt-link
-          :to="localePath({ name: 'shop' })"
+          :to="localePath({ name: 'shop-management-dashboard' })"
           class="dropdown__link">
           <font-awesome-icon
             :icon="['far', 'store']"

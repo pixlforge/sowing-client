@@ -1,8 +1,11 @@
 <template>
-  <li
-    :class="classes"
-    class="side-menu__list-item">
-    {{ label }}
+  <li>
+    <nuxt-link
+      :to="localePath({ name: route })"
+      :class="classes"
+      class="side-menu__link">
+      {{ label }}
+    </nuxt-link>
   </li>
 </template>
 
@@ -16,7 +19,7 @@ export default {
       type: String,
       required: true
     },
-    activeRoute: {
+    route: {
       type: String,
       required: true
     }
@@ -25,8 +28,8 @@ export default {
     classes() {
       let active;
 
-      if (this.$route.name.includes(this.activeRoute)) {
-        active = `side-menu__list-item--active ${this.bgTheme}`;
+      if (this.$route.name.includes(this.route)) {
+        active = `side-menu__link--active ${this.bgTheme}`;
       }
 
       return `hover:${this.bgTheme} ${active}`;
