@@ -1,0 +1,14 @@
+.side-menu {
+  &__list {
+    @apply bg-green-lightest rounded-lg text-16;
+  }
+
+  &__list-item {
+    @apply rounded-lg pl-20 py-12;
+
+    &:hover,
+    &--active {
+      @apply text-white;
+    }
+  }
+}

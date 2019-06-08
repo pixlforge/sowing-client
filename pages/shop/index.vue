@@ -60,10 +60,23 @@
           </h2>
 
           <div class="shop__columns-wrapper">
+
+            <!-- Side menu -->
             <aside class="shop__menu">
-              Menu
+              <AppSideMenu>
+                <AppSideMenuItem
+                  label="Tableau de bord"
+                  active-route="shop"/>
+                <AppSideMenuItem
+                  label="Ma boutique"
+                  active-route="tbd"/>
+                <AppSideMenuItem
+                  label="Mes produits"
+                  active-route="tbd"/>
+              </AppSideMenu>
             </aside>
 
+            <!-- Dashboard content -->
             <section class="shop__content">
 
               <!-- Shop details -->
@@ -140,6 +153,8 @@ import Header from "@/components/Header";
 import AppShopCover from "@/components/shops/AppShopCover";
 import AppShopDetails from "@/components/shops/AppShopDetails";
 import AppShopCustomization from "@/components/shops/AppShopCustomization";
+import AppSideMenu from "@/components/menus/AppSideMenu";
+import AppSideMenuItem from "@/components/menus/AppSideMenuItem";
 import theming from "@/mixins/theming";
 import { mapGetters, mapActions } from "vuex";
 
@@ -154,7 +169,9 @@ export default {
     Header,
     AppShopCover,
     AppShopDetails,
-    AppShopCustomization
+    AppShopCustomization,
+    AppSideMenu,
+    AppSideMenuItem
   },
   mixins: [theming],
   data() {
