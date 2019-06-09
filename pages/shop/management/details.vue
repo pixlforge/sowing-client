@@ -1,7 +1,5 @@
 <template>
   <section class="shop__content">
-
-    <!-- Shop details -->
     <h3 class="title__larger">
       Détails
     </h3>
@@ -23,21 +21,11 @@
         </button>
       </div>
     </div>
-
-    <!-- Shop Customization -->
-    <h3 class="title__larger">
-      Thème
-    </h3>
-    <div class="shop__section shop__section--last">
-      <AppShopCustomization/>
-    </div>
-
   </section>
 </template>
 
 <script>
 import AppShopDetails from "@/components/shops/AppShopDetails";
-import AppShopCustomization from "@/components/shops/AppShopCustomization";
 import theming from "@/mixins/theming";
 import { mapGetters, mapActions } from "vuex";
 
@@ -50,8 +38,7 @@ export default {
   },
   layout: "shop-management",
   components: {
-    AppShopDetails,
-    AppShopCustomization
+    AppShopDetails
   },
   mixins: [theming],
   data() {

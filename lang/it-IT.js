@@ -281,6 +281,9 @@ export default {
         },
         details: {
           title: "Gestire i dettagli del mio negozio"
+        },
+        theme: {
+          title: "Gestione del tema del mio negozio"
         }
       }
     },

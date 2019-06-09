@@ -81,8 +81,11 @@
                     label="Tableau de bord"
                     route="shop-management-dashboard"/>
                   <AppSideMenuItem
-                    label="Ma boutique"
+                    label="Détails"
                     route="shop-management-details"/>
+                  <AppSideMenuItem
+                    label="Thème"
+                    route="shop-management-theme"/>
                 </AppSideMenu>
               </aside>
               

@@ -8,7 +8,7 @@
 
     &:hover,
     &--active {
-      @apply text-white;
+      @apply text-white shadow-md;
     }
   }
 }

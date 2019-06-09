@@ -12,11 +12,7 @@
   }
 
   &__section {
-    @apply rounded-lg shadow-lg p-40 mt-20 mb-100;
-
-    &--last {
-      @apply mb-0;
-    }
+    @apply rounded-lg shadow-lg p-40 mt-20;
   }
 
   &__controls {

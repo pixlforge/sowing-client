@@ -21,6 +21,7 @@ const _302d5a49 = () => interopDefault(import('../pages/shop/creator/name.vue' /
 const _086ecab9 = () => interopDefault(import('../pages/shop/creator/terms.vue' /* webpackChunkName: "pages/shop/creator/terms" */))
 const _c6f278fa = () => interopDefault(import('../pages/shop/management/dashboard.vue' /* webpackChunkName: "pages/shop/management/dashboard" */))
 const _b659241e = () => interopDefault(import('../pages/shop/management/details.vue' /* webpackChunkName: "pages/shop/management/details" */))
+const _11c86fb8 = () => interopDefault(import('../pages/shop/management/theme.vue' /* webpackChunkName: "pages/shop/management/theme" */))
 const _55bb8585 = () => interopDefault(import('../pages/categories/_slug.vue' /* webpackChunkName: "pages/categories/_slug" */))
 const _98c27766 = () => interopDefault(import('../pages/products/_slug.vue' /* webpackChunkName: "pages/products/_slug" */))
 const _c372bddc = () => interopDefault(import('../pages/shop/_slug/details.vue' /* webpackChunkName: "pages/shop/_slug/details" */))
@@ -405,6 +406,22 @@ export function createRouter() {
       path: "/it/shop/management/details",
       component: _b659241e,
       name: "shop-management-details___it"
+    }, {
+      path: "/en/shop/management/theme",
+      component: _11c86fb8,
+      name: "shop-management-theme___en"
+    }, {
+      path: "/fr/shop/management/theme",
+      component: _11c86fb8,
+      name: "shop-management-theme___fr"
+    }, {
+      path: "/de/shop/management/theme",
+      component: _11c86fb8,
+      name: "shop-management-theme___de"
+    }, {
+      path: "/it/shop/management/theme",
+      component: _11c86fb8,
+      name: "shop-management-theme___it"
     }, {
       path: "/en/categories/:slug?",
       component: _55bb8585,
