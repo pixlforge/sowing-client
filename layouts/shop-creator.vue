@@ -1,11 +1,21 @@
 <template>
   <div>
+
+    <!-- Alert -->
     <TheAlert/>
+
+    <!-- Navbar -->
     <Navbar/>
+
+    <!-- Categories -->
     <AppCategoryBar/>
+
+    <!-- Shop cover image -->
     <AppShopCover
       v-if="shopCover"
       :shop-cover="shopCover"/>
+
+    <!-- Header -->
     <Header :class="bgTheme">
       <template slot="icon">
         <div
@@ -27,9 +37,17 @@
         </h1>
       </template>
     </Header>
+
+    <!-- Navigation -->
     <AppShopNavigation/>
+
+    <!-- Page content -->
     <nuxt/>
+
+    <!-- Footer -->
     <Footer/>
+
+    <!-- Disclaimer -->
     <Disclaimer :class="bgTheme"/>
   </div>
 </template>

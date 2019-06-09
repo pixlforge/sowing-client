@@ -10,7 +10,7 @@
     <!-- Categories -->
     <AppCategoryBar/>
 
-    <!-- Cover -->
+    <!-- Shop cover image -->
     <AppShopCover
       v-if="shopCover"
       :shop-cover="shopCover"/>
@@ -58,18 +58,22 @@
       </template>
     </Header>
 
-    <!-- Content -->
+    <!-- Main -->
     <main>
       <section class="section__container container">
         <div class="section__centered">
 
           <!-- User owns a shop -->
           <template v-if="userHasShop">
+
+            <!-- Title -->
             <h2 class="title__main title--center">
               {{ $t("pages.shop.title") }}
             </h2>
 
+            <!-- Content -->
             <div class="shop__columns-wrapper">
+
               <!-- Side menu -->
               <aside class="shop__menu">
                 <AppSideMenu>
@@ -82,22 +86,26 @@
                 </AppSideMenu>
               </aside>
               
-              <!-- Dashboard content -->
+              <!-- Page content -->
               <nuxt/>
             </div>
           </template>
               
           <!-- User does not own a shop -->
           <template v-else>
+
+            <!-- Title -->
             <h2 class="title__main title--center">
               {{ $t("pages.shop.not_created_yet") }}
             </h2>
 
+            <!-- Shop creation CTA -->
             <p class="paragraph__large paragraph--center">
               {{ $t("pages.shop.creation_cta_line_1") }}<br>
               {{ $t("pages.shop.creation_cta_line_2") }}
             </p>
 
+            <!-- Illustration -->
             <div class="illustration__container">
               <img
                 src="~assets/img/under_construction.svg"
@@ -105,6 +113,7 @@
                 class="illustration__image">
             </div>
 
+            <!-- Shop creation link -->
             <nuxt-link
               :to="localePath({ name: 'shop-creator-terms' })"
               class="button button__primary button--spaced-large">

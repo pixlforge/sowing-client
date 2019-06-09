@@ -1,10 +1,22 @@
 <template>
   <div>
+
+    <!-- Alert -->
     <TheAlert/>
+
+    <!-- Navbar -->
     <Navbar/>
+
+    <!-- Categories -->
     <AppCategoryBar/>
+
+    <!-- Page content -->
     <nuxt/>
+
+    <!-- Footer -->
     <Footer/>
+
+    <!-- Disclaimer -->
     <Disclaimer :class="bgTheme"/>
   </div>
 </template>
