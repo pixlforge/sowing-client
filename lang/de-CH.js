@@ -277,7 +277,10 @@ export default {
       creation_cta_line_2: "Mit dem Assistenten für die Shop-Erstellung von Sowing ist das ganz einfach. Lassen Sie sich einfach führen.",
       management: {
         dashboard: {
-          title: ""
+          title: "Instrumententafel"
+        },
+        details: {
+          title: "Verwaltung der Details meines Shops"
         }
       }
     },

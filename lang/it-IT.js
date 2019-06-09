@@ -277,7 +277,10 @@ export default {
       creation_cta_line_2: "Con l'assistente alla creazione di negozio Sowing, è molto semplice, basta lasciarsi guidare.",
       management: {
         dashboard: {
-          title: ""
+          title: "Cruscotto"
+        },
+        details: {
+          title: "Gestire i dettagli del mio negozio"
         }
       }
     },

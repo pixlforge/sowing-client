@@ -277,7 +277,10 @@ export default {
       creation_cta_line_2: "Avec l'assistant de création de boutique Sowing, c'est très facile, il suffit de se laisser guider.",
       management: {
         dashboard: {
-          title: ""
+          title: "Tableau de bord"
+        },
+        details: {
+          title: "Gestion des détails de ma boutique"
         }
       }
     },

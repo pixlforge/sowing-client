@@ -45,7 +45,7 @@ export default {
   middleware: ["authenticated"],
   head() {
     return {
-      title: `${this.$t("pages.shop.title")} | ${this.title}`
+      title: `${this.$t("pages.shop.management.details.title")} | ${this.title}`
     };
   },
   layout: "shop-management",

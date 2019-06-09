@@ -277,7 +277,10 @@ export default {
       creation_cta_line_2: "It's very easy with the Sowing shop creation assistant, just let yourself be guided.",
       management: {
         dashboard: {
-          title: ""
+          title: "Dashboard"
+        },
+        details: {
+          title: "Managing the details of my shop"
         }
       }
     },
