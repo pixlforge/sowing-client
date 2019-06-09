@@ -99,12 +99,9 @@ export default {
   dropzone: {
     dict_remove_file: "Rimuovere",
     dict_cancel_upload: "Annulla",
-    dict_cancel_upload_confirmation:
-      "Siete sicuri di voler annullare il caricamento?",
-    dict_default_message:
-      "Trascinate e rilasciate qui un'immagine da scaricare o fate un clic per scegliere la vostra immagine.",
-    dict_fallback_message:
-      "Il vostro navigatore è troppo vecchio o incompatibile.",
+    dict_cancel_upload_confirmation: "Siete sicuri di voler annullare il caricamento?",
+    dict_default_message: "Trascinate e rilasciate qui un'immagine da scaricare o fate un clic per scegliere la vostra immagine.",
+    dict_fallback_message: "Il vostro navigatore è troppo vecchio o incompatibile.",
     dict_file_too_big: "Questo file è troppo grande."
   },
 
@@ -209,23 +206,19 @@ export default {
       features: {
         first: {
           title: "Sowing è unico in Svizzera",
-          body:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam et facere quia aliquid perferendis optio, temporibus quasi error! Ad omnis qui nulla iste aspernatur dolorem dolores ullam tenetur est. Qui."
+          body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam et facere quia aliquid perferendis optio, temporibus quasi error! Ad omnis qui nulla iste aspernatur dolorem dolores ullam tenetur est. Qui."
         },
         second: {
           title: "Una visibilità senza precedenti per voi",
-          body:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam et facere quia aliquid perferendis optio, temporibus quasi error! Ad omnis qui nulla iste aspernatur dolorem dolores ullam tenetur est. Qui."
+          body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam et facere quia aliquid perferendis optio, temporibus quasi error! Ad omnis qui nulla iste aspernatur dolorem dolores ullam tenetur est. Qui."
         },
         third: {
           title: "Sowing è indipendente",
-          body:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam et facere quia aliquid perferendis optio, temporibus quasi error! Ad omnis qui nulla iste aspernatur dolorem dolores ullam tenetur est. Qui."
+          body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam et facere quia aliquid perferendis optio, temporibus quasi error! Ad omnis qui nulla iste aspernatur dolorem dolores ullam tenetur est. Qui."
         },
         fourth: {
           title: "La vostra sicurezza, la nostra missione",
-          body:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam et facere quia aliquid perferendis optio, temporibus quasi error! Ad omnis qui nulla iste aspernatur dolorem dolores ullam tenetur est. Qui."
+          body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam et facere quia aliquid perferendis optio, temporibus quasi error! Ad omnis qui nulla iste aspernatur dolorem dolores ullam tenetur est. Qui."
         }
       }
     },
@@ -249,8 +242,7 @@ export default {
       title: "Recupero dell'account",
       paragraphs: {
         first: "Hai dimenticato la password?",
-        second:
-          "Nessun problema, inserite semplicemente il vostro indirizzo e-mail nel campo sottostante e vi invieremo una e-mail contenente un link che vi permetterà di impostare una nuova password per il vostro account."
+        second: "Nessun problema, inserite semplicemente il vostro indirizzo e-mail nel campo sottostante e vi invieremo una e-mail contenente un link che vi permetterà di impostare una nuova password per il vostro account."
       }
     },
     password_reset: {
@@ -281,10 +273,13 @@ export default {
       title: "Gestione del vostro negozio",
       creation: "Creazione del mio negozio",
       not_created_yet: "Non avete ancora creato un negozio",
-      creation_cta_line_1:
-        "Create oggi il vostro negozio online gratuitamente!",
-      creation_cta_line_2:
-        "Con l'assistente alla creazione di negozio Sowing, è molto semplice, basta lasciarsi guidare."
+      creation_cta_line_1: "Create oggi il vostro negozio online gratuitamente!",
+      creation_cta_line_2: "Con l'assistente alla creazione di negozio Sowing, è molto semplice, basta lasciarsi guidare.",
+      management: {
+        dashboard: {
+          title: ""
+        }
+      }
     },
     shop_details: {
       welcome: "Benvenuto nel nostro negozio",
@@ -316,35 +311,27 @@ export default {
     steps: {
       name: {
         title: "Date un nome al vostro negozio",
-        paragraph:
-          "Date al vostro negozio un nome unico che dà il tono e incoraggia i visitatori ad interessarsi ai vostri prodotti. Una forte identità è un buon modo per costruire un negozio attraente e riconosciuto.",
+        paragraph: "Date al vostro negozio un nome unico che dà il tono e incoraggia i visitatori ad interessarsi ai vostri prodotti. Una forte identità è un buon modo per costruire un negozio attraente e riconosciuto.",
         placeholder: "Nome del vostro negozio"
       },
       details: {
         title: "Dettagli del vostro negozio",
-        paragraph:
-          "Parlateci del vostro negozio. Dove si trova? Cosa ha da offrire? Descrivite al meglio per dargli una buona immagine, oltre ad informare efficacemente i vostri visitatori delle vostre attività e metodi.",
-        description_short_description:
-          "Descrizione in una frase del vostro negozio. Di solito accompagna il titolo del vostro negozio ovunque quest'ultimo è visibile.",
-        description_long_description:
-          "Descrizione dettagliata del vostro negozio. Quest'ultimo è visibile solo sulla pagina del profilo del vostro negozio."
+        paragraph: "Parlateci del vostro negozio. Dove si trova? Cosa ha da offrire? Descrivite al meglio per dargli una buona immagine, oltre ad informare efficacemente i vostri visitatori delle vostre attività e metodi.",
+        description_short_description: "Descrizione in una frase del vostro negozio. Di solito accompagna il titolo del vostro negozio ovunque quest'ultimo è visibile.",
+        description_long_description: "Descrizione dettagliata del vostro negozio. Quest'ultimo è visibile solo sulla pagina del profilo del vostro negozio."
       },
       customization: {
         title: "Personalizzate il vostro negozio",
-        paragraph:
-          "Personalizzate il vostro negozio per dargli un'identità unica!"
+        paragraph: "Personalizzate il vostro negozio per dargli un'identità unica!"
       },
       connect: {
         title: "Create o collega il vostro account commerciante",
-        paragraph:
-          "Create o collegate un account Stripe esistente su cui trasferire le entrate dalle vendite."
+        paragraph: "Create o collegate un account Stripe esistente su cui trasferire le entrate dalle vendite."
       },
       done: {
         title: "Terminé!",
-        paragraph:
-          "Vous avez maintenant terminé la création de votre boutique. Félicitations!",
-        provision_shop:
-          "Vous pouvrez dès à présent approvisionner votre boutique en y ajoutant des produits."
+        paragraph: "Vous avez maintenant terminé la création de votre boutique. Félicitations!",
+        provision_shop: "Vous pouvrez dès à présent approvisionner votre boutique en y ajoutant des produits."
       }
     }
   },
@@ -359,8 +346,7 @@ export default {
     },
     newsletter: {
       title: "Iscrivitevi alla nostra newsletter",
-      body:
-        "Registrazione rapida, semplice, senza spam e annullamento dell'iscrizione quando vuoi.",
+      body: "Registrazione rapida, semplice, senza spam e annullamento dell'iscrizione quando vuoi.",
       placeholder: "vostro.email@indirizzo.ch"
     }
   },
@@ -369,8 +355,7 @@ export default {
    * Stripe
    */
   stripe: {
-    add_a_card:
-      "Aggiungete una carta di credito o di debito inserendo le informazioni corrispondenti qui sotto."
+    add_a_card: "Aggiungete una carta di credito o di debito inserendo le informazioni corrispondenti qui sotto."
   },
 
   /**
@@ -383,30 +368,22 @@ export default {
       selected: "Indirizzo selezionato."
     },
     cart: {
-      has_changed:
-        "Uno o più articoli nel vostro carrello sono stati aggiornati, vi preghiamo di verificarli prima di ordinare.",
+      has_changed: "Uno o più articoli nel vostro carrello sono stati aggiornati, vi preghiamo di verificarli prima di ordinare.",
       item_added_singular: "aggiunto al carrello!",
       item_added_plural: "aggiunti al carrello!",
       product_removed: "è stato rimosso."
     },
-    cc_added:
-      "La carta di credito o di debito è stata aggiunta al vostro account con successo!",
-    general_error:
-      "C'è stato un errore. Si prega, per favore, di ricaricare la pagina e riprovare.",
+    cc_added: "La carta di credito o di debito è stata aggiunta al vostro account con successo!",
+    general_error: "C'è stato un errore. Si prega, per favore, di ricaricare la pagina e riprovare.",
     is_already_in_use: "è già in uso",
     is_available: "è disponibile",
     logged_out: "Ora siete disconnessi.",
-    shop_avatar_updated:
-      "L'avatar del vostro negozio è stato aggiornato con successo!",
-    shop_cover_updated:
-      "La copertina del vostro negozio è stata aggiornata con successo!",
-    subscribed:
-      "Grazie! Riceverete un'email per confermare la vostra iscrizione alla newsletter!",
-    terms:
-      "Devi prima accettare i termini e le condizioni prima di continuare.",
+    shop_avatar_updated: "L'avatar del vostro negozio è stato aggiornato con successo!",
+    shop_cover_updated: "La copertina del vostro negozio è stata aggiornata con successo!",
+    subscribed: "Grazie! Riceverete un'email per confermare la vostra iscrizione alla newsletter!",
+    terms: "Devi prima accettare i termini e le condizioni prima di continuare.",
     theme_updated: "Il tema del vostro negozio è stato aggiornato!",
-    validation:
-      "Il modulo contiene errori. Si prega di correggerli e riprovare.",
+    validation: "Il modulo contiene errori. Si prega di correggerli e riprovare.",
     welcome: "Benvenuto"
   }
 };
