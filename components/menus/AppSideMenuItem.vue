@@ -1,5 +1,5 @@
 <template>
-  <li>
+  <li class="side-menu__list-item">
     <nuxt-link
       :to="localePath({ name: route })"
       :class="classes"
