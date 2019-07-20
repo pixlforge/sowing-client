@@ -3,9 +3,16 @@
 
     <!-- Profile image -->
     <section class="shop-customization__group shop-customization__group--first">
-      <h5 class="shop-customization__label">
-        {{ $t("forms.labels.avatar") }}
-      </h5>
+      <div class="shop-customization__group-header">
+        <h5 class="shop-customization__label">
+          {{ $t("forms.labels.avatar") }}
+        </h5>
+        <button
+          class="button button__secondary button--small"
+          @click="deleteAvatar">
+          {{ $t("buttons.delete") }}
+        </button>
+      </div>
       <dropzone
         id="dropzoneProfile"
         ref="dropzoneProfile"
@@ -17,9 +24,16 @@
 
     <!-- Cover image -->
     <section class="shop-customization__group">
-      <h5 class="shop-customization__label">
-        {{ $t("forms.labels.cover_image") }}
-      </h5>
+      <div class="shop-customization__group-header">
+        <h5 class="shop-customization__label">
+          {{ $t("forms.labels.cover_image") }}
+        </h5>
+        <button
+          class="button button__secondary button--small"
+          @click="deleteCover">
+          {{ $t("buttons.delete") }}
+        </button>
+      </div>
       <dropzone
         id="dropzoneCover"
         ref="dropzoneCover"
@@ -48,7 +62,6 @@
     </section>
   </div>
 </template>
-
 
 <script>
 import Dropzone from "nuxt-dropzone";
@@ -114,6 +127,12 @@ export default {
       setCover: "shop/setCover",
       setAvatar: "shop/setAvatar"
     }),
+    deleteAvatar() {
+      console.log('delete avatar');
+    },
+    deleteCover() {
+      console.log('delete cover');
+    },
     dzMaxFilesExceeded(file) {
       this.$refs.dropzoneProfile.removeFile(file);
       this.$toast.error(

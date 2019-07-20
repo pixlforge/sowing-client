@@ -15,7 +15,7 @@
   }
 
   &__secondary {
-    @apply bg-pink-dark text-white;
+    @apply bg-pink-darker text-white;
 
     &:hover {
       @apply bg-pink-darker;
@@ -171,6 +171,10 @@
 
   &--spaced-right {
     @apply mr-10;
+  }
+
+  &--small {
+    @apply text-10 px-10 py-5;
   }
 
   &--large {

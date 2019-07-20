@@ -15,6 +15,10 @@
     }
   }
 
+  &__group-header {
+    @apply flex justify-between items-center;
+  }
+
   &__label-container {
     @apply w-full;
 

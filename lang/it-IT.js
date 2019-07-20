@@ -30,6 +30,7 @@ export default {
     create_account: "Creare l'account",
     create_my_shop: "Creare il mio negozio",
     customize_my_shop: "Personalizzare il mio negozio",
+    delete: "Cancellare",
     finalize_shop_creation: "Finalizzare la creazione del mio negozio",
     finish: "Finire",
     login: "Accesso",

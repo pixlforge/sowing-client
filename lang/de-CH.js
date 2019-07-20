@@ -30,6 +30,7 @@ export default {
     create_account: "Konto erstellen",
     create_my_shop: "Schaffe meinen Shop",
     customize_my_shop: "Passen Sie meinen Shop an",
+    delete: "Entfernen",
     finalize_shop_creation: "Beenden Sie die Erstellung meines Shops",
     finish: "Fertig",
     login: "Einloggen",
