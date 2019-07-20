@@ -8,10 +8,10 @@
   }
 
   &__button {
-    @apply bg-grey-lightest transition text-white w-80 h-80 rounded-full p-0;
+    @apply bg-gray-200 transition text-white w-80 h-80 rounded-full p-0;
 
     &:hover {
-      @apply bg-green;
+      @apply bg-green-400;
     }
   }
 
@@ -32,6 +32,6 @@
   }
 
   &__input {
-    @apply bg-green-lightest rounded-lg pl-10 py-10;
+    @apply bg-green-200 rounded-lg pl-10 py-10;
   }
 }

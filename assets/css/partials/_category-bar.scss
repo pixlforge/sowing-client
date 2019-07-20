@@ -1,6 +1,6 @@
 .category-bar {
   &__background {
-    @apply bg-green-lightest py-5;
+    @apply bg-green-200 py-5;
   }
 
   &__container {
@@ -12,10 +12,10 @@
   }
 
   &__link {
-    @apply block no-underline text-16 font-semibold text-green-darkest transition outline-none rounded-lg px-10 py-10;
+    @apply block no-underline text-16 font-semibold text-green-800 transition outline-none rounded-lg px-10 py-10;
 
     &:hover {
-      @apply text-green;
+      @apply text-green-400;
     }
 
     &:focus {

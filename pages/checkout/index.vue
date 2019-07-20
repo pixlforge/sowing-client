@@ -45,7 +45,7 @@
             v-model="shippingMethodId"
             :methods="shippingMethods"
             :errors="errors.shipping_method_id"
-            class="mt-40"/>
+            class="mt-48"/>
 
           <!-- Price block -->
           <div

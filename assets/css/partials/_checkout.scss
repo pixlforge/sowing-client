@@ -4,34 +4,34 @@
   }
 
   &__content {
-    @apply w-3/4 mr-50;
+    @apply w-3/4 mr-48;
   }
 
   &__sidebar {
-    @apply w-1/4 bg-green-lightest rounded-lg flex flex-col justify-start p-30 mt-40;
+    @apply w-1/4 bg-green-200 rounded-lg flex flex-col justify-start p-30 mt-48;
   }
 
   &__payment-methods {
-    @apply text-36 text-green-darkest mt-40;
+    @apply text-36 text-green-800 mt-48;
   }
 
   &__cart-overview {
-    @apply text-36 text-green-darkest mt-100;
+    @apply text-36 text-green-800 mt-96;
   }
 
   &__price-container {
-    @apply mt-40;
+    @apply mt-48;
   }
 
   &__subtotal {
-    @apply w-full text-grey-lighter text-14 flex justify-between;
+    @apply w-full text-gray-300 text-14 flex justify-between;
   }
 
   &__shipping {
-    @apply w-full text-grey-lighter text-14 flex justify-between mt-5;
+    @apply w-full text-gray-300 text-14 flex justify-between mt-5;
   }
 
   &__total {
-    @apply w-full text-20 font-bold uppercase flex justify-between mt-15;
+    @apply w-full text-20 font-bold uppercase flex justify-between mt-16;
   }
 }

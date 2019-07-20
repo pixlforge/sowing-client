@@ -44,7 +44,7 @@
         class="mt-10">
         <nuxt-link
           :to="localePath({ name: 'shop-creator-terms' })"
-          class="button button__secondary nowrap">
+          class="button button__secondary whitespace-no-wrap">
           <font-awesome-icon
             :icon="['far', 'store']"
             class="mr-10"/>
@@ -57,7 +57,7 @@
       <!-- Logout -->
       <li>
         <a
-          class="dropdown__link text-pink-dark"
+          class="dropdown__link text-pink-600"
           @click="logout">
           <font-awesome-icon
             :icon="['far', 'sign-out']"

@@ -1,5 +1,5 @@
 .button {
-  @apply block outline-none rounded-lg text-12 text-grey-lighter font-extrabold text-center uppercase transition no-underline nowrap px-30 py-12;
+  @apply block outline-none rounded-lg text-12 text-gray-300 font-extrabold text-center uppercase transition no-underline whitespace-no-wrap px-30 py-12;
   outline: none !important;
 
   &:focus {
@@ -7,92 +7,92 @@
   }
 
   &__primary {
-    @apply bg-green text-white;
+    @apply bg-green-400 text-white;
 
     &:hover {
-      @apply bg-green-dark;
+      @apply bg-green-600;
     }
   }
 
   &__secondary {
-    @apply bg-pink-dark text-white;
+    @apply bg-pink-600 text-white;
 
     &:hover {
-      @apply bg-pink-darker;
+      @apply bg-pink-700;
     }
   }
 
   &__default,
   &__default:hover {
-    @apply text-grey border border-grey-lightest;
+    @apply text-gray-400 border border-gray-200;
   }
 
   &__disabled,
   &__disabled:hover {
-    @apply bg-grey-lightest text-white cursor-not-allowed;
+    @apply bg-gray-200 text-white cursor-not-allowed;
   }
 
   &__green {
-    @apply bg-green text-white;
+    @apply bg-green-400 text-white;
 
     &:hover {
-      @apply bg-green-dark;
+      @apply bg-green-600;
     }
   }
 
   &__pink {
-    @apply bg-pink text-white;
+    @apply bg-pink-400 text-white;
 
     &:hover {
-      @apply bg-pink-dark;
+      @apply bg-pink-600;
     }
   }
 
   &__purple {
-    @apply bg-purple text-white;
+    @apply bg-purple-400 text-white;
 
     &:hover {
-      @apply bg-purple-dark;
+      @apply bg-purple-600;
     }
   }
 
   &__indigo {
-    @apply bg-indigo text-white;
+    @apply bg-indigo-400 text-white;
 
     &:hover {
-      @apply bg-indigo-dark;
+      @apply bg-indigo-600;
     }
   }
 
   &__blue {
-    @apply bg-blue text-white;
+    @apply bg-blue-400 text-white;
 
     &:hover {
-      @apply bg-blue-dark;
+      @apply bg-blue-600;
     }
   }
 
   &__brown {
-    @apply bg-brown text-white;
+    @apply bg-brown-400 text-white;
 
     &:hover {
-      @apply bg-brown-dark;
+      @apply bg-brown-600;
     }
   }
 
   &__grey {
-    @apply bg-grey text-white;
+    @apply bg-gray-400 text-white;
 
     &:hover {
-      @apply bg-grey-dark;
+      @apply bg-gray-500;
     }
   }
 
   &__slate {
-    @apply bg-slate text-white;
+    @apply bg-slate-400 text-white;
 
     &:hover {
-      @apply bg-slate-dark;
+      @apply bg-slate-600;
     }
   }
 
@@ -113,7 +113,7 @@
   }
 
   &__caret {
-    @apply text-16 ml-15;
+    @apply text-16 ml-14;
   }
 
   &__round {
@@ -125,7 +125,7 @@
   }
 
   &__badge {
-    @apply absolute top-0 right-0 w-20 h-20 rounded-full bg-pink-dark text-12 font-bold text-white flex justify-center items-center;
+    @apply absolute top-0 right-0 w-20 h-20 rounded-full bg-pink-600 text-12 font-bold text-white flex justify-center items-center;
     line-height: 0;
   }
 
@@ -158,15 +158,15 @@
   }
 
   &--spaced {
-    @apply mt-40;
+    @apply mt-48;
   }
   
   &--spaced-large {
-    @apply mt-80;
+    @apply mt-72;
   }
 
   &--spaced-larger {
-    @apply mt-100;
+    @apply mt-96;
   }
 
   &--spaced-right {
@@ -178,7 +178,7 @@
   }
 
   &--large {
-    @apply flex justify-center items-center text-14 py-15;
+    @apply flex justify-center items-center text-14 py-16;
   }
   
   &--grouped {

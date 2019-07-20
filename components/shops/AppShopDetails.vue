@@ -85,7 +85,7 @@
       </div>
     </div>
 
-    <hr class="border border-green-lightest my-50 lg:my-100">
+    <hr class="border border-green-200 my-50 lg:my-100">
 
     <!-- Short description FR -->
     <div class="form__inline-group">
@@ -133,7 +133,7 @@
       </div>
     </div>
 
-    <hr class="border border-green-lightest my-50 lg:my-100">
+    <hr class="border border-green-200 my-50 lg:my-100">
 
     <!-- Short description EN -->
     <div class="form__inline-group">
@@ -181,7 +181,7 @@
       </div>
     </div>
 
-    <hr class="border border-green-lightest my-50 lg:my-100">
+    <hr class="border border-green-200 my-50 lg:my-100">
 
     <!-- Short description DE -->
     <div class="form__inline-group">
@@ -229,7 +229,7 @@
       </div>
     </div>
 
-    <hr class="border border-green-lightest my-50 lg:my-100">
+    <hr class="border border-green-200 my-50 lg:my-100">
 
     <!-- Short description IT -->
     <div class="form__inline-group">

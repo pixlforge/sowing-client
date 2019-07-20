@@ -28,7 +28,7 @@
 
         <section
           v-if="shopStripeUserId && shopStripePublishableKey"
-          class="mt-150">
+          class="mt-196">
 
           <!-- Icon -->
           <div class="icon__group">

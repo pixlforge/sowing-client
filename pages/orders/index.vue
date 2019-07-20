@@ -15,7 +15,7 @@
       
       <div
         v-if="orders.length"
-        class="mt-100">
+        class="mt-96">
         <Order
           v-for="order in orders"
           :key="order.id"
@@ -24,7 +24,7 @@
 
       <div
         v-else
-        class="mt-100">
+        class="mt-96">
         <p>No orders yet</p>
       </div>
 

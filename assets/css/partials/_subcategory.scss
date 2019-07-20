@@ -1,10 +1,10 @@
 .subcategory {
   &__wrapper {
-    @apply flex flex-wrap justify-center -mx-20 mt-100; 
+    @apply flex flex-wrap justify-center -mx-20 mt-96; 
   }
 
   &__container {
-    @apply w-full px-20 mt-40;  
+    @apply w-full px-20 mt-48;  
 
     @screen md {
       @apply w-1/2;
@@ -14,13 +14,13 @@
       @apply w-1/3;
     }
     
-    @screen xxl {
+    @screen xl {
       @apply w-1/4;
     }
   }
 
   &__section {
-    @apply text-48 text-green-darkest mt-150;
+    @apply text-48 text-green-800 mt-196;
   }
 
   &__body {
@@ -36,15 +36,15 @@
   }
 
   &__name {
-    @apply text-green-darkest font-bold text-24 text-center;
+    @apply text-green-800 font-bold text-24 text-center;
   }
 
   &__description {
-    @apply text-16 font-semibold text-grey-lighter text-center leading-tight my-15;
+    @apply text-16 font-semibold text-gray-300 text-center leading-tight my-16;
   }
 
   &__link {
-    @apply block text-16 text-green font-semibold text-center no-underline p-5 mt-auto;
+    @apply block text-16 text-green-400 font-semibold text-center no-underline p-5 mt-auto;
 
     &:hover {
       @apply underline;

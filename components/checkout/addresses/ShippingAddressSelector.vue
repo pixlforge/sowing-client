@@ -4,7 +4,7 @@
       <li
         v-for="address in addresses"
         :key="address.id"
-        :class="{ 'border-green': address.id == selectedAddress.id, 'border-green-lightest': address.id != selectedAddress.id }"
+        :class="{ 'border-green-400': address.id == selectedAddress.id, 'border-green-200': address.id != selectedAddress.id }"
         class="list__item-bordered"
         @click.prevent="selectAddress(address)">
         <ul class="list__address list__address--selector">

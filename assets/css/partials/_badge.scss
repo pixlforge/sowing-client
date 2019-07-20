@@ -3,19 +3,19 @@
     @apply text-12 font-extrabold uppercase rounded-full px-20 py-10;
 
     &--success {
-      @apply bg-green-lighter text-green-darker;
+      @apply bg-green-300 bg-green-700;
     }
     
     &--info {
-      @apply bg-blue-lighter text-blue-darker;
+      @apply bg-blue-300 text-blue-700;
     }
     
     &--danger {
-      @apply bg-red-lighter text-red-darker;
+      @apply bg-red-300 text-red-700;
     }
     
     &--warning {
-      @apply bg-orange-lighter text-orange-darker;
+      @apply bg-orange-300 text-orange-700;
     }
   }
 }

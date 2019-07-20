@@ -1,10 +1,14 @@
 const pkg = require("./package");
 const join = require('path').join
-const tailwindJS = join(__dirname, 'tailwind.config.js')
+// const tailwindJS = join(__dirname, 'tailwind.config.js')
 
 require("dotenv").config();
 
 module.exports = {
+  server: {
+    port: 8871
+  },
+  
   mode: "universal",
 
   /*
@@ -176,29 +180,16 @@ module.exports = {
     duration: 6000
   },
 
-  /*
-   ** Build configuration
-   */
   build: {
-    /*
-     ** You can extend webpack config here
-     */
-    extend(config, ctx) {
-      // Run ESLint on save
-      if (ctx.isDev && ctx.isClient) {
-        config.module.rules.push({
-          enforce: "pre",
-          test: /\.(js|vue)$/,
-          loader: "eslint-loader",
-          exclude: /(node_modules)/
-        });
+    postcss: {
+      plugins: {
+        tailwindcss: './tailwind.config.js'
       }
     },
-    postcss: {
-      plugins: [
-        require('tailwindcss')(tailwindJS),
-        require('autoprefixer')
-      ]
+    /*
+    ** You can extend webpack config here
+    */
+    extend(config, ctx) {
     }
   }
 };

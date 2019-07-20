@@ -4,30 +4,30 @@
   }
 
   &__container {
-    @apply w-full px-20 mx-auto mt-100;
+    @apply w-full px-20 mx-auto mt-96;
 
     @screen md {
       @apply w-1/2;
     }
 
-    @screen xxl {
+    @screen xl {
       @apply w-1/4;
     }
   }
 
   &__icon-container {
-    @apply w-90 h-90 border-4 border-pink-dark rounded-full flex justify-center items-center mx-auto;
+    @apply w-90 h-90 border-4 border-pink-600 rounded-full flex justify-center items-center mx-auto;
   }
 
   &__icon {
-    @apply text-48 text-pink-dark;
+    @apply text-48 text-pink-600;
   }
 
   &__title {
-    @apply text-20 text-green-darkest font-extrabold text-center uppercase mt-40;
+    @apply text-20 text-green-800 font-extrabold text-center uppercase mt-48;
   }
 
   &__body {
-    @apply text-16 text-grey-light text-center leading-loose mt-30;
+    @apply text-16 text-gray-300 text-center leading-loose mt-30;
   }
 }

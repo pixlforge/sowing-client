@@ -4,7 +4,7 @@
   }
 
   &__container {
-    @apply w-full px-20 mt-100;
+    @apply w-full px-20 mt-96;
 
     @screen lg {
       @apply w-1/2;
@@ -40,7 +40,7 @@
   }
 
   &__name {
-    @apply text-20 text-green-darkest font-bold text-center;
+    @apply text-20 text-green-800 font-bold text-center;
 
     @screen md {
       @apply text-left;
@@ -48,7 +48,7 @@
   }
 
   &__description {
-    @apply text-16 text-grey-lighter leading-normal text-center mt-30;
+    @apply text-16 text-gray-300 leading-normal text-center mt-30;
 
     @screen md {
       @apply text-left;
@@ -64,10 +64,10 @@
   }
 
   &__icon {
-    @apply text-14 text-grey-lighter mr-10;
+    @apply text-14 text-gray-300 mr-10;
   }
 
   &__products {
-    @apply text-14 text-grey-lighter;
+    @apply text-14 text-gray-300;
   }
 }

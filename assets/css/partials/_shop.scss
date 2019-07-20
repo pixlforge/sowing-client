@@ -1,6 +1,6 @@
 .shop {
   &__columns-wrapper {
-    @apply w-full flex mt-100;
+    @apply w-full flex mt-96;
   }
 
   &__menu {
@@ -12,7 +12,7 @@
   }
 
   &__section {
-    @apply rounded-lg shadow-lg p-40 mt-20;
+    @apply rounded-lg shadow-lg p-36 mt-20;
   }
 
   &__controls {

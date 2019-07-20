@@ -8,7 +8,7 @@
   }
 
   &__body {
-    @apply flex no-underline text-green-darkest outline-none rounded-lg shadow-lg;
+    @apply flex no-underline text-green-800 outline-none rounded-lg shadow-lg;
 
     &:focus {
       @apply shadow-outline;
@@ -32,27 +32,27 @@
   }
 
   &__name {
-    @apply text-24 font-bold text-green-darkest;
+    @apply text-24 font-bold text-green-800;
   }
 
   &__description {
-    @apply text-18 text-grey-lighter leading-normal mt-15;
+    @apply text-18 text-gray-300 leading-normal mt-16;
   }
 
   &__price-container {
-    @apply text-20 flex items-start mt-15;
+    @apply text-20 flex items-start mt-16;
   }
 
   &__currency {
-    @apply text-14 font-extrabold text-green mr-5 mt-5;
+    @apply text-14 font-extrabold text-green-400 mr-5 mt-5;
   }
 
   &__price {
-    @apply text-24 font-bold text-green-darkest;
+    @apply text-24 font-bold text-green-800;
   }
 
   &__meta {
-    @apply flex items-start text-14 text-green mt-15;
+    @apply flex items-start text-14 text-green-400 mt-16;
   }
 
   &__meta-icon {
@@ -60,7 +60,7 @@
   }
 
   &__meta-link {
-    @apply text-green font-semibold no-underline;
+    @apply text-green-400 font-semibold no-underline;
 
     &:hover {
       @apply underline;

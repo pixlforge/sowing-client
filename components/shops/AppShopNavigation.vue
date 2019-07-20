@@ -24,7 +24,7 @@
       <!-- Details -->
       <div class="shop-navigation__group">
         <div
-          :class="stepName ? `${bgTheme} text-white` : 'bg-white text-grey-lightest'"
+          :class="stepName ? `${bgTheme} text-white` : 'bg-white text-gray-200'"
           class="shop-navigation__oval"
           @click.prevent="toShopCreatorDetails">
           2
@@ -33,7 +33,7 @@
           :class="stepDetails ? bgTheme : 'bg-white'"
           class="shop-navigation__line"/>
         <div
-          :class="stepName ? textTheme : 'text-grey-lightest'"
+          :class="stepName ? textTheme : 'text-gray-200'"
           class="shop-navigation__label"
           @click.prevent="toShopCreatorDetails">
           {{ $t("shop_creator.navigation.details") }}
@@ -43,7 +43,7 @@
       <!-- Customize -->
       <div class="shop-navigation__group">
         <div
-          :class="stepDetails ? `${bgTheme} text-white` : 'bg-white text-grey-lightest'"
+          :class="stepDetails ? `${bgTheme} text-white` : 'bg-white text-gray-200'"
           class="shop-navigation__oval"
           @click.prevent="toShopCreatorCustomization">
           3
@@ -52,7 +52,7 @@
           :class="stepCustomization ? bgTheme : 'bg-white'"
           class="shop-navigation__line"/>
         <div
-          :class="stepDetails ? textTheme : 'text-grey-lightest'"
+          :class="stepDetails ? textTheme : 'text-gray-200'"
           class="shop-navigation__label"
           @click.prevent="toShopCreatorCustomization">
           {{ $t("shop_creator.navigation.customize") }}
@@ -62,7 +62,7 @@
       <!-- Connect -->
       <div class="shop-navigation__group">
         <div
-          :class="stepCustomization ? `${bgTheme} text-white` : 'bg-white text-grey-lightest'"
+          :class="stepCustomization ? `${bgTheme} text-white` : 'bg-white text-gray-200'"
           class="shop-navigation__oval"
           @click.prevent="toShopCreatorConnect">
           4
@@ -71,7 +71,7 @@
           :class="stepConnect ? bgTheme : 'bg-white'"
           class="shop-navigation__line"/>
         <div
-          :class="stepCustomization ? textTheme : 'text-grey-lightest'"
+          :class="stepCustomization ? textTheme : 'text-gray-200'"
           class="shop-navigation__label"
           @click.prevent="toShopCreatorConnect">
           {{ $t("shop_creator.navigation.connect") }}
@@ -81,13 +81,13 @@
       <!-- Done -->
       <div class="shop-navigation__group shop-navigation__group--last">
         <div
-          :class="stepConnect ? `${bgTheme} text-white` : 'bg-white text-grey-lightest'"
+          :class="stepConnect ? `${bgTheme} text-white` : 'bg-white text-gray-200'"
           class="shop-navigation__oval"
           @click.prevent="toShopCreatorDone">
           5
         </div>
         <div
-          :class="stepConnect ? textTheme : 'text-grey-lightest'"
+          :class="stepConnect ? textTheme : 'text-gray-200'"
           class="shop-navigation__label"
           @click.prevent="toShopCreatorDone">
           {{ $t("shop_creator.navigation.done") }}

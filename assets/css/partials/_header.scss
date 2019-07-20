@@ -1,10 +1,10 @@
 .header {
   &__background {
-    @apply bg-green;
+    @apply bg-green-400;
   }
 
   &__container {
-    @apply flex flex-col items-center py-40;
+    @apply flex flex-col items-center py-48;
 
     @screen lg {
       @apply flex-row;
@@ -12,7 +12,7 @@
   }
 
   &__avatar {
-    @apply w-110 h-110 rounded-full bg-white flex justify-center items-center text-48 text-green;
+    @apply w-110 h-110 rounded-full bg-white flex justify-center items-center text-48 text-green-400;
 
     &--picture {
       @apply block bg-center bg-no-repeat bg-cover;
@@ -24,10 +24,10 @@
   }
 
   &__content {
-    @apply text-center mt-40;
+    @apply text-center mt-48;
 
     @screen lg {
-      @apply text-left ml-80 mt-0;
+      @apply text-left ml-72 mt-0;
     }
   }
 

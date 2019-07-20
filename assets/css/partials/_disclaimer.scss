@@ -1,6 +1,6 @@
 .disclaimer {
   &__container {
-    @apply bg-green flex flex-col justify-center items-center text-12 text-white py-15;
+    @apply bg-green-400 flex flex-col justify-center items-center text-12 text-white py-16;
   }
 
   &__brand-link {
@@ -20,7 +20,7 @@
   }
 
   &__heart-icon {
-    @apply text-red;
+    @apply text-red-400;
   }
 
   &__made-by {

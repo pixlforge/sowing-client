@@ -1,6 +1,6 @@
 .title {
   &__main {
-    @apply font-cafe text-30 text-green-darkest font-bold tracking-tight;
+    @apply font-cafe text-30 text-green-800 font-bold tracking-tight;
   
     @screen md {
       @apply text-48;
@@ -12,19 +12,19 @@
   }
 
   &__large {
-    @apply text-24 text-green-darkest leading-normal mt-80;
+    @apply text-24 text-green-800 leading-normal mt-72;
   }
 
   &__medium {
-    @apply text-20 text-green-darkest leading-normal;
+    @apply text-20 text-green-800 leading-normal;
   }
 
   &__small {
-    @apply text-16 text-green-darkest uppercase font-bold;
+    @apply text-16 text-green-800 uppercase font-bold;
   }
 
   &__smaller {
-    @apply text-14 text-green-darkest uppercase font-bold;
+    @apply text-14 text-green-800 uppercase font-bold;
   }
 
   &--center {

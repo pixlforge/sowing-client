@@ -7,8 +7,6 @@
 }
 
 html {
-  font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
   font-size: 10px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -27,14 +25,5 @@ body {
 *:after {
   box-sizing: border-box;
   margin: 0;
-}
 
-@responsive {
-  .border-spacing-h-40 {
-    border-spacing: 0 4rem;
-  }
-}
-
-.nowrap {
-  white-space: nowrap;
 }

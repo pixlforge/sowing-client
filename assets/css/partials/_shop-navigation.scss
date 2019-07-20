@@ -1,13 +1,13 @@
 .shop-navigation {
   &__background {
-    @apply bg-green-lightest;
+    @apply bg-green-200;
   }
 
   &__container {
     @apply flex pt-60 pb-60;
 
     @screen lg {
-      @apply pb-80;
+      @apply pb-72;
     }
   }
 

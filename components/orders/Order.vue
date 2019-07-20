@@ -1,5 +1,5 @@
 <template>
-  <div class="rounded-lg hover:bg-grey-faint text-16 text-center leading-normal flex px-20 py-40 min-h-160">
+  <div class="rounded-lg hover:bg-gray-100 text-16 text-center leading-normal flex px-20 py-48 min-h-160">
     <div class="w-1/5 flex justify-center">
       #{{ order.id }}
     </div>
@@ -13,7 +13,7 @@
           :key="variation.id">
           <nuxt-link
             :to="localePath({ name: 'products-slug', params: { slug: variation.product.slug } })"
-            class="text-green no-underline hover:underline">
+            class="text-green-400 no-underline hover:underline">
             {{ variation.product.name[locale] }} {{ variation.type.name[locale] }} {{ variation.name[locale] }}
           </nuxt-link>
         </li>

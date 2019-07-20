@@ -1,11 +1,11 @@
 .streak {
   &__background {
     &--green {
-      @apply bg-green;
+      @apply bg-green-400;
     }
     
     &--pink {
-      @apply bg-pink-dark;
+      @apply bg-pink-600;
     }
   }
 
@@ -38,7 +38,7 @@
   }
 
   &__content {
-    @apply w-full py-110;
+    @apply w-full py-132;
 
     @screen lg {
       @apply w-1/2;
@@ -62,7 +62,7 @@
   }
 
   &__controls {
-    @apply flex flex-col justify-center mt-40;
+    @apply flex flex-col justify-center mt-48;
 
     @screen md {
       @apply flex-row;

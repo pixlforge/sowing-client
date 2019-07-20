@@ -8,7 +8,7 @@
     <div class="form__select-group">
       <select
         id="country"
-        :class="{ 'border-red': errors.length, 'border-green-lightest': !errors.length }"
+        :class="{ 'border-red': errors.length, 'border-green-200': !errors.length }"
         name="country"
         class="form__select form__select--white"
         @change="$emit('input', $event.target.value)">

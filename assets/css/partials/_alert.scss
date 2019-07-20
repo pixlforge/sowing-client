@@ -1,6 +1,6 @@
 .alert {
   &__background {
-    @apply py-40;
+    @apply py-48;
   }
 
   &__container {
@@ -15,7 +15,7 @@
     @apply absolute right-0 text-24 text-white p-10;
 
     &:hover {
-      @apply text-grey-lightest;
+      @apply text-gray-200;
     }
   }
 }
