@@ -21,6 +21,7 @@ import NuxtLink from './components/nuxt-link.client.js' // should be included af
 import consola from 'consola'
 
 consola.wrapConsole()
+console.log = console.__log
 
 // Component: <NuxtLink>
 Vue.component(NuxtLink.name, NuxtLink)
