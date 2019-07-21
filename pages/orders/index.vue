@@ -1,52 +1,50 @@
 <template>
   <main>
-    
+
     <!-- Header -->
-    <Header>
+    <AppHeader>
       <template slot="icon">
         <font-awesome-icon :icon="['far', 'shipping-fast']"/>
       </template>
       <template slot="title">
-        <h1 class="header__title">{{ $t("pages.orders.title") }}</h1>
+        <h1 class="header__title">
+          {{ $t("pages.orders.title") }}
+        </h1>
       </template>
-    </Header>
+    </AppHeader>
 
     <section class="section__container container">
-      
       <div
         v-if="orders.length"
         class="mt-96">
-        <Order
+        <AppOrder
           v-for="order in orders"
           :key="order.id"
           :order="order"/>
       </div>
-
       <div
         v-else
         class="mt-96">
         <p>No orders yet</p>
       </div>
-
     </section>
-
   </main>
 </template>
 
 <script>
-import Header from "@/components/Header";
-import Order from "@/components/orders/Order";
+import AppOrder from '@/components/orders/AppOrder';
+import AppHeader from '@/components/AppHeader';
 
 export default {
-  middleware: ["authenticated"],
+  middleware: ['authenticated'],
   head() {
     return {
-      title: `${this.$t("pages.orders.title")} | ${this.title}`
+      title: `${this.$t('pages.orders.title')} | ${this.title}`
     };
   },
   components: {
-    Header,
-    Order
+    AppOrder,
+    AppHeader
   },
   data() {
     return {
@@ -54,7 +52,7 @@ export default {
     };
   },
   async asyncData({ app }) {
-    let res = await app.$axios.$get("/orders");
+    const res = await app.$axios.$get('/orders');
     return {
       orders: res.data,
       title: app.head.title

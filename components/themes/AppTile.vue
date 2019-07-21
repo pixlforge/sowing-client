@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
   props: {
@@ -22,22 +22,22 @@ export default {
   },
   computed: {
     ...mapGetters({
-      shopTheme: "shop/shopTheme"
+      shopTheme: 'shop/shopTheme'
     }),
     bgTheme() {
-      return `bg-${this.theme}`;
+      return `bg-${this.theme}-500`;
     }
   },
   methods: {
     ...mapActions({
-      setShopTheme: "shop/setShopTheme"
+      setShopTheme: 'shop/setShopTheme'
     }),
     async update() {
       try {
         await this.setShopTheme(this.theme);
-        this.$toast.success(this.$t("toasts.theme_updated"));
+        this.$toast.success(this.$t('toasts.theme_updated'));
       } catch (e) {
-        this.$toast.error(this.$t("toasts.general_error"));
+        this.$toast.error(this.$t('toasts.general_error'));
       }
     }
   }

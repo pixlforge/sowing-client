@@ -14,7 +14,7 @@
       <h3 class="cart-product__name">
         {{ baseProductName }} &ndash; {{ variationType }} &ndash; {{ variationName }}
       </h3>
-      
+
       <p class="cart-product__description">
         {{ baseProductDescription }}
       </p>
@@ -77,7 +77,7 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
   props: {
@@ -88,7 +88,7 @@ export default {
   },
   computed: {
     ...mapGetters({
-      locale: "locale"
+      locale: 'locale'
     }),
     quantity: {
       get() {
@@ -99,16 +99,16 @@ export default {
       }
     },
     imgUrl() {
-      return require("@/assets/img/placeholders/category.svg");
+      return require('@/assets/img/placeholders/category.svg');
     },
     imgAlt() {
-      return this.$t("components.products.img.alt");
+      return this.$t('components.products.img.alt');
     },
     labelPrice() {
-      return this.$t("components.cart.labels.price");
+      return this.$t('components.cart.labels.price');
     },
     labelQuantity() {
-      return this.$t("components.cart.labels.quantity");
+      return this.$t('components.cart.labels.quantity');
     },
     baseProductName() {
       return this.product.product.name[this.locale];
@@ -128,14 +128,14 @@ export default {
   },
   methods: {
     ...mapActions({
-      destroy: "cart/destroy",
-      update: "cart/update"
+      destroy: 'cart/destroy',
+      update: 'cart/update'
     }),
     remove(productId) {
       this.$toast.success(
         `${this.baseProductName} ${this.variationType} ${
           this.variationName
-        } ${this.$t("toasts.cart.product_removed")}`
+        } ${this.$t('toasts.cart.product_removed')}`
       );
       this.destroy(productId);
     }

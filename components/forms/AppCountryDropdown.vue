@@ -30,13 +30,15 @@
         class="form__select-caret"/>
     </div>
     <template v-if="errors">
-      <p class="form__feedback">{{ errors[0] }}</p>
+      <p class="form__feedback">
+        {{ errors[0] }}
+      </p>
     </template>
   </div>
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters } from 'vuex';
 
 export default {
   props: {
@@ -55,7 +57,7 @@ export default {
   },
   computed: {
     ...mapGetters({
-      locale: "locale"
+      locale: 'locale'
     })
   },
   created() {
@@ -63,7 +65,7 @@ export default {
   },
   methods: {
     async getCountries() {
-      let res = await this.$axios.$get("/countries");
+      const res = await this.$axios.$get('/countries');
       this.countries = res.data;
     }
   }

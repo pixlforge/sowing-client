@@ -45,38 +45,39 @@
 </template>
 
 <script>
-import AppShopCustomization from "@/components/shops/AppShopCustomization";
-import theming from "@/mixins/theming";
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters, mapActions } from 'vuex';
+import theming from '@/mixins/theming';
+
+import AppShopCustomization from '@/components/shops/AppShopCustomization';
 
 export default {
-  middleware: ["authenticated", "hasShop"],
+  middleware: ['authenticated', 'hasShop'],
   head() {
     return {
-      title: `${this.$t("shop_creator.steps.customization.title")} | ${this.title}`
+      title: `${this.$t('shop_creator.steps.customization.title')} | ${this.title}`
     };
   },
-  layout: "shop-creator",
+  layout: 'shop-creator',
   transition: {
-    name: "slide",
-    mode: "out-in"
+    name: 'slide',
+    mode: 'out-in'
   },
   components: {
     AppShopCustomization
   },
   mixins: [theming],
-  async asyncData({ app }) {
+  computed: {
+    ...mapGetters({
+      shop: 'shop/shop',
+      stepName: 'shop/stepName',
+      shopExists: 'shop/shopExists',
+      stepDetails: 'shop/stepDetails'
+    })
+  },
+  asyncData({ app }) {
     return {
       title: app.head.title
     };
-  },
-  computed: {
-    ...mapGetters({
-      shop: "shop/shop",
-      stepName: "shop/stepName",
-      shopExists: "shop/shopExists",
-      stepDetails: "shop/stepDetails"
-    })
   },
   mounted() {
     if (!this.shopExists && this.$auth.user.has_shop) {
@@ -88,16 +89,16 @@ export default {
   },
   methods: {
     ...mapActions({
-      getShop: "shop/getShop",
-      setStepName: "shop/setStepName",
-      setStepDetails: "shop/setStepDetails"
+      getShop: 'shop/getShop',
+      setStepName: 'shop/setStepName',
+      setStepDetails: 'shop/setStepDetails'
     }),
     prev() {
-      this.$router.push(this.localePath({ name: "shop-creator-details" }));
+      this.$router.push(this.localePath({ name: 'shop-creator-details' }));
     },
     next() {
       if (this.stepName && this.stepDetails) {
-        this.$router.push(this.localePath({ name: "shop-creator-connect" }));
+        this.$router.push(this.localePath({ name: 'shop-creator-connect' }));
       }
     }
   }

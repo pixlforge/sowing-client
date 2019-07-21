@@ -2,7 +2,7 @@
   <main>
 
     <!-- Header -->
-    <Header :class="bgTheme">
+    <AppHeader :class="bgTheme">
       <template slot="icon">
         <div
           v-if="shopAvatar"
@@ -34,27 +34,27 @@
           </p>
         </nuxt-link>
       </template>
-    </Header>
+    </AppHeader>
 
     <!-- Product details -->
     <section class="section__container container">
-      <ProductDetails :product="product"/>
+      <AppProductDetails :product="product"/>
     </section>
 
     <!-- Streak newsletter -->
     <section>
-      <StreakNewsletter/>
+      <AppStreakNewsletter/>
     </section>
-
   </main>
 </template>
 
 <script>
-import Header from "@/components/Header";
-import ProductDetails from "@/components/products/ProductDetails";
-import StreakNewsletter from "@/components/streaks/StreakNewsletter";
-import theming from "@/mixins/theming";
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters, mapActions } from 'vuex';
+import theming from '@/mixins/theming';
+
+import AppHeader from '@/components/AppHeader';
+import AppStreakNewsletter from '@/components/streaks/AppStreakNewsletter';
+import AppProductDetails from '@/components/products/AppProductDetails';
 
 export default {
   head() {
@@ -63,9 +63,9 @@ export default {
     };
   },
   components: {
-    Header,
-    ProductDetails,
-    StreakNewsletter
+    AppHeader,
+    AppProductDetails,
+    AppStreakNewsletter
   },
   mixins: [theming],
   data() {
@@ -74,21 +74,21 @@ export default {
       shop: {}
     };
   },
+  computed: {
+    ...mapGetters({
+      locale: 'locale',
+      shopAvatar: 'shop/shopAvatar'
+    })
+  },
   async asyncData({ params, app }) {
-    let product = await app.$axios.$get(`/products/${params.slug}`);
-    let shop = await app.$axios.$get(`/shops/${product.data.shop.slug}`);
+    const product = await app.$axios.$get(`/products/${params.slug}`);
+    const shop = await app.$axios.$get(`/shops/${product.data.shop.slug}`);
 
     return {
       title: app.head.title,
       product: product.data,
       shop: shop.data
     };
-  },
-  computed: {
-    ...mapGetters({
-      locale: "locale",
-      shopAvatar: "shop/shopAvatar"
-    })
   },
   mounted() {
     this.setShop(this.shop);
@@ -98,8 +98,8 @@ export default {
   },
   methods: {
     ...mapActions({
-      setShop: "shop/setShop",
-      resetShop: "shop/resetShop"
+      setShop: 'shop/setShop',
+      resetShop: 'shop/resetShop'
     })
   }
 };

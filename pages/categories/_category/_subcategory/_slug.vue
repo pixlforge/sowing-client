@@ -2,15 +2,19 @@
   <main>
 
     <!-- Header -->
-    <Header>
+    <AppHeader>
       <template slot="title">
-        <h1 class="header__title">{{ subcategory.name[locale] }}</h1>
+        <h1 class="header__title">
+          {{ subcategory.name[locale] }}
+        </h1>
       </template>
       <template slot="description">
-        <p class="header__description">{{ subcategory.description[locale] }}</p>
+        <p class="header__description">
+          {{ subcategory.description[locale] }}
+        </p>
       </template>
-    </Header>
-    
+    </AppHeader>
+
     <section class="section__container container">
       <div class="product__wrapper">
 
@@ -19,19 +23,18 @@
           v-for="product in products"
           :key="product.id"
           class="product__container">
-          <Product :product="product"/>
+          <AppProduct :product="product"/>
         </div>
-
       </div>
     </section>
-
   </main>
 </template>
 
 <script>
-import Header from "@/components/Header";
-import Product from "@/components/products/Product";
-import { mapGetters } from "vuex";
+import { mapGetters } from 'vuex';
+
+import AppHeader from '@/components/AppHeader';
+import AppProduct from '@/components/products/AppProduct';
 
 export default {
   head() {
@@ -40,8 +43,8 @@ export default {
     };
   },
   components: {
-    Header,
-    Product
+    AppHeader,
+    AppProduct
   },
   data() {
     return {
@@ -49,11 +52,16 @@ export default {
       products: []
     };
   },
+  computed: {
+    ...mapGetters({
+      locale: 'locale'
+    })
+  },
   async asyncData({ params, app }) {
-    let subcategory = await app.$axios.$get(
+    const subcategory = await app.$axios.$get(
       `/categories/${params.subcategory}`
     );
-    let products = await app.$axios.$get(
+    const products = await app.$axios.$get(
       `/products?category=${params.subcategory}`
     );
 
@@ -62,11 +70,6 @@ export default {
       subcategory: subcategory.data,
       products: products.data
     };
-  },
-  computed: {
-    ...mapGetters({
-      locale: "locale"
-    })
   }
 };
 </script>

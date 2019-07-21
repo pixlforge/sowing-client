@@ -2,16 +2,18 @@
   <main>
 
     <!-- Header -->
-    <Header>
+    <AppHeader>
       <template slot="title">
-        <h1 class="header__title">{{ category.name[locale] }}</h1>
+        <h1 class="header__title">
+          {{ category.name[locale] }}
+        </h1>
       </template>
       <template slot="description">
         <p class="header__description">
           {{ category.description[locale] }}
         </p>
       </template>
-    </Header>
+    </AppHeader>
 
     <!-- Content -->
     <section class="section__container container">
@@ -30,7 +32,7 @@
               v-for="subcategory in section.children"
               :key="subcategory.slug"
               class="subcategory__container">
-              <SubCategory
+              <AppSubCategory
                 :category="category"
                 :subcategory="subcategory"/>
             </div>
@@ -45,7 +47,7 @@
             v-for="subcategory in category.children"
             :key="subcategory.slug"
             class="subcategory__container">
-            <SubCategory
+            <AppSubCategory
               :category="category"
               :subcategory="subcategory"/>
           </div>
@@ -56,9 +58,10 @@
 </template>
 
 <script>
-import Header from "@/components/Header";
-import SubCategory from "@/components/categories/SubCategory";
-import { mapGetters } from "vuex";
+import { mapGetters } from 'vuex';
+
+import AppHeader from '@/components/AppHeader';
+import AppSubCategory from '@/components/categories/AppSubCategory';
 
 export default {
   head() {
@@ -67,29 +70,29 @@ export default {
     };
   },
   components: {
-    Header,
-    SubCategory
+    AppHeader,
+    AppSubCategory
   },
   data() {
     return {
       category: {}
     };
   },
+  computed: {
+    ...mapGetters({
+      locale: 'locale'
+    }),
+    categoryHasSections() {
+      return this.category.children[0].is_section;
+    }
+  },
   async asyncData({ params, app }) {
-    let res = await app.$axios.$get(`/categories/${params.slug}`);
+    const res = await app.$axios.$get(`/categories/${params.slug}`);
 
     return {
       title: app.head.title,
       category: res.data
     };
-  },
-  computed: {
-    ...mapGetters({
-      locale: "locale"
-    }),
-    categoryHasSections() {
-      return this.category.children[0].is_section;
-    }
   }
 };
 </script>

@@ -2,15 +2,17 @@
   <main>
 
     <!-- Header -->
-    <Header>
+    <AppHeader>
       <template slot="icon">
         <font-awesome-icon :icon="['far', 'search']"/>
       </template>
       <template slot="title">
-        <h1 class="header__title">{{ $t("pages.search.title") }}</h1>
+        <h1 class="header__title">
+          {{ $t("pages.search.title") }}
+        </h1>
       </template>
-    </Header>
-    
+    </AppHeader>
+
     <section class="section__container section__container--min-h-half-screen container">
 
       <!-- Search field -->
@@ -24,13 +26,13 @@
       <div class="search__results-wrapper">
 
         <!-- Product search results -->
-        <Result
+        <AppSearchResult
           :query="query"
           index-name="products"
           class="search__results-component search__results-component--left"/>
-        
+
         <!-- Shop search results -->
-        <Result
+        <AppSearchResult
           :query="query"
           index-name="shops"
           class="search__results-component search__results-component--right"/>
@@ -41,34 +43,35 @@
 </template>
 
 <script>
-import Header from "@/components/Header";
-import Result from "@/components/search/Result";
 import { mapGetters } from 'vuex';
+
+import AppHeader from '@/components/AppHeader';
+import AppSearchResult from '@/components/search/AppSearchResult';
 
 export default {
   head() {
     return {
-      title: `${this.$t("pages.search.title")} | ${this.title}`
+      title: `${this.$t('pages.search.title')} | ${this.title}`
     };
   },
   components: {
-    Header,
-    Result
+    AppHeader,
+    AppSearchResult
   },
   data() {
     return {
-      query: ""
+      query: ''
     }
-  },
-  async asyncData({ app }) {
-    return {
-      title: app.head.title
-    };
   },
   computed: {
     ...mapGetters({
-      locale: "locale"
+      locale: 'locale'
     })
+  },
+  asyncData({ app }) {
+    return {
+      title: app.head.title
+    };
   }
 };
 

@@ -1,6 +1,6 @@
 export const state = () => ({
-  message: "",
-  type: ""
+  message: '',
+  type: ''
 });
 
 export const getters = {
@@ -20,16 +20,16 @@ export const mutations = {
     state.type = type;
   },
   EMPTY_MESSAGE(state) {
-    state.message = "";
+    state.message = '';
   }
 };
 
 export const actions = {
   flash({ commit }, content) {
-    commit("SET_TYPE", content.type);
-    commit("SET_MESSAGE", content.message);
+    commit('SET_TYPE', content.type);
+    commit('SET_MESSAGE', content.message);
   },
   close({ commit }) {
-    commit("EMPTY_MESSAGE");
+    commit('EMPTY_MESSAGE');
   }
 };

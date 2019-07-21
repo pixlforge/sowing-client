@@ -1,13 +1,13 @@
 <template>
   <main>
-    
+
     <!-- Cover -->
     <AppShopCover
       v-if="shopCover"
       :shop-cover="shopCover"/>
 
     <!-- Header -->
-    <Header :class="bgTheme">
+    <AppHeader :class="bgTheme">
       <template slot="icon">
         <div
           v-if="shopAvatar"
@@ -43,7 +43,7 @@
           </li>
         </ul>
       </template>
-    </Header>
+    </AppHeader>
 
     <!-- Content -->
     <section class="section__container container">
@@ -89,18 +89,19 @@
 
     <!-- Register CTA -->
     <section>
-      <StreakRegister/>
+      <AppStreakRegister/>
     </section>
 
   </main>
 </template>
 
 <script>
-import Header from "@/components/Header";
-import AppShopCover from "@/components/shops/AppShopCover";
-import StreakRegister from "@/components/streaks/StreakRegister";
-import theming from "@/mixins/theming";
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters, mapActions } from 'vuex';
+import theming from '@/mixins/theming';
+
+import AppHeader from '@/components/AppHeader';
+import AppShopCover from '@/components/shops/AppShopCover';
+import AppStreakRegister from '@/components/streaks/AppStreakRegister';
 
 export default {
   head() {
@@ -109,9 +110,9 @@ export default {
     };
   },
   components: {
-    Header,
+    AppHeader,
     AppShopCover,
-    StreakRegister
+    AppStreakRegister
   },
   mixins: [theming],
   data() {
@@ -119,27 +120,27 @@ export default {
       shop: {}
     };
   },
-  async asyncData({ app, route }) {
-    let shop = await app.$axios.$get(`/shops/${route.params.slug}`);
-
-    return {
-      title: app.head.title,
-      shop: shop.data
-    };
-  },
   computed: {
     ...mapGetters({
-      locale: "locale",
-      shopAvatar: "shop/shopAvatar",
-      shopCover: "shop/shopCover",
-      shopName: "shop/shopName"
+      locale: 'locale',
+      shopAvatar: 'shop/shopAvatar',
+      shopCover: 'shop/shopCover',
+      shopName: 'shop/shopName'
     }),
     imgUrl() {
       return `https://bulma.io/images/placeholders/1280x960.png`;
     },
     imgAlt() {
-      return this.$t("components.products.img.alt");
+      return this.$t('components.products.img.alt');
     }
+  },
+  async asyncData({ app, route }) {
+    const shop = await app.$axios.$get(`/shops/${route.params.slug}`);
+
+    return {
+      title: app.head.title,
+      shop: shop.data
+    };
   },
   mounted() {
     this.setShop(this.shop);
@@ -149,8 +150,8 @@ export default {
   },
   methods: {
     ...mapActions({
-      setShop: "shop/setShop",
-      resetShop: "shop/resetShop"
+      setShop: 'shop/setShop',
+      resetShop: 'shop/resetShop'
     })
   }
 };

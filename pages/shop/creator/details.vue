@@ -46,21 +46,22 @@
 </template>
 
 <script>
-import AppShopDetails from "@/components/shops/AppShopDetails";
-import theming from "@/mixins/theming";
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters, mapActions } from 'vuex';
+import theming from '@/mixins/theming';
+
+import AppShopDetails from '@/components/shops/AppShopDetails';
 
 export default {
-  middleware: ["authenticated"],
+  middleware: ['authenticated'],
   head() {
     return {
-      title: `${this.$t("shop_creator.steps.details.title")} | ${this.title}`
+      title: `${this.$t('shop_creator.steps.details.title')} | ${this.title}`
     };
   },
-  layout: "shop-creator",
+  layout: 'shop-creator',
   transition: {
-    name: "slide",
-    mode: "out-in"
+    name: 'slide',
+    mode: 'out-in'
   },
   components: {
     AppShopDetails
@@ -72,30 +73,30 @@ export default {
       errors: {}
     };
   },
+  computed: {
+    ...mapGetters({
+      locale: 'locale',
+      shop: 'shop/shop',
+      terms: 'shop/terms',
+      stepName: 'shop/stepName',
+      shopCity: 'shop/shopCity',
+      shopExists: 'shop/shopExists',
+      stepDetails: 'shop/stepDetails',
+      shopCountryId: 'shop/shopCountryId',
+      shopPostalCode: 'shop/shopPostalCode'
+    })
+  },
   async asyncData({ app }) {
-    let countries = await app.$axios.$get("/countries");
+    const countries = await app.$axios.$get('/countries');
 
     return {
       countries: countries.data,
       title: app.head.title
     };
   },
-  computed: {
-    ...mapGetters({
-      locale: "locale",
-      shop: "shop/shop",
-      terms: "shop/terms",
-      stepName: "shop/stepName",
-      shopCity: "shop/shopCity",
-      shopExists: "shop/shopExists",
-      stepDetails: "shop/stepDetails",
-      shopCountryId: "shop/shopCountryId",
-      shopPostalCode: "shop/shopPostalCode"
-    })
-  },
   mounted() {
     if (!this.terms) {
-      return this.$router.push(this.localePath("shop-creator-terms"));
+      return this.$router.push(this.localePath('shop-creator-terms'));
     }
 
     if (!this.shopExists && this.$auth.user.has_shop) {
@@ -107,11 +108,11 @@ export default {
   },
   methods: {
     ...mapActions({
-      setShop: "shop/setShop",
-      getShop: "shop/getShop",
-      setStepName: "shop/setStepName",
-      setStepDetails: "shop/setStepDetails",
-      setUserHasShop: "setUserHasShop"
+      setShop: 'shop/setShop',
+      getShop: 'shop/getShop',
+      setStepName: 'shop/setStepName',
+      setStepDetails: 'shop/setStepDetails',
+      setUserHasShop: 'setUserHasShop'
     }),
     async store() {
       if (this.stepDetails) {
@@ -119,28 +120,28 @@ export default {
       } else {
         try {
           if (this.terms) {
-            let res = await this.$axios.$post("/shops", this.shop);
+            const res = await this.$axios.$post('/shops', this.shop);
             this.setShop(res.data);
             this.setUserHasShop(true);
             this.$toast.success(
-              "Votre nouvelle boutique a été créée avec succès!"
+              'Votre nouvelle boutique a été créée avec succès!'
             );
             this.next();
           } else {
-            this.$toast.error(this.$t("toasts.terms"));
+            this.$toast.error(this.$t('toasts.terms'));
           }
         } catch (e) {
           this.errors = e.response.data.errors;
-          this.$toast.error(this.$t("toasts.validation"));
+          this.$toast.error(this.$t('toasts.validation'));
         }
       }
     },
     prev() {
-      this.$router.push(this.localePath({ name: "shop-creator-name" }));
+      this.$router.push(this.localePath({ name: 'shop-creator-name' }));
     },
     next() {
       this.$router.push(
-        this.localePath({ name: "shop-creator-customization" })
+        this.localePath({ name: 'shop-creator-customization' })
       );
     }
   }

@@ -55,7 +55,7 @@
             v-for="(theme, index) in availableThemes"
             :key="index"
             class="shop-customization__list-item">
-            <Tile :theme="theme"/>
+            <AppTile :theme="theme"/>
           </li>
         </ul>
       </div>
@@ -64,42 +64,43 @@
 </template>
 
 <script>
-import Dropzone from "nuxt-dropzone";
-import Tile from "@/components/themes/Tile";
-import "vue2-dropzone/dist/vue2Dropzone.css";
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters, mapActions } from 'vuex';
+
+import 'vue2-dropzone/dist/vue2Dropzone.css';
+import Dropzone from 'nuxt-dropzone';
+import AppTile from '@/components/themes/AppTile';
 
 export default {
   components: {
     Dropzone,
-    Tile
+    AppTile
   },
   data() {
     return {
       dzOptions: {
         headers: {
-          Authorization: this.$auth.getToken("local")
+          Authorization: this.$auth.getToken('local')
         },
         maxFiles: 1,
         maxFilesize: 2,
         addRemoveLinks: true,
-        dictRemoveFile: this.$t("dropzone.dict_remove_file"),
-        dictCancelUpload: this.$t("dropzone.dict_cancel_upload"),
+        dictRemoveFile: this.$t('dropzone.dict_remove_file'),
+        dictCancelUpload: this.$t('dropzone.dict_cancel_upload'),
         dictCancelUploadConfirmation: this.$t(
-          "dropzone.dict_cancel_upload_confirmation"
+          'dropzone.dict_cancel_upload_confirmation'
         ),
         dictDefaultMessage: `<span>${this.$t(
-          "dropzone.dict_default_message"
+          'dropzone.dict_default_message'
         )}</span>`,
-        dictFallbackMessage: this.$t("dropzone.dict_fallback_message"),
-        dictFileTooBig: this.$t("dropzone.dict_file_too_big")
+        dictFallbackMessage: this.$t('dropzone.dict_fallback_message'),
+        dictFileTooBig: this.$t('dropzone.dict_file_too_big')
       }
     };
   },
   computed: {
     ...mapGetters({
-      shop: "shop/shop",
-      availableThemes: "shop/availableThemes"
+      shop: 'shop/shop',
+      availableThemes: 'shop/availableThemes'
     }),
     optionsForAvatar() {
       return {
@@ -116,16 +117,10 @@ export default {
       };
     }
   },
-  mounted() {
-    if (this.shop.id) {
-      const dropzoneProfile = this.$refs.dropzoneProfile.dropzone;
-      const dropzoneCover = this.$refs.dropzoneCover.dropzone;
-    }
-  },
   methods: {
     ...mapActions({
-      setCover: "shop/setCover",
-      setAvatar: "shop/setAvatar"
+      setCover: 'shop/setCover',
+      setAvatar: 'shop/setAvatar'
     }),
     deleteAvatar() {
       console.log('delete avatar');
@@ -140,13 +135,13 @@ export default {
       );
     },
     updateShop(file, res) {
-      if (res.media.type === "avatar") {
+      if (res.media.type === 'avatar') {
         this.setAvatar(res.media.url);
-        this.$toast.success(this.$t("toasts.shop_avatar_updated"));
+        this.$toast.success(this.$t('toasts.shop_avatar_updated'));
       }
-      if (res.media.type === "cover") {
+      if (res.media.type === 'cover') {
         this.setCover(res.media.url);
-        this.$toast.success(this.$t("toasts.shop_cover_updated"));
+        this.$toast.success(this.$t('toasts.shop_cover_updated'));
       }
     }
   }

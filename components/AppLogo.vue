@@ -1,7 +1,7 @@
 <template>
   <svg
-    width="133px" 
-    height="25px" 
+    width="133px"
+    height="25px"
     viewBox="0 0 133 25">
     <title>Logo Sowing</title>
     <g
@@ -32,8 +32,7 @@
 </template>
 
 <script>
-import theming from "@/mixins/theming";
-import { mapGetters } from "vuex";
+import theming from '@/mixins/theming';
 
 export default {
   mixins: [theming]

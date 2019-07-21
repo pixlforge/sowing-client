@@ -13,14 +13,14 @@
 </template>
 
 <script>
-import theming from "@/mixins/theming";
-import { mapGetters } from "vuex";
+import { mapGetters } from 'vuex';
+import theming from '@/mixins/theming';
 
 export default {
   mixins: [theming],
   computed: {
     ...mapGetters({
-      count: "cart/count",
+      count: 'cart/count'
     })
   }
 };

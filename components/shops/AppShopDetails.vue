@@ -281,7 +281,7 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
   props: {
@@ -301,19 +301,19 @@ export default {
   },
   computed: {
     ...mapGetters({
-      locale: "locale",
-      shopCity: "shop/shopCity",
-      shopExists: "shop/shopExists",
-      shopCountryId: "shop/shopCountryId",
-      shopPostalCode: "shop/shopPostalCode",
-      shopLongDescriptionFr: "shop/shopLongDescriptionFr",
-      shopLongDescriptionEn: "shop/shopLongDescriptionEn",
-      shopLongDescriptionDe: "shop/shopLongDescriptionDe",
-      shopLongDescriptionIt: "shop/shopLongDescriptionIt",
-      shopShortDescriptionFr: "shop/shopShortDescriptionFr",
-      shopShortDescriptionEn: "shop/shopShortDescriptionEn",
-      shopShortDescriptionDe: "shop/shopShortDescriptionDe",
-      shopShortDescriptionIt: "shop/shopShortDescriptionIt"
+      locale: 'locale',
+      shopCity: 'shop/shopCity',
+      shopExists: 'shop/shopExists',
+      shopCountryId: 'shop/shopCountryId',
+      shopPostalCode: 'shop/shopPostalCode',
+      shopLongDescriptionFr: 'shop/shopLongDescriptionFr',
+      shopLongDescriptionEn: 'shop/shopLongDescriptionEn',
+      shopLongDescriptionDe: 'shop/shopLongDescriptionDe',
+      shopLongDescriptionIt: 'shop/shopLongDescriptionIt',
+      shopShortDescriptionFr: 'shop/shopShortDescriptionFr',
+      shopShortDescriptionEn: 'shop/shopShortDescriptionEn',
+      shopShortDescriptionDe: 'shop/shopShortDescriptionDe',
+      shopShortDescriptionIt: 'shop/shopShortDescriptionIt'
     }),
     localPostalCode: {
       get() {
@@ -409,17 +409,17 @@ export default {
   },
   methods: {
     ...mapActions({
-      setShopCity: "shop/setShopCity",
-      setShopCountryId: "shop/setShopCountryId",
-      setShopPostalCode: "shop/setShopPostalCode",
-      setShopLongDescriptionFr: "shop/setShopLongDescriptionFr",
-      setShopLongDescriptionEn: "shop/setShopLongDescriptionEn",
-      setShopLongDescriptionDe: "shop/setShopLongDescriptionDe",
-      setShopLongDescriptionIt: "shop/setShopLongDescriptionIt",
-      setShopShortDescriptionFr: "shop/setShopShortDescriptionFr",
-      setShopShortDescriptionEn: "shop/setShopShortDescriptionEn",
-      setShopShortDescriptionDe: "shop/setShopShortDescriptionDe",
-      setShopShortDescriptionIt: "shop/setShopShortDescriptionIt"
+      setShopCity: 'shop/setShopCity',
+      setShopCountryId: 'shop/setShopCountryId',
+      setShopPostalCode: 'shop/setShopPostalCode',
+      setShopLongDescriptionFr: 'shop/setShopLongDescriptionFr',
+      setShopLongDescriptionEn: 'shop/setShopLongDescriptionEn',
+      setShopLongDescriptionDe: 'shop/setShopLongDescriptionDe',
+      setShopLongDescriptionIt: 'shop/setShopLongDescriptionIt',
+      setShopShortDescriptionFr: 'shop/setShopShortDescriptionFr',
+      setShopShortDescriptionEn: 'shop/setShopShortDescriptionEn',
+      setShopShortDescriptionDe: 'shop/setShopShortDescriptionDe',
+      setShopShortDescriptionIt: 'shop/setShopShortDescriptionIt'
     })
   }
 };

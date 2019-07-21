@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters } from 'vuex';
 
 export default {
   data() {
@@ -42,32 +42,32 @@ export default {
   },
   computed: {
     ...mapGetters({
-      shopTheme: "shop/shopTheme"
+      shopTheme: 'shop/shopTheme'
     }),
     textTheme() {
       return `text-${this.shopTheme}`;
     }
   },
   mounted() {
-    const escapeHandler = event => {
-      if (event.key === "Escape" && this.dropdownIsOpen) {
+    const escapeHandler = (event) => {
+      if (event.key === 'Escape' && this.dropdownIsOpen) {
         this.dropdownIsOpen = false;
       }
     };
-    document.addEventListener("keydown", escapeHandler);
+    document.addEventListener('keydown', escapeHandler);
 
-    const clickHandler = event => {
-      let element = this.$refs.dropdownMenu;
-      let target = event.target;
+    const clickHandler = (event) => {
+      const element = this.$refs.dropdownMenu;
+      const target = event.target;
       if (element !== target && !element.contains(target)) {
         this.dropdownIsOpen = false;
       }
     };
-    document.addEventListener("click", clickHandler);
+    document.addEventListener('click', clickHandler);
 
-    this.$once("hook:destroyed", () => {
-      document.removeEventListener("keydown", escapeHandler);
-      document.removeEventListener("click", clickHandler);
+    this.$once('hook:destroyed', () => {
+      document.removeEventListener('keydown', escapeHandler);
+      document.removeEventListener('click', clickHandler);
     });
   },
   methods: {

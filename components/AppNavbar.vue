@@ -3,13 +3,13 @@
 
     <!-- Logo -->
     <nuxt-link :to="localePath({ name: 'index' })">
-      <Logo/>
+      <AppLogo/>
     </nuxt-link>
 
     <div class="navbar__menu">
-      
+
       <!-- Languages -->
-      <ButtonLanguages class="navbar__languages"/>
+      <AppButtonLanguages class="navbar__languages"/>
 
       <!-- Login -->
       <nuxt-link
@@ -29,36 +29,36 @@
           class="mr-5"/>
         {{ $t("buttons.register") }}
       </nuxt-link>
-        
+
       <!-- User -->
-      <ButtonUser
+      <AppButtonUser
         v-if="loggedIn"
         class="mr-20"/>
 
       <!-- Search page link -->
-      <ButtonSearch class="mr-20"/>
+      <AppButtonSearch class="mr-20"/>
 
       <!-- Cart page link -->
-      <ButtonCart/>
+      <AppButtonCart/>
     </div>
 
   </nav>
 </template>
 
 <script>
-import Logo from "@/components/Logo";
-import ButtonCart from "@/components/buttons/ButtonCart";
-import ButtonUser from "@/components/buttons/ButtonUser";
-import ButtonSearch from "@/components/search/ButtonSearch";
-import ButtonLanguages from "@/components/buttons/ButtonLanguages";
+import AppLogo from '@/components/AppLogo';
+import AppButtonCart from '@/components/buttons/AppButtonCart';
+import AppButtonUser from '@/components/buttons/AppButtonUser';
+import AppButtonSearch from '@/components/buttons/AppButtonSearch';
+import AppButtonLanguages from '@/components/buttons/AppButtonLanguages';
 
 export default {
   components: {
-    Logo,
-    ButtonCart,
-    ButtonUser,
-    ButtonSearch,
-    ButtonLanguages
+    AppLogo,
+    AppButtonCart,
+    AppButtonUser,
+    AppButtonSearch,
+    AppButtonLanguages
   },
   computed: {
     loggedIn() {

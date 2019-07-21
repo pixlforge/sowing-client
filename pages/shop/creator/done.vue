@@ -11,7 +11,7 @@
           {{ $t("shop_creator.steps.done.provision_shop") }}
         </p>
 
-        <Success class="shop-creator__done-illustration"/>
+        <IllustrationSuccess class="shop-creator__done-illustration"/>
 
         <div class="shop-creator__controls">
 
@@ -42,39 +42,40 @@
 </template>
 
 <script>
-import Success from "@/components/illustrations/Success";
-import theming from "@/mixins/theming";
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters, mapActions } from 'vuex';
+import theming from '@/mixins/theming';
+
+import IllustrationSuccess from '@/components/illustrations/IllustrationSuccess';
 
 export default {
-  middleware: ["authenticated", "hasShop"],
+  middleware: ['authenticated', 'hasShop'],
   head() {
     return {
-      title: `${this.$t("shop_creator.steps.done.title")} | ${this.title}`
+      title: `${this.$t('shop_creator.steps.done.title')} | ${this.title}`
     };
   },
-  layout: "shop-creator",
+  layout: 'shop-creator',
   transition: {
-    name: "slide",
-    mode: "out-in"
+    name: 'slide',
+    mode: 'out-in'
   },
   components: {
-    Success
+    IllustrationSuccess
   },
   mixins: [theming],
-  async asyncData({ app }) {
+  computed: {
+    ...mapGetters({
+      stepName: 'shop/stepName',
+      shopExists: 'shop/shopExists',
+      stepDetails: 'shop/stepDetails',
+      stepCustomization: 'shop/stepCustomization',
+      stepConnect: 'shop/stepConnect'
+    })
+  },
+  asyncData({ app }) {
     return {
       title: app.head.title
     };
-  },
-  computed: {
-    ...mapGetters({
-      stepName: "shop/stepName",
-      shopExists: "shop/shopExists",
-      stepDetails: "shop/stepDetails",
-      stepCustomization: "shop/stepCustomization",
-      stepConnect: "shop/stepConnect"
-    })
   },
   mounted() {
     if (!this.shopExists && this.$auth.user.has_shop) {
@@ -88,14 +89,14 @@ export default {
   },
   methods: {
     ...mapActions({
-      getShop: "shop/getShop",
-      setStepName: "shop/setStepName",
-      setStepDetails: "shop/setStepDetails",
-      setStepCustomization: "shop/setStepCustomization",
-      setStepConnect: "shop/setStepConnect"
+      getShop: 'shop/getShop',
+      setStepName: 'shop/setStepName',
+      setStepDetails: 'shop/setStepDetails',
+      setStepCustomization: 'shop/setStepCustomization',
+      setStepConnect: 'shop/setStepConnect'
     }),
     prev() {
-      this.$router.push(this.localePath({ name: "shop-creator-connect" }));
+      this.$router.push(this.localePath({ name: 'shop-creator-connect' }));
     },
     next() {
       if (
@@ -104,7 +105,7 @@ export default {
         this.stepCustomization &&
         this.stepConnect
       ) {
-        this.$router.push(this.localePath({ name: "shop" }));
+        this.$router.push(this.localePath({ name: 'shop' }));
       }
     }
   }

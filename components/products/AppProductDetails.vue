@@ -63,14 +63,14 @@
         <form
           class="product-details__variation-container"
           @submit.prevent="add">
-          
+
           <!-- Variations -->
-          <Variation
+          <AppVariation
             v-for="(variations, type) in product.variations"
             :key="type"
+            v-model="form.variation"
             :type="type"
             :variations="variations"
-            v-model="form.variation"
             class="mb-20"/>
 
           <!-- Quantity -->
@@ -110,9 +110,7 @@
               {{ $t("buttons.add_to_cart") }}
             </button>
           </div>
-
         </form>
-
       </div>
     </div>
 
@@ -133,12 +131,13 @@
 </template>
 
 <script>
-import Variation from "@/components/products/Variation";
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters, mapActions } from 'vuex';
+
+import AppVariation from '@/components/products/AppVariation';
 
 export default {
   components: {
-    Variation
+    AppVariation
   },
   props: {
     product: {
@@ -149,20 +148,20 @@ export default {
   data() {
     return {
       form: {
-        variation: "",
+        variation: '',
         quantity: 1
       }
     };
   },
   computed: {
     ...mapGetters({
-      locale: "locale"
+      locale: 'locale'
     }),
     imgUrl() {
-      return require("@/assets/img/placeholders/category.svg");
+      return require('@/assets/img/placeholders/category.svg');
     },
     imgAlt() {
-      return this.$t("components.products.img.alt");
+      return this.$t('components.products.img.alt');
     },
     productName() {
       return this.product.name[this.locale];
@@ -177,23 +176,23 @@ export default {
       return this.product.price.amount;
     },
     quantityLabel() {
-      return this.$t("components.variations.labels.quantity");
+      return this.$t('components.variations.labels.quantity');
     },
     productsRemaining() {
-      return this.$t("components.products.details.remaining");
+      return this.$t('components.products.details.remaining');
     },
     productOutOfStock() {
-      return this.$t("components.products.details.out_of_stock");
+      return this.$t('components.products.details.out_of_stock');
     }
   },
   watch: {
-    "form.variation"() {
+    'form.variation'() {
       this.form.quantity = 1;
     }
   },
   methods: {
     ...mapActions({
-      store: "cart/store"
+      store: 'cart/store'
     }),
     async add() {
       await this.store([
@@ -209,16 +208,12 @@ export default {
           ${this.product.name[this.locale]}
           ${this.form.variation.type.name[this.locale]}
           ${this.form.variation.name[this.locale]}
-          ${
-            this.form.quantity > 1
-              ? this.$t("toasts.cart.item_added_plural")
-              : this.$t("toasts.cart.item_added_singular")
-          }
+          ${this.form.quantity > 1 ? this.$t('toasts.cart.item_added_plural') : this.$t('toasts.cart.item_added_singular')}
         `
       );
 
       this.form = {
-        variation: "",
+        variation: '',
         quantity: 1
       };
     }

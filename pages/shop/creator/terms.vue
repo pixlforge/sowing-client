@@ -2,18 +2,20 @@
   <main>
 
     <!-- Header -->
-    <Header>
+    <AppHeader>
       <template slot="icon">
         <font-awesome-icon :icon="['far', 'store']"/>
       </template>
       <template slot="title">
-        <h1 class="header__title">{{ $t("pages.shop.creation") }}</h1>
+        <h1 class="header__title">
+          {{ $t("pages.shop.creation") }}
+        </h1>
       </template>
-    </Header>
+    </AppHeader>
 
     <!-- Page contents -->
     <section class="section__container container">
-      
+
       <!-- Terms -->
       <AppTerms/>
 
@@ -52,24 +54,25 @@
 </template>
 
 <script>
-import Header from "@/components/Header";
-import AppTerms from "@/components/terms/AppTerms";
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters, mapActions } from 'vuex';
+
+import AppHeader from '@/components/AppHeader';
+import AppTerms from '@/components/terms/AppTerms';
 
 export default {
-  middleware: ["authenticated"],
+  middleware: ['authenticated'],
   head() {
     return {
-      title: `${this.$t("pages.terms.title")} | ${this.title}`
+      title: `${this.$t('pages.terms.title')} | ${this.title}`
     };
   },
   components: {
-    Header,
+    AppHeader,
     AppTerms
   },
   computed: {
     ...mapGetters({
-      terms: "shop/terms"
+      terms: 'shop/terms'
     }),
     localTerms: {
       get() {
@@ -83,18 +86,18 @@ export default {
       return this.localTerms;
     }
   },
-  async asyncData({ app }) {
+  asyncData({ app }) {
     return {
       title: app.head.title
     };
   },
   methods: {
     ...mapActions({
-      setTerms: "shop/setTerms"
+      setTerms: 'shop/setTerms'
     }),
     next() {
       if (this.terms) {
-        this.$router.push(this.localePath({ name: "shop-creator-name" }));
+        this.$router.push(this.localePath({ name: 'shop-creator-name' }));
       }
     }
   }

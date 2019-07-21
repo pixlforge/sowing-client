@@ -7,12 +7,17 @@ module.exports = {
   parserOptions: {
     parser: "babel-eslint"
   },
-  extends: ["plugin:vue/recommended"],
-  // required to lint *.vue files
-  plugins: ["vue"],
+  extends: [
+    '@nuxtjs',
+    'plugin:nuxt/recommended'
+  ],
   // add your custom rules here
   rules: {
-    "no-console": process.env.NODE_ENV === "production" ? "error" : "off",
-    "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off"
+    'no-console': 'off',
+    'semi': 0,
+    'quote-props': 0,
+    'vue/html-closing-bracket-spacing': 0,
+    'vue/html-closing-bracket-newline': 0,
+    'vue/multiline-html-element-content-newline': 0,
   }
 };

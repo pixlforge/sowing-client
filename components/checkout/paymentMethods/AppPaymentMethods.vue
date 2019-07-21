@@ -20,24 +20,24 @@
           @click.native="switchPaymentMethod(method)"/>
       </li>
       <li class="payment-method__list-item">
-        <PaymentMethodCreator @payment-method:added="addPaymentMethod"/>
+        <AppPaymentMethodCreator @payment-method:added="addPaymentMethod"/>
       </li>
     </ul>
   </div>
 </template>
 
 <script>
-import PaymentMethodCreator from "@/components/checkout/paymentMethods/PaymentMethodCreator";
-import MasterCard from "@/components/checkout/paymentMethods/cards/MasterCard";
-import Visa from "@/components/checkout/paymentMethods/cards/Visa";
-import Amex from "@/components/checkout/paymentMethods/cards/Amex";
+import AppCardVisa from '@/components/checkout/paymentMethods/cards/AppCardVisa';
+import AppCardAmex from '@/components/checkout/paymentMethods/cards/AppCardAmex';
+import AppCardMasterCard from '@/components/checkout/paymentMethods/cards/AppCardMasterCard';
+import AppPaymentMethodCreator from '@/components/checkout/paymentMethods/AppPaymentMethodCreator';
 
 export default {
   components: {
-    PaymentMethodCreator,
-    mastercard: MasterCard,
-    visa: Visa,
-    "american-express": Amex
+    visa: AppCardVisa,
+    'american-express': AppCardAmex,
+    mastercard: AppCardMasterCard,
+    AppPaymentMethodCreator
   },
   props: {
     paymentMethods: {
@@ -64,11 +64,11 @@ export default {
   methods: {
     addPaymentMethod(method) {
       this.switchPaymentMethod(method);
-      this.$emit("payment-method:added", method);
+      this.$emit('payment-method:added', method);
     },
     switchPaymentMethod(method) {
       this.selectedPaymentMethod = method;
-      this.$emit("input", this.selectedPaymentMethod.id);
+      this.$emit('input', this.selectedPaymentMethod.id);
     }
   }
 };

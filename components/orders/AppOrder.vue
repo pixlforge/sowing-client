@@ -32,18 +32,19 @@
 </template>
 
 <script>
-import Completed from "@/components/orders/statuses/Completed";
-import Pending from "@/components/orders/statuses/Pending";
-import Processing from "@/components/orders/statuses/Processing";
-import PaymentFailed from "@/components/orders/statuses/PaymentFailed";
-import { mapGetters } from "vuex";
+import { mapGetters } from 'vuex';
+
+import AppStatusCompleted from '@/components/orders/statuses/AppStatusCompleted';
+import AppStatusPending from '@/components/orders/statuses/AppStatusPending';
+import AppStatusProcessing from '@/components/orders/statuses/AppStatusProcessing';
+import AppStatusPaymentFailed from '@/components/orders/statuses/AppStatusPaymentFailed';
 
 export default {
   components: {
-    completed: Completed,
-    pending: Pending,
-    processing: Processing,
-    payment_failed: PaymentFailed
+    completed: AppStatusCompleted,
+    pending: AppStatusPending,
+    processing: AppStatusProcessing,
+    payment_failed: AppStatusPaymentFailed
   },
   props: {
     order: {
@@ -55,16 +56,16 @@ export default {
     return {
       maxItems: 3,
       statusClasses: {
-        "badge-success": this.order.status === "completed",
-        "badge-info": this.order.status === "processing",
-        "badge-warning": this.order.status === "pending",
-        "badge-danger": this.order.status === "payment_failed"
+        'badge-success': this.order.status === 'completed',
+        'badge-info': this.order.status === 'processing',
+        'badge-warning': this.order.status === 'pending',
+        'badge-danger': this.order.status === 'payment_failed'
       }
     };
   },
   computed: {
     ...mapGetters({
-      locale: "locale"
+      locale: 'locale'
     }),
     variations() {
       return this.order.variations.slice(0, this.maxItems);

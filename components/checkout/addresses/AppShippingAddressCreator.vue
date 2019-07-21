@@ -17,7 +17,9 @@
           name="first_name"
           class="form__input form__input--white">
         <template v-if="errors.first_name">
-          <p class="form__feedback">{{ errors.first_name[0] }}</p>
+          <p class="form__feedback">
+            {{ errors.first_name[0] }}
+          </p>
         </template>
       </div>
 
@@ -36,7 +38,9 @@
           name="last_name"
           class="form__input form__input--white">
         <template v-if="errors.last_name">
-          <p class="form__feedback">{{ errors.last_name[0] }}</p>
+          <p class="form__feedback">
+            {{ errors.last_name[0] }}
+          </p>
         </template>
       </div>
 
@@ -55,7 +59,9 @@
           name="company_name"
           class="form__input form__input--white">
         <template v-if="errors.company_name">
-          <p class="form__feedback">{{ errors.company_name[0] }}</p>
+          <p class="form__feedback">
+            {{ errors.company_name[0] }}
+          </p>
         </template>
       </div>
 
@@ -74,7 +80,9 @@
           name="address_line_1"
           class="form__input form__input--white">
         <template v-if="errors.address_line_1">
-          <p class="form__feedback">{{ errors.address_line_1[0] }}</p>
+          <p class="form__feedback">
+            {{ errors.address_line_1[0] }}
+          </p>
         </template>
       </div>
 
@@ -93,7 +101,9 @@
           name="address_line_2"
           class="form__input form__input--white">
         <template v-if="errors.address_line_2">
-          <p class="form__feedback">{{ errors.address_line_2[0] }}</p>
+          <p class="form__feedback">
+            {{ errors.address_line_2[0] }}
+          </p>
         </template>
       </div>
 
@@ -112,7 +122,9 @@
           name="postal_code"
           class="form__input form__input--white">
         <template v-if="errors.postal_code">
-          <p class="form__feedback">{{ errors.postal_code[0] }}</p>
+          <p class="form__feedback">
+            {{ errors.postal_code[0] }}
+          </p>
         </template>
       </div>
 
@@ -131,12 +143,14 @@
           name="city"
           class="form__input form__input--white">
         <template v-if="errors.city">
-          <p class="form__feedback">{{ errors.city[0] }}</p>
+          <p class="form__feedback">
+            {{ errors.city[0] }}
+          </p>
         </template>
       </div>
 
       <!-- Country -->
-      <CountryDropdown
+      <AppCountryDropdown
         v-model="form.country_id"
         :errors="errors.country_id"
         class="form__group form__group--tight"/>
@@ -159,24 +173,25 @@
 </template>
 
 <script>
-import CountryDropdown from "@/components/forms/CountryDropdown";
-import { mapActions } from "vuex";
+import { mapActions } from 'vuex';
+
+import AppCountryDropdown from '@/components/forms/AppCountryDropdown';
 
 export default {
   components: {
-    CountryDropdown
+    AppCountryDropdown
   },
   data() {
     return {
       form: {
-        first_name: "",
-        last_name: "",
-        company_name: "",
-        address_line_1: "",
-        address_line_2: "",
-        postal_code: "",
-        city: "",
-        country_id: "",
+        first_name: '',
+        last_name: '',
+        company_name: '',
+        address_line_1: '',
+        address_line_2: '',
+        postal_code: '',
+        city: '',
+        country_id: '',
         is_default: true
       },
       errors: {}
@@ -184,15 +199,14 @@ export default {
   },
   methods: {
     ...mapActions({
-      closeAddressCreator: "checkout/closeAddressCreator"
+      closeAddressCreator: 'checkout/closeAddressCreator'
     }),
-
     async store() {
       try {
-        let res = await this.$axios.$post("/addresses", this.form);
-        this.$emit("address:created", res.data);
+        const res = await this.$axios.$post('/addresses', this.form);
+        this.$emit('address:created', res.data);
       } catch (e) {
-        this.$toast.error(this.$t("toasts.validation"));
+        this.$toast.error(this.$t('toasts.validation'));
         this.errors = e.response.data.errors;
       }
     }

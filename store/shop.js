@@ -5,28 +5,28 @@ const initialState = {
   step_customization: false,
   step_connect: false,
   shop: {
-    name: "",
+    name: '',
     description_short: {
-      en: "",
-      fr: "",
-      de: "",
-      it: ""
+      en: '',
+      fr: '',
+      de: '',
+      it: ''
     },
     description_long: {
-      en: "",
-      fr: "",
-      de: "",
-      it: ""
+      en: '',
+      fr: '',
+      de: '',
+      it: ''
     },
-    theme: "green",
-    postal_code: "",
-    city: "",
-    country_id: "",
-    stripe_user_id: "",
-    stripe_publishable_key: "",
+    theme: 'green',
+    postal_code: '',
+    city: '',
+    country_id: '',
+    stripe_user_id: '',
+    stripe_publishable_key: '',
     media: {
-      avatar: "",
-      cover: ""
+      avatar: '',
+      cover: ''
     }
   }
 };
@@ -34,14 +34,14 @@ const initialState = {
 export const state = () => ({
   ...initialState,
   available_themes: [
-    "green",
-    "pink",
-    "purple",
-    "indigo",
-    "blue",
-    "brown",
-    "grey",
-    "slate"
+    'green',
+    'pink',
+    'purple',
+    'indigo',
+    'blue',
+    'brown',
+    'gray',
+    'slate'
   ]
 });
 
@@ -194,77 +194,77 @@ export const mutations = {
 
 export const actions = {
   setTerms({ commit }, terms) {
-    commit("SET_TERMS", terms);
+    commit('SET_TERMS', terms);
   },
   setStepName({ commit }, value) {
-    commit("SET_STEP_NAME", value);
+    commit('SET_STEP_NAME', value);
   },
   setStepDetails({ commit }, value) {
-    commit("SET_STEP_DETAILS", value);
+    commit('SET_STEP_DETAILS', value);
   },
   setStepCustomization({ commit }, value) {
-    commit("SET_STEP_CUSTOMIZATION", value);
+    commit('SET_STEP_CUSTOMIZATION', value);
   },
   setStepConnect({ commit }, value) {
-    commit("SET_STEP_CONNECT", value);
+    commit('SET_STEP_CONNECT', value);
   },
   setShop({ commit }, shop) {
-    commit("SET_SHOP", shop);
+    commit('SET_SHOP', shop);
   },
   setAvatar({ commit }, url) {
-    commit("SET_AVATAR", url);
+    commit('SET_AVATAR', url);
   },
   setCover({ commit }, url) {
-    commit("SET_COVER", url);
+    commit('SET_COVER', url);
   },
   setShopName({ commit }, name) {
-    commit("SET_SHOP_NAME", name);
+    commit('SET_SHOP_NAME', name);
   },
   setShopPostalCode({ commit }, postalCode) {
-    commit("SET_SHOP_POSTAL_CODE", postalCode);
+    commit('SET_SHOP_POSTAL_CODE', postalCode);
   },
   setShopCity({ commit }, city) {
-    commit("SET_SHOP_CITY", city);
+    commit('SET_SHOP_CITY', city);
   },
   setShopCountryId({ commit }, countryId) {
-    commit("SET_SHOP_COUNTRY_ID", countryId);
+    commit('SET_SHOP_COUNTRY_ID', countryId);
   },
   setShopShortDescriptionFr({ commit }, description) {
-    commit("SET_SHOP_SHORT_DESCRIPTION_FR", description);
+    commit('SET_SHOP_SHORT_DESCRIPTION_FR', description);
   },
   setShopLongDescriptionFr({ commit }, description) {
-    commit("SET_SHOP_LONG_DESCRIPTION_FR", description);
+    commit('SET_SHOP_LONG_DESCRIPTION_FR', description);
   },
   setShopShortDescriptionEn({ commit }, description) {
-    commit("SET_SHOP_SHORT_DESCRIPTION_EN", description);
+    commit('SET_SHOP_SHORT_DESCRIPTION_EN', description);
   },
   setShopLongDescriptionEn({ commit }, description) {
-    commit("SET_SHOP_LONG_DESCRIPTION_EN", description);
+    commit('SET_SHOP_LONG_DESCRIPTION_EN', description);
   },
   setShopShortDescriptionDe({ commit }, description) {
-    commit("SET_SHOP_SHORT_DESCRIPTION_DE", description);
+    commit('SET_SHOP_SHORT_DESCRIPTION_DE', description);
   },
   setShopLongDescriptionDe({ commit }, description) {
-    commit("SET_SHOP_LONG_DESCRIPTION_DE", description);
+    commit('SET_SHOP_LONG_DESCRIPTION_DE', description);
   },
   setShopShortDescriptionIt({ commit }, description) {
-    commit("SET_SHOP_SHORT_DESCRIPTION_IT", description);
+    commit('SET_SHOP_SHORT_DESCRIPTION_IT', description);
   },
   setShopLongDescriptionIt({ commit }, description) {
-    commit("SET_SHOP_LONG_DESCRIPTION_IT", description);
+    commit('SET_SHOP_LONG_DESCRIPTION_IT', description);
   },
   async setShopTheme({ commit, dispatch }, theme) {
-    commit("SET_SHOP_THEME", theme);
-    await dispatch("updateShop");
+    commit('SET_SHOP_THEME', theme);
+    await dispatch('updateShop');
   },
   async updateShop({ state }) {
     await this.$axios.$patch(`/shops/${state.shop.slug}`, state.shop);
   },
   async getShop({ dispatch }) {
-    let res = await this.$axios.$get("/user/shop");
-    dispatch("setShop", res.data);
+    const res = await this.$axios.$get('/user/shop');
+    dispatch('setShop', res.data);
   },
   resetShop({ commit }) {
-    commit("RESET_SHOP");
+    commit('RESET_SHOP');
   }
 };

@@ -36,8 +36,8 @@
       :results-per-page="5"
       class="search__ais-results">
       <component
-        slot-scope="{ result }"
         :is="indexName"
+        slot-scope="{ result }"
         :result="result"/>
     </ais-results>
     <ais-pagination>
@@ -51,13 +51,13 @@
 </template>
 
 <script>
-import ResultShop from "@/components/search/ResultShop";
-import ResultProduct from "@/components/search/ResultProduct";
+import AppSearchResultShop from '@/components/search/AppSearchResultShop';
+import AppSearchResultProduct from '@/components/search/AppSearchResultProduct';
 
 export default {
   components: {
-    'shops': ResultShop,
-    'products': ResultProduct
+    'shops': AppSearchResultShop,
+    'products': AppSearchResultProduct
   },
   props: {
     query: {
@@ -74,8 +74,8 @@ export default {
       api: {
         id: process.env.ALGOLIA_APP_ID,
         key: process.env.ALGOLIA_SECRET
-      },
+      }
     };
-  },
+  }
 }
 </script>

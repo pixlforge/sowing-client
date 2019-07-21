@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters } from 'vuex';
 
 export default {
   props: {
@@ -24,10 +24,10 @@ export default {
   },
   computed: {
     ...mapGetters({
-      locale: "locale"
+      locale: 'locale'
     }),
     imgUrl() {
-      const img = require("@/assets/img/placeholders/category.svg");
+      const img = require('@/assets/img/placeholders/category.svg');
       return `background-image: url(${img})`;
     }
   }

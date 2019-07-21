@@ -9,11 +9,11 @@
       <h5 class="subcategory__name">
         {{ subcategory.name[locale] }}
       </h5>
-      
+
       <p class="subcategory__description">
         {{ subcategory.description[locale] }}
       </p>
-      
+
       <nuxt-link
         :to="localePath({
           name: 'categories-category-subcategory-slug',
@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters } from 'vuex';
 
 export default {
   props: {
@@ -45,13 +45,13 @@ export default {
   },
   computed: {
     ...mapGetters({
-      locale: "locale"
+      locale: 'locale'
     }),
     alt() {
-      return this.$t("components.category.img.alt");
+      return this.$t('components.category.img.alt');
     },
     imgSrc() {
-      return require("@/assets/img/placeholders/category.svg");
+      return require('@/assets/img/placeholders/category.svg');
     }
   }
 };

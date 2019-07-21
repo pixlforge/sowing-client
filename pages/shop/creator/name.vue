@@ -9,7 +9,7 @@
         <p class="paragraph__medium paragraph--center paragraph--narrow paragraph--spaced">
           {{ $t("shop_creator.steps.name.paragraph") }}
         </p>
-        
+
         <!-- Shop name -->
         <AppShopName class="shop-creator__name-component"/>
 
@@ -43,48 +43,49 @@
 </template>
 
 <script>
-import AppShopName from "@/components/shops/AppShopName";
-import theming from "@/mixins/theming";
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters, mapActions } from 'vuex';
+import theming from '@/mixins/theming';
+
+import AppShopName from '@/components/shops/AppShopName';
 
 export default {
-  middleware: ["authenticated"],
+  middleware: ['authenticated'],
   head() {
     return {
-      title: `${this.$t("shop_creator.steps.name.title")} | ${this.title}`
+      title: `${this.$t('shop_creator.steps.name.title')} | ${this.title}`
     };
   },
-  layout: "shop-creator",
+  layout: 'shop-creator',
   transition: {
-    name: "slide",
-    mode: "out-in"
+    name: 'slide',
+    mode: 'out-in'
   },
   components: {
     AppShopName
   },
   mixins: [theming],
+  computed: {
+    ...mapGetters({
+      terms: 'shop/terms',
+      shopName: 'shop/shopName',
+      shopExists: 'shop/shopExists',
+      stepDetails: 'shop/stepDetails'
+    })
+  },
   async asyncData({ app, store }) {
-    let shop = await app.$axios.$get("/user/shop");
+    const shop = await app.$axios.$get('/user/shop');
 
     if (shop.data) {
-      store.dispatch("shop/setShop", shop.data);
+      store.dispatch('shop/setShop', shop.data);
     }
 
     return {
       title: app.head.title
     };
   },
-  computed: {
-    ...mapGetters({
-      terms: "shop/terms",
-      shopName: "shop/shopName",
-      shopExists: "shop/shopExists",
-      stepDetails: "shop/stepDetails"
-    })
-  },
   mounted() {
     if (!this.terms) {
-      return this.$router.push(this.localePath("shop-creator-terms"));
+      return this.$router.push(this.localePath('shop-creator-terms'));
     }
 
     if (this.$auth.user.has_shop) {
@@ -94,36 +95,36 @@ export default {
   },
   methods: {
     ...mapActions({
-      flash: "alert/flash",
-      close: "alert/close",
-      setShop: "shop/setShop",
-      setStepName: "shop/setStepName",
-      setStepDetails: "shop/setStepDetails"
+      flash: 'alert/flash',
+      close: 'alert/close',
+      setShop: 'shop/setShop',
+      setStepName: 'shop/setStepName',
+      setStepDetails: 'shop/setStepDetails'
     }),
     prev() {
-      this.$router.push(this.localePath({ name: "shop-creator-terms" }));
+      this.$router.push(this.localePath({ name: 'shop-creator-terms' }));
     },
     async next() {
       if (this.shopExists) {
-        this.$router.push(this.localePath({ name: "shop-creator-details" }));
+        this.$router.push(this.localePath({ name: 'shop-creator-details' }));
         return;
       }
 
       try {
-        await this.$axios.$post("/shops/checker", {
+        await this.$axios.$post('/shops/checker', {
           name: this.shopName
         });
         this.close();
-        this.$router.push(this.localePath({ name: "shop-creator-details" }));
+        this.$router.push(this.localePath({ name: 'shop-creator-details' }));
       } catch (e) {
         this.setStepName(false);
         this.$toast.error(
-          `"<em>${this.shopName}</em>" ${this.$t("toasts.is_already_in_use")}.`
+          `"<em>${this.shopName}</em>" ${this.$t('toasts.is_already_in_use')}.`
         );
         this.flash({
-          type: "danger",
+          type: 'danger',
           message: `"<em>${this.shopName}</em>" ${this.$t(
-            "toasts.is_already_in_use"
+            'toasts.is_already_in_use'
           )}!`
         });
       }

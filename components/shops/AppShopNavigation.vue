@@ -99,45 +99,45 @@
 </template>
 
 <script>
-import theming from "@/mixins/theming";
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters, mapActions } from 'vuex';
+import theming from '@/mixins/theming';
 
 export default {
   mixins: [theming],
   computed: {
     ...mapGetters({
-      stepName: "shop/stepName",
-      stepDetails: "shop/stepDetails",
-      stepCustomization: "shop/stepCustomization",
-      stepConnect: "shop/stepConnect",
-    }),
+      stepName: 'shop/stepName',
+      stepDetails: 'shop/stepDetails',
+      stepCustomization: 'shop/stepCustomization',
+      stepConnect: 'shop/stepConnect'
+    })
   },
   methods: {
     ...mapActions({
-      close: "alert/close"
+      close: 'alert/close'
     }),
     toShopCreatorName() {
       this.close();
-      this.$router.push(this.localePath({ name: "shop-creator-name" }));
+      this.$router.push(this.localePath({ name: 'shop-creator-name' }));
     },
     toShopCreatorDetails() {
       if (this.stepName) {
         this.close();
-        this.$router.push(this.localePath({ name: "shop-creator-details" }));
+        this.$router.push(this.localePath({ name: 'shop-creator-details' }));
       }
     },
     toShopCreatorCustomization() {
       if (this.stepName && this.stepDetails) {
         this.close();
         this.$router.push(
-          this.localePath({ name: "shop-creator-customization" })
+          this.localePath({ name: 'shop-creator-customization' })
         );
       }
     },
     toShopCreatorConnect() {
       if (this.stepName && this.stepDetails && this.stepCustomization) {
         this.close();
-        this.$router.push(this.localePath({ name: "shop-creator-connect" }));
+        this.$router.push(this.localePath({ name: 'shop-creator-connect' }));
       }
     },
     toShopCreatorDone() {
@@ -148,7 +148,7 @@ export default {
         this.stepConnect
       ) {
         this.close();
-        this.$router.push(this.localePath({ name: "shop-creator-done" }));
+        this.$router.push(this.localePath({ name: 'shop-creator-done' }));
       }
     }
   }

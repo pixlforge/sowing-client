@@ -4,13 +4,13 @@
       {{ $t("pages.checkout.delivery_address") }}
     </h5>
 
-    <ShippingAddressSelector
+    <AppShippingAddressSelector
       v-if="addressSelector"
       :addresses="currentAddresses"
       :selected-address="selectedAddress"
       @address:selected="switchAddress"/>
 
-    <ShippingAddressCreator
+    <AppShippingAddressCreator
       v-if="addressCreator"
       @address:created="addAddress"/>
 
@@ -52,19 +52,19 @@
       @click.prevent="openAddressCreator">
       {{ $t("pages.checkout.add_address") }}
     </a>
-
   </div>
 </template>
 
 <script>
-import ShippingAddressSelector from "@/components/checkout/addresses/ShippingAddressSelector";
-import ShippingAddressCreator from "@/components/checkout/addresses/ShippingAddressCreator";
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters, mapActions } from 'vuex';
+
+import AppShippingAddressCreator from '@/components/checkout/addresses/AppShippingAddressCreator';
+import AppShippingAddressSelector from '@/components/checkout/addresses/AppShippingAddressSelector';
 
 export default {
   components: {
-    ShippingAddressSelector,
-    ShippingAddressCreator
+    AppShippingAddressCreator,
+    AppShippingAddressSelector
   },
   props: {
     addresses: {
@@ -80,12 +80,11 @@ export default {
   },
   computed: {
     ...mapGetters({
-      locale: "locale",
-      addressSelector: "checkout/addressSelector",
-      addressCreator: "checkout/addressCreator",
-      addressManagersVisible: "checkout/addressManagersVisible"
+      locale: 'locale',
+      addressSelector: 'checkout/addressSelector',
+      addressCreator: 'checkout/addressCreator',
+      addressManagersVisible: 'checkout/addressManagersVisible'
     }),
-
     defaultAddress() {
       return this.currentAddresses.find(address => address.is_default);
     }
@@ -97,23 +96,21 @@ export default {
   },
   methods: {
     ...mapActions({
-      openAddressSelector: "checkout/openAddressSelector",
-      closeAddressSelector: "checkout/closeAddressSelector",
-      openAddressCreator: "checkout/openAddressCreator",
-      closeAddressCreator: "checkout/closeAddressCreator"
+      openAddressSelector: 'checkout/openAddressSelector',
+      closeAddressSelector: 'checkout/closeAddressSelector',
+      openAddressCreator: 'checkout/openAddressCreator',
+      closeAddressCreator: 'checkout/closeAddressCreator'
     }),
-
     switchAddress(address) {
       this.selectedAddress = address;
       this.closeAddressSelector();
-      this.$emit("input", this.selectedAddress.id);
+      this.$emit('input', this.selectedAddress.id);
     },
-
     addAddress(address) {
       this.currentAddresses.push(address);
       this.switchAddress(address);
       this.closeAddressCreator();
-      this.$toast.success(this.$t("toasts.addresses.created"));
+      this.$toast.success(this.$t('toasts.addresses.created'));
     }
   }
 };

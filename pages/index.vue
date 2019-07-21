@@ -3,13 +3,13 @@
 
     <!-- Featured Categories -->
     <section class="featured-category__wrapper">
-      <FeaturedCategoryLarge/>
+      <AppFeaturedCategoryLarge/>
       <div class="featured-category__wrapper featured-category__wrapper--small">
-        <FeaturedCategorySmall/>
-        <FeaturedCategorySmall/>
+        <AppFeaturedCategorySmall/>
+        <AppFeaturedCategorySmall/>
       </div>
     </section>
-    
+
     <!-- Features -->
     <section class="section__container container">
 
@@ -18,39 +18,39 @@
       </h1>
 
       <div class="feature__wrapper">
-        <Feature icon="lightbulb">
+        <AppFeature icon="lightbulb">
           <template slot="title">
             {{ $t("pages.home.features.first.title") }}
           </template>
           {{ $t("pages.home.features.first.body") }}
-        </Feature>
+        </AppFeature>
 
-        <Feature icon="eye">
+        <AppFeature icon="eye">
           <template slot="title">
             {{ $t("pages.home.features.second.title") }}
           </template>
           {{ $t("pages.home.features.second.body") }}
-        </Feature>
+        </AppFeature>
 
-        <Feature icon="rocket">
+        <AppFeature icon="rocket">
           <template slot="title">
             {{ $t("pages.home.features.third.title") }}
           </template>
           {{ $t("pages.home.features.third.body") }}
-        </Feature>
+        </AppFeature>
 
-        <Feature icon="shield-check">
+        <AppFeature icon="shield-check">
           <template slot="title">
             {{ $t("pages.home.features.fourth.title") }}
           </template>
           {{ $t("pages.home.features.fourth.body") }}
-        </Feature>
+        </AppFeature>
       </div>
     </section>
 
     <!-- Streak register -->
     <section>
-      <StreakRegister/>
+      <AppStreakRegister/>
     </section>
 
     <!-- Shops -->
@@ -88,7 +88,7 @@
       </h1>
 
       <div class="review__wrapper">
-        <Review
+        <AppReview
           :stars="3"
           name="Marty McFly"
           body="I think it's terrible. Girls chasing boys. When I was your age I never chased a boy, or called a boy, or sat in a parked car with a boy. He's a very strange young man. You can't, uh, that is, uh, nobody's home. Oh, you mean how you're supposed to act on a first date. I'll call you tonight.">
@@ -98,9 +98,9 @@
               alt="Avatar Marty McFly"
               class="review__avatar">
           </template>
-        </Review>
+        </AppReview>
 
-        <Review
+        <AppReview
           :stars="4"
           name="Doc Brown"
           body="Now which one was it, Greg or Craig? Wrecked? When did this happen and- There, there, now, just relax. You've been asleep for almost nine hours now. So tell me, Marty, how long have you been in port? Okay, okay you guys, oh ha ha ha very funny. Hey you guys are being real mature.">
@@ -110,9 +110,9 @@
               alt="Avatar Doc Brown"
               class="review__avatar">
           </template>
-        </Review>
+        </AppReview>
 
-        <Review
+        <AppReview
           :stars="4"
           name="Biff Tannen"
           body="Um, yeah, I'm on my way. Right. Oh, pleased to meet you, Calvin Marty Klein. Do you mind if I sit here? I over slept, look I need your help. I have to ask Lorraine out but I don't know how to do it. I have to ask Lorraine out but I don't know how to do it. Go.">
@@ -122,96 +122,97 @@
               alt="Avatar Biff Tannen"
               class="review__avatar">
           </template>
-        </Review>
+        </AppReview>
       </div>
     </section>
 
     <!-- Streak newsletter -->
     <section>
-      <StreakNewsletter/>
+      <AppStreakNewsletter/>
     </section>
   </main>
 </template>
 
 <script>
-import Review from "@/components/Review";
-import Feature from "@/components/Feature";
-import AppShopCard from "@/components/shops/AppShopCard";
-import FeaturedCategoryLarge from "@/components/categories/FeaturedCategoryLarge";
-import FeaturedCategorySmall from "@/components/categories/FeaturedCategorySmall";
-import AppCategoryCard from "@/components/categories/AppCategoryCard";
-import StreakRegister from "@/components/streaks/StreakRegister";
-import StreakNewsletter from "@/components/streaks/StreakNewsletter";
-import { mapGetters } from "vuex";
+import { mapGetters } from 'vuex';
+
+import AppReview from '@/components/AppReview';
+import AppFeature from '@/components/AppFeature';
+import AppShopCard from '@/components/shops/AppShopCard';
+import AppStreakRegister from '@/components/streaks/AppStreakRegister';
+import AppStreakNewsletter from '@/components/streaks/AppStreakNewsletter';
+import AppCategoryCard from '@/components/categories/AppCategoryCard';
+import AppFeaturedCategoryLarge from '@/components/categories/AppFeaturedCategoryLarge';
+import AppFeaturedCategorySmall from '@/components/categories/AppFeaturedCategorySmall';
 
 export default {
   head() {
     return {
-      title: `${this.$t("pages.home.title")} | ${this.title}`
+      title: `${this.$t('pages.home.title')} | ${this.title}`
     };
   },
   components: {
-    Review,
-    Feature,
+    AppReview,
+    AppFeature,
     AppShopCard,
-    FeaturedCategoryLarge,
-    FeaturedCategorySmall,
+    AppStreakRegister,
+    AppStreakNewsletter,
     AppCategoryCard,
-    StreakRegister,
-    StreakNewsletter
+    AppFeaturedCategoryLarge,
+    AppFeaturedCategorySmall
   },
   data() {
     return {
       shops: [
         {
           id: 1,
-          name: "Petit coin de paradis",
+          name: 'Petit coin de paradis',
           description:
-            "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
+            'Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.',
           articles: 89,
-          avatar: "https://bulma.io/images/placeholders/1280x960.png",
-          accent: "#546E7A"
+          avatar: 'https://bulma.io/images/placeholders/1280x960.png',
+          accent: '#546E7A'
         },
         {
           id: 2,
-          name: "Ma super boutique",
+          name: 'Ma super boutique',
           description:
-            "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
+            'Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.',
           articles: 3,
-          avatar: "https://bulma.io/images/placeholders/1280x960.png",
-          accent: "#7E57C2"
+          avatar: 'https://bulma.io/images/placeholders/1280x960.png',
+          accent: '#7E57C2'
         },
         {
           id: 3,
-          name: "Chez Lucette",
+          name: 'Chez Lucette',
           description:
-            "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
+            'Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.',
           articles: 15,
-          avatar: "https://bulma.io/images/placeholders/1280x960.png",
-          accent: "#5C6BC0"
+          avatar: 'https://bulma.io/images/placeholders/1280x960.png',
+          accent: '#5C6BC0'
         },
         {
           id: 4,
-          name: "Notre boutique géniale",
+          name: 'Notre boutique géniale',
           description:
-            "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
+            'Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.',
           articles: 17,
-          avatar: "https://bulma.io/images/placeholders/1280x960.png",
-          accent: "#42A5F5"
+          avatar: 'https://bulma.io/images/placeholders/1280x960.png',
+          accent: '#42A5F5'
         }
       ]
     };
   },
-  async asyncData({ app }) {
+  computed: {
+    ...mapGetters({
+      locale: 'locale',
+      categories: 'categories'
+    })
+  },
+  asyncData({ app }) {
     return {
       title: app.head.title
     };
-  },
-  computed: {
-    ...mapGetters({
-      locale: "locale",
-      categories: "categories"
-    })
   }
 };
 </script>

@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import theming from "@/mixins/theming";
+import theming from '@/mixins/theming';
 
 export default {
   mixins: [theming]

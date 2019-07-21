@@ -1,7 +1,12 @@
 <template>
   <div
     v-if="alert"
-    :class="{ 'bg-blue-400': type === 'info', 'bg-red': type === 'danger', 'bg-green-400': type === 'success', 'bg-orange': type === 'warning' }"
+    :class="{
+      'bg-blue-400': type === 'info',
+      'bg-red': type === 'danger',
+      'bg-green-400': type === 'success',
+      'bg-orange': type === 'warning'
+    }"
     class="alert__background">
     <div class="alert__container container">
       <p
@@ -18,18 +23,18 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
   computed: {
     ...mapGetters({
-      type: "alert/type",
-      alert: "alert/message"
+      type: 'alert/type',
+      alert: 'alert/message'
     })
   },
   methods: {
     ...mapActions({
-      close: "alert/close"
+      close: 'alert/close'
     })
   }
 };

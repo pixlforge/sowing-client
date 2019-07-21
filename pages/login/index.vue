@@ -2,15 +2,17 @@
   <main>
 
     <!-- Header -->
-    <Header>
+    <AppHeader>
       <template slot="icon">
         <font-awesome-icon :icon="['far', 'key']"/>
       </template>
       <template slot="title">
-        <h1 class="header__title">{{ $t("pages.login.title") }}</h1>
+        <h1 class="header__title">
+          {{ $t("pages.login.title") }}
+        </h1>
       </template>
-    </Header>
-    
+    </AppHeader>
+
     <!-- Form -->
     <section class="section__container container">
       <form
@@ -35,7 +37,9 @@
             required
             autofocus>
           <template v-if="errors.email">
-            <p class="form__feedback">{{ errors.email }}</p>
+            <p class="form__feedback">
+              {{ errors.email }}
+            </p>
           </template>
         </div>
 
@@ -55,12 +59,14 @@
             class="form__input"
             required>
           <template v-if="errors.password">
-            <p class="form__feedback">{{ errors.password }}</p>
+            <p class="form__feedback">
+              {{ errors.password }}
+            </p>
           </template>
         </div>
 
         <div class="form__links">
-          
+
           <!-- Password forgotten -->
           <nuxt-link
             :to="localePath({ name: 'password-forgot' })"
@@ -75,7 +81,7 @@
             {{ $t("pages.login.links.register") }}
           </nuxt-link>
         </div>
-          
+
         <!-- Submit -->
         <button
           :class="{ 'button__disabled': missingCredentials }"
@@ -93,31 +99,26 @@
 </template>
 
 <script>
-import Header from "@/components/Header";
-import { mapActions } from "vuex";
+import { mapActions } from 'vuex';
+import AppHeader from '@/components/AppHeader';
 
 export default {
-  middleware: ["guest"],
+  middleware: ['guest'],
   head() {
     return {
-      title: `${this.$t("pages.login.title")} | ${this.title}`
+      title: `${this.$t('pages.login.title')} | ${this.title}`
     };
   },
   components: {
-    Header
+    AppHeader
   },
   data() {
     return {
       form: {
-        email: "",
-        password: ""
+        email: '',
+        password: ''
       },
       errors: {}
-    };
-  },
-  async asyncData({ app }) {
-    return {
-      title: app.head.title
     };
   },
   computed: {
@@ -125,29 +126,34 @@ export default {
       return !this.form.email || this.form.password.length < 8;
     }
   },
+  asyncData({ app }) {
+    return {
+      title: app.head.title
+    };
+  },
   mounted() {
     this.$refs.autofocus.focus();
   },
   methods: {
     ...mapActions({
-      getCart: "cart/getCart"
+      getCart: 'cart/getCart'
     }),
     async login() {
       this.errors = {};
 
       try {
-        await this.$auth.loginWith("local", {
+        await this.$auth.loginWith('local', {
           data: this.form
         });
 
         if (this.$route.query.redirect) {
           this.$router.push(this.$route.query.redirect);
         } else {
-          this.$router.push(this.localePath({ name: "index" }));
+          this.$router.push(this.localePath({ name: 'index' }));
         }
 
         this.$toast.success(
-          `${this.$t("toasts.welcome")}, ${this.$auth.user.name}!`
+          `${this.$t('toasts.welcome')}, ${this.$auth.user.name}!`
         );
 
         await this.getCart();

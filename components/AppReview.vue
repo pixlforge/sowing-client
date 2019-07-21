@@ -13,8 +13,12 @@
       </div>
     </div>
     <div class="review__content">
-      <h5 class="review__name">{{ name }}</h5>
-      <p class="review__body">{{ body }}</p>
+      <h5 class="review__name">
+        {{ name }}
+      </h5>
+      <p class="review__body">
+        {{ body }}
+      </p>
     </div>
   </div>
 </template>

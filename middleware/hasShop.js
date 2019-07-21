@@ -1,5 +1,5 @@
-export default function({ app, redirect }) {
+export default function ({ app, redirect }) {
   if (!app.$auth.user.has_shop) {
-    return redirect(app.localePath("shop"));
+    return redirect(app.localePath('shop'));
   }
 }

@@ -1,19 +1,19 @@
 <template>
   <div class="streak__background--green">
     <div class="streak__container container">
-        
+
       <div class="streak__illustration-container">
         <img
           src="~assets/img/rocket.svg"
           alt="Illustration representing a rocket"
           class="streak__illustration streak__illustration--register">
       </div>
-        
+
       <div class="streak__content">
         <h3 class="title__main title--white">
           {{ $t("streaks.register.title") }}
         </h3>
-          
+
         <p class="streak__body">
           {{ $t("streaks.register.body") }}
         </p>

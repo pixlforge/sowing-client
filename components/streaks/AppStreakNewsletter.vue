@@ -1,19 +1,19 @@
 <template>
   <div class="streak__background--pink">
     <div class="streak__container container">
-        
+
       <div class="streak__illustration-container">
         <img
           src="~assets/img/newsletter.svg"
           alt="Illustration representing a newsletter"
           class="streak__illustration streak__illustration--newsletter">
       </div>
-        
+
       <div class="streak__content">
         <h3 class="title__main title--white">
           {{ $t("streaks.newsletter.title") }}
         </h3>
-          
+
         <p class="streak__body">
           {{ $t("streaks.newsletter.body") }}
         </p>
@@ -21,7 +21,7 @@
         <form
           class="relative"
           @submit.prevent="subscribe">
-            
+
           <div class="streak__controls">
             <input
               id="email"
@@ -59,13 +59,13 @@
 export default {
   data() {
     return {
-      email: "",
+      email: '',
       errors: {}
     };
   },
   computed: {
     placeholder() {
-      return this.$t("streaks.newsletter.placeholder");
+      return this.$t('streaks.newsletter.placeholder');
     }
   },
   methods: {
@@ -73,14 +73,14 @@ export default {
       this.errors = {};
 
       try {
-        await this.$axios.$post("/newsletter/subscribe", {
+        await this.$axios.$post('/newsletter/subscribe', {
           email: this.email
         });
-        this.$toast.success(this.$t("toasts.subscribed"));
-        this.email = "";
+        this.$toast.success(this.$t('toasts.subscribed'));
+        this.email = '';
       } catch (e) {
         this.errors = e.response.data.errors;
-        this.$toast.error(this.$t("toasts.validation"));
+        this.$toast.error(this.$t('toasts.validation'));
       }
     }
   }

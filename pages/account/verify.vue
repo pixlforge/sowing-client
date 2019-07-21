@@ -2,14 +2,16 @@
   <main>
 
     <!-- Header -->
-    <Header>
+    <AppHeader>
       <template slot="icon">
         <font-awesome-icon :icon="['far', 'shield-check']"/>
       </template>
       <template slot="title">
-        <h1 class="header__title">{{ $t("pages.verify.title") }}</h1>
+        <h1 class="header__title">
+          {{ $t("pages.verify.title") }}
+        </h1>
       </template>
-    </Header>
+    </AppHeader>
 
     <!-- Content -->
     <section class="section__container container">
@@ -65,28 +67,23 @@
 </template>
 
 <script>
-import Header from "@/components/Header";
+import AppHeader from '@/components/AppHeader';
 
 export default {
-  middleware: ["authenticated"],
+  middleware: ['authenticated'],
   head() {
     return {
-      title: `${this.$t("pages.verify.title")} | ${this.title}`
+      title: `${this.$t('pages.verify.title')} | ${this.title}`
     };
   },
   components: {
-    Header
+    AppHeader
   },
   data() {
     return {
       tried: false,
       verified: false,
       error: null
-    };
-  },
-  async asyncData({ app }) {
-    return {
-      title: app.head.title
     };
   },
   computed: {
@@ -97,9 +94,13 @@ export default {
       return this.tried && !this.verified
     }
   },
+  asyncData({ app }) {
+    return {
+      title: app.head.title
+    };
+  },
   mounted() {
-    // this.verifyEmailAddress();
-    this.verified = true;
+    this.verifyEmailAddress();
   },
   methods: {
     async verifyEmailAddress() {
@@ -112,7 +113,7 @@ export default {
       try {
         await this.$axios.$post('/auth/verify', { token });
         this.verified = true;
-        this.$toast.success(this.$t("toasts.account_confirmed"));
+        this.$toast.success(this.$t('toasts.account_confirmed'));
       } catch (e) {
         this.error = e.response.data.errors.token;
         this.$toast.error(this.error);
@@ -123,4 +124,3 @@ export default {
   }
 }
 </script>
-

@@ -2,20 +2,27 @@
   <main>
 
     <!-- Header -->
-    <Header>
+    <AppHeader>
       <template slot="icon">
         <font-awesome-icon :icon="['far', 'shopping-cart']"/>
       </template>
       <template slot="title">
-        <h1 class="header__title">{{ pageTitle }}</h1>
+        <h1 class="header__title">
+          {{ pageTitle }}
+        </h1>
       </template>
-    </Header>
+    </AppHeader>
 
     <section class="section__container container">
 
       <!-- Cart Overview -->
       <div>
-        <CartOverview v-if="products.length"/>
+        <template v-if="products.length">
+          <AppCartOverviewProduct
+            v-for="product in products"
+            :key="product.id"
+            :product="product"/>
+        </template>
         <div
           v-else
           class="section__centered">
@@ -65,48 +72,49 @@
 </template>
 
 <script>
-import Header from "@/components/Header";
-import CartOverview from "@/components/cart/CartOverview";
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters, mapActions } from 'vuex';
+
+import AppHeader from '@/components/AppHeader';
+import AppCartOverviewProduct from '@/components/cart/AppCartOverviewProduct';
 
 export default {
-  middleware: ["authenticated"],
+  middleware: ['authenticated'],
   head() {
     return {
       title: `${this.pageTitle} | ${this.title}`
     };
   },
   components: {
-    Header,
-    CartOverview
-  },
-  async asyncData({ app }) {
-    return {
-      title: app.head.title
-    };
+    AppHeader,
+    AppCartOverviewProduct
   },
   computed: {
     ...mapGetters({
-      is_empty: "cart/isEmpty",
-      products: "cart/products",
-      subtotal: "cart/subtotal",
-      total: "cart/total",
-      has_changed: "cart/hasChanged"
+      is_empty: 'cart/isEmpty',
+      products: 'cart/products',
+      subtotal: 'cart/subtotal',
+      total: 'cart/total',
+      has_changed: 'cart/hasChanged'
     }),
     pageTitle() {
-      return this.$t("pages.cart.title");
+      return this.$t('pages.cart.title');
     }
+  },
+  asyncData({ app }) {
+    return {
+      title: app.head.title
+    };
   },
   mounted() {
     this.getCart();
 
     if (this.has_changed) {
-      this.$toast.info(`${this.$t("toasts.cart.has_changed")}`);
+      this.$toast.info(`${this.$t('toasts.cart.has_changed')}`);
     }
   },
   methods: {
     ...mapActions({
-      getCart: "cart/getCart"
+      getCart: 'cart/getCart'
     })
   }
 };

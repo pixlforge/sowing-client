@@ -1,8 +1,8 @@
 <template>
   <main>
-    
+
     <!-- Header -->
-    <Header>
+    <AppHeader>
       <template slot="icon">
         <font-awesome-icon :icon="['far', 'question']"/>
       </template>
@@ -11,7 +11,7 @@
           {{ $t("pages.faq.title") }}
         </h1>
       </template>
-    </Header>
+    </AppHeader>
 
     <!-- Content -->
     <section class="section__container container">
@@ -54,30 +54,30 @@
 
     <!-- Streak newsletter -->
     <section>
-      <StreakNewsletter/>
+      <AppStreakNewsletter/>
     </section>
 
   </main>
 </template>
 
 <script>
-import Header from "@/components/Header";
-import StreakNewsletter from "@/components/streaks/StreakNewsletter";
+import AppHeader from '@/components/AppHeader';
+import AppStreakNewsletter from '@/components/streaks/AppStreakNewsletter';
 
 export default {
   head() {
     return {
-      title: `${this.$t("pages.faq.title")} | ${this.title}`
+      title: `${this.$t('pages.faq.title')} | ${this.title}`
     };
   },
   components: {
-    Header,
-    StreakNewsletter
+    AppHeader,
+    AppStreakNewsletter
   },
-  async asyncData({ app }) {
+  asyncData({ app }) {
     return {
       title: app.head.title
     };
-  },
+  }
 }
 </script>

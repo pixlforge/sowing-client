@@ -1,8 +1,8 @@
-export default function({ app, redirect, route }) {
+export default function ({ app, redirect, route }) {
   if (!app.$auth.loggedIn) {
     return redirect(
       app.localePath({
-        name: "login",
+        name: 'login',
         query: {
           redirect: route.fullPath
         }

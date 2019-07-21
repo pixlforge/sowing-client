@@ -48,13 +48,13 @@
           {{ shopName }}
         </nuxt-link>
       </div>
-      
+
     </div>
   </div>
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters } from 'vuex';
 
 export default {
   props: {
@@ -65,13 +65,13 @@ export default {
   },
   computed: {
     ...mapGetters({
-      locale: "locale"
+      locale: 'locale'
     }),
     alt() {
-      return this.$t("components.products.img.alt");
+      return this.$t('components.products.img.alt');
     },
     imgSrc() {
-      return require("@/assets/img/placeholders/product.svg");
+      return require('@/assets/img/placeholders/product.svg');
     },
     productCurrency() {
       return this.product.price.currency;

@@ -32,7 +32,7 @@ export default {
   },
   computed: {
     ...mapGetters({
-      locale: "locale"
+      locale: 'locale'
     })
   }
 }

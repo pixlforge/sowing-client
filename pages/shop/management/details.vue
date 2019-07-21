@@ -25,18 +25,19 @@
 </template>
 
 <script>
-import AppShopDetails from "@/components/shops/AppShopDetails";
-import theming from "@/mixins/theming";
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters, mapActions } from 'vuex';
+import theming from '@/mixins/theming';
+
+import AppShopDetails from '@/components/shops/AppShopDetails';
 
 export default {
-  middleware: ["authenticated"],
+  middleware: ['authenticated'],
   head() {
     return {
-      title: `${this.$t("pages.shop.management.details.title")} | ${this.title}`
+      title: `${this.$t('pages.shop.management.details.title')} | ${this.title}`
     };
   },
-  layout: "shop-management",
+  layout: 'shop-management',
   components: {
     AppShopDetails
   },
@@ -46,20 +47,20 @@ export default {
       errors: {}
     };
   },
+  computed: {
+    ...mapGetters({
+      shopExists: 'shop/shopExists'
+    })
+  },
   async asyncData({ app, store }) {
-    let shop = await app.$axios.$get("/user/shop");
-    let countries = await app.$axios.$get("/countries");
+    const shop = await app.$axios.$get('/user/shop');
+    const countries = await app.$axios.$get('/countries');
 
     return {
       shopData: shop.data,
       countries: countries.data,
       title: app.head.title
     };
-  },
-  computed: {
-    ...mapGetters({
-      shopExists: "shop/shopExists"
-    })
   },
   mounted() {
     if (!this.shopExists) {
@@ -68,16 +69,16 @@ export default {
   },
   methods: {
     ...mapActions({
-      setShop: "shop/setShop",
-      updateShop: "shop/updateShop"
+      setShop: 'shop/setShop',
+      updateShop: 'shop/updateShop'
     }),
     async update() {
       try {
-        let res = await this.updateShop();
-        this.$toast.success("Votre boutique a été mise à jour avec succès!");
+        await this.updateShop();
+        this.$toast.success('Votre boutique a été mise à jour avec succès!');
       } catch (e) {
         this.errors = e.response.data.errors;
-        this.$toast.error(this.$t("toasts.validation"));
+        this.$toast.error(this.$t('toasts.validation'));
       }
     }
   }

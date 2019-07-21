@@ -1,11 +1,11 @@
 <template>
-  <div>
+  <div class="antialiased">
 
     <!-- Alert -->
-    <TheAlert/>
+    <AppAlert/>
 
     <!-- Navbar -->
-    <Navbar/>
+    <AppNavbar/>
 
     <!-- Categories -->
     <AppCategoryBar/>
@@ -16,7 +16,7 @@
       :shop-cover="shopCover"/>
 
     <!-- Header -->
-    <Header :class="bgTheme">
+    <AppHeader :class="bgTheme">
       <template slot="icon">
         <div
           v-if="shopAvatar"
@@ -32,11 +32,15 @@
       </template>
       <template slot="title">
         <h1 class="header__title">
-          <template v-if="shopName">{{ shopName }}</template>
-          <template v-else>{{ $t("pages.shop.creation") }}</template>
+          <template v-if="shopName">
+            {{ shopName }}
+          </template>
+          <template v-else>
+            {{ $t("pages.shop.creation") }}
+          </template>
         </h1>
       </template>
-    </Header>
+    </AppHeader>
 
     <!-- Navigation -->
     <AppShopNavigation/>
@@ -45,42 +49,43 @@
     <nuxt/>
 
     <!-- Footer -->
-    <Footer/>
+    <AppFooter/>
 
     <!-- Disclaimer -->
-    <Disclaimer :class="bgTheme"/>
+    <AppDisclaimer :class="bgTheme"/>
   </div>
 </template>
 
 <script>
-import TheAlert from "@/components/globals/TheAlert";
-import Navbar from "@/components/Navbar";
-import AppCategoryBar from "@/components/categories/AppCategoryBar";
-import Header from "@/components/Header";
-import AppShopNavigation from "@/components/shops/AppShopNavigation";
-import Footer from "@/components/footer/Footer";
-import Disclaimer from "@/components/footer/Disclaimer";
-import AppShopCover from "@/components/shops/AppShopCover";
-import theming from "@/mixins/theming";
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters, mapActions } from 'vuex';
+import theming from '@/mixins/theming';
+
+import AppNavbar from '@/components/AppNavbar';
+import AppHeader from '@/components/AppHeader';
+import AppAlert from '@/components/globals/AppAlert';
+import AppFooter from '@/components/footer/AppFooter';
+import AppShopCover from '@/components/shops/AppShopCover';
+import AppDisclaimer from '@/components/footer/AppDisclaimer';
+import AppCategoryBar from '@/components/categories/AppCategoryBar';
+import AppShopNavigation from '@/components/shops/AppShopNavigation';
 
 export default {
   components: {
-    TheAlert,
-    Navbar,
+    AppNavbar,
+    AppHeader,
+    AppAlert,
+    AppFooter,
+    AppShopCover,
+    AppDisclaimer,
     AppCategoryBar,
-    Header,
-    AppShopNavigation,
-    Footer,
-    Disclaimer,
-    AppShopCover
+    AppShopNavigation
   },
   mixins: [theming],
   computed: {
     ...mapGetters({
-      shopName: "shop/shopName",
-      shopAvatar: "shop/shopAvatar",
-      shopCover: "shop/shopCover"
+      shopName: 'shop/shopName',
+      shopAvatar: 'shop/shopAvatar',
+      shopCover: 'shop/shopCover'
     })
   },
   destroyed() {
@@ -88,7 +93,7 @@ export default {
   },
   methods: {
     ...mapActions({
-      resetShop: "shop/resetShop"
+      resetShop: 'shop/resetShop'
     })
   }
 };

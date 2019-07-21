@@ -78,37 +78,37 @@
 </template>
 
 <script>
-import theming from "@/mixins/theming";
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters, mapActions } from 'vuex';
+import theming from '@/mixins/theming';
 
 export default {
-  middleware: ["authenticated", "hasShop"],
+  middleware: ['authenticated', 'hasShop'],
   head() {
     return {
-      title: `${this.$t("shop_creator.steps.connect.title")} | ${this.title}`
+      title: `${this.$t('shop_creator.steps.connect.title')} | ${this.title}`
     };
   },
-  layout: "shop-creator",
+  layout: 'shop-creator',
   transition: {
-    name: "slide",
-    mode: "out-in"
+    name: 'slide',
+    mode: 'out-in'
   },
   mixins: [theming],
-  async asyncData({ app }) {
-    return {
-      title: app.head.title
-    };
-  },
   computed: {
     ...mapGetters({
-      shopStripeUserId: "shop/shopStripeUserId",
-      shopStripePublishableKey: "shop/shopStripePublishableKey"
+      shopStripeUserId: 'shop/shopStripeUserId',
+      shopStripePublishableKey: 'shop/shopStripePublishableKey'
     }),
     stripeConnectOAuthUrl() {
       return `https://dashboard.stripe.com/oauth/authorize?response_type=code&client_id=${
         process.env.STRIPE_CONNECT
       }&scope=read_write`;
     }
+  },
+  asyncData({ app }) {
+    return {
+      title: app.head.title
+    };
   },
   async mounted() {
     if (!this.shopExists && this.$auth.user.has_shop) {
@@ -125,14 +125,14 @@ export default {
   },
   methods: {
     ...mapActions({
-      getShop: "shop/getShop",
-      setStepName: "shop/setStepName",
-      setStepDetails: "shop/setStepDetails",
-      setStepCustomization: "shop/setStepCustomization"
+      getShop: 'shop/getShop',
+      setStepName: 'shop/setStepName',
+      setStepDetails: 'shop/setStepDetails',
+      setStepCustomization: 'shop/setStepCustomization'
     }),
     async requestTokens(code) {
       try {
-        await this.$axios.$post("/shops/connect", {
+        await this.$axios.$post('/shops/connect', {
           code: code
         });
         await this.getShop();
@@ -140,11 +140,11 @@ export default {
     },
     prev() {
       this.$router.push(
-        this.localePath({ name: "shop-creator-customization" })
+        this.localePath({ name: 'shop-creator-customization' })
       );
     },
     next() {
-      this.$router.push(this.localePath({ name: "shop-creator-done" }));
+      this.$router.push(this.localePath({ name: 'shop-creator-done' }));
     }
   }
 };

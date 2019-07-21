@@ -1,20 +1,22 @@
 <template>
   <main>
-    
+
     <!-- Header -->
-    <Header>
+    <AppHeader>
       <template slot="icon">
         <font-awesome-icon :icon="['far', 'user-plus']"/>
       </template>
       <template slot="title">
-        <h1 class="header__title">{{ $t("pages.register.title") }}</h1>
+        <h1 class="header__title">
+          {{ $t("pages.register.title") }}
+        </h1>
       </template>
-    </Header>
+    </AppHeader>
 
     <!-- Content -->
     <section class="section__container container">
       <div class="section__centered">
-        
+
         <!-- Icon -->
         <div class="icon__group">
           <font-awesome-icon
@@ -43,18 +45,18 @@
 </template>
 
 <script>
-import Header from "@/components/Header";
+import AppHeader from '@/components/AppHeader';
 
 export default {
   head() {
     return {
-      title: `${this.$t("pages.register_success.title")} | ${this.title}`
+      title: `${this.$t('pages.register_success.title')} | ${this.title}`
     };
   },
   components: {
-    Header
+    AppHeader
   },
-  async asyncData({ app }) {
+  asyncData({ app }) {
     return {
       title: app.head.title
     };
