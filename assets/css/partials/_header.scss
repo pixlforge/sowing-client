@@ -31,18 +31,6 @@
     }
   }
 
-  &__title {
-    @apply font-cafe text-24 text-white tracking-tight;
-
-    @screen md {
-      @apply text-36;
-    }
-    
-    @screen lg {
-      @apply text-48;
-    }
-  }
-
   &__description {
     @apply text-18 text-white font-semibold mt-10;
   }

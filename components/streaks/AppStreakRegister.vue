@@ -1,5 +1,5 @@
 <template>
-  <div class="streak__background--green">
+  <section class="streak__background--green">
     <div class="streak__container container">
 
       <div class="streak__illustration-container">
@@ -30,5 +30,5 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>

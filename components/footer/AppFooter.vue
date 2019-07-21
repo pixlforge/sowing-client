@@ -1,9 +1,9 @@
 <template>
-  <div class="footer__background">
+  <footer class="footer__background">
     <div class="footer__container container">
 
       <!-- Categories -->
-      <div class="footer__column">
+      <section class="footer__column">
         <h5 class="title__smaller">
           {{ $t('footer.titles.categories') }}
         </h5>
@@ -18,10 +18,10 @@
             </nuxt-link>
           </li>
         </ul>
-      </div>
+      </section>
 
       <!-- Selling -->
-      <div class="footer__column">
+      <section class="footer__column">
         <h5 class="title__smaller">
           {{ $t("footer.titles.sell_on_sowing") }}
         </h5>
@@ -48,10 +48,10 @@
             </nuxt-link>
           </li>
         </ul>
-      </div>
+      </section>
 
       <!-- About -->
-      <div class="footer__column">
+      <section class="footer__column">
         <h5 class="title__smaller">
           {{ $t("footer.titles.about") }}
         </h5>
@@ -85,10 +85,10 @@
             </nuxt-link>
           </li>
         </ul>
-      </div>
+      </section>
 
       <!-- Languages -->
-      <div class="footer__column">
+      <section class="footer__column">
         <h5 class="title__smaller">
           {{ $t("footer.titles.language") }}
         </h5>
@@ -103,10 +103,10 @@
             </nuxt-link>
           </li>
         </ul>
-      </div>
+      </section>
 
       <!-- Social Networks -->
-      <div class="footer__column">
+      <section class="footer__column">
         <h5 class="title__smaller">
           {{ $t("footer.titles.social_networks") }}
         </h5>
@@ -140,20 +140,20 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
     </div>
-  </div>
+  </footer>
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters } from 'vuex';
 
 export default {
   computed: {
     ...mapGetters({
-      locale: "locale",
-      categories: "categories",
-      shopTheme: "shop/shopTheme"
+      locale: 'locale',
+      categories: 'categories',
+      shopTheme: 'shop/shopTheme'
     }),
     textTheme() {
       return `text-${this.shopTheme}`;

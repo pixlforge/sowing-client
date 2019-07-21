@@ -190,7 +190,8 @@ module.exports = {
       '60': '6rem',
       '72': '7.2rem',
       '96': '9.6rem',
-      '132': '13.2rem'
+      '132': '13.2rem',
+      '196': '19.6rem'
     },
     margin: {
       auto: 'auto',
@@ -219,7 +220,7 @@ module.exports = {
     },
     container: {
       center: true,
-      padding: '1rem'
+      padding: '2rem'
     },
     extend: {
       fontFamily: {
@@ -276,7 +277,7 @@ module.exports = {
     inset: ['responsive'],
     letterSpacing: ['responsive'],
     lineHeight: ['responsive'],
-    margin: ['responsive'],
+    margin: ['responsive', 'first', 'last'],
     maxWidth: ['responsive'],
     minHeight: ['responsive'],
     minWidth: ['responsive'],
@@ -307,5 +308,19 @@ module.exports = {
     verticalAlign: false,
     visibility: false
   },
-  plugins: []
+  plugins: [
+    function ({ addVariant, e }) {
+      addVariant('first', ({ modifySelectors, separator }) => {
+        modifySelectors(({ className }) => {
+          return `.${e(`first${separator}${className}`)}:first-child`;
+        });
+      });
+
+      addVariant('last', ({ modifySelectors, separator }) => {
+        modifySelectors(({ className }) => {
+          return `.${e(`last${separator}${className}`)}:last-child`;
+        });
+      });
+    }
+  ]
 };
