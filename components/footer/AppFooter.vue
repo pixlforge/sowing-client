@@ -4,9 +4,11 @@
 
       <!-- Categories -->
       <section class="footer__column">
-        <h5 class="title__smaller">
+        <AppTitle
+          semantic="h5"
+          visual="h5">
           {{ $t('footer.titles.categories') }}
-        </h5>
+        </AppTitle>
         <ul class="footer__list">
           <li
             v-for="category in categories"
@@ -22,9 +24,11 @@
 
       <!-- Selling -->
       <section class="footer__column">
-        <h5 class="title__smaller">
+        <AppTitle
+          semantic="h5"
+          visual="h5">
           {{ $t("footer.titles.sell_on_sowing") }}
-        </h5>
+        </AppTitle>
         <ul class="footer__list">
           <li>
             <nuxt-link
@@ -52,9 +56,11 @@
 
       <!-- About -->
       <section class="footer__column">
-        <h5 class="title__smaller">
+        <AppTitle
+          semantic="h5"
+          visual="h5">
           {{ $t("footer.titles.about") }}
-        </h5>
+        </AppTitle>
         <ul class="footer__list">
           <li>
             <nuxt-link
@@ -89,9 +95,11 @@
 
       <!-- Languages -->
       <section class="footer__column">
-        <h5 class="title__smaller">
+        <AppTitle
+          semantic="h5"
+          visual="h5">
           {{ $t("footer.titles.language") }}
-        </h5>
+        </AppTitle>
         <ul class="footer__list">
           <li
             v-for="locale in $i18n.locales"
@@ -107,9 +115,11 @@
 
       <!-- Social Networks -->
       <section class="footer__column">
-        <h5 class="title__smaller">
+        <AppTitle
+          semantic="h5"
+          visual="h5">
           {{ $t("footer.titles.social_networks") }}
-        </h5>
+        </AppTitle>
         <ul class="footer__list">
           <li>
             <a
@@ -148,7 +158,12 @@
 <script>
 import { mapGetters } from 'vuex';
 
+import AppTitle from '@/components/AppTitle';
+
 export default {
+  components: {
+    AppTitle
+  },
   computed: {
     ...mapGetters({
       locale: 'locale',

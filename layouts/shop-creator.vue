@@ -1,5 +1,5 @@
 <template>
-  <div class="antialiased">
+  <div class="antialiased text-green-900">
 
     <!-- Alert -->
     <AppAlert/>

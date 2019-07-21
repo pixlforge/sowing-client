@@ -1,24 +1,27 @@
 <template>
-  <section class="streak__background--green">
-    <div class="streak__container container">
+  <section class="bg-green-500">
+    <div class="container flex items-center">
 
-      <div class="streak__illustration-container">
+      <div class="hidden lg:block lg:w-1/2 xl:w-1/3">
         <img
           src="~assets/img/rocket.svg"
           alt="Illustration representing a rocket"
-          class="streak__illustration streak__illustration--register">
+          class="block w-full">
       </div>
 
-      <div class="streak__content">
-        <h3 class="title__main title--white">
+      <div class="w-full lg:w-1/2 xl:w-2/3 py-132">
+        <AppTitle
+          semantic="h1"
+          visual="main"
+          utilities="text-white lg:text-left">
           {{ $t("streaks.register.title") }}
-        </h3>
+        </AppTitle>
 
-        <p class="streak__body">
+        <p class="text-20 xl:text-24 font-semibold text-white text-center lg:text-left mt-30">
           {{ $t("streaks.register.body") }}
         </p>
 
-        <div class="streak__controls">
+        <div class="flex flex-col md:flex-row justify-center lg:justify-start mt-48">
           <nuxt-link
             :to="localePath({ name: 'index' })"
             class="button button__secondary">
@@ -32,3 +35,13 @@
     </div>
   </section>
 </template>
+
+<script>
+import AppTitle from '@/components/AppTitle';
+
+export default {
+  components: {
+    AppTitle
+  }
+}
+</script>

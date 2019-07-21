@@ -7,14 +7,16 @@
         <font-awesome-icon :icon="['far', 'key']"/>
       </template>
       <template slot="title">
-        <h1 class="header__title">
+        <AppTitle
+          semantic="h1"
+          visual="header">
           {{ $t("pages.login.title") }}
-        </h1>
+        </AppTitle>
       </template>
     </AppHeader>
 
     <!-- Form -->
-    <section class="section__container container">
+    <AppContentSection>
       <form
         class="form__container form__container--narrow"
         @submit.prevent="login">
@@ -94,13 +96,16 @@
           {{ $t("buttons.connection") }}
         </button>
       </form>
-    </section>
+    </AppContentSection>
   </main>
 </template>
 
 <script>
 import { mapActions } from 'vuex';
+
+import AppTitle from '@/components/AppTitle';
 import AppHeader from '@/components/AppHeader';
+import AppContentSection from '@/components/AppContentSection';
 
 export default {
   middleware: ['guest'],
@@ -110,7 +115,9 @@ export default {
     };
   },
   components: {
-    AppHeader
+    AppTitle,
+    AppHeader,
+    AppContentSection
   },
   data() {
     return {

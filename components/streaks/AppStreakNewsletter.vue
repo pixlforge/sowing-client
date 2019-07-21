@@ -1,20 +1,23 @@
 <template>
-  <section class="streak__background--pink">
-    <div class="streak__container container">
+  <section class="bg-pink-600">
+    <div class="container flex items-center">
 
-      <div class="streak__illustration-container">
+      <div class="hidden lg:block lg:w-1/2 xl:w-1/3">
         <img
           src="~assets/img/newsletter.svg"
           alt="Illustration representing a newsletter"
-          class="streak__illustration streak__illustration--newsletter">
+          class="block w-4/5">
       </div>
 
-      <div class="streak__content">
-        <h3 class="title__main title--white">
+      <div class="w-full lg:w-1/2 xl:w-2/3 py-132">
+        <AppTitle
+          semantic="h1"
+          visual="main"
+          utilities="text-white lg:text-left">
           {{ $t("streaks.newsletter.title") }}
-        </h3>
+        </AppTitle>
 
-        <p class="streak__body">
+        <p class="text-20 xl:text-24 font-semibold text-white text-center lg:text-left mt-30">
           {{ $t("streaks.newsletter.body") }}
         </p>
 
@@ -22,7 +25,7 @@
           class="relative"
           @submit.prevent="subscribe">
 
-          <div class="streak__controls">
+          <div class="flex flex-col md:flex-row justify-center lg:justify-start mt-48">
             <input
               id="email"
               v-model="email"
@@ -56,7 +59,12 @@
 </template>
 
 <script>
+import AppTitle from '@/components/AppTitle';
+
 export default {
+  components: {
+    AppTitle
+  },
   data() {
     return {
       email: '',

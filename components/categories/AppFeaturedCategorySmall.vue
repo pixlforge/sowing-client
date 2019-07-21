@@ -3,9 +3,12 @@
     :style="imgUrl"
     class="featured-category__container">
     <div class="featured-category__content">
-      <h2 class="title__main title--white">
+      <AppTitle
+        semantic="h2"
+        visual="main"
+        utilities="text-white">
         Savon artisanal
-      </h2>
+      </AppTitle>
       <p class="featured-category__description">
         Now let's put some happy little clouds in here. Have fun with it. It looks so good, I might as well not stop.
       </p>
@@ -20,7 +23,12 @@
 </template>
 
 <script>
+import AppTitle from '@/components/AppTitle';
+
 export default {
+  components: {
+    AppTitle
+  },
   computed: {
     imgUrl() {
       const img = require('@/assets/img/placeholders/product.svg');

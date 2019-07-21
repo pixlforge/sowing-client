@@ -11,11 +11,12 @@
     </section>
 
     <!-- Features -->
-    <section class="section__container container">
-
-      <h1 class="title__main title--center">
+    <AppContentSection>
+      <AppTitle
+        semantic="h1"
+        visual="main">
         {{ $t("pages.home.titles.features") }}
-      </h1>
+      </AppTitle>
 
       <div class="feature__wrapper">
         <AppFeature icon="lightbulb">
@@ -46,18 +47,18 @@
           {{ $t("pages.home.features.fourth.body") }}
         </AppFeature>
       </div>
-    </section>
+    </AppContentSection>
 
     <!-- Streak register -->
-    <section>
-      <AppStreakRegister/>
-    </section>
+    <AppStreakRegister/>
 
     <!-- Shops -->
-    <section class="section__container container">
-      <h1 class="title__main title--center">
+    <AppContentSection>
+      <AppTitle
+        semantic="h1"
+        visual="main">
         {{ $t("pages.home.titles.shops") }}
-      </h1>
+      </AppTitle>
 
       <div class="shop-card__wrapper">
         <AppShopCard
@@ -65,13 +66,15 @@
           :key="shop.id"
           :shop="shop"/>
       </div>
-    </section>
+    </AppContentSection>
 
     <!-- Categories -->
-    <section class="section__container container">
-      <h1 class="title__main title--center">
+    <AppContentSection>
+      <AppTitle
+        semantic="h1"
+        visual="main">
         {{ $t("pages.home.titles.categories") }}
-      </h1>
+      </AppTitle>
 
       <div class="category-card__wrapper">
         <AppCategoryCard
@@ -79,13 +82,15 @@
           :key="category.id"
           :category="category"/>
       </div>
-    </section>
+    </AppContentSection>
 
     <!-- Reviews -->
-    <section class="section__container container">
-      <h1 class="title__main title--center">
+    <AppContentSection>
+      <AppTitle
+        semantic="h1"
+        visual="main">
         {{ $t("pages.home.titles.reviews") }}
-      </h1>
+      </AppTitle>
 
       <div class="review__wrapper">
         <AppReview
@@ -124,24 +129,25 @@
           </template>
         </AppReview>
       </div>
-    </section>
+    </AppContentSection>
 
     <!-- Streak newsletter -->
-    <section>
-      <AppStreakNewsletter/>
-    </section>
+    <AppStreakNewsletter/>
+
   </main>
 </template>
 
 <script>
 import { mapGetters } from 'vuex';
 
+import AppTitle from '@/components/AppTitle';
 import AppReview from '@/components/AppReview';
 import AppFeature from '@/components/AppFeature';
 import AppShopCard from '@/components/shops/AppShopCard';
+import AppContentSection from '@/components/AppContentSection';
+import AppCategoryCard from '@/components/categories/AppCategoryCard';
 import AppStreakRegister from '@/components/streaks/AppStreakRegister';
 import AppStreakNewsletter from '@/components/streaks/AppStreakNewsletter';
-import AppCategoryCard from '@/components/categories/AppCategoryCard';
 import AppFeaturedCategoryLarge from '@/components/categories/AppFeaturedCategoryLarge';
 import AppFeaturedCategorySmall from '@/components/categories/AppFeaturedCategorySmall';
 
@@ -152,12 +158,14 @@ export default {
     };
   },
   components: {
+    AppTitle,
     AppReview,
     AppFeature,
     AppShopCard,
+    AppContentSection,
+    AppCategoryCard,
     AppStreakRegister,
     AppStreakNewsletter,
-    AppCategoryCard,
     AppFeaturedCategoryLarge,
     AppFeaturedCategorySmall
   },

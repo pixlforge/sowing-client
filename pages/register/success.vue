@@ -7,14 +7,16 @@
         <font-awesome-icon :icon="['far', 'user-plus']"/>
       </template>
       <template slot="title">
-        <h1 class="header__title">
+        <AppTitle
+          semantic="h1"
+          visual="header">
           {{ $t("pages.register.title") }}
-        </h1>
+        </AppTitle>
       </template>
     </AppHeader>
 
     <!-- Content -->
-    <section class="section__container container">
+    <AppContentSection>
       <div class="section__centered">
 
         <!-- Icon -->
@@ -24,9 +26,11 @@
             class="icon__icon icon__icon--success"/>
         </div>
 
-        <h2 class="title__main title--center">
+        <AppTitle
+          semantic="h2"
+          visual="main">
           {{ $t("pages.register_success.congratulations") }}
-        </h2>
+        </AppTitle>
 
         <p class="paragraph__medium paragraph--center paragraph--narrow paragraph--spaced">
           {{ $t("pages.register_success.account_created") }}
@@ -40,12 +44,14 @@
             class="illustration__image">
         </div>
       </div>
-    </section>
+    </AppContentSection>
   </main>
 </template>
 
 <script>
+import AppTitle from '@/components/AppTitle';
 import AppHeader from '@/components/AppHeader';
+import AppContentSection from '@/components/AppContentSection';
 
 export default {
   head() {
@@ -54,7 +60,9 @@ export default {
     };
   },
   components: {
-    AppHeader
+    AppTitle,
+    AppHeader,
+    AppContentSection
   },
   asyncData({ app }) {
     return {
