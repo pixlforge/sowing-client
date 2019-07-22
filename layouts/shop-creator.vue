@@ -31,14 +31,16 @@
         </div>
       </template>
       <template slot="title">
-        <h1 class="header__title">
+        <AppTitle
+          semantic="h1"
+          visual="header">
           <template v-if="shopName">
             {{ shopName }}
           </template>
           <template v-else>
             {{ $t("pages.shop.creation") }}
           </template>
-        </h1>
+        </AppTitle>
       </template>
     </AppHeader>
 
@@ -60,10 +62,11 @@
 import { mapGetters, mapActions } from 'vuex';
 import theming from '@/mixins/theming';
 
+import AppTitle from '@/components/AppTitle';
 import AppNavbar from '@/components/AppNavbar';
-import AppHeader from '@/components/headers/AppHeader';
 import AppAlert from '@/components/globals/AppAlert';
 import AppFooter from '@/components/footer/AppFooter';
+import AppHeader from '@/components/headers/AppHeader';
 import AppShopCover from '@/components/shops/AppShopCover';
 import AppDisclaimer from '@/components/footer/AppDisclaimer';
 import AppCategoryBar from '@/components/categories/AppCategoryBar';
@@ -71,10 +74,11 @@ import AppShopNavigation from '@/components/shops/AppShopNavigation';
 
 export default {
   components: {
+    AppTitle,
     AppNavbar,
-    AppHeader,
     AppAlert,
     AppFooter,
+    AppHeader,
     AppShopCover,
     AppDisclaimer,
     AppCategoryBar,

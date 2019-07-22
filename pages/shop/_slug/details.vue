@@ -32,8 +32,7 @@
         <AppHeaderDescription>
           {{ shop.description_short[locale] }}
         </AppHeaderDescription>
-
-        <ul class="list__address list__address--white">
+        <AppHeaderList>
           <li>
             <font-awesome-icon
               :icon="['far', 'map-marker-alt']"
@@ -43,7 +42,7 @@
           <li class="ml-20">
             {{ shop.country.name[locale] }}
           </li>
-        </ul>
+        </AppHeaderList>
       </template>
     </AppHeader>
 
@@ -107,6 +106,7 @@ import AppTitle from '@/components/AppTitle';
 import AppHeader from '@/components/headers/AppHeader';
 import AppShopCover from '@/components/shops/AppShopCover';
 import AppContentSection from '@/components/AppContentSection';
+import AppHeaderList from '@/components/headers/AppHeaderList';
 import AppStreakRegister from '@/components/streaks/AppStreakRegister';
 import AppHeaderDescription from '@/components/headers/AppHeaderDescription';
 
@@ -121,6 +121,7 @@ export default {
     AppHeader,
     AppShopCover,
     AppContentSection,
+    AppHeaderList,
     AppStreakRegister,
     AppHeaderDescription
   },
