@@ -1,43 +1,43 @@
 <template>
   <main>
-    <section class="section__container container">
-      <div class="section__centered">
-        <h2 class="title__main title--center">
-          {{ $t("shop_creator.steps.done.title") }}
-        </h2>
 
-        <p class="paragraph__medium paragraph--center paragraph--narrow paragraph--spaced">
-          {{ $t("shop_creator.steps.done.paragraph") }}<br>
-          {{ $t("shop_creator.steps.done.provision_shop") }}
-        </p>
+    <!-- Page contents -->
+    <AppContentSection>
 
-        <IllustrationSuccess class="shop-creator__done-illustration"/>
+      <AppSplash
+        type="success"
+        :title="$t('shop_creator.steps.done.title')"
+        :subtitle="$t('shop_creator.steps.done.paragraph')"
+        class="max-w-800">
+        <template slot="illustration">
+          <IllustrationSuccess/>
+        </template>
+      </AppSplash>
 
-        <div class="shop-creator__controls">
+      <div class="shop-creator__controls">
 
-          <!-- Previous -->
-          <button
-            class="button button__previous"
-            @click.prevent="prev">
-            <font-awesome-icon
-              :icon="['far', 'chevron-circle-left']"
-              class="button__icon button__icon--small"/>
-            {{ $t("buttons.back") }}
-          </button>
+        <!-- Previous -->
+        <button
+          class="button button__previous"
+          @click.prevent="prev">
+          <font-awesome-icon
+            :icon="['far', 'chevron-circle-left']"
+            class="button__icon button__icon--small"/>
+          {{ $t("buttons.back") }}
+        </button>
 
-          <!-- Next -->
-          <button
-            :class="btnTheme"
-            class="button button__next"
-            @click.prevent="next">
-            <font-awesome-icon
-              :icon="['far', 'chevron-circle-right']"
-              class="button__icon button__icon--small"/>
-            {{ $t("buttons.finish") }}
-          </button>
-        </div>
+        <!-- Next -->
+        <button
+          :class="btnTheme"
+          class="button button__next"
+          @click.prevent="next">
+          <font-awesome-icon
+            :icon="['far', 'chevron-circle-right']"
+            class="button__icon button__icon--small"/>
+          {{ $t("buttons.finish") }}
+        </button>
       </div>
-    </section>
+    </AppContentSection>
   </main>
 </template>
 
@@ -45,6 +45,8 @@
 import { mapGetters, mapActions } from 'vuex';
 import theming from '@/mixins/theming';
 
+import AppSplash from '@/components/AppSplash';
+import AppContentSection from '@/components/AppContentSection';
 import IllustrationSuccess from '@/components/illustrations/IllustrationSuccess';
 
 export default {
@@ -60,6 +62,8 @@ export default {
     mode: 'out-in'
   },
   components: {
+    AppSplash,
+    AppContentSection,
     IllustrationSuccess
   },
   mixins: [theming],

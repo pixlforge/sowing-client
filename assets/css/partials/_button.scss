@@ -7,7 +7,7 @@
   }
 
   &__primary {
-    @apply bg-green-400 text-white;
+    @apply bg-green-500 text-white;
 
     &:hover {
       @apply bg-green-600;
@@ -24,7 +24,7 @@
 
   &__default,
   &__default:hover {
-    @apply text-gray-400 border border-gray-200;
+    @apply text-gray-500 border border-gray-200;
   }
 
   &__disabled,
@@ -33,7 +33,7 @@
   }
 
   &__green {
-    @apply bg-green-400 text-white;
+    @apply bg-green-500 text-white;
 
     &:hover {
       @apply bg-green-600;
@@ -41,7 +41,7 @@
   }
 
   &__pink {
-    @apply bg-pink-400 text-white;
+    @apply bg-pink-500 text-white;
 
     &:hover {
       @apply bg-pink-600;
@@ -49,7 +49,7 @@
   }
 
   &__purple {
-    @apply bg-purple-400 text-white;
+    @apply bg-purple-500 text-white;
 
     &:hover {
       @apply bg-purple-600;
@@ -57,7 +57,7 @@
   }
 
   &__indigo {
-    @apply bg-indigo-400 text-white;
+    @apply bg-indigo-500 text-white;
 
     &:hover {
       @apply bg-indigo-600;
@@ -65,7 +65,7 @@
   }
 
   &__blue {
-    @apply bg-blue-400 text-white;
+    @apply bg-blue-500 text-white;
 
     &:hover {
       @apply bg-blue-600;
@@ -73,7 +73,7 @@
   }
 
   &__brown {
-    @apply bg-brown-400 text-white;
+    @apply bg-brown-500 text-white;
 
     &:hover {
       @apply bg-brown-600;
@@ -81,7 +81,7 @@
   }
 
   &__gray {
-    @apply bg-gray-400 text-white;
+    @apply bg-gray-500 text-white;
 
     &:hover {
       @apply bg-gray-500;
@@ -89,7 +89,7 @@
   }
 
   &__slate {
-    @apply bg-slate-400 text-white;
+    @apply bg-slate-500 text-white;
 
     &:hover {
       @apply bg-slate-600;

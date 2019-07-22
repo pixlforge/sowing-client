@@ -2,19 +2,12 @@
   <main>
 
     <!-- Header -->
-    <AppHeader>
-      <template slot="icon">
-        <font-awesome-icon :icon="['far', 'store']"/>
-      </template>
-      <template slot="title">
-        <h1 class="header__title">
-          {{ $t("pages.shop.creation") }}
-        </h1>
-      </template>
-    </AppHeader>
+    <AppHeader
+      :title="$t('pages.shop.creation')"
+      icon="file-contract"/>
 
     <!-- Page contents -->
-    <section class="section__container container">
+    <AppContentSection>
 
       <!-- Terms -->
       <AppTerms/>
@@ -49,15 +42,16 @@
           {{ $t("buttons.begin_shop_creation") }}
         </button>
       </div>
-    </section>
+    </AppContentSection>
   </main>
 </template>
 
 <script>
 import { mapGetters, mapActions } from 'vuex';
 
-import AppHeader from '@/components/headers/AppHeader';
 import AppTerms from '@/components/terms/AppTerms';
+import AppHeader from '@/components/headers/AppHeader';
+import AppContentSection from '@/components/AppContentSection';
 
 export default {
   middleware: ['authenticated'],
@@ -67,8 +61,9 @@ export default {
     };
   },
   components: {
+    AppTerms,
     AppHeader,
-    AppTerms
+    AppContentSection
   },
   computed: {
     ...mapGetters({

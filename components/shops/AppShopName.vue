@@ -1,5 +1,5 @@
 <template>
-  <section class="shop-creator__name-section">
+  <section class="flex flex-col sm:flex-row justify-center items-center">
     <input
       id="name"
       v-model="localShopName"
@@ -8,11 +8,11 @@
       :placeholder="$t('shop_creator.steps.name.placeholder')"
       name="name"
       type="text"
-      class="form__input form__input--grouped">
+      class="form__input sm:rounded-r-none mt-0">
     <button
       :disabled="(shopExists || !shopName) && !editable"
       :class="(shopExists || !shopName) && !editable ? 'button__disabled' : btnTheme"
-      class="button button--grouped"
+      class="button w-full sm:w-auto sm:rounded-l-none"
       @click.prevent="check">
       <font-awesome-icon
         :icon="['far', 'rocket']"

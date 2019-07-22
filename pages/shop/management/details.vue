@@ -1,8 +1,10 @@
 <template>
   <section class="shop__content">
-    <h3 class="title__larger">
+    <AppTitle
+      semantic="h1"
+      visual="h3">
       Détails
-    </h3>
+    </AppTitle>
     <div class="shop__section">
       <AppShopDetails
         :countries="countries"
@@ -28,6 +30,7 @@
 import { mapGetters, mapActions } from 'vuex';
 import theming from '@/mixins/theming';
 
+import AppTitle from '@/components/AppTitle';
 import AppShopDetails from '@/components/shops/AppShopDetails';
 
 export default {
@@ -39,6 +42,7 @@ export default {
   },
   layout: 'shop-management',
   components: {
+    AppTitle,
     AppShopDetails
   },
   mixins: [theming],

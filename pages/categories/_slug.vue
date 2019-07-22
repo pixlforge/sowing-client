@@ -3,15 +3,20 @@
 
     <!-- Header -->
     <AppHeader>
+      <template slot="icon">
+        <AppHeaderIcon/>
+      </template>
       <template slot="title">
-        <h1 class="header__title">
+        <AppTitle
+          semantic="h1"
+          visual="header">
           {{ category.name[locale] }}
-        </h1>
+        </AppTitle>
       </template>
       <template slot="description">
-        <p class="header__description">
+        <AppHeaderDescription>
           {{ category.description[locale] }}
-        </p>
+        </AppHeaderDescription>
       </template>
     </AppHeader>
 
@@ -60,8 +65,11 @@
 <script>
 import { mapGetters } from 'vuex';
 
+import AppTitle from '@/components/AppTitle';
 import AppHeader from '@/components/headers/AppHeader';
+import AppHeaderIcon from '@/components/headers/AppHeaderIcon';
 import AppSubCategory from '@/components/categories/AppSubCategory';
+import AppHeaderDescription from '@/components/headers/AppHeaderDescription';
 
 export default {
   head() {
@@ -70,8 +78,11 @@ export default {
     };
   },
   components: {
+    AppTitle,
     AppHeader,
-    AppSubCategory
+    AppHeaderIcon,
+    AppSubCategory,
+    AppHeaderDescription
   },
   data() {
     return {

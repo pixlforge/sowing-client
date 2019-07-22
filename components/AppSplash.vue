@@ -19,11 +19,15 @@
     <AppTitle
       semantic="h2"
       visual="main">
-      <slot name="title"/>
+      <slot name="title">
+        {{ title }}
+      </slot>
     </AppTitle>
 
     <p class="text-18 md:text-20 lg:text-30 font-bold text-center mb-72 md:mb-96 lg:mb-132">
-      <slot name="subtitle"/>
+      <slot name="subtitle">
+        {{ subtitle }}
+      </slot>
     </p>
 
     <!-- Illustration -->
@@ -46,6 +50,16 @@ export default {
     type: {
       type: String,
       required: true
+    },
+    title: {
+      type: String,
+      required: false,
+      default: ''
+    },
+    subtitle: {
+      type: String,
+      required: false,
+      default: ''
     }
   },
   computed: {

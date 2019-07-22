@@ -16,52 +16,24 @@
       :shop-cover="shopCover"/>
 
     <!-- Header -->
-    <AppHeader :class="bgTheme">
-      <template slot="icon">
-        <div
-          v-if="shopAvatar"
-          :style="`background-image: url('${shopAvatar}');`"
-          class="header__avatar header__avatar--picture"/>
-        <div
-          v-else
-          :class="textTheme">
+    <AppHeader
+      v-if="shopExists"
+      :class="bgTheme"
+      :title="shopName"
+      :description="shop.description_short[locale]">
+      <AppHeaderList>
+        <li>
           <font-awesome-icon
-            :icon="['far', 'store']"
-            class="header__icon"/>
-        </div>
-      </template>
-      <template slot="title">
-        <AppTitle
-          semantic="h1"
-          visual="header">
-          <template v-if="shopName">
-            {{ shopName }}
-          </template>
-          <template v-else>
-            {{ $t("pages.shop.title") }}
-          </template>
-        </AppTitle>
-      </template>
-      <template
-        v-if="shop.id"
-        slot="description">
-        <AppHeaderDescription>
-          {{ shop.description_short[locale] }}
-        </AppHeaderDescription>
-        <AppHeaderList>
-          <li>
-            <font-awesome-icon
-              :icon="['far', 'map-marker-alt']"
-              class="mr-5"/>
-            {{ shop.postal_code }} {{ shop.city }}
-          </li>
-          <li
-            v-if="shop.country"
-            class="ml-20">
-            {{ shop.country.name[locale] }}
-          </li>
-        </AppHeaderList>
-      </template>
+            :icon="['far', 'map-marker-alt']"
+            class="mr-5"/>
+          {{ shop.postal_code }} {{ shop.city }}
+        </li>
+        <li
+          v-if="shop.country"
+          class="ml-20">
+          {{ shop.country.name[locale] }}
+        </li>
+      </AppHeaderList>
     </AppHeader>
 
     <!-- Main -->
@@ -162,7 +134,6 @@ import AppContentSection from '@/components/AppContentSection';
 import AppHeaderList from '@/components/headers/AppHeaderList';
 import AppSideMenuItem from '@/components/menus/AppSideMenuItem';
 import AppCategoryBar from '@/components/categories/AppCategoryBar';
-import AppHeaderDescription from '@/components/headers/AppHeaderDescription';
 
 export default {
   components: {
@@ -177,8 +148,7 @@ export default {
     AppContentSection,
     AppHeaderList,
     AppSideMenuItem,
-    AppCategoryBar,
-    AppHeaderDescription
+    AppCategoryBar
   },
   mixins: [theming],
   computed: {
@@ -186,6 +156,7 @@ export default {
       shopCover: 'shop/shopCover',
       shopAvatar: 'shop/shopAvatar',
       shopName: 'shop/shopName',
+      shopExists: 'shop/shopExists',
       userHasShop: 'userHasShop',
       shop: 'shop/shop',
       locale: 'locale'

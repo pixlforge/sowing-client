@@ -16,33 +16,9 @@
       :shop-cover="shopCover"/>
 
     <!-- Header -->
-    <AppHeader :class="bgTheme">
-      <template slot="icon">
-        <div
-          v-if="shopAvatar"
-          :style="`background-image: url('${shopAvatar}');`"
-          class="header__avatar header__avatar--picture"/>
-        <div
-          v-else
-          :class="textTheme">
-          <font-awesome-icon
-            :icon="['far', 'store']"
-            class="block"/>
-        </div>
-      </template>
-      <template slot="title">
-        <AppTitle
-          semantic="h1"
-          visual="header">
-          <template v-if="shopName">
-            {{ shopName }}
-          </template>
-          <template v-else>
-            {{ $t("pages.shop.creation") }}
-          </template>
-        </AppTitle>
-      </template>
-    </AppHeader>
+    <AppHeader
+      :class="bgTheme"
+      :title="shopName ? shopName : $t('pages.shop.creation')"/>
 
     <!-- Navigation -->
     <AppShopNavigation/>
@@ -69,6 +45,7 @@ import AppFooter from '@/components/footer/AppFooter';
 import AppHeader from '@/components/headers/AppHeader';
 import AppShopCover from '@/components/shops/AppShopCover';
 import AppDisclaimer from '@/components/footer/AppDisclaimer';
+import AppHeaderIcon from '@/components/headers/AppHeaderIcon';
 import AppCategoryBar from '@/components/categories/AppCategoryBar';
 import AppShopNavigation from '@/components/shops/AppShopNavigation';
 
@@ -81,6 +58,7 @@ export default {
     AppHeader,
     AppShopCover,
     AppDisclaimer,
+    AppHeaderIcon,
     AppCategoryBar,
     AppShopNavigation
   },

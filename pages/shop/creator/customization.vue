@@ -1,46 +1,49 @@
 <template>
   <main>
-    <section class="section__container container">
-      <div class="section__centered">
-        <h2 class="title__main title--center">
-          {{ $t("shop_creator.steps.customization.title") }}
-        </h2>
 
-        <p class="paragraph__medium paragraph--center paragraph--narrow paragraph--spaced">
-          {{ $t("shop_creator.steps.customization.paragraph") }}
-        </p>
+    <!-- Page contents -->
+    <AppContentSection>
 
-        <!-- Shop customization -->
-        <AppShopCustomization
-          v-if="shop.id"
-          class="shop-creator__customization-component"/>
+      <!-- Title -->
+      <AppTitle
+        semantic="h1"
+        visual="main">
+        {{ $t("shop_creator.steps.customization.title") }}
+      </AppTitle>
 
-        <div class="shop-creator__controls">
+      <p class="paragraph__medium paragraph--center paragraph--narrow paragraph--spaced">
+        {{ $t("shop_creator.steps.customization.paragraph") }}
+      </p>
 
-          <!-- Previous -->
-          <button
-            class="button button__previous"
-            @click.prevent="prev">
-            <font-awesome-icon
-              :icon="['far', 'chevron-circle-left']"
-              class="button__icon button__icon--small"/>
-            {{ $t("buttons.back") }}
-          </button>
+      <!-- Shop customization -->
+      <AppShopFeatureContainer v-if="shop.id">
+        <AppShopCustomization/>
+      </AppShopFeatureContainer>
 
-          <!-- Next -->
-          <button
-            :class="btnTheme"
-            class="button button__next"
-            @click.prevent="next">
-            <font-awesome-icon
-              :icon="['far', 'chevron-circle-right']"
-              class="button__icon button__icon--small"/>
-            {{ $t("buttons.next") }}
-          </button>
-        </div>
+      <div class="shop-creator__controls">
 
+        <!-- Previous -->
+        <button
+          class="button button__previous"
+          @click.prevent="prev">
+          <font-awesome-icon
+            :icon="['far', 'chevron-circle-left']"
+            class="button__icon button__icon--small"/>
+          {{ $t("buttons.back") }}
+        </button>
+
+        <!-- Next -->
+        <button
+          :class="btnTheme"
+          class="button button__next"
+          @click.prevent="next">
+          <font-awesome-icon
+            :icon="['far', 'chevron-circle-right']"
+            class="button__icon button__icon--small"/>
+          {{ $t("buttons.next") }}
+        </button>
       </div>
-    </section>
+    </AppContentSection>
   </main>
 </template>
 
@@ -48,7 +51,10 @@
 import { mapGetters, mapActions } from 'vuex';
 import theming from '@/mixins/theming';
 
+import AppTitle from '@/components/AppTitle';
+import AppContentSection from '@/components/AppContentSection';
 import AppShopCustomization from '@/components/shops/AppShopCustomization';
+import AppShopFeatureContainer from '@/components/shops/AppShopFeatureContainer';
 
 export default {
   middleware: ['authenticated', 'hasShop'],
@@ -63,7 +69,10 @@ export default {
     mode: 'out-in'
   },
   components: {
-    AppShopCustomization
+    AppTitle,
+    AppContentSection,
+    AppShopCustomization,
+    AppShopFeatureContainer
   },
   mixins: [theming],
   computed: {

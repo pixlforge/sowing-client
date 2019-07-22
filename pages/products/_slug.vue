@@ -4,17 +4,7 @@
     <!-- Header -->
     <AppHeader :class="bgTheme">
       <template slot="icon">
-        <div
-          v-if="shopAvatar"
-          :style="`background-image: url('${shopAvatar}');`"
-          class="header__avatar header__avatar--picture"/>
-        <div
-          v-else
-          :class="textTheme">
-          <font-awesome-icon
-            :icon="['far', 'store']"
-            class="header__icon"/>
-        </div>
+        <AppHeaderIcon/>
       </template>
       <template slot="title">
         <nuxt-link
@@ -55,6 +45,7 @@ import theming from '@/mixins/theming';
 import AppTitle from '@/components/AppTitle';
 import AppHeader from '@/components/headers/AppHeader';
 import AppContentSection from '@/components/AppContentSection';
+import AppHeaderIcon from '@/components/headers/AppHeaderIcon';
 import AppProductDetails from '@/components/products/AppProductDetails';
 import AppStreakNewsletter from '@/components/streaks/AppStreakNewsletter';
 import AppHeaderDescription from '@/components/headers/AppHeaderDescription';
@@ -69,6 +60,7 @@ export default {
     AppTitle,
     AppHeader,
     AppContentSection,
+    AppHeaderIcon,
     AppProductDetails,
     AppStreakNewsletter,
     AppHeaderDescription

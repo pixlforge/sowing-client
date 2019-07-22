@@ -9,17 +9,7 @@
     <!-- Header -->
     <AppHeader :class="bgTheme">
       <template slot="icon">
-        <div
-          v-if="shopAvatar"
-          :style="`background-image: url('${shopAvatar}');`"
-          class="header__avatar header__avatar--picture"/>
-        <div
-          v-else
-          :class="textTheme">
-          <font-awesome-icon
-            :icon="['far', 'store']"
-            class="header__icon"/>
-        </div>
+        <AppHeaderIcon/>
       </template>
       <template slot="title">
         <AppTitle
@@ -105,6 +95,7 @@ import theming from '@/mixins/theming';
 import AppTitle from '@/components/AppTitle';
 import AppHeader from '@/components/headers/AppHeader';
 import AppShopCover from '@/components/shops/AppShopCover';
+import AppHeaderIcon from '@/components/headers/AppHeaderIcon';
 import AppContentSection from '@/components/AppContentSection';
 import AppHeaderList from '@/components/headers/AppHeaderList';
 import AppStreakRegister from '@/components/streaks/AppStreakRegister';
@@ -120,6 +111,7 @@ export default {
     AppTitle,
     AppHeader,
     AppShopCover,
+    AppHeaderIcon,
     AppContentSection,
     AppHeaderList,
     AppStreakRegister,

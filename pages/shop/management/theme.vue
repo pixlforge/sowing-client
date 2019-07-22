@@ -1,8 +1,10 @@
 <template>
   <section class="shop__content">
-    <h3 class="title__larger">
+    <AppTitle
+      semantic="h1"
+      visual="h3">
       Thème
-    </h3>
+    </AppTitle>
     <div class="shop__section">
       <AppShopCustomization/>
     </div>
@@ -13,6 +15,7 @@
 import { mapGetters, mapActions } from 'vuex';
 import theming from '@/mixins/theming';
 
+import AppTitle from '@/components/AppTitle';
 import AppShopCustomization from '@/components/shops/AppShopCustomization';
 
 export default {
@@ -24,6 +27,7 @@ export default {
   },
   layout: 'shop-management',
   components: {
+    AppTitle,
     AppShopCustomization
   },
   mixins: [theming],

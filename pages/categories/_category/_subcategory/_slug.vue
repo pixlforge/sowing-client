@@ -2,20 +2,11 @@
   <main>
 
     <!-- Header -->
-    <AppHeader>
-      <template slot="title">
-        <h1 class="header__title">
-          {{ subcategory.name[locale] }}
-        </h1>
-      </template>
-      <template slot="description">
-        <p class="header__description">
-          {{ subcategory.description[locale] }}
-        </p>
-      </template>
-    </AppHeader>
+    <AppHeader
+      :title="subcategory.name[locale]"
+      :description="subcategory.description[locale]"/>
 
-    <section class="section__container container">
+    <AppContentSection>
       <div class="product__wrapper">
 
         <!-- Products -->
@@ -26,7 +17,7 @@
           <AppProduct :product="product"/>
         </div>
       </div>
-    </section>
+    </AppContentSection>
   </main>
 </template>
 
@@ -35,6 +26,7 @@ import { mapGetters } from 'vuex';
 
 import AppHeader from '@/components/headers/AppHeader';
 import AppProduct from '@/components/products/AppProduct';
+import AppContentSection from '@/components/AppContentSection';
 
 export default {
   head() {
@@ -44,7 +36,8 @@ export default {
   },
   components: {
     AppHeader,
-    AppProduct
+    AppProduct,
+    AppContentSection
   },
   data() {
     return {
