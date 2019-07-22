@@ -15,43 +15,29 @@
       </template>
     </AppHeader>
 
-    <!-- Content -->
-    <AppContentSection>
-      <div class="section__centered">
-
-        <!-- Icon -->
-        <div class="icon__group">
-          <font-awesome-icon
-            :icon="['far', 'check-circle']"
-            class="icon__icon icon__icon--success"/>
-        </div>
-
-        <AppTitle
-          semantic="h2"
-          visual="main">
-          {{ $t("pages.register_success.congratulations") }}
-        </AppTitle>
-
-        <p class="paragraph__medium paragraph--center paragraph--narrow paragraph--spaced">
-          {{ $t("pages.register_success.account_created") }}
-        </p>
-
-        <!-- Illustration -->
-        <div class="illustration__container">
-          <img
-            src="~assets/img/success_smiley.svg"
-            alt=""
-            class="illustration__image">
-        </div>
-      </div>
-    </AppContentSection>
+    <!-- Splash -->
+    <AppSplash
+      type="success"
+      class="max-w-800">
+      <template slot="title">
+        {{ $t("pages.register_success.congratulations") }}
+      </template>
+      <template slot="subtitle">
+        {{ $t("pages.register_success.account_created") }}
+      </template>
+      <template slot="illustration">
+        <img
+          src="~assets/img/success_smiley.svg"
+          :alt="$t('pages.register_success.congratulations')">
+      </template>
+    </AppSplash>
   </main>
 </template>
 
 <script>
 import AppTitle from '@/components/AppTitle';
-import AppHeader from '@/components/AppHeader';
-import AppContentSection from '@/components/AppContentSection';
+import AppHeader from '@/components/headers/AppHeader';
+import AppSplash from '@/components/AppSplash';
 
 export default {
   head() {
@@ -62,7 +48,7 @@ export default {
   components: {
     AppTitle,
     AppHeader,
-    AppContentSection
+    AppSplash
   },
   asyncData({ app }) {
     return {

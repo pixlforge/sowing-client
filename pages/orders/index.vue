@@ -33,7 +33,7 @@
 
 <script>
 import AppOrder from '@/components/orders/AppOrder';
-import AppHeader from '@/components/AppHeader';
+import AppHeader from '@/components/headers/AppHeader';
 
 export default {
   middleware: ['authenticated'],

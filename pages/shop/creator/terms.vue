@@ -56,7 +56,7 @@
 <script>
 import { mapGetters, mapActions } from 'vuex';
 
-import AppHeader from '@/components/AppHeader';
+import AppHeader from '@/components/headers/AppHeader';
 import AppTerms from '@/components/terms/AppTerms';
 
 export default {

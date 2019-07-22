@@ -22,14 +22,16 @@
         </div>
       </template>
       <template slot="title">
-        <h1 class="header__title">
+        <AppTitle
+          semantic="h1"
+          visual="header">
           {{ shopName }}
-        </h1>
+        </AppTitle>
       </template>
       <template slot="description">
-        <p class="header__description">
+        <AppHeaderDescription>
           {{ shop.description_short[locale] }}
-        </p>
+        </AppHeaderDescription>
 
         <ul class="list__address list__address--white">
           <li>
@@ -46,17 +48,19 @@
     </AppHeader>
 
     <!-- Content -->
-    <section class="section__container container">
-      <h2 class="title__main title--center">
+    <AppContentSection>
+      <AppTitle
+        semantic="h1"
+        visual="main">
         {{ $t("pages.shop_details.welcome") }}
-      </h2>
+      </AppTitle>
 
       <p
         class="paragraph__large paragraph--center paragraph--narrow"
         v-html="shop.description_long[locale]"/>
-    </section>
+    </AppContentSection>
 
-    <section class="section__container container">
+    <AppContentSection>
       <div class="shop-details__images-section">
         <div
           v-for="n in 10"
@@ -68,12 +72,14 @@
             class="shop-details__image">
         </div>
       </div>
-    </section>
+    </AppContentSection>
 
-    <section class="section__container">
-      <h2 class="title__main title--center">
+    <AppContentSection>
+      <AppTitle
+        semantic="h2"
+        visual="main">
         {{ $t("pages.shop_details.interested") }}
-      </h2>
+      </AppTitle>
 
       <div class="shop-details__interested">
         <a
@@ -85,12 +91,10 @@
           {{ $t("buttons.see_all_articles") }}
         </a>
       </div>
-    </section>
+    </AppContentSection>
 
     <!-- Register CTA -->
-    <section>
-      <AppStreakRegister/>
-    </section>
+    <AppStreakRegister/>
 
   </main>
 </template>
@@ -99,9 +103,12 @@
 import { mapGetters, mapActions } from 'vuex';
 import theming from '@/mixins/theming';
 
-import AppHeader from '@/components/AppHeader';
+import AppTitle from '@/components/AppTitle';
+import AppHeader from '@/components/headers/AppHeader';
 import AppShopCover from '@/components/shops/AppShopCover';
+import AppContentSection from '@/components/AppContentSection';
 import AppStreakRegister from '@/components/streaks/AppStreakRegister';
+import AppHeaderDescription from '@/components/headers/AppHeaderDescription';
 
 export default {
   head() {
@@ -110,9 +117,12 @@ export default {
     };
   },
   components: {
+    AppTitle,
     AppHeader,
     AppShopCover,
-    AppStreakRegister
+    AppContentSection,
+    AppStreakRegister,
+    AppHeaderDescription
   },
   mixins: [theming],
   data() {

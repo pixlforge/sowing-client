@@ -60,7 +60,7 @@
 <script>
 import { mapGetters } from 'vuex';
 
-import AppHeader from '@/components/AppHeader';
+import AppHeader from '@/components/headers/AppHeader';
 import AppSubCategory from '@/components/categories/AppSubCategory';
 
 export default {

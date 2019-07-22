@@ -66,7 +66,7 @@
 <script>
 import { mapActions } from 'vuex';
 
-import AppHeader from '@/components/AppHeader';
+import AppHeader from '@/components/headers/AppHeader';
 
 export default {
   middleware: ['guest'],

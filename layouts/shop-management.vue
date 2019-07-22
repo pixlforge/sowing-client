@@ -147,7 +147,7 @@ import { mapGetters, mapActions } from 'vuex';
 import theming from '@/mixins/theming';
 
 import AppNavbar from '@/components/AppNavbar';
-import AppHeader from '@/components/AppHeader';
+import AppHeader from '@/components/headers/AppHeader';
 import AppAlert from '@/components/globals/AppAlert';
 import AppFooter from '@/components/footer/AppFooter';
 import AppSideMenu from '@/components/menus/AppSideMenu';

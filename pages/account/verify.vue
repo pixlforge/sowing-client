@@ -7,77 +7,83 @@
         <font-awesome-icon :icon="['far', 'shield-check']"/>
       </template>
       <template slot="title">
-        <h1 class="header__title">
+        <AppTitle
+          semantic="h1"
+          visual="header">
           {{ $t("pages.verify.title") }}
-        </h1>
+        </AppTitle>
       </template>
     </AppHeader>
 
-    <!-- Content -->
-    <section class="section__container container">
-
-      <!-- Icon -->
-      <div class="icon__group">
-        <font-awesome-icon
-          v-if="verificationSuccessful"
-          :icon="['far', 'check-circle']"
-          class="icon__icon icon__icon--success"/>
-        <font-awesome-icon
-          v-if="verificationFailed"
-          :icon="['far', 'exclamation-triangle']"
-          class="icon__icon icon__icon--danger"/>
-      </div>
-
-      <!-- Title -->
-      <h2 class="title__main title--center">
-        <template v-if="verificationSuccessful">
+    <!-- Verification successful -->
+    <template v-if="verificationSuccessful">
+      <AppSplash
+        type="success"
+        class="max-w-800">
+        <template slot="title">
           {{ $t("pages.verify.success") }}
         </template>
-        <template v-if="verificationFailed">
-          {{ $t("pages.verify.fail") }}
-        </template>
-      </h2>
-
-      <!-- Paragraph -->
-      <p class="paragraph__large paragraph--center">
-        <template v-if="verificationSuccessful">
+        <template slot="subtitle">
           {{ $t("toasts.account_confirmed") }}
         </template>
-        <template v-if="verificationFailed">
+        <template slot="illustration">
+          <img
+            src="~assets/img/success2.svg"
+            :alt="$t('pages.verify.success')">
+        </template>
+      </AppSplash>
+    </template>
+
+    <!-- Verification failed -->
+    <template v-if="verificationFailed">
+      <AppSplash
+        type="error"
+        class="max-w-800">
+        <template slot="title">
+          {{ $t("pages.verify.fail") }}
+        </template>
+        <template slot="subtitle">
           {{ error }}
         </template>
-      </p>
-
-      <!-- Illustration -->
-      <div class="illustration__container">
-        <img
-          v-if="verificationSuccessful"
-          src="~assets/img/success2.svg"
-          alt="Illustration of a successful action"
-          class="illustration__image">
-        <img
-          v-if="verificationFailed"
-          src="~assets/img/warning.svg"
-          alt="Illustration of an unsuccessful action"
-          class="illustration__image">
-      </div>
-    </section>
+        <template slot="illustration">
+          <img
+            src="~assets/img/warning.svg"
+            :alt="$t('pages.verify.fail')">
+        </template>
+      </AppSplash>
+    </template>
 
   </main>
 </template>
 
 <script>
-import AppHeader from '@/components/AppHeader';
+import AppTitle from '@/components/AppTitle';
+import AppHeader from '@/components/headers/AppHeader';
+import AppSplash from '@/components/AppSplash';
 
 export default {
   middleware: ['authenticated'],
   head() {
     return {
-      title: `${this.$t('pages.verify.title')} | ${this.title}`
+      title: `${this.$t('pages.verify.title')} | ${this.title}`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: ''
+        },
+        {
+          hid: 'robots',
+          name: 'robots',
+          content: 'noindex'
+        }
+      ]
     };
   },
   components: {
-    AppHeader
+    AppTitle,
+    AppHeader,
+    AppSplash
   },
   data() {
     return {
@@ -96,7 +102,8 @@ export default {
   },
   asyncData({ app }) {
     return {
-      title: app.head.title
+      title: app.head.title,
+      description: app.head.description
     };
   },
   mounted() {

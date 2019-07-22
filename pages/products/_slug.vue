@@ -20,31 +20,31 @@
         <nuxt-link
           :to="localePath({ name: 'shop-slug-details', params: { slug: product.shop.slug } })"
           class="product-details__link">
-          <h1 class="header__title">
+          <AppTitle
+            semantic="h1"
+            visual="header">
             {{ product.shop.name }}
-          </h1>
+          </AppTitle>
         </nuxt-link>
       </template>
       <template slot="description">
         <nuxt-link
           :to="localePath({ name: 'shop-slug-details', params: { slug: product.shop.slug } })"
           class="product-details__link">
-          <p class="header__description">
+          <AppHeaderDescription>
             {{ product.shop.description_short[locale] }}
-          </p>
+          </AppHeaderDescription>
         </nuxt-link>
       </template>
     </AppHeader>
 
     <!-- Product details -->
-    <section class="section__container container">
+    <AppContentSection>
       <AppProductDetails :product="product"/>
-    </section>
+    </AppContentSection>
 
     <!-- Streak newsletter -->
-    <section>
-      <AppStreakNewsletter/>
-    </section>
+    <AppStreakNewsletter/>
   </main>
 </template>
 
@@ -52,9 +52,12 @@
 import { mapGetters, mapActions } from 'vuex';
 import theming from '@/mixins/theming';
 
-import AppHeader from '@/components/AppHeader';
-import AppStreakNewsletter from '@/components/streaks/AppStreakNewsletter';
+import AppTitle from '@/components/AppTitle';
+import AppHeader from '@/components/headers/AppHeader';
+import AppContentSection from '@/components/AppContentSection';
 import AppProductDetails from '@/components/products/AppProductDetails';
+import AppStreakNewsletter from '@/components/streaks/AppStreakNewsletter';
+import AppHeaderDescription from '@/components/headers/AppHeaderDescription';
 
 export default {
   head() {
@@ -63,9 +66,12 @@ export default {
     };
   },
   components: {
+    AppTitle,
     AppHeader,
+    AppContentSection,
     AppProductDetails,
-    AppStreakNewsletter
+    AppStreakNewsletter,
+    AppHeaderDescription
   },
   mixins: [theming],
   data() {

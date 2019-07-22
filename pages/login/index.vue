@@ -104,7 +104,7 @@
 import { mapActions } from 'vuex';
 
 import AppTitle from '@/components/AppTitle';
-import AppHeader from '@/components/AppHeader';
+import AppHeader from '@/components/headers/AppHeader';
 import AppContentSection from '@/components/AppContentSection';
 
 export default {

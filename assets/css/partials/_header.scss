@@ -1,16 +1,4 @@
 .header {
-  &__background {
-    @apply bg-green-400;
-  }
-
-  &__container {
-    @apply flex flex-col items-center py-48;
-
-    @screen lg {
-      @apply flex-row;
-    }
-  }
-
   &__avatar {
     @apply w-110 h-110 rounded-full bg-white flex justify-center items-center text-48 text-green-400;
 
@@ -21,17 +9,5 @@
 
   &__icon {
     @apply block;
-  }
-
-  &__content {
-    @apply text-center mt-48;
-
-    @screen lg {
-      @apply text-left ml-72 mt-0;
-    }
-  }
-
-  &__description {
-    @apply text-18 text-white font-semibold mt-10;
   }
 }

@@ -33,7 +33,7 @@
 <script>
 import { mapGetters } from 'vuex';
 
-import AppHeader from '@/components/AppHeader';
+import AppHeader from '@/components/headers/AppHeader';
 import AppProduct from '@/components/products/AppProduct';
 
 export default {

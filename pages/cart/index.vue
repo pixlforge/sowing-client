@@ -74,7 +74,7 @@
 <script>
 import { mapGetters, mapActions } from 'vuex';
 
-import AppHeader from '@/components/AppHeader';
+import AppHeader from '@/components/headers/AppHeader';
 import AppCartOverviewProduct from '@/components/cart/AppCartOverviewProduct';
 
 export default {

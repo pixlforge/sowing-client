@@ -68,7 +68,7 @@
 
 <script>
 import AppTitle from '@/components/AppTitle';
-import AppHeader from '@/components/AppHeader';
+import AppHeader from '@/components/headers/AppHeader';
 import AppFaqGroup from '@/components/faq/AppFaqGroup';
 import AppContentSection from '@/components/AppContentSection';
 import AppFaqParagraph from '@/components/faq/AppFaqParagraph';

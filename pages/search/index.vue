@@ -7,13 +7,15 @@
         <font-awesome-icon :icon="['far', 'search']"/>
       </template>
       <template slot="title">
-        <h1 class="header__title">
+        <AppTitle
+          semantic="h1"
+          visual="header">
           {{ $t("pages.search.title") }}
-        </h1>
+        </AppTitle>
       </template>
     </AppHeader>
 
-    <section class="section__container section__container--min-h-half-screen container">
+    <AppContentSection class="min-h-half-screen">
 
       <!-- Search field -->
       <div class="search__input-group">
@@ -38,14 +40,16 @@
           class="search__results-component search__results-component--right"/>
 
       </div>
-    </section>
+    </AppContentSection>
   </main>
 </template>
 
 <script>
 import { mapGetters } from 'vuex';
 
-import AppHeader from '@/components/AppHeader';
+import AppTitle from '@/components/AppTitle';
+import AppHeader from '@/components/headers/AppHeader';
+import AppContentSection from '@/components/AppContentSection';
 import AppSearchResult from '@/components/search/AppSearchResult';
 
 export default {
@@ -55,7 +59,9 @@ export default {
     };
   },
   components: {
+    AppTitle,
     AppHeader,
+    AppContentSection,
     AppSearchResult
   },
   data() {

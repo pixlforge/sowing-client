@@ -110,7 +110,7 @@
 <script>
 import { mapGetters, mapActions } from 'vuex';
 
-import AppHeader from '@/components/AppHeader';
+import AppHeader from '@/components/headers/AppHeader';
 import AppCartOverviewProduct from '@/components/cart/AppCartOverviewProduct';
 import AppShippingMethods from '@/components/checkout/addresses/AppShippingMethods';
 import AppShippingAddress from '@/components/checkout/addresses/AppShippingAddress';
