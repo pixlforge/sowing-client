@@ -1,15 +1,15 @@
 <template>
-  <nav class="navbar__container container">
+  <nav class="container flex justify-between items-center px-20 py-30">
 
     <!-- Logo -->
     <nuxt-link :to="localePath({ name: 'index' })">
       <AppLogo/>
     </nuxt-link>
 
-    <div class="navbar__menu">
+    <div class="flex">
 
       <!-- Languages -->
-      <AppButtonLanguages class="navbar__languages"/>
+      <AppButtonLanguages class="mr-20"/>
 
       <!-- Login -->
       <nuxt-link

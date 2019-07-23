@@ -1,5 +1,5 @@
 <template>
-  <span class="badge__primary badge__primary--info">
+  <span class="bg-blue-300 text-blue-700 text-12 font-extrabold uppercase rounded-full px-20 py-10">
     {{ $t("pages.orders.statuses.processing") }}
   </span>
 </template>
