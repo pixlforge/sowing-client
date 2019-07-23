@@ -3,7 +3,7 @@
 
     <!-- Logo -->
     <nuxt-link :to="localePath({ name: 'index' })">
-      <AppLogo/>
+      <AppLogo class="w-48"/>
     </nuxt-link>
 
     <div class="flex">

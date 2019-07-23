@@ -22,7 +22,10 @@ export default {
   },
 
   router: {
-    middleware: ['locale-redirect']
+    middleware: [
+      'landing-page-redirect',
+      'locale-redirect'
+    ]
   },
 
   /*
@@ -164,7 +167,10 @@ export default {
    */
   webfontloader: {
     google: {
-      families: ['Nunito:300,400,600,700,800']
+      families: [
+        'Montserrat:300,400,800,900'
+        // 'Nunito:300,400,600,700,800'
+      ]
     }
   },
 

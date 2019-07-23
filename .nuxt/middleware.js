@@ -9,6 +9,9 @@ middleware['guest'] = middleware['guest'].default || middleware['guest']
 middleware['hasShop'] = require('../middleware/hasShop.js');
 middleware['hasShop'] = middleware['hasShop'].default || middleware['hasShop']
 
+middleware['landing-page-redirect'] = require('../middleware/landing-page-redirect.js');
+middleware['landing-page-redirect'] = middleware['landing-page-redirect'].default || middleware['landing-page-redirect']
+
 middleware['locale-redirect'] = require('../middleware/locale-redirect.js');
 middleware['locale-redirect'] = middleware['locale-redirect'].default || middleware['locale-redirect']
 

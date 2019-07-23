@@ -1,7 +1,5 @@
 <template>
   <svg
-    width="133px"
-    height="25px"
     viewBox="0 0 133 25">
     <title>Logo Sowing</title>
     <g

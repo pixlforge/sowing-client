@@ -4,6 +4,7 @@ import { interopDefault } from './utils'
 
 const _202ee15e = () => interopDefault(import('../pages/cart/index.vue' /* webpackChunkName: "pages/cart/index" */))
 const _61cceef7 = () => interopDefault(import('../pages/checkout/index.vue' /* webpackChunkName: "pages/checkout/index" */))
+const _c8b0dcee = () => interopDefault(import('../pages/coming-soon.vue' /* webpackChunkName: "pages/coming-soon" */))
 const _51f57edb = () => interopDefault(import('../pages/faq/index.vue' /* webpackChunkName: "pages/faq/index" */))
 const _1f7774ee = () => interopDefault(import('../pages/login/index.vue' /* webpackChunkName: "pages/login/index" */))
 const _4d115756 = () => interopDefault(import('../pages/orders/index.vue' /* webpackChunkName: "pages/orders/index" */))
@@ -134,6 +135,22 @@ export function createRouter() {
       path: "/it/checkout",
       component: _61cceef7,
       name: "checkout___it"
+    }, {
+      path: "/en/coming-soon",
+      component: _c8b0dcee,
+      name: "coming-soon___en"
+    }, {
+      path: "/fr/coming-soon",
+      component: _c8b0dcee,
+      name: "coming-soon___fr"
+    }, {
+      path: "/de/coming-soon",
+      component: _c8b0dcee,
+      name: "coming-soon___de"
+    }, {
+      path: "/it/coming-soon",
+      component: _c8b0dcee,
+      name: "coming-soon___it"
     }, {
       path: "/en/faq",
       component: _51f57edb,

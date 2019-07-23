@@ -4,7 +4,7 @@
   }
 
   &__brand-link {
-    @apply no-underline text-white font-cafe uppercase;
+    @apply no-underline text-white  uppercase;
 
     &:hover {
       @apply underline;

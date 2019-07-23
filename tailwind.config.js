@@ -11,7 +11,7 @@ module.exports = {
         200: '#F4F7F5',
         300: '#C1E3CB',
         400: '#84C697',
-        500: '#65B87D',
+        500: '#5FB881',
         600: '#478158',
         700: '#335C3F',
         800: '#1B3324',
@@ -225,8 +225,7 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ['Nunito'],
-        cafe: ['Louis George Cafe Bold']
+        sans: ['Montserrat']
       },
       width: {
         '20': '2rem',

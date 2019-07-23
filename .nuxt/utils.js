@@ -138,7 +138,7 @@ export async function setContext(app, context) {
       payload: context.payload,
       error: context.error,
       base: '/',
-      env: {"API_URL":"http://sowing.test/api","CLIENT_URL":"http://localhost:8871","STRIPE_PUBLIC":"pk_test_ZqbFEvgY1hidolj3Eu3hZ6RV","STRIPE_CONNECT":"ca_EKWDjfpD1k1MUMtNGRJdxuR2XSnuTh9H","ALGOLIA_APP_ID":"U3ILWOPS2P","ALGOLIA_SECRET":"73f361aa193e1880047cfef6d405a08f"}
+      env: {"APP_ENV":"local","API_URL":"http://sowing.test/api","CLIENT_URL":"http://localhost:8871","STRIPE_PUBLIC":"pk_test_ZqbFEvgY1hidolj3Eu3hZ6RV","STRIPE_CONNECT":"ca_EKWDjfpD1k1MUMtNGRJdxuR2XSnuTh9H","ALGOLIA_APP_ID":"U3ILWOPS2P","ALGOLIA_SECRET":"73f361aa193e1880047cfef6d405a08f"}
     }
     // Only set once
     if (context.req) {

@@ -25,8 +25,8 @@ export default {
         h3: 'text-20 sm:text-24 font-bold leading-normal',
         h4: 'text-16 sm:text-20 font-bold leading-normal',
         h5: 'text-14 font-extrabold uppercase leading-normal',
-        main: 'font-cafe text-30 md:text-48 font-bold text-center tracking-tight',
-        header: 'font-cafe text-24 md:text-36 lg:text-48 text-white tracking-tight'
+        main: ' text-30 md:text-48 font-bold text-center tracking-tight',
+        header: ' text-24 md:text-36 lg:text-48 text-white tracking-tight'
       }
     };
   },
