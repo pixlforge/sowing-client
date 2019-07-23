@@ -260,8 +260,12 @@ export const actions = {
   async updateShop({ state }) {
     await this.$axios.$patch(`/shops/${state.shop.slug}`, state.shop);
   },
-  async getShop({ dispatch }) {
+  async getUserShop({ dispatch }) {
     const res = await this.$axios.$get('/user/shop');
+    dispatch('setShop', res.data);
+  },
+  async getShop({ dispatch }, slug) {
+    const res = await this.$axios.$get(`/shops/${slug}`);
     dispatch('setShop', res.data);
   },
   resetShop({ commit }) {

@@ -2,20 +2,11 @@
   <main>
 
     <!-- Header -->
-    <AppHeader>
-      <template slot="icon">
-        <font-awesome-icon :icon="['far', 'key']"/>
-      </template>
-      <template slot="title">
-        <AppTitle
-          semantic="h1"
-          visual="header">
-          {{ $t("pages.login.title") }}
-        </AppTitle>
-      </template>
-    </AppHeader>
+    <AppHeader
+      :title="$t('pages.login.title')"
+      icon="key"/>
 
-    <!-- Form -->
+    <!-- Page contents -->
     <AppContentSection>
       <form
         class="form__container form__container--narrow"
@@ -97,13 +88,13 @@
         </button>
       </form>
     </AppContentSection>
+
   </main>
 </template>
 
 <script>
 import { mapActions } from 'vuex';
 
-import AppTitle from '@/components/AppTitle';
 import AppHeader from '@/components/headers/AppHeader';
 import AppContentSection from '@/components/AppContentSection';
 
@@ -111,11 +102,22 @@ export default {
   middleware: ['guest'],
   head() {
     return {
-      title: `${this.$t('pages.login.title')} | ${this.title}`
+      title: `${this.$t('pages.login.title')} | ${this.title}`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: ''
+        },
+        {
+          hid: 'robots',
+          name: 'robots',
+          content: 'noindex'
+        }
+      ]
     };
   },
   components: {
-    AppTitle,
     AppHeader,
     AppContentSection
   },

@@ -2,29 +2,17 @@
   <main>
 
     <!-- Header -->
-    <AppHeader :class="bgTheme">
-      <template slot="icon">
-        <AppHeaderIcon/>
-      </template>
-      <template slot="title">
-        <nuxt-link
+    <AppHeader
+      :title="product.shop.name"
+      :description="product.shop.description_short[locale]"
+      :class="bgTheme">
+      <template>
+        <AppHeaderButtonLink
           :to="localePath({ name: 'shop-slug-details', params: { slug: product.shop.slug } })"
-          class="product-details__link">
-          <AppTitle
-            semantic="h1"
-            visual="header">
-            {{ product.shop.name }}
-          </AppTitle>
-        </nuxt-link>
-      </template>
-      <template slot="description">
-        <nuxt-link
-          :to="localePath({ name: 'shop-slug-details', params: { slug: product.shop.slug } })"
-          class="product-details__link">
-          <AppHeaderDescription>
-            {{ product.shop.description_short[locale] }}
-          </AppHeaderDescription>
-        </nuxt-link>
+          :color="shopTheme"
+          class="mt-16 shadow-2xl">
+          {{ $t("pages.shop.visit") }}
+        </AppHeaderButtonLink>
       </template>
     </AppHeader>
 
@@ -35,6 +23,7 @@
 
     <!-- Streak newsletter -->
     <AppStreakNewsletter/>
+
   </main>
 </template>
 
@@ -42,28 +31,31 @@
 import { mapGetters, mapActions } from 'vuex';
 import theming from '@/mixins/theming';
 
-import AppTitle from '@/components/AppTitle';
 import AppHeader from '@/components/headers/AppHeader';
 import AppContentSection from '@/components/AppContentSection';
-import AppHeaderIcon from '@/components/headers/AppHeaderIcon';
 import AppProductDetails from '@/components/products/AppProductDetails';
 import AppStreakNewsletter from '@/components/streaks/AppStreakNewsletter';
-import AppHeaderDescription from '@/components/headers/AppHeaderDescription';
+import AppHeaderButtonLink from '@/components/buttons/AppHeaderButtonLink';
 
 export default {
   head() {
     return {
-      title: `${this.product.name[this.locale]} | ${this.title}`
+      title: `${this.product.name[this.locale]} | ${this.title}`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: ''
+        }
+      ]
     };
   },
   components: {
-    AppTitle,
     AppHeader,
     AppContentSection,
-    AppHeaderIcon,
     AppProductDetails,
     AppStreakNewsletter,
-    AppHeaderDescription
+    AppHeaderButtonLink
   },
   mixins: [theming],
   data() {

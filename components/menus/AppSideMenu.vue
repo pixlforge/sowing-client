@@ -1,5 +1,5 @@
 <template>
-  <ul class="side-menu__list">
+  <ul class="rounded-lg text-16">
     <slot/>
   </ul>
 </template>

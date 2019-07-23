@@ -2,18 +2,10 @@
   <main>
 
     <!-- Header -->
-    <AppHeader>
-      <template slot="icon">
-        <font-awesome-icon :icon="['far', 'search']"/>
-      </template>
-      <template slot="title">
-        <AppTitle
-          semantic="h1"
-          visual="header">
-          {{ $t("pages.search.title") }}
-        </AppTitle>
-      </template>
-    </AppHeader>
+    <AppHeader
+      :title="$t('pages.search.title')"
+      :description="$t('pages.search.description')"
+      icon="search"/>
 
     <AppContentSection class="min-h-half-screen">
 
@@ -47,7 +39,6 @@
 <script>
 import { mapGetters } from 'vuex';
 
-import AppTitle from '@/components/AppTitle';
 import AppHeader from '@/components/headers/AppHeader';
 import AppContentSection from '@/components/AppContentSection';
 import AppSearchResult from '@/components/search/AppSearchResult';
@@ -55,11 +46,17 @@ import AppSearchResult from '@/components/search/AppSearchResult';
 export default {
   head() {
     return {
-      title: `${this.$t('pages.search.title')} | ${this.title}`
+      title: `${this.$t('pages.search.title')} | ${this.title}`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: ''
+        }
+      ]
     };
   },
   components: {
-    AppTitle,
     AppHeader,
     AppContentSection,
     AppSearchResult

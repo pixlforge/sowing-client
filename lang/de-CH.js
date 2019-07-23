@@ -263,6 +263,7 @@ export default {
     },
     search: {
       title: 'Suche',
+      description: 'Suchen Sie nach Produkten und Geschäften',
       placeholder: 'Suchen Sie nach Produkten und Geschäften',
       results_found: 'gefunden',
       products: 'Produkte',
@@ -286,7 +287,8 @@ export default {
         theme: {
           title: 'Verwaltung des Themas meines Shops'
         }
-      }
+      },
+      visit: 'Shop durchsuchen'
     },
     shop_details: {
       welcome: 'Herzlich Willkommen in unserem Shop',

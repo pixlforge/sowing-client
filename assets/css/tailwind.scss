@@ -2,13 +2,11 @@
 
 @tailwind components;
 
-@import "partials/alert";
 @import "partials/badge";
 @import "partials/base";
 @import "partials/button";
 @import "partials/cart";
 @import "partials/cart-product";
-@import "partials/category-bar";
 @import "partials/category-card";
 @import "partials/checkout";
 @import "partials/credit-card";
@@ -31,12 +29,10 @@
 @import "partials/search";
 @import "partials/shop";
 @import "partials/shop-card";
-@import "partials/shop-cover";
 @import "partials/shop-creator";
 @import "partials/shop-customization";
 @import "partials/shop-details";
 @import "partials/shop-navigation";
-@import "partials/side-menu";
 @import "partials/subcategory";
 @import "partials/terms";
 @import "partials/tile";

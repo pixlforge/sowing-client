@@ -9,9 +9,15 @@
         :icon="['fas', 'store']"
         class="search__result-icon"/>
       <div>
-        <h5 class="search__result-name">
+
+        <!-- Name -->
+        <AppTitle
+          semantic="h5"
+          visual="h4">
           {{ result.name }}
-        </h5>
+        </AppTitle>
+
+        <!-- Description -->
         <p
           class="search__result-description"
           v-html="result.description_short[locale]"/>
@@ -23,7 +29,12 @@
 <script>
 import { mapGetters } from 'vuex';
 
+import AppTitle from '@/components/AppTitle';
+
 export default {
+  components: {
+    AppTitle
+  },
   props: {
     result: {
       type: Object,

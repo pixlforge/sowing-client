@@ -2,18 +2,9 @@
   <main>
 
     <!-- Header -->
-    <AppHeader>
-      <template slot="icon">
-        <font-awesome-icon :icon="['far', 'user-plus']"/>
-      </template>
-      <template slot="title">
-        <AppTitle
-          semantic="h1"
-          visual="header">
-          {{ $t("pages.register.title") }}
-        </AppTitle>
-      </template>
-    </AppHeader>
+    <AppHeader
+      :title="$t('pages.register.title')"
+      icon="user-plus"/>
 
     <!-- Form -->
     <AppContentSection>
@@ -140,7 +131,6 @@
 <script>
 import { mapActions } from 'vuex';
 
-import AppTitle from '@/components/AppTitle';
 import AppHeader from '@/components/headers/AppHeader';
 import AppContentSection from '@/components/AppContentSection';
 
@@ -148,11 +138,22 @@ export default {
   middleware: ['guest'],
   head() {
     return {
-      title: `${this.$t('pages.register.title')} | ${this.title}`
+      title: `${this.$t('pages.register.title')} | ${this.title}`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: ''
+        },
+        {
+          hid: 'robots',
+          name: 'robots',
+          content: 'noindex'
+        }
+      ]
     };
   },
   components: {
-    AppTitle,
     AppHeader,
     AppContentSection
   },

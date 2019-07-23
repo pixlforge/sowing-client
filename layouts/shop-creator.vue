@@ -38,27 +38,23 @@
 import { mapGetters, mapActions } from 'vuex';
 import theming from '@/mixins/theming';
 
-import AppTitle from '@/components/AppTitle';
 import AppNavbar from '@/components/AppNavbar';
 import AppAlert from '@/components/globals/AppAlert';
 import AppFooter from '@/components/footer/AppFooter';
 import AppHeader from '@/components/headers/AppHeader';
 import AppShopCover from '@/components/shops/AppShopCover';
 import AppDisclaimer from '@/components/footer/AppDisclaimer';
-import AppHeaderIcon from '@/components/headers/AppHeaderIcon';
 import AppCategoryBar from '@/components/categories/AppCategoryBar';
 import AppShopNavigation from '@/components/shops/AppShopNavigation';
 
 export default {
   components: {
-    AppTitle,
     AppNavbar,
     AppAlert,
     AppFooter,
     AppHeader,
     AppShopCover,
     AppDisclaimer,
-    AppHeaderIcon,
     AppCategoryBar,
     AppShopNavigation
   },

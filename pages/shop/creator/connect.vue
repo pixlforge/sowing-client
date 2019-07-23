@@ -79,7 +79,19 @@ export default {
   middleware: ['authenticated', 'hasShop'],
   head() {
     return {
-      title: `${this.$t('shop_creator.steps.connect.title')} | ${this.title}`
+      title: `${this.$t('shop_creator.steps.connect.title')} | ${this.title}`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: ''
+        },
+        {
+          hid: 'robots',
+          name: 'robots',
+          content: 'noindex'
+        }
+      ]
     };
   },
   layout: 'shop-creator',
@@ -117,7 +129,7 @@ export default {
   },
   async mounted() {
     if (!this.shopExists && this.$auth.user.has_shop) {
-      await this.getShop();
+      await this.getUserShop();
 
       if (this.$route.query.code && !this.shopStripeUserId) {
         this.requestTokens(this.$route.query.code);
@@ -130,7 +142,7 @@ export default {
   },
   methods: {
     ...mapActions({
-      getShop: 'shop/getShop',
+      getUserShop: 'shop/getUserShop',
       setStepName: 'shop/setStepName',
       setStepDetails: 'shop/setStepDetails',
       setStepCustomization: 'shop/setStepCustomization'
@@ -140,7 +152,7 @@ export default {
         await this.$axios.$post('/shops/connect', {
           code: code
         });
-        await this.getShop();
+        await this.getUserShop();
       } catch (e) {}
 
       this.tried = true;

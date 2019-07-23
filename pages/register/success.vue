@@ -2,29 +2,16 @@
   <main>
 
     <!-- Header -->
-    <AppHeader>
-      <template slot="icon">
-        <font-awesome-icon :icon="['far', 'user-plus']"/>
-      </template>
-      <template slot="title">
-        <AppTitle
-          semantic="h1"
-          visual="header">
-          {{ $t("pages.register.title") }}
-        </AppTitle>
-      </template>
-    </AppHeader>
+    <AppHeader
+      :title="$t('pages.register.title')"
+      icon="user-plus"/>
 
     <!-- Splash -->
     <AppSplash
+      :title="$t('pages.register_success.congratulations')"
+      :subtitle="$t('pages.register_success.account_created')"
       type="success"
       class="max-w-800">
-      <template slot="title">
-        {{ $t("pages.register_success.congratulations") }}
-      </template>
-      <template slot="subtitle">
-        {{ $t("pages.register_success.account_created") }}
-      </template>
       <template slot="illustration">
         <img
           src="~assets/img/success_smiley.svg"
@@ -35,9 +22,8 @@
 </template>
 
 <script>
-import AppTitle from '@/components/AppTitle';
-import AppHeader from '@/components/headers/AppHeader';
 import AppSplash from '@/components/AppSplash';
+import AppHeader from '@/components/headers/AppHeader';
 
 export default {
   head() {
@@ -46,9 +32,8 @@ export default {
     };
   },
   components: {
-    AppTitle,
-    AppHeader,
-    AppSplash
+    AppSplash,
+    AppHeader
   },
   asyncData({ app }) {
     return {

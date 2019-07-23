@@ -2,41 +2,31 @@
   <main>
 
     <!-- Header -->
-    <AppHeader>
-      <template slot="icon">
-        <AppHeaderIcon/>
-      </template>
-      <template slot="title">
-        <AppTitle
-          semantic="h1"
-          visual="header">
-          {{ category.name[locale] }}
-        </AppTitle>
-      </template>
-      <template slot="description">
-        <AppHeaderDescription>
-          {{ category.description[locale] }}
-        </AppHeaderDescription>
-      </template>
-    </AppHeader>
+    <AppHeader
+      :title="categoryName"
+      :description="categoryDescription"/>
 
     <!-- Content -->
-    <section class="section__container container">
+    <AppContentSection>
 
       <!-- Subcategories with sections -->
       <template v-if="categoryHasSections">
         <div
           v-for="section in category.children"
           :key="section.id">
-          <h2 class="subcategory__section">
+
+          <AppTitle
+            semantic="h1"
+            visual="main">
             {{ section.name[locale] }}
-          </h2>
+          </AppTitle>
 
           <div class="subcategory__wrapper">
             <div
               v-for="subcategory in section.children"
               :key="subcategory.slug"
               class="subcategory__container">
+
               <AppSubCategory
                 :category="category"
                 :subcategory="subcategory"/>
@@ -52,13 +42,15 @@
             v-for="subcategory in category.children"
             :key="subcategory.slug"
             class="subcategory__container">
+
             <AppSubCategory
               :category="category"
               :subcategory="subcategory"/>
           </div>
         </div>
       </template>
-    </section>
+    </AppContentSection>
+
   </main>
 </template>
 
@@ -67,9 +59,8 @@ import { mapGetters } from 'vuex';
 
 import AppTitle from '@/components/AppTitle';
 import AppHeader from '@/components/headers/AppHeader';
-import AppHeaderIcon from '@/components/headers/AppHeaderIcon';
+import AppContentSection from '@/components/AppContentSection';
 import AppSubCategory from '@/components/categories/AppSubCategory';
-import AppHeaderDescription from '@/components/headers/AppHeaderDescription';
 
 export default {
   head() {
@@ -80,9 +71,8 @@ export default {
   components: {
     AppTitle,
     AppHeader,
-    AppHeaderIcon,
-    AppSubCategory,
-    AppHeaderDescription
+    AppContentSection,
+    AppSubCategory
   },
   data() {
     return {
@@ -95,6 +85,12 @@ export default {
     }),
     categoryHasSections() {
       return this.category.children[0].is_section;
+    },
+    categoryName() {
+      return this.category.name[this.locale];
+    },
+    categoryDescription() {
+      return this.category.description[this.locale];
     }
   },
   async asyncData({ params, app }) {

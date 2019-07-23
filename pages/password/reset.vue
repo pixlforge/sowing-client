@@ -2,19 +2,12 @@
   <main>
 
     <!-- Header -->
-    <AppHeader>
-      <template slot="icon">
-        <font-awesome-icon :icon="['far', 'redo-alt']"/>
-      </template>
-      <template slot="title">
-        <h1 class="header__title">
-          {{ $t("pages.password_reset.title") }}
-        </h1>
-      </template>
-    </AppHeader>
+    <AppHeader
+      :title="$t('pages.password_reset.title')"
+      icon="redo-alt"/>
 
     <!-- Form -->
-    <section class="section__container container">
+    <AppContentSection>
       <form
         class="form__container form__container--narrow"
         @submit.prevent="reset">
@@ -85,7 +78,7 @@
           {{ $t("buttons.password_reset") }}
         </button>
       </form>
-    </section>
+    </AppContentSection>
   </main>
 </template>
 
@@ -93,16 +86,30 @@
 import { mapActions } from 'vuex';
 
 import AppHeader from '@/components/headers/AppHeader';
+import AppContentSection from '@/components/AppContentSection';
 
 export default {
   middleware: ['guest'],
   head() {
     return {
-      title: `${this.$t('pages.password_reset.title')} | ${this.title}`
+      title: `${this.$t('pages.password_reset.title')} | ${this.title}`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: ''
+        },
+        {
+          hid: 'robots',
+          name: 'robots',
+          content: 'noindex'
+        }
+      ]
     };
   },
   components: {
-    AppHeader
+    AppHeader,
+    AppContentSection
   },
   data() {
     return {

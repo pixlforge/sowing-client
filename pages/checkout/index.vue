@@ -2,34 +2,33 @@
   <main>
 
     <!-- Header -->
-    <AppHeader>
-      <template slot="icon">
-        <font-awesome-icon :icon="['far', 'cash-register']"/>
-      </template>
-      <template slot="title">
-        <h1 class="header__title">
-          {{ pageTitle }}
-        </h1>
-      </template>
-    </AppHeader>
+    <AppHeader
+      :title="pageTitle"
+      icon="cash-register"/>
 
-    <section class="section__container container">
+    <AppContentSection>
       <div class="checkout__section">
         <div class="checkout__content">
 
           <!-- Payment methods -->
-          <h2 class="checkout__payment-methods">
+          <AppTitle
+            semantic="h2"
+            visual="h3">
             {{ $t("pages.checkout.payment") }}
-          </h2>
+          </AppTitle>
+
           <AppPaymentMethods
             v-model="form.payment_method_id"
             :payment-methods="paymentMethods"
+            class="mb-72 lg:mb-132 xl:mb-196"
             @payment-method:added="addPaymentMethod"/>
 
           <!-- Cart Overview -->
-          <h2 class="checkout__cart-overview">
+          <AppTitle
+            semantic="h2"
+            visual="h3">
             {{ $t("pages.cart.title") }}
-          </h2>
+          </AppTitle>
 
           <AppCartOverviewProduct
             v-for="product in products"
@@ -101,16 +100,18 @@
             {{ $t("pages.checkout.order") }}
           </button>
         </div>
-
       </div>
-    </section>
+    </AppContentSection>
+
   </main>
 </template>
 
 <script>
 import { mapGetters, mapActions } from 'vuex';
 
+import AppTitle from '@/components/AppTitle';
 import AppHeader from '@/components/headers/AppHeader';
+import AppContentSection from '@/components/AppContentSection';
 import AppCartOverviewProduct from '@/components/cart/AppCartOverviewProduct';
 import AppShippingMethods from '@/components/checkout/addresses/AppShippingMethods';
 import AppShippingAddress from '@/components/checkout/addresses/AppShippingAddress';
@@ -120,11 +121,25 @@ export default {
   middleware: ['authenticated'],
   head() {
     return {
-      title: `${this.pageTitle} | ${this.title}`
+      title: `${this.pageTitle} | ${this.title}`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: ''
+        },
+        {
+          hid: 'robots',
+          name: 'robots',
+          content: 'noindex'
+        }
+      ]
     };
   },
   components: {
+    AppTitle,
     AppHeader,
+    AppContentSection,
     AppCartOverviewProduct,
     AppShippingMethods,
     AppShippingAddress,

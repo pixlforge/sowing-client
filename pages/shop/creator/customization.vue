@@ -60,7 +60,19 @@ export default {
   middleware: ['authenticated', 'hasShop'],
   head() {
     return {
-      title: `${this.$t('shop_creator.steps.customization.title')} | ${this.title}`
+      title: `${this.$t('shop_creator.steps.customization.title')} | ${this.title}`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: ''
+        },
+        {
+          hid: 'robots',
+          name: 'robots',
+          content: 'noindex'
+        }
+      ]
     };
   },
   layout: 'shop-creator',
@@ -90,7 +102,7 @@ export default {
   },
   mounted() {
     if (!this.shopExists && this.$auth.user.has_shop) {
-      this.getShop();
+      this.getUserShop();
     }
 
     this.setStepName(true);
@@ -98,7 +110,7 @@ export default {
   },
   methods: {
     ...mapActions({
-      getShop: 'shop/getShop',
+      getUserShop: 'shop/getUserShop',
       setStepName: 'shop/setStepName',
       setStepDetails: 'shop/setStepDetails'
     }),

@@ -18,9 +18,11 @@
       <nuxt-link
         :to="localePath({ name: 'products-slug', params: { slug: product.slug } })"
         class="product__name-link">
-        <h5 class="product__name">
-          {{ product.name[locale] }}
-        </h5>
+        <AppTitle
+          semantic="h3"
+          visual="h3">
+          {{ productName }}
+        </AppTitle>
       </nuxt-link>
 
       <!-- Base product description -->
@@ -56,7 +58,12 @@
 <script>
 import { mapGetters } from 'vuex';
 
+import AppTitle from '@/components/AppTitle';
+
 export default {
+  components: {
+    AppTitle
+  },
   props: {
     product: {
       type: Object,
@@ -72,6 +79,9 @@ export default {
     },
     imgSrc() {
       return require('@/assets/img/placeholders/product.svg');
+    },
+    productName() {
+      return this.product.name[this.locale];
     },
     productCurrency() {
       return this.product.price.currency;

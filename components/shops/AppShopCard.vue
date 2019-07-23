@@ -16,12 +16,20 @@
 
       <!-- Right side -->
       <div class="shop-card__right-side">
-        <h5 class="shop-card__name">
+
+        <!-- Title -->
+        <AppTitle
+          semantic="h5"
+          visual="h4">
           {{ shop.name }}
-        </h5>
+        </AppTitle>
+
+        <!-- Description -->
         <p class="shop-card__description">
           {{ shop.description }}
         </p>
+
+        <!-- Meta -->
         <div class="shop-card__meta">
           <font-awesome-icon
             :icon="['far', 'box-full']"
@@ -36,7 +44,12 @@
 </template>
 
 <script>
+import AppTitle from '@/components/AppTitle';
+
 export default {
+  components: {
+    AppTitle
+  },
   props: {
     shop: {
       type: Object,

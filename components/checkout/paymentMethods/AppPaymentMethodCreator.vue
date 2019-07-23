@@ -43,7 +43,7 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters } from 'vuex';
 
 export default {
   data() {
@@ -55,8 +55,8 @@ export default {
       options: {
         style: {
           base: {
-            fontSize: "16px",
-            iconColor: "#8D8D8D"
+            fontSize: '16px',
+            iconColor: '#8D8D8D'
           }
         }
       }
@@ -64,16 +64,16 @@ export default {
   },
   computed: {
     ...mapGetters({
-      locale: "locale"
+      locale: 'locale'
     })
   },
   mounted() {
-    this.stripe = Stripe(process.env.STRIPE_PUBLIC);
+    this.stripe = window.Stripe(process.env.STRIPE_PUBLIC);
 
     this.card = this.stripe
       .elements({ locale: this.locale })
-      .create("card", this.options);
-    this.card.mount("#elements");
+      .create('card', this.options);
+    this.card.mount('#elements');
   },
   methods: {
     async store() {
@@ -81,13 +81,13 @@ export default {
       const { token, error } = await this.stripe.createToken(this.card);
 
       if (error) {
-        this.$toast.error(this.$t("toasts.general_error"));
+        this.$toast.error(this.$t('toasts.general_error'));
       } else {
-        let res = await this.$axios.$post("/payment-methods", {
+        const res = await this.$axios.$post('/payment-methods', {
           token: token.id
         });
-        this.$toast.success(this.$t("toasts.cc_added"));
-        this.$emit("payment-method:added", res.data);
+        this.$toast.success(this.$t('toasts.cc_added'));
+        this.$emit('payment-method:added', res.data);
         this.card.clear();
         this.showing = false;
       }

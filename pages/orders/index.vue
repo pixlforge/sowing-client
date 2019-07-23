@@ -2,18 +2,12 @@
   <main>
 
     <!-- Header -->
-    <AppHeader>
-      <template slot="icon">
-        <font-awesome-icon :icon="['far', 'shipping-fast']"/>
-      </template>
-      <template slot="title">
-        <h1 class="header__title">
-          {{ $t("pages.orders.title") }}
-        </h1>
-      </template>
-    </AppHeader>
+    <AppHeader
+      :title="$t('pages.orders.title')"
+      icon="shipping-fast"/>
 
-    <section class="section__container container">
+    <!-- Page contents -->
+    <AppContentSection>
       <div
         v-if="orders.length"
         class="mt-96">
@@ -27,24 +21,39 @@
         class="mt-96">
         <p>No orders yet</p>
       </div>
-    </section>
+    </AppContentSection>
+
   </main>
 </template>
 
 <script>
 import AppOrder from '@/components/orders/AppOrder';
 import AppHeader from '@/components/headers/AppHeader';
+import AppContentSection from '@/components/AppContentSection';
 
 export default {
   middleware: ['authenticated'],
   head() {
     return {
-      title: `${this.$t('pages.orders.title')} | ${this.title}`
+      title: `${this.$t('pages.orders.title')} | ${this.title}`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: ''
+        },
+        {
+          hid: 'robots',
+          name: 'robots',
+          content: 'noindex'
+        }
+      ]
     };
   },
   components: {
     AppOrder,
-    AppHeader
+    AppHeader,
+    AppContentSection
   },
   data() {
     return {

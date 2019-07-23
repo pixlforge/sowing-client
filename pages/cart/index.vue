@@ -2,18 +2,12 @@
   <main>
 
     <!-- Header -->
-    <AppHeader>
-      <template slot="icon">
-        <font-awesome-icon :icon="['far', 'shopping-cart']"/>
-      </template>
-      <template slot="title">
-        <h1 class="header__title">
-          {{ pageTitle }}
-        </h1>
-      </template>
-    </AppHeader>
+    <AppHeader
+      :title="pageTitle"
+      icon="shopping-cart"/>
 
-    <section class="section__container container">
+    <!-- Page contents -->
+    <AppContentSection>
 
       <!-- Cart Overview -->
       <div>
@@ -66,8 +60,8 @@
           {{ $t("pages.cart.checkout") }}
         </nuxt-link>
       </div>
+    </AppContentSection>
 
-    </section>
   </main>
 </template>
 
@@ -75,17 +69,31 @@
 import { mapGetters, mapActions } from 'vuex';
 
 import AppHeader from '@/components/headers/AppHeader';
+import AppContentSection from '@/components/AppContentSection';
 import AppCartOverviewProduct from '@/components/cart/AppCartOverviewProduct';
 
 export default {
   middleware: ['authenticated'],
   head() {
     return {
-      title: `${this.pageTitle} | ${this.title}`
+      title: `${this.pageTitle} | ${this.title}`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: ''
+        },
+        {
+          hid: 'robots',
+          name: 'robots',
+          content: 'noindex'
+        }
+      ]
     };
   },
   components: {
     AppHeader,
+    AppContentSection,
     AppCartOverviewProduct
   },
   computed: {

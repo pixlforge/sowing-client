@@ -14,9 +14,11 @@
       <div class="product-details__content">
 
         <!-- Base product name -->
-        <h2 class="product-details__name">
+        <AppTitle
+          semantic="h1"
+          visual="main">
           {{ productName }}
-        </h2>
+        </AppTitle>
 
         <!-- Base product description -->
         <p class="product-details__description">
@@ -133,10 +135,12 @@
 <script>
 import { mapGetters, mapActions } from 'vuex';
 
+import AppTitle from '@/components/AppTitle';
 import AppVariation from '@/components/products/AppVariation';
 
 export default {
   components: {
+    AppTitle,
     AppVariation
   },
   props: {

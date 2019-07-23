@@ -1,8 +1,13 @@
 <template>
   <div>
-    <h5 class="title__medium">
+
+    <!-- Title -->
+    <AppTitle
+      semantic="h5"
+      visual="h5">
       {{ $t("pages.checkout.delivery_method") }}
-    </h5>
+    </AppTitle>
+
     <div class="form__select-group form__select-group--spaced">
       <select
         id="method"
@@ -35,7 +40,12 @@
 </template>
 
 <script>
+import AppTitle from '@/components/AppTitle';
+
 export default {
+  components: {
+    AppTitle
+  },
   props: {
     methods: {
       type: Array,

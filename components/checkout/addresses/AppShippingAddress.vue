@@ -1,8 +1,10 @@
 <template>
   <div>
-    <h5 class="title__medium">
+    <AppTitle
+      semantic="h5"
+      visual="h5">
       {{ $t("pages.checkout.delivery_address") }}
-    </h5>
+    </AppTitle>
 
     <AppShippingAddressSelector
       v-if="addressSelector"
@@ -58,11 +60,13 @@
 <script>
 import { mapGetters, mapActions } from 'vuex';
 
+import AppTitle from '@/components/AppTitle';
 import AppShippingAddressCreator from '@/components/checkout/addresses/AppShippingAddressCreator';
 import AppShippingAddressSelector from '@/components/checkout/addresses/AppShippingAddressSelector';
 
 export default {
   components: {
+    AppTitle,
     AppShippingAddressCreator,
     AppShippingAddressSelector
   },

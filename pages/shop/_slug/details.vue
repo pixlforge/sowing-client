@@ -7,36 +7,24 @@
       :shop-cover="shopCover"/>
 
     <!-- Header -->
-    <AppHeader :class="bgTheme">
-      <template slot="icon">
-        <AppHeaderIcon/>
-      </template>
-      <template slot="title">
-        <AppTitle
-          semantic="h1"
-          visual="header">
-          {{ shopName }}
-        </AppTitle>
-      </template>
-      <template slot="description">
-        <AppHeaderDescription>
-          {{ shop.description_short[locale] }}
-        </AppHeaderDescription>
-        <AppHeaderList>
-          <li>
-            <font-awesome-icon
-              :icon="['far', 'map-marker-alt']"
-              class="mr-5"/>
-            {{ shop.postal_code }} {{ shop.city }}
-          </li>
-          <li class="ml-20">
-            {{ shop.country.name[locale] }}
-          </li>
-        </AppHeaderList>
-      </template>
+    <AppHeader
+      :class="bgTheme"
+      :title="shopName"
+      :description="shop.description_short[locale]">
+      <AppHeaderList>
+        <li>
+          <font-awesome-icon
+            :icon="['far', 'map-marker-alt']"
+            class="mr-5"/>
+          {{ shop.postal_code }} {{ shop.city }}
+        </li>
+        <li class="ml-20">
+          {{ shop.country.name[locale] }}
+        </li>
+      </AppHeaderList>
     </AppHeader>
 
-    <!-- Content -->
+    <!-- About -->
     <AppContentSection>
       <AppTitle
         semantic="h1"
@@ -49,6 +37,7 @@
         v-html="shop.description_long[locale]"/>
     </AppContentSection>
 
+    <!-- Additional images -->
     <AppContentSection>
       <div class="shop-details__images-section">
         <div
@@ -63,6 +52,7 @@
       </div>
     </AppContentSection>
 
+    <!-- Shop articles -->
     <AppContentSection>
       <AppTitle
         semantic="h2"
@@ -95,11 +85,9 @@ import theming from '@/mixins/theming';
 import AppTitle from '@/components/AppTitle';
 import AppHeader from '@/components/headers/AppHeader';
 import AppShopCover from '@/components/shops/AppShopCover';
-import AppHeaderIcon from '@/components/headers/AppHeaderIcon';
 import AppContentSection from '@/components/AppContentSection';
 import AppHeaderList from '@/components/headers/AppHeaderList';
 import AppStreakRegister from '@/components/streaks/AppStreakRegister';
-import AppHeaderDescription from '@/components/headers/AppHeaderDescription';
 
 export default {
   head() {
@@ -111,11 +99,9 @@ export default {
     AppTitle,
     AppHeader,
     AppShopCover,
-    AppHeaderIcon,
     AppContentSection,
     AppHeaderList,
-    AppStreakRegister,
-    AppHeaderDescription
+    AppStreakRegister
   },
   mixins: [theming],
   data() {

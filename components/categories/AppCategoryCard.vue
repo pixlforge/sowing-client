@@ -4,10 +4,18 @@
       :to="localePath({ name: 'categories-slug', params: { slug: category.slug } })"
       :style="imgUrl"
       class="category-card__body">
-      <h5 class="category-card__name">
+
+      <!-- Name -->
+      <AppTitle
+        semantic="h2"
+        visual="h3"
+        utilities="text-white z-10">
         {{ category.name[locale] }}
-      </h5>
+      </AppTitle>
+
+      <!-- Mask -->
       <div class="category-card__mask"/>
+
     </nuxt-link>
   </div>
 </template>
@@ -15,7 +23,12 @@
 <script>
 import { mapGetters } from 'vuex';
 
+import AppTitle from '@/components/AppTitle';
+
 export default {
+  components: {
+    AppTitle
+  },
   props: {
     category: {
       type: Object,

@@ -2,18 +2,20 @@
   <div
     v-if="alert"
     :class="{
-      'bg-blue-400': type === 'info',
-      'bg-red': type === 'danger',
-      'bg-green-400': type === 'success',
-      'bg-orange': type === 'warning'
+      'bg-blue-500': type === 'info',
+      'bg-red-500': type === 'danger',
+      'bg-green-500': type === 'success',
+      'bg-orange-500': type === 'warning'
     }"
-    class="alert__background">
-    <div class="alert__container container">
+    class="py-48">
+    <div class="container relative flex justify-center items-center">
+      <!-- eslint-disable vue/no-v-html -->
       <p
-        class="alert__message"
+        class="text-18 font-semibold text-white text-center"
         v-html="alert"/>
+      <!-- eslint-enable -->
       <button
-        class="alert__close-button"
+        class="absolute right-0 text-24 text-white hover:text-gray-200 p-10"
         @click.prevent="close">
         <font-awesome-icon
           :icon="['fas', 'times']"/>

@@ -62,7 +62,19 @@ export default {
   middleware: ['authenticated'],
   head() {
     return {
-      title: `${this.$t('shop_creator.steps.name.title')} | ${this.title}`
+      title: `${this.$t('shop_creator.steps.name.title')} | ${this.title}`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: ''
+        },
+        {
+          hid: 'robots',
+          name: 'robots',
+          content: 'noindex'
+        }
+      ]
     };
   },
   layout: 'shop-creator',
