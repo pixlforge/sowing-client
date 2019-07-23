@@ -157,6 +157,7 @@
 
 <script>
 import { mapGetters } from 'vuex';
+import theming from '@/mixins/theming';
 
 import AppTitle from '@/components/AppTitle';
 
@@ -164,15 +165,12 @@ export default {
   components: {
     AppTitle
   },
+  mixins: [theming],
   computed: {
     ...mapGetters({
       locale: 'locale',
-      categories: 'categories',
-      shopTheme: 'shop/shopTheme'
-    }),
-    textTheme() {
-      return `text-${this.shopTheme}`;
-    }
+      categories: 'categories'
+    })
   }
 };
 </script>

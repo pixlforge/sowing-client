@@ -32,21 +32,14 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import theming from '@/mixins/theming';
 
 export default {
+  mixins: [theming],
   data() {
     return {
       dropdownIsOpen: false
     };
-  },
-  computed: {
-    ...mapGetters({
-      shopTheme: 'shop/shopTheme'
-    }),
-    textTheme() {
-      return `text-${this.shopTheme}`;
-    }
   },
   mounted() {
     const escapeHandler = (event) => {
