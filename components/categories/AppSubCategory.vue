@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full md:w-1/2 xl:w-1/3 px-36 my-48">
+  <div class="w-full sm:w-1/2 xl:w-1/3 px-20 md:px-36 my-24 md:my-48">
     <div class="rounded-lg shadow-2xl">
 
       <nuxt-link
