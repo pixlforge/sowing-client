@@ -13,16 +13,16 @@
       </AppTitle>
 
       <!-- Description -->
-      <p class="featured-category__description">
+      <p class="featured-category__description my-16">
         Now let's put some happy little clouds in here. Have fun with it. It looks so good, I might as well not stop.
       </p>
 
       <!-- Link -->
-      <nuxt-link
+      <AppButtonLinkPrimary
         :to="localePath({ name: 'index' })"
-        class="button button__primary button--spaced">
+        class="shadow-xl">
         Voir les produits
-      </nuxt-link>
+      </AppButtonLinkPrimary>
     </div>
 
     <!-- Mask -->
@@ -33,10 +33,12 @@
 
 <script>
 import AppTitle from '@/components/AppTitle';
+import AppButtonLinkPrimary from '@/components/buttons/AppButtonLinkPrimary';
 
 export default {
   components: {
-    AppTitle
+    AppTitle,
+    AppButtonLinkPrimary
   },
   computed: {
     imgUrl() {

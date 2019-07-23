@@ -15,38 +15,35 @@
           v-for="section in category.children"
           :key="section.id">
 
+          <!-- Section name -->
           <AppTitle
             semantic="h1"
             visual="main">
             {{ section.name[locale] }}
           </AppTitle>
 
-          <div class="subcategory__wrapper">
-            <div
+          <div class="flex flex-wrap justify-center -mx-20 mb-96 md:mb-132 lg:mb-196">
+
+            <!-- Subcategory -->
+            <AppSubCategory
               v-for="subcategory in section.children"
               :key="subcategory.slug"
-              class="subcategory__container">
-
-              <AppSubCategory
-                :category="category"
-                :subcategory="subcategory"/>
-            </div>
+              :category="category"
+              :subcategory="subcategory"/>
           </div>
         </div>
       </template>
 
       <!-- Subcategories without sections -->
       <template v-else>
-        <div class="subcategory__wrapper">
-          <div
+        <div class="flex flex-wrap justify-center -mx-20 mt-96">
+
+          <!-- Subcategory -->
+          <AppSubCategory
             v-for="subcategory in category.children"
             :key="subcategory.slug"
-            class="subcategory__container">
-
-            <AppSubCategory
-              :category="category"
-              :subcategory="subcategory"/>
-          </div>
+            :category="category"
+            :subcategory="subcategory"/>
         </div>
       </template>
     </AppContentSection>

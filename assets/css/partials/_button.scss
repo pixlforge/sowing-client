@@ -1,6 +1,5 @@
 .button {
-  @apply block outline-none rounded-lg text-12 text-gray-300 font-extrabold text-center uppercase transition no-underline whitespace-no-wrap px-30 py-12;
-  outline: none !important;
+  @apply outline-none rounded-lg text-12 text-gray-300 font-extrabold text-center uppercase transition no-underline whitespace-no-wrap px-30 py-12;
 
   &:focus {
     @apply shadow-outline;

@@ -22,14 +22,12 @@
         </p>
 
         <div class="flex flex-col md:flex-row justify-center lg:justify-start mt-48">
-          <nuxt-link
-            :to="localePath({ name: 'index' })"
-            class="button button__secondary">
-            <font-awesome-icon
-              :icon="['far', 'store']"
-              class="mr-10"/>
+          <AppButtonLinkPrimary
+            :to="localePath({ name: 'register' })"
+            icon="store"
+            color="pink">
             {{ $t("buttons.create_my_shop") }}
-          </nuxt-link>
+          </AppButtonLinkPrimary>
         </div>
       </div>
     </div>
@@ -38,10 +36,12 @@
 
 <script>
 import AppTitle from '@/components/AppTitle';
+import AppButtonLinkPrimary from '@/components/buttons/AppButtonLinkPrimary';
 
 export default {
   components: {
-    AppTitle
+    AppTitle,
+    AppButtonLinkPrimary
   }
 }
 </script>

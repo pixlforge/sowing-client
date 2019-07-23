@@ -36,15 +36,12 @@
               class="form__input form__input--grouped"
               required>
 
-            <button
+            <AppButtonPrimary
+              icon="paper-plane"
               type="submit"
-              role="button"
-              class="button button__primary button--grouped">
-              <font-awesome-icon
-                :icon="['far', 'paper-plane']"
-                class="mr-10"/>
+              class="md:rounded-l-none mt-20 md:mt-0">
               {{ $t("buttons.subscribe") }}
-            </button>
+            </AppButtonPrimary>
           </div>
 
           <p
@@ -60,10 +57,12 @@
 
 <script>
 import AppTitle from '@/components/AppTitle';
+import AppButtonPrimary from '@/components/buttons/AppButtonPrimary';
 
 export default {
   components: {
-    AppTitle
+    AppTitle,
+    AppButtonPrimary
   },
   data() {
     return {
