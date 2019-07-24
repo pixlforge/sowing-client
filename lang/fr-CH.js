@@ -410,7 +410,7 @@ export default {
     logged_out: 'Vous êtes maintenant déconnecté(e)',
     shop_avatar_updated: "L'avatar de votre boutique à été mis à jour avec succès!",
     shop_cover_updated: 'La couverture de votre boutique a été mise à jour avec succès!',
-    subscribed: 'Merci! Vous allez recevoir un email pour confirmer votre inscription à la newsletter!',
+    subscribed: 'Merci! Vous êtes maintenant inscrit à notre newsletter!',
     terms: "Vous devez d'abord accepter les conditions d'utilisation avant de continuer.",
     theme_updated: 'Le thème de votre boutique a été mis à jour!',
     validation: 'Le formulaire comporte des erreurs. Veuillez, svp, les corriger et réessayer.',

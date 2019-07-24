@@ -410,7 +410,7 @@ export default {
     logged_out: 'You are now logged out.',
     shop_avatar_updated: 'The avatar of your shop has been updated successfully!',
     shop_cover_updated: 'The cover of your shop has been updated successfully!',
-    subscribed: 'Thank you! You will receive an email to confirm your subscription to the newsletter!',
+    subscribed: 'Thank you! You are now subscribed to our newsletter!',
     terms: 'You must first agree to the terms and conditions before going forward.',
     theme_updated: 'The theme of your shop has been updated!',
     validation: 'The form contains errors. Please correct them and try again.',
