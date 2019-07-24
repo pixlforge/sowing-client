@@ -4,7 +4,7 @@
     <main class="grid">
 
       <h1 class="sr-only">
-        Bientôt disponible
+        {{ $t("landing.soon") }}
       </h1>
 
       <!-- Header -->
@@ -13,25 +13,39 @@
           Sowing
         </h1>
         <h5 class="text-14 uppercase text-gray-300 mb-72">
-          Bientôt disponible
+          {{ $t("landing.soon") }}
         </h5>
         <AppLogo class="w-350 mx-auto"/>
+
+        <div class="absolute right-0 top-0 mr-60 mt-24">
+          <ul class="flex">
+            <li
+              v-for="locale in $i18n.locales"
+              :key="locale.code">
+              <nuxt-link
+                :to="switchLocalePath(locale.code)"
+                class="block text-12 text-gray-300 px-10 py-10">
+                {{ locale.name }}
+              </nuxt-link>
+            </li>
+          </ul>
+        </div>
       </header>
 
       <!-- Intro -->
-      <section class="intro bg-green-500 py-196">
+      <section class="intro bg-green-500 py-72 md:py-132 lg:py-196">
         <div class="intro-content container text-white px-60">
           <h1 class="font-extrabold">
             <div class="text-24 uppercase tracking-tight">
-              Place de marché e-commerce
+              {{ $t("landing.title") }}
             </div>
             <div class="text-48 tracking-wide">
-              Artisanat &amp; Fait main
+              {{ $t("landing.subtitle") }}
             </div>
           </h1>
           <p class="text-20 my-48">
-            Place de marché dédiée à l’artisanat et au fait main.<br>
-            Créez la boutique qui vous ressemble et vendez vos créations.
+            {{ $t("landing.description_first_line") }}<br>
+            {{ $t("landing.description_second_line") }}
           </p>
 
           <form
@@ -48,56 +62,56 @@
             <button
               type="submit"
               class="w-1/3 outline-none focus:shadow-outline bg-pink-600 hover:bg-pink-700 rounded-r-lg text-14 font-black uppercase">
-              Tenez-moi informé
+              {{ $t("landing.button") }}
             </button>
           </form>
         </div>
       </section>
 
       <!-- Features -->
-      <section class="container flex py-196">
-        <IllustrationEcommerce class="w-1/2 pr-36"/>
+      <section class="container flex flex-col sm:flex-row py-72 md:py-132 lg:py-196 my-72">
+        <IllustrationEcommerce class="w-full h-350 sm:w-1/2 sm:pr-20 md:pr-36"/>
 
-        <ul class="w-1/2 text-18 text-left pl-36">
+        <ul class="w-full sm:w-1/2 text-16 md:text-18 text-left px-16 sm:px-36 sm:px-0 sm:pl-20 md:pl-36">
           <li class="flex items-center my-20">
             <font-awesome-icon
               :icon="['fas', 'arrow-alt-circle-right']"
               class="text-24 text-green-500 mr-20"/>
-            <span>Créez votre propre boutique personnalisable</span>
+            <span>{{ $t("landing.features.first") }}</span>
           </li>
           <li class="flex items-center my-20">
             <font-awesome-icon
               :icon="['fas', 'arrow-alt-circle-right']"
               class="text-24 text-green-500 mr-20"/>
-            <span>Vendez vos créations originales</span>
+            <span>{{ $t("landing.features.second") }}</span>
           </li>
           <li class="flex items-center my-20">
             <font-awesome-icon
               :icon="['fas', 'arrow-alt-circle-right']"
               class="text-24 text-green-500 mr-20"/>
-            <span>Découvrez les superbes créations de nos artisans</span>
+            <span>{{ $t("landing.features.third") }}</span>
           </li>
           <li class="flex items-center my-20">
             <font-awesome-icon
               :icon="['fas', 'arrow-alt-circle-right']"
               class="text-24 text-green-500 mr-20"/>
-            <span>Disponible en 4 langues: français, anglais, allemand et italien</span>
+            <span>{{ $t("landing.features.fourth") }}</span>
           </li>
           <li class="flex items-center my-20">
             <font-awesome-icon
               :icon="['fas', 'arrow-alt-circle-right']"
               class="text-24 text-green-500 mr-20"/>
-            <span>Unique en Suisse</span>
+            <span>{{ $t("landing.features.fifth") }}</span>
           </li>
         </ul>
       </section>
 
       <!-- Subscribe -->
-      <section class="bg-green-500 py-132">
+      <section class="bg-green-500 py-72 md:py-132">
         <div class="container text-white px-20">
           <p class="text-20 mb-48">
-            Place de marché dédiée à l’artisanat et au fait main.<br>
-            Créez la boutique qui vous ressemble et vendez vos créations.
+            {{ $t("landing.description_first_line") }}<br>
+            {{ $t("landing.description_second_line") }}
           </p>
 
           <form
@@ -114,7 +128,7 @@
             <button
               type="submit"
               class="w-1/3 outline-none focus:shadow-outline bg-pink-600 hover:bg-pink-700 rounded-r-lg text-14 font-black uppercase">
-              Tenez-moi informé
+              {{ $t("landing.button") }}
             </button>
           </form>
         </div>
@@ -122,14 +136,14 @@
 
       <footer class="container py-96">
         <h1 class="sr-only">
-          Réseaux sociaux
+          {{ $t("landing.social_networks") }}
         </h1>
 
         <p class="text-24">
-          Suivez-nous également sur les réseaux sociaux
+          {{ $t("landing.follow_us") }}
         </p>
 
-        <ul class="flex justify-center my-96">
+        <ul class="flex justify-center my-60 md:my-96">
           <li class="mx-20">
             <a
               href="#"
@@ -157,14 +171,15 @@
             2019
             <font-awesome-icon
               :icon="['far', 'copyright']"/>
-            Tous droits réservés Sowing
+            Sowing
+            {{ $t("footer.disclaimer.rights") }}
           </p>
           <p>
-            Réalisé avec
+            {{ $t("footer.disclaimer.made_with") }}
             <font-awesome-icon
               :icon="['fas', 'heart']"
               class="text-red-500"/>
-            par
+            {{ $t("footer.disclaimer.by") }}
             <a
               href="https://www.pixlforge.ch"
               target="_blank"

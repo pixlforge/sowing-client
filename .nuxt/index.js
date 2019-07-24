@@ -11,7 +11,6 @@ import { createStore } from './store.js'
 
 /* Plugins */
 
-import nuxt_plugin_pluginseo_21a6a585 from 'nuxt_plugin_pluginseo_21a6a585' // Source: ./nuxt-i18n/plugin.seo.js (mode: 'all')
 import nuxt_plugin_pluginrouting_941e8208 from 'nuxt_plugin_pluginrouting_941e8208' // Source: ./nuxt-i18n/plugin.routing.js (mode: 'all')
 import nuxt_plugin_pluginmain_6286241a from 'nuxt_plugin_pluginmain_6286241a' // Source: ./nuxt-i18n/plugin.main.js (mode: 'all')
 import nuxt_plugin_googleanalytics_2c20545c from 'nuxt_plugin_googleanalytics_2c20545c' // Source: ./google-analytics.js (mode: 'client')
@@ -160,10 +159,6 @@ async function createApp(ssrContext) {
   }
 
   // Plugin execution
-
-  if (typeof nuxt_plugin_pluginseo_21a6a585 === 'function') {
-    await nuxt_plugin_pluginseo_21a6a585(app.context, inject)
-  }
 
   if (typeof nuxt_plugin_pluginrouting_941e8208 === 'function') {
     await nuxt_plugin_pluginrouting_941e8208(app.context, inject)

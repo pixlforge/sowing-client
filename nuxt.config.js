@@ -22,10 +22,7 @@ export default {
   },
 
   router: {
-    middleware: [
-      'landing-page-redirect',
-      'locale-redirect'
-    ]
+    middleware: ['landing-page-redirect']
   },
 
   /*
@@ -92,16 +89,17 @@ export default {
             file: 'it-IT.js'
           }
         ],
-        strategy: 'prefix',
-        defaultLocale: 'fr',
-        vueI18n: {
-          fallbackLocale: 'fr'
+        vuex: {
+          syncLocale: true
         },
+        defaultLocale: 'fr',
+        strategy: 'prefix_and_default',
         lazy: true,
         langDir: 'lang/',
         detectBrowserLanguage: {
           useCookie: true,
-          cookieKey: 'i18n_redirected'
+          cookieKey: 'i18n_redirected',
+          alwaysRedirect: false
         }
       }
     ]

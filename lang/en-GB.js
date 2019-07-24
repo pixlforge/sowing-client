@@ -1,5 +1,26 @@
 export default {
   /**
+   * Temporary landing page
+   */
+  landing: {
+    soon: 'Coming soon',
+    title: 'E-commerce Marketplace',
+    subtitle: 'Crafts & Handmade',
+    description_first_line: 'Market place dedicated to crafts and handmade.',
+    description_second_line: 'Create the shop that suits you and sell your creations.',
+    button: 'Keep me updated',
+    features: {
+      first: 'Create your own customizable store',
+      second: 'Sell your original creations',
+      third: 'Discover the superb creations of our artisans',
+      fourth: 'Available in 4 languages: French, English, German and Italian',
+      fifth: 'Unique in Switzerland'
+    },
+    social_networks: 'Social networks',
+    follow_us: 'Follow us also on social networks'
+  },
+
+  /**
    * ARIA
    */
   aria: {
