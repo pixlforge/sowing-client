@@ -146,7 +146,9 @@
         <ul class="flex justify-center my-60 md:my-96">
           <li class="mx-20">
             <a
-              href="#"
+              href="https://www.facebook.com/sowing.ch"
+              target="_blank"
+              rel="noopener noreferrer"
               class="group">
               <font-awesome-icon
                 :icon="['fab', 'facebook-square']"
@@ -156,7 +158,9 @@
           </li>
           <li class="mx-20">
             <a
-              href="#"
+              href="https://www.instagram.com/sowing.ch/"
+              target="_blank"
+              rel="noopener noreferrer"
               class="group">
               <font-awesome-icon
                 :icon="['fab', 'instagram']"
