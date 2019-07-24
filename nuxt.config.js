@@ -38,6 +38,15 @@ export default {
    */
   css: ['~/assets/css/tailwind.scss'],
 
+  /**
+   * Web font loader configuration
+   */
+  webfontloader: {
+    google: {
+      families: ['Montserrat:300,400,800,900']
+    }
+  },
+
   /*
    ** Plugins to load before mounting the App
    */
@@ -158,18 +167,6 @@ export default {
         icons: ['fab']
       }
     ]
-  },
-
-  /**
-   * Web font loader configuration
-   */
-  webfontloader: {
-    google: {
-      families: [
-        'Montserrat:300,400,800,900'
-        // 'Nunito:300,400,600,700,800'
-      ]
-    }
   },
 
   /**
