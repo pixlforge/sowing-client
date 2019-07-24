@@ -2,91 +2,75 @@
   <main>
 
     <!-- Header -->
-    <Header>
-      <template slot="icon">
-        <font-awesome-icon :icon="['far', 'shield-check']"/>
-      </template>
-      <template slot="title">
-        <h1 class="header__title">{{ $t("pages.verify.title") }}</h1>
-      </template>
-    </Header>
+    <AppHeader
+      :title="$t('pages.verify.title')"
+      icon="shield-check"/>
 
-    <!-- Content -->
-    <section class="section__container container">
-
-      <!-- Icon -->
-      <div class="icon__group">
-        <font-awesome-icon
-          v-if="verificationSuccessful"
-          :icon="['far', 'check-circle']"
-          class="icon__icon icon__icon--success"/>
-        <font-awesome-icon
-          v-if="verificationFailed"
-          :icon="['far', 'exclamation-triangle']"
-          class="icon__icon icon__icon--danger"/>
-      </div>
-
-      <!-- Title -->
-      <h2 class="title__main title--center">
-        <template v-if="verificationSuccessful">
-          {{ $t("pages.verify.success") }}
+    <!-- Verification successful -->
+    <template v-if="verificationSuccessful">
+      <AppSplash
+        :title="$t('pages.verify.success')"
+        :subtitle="$t('toasts.account_confirmed')"
+        type="success"
+        class="max-w-800">
+        <template slot="illustration">
+          <img
+            src="~assets/img/success2.svg"
+            :alt="$t('pages.verify.success')">
         </template>
-        <template v-if="verificationFailed">
-          {{ $t("pages.verify.fail") }}
-        </template>
-      </h2>
+      </AppSplash>
+    </template>
 
-      <!-- Paragraph -->
-      <p class="paragraph__large paragraph--center">
-        <template v-if="verificationSuccessful">
-          {{ $t("toasts.account_confirmed") }}
+    <!-- Verification failed -->
+    <template v-if="verificationFailed">
+      <AppSplash
+        :title="$t('pages.verify.fail')"
+        :subtitle="error"
+        type="error"
+        class="max-w-800">
+        <template slot="illustration">
+          <img
+            src="~assets/img/warning.svg"
+            :alt="$t('pages.verify.fail')">
         </template>
-        <template v-if="verificationFailed">
-          {{ error }}
-        </template>
-      </p>
-
-      <!-- Illustration -->
-      <div class="illustration__container">
-        <img
-          v-if="verificationSuccessful"
-          src="~assets/img/success2.svg"
-          alt="Illustration of a successful action"
-          class="illustration__image">
-        <img
-          v-if="verificationFailed"
-          src="~assets/img/warning.svg"
-          alt="Illustration of an unsuccessful action"
-          class="illustration__image">
-      </div>
-    </section>
+      </AppSplash>
+    </template>
 
   </main>
 </template>
 
 <script>
-import Header from "@/components/Header";
+import AppHeader from '@/components/headers/AppHeader';
+import AppSplash from '@/components/AppSplash';
 
 export default {
-  middleware: ["authenticated"],
+  middleware: ['authenticated'],
   head() {
     return {
-      title: `${this.$t("pages.verify.title")} | ${this.title}`
+      title: `${this.$t('pages.verify.title')} | ${this.title}`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: ''
+        },
+        {
+          hid: 'robots',
+          name: 'robots',
+          content: 'noindex'
+        }
+      ]
     };
   },
   components: {
-    Header
+    AppHeader,
+    AppSplash
   },
   data() {
     return {
       tried: false,
       verified: false,
       error: null
-    };
-  },
-  async asyncData({ app }) {
-    return {
-      title: app.head.title
     };
   },
   computed: {
@@ -97,9 +81,14 @@ export default {
       return this.tried && !this.verified
     }
   },
+  asyncData({ app }) {
+    return {
+      title: app.head.title,
+      description: app.head.description
+    };
+  },
   mounted() {
-    // this.verifyEmailAddress();
-    this.verified = true;
+    this.verifyEmailAddress();
   },
   methods: {
     async verifyEmailAddress() {
@@ -112,7 +101,7 @@ export default {
       try {
         await this.$axios.$post('/auth/verify', { token });
         this.verified = true;
-        this.$toast.success(this.$t("toasts.account_confirmed"));
+        this.$toast.success(this.$t('toasts.account_confirmed'));
       } catch (e) {
         this.error = e.response.data.errors.token;
         this.$toast.error(this.error);
@@ -123,4 +112,3 @@ export default {
   }
 }
 </script>
-

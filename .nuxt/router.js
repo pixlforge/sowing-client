@@ -4,6 +4,7 @@ import { interopDefault } from './utils'
 
 const _202ee15e = () => interopDefault(import('../pages/cart/index.vue' /* webpackChunkName: "pages/cart/index" */))
 const _61cceef7 = () => interopDefault(import('../pages/checkout/index.vue' /* webpackChunkName: "pages/checkout/index" */))
+const _c8b0dcee = () => interopDefault(import('../pages/coming-soon.vue' /* webpackChunkName: "pages/coming-soon" */))
 const _51f57edb = () => interopDefault(import('../pages/faq/index.vue' /* webpackChunkName: "pages/faq/index" */))
 const _1f7774ee = () => interopDefault(import('../pages/login/index.vue' /* webpackChunkName: "pages/login/index" */))
 const _4d115756 = () => interopDefault(import('../pages/orders/index.vue' /* webpackChunkName: "pages/orders/index" */))
@@ -107,6 +108,10 @@ export function createRouter() {
       component: _202ee15e,
       name: "cart___en"
     }, {
+      path: "/cart",
+      component: _202ee15e,
+      name: "cart___fr___default"
+    }, {
       path: "/fr/cart",
       component: _202ee15e,
       name: "cart___fr"
@@ -123,6 +128,10 @@ export function createRouter() {
       component: _61cceef7,
       name: "checkout___en"
     }, {
+      path: "/checkout",
+      component: _61cceef7,
+      name: "checkout___fr___default"
+    }, {
       path: "/fr/checkout",
       component: _61cceef7,
       name: "checkout___fr"
@@ -135,9 +144,33 @@ export function createRouter() {
       component: _61cceef7,
       name: "checkout___it"
     }, {
+      path: "/en/coming-soon",
+      component: _c8b0dcee,
+      name: "coming-soon___en"
+    }, {
+      path: "/coming-soon",
+      component: _c8b0dcee,
+      name: "coming-soon___fr___default"
+    }, {
+      path: "/fr/coming-soon",
+      component: _c8b0dcee,
+      name: "coming-soon___fr"
+    }, {
+      path: "/de/coming-soon",
+      component: _c8b0dcee,
+      name: "coming-soon___de"
+    }, {
+      path: "/it/coming-soon",
+      component: _c8b0dcee,
+      name: "coming-soon___it"
+    }, {
       path: "/en/faq",
       component: _51f57edb,
       name: "faq___en"
+    }, {
+      path: "/faq",
+      component: _51f57edb,
+      name: "faq___fr___default"
     }, {
       path: "/fr/faq",
       component: _51f57edb,
@@ -155,6 +188,10 @@ export function createRouter() {
       component: _1f7774ee,
       name: "login___en"
     }, {
+      path: "/login",
+      component: _1f7774ee,
+      name: "login___fr___default"
+    }, {
       path: "/fr/login",
       component: _1f7774ee,
       name: "login___fr"
@@ -170,6 +207,10 @@ export function createRouter() {
       path: "/en/orders",
       component: _4d115756,
       name: "orders___en"
+    }, {
+      path: "/orders",
+      component: _4d115756,
+      name: "orders___fr___default"
     }, {
       path: "/fr/orders",
       component: _4d115756,
@@ -187,6 +228,10 @@ export function createRouter() {
       component: _3584ffd8,
       name: "register___en"
     }, {
+      path: "/register",
+      component: _3584ffd8,
+      name: "register___fr___default"
+    }, {
       path: "/fr/register",
       component: _3584ffd8,
       name: "register___fr"
@@ -202,6 +247,10 @@ export function createRouter() {
       path: "/en/search",
       component: _3df3fb4e,
       name: "search___en"
+    }, {
+      path: "/search",
+      component: _3df3fb4e,
+      name: "search___fr___default"
     }, {
       path: "/fr/search",
       component: _3df3fb4e,
@@ -219,6 +268,10 @@ export function createRouter() {
       component: _e73cec6e,
       name: "account-verify___en"
     }, {
+      path: "/account/verify",
+      component: _e73cec6e,
+      name: "account-verify___fr___default"
+    }, {
       path: "/fr/account/verify",
       component: _e73cec6e,
       name: "account-verify___fr"
@@ -234,6 +287,10 @@ export function createRouter() {
       path: "/en/password/forgot",
       component: _1f6b6cd9,
       name: "password-forgot___en"
+    }, {
+      path: "/password/forgot",
+      component: _1f6b6cd9,
+      name: "password-forgot___fr___default"
     }, {
       path: "/fr/password/forgot",
       component: _1f6b6cd9,
@@ -251,6 +308,10 @@ export function createRouter() {
       component: _13ee37ee,
       name: "password-reset___en"
     }, {
+      path: "/password/reset",
+      component: _13ee37ee,
+      name: "password-reset___fr___default"
+    }, {
       path: "/fr/password/reset",
       component: _13ee37ee,
       name: "password-reset___fr"
@@ -266,6 +327,10 @@ export function createRouter() {
       path: "/en/register/success",
       component: _2f25d445,
       name: "register-success___en"
+    }, {
+      path: "/register/success",
+      component: _2f25d445,
+      name: "register-success___fr___default"
     }, {
       path: "/fr/register/success",
       component: _2f25d445,
@@ -283,6 +348,10 @@ export function createRouter() {
       component: _47fb1bc8,
       name: "shop-creator-connect___en"
     }, {
+      path: "/shop/creator/connect",
+      component: _47fb1bc8,
+      name: "shop-creator-connect___fr___default"
+    }, {
       path: "/fr/shop/creator/connect",
       component: _47fb1bc8,
       name: "shop-creator-connect___fr"
@@ -298,6 +367,10 @@ export function createRouter() {
       path: "/en/shop/creator/customization",
       component: _88a72df6,
       name: "shop-creator-customization___en"
+    }, {
+      path: "/shop/creator/customization",
+      component: _88a72df6,
+      name: "shop-creator-customization___fr___default"
     }, {
       path: "/fr/shop/creator/customization",
       component: _88a72df6,
@@ -315,6 +388,10 @@ export function createRouter() {
       component: _07cb0118,
       name: "shop-creator-details___en"
     }, {
+      path: "/shop/creator/details",
+      component: _07cb0118,
+      name: "shop-creator-details___fr___default"
+    }, {
       path: "/fr/shop/creator/details",
       component: _07cb0118,
       name: "shop-creator-details___fr"
@@ -330,6 +407,10 @@ export function createRouter() {
       path: "/en/shop/creator/done",
       component: _07adafc0,
       name: "shop-creator-done___en"
+    }, {
+      path: "/shop/creator/done",
+      component: _07adafc0,
+      name: "shop-creator-done___fr___default"
     }, {
       path: "/fr/shop/creator/done",
       component: _07adafc0,
@@ -347,6 +428,10 @@ export function createRouter() {
       component: _302d5a49,
       name: "shop-creator-name___en"
     }, {
+      path: "/shop/creator/name",
+      component: _302d5a49,
+      name: "shop-creator-name___fr___default"
+    }, {
       path: "/fr/shop/creator/name",
       component: _302d5a49,
       name: "shop-creator-name___fr"
@@ -362,6 +447,10 @@ export function createRouter() {
       path: "/en/shop/creator/terms",
       component: _086ecab9,
       name: "shop-creator-terms___en"
+    }, {
+      path: "/shop/creator/terms",
+      component: _086ecab9,
+      name: "shop-creator-terms___fr___default"
     }, {
       path: "/fr/shop/creator/terms",
       component: _086ecab9,
@@ -379,6 +468,10 @@ export function createRouter() {
       component: _c6f278fa,
       name: "shop-management-dashboard___en"
     }, {
+      path: "/shop/management/dashboard",
+      component: _c6f278fa,
+      name: "shop-management-dashboard___fr___default"
+    }, {
       path: "/fr/shop/management/dashboard",
       component: _c6f278fa,
       name: "shop-management-dashboard___fr"
@@ -394,6 +487,10 @@ export function createRouter() {
       path: "/en/shop/management/details",
       component: _b659241e,
       name: "shop-management-details___en"
+    }, {
+      path: "/shop/management/details",
+      component: _b659241e,
+      name: "shop-management-details___fr___default"
     }, {
       path: "/fr/shop/management/details",
       component: _b659241e,
@@ -411,6 +508,10 @@ export function createRouter() {
       component: _11c86fb8,
       name: "shop-management-theme___en"
     }, {
+      path: "/shop/management/theme",
+      component: _11c86fb8,
+      name: "shop-management-theme___fr___default"
+    }, {
       path: "/fr/shop/management/theme",
       component: _11c86fb8,
       name: "shop-management-theme___fr"
@@ -426,6 +527,10 @@ export function createRouter() {
       path: "/en/categories/:slug?",
       component: _55bb8585,
       name: "categories-slug___en"
+    }, {
+      path: "/categories/:slug?",
+      component: _55bb8585,
+      name: "categories-slug___fr___default"
     }, {
       path: "/fr/categories/:slug?",
       component: _55bb8585,
@@ -443,6 +548,10 @@ export function createRouter() {
       component: _98c27766,
       name: "products-slug___en"
     }, {
+      path: "/products/:slug?",
+      component: _98c27766,
+      name: "products-slug___fr___default"
+    }, {
       path: "/fr/products/:slug?",
       component: _98c27766,
       name: "products-slug___fr"
@@ -458,6 +567,10 @@ export function createRouter() {
       path: "/en/shop/:slug?/details",
       component: _c372bddc,
       name: "shop-slug-details___en"
+    }, {
+      path: "/shop/:slug?/details",
+      component: _c372bddc,
+      name: "shop-slug-details___fr___default"
     }, {
       path: "/fr/shop/:slug?/details",
       component: _c372bddc,
@@ -475,6 +588,10 @@ export function createRouter() {
       component: _669364c1,
       name: "categories-category-subcategory-slug___en"
     }, {
+      path: "/categories/:category?/:subcategory?/:slug?",
+      component: _669364c1,
+      name: "categories-category-subcategory-slug___fr___default"
+    }, {
       path: "/fr/categories/:category?/:subcategory?/:slug?",
       component: _669364c1,
       name: "categories-category-subcategory-slug___fr"
@@ -490,6 +607,10 @@ export function createRouter() {
       path: "/en/",
       component: _427590d8,
       name: "index___en"
+    }, {
+      path: "/",
+      component: _427590d8,
+      name: "index___fr___default"
     }, {
       path: "/fr/",
       component: _427590d8,

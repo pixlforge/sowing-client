@@ -1,51 +1,56 @@
 <template>
   <main>
-    
-    <!-- Header -->
-    <Header>
-      <template slot="icon">
-        <font-awesome-icon :icon="['far', 'cash-register']"/>
-      </template>
-      <template slot="title">
-        <h1 class="header__title">{{ pageTitle }}</h1>
-      </template>
-    </Header>
 
-    <section class="section__container container">
+    <!-- Header -->
+    <AppHeader
+      :title="pageTitle"
+      icon="cash-register"/>
+
+    <AppContentSection>
       <div class="checkout__section">
         <div class="checkout__content">
-          
+
           <!-- Payment methods -->
-          <h2 class="checkout__payment-methods">
+          <AppTitle
+            semantic="h2"
+            visual="h3">
             {{ $t("pages.checkout.payment") }}
-          </h2>
-          <PaymentMethods
-            :payment-methods="paymentMethods"
+          </AppTitle>
+
+          <AppPaymentMethods
             v-model="form.payment_method_id"
+            :payment-methods="paymentMethods"
+            class="mb-72 lg:mb-132 xl:mb-196"
             @payment-method:added="addPaymentMethod"/>
-          
+
           <!-- Cart Overview -->
-          <h2 class="checkout__cart-overview">
+          <AppTitle
+            semantic="h2"
+            visual="h3">
             {{ $t("pages.cart.title") }}
-          </h2>
-          <CartOverview/>
+          </AppTitle>
+
+          <AppCartOverviewProduct
+            v-for="product in products"
+            :key="product.id"
+            :product="product"/>
         </div>
 
         <!-- Sidebar -->
         <div class="checkout__sidebar">
 
           <!-- Shipping address -->
-          <ShippingAddress
+          <AppShippingAddress
             v-model="form.address_id"
             :addresses="addresses"/>
 
           <!-- Shipping methods dropdown -->
-          <ShippingMethods
+          <AppShippingMethods
             v-if="!addressManagersVisible"
             v-model="shippingMethodId"
             :methods="shippingMethods"
             :errors="errors.shipping_method_id"
-            class="mt-40"/>
+            class="mt-48"/>
 
           <!-- Price block -->
           <div
@@ -95,39 +100,56 @@
             {{ $t("pages.checkout.order") }}
           </button>
         </div>
-
       </div>
-    </section>
+    </AppContentSection>
+
   </main>
 </template>
 
 <script>
-import Header from "@/components/Header";
-import CartOverview from "@/components/cart/CartOverview";
-import ShippingAddress from "@/components/checkout/addresses/ShippingAddress";
-import ShippingMethods from "@/components/checkout/addresses/ShippingMethods";
-import PaymentMethods from "@/components/checkout/paymentMethods/PaymentMethods";
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters, mapActions } from 'vuex';
+
+import AppTitle from '@/components/AppTitle';
+import AppHeader from '@/components/headers/AppHeader';
+import AppContentSection from '@/components/AppContentSection';
+import AppCartOverviewProduct from '@/components/cart/AppCartOverviewProduct';
+import AppShippingMethods from '@/components/checkout/addresses/AppShippingMethods';
+import AppShippingAddress from '@/components/checkout/addresses/AppShippingAddress';
+import AppPaymentMethods from '@/components/checkout/paymentMethods/AppPaymentMethods';
 
 export default {
-  middleware: ["authenticated"],
+  middleware: ['authenticated'],
   head() {
     return {
-      title: `${this.pageTitle} | ${this.title}`
+      title: `${this.pageTitle} | ${this.title}`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: ''
+        },
+        {
+          hid: 'robots',
+          name: 'robots',
+          content: 'noindex'
+        }
+      ]
     };
   },
   components: {
-    Header,
-    CartOverview,
-    ShippingAddress,
-    ShippingMethods,
-    PaymentMethods
+    AppTitle,
+    AppHeader,
+    AppContentSection,
+    AppCartOverviewProduct,
+    AppShippingMethods,
+    AppShippingAddress,
+    AppPaymentMethods
   },
   data() {
     return {
       form: {
-        address_id: "",
-        payment_method_id: ""
+        address_id: '',
+        payment_method_id: ''
       },
       errors: {},
       addresses: [],
@@ -136,41 +158,32 @@ export default {
       submitting: false
     };
   },
-  async asyncData({ app }) {
-    let addresses = await app.$axios.$get("/addresses");
-    let paymentMethods = await app.$axios.$get("/payment-methods");
-    return {
-      title: app.head.title,
-      addresses: addresses.data,
-      paymentMethods: paymentMethods.data
-    };
-  },
   computed: {
     ...mapGetters({
-      is_empty: "cart/isEmpty",
-      products: "cart/products",
-      subtotal: "cart/subtotal",
-      total: "cart/total",
-      has_changed: "cart/hasChanged",
-      shippingMethod: "cart/shippingMethod",
-      addressManagersVisible: "checkout/addressManagersVisible"
+      is_empty: 'cart/isEmpty',
+      products: 'cart/products',
+      subtotal: 'cart/subtotal',
+      total: 'cart/total',
+      has_changed: 'cart/hasChanged',
+      shippingMethod: 'cart/shippingMethod',
+      addressManagersVisible: 'checkout/addressManagersVisible'
     }),
     pageTitle() {
-      return this.$t("pages.checkout.title");
+      return this.$t('pages.checkout.title');
     },
     shippingMethodId: {
       get() {
-        return this.shippingMethod ? this.shippingMethod.id : "";
+        return this.shippingMethod ? this.shippingMethod.id : '';
       },
       set(shippingMethodId) {
         this.setShippingMethod(
-          this.shippingMethods.find(method => method.id == shippingMethodId)
+          this.shippingMethods.find(method => method.id === parseInt(shippingMethodId))
         );
       }
     }
   },
   watch: {
-    "form.address_id"(addressId) {
+    'form.address_id'(addressId) {
       this.getShippingMethodsForAddress(addressId).then(() => {
         this.setShippingMethod(this.shippingMethods[0]);
       });
@@ -179,24 +192,34 @@ export default {
       this.getCart();
     }
   },
+  async asyncData({ app }) {
+    const addresses = await app.$axios.$get('/addresses');
+    const paymentMethods = await app.$axios.$get('/payment-methods');
+
+    return {
+      title: app.head.title,
+      addresses: addresses.data,
+      paymentMethods: paymentMethods.data
+    };
+  },
   methods: {
     ...mapActions({
-      getCart: "cart/getCart",
-      setShippingMethod: "cart/setShippingMethod",
-      flash: "alert/flash"
+      getCart: 'cart/getCart',
+      setShippingMethod: 'cart/setShippingMethod',
+      flash: 'alert/flash'
     }),
     async order() {
       this.submitting = true;
       try {
-        let res = await this.$axios.$post(`/orders`, {
+        await this.$axios.$post(`/orders`, {
           ...this.form,
           shipping_method_id: this.shippingMethodId
         });
-        this.$toast.success("It worked");
-        this.$router.push(this.localePath({ name: "orders" }));
+        this.$toast.success('It worked');
+        this.$router.push(this.localePath({ name: 'orders' }));
       } catch (e) {
         this.flash({
-          type: "danger",
+          type: 'danger',
           message: e.response.data.message
         });
         this.$toast.error(e.response.data.message);
@@ -206,11 +229,11 @@ export default {
     },
     async getShippingMethodsForAddress(addressId) {
       try {
-        let res = await this.$axios.$get(`/addresses/${addressId}/shipping`);
+        const res = await this.$axios.$get(`/addresses/${addressId}/shipping`);
         this.shippingMethods = res.data;
         return res;
       } catch (e) {
-        this.$toast.error("toasts.general_error");
+        this.$toast.error('toasts.general_error');
       }
     },
     addPaymentMethod(method) {

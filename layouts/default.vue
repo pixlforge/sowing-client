@@ -1,11 +1,11 @@
 <template>
-  <div>
+  <div class="antialiased text-green-900">
 
     <!-- Alert -->
-    <TheAlert/>
+    <AppAlert/>
 
     <!-- Navbar -->
-    <Navbar/>
+    <AppNavbar/>
 
     <!-- Categories -->
     <AppCategoryBar/>
@@ -14,29 +14,29 @@
     <nuxt/>
 
     <!-- Footer -->
-    <Footer/>
+    <AppFooter/>
 
     <!-- Disclaimer -->
-    <Disclaimer :class="bgTheme"/>
+    <AppDisclaimer :class="bgTheme"/>
   </div>
 </template>
 
 <script>
-import TheAlert from "@/components/globals/TheAlert";
-import Navbar from "@/components/Navbar";
-import AppCategoryBar from "@/components/categories/AppCategoryBar";
-import Footer from "@/components/footer/Footer";
-import Disclaimer from "@/components/footer/Disclaimer";
-import theming from "@/mixins/theming";
-import { mapGetters, mapActions } from "vuex";
+import theming from '@/mixins/theming';
+
+import AppNavbar from '@/components/AppNavbar';
+import AppAlert from '@/components/globals/AppAlert';
+import AppFooter from '@/components/footer/AppFooter';
+import AppDisclaimer from '@/components/footer/AppDisclaimer';
+import AppCategoryBar from '@/components/categories/AppCategoryBar';
 
 export default {
   components: {
-    TheAlert,
-    Navbar,
-    AppCategoryBar,
-    Footer,
-    Disclaimer
+    AppNavbar,
+    AppAlert,
+    AppFooter,
+    AppDisclaimer,
+    AppCategoryBar
   },
   mixins: [theming]
 };

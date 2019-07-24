@@ -1,5 +1,5 @@
 <template>
-  <section class="shop-creator__name-section">
+  <section class="flex flex-col sm:flex-row justify-center items-center">
     <input
       id="name"
       v-model="localShopName"
@@ -8,11 +8,11 @@
       :placeholder="$t('shop_creator.steps.name.placeholder')"
       name="name"
       type="text"
-      class="form__input form__input--grouped">
+      class="form__input sm:rounded-r-none mt-0">
     <button
       :disabled="(shopExists || !shopName) && !editable"
       :class="(shopExists || !shopName) && !editable ? 'button__disabled' : btnTheme"
-      class="button button--grouped"
+      class="button w-full sm:w-auto sm:rounded-l-none"
       @click.prevent="check">
       <font-awesome-icon
         :icon="['far', 'rocket']"
@@ -23,8 +23,8 @@
 </template>
 
 <script>
-import theming from "@/mixins/theming";
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters, mapActions } from 'vuex';
+import theming from '@/mixins/theming';
 
 export default {
   mixins: [theming],
@@ -37,8 +37,8 @@ export default {
   },
   computed: {
     ...mapGetters({
-      shopName: "shop/shopName",
-      shopExists: "shop/shopExists"
+      shopName: 'shop/shopName',
+      shopExists: 'shop/shopExists'
     }),
     localShopName: {
       get() {
@@ -51,32 +51,32 @@ export default {
   },
   methods: {
     ...mapActions({
-      flash: "alert/flash",
-      close: "alert/close",
-      setShopName: "shop/setShopName"
+      flash: 'alert/flash',
+      close: 'alert/close',
+      setShopName: 'shop/setShopName'
     }),
     async check() {
       try {
-        let res = await this.$axios.$post("/shops/checker", {
+        await this.$axios.$post('/shops/checker', {
           name: this.shopName
         });
         this.$toast.success(
-          `"<em>${this.shopName}</em>" ${this.$t("toasts.is_available")}!`
+          `"<em>${this.shopName}</em>" ${this.$t('toasts.is_available')}!`
         );
         this.flash({
-          type: "success",
+          type: 'success',
           message: `"<em>${this.shopName}</em>" ${this.$t(
-            "toasts.is_available"
+            'toasts.is_available'
           )}!`
         });
       } catch (e) {
         this.$toast.error(
-          `"<em>${this.shopName}</em>" ${this.$t("toasts.is_already_in_use")}.`
+          `"<em>${this.shopName}</em>" ${this.$t('toasts.is_already_in_use')}.`
         );
         this.flash({
-          type: "danger",
+          type: 'danger',
           message: `"<em>${this.shopName}</em>" ${this.$t(
-            "toasts.is_already_in_use"
+            'toasts.is_already_in_use'
           )}!`
         });
       }

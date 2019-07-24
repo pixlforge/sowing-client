@@ -5,28 +5,40 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
-  middleware: ["authenticated"],
+  middleware: ['authenticated'],
   head() {
     return {
-      title: `${this.$t("pages.shop.management.dashboard.title")} | ${this.title}`
+      title: `${this.$t('pages.shop.management.dashboard.title')} | ${this.title}`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: ''
+        },
+        {
+          hid: 'robots',
+          name: 'robots',
+          content: 'noindex'
+        }
+      ]
     };
   },
-  layout: "shop-management",
+  layout: 'shop-management',
+  computed: {
+    ...mapGetters({
+      shopExists: 'shop/shopExists'
+    })
+  },
   async asyncData({ app, store }) {
-    let shop = await app.$axios.$get("/user/shop");
+    const shop = await app.$axios.$get('/user/shop');
 
     return {
       shopData: shop.data,
       title: app.head.title
     };
-  },
-  computed: {
-    ...mapGetters({
-      shopExists: "shop/shopExists"
-    })
   },
   mounted() {
     if (!this.shopExists) {
@@ -35,9 +47,8 @@ export default {
   },
   methods: {
     ...mapActions({
-      setShop: "shop/setShop"
+      setShop: 'shop/setShop'
     })
   }
 }
 </script>
-

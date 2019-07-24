@@ -1,90 +1,116 @@
 <template>
   <main>
-    <section class="section__container container">
-      <div class="section__centered">
-        <h2 class="title__main title--center">
-          {{ $t("shop_creator.steps.name.title") }}
-        </h2>
 
-        <p class="paragraph__medium paragraph--center paragraph--narrow paragraph--spaced">
-          {{ $t("shop_creator.steps.name.paragraph") }}
-        </p>
-        
-        <!-- Shop name -->
-        <AppShopName class="shop-creator__name-component"/>
+    <!-- Page contents -->
+    <AppContentSection>
 
-        <div class="shop-creator__controls">
+      <!-- Title -->
+      <AppTitle
+        semantic="h1"
+        visual="main">
+        {{ $t("shop_creator.steps.name.title") }}
+      </AppTitle>
 
-          <!-- Previous -->
-          <button
-            class="button button__previous"
-            @click.prevent="prev">
-            <font-awesome-icon
-              :icon="['far', 'chevron-circle-left']"
-              class="button__icon button__icon--small"/>
-            {{ $t("buttons.back") }}
-          </button>
+      <!-- Info -->
+      <p class="paragraph__medium paragraph--center paragraph--narrow paragraph--spaced">
+        {{ $t("shop_creator.steps.name.paragraph") }}
+      </p>
 
-          <!-- Next -->
-          <button
-            :disabled="!shopName"
-            :class="shopName ? btnTheme : 'button__disabled'"
-            class="button button__next"
-            @click.prevent="next">
-            <font-awesome-icon
-              :icon="['far', 'chevron-circle-right']"
-              class="button__icon button__icon--small"/>
-            {{ $t("buttons.next") }}
-          </button>
-        </div>
+      <!-- Shop name -->
+      <AppShopFeatureContainer>
+        <AppShopName/>
+      </AppShopFeatureContainer>
+
+      <div class="shop-creator__controls">
+
+        <!-- Previous -->
+        <button
+          class="button button__previous"
+          @click.prevent="prev">
+          <font-awesome-icon
+            :icon="['far', 'chevron-circle-left']"
+            class="button__icon button__icon--small"/>
+          {{ $t("buttons.back") }}
+        </button>
+
+        <!-- Next -->
+        <button
+          :disabled="!shopName"
+          :class="shopName ? btnTheme : 'button__disabled'"
+          class="button button__next"
+          @click.prevent="next">
+          <font-awesome-icon
+            :icon="['far', 'chevron-circle-right']"
+            class="button__icon button__icon--small"/>
+          {{ $t("buttons.next") }}
+        </button>
       </div>
-    </section>
+    </AppContentSection>
   </main>
 </template>
 
 <script>
-import AppShopName from "@/components/shops/AppShopName";
-import theming from "@/mixins/theming";
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters, mapActions } from 'vuex';
+import theming from '@/mixins/theming';
+
+import AppTitle from '@/components/AppTitle';
+import AppShopName from '@/components/shops/AppShopName';
+import AppContentSection from '@/components/AppContentSection';
+import AppShopFeatureContainer from '@/components/shops/AppShopFeatureContainer';
 
 export default {
-  middleware: ["authenticated"],
+  middleware: ['authenticated'],
   head() {
     return {
-      title: `${this.$t("shop_creator.steps.name.title")} | ${this.title}`
+      title: `${this.$t('shop_creator.steps.name.title')} | ${this.title}`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: ''
+        },
+        {
+          hid: 'robots',
+          name: 'robots',
+          content: 'noindex'
+        }
+      ]
     };
   },
-  layout: "shop-creator",
+  layout: 'shop-creator',
   transition: {
-    name: "slide",
-    mode: "out-in"
+    name: 'slide',
+    mode: 'out-in'
   },
   components: {
-    AppShopName
+    AppTitle,
+    AppShopName,
+    AppContentSection,
+    AppShopFeatureContainer
   },
   mixins: [theming],
+  computed: {
+    ...mapGetters({
+      terms: 'shop/terms',
+      shopName: 'shop/shopName',
+      shopExists: 'shop/shopExists',
+      stepDetails: 'shop/stepDetails'
+    })
+  },
   async asyncData({ app, store }) {
-    let shop = await app.$axios.$get("/user/shop");
+    const shop = await app.$axios.$get('/user/shop');
 
     if (shop.data) {
-      store.dispatch("shop/setShop", shop.data);
+      store.dispatch('shop/setShop', shop.data);
     }
 
     return {
       title: app.head.title
     };
   },
-  computed: {
-    ...mapGetters({
-      terms: "shop/terms",
-      shopName: "shop/shopName",
-      shopExists: "shop/shopExists",
-      stepDetails: "shop/stepDetails"
-    })
-  },
   mounted() {
     if (!this.terms) {
-      return this.$router.push(this.localePath("shop-creator-terms"));
+      return this.$router.push(this.localePath('shop-creator-terms'));
     }
 
     if (this.$auth.user.has_shop) {
@@ -94,36 +120,36 @@ export default {
   },
   methods: {
     ...mapActions({
-      flash: "alert/flash",
-      close: "alert/close",
-      setShop: "shop/setShop",
-      setStepName: "shop/setStepName",
-      setStepDetails: "shop/setStepDetails"
+      flash: 'alert/flash',
+      close: 'alert/close',
+      setShop: 'shop/setShop',
+      setStepName: 'shop/setStepName',
+      setStepDetails: 'shop/setStepDetails'
     }),
     prev() {
-      this.$router.push(this.localePath({ name: "shop-creator-terms" }));
+      this.$router.push(this.localePath({ name: 'shop-creator-terms' }));
     },
     async next() {
       if (this.shopExists) {
-        this.$router.push(this.localePath({ name: "shop-creator-details" }));
+        this.$router.push(this.localePath({ name: 'shop-creator-details' }));
         return;
       }
 
       try {
-        await this.$axios.$post("/shops/checker", {
+        await this.$axios.$post('/shops/checker', {
           name: this.shopName
         });
         this.close();
-        this.$router.push(this.localePath({ name: "shop-creator-details" }));
+        this.$router.push(this.localePath({ name: 'shop-creator-details' }));
       } catch (e) {
         this.setStepName(false);
         this.$toast.error(
-          `"<em>${this.shopName}</em>" ${this.$t("toasts.is_already_in_use")}.`
+          `"<em>${this.shopName}</em>" ${this.$t('toasts.is_already_in_use')}.`
         );
         this.flash({
-          type: "danger",
+          type: 'danger',
           message: `"<em>${this.shopName}</em>" ${this.$t(
-            "toasts.is_already_in_use"
+            'toasts.is_already_in_use'
           )}!`
         });
       }

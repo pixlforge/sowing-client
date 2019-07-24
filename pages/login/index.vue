@@ -2,17 +2,12 @@
   <main>
 
     <!-- Header -->
-    <Header>
-      <template slot="icon">
-        <font-awesome-icon :icon="['far', 'key']"/>
-      </template>
-      <template slot="title">
-        <h1 class="header__title">{{ $t("pages.login.title") }}</h1>
-      </template>
-    </Header>
-    
-    <!-- Form -->
-    <section class="section__container container">
+    <AppHeader
+      :title="$t('pages.login.title')"
+      icon="key"/>
+
+    <!-- Page contents -->
+    <AppContentSection>
       <form
         class="form__container form__container--narrow"
         @submit.prevent="login">
@@ -35,7 +30,9 @@
             required
             autofocus>
           <template v-if="errors.email">
-            <p class="form__feedback">{{ errors.email }}</p>
+            <p class="form__feedback">
+              {{ errors.email }}
+            </p>
           </template>
         </div>
 
@@ -55,12 +52,14 @@
             class="form__input"
             required>
           <template v-if="errors.password">
-            <p class="form__feedback">{{ errors.password }}</p>
+            <p class="form__feedback">
+              {{ errors.password }}
+            </p>
           </template>
         </div>
 
         <div class="form__links">
-          
+
           <!-- Password forgotten -->
           <nuxt-link
             :to="localePath({ name: 'password-forgot' })"
@@ -75,7 +74,7 @@
             {{ $t("pages.login.links.register") }}
           </nuxt-link>
         </div>
-          
+
         <!-- Submit -->
         <button
           :class="{ 'button__disabled': missingCredentials }"
@@ -88,36 +87,47 @@
           {{ $t("buttons.connection") }}
         </button>
       </form>
-    </section>
+    </AppContentSection>
+
   </main>
 </template>
 
 <script>
-import Header from "@/components/Header";
-import { mapActions } from "vuex";
+import { mapActions } from 'vuex';
+
+import AppHeader from '@/components/headers/AppHeader';
+import AppContentSection from '@/components/AppContentSection';
 
 export default {
-  middleware: ["guest"],
+  middleware: ['guest'],
   head() {
     return {
-      title: `${this.$t("pages.login.title")} | ${this.title}`
+      title: `${this.$t('pages.login.title')} | ${this.title}`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: ''
+        },
+        {
+          hid: 'robots',
+          name: 'robots',
+          content: 'noindex'
+        }
+      ]
     };
   },
   components: {
-    Header
+    AppHeader,
+    AppContentSection
   },
   data() {
     return {
       form: {
-        email: "",
-        password: ""
+        email: '',
+        password: ''
       },
       errors: {}
-    };
-  },
-  async asyncData({ app }) {
-    return {
-      title: app.head.title
     };
   },
   computed: {
@@ -125,29 +135,34 @@ export default {
       return !this.form.email || this.form.password.length < 8;
     }
   },
+  asyncData({ app }) {
+    return {
+      title: app.head.title
+    };
+  },
   mounted() {
     this.$refs.autofocus.focus();
   },
   methods: {
     ...mapActions({
-      getCart: "cart/getCart"
+      getCart: 'cart/getCart'
     }),
     async login() {
       this.errors = {};
 
       try {
-        await this.$auth.loginWith("local", {
+        await this.$auth.loginWith('local', {
           data: this.form
         });
 
         if (this.$route.query.redirect) {
           this.$router.push(this.$route.query.redirect);
         } else {
-          this.$router.push(this.localePath({ name: "index" }));
+          this.$router.push(this.localePath({ name: 'index' }));
         }
 
         this.$toast.success(
-          `${this.$t("toasts.welcome")}, ${this.$auth.user.name}!`
+          `${this.$t('toasts.welcome')}, ${this.$auth.user.name}!`
         );
 
         await this.getCart();

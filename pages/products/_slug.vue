@@ -2,70 +2,60 @@
   <main>
 
     <!-- Header -->
-    <Header :class="bgTheme">
-      <template slot="icon">
-        <div
-          v-if="shopAvatar"
-          :style="`background-image: url('${shopAvatar}');`"
-          class="header__avatar header__avatar--picture"/>
-        <div
-          v-else
-          :class="textTheme">
-          <font-awesome-icon
-            :icon="['far', 'store']"
-            class="header__icon"/>
-        </div>
-      </template>
-      <template slot="title">
-        <nuxt-link
+    <AppHeader
+      :title="product.shop.name"
+      :description="product.shop.description_short[locale]"
+      :class="bgTheme">
+      <template>
+        <AppHeaderButtonLink
           :to="localePath({ name: 'shop-slug-details', params: { slug: product.shop.slug } })"
-          class="product-details__link">
-          <h1 class="header__title">
-            {{ product.shop.name }}
-          </h1>
-        </nuxt-link>
+          :color="shopTheme"
+          class="mt-16 shadow-2xl">
+          {{ $t("pages.shop.visit") }}
+        </AppHeaderButtonLink>
       </template>
-      <template slot="description">
-        <nuxt-link
-          :to="localePath({ name: 'shop-slug-details', params: { slug: product.shop.slug } })"
-          class="product-details__link">
-          <p class="header__description">
-            {{ product.shop.description_short[locale] }}
-          </p>
-        </nuxt-link>
-      </template>
-    </Header>
+    </AppHeader>
 
     <!-- Product details -->
-    <section class="section__container container">
-      <ProductDetails :product="product"/>
-    </section>
+    <AppContentSection>
+      <AppProductDetails :product="product"/>
+    </AppContentSection>
 
     <!-- Streak newsletter -->
-    <section>
-      <StreakNewsletter/>
-    </section>
+    <AppStreakNewsletter/>
 
   </main>
 </template>
 
 <script>
-import Header from "@/components/Header";
-import ProductDetails from "@/components/products/ProductDetails";
-import StreakNewsletter from "@/components/streaks/StreakNewsletter";
-import theming from "@/mixins/theming";
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters, mapActions } from 'vuex';
+import theming from '@/mixins/theming';
+
+import AppHeader from '@/components/headers/AppHeader';
+import AppContentSection from '@/components/AppContentSection';
+import AppProductDetails from '@/components/products/AppProductDetails';
+import AppStreakNewsletter from '@/components/streaks/AppStreakNewsletter';
+import AppHeaderButtonLink from '@/components/buttons/AppHeaderButtonLink';
 
 export default {
   head() {
     return {
-      title: `${this.product.name[this.locale]} | ${this.title}`
+      title: `${this.product.name[this.locale]} | ${this.title}`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: ''
+        }
+      ]
     };
   },
   components: {
-    Header,
-    ProductDetails,
-    StreakNewsletter
+    AppHeader,
+    AppContentSection,
+    AppProductDetails,
+    AppStreakNewsletter,
+    AppHeaderButtonLink
   },
   mixins: [theming],
   data() {
@@ -74,21 +64,21 @@ export default {
       shop: {}
     };
   },
+  computed: {
+    ...mapGetters({
+      locale: 'locale',
+      shopAvatar: 'shop/shopAvatar'
+    })
+  },
   async asyncData({ params, app }) {
-    let product = await app.$axios.$get(`/products/${params.slug}`);
-    let shop = await app.$axios.$get(`/shops/${product.data.shop.slug}`);
+    const product = await app.$axios.$get(`/products/${params.slug}`);
+    const shop = await app.$axios.$get(`/shops/${product.data.shop.slug}`);
 
     return {
       title: app.head.title,
       product: product.data,
       shop: shop.data
     };
-  },
-  computed: {
-    ...mapGetters({
-      locale: "locale",
-      shopAvatar: "shop/shopAvatar"
-    })
   },
   mounted() {
     this.setShop(this.shop);
@@ -98,8 +88,8 @@ export default {
   },
   methods: {
     ...mapActions({
-      setShop: "shop/setShop",
-      resetShop: "shop/resetShop"
+      setShop: 'shop/setShop',
+      resetShop: 'shop/resetShop'
     })
   }
 };

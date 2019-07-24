@@ -1,6 +1,6 @@
 .cart-product {
   &__container {
-    @apply relative bg-white rounded-lg shadow-md flex items-center p-30 mt-40;
+    @apply relative bg-white rounded-lg shadow-md flex items-center p-30 mt-48;
   }
 
   &__featured-image-container {
@@ -16,11 +16,11 @@
   }
 
   &__name {
-    @apply text-24 text-green-darkest font-extrabold;
+    @apply text-24 text-green-800 font-extrabold;
   }
 
   &__description {
-    @apply text-16 text-grey-lighter leading-normal mt-20;
+    @apply text-16 text-gray-300 leading-normal mt-20;
   }
 
   &__price-container {
@@ -28,11 +28,11 @@
   }
 
   &__label {
-    @apply text-12 text-grey-lightest uppercase;
+    @apply text-12 text-gray-200 uppercase;
   }
 
   &__price {
-    @apply h-42 text-16 text-green-darkest font-bold mt-20 flex justify-center items-center;
+    @apply h-42 text-16 text-green-800 font-bold mt-20 flex justify-center items-center;
   }
 
   &__quantity-container {
@@ -44,10 +44,10 @@
   }
 
   &__delete-button-icon {
-    @apply text-20 text-grey-lightest transition cursor-pointer;
+    @apply text-20 text-gray-200 transition cursor-pointer;
 
     &:hover {
-      @apply text-red;
+      @apply text-red-400;
     }
   }
 }

@@ -2,16 +2,11 @@
   <main>
 
     <!-- Header -->
-    <Header>
-      <template slot="title">
-        <h1 class="header__title">{{ subcategory.name[locale] }}</h1>
-      </template>
-      <template slot="description">
-        <p class="header__description">{{ subcategory.description[locale] }}</p>
-      </template>
-    </Header>
-    
-    <section class="section__container container">
+    <AppHeader
+      :title="subcategory.name[locale]"
+      :description="subcategory.description[locale]"/>
+
+    <AppContentSection>
       <div class="product__wrapper">
 
         <!-- Products -->
@@ -19,19 +14,20 @@
           v-for="product in products"
           :key="product.id"
           class="product__container">
-          <Product :product="product"/>
+          <AppProduct :product="product"/>
         </div>
-
       </div>
-    </section>
+    </AppContentSection>
 
   </main>
 </template>
 
 <script>
-import Header from "@/components/Header";
-import Product from "@/components/products/Product";
-import { mapGetters } from "vuex";
+import { mapGetters } from 'vuex';
+
+import AppHeader from '@/components/headers/AppHeader';
+import AppProduct from '@/components/products/AppProduct';
+import AppContentSection from '@/components/AppContentSection';
 
 export default {
   head() {
@@ -40,8 +36,9 @@ export default {
     };
   },
   components: {
-    Header,
-    Product
+    AppHeader,
+    AppProduct,
+    AppContentSection
   },
   data() {
     return {
@@ -49,11 +46,16 @@ export default {
       products: []
     };
   },
+  computed: {
+    ...mapGetters({
+      locale: 'locale'
+    })
+  },
   async asyncData({ params, app }) {
-    let subcategory = await app.$axios.$get(
+    const subcategory = await app.$axios.$get(
       `/categories/${params.subcategory}`
     );
-    let products = await app.$axios.$get(
+    const products = await app.$axios.$get(
       `/products?category=${params.subcategory}`
     );
 
@@ -62,11 +64,6 @@ export default {
       subcategory: subcategory.data,
       products: products.data
     };
-  },
-  computed: {
-    ...mapGetters({
-      locale: "locale"
-    })
   }
 };
 </script>

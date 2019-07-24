@@ -2,20 +2,17 @@
   <main>
 
     <!-- Header -->
-    <Header>
-      <template slot="icon">
-        <font-awesome-icon :icon="['far', 'redo-alt']"/>
-      </template>
-      <template slot="title">
-        <h1 class="header__title">{{ $t("pages.password_email.title") }}</h1>
-      </template>
-    </Header>
-    
+    <AppHeader
+      :title="$t('pages.password_email.title')"
+      icon="redo-alt"/>
+
     <!-- Content -->
-    <section class="section__container container">
-      <h2 class="title__main title--center">
+    <AppContentSection>
+      <AppTitle
+        semantic="h1"
+        visual="main">
         {{ $t("pages.password_email.paragraphs.first") }}
-      </h2>
+      </AppTitle>
 
       <p class="paragraph__large  paragraph--center">
         {{ $t("pages.password_email.paragraphs.second") }}
@@ -41,10 +38,12 @@
             name="email"
             class="form__input">
           <template v-if="errors.email">
-            <p class="form__feedback">{{ errors.email }}</p>
+            <p class="form__feedback">
+              {{ errors.email }}
+            </p>
           </template>
         </div>
-          
+
         <!-- Submit -->
         <button
           type="submit"
@@ -55,42 +54,59 @@
           {{ $t("buttons.password_email") }}
         </button>
       </form>
-    </section>
+    </AppContentSection>
   </main>
 </template>
 
 <script>
-import Header from "@/components/Header";
 import { mapActions } from 'vuex';
 
+import AppTitle from '@/components/AppTitle';
+import AppHeader from '@/components/headers/AppHeader';
+import AppContentSection from '@/components/AppContentSection';
+
 export default {
-  middleware: ["guest"],
+  middleware: ['guest'],
   head() {
     return {
-      title: `${this.$t("pages.password_email.title")} | ${this.title}`
+      title: `${this.$t('pages.password_email.title')} | ${this.title}`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: ''
+        },
+        {
+          hid: 'robots',
+          name: 'robots',
+          content: 'noindex'
+        }
+      ]
     };
   },
   components: {
-    Header
+    AppTitle,
+    AppHeader,
+    AppContentSection
   },
   data() {
     return {
-      email: "",
+      email: '',
       errors: {}
     };
   },
-  async asyncData({ app }) {
+  asyncData({ app }) {
     return {
       title: app.head.title
     };
   },
   methods: {
     ...mapActions({
-      flash: "alert/flash"
+      flash: 'alert/flash'
     }),
     async send() {
       try {
-        let res = await this.$axios.$post('/auth/forgot', { email: this.email });
+        const res = await this.$axios.$post('/auth/forgot', { email: this.email });
         this.$toast.success(res.message);
         this.flash({ message: res.message, type: 'success' });
         this.$router.push(this.localePath({ name: 'login' }));

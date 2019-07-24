@@ -32,27 +32,27 @@
   }
 
   &__name {
-    @apply text-36 font-bold text-green-darkest;
+    @apply text-36 font-bold text-green-800;
   }
 
   &__description {
-    @apply text-20 text-grey-lighter leading-normal mt-40;
+    @apply text-20 text-gray-300 leading-normal mt-48;
   }
 
   &__price-container {
-    @apply flex items-start mt-40;
+    @apply flex items-start mt-48;
   }
 
   &__icon {
     @apply mr-10;
 
     &--green {
-      @apply text-green;
+      @apply text-green-400;
     }
   }
 
   &__stock-container {
-    @apply flex items-start text-16 text-green-darkest mt-40;
+    @apply flex items-start text-16 text-green-800 mt-48;
   }
 
   &__stock-count {
@@ -64,7 +64,7 @@
   }
 
   &__out-of-stock-container {
-    @apply flex items-start text-16 text-red mt-40;
+    @apply flex items-start text-16 text-red-400 mt-48;
   }
 
   &__variation-container {
@@ -74,13 +74,13 @@
       @apply w-3/4;
     }
 
-    @screen xxl {
+    @screen xl {
       @apply w-1/2;
     }
   }
 
   &__additional-images-container {
-    @apply w-full bg-green-lightest rounded-b-lg flex flex-wrap items-center p-20;
+    @apply w-full bg-green-200 rounded-b-lg flex flex-wrap items-center p-20;
   }
 
   &__additional-images {
@@ -98,7 +98,7 @@
       @apply w-1/4;
     }
 
-    @screen xxl {
+    @screen xl {
       @apply w-1/5;
     }
   }

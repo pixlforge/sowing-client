@@ -2,63 +2,62 @@
   <main>
 
     <!-- Header -->
-    <Header>
-      <template slot="title">
-        <h1 class="header__title">{{ category.name[locale] }}</h1>
-      </template>
-      <template slot="description">
-        <p class="header__description">
-          {{ category.description[locale] }}
-        </p>
-      </template>
-    </Header>
+    <AppHeader
+      :title="categoryName"
+      :description="categoryDescription"/>
 
     <!-- Content -->
-    <section class="section__container container">
+    <AppContentSection>
 
       <!-- Subcategories with sections -->
       <template v-if="categoryHasSections">
         <div
           v-for="section in category.children"
           :key="section.id">
-          <h2 class="subcategory__section">
-            {{ section.name[locale] }}
-          </h2>
 
-          <div class="subcategory__wrapper">
-            <div
+          <!-- Section name -->
+          <AppTitle
+            semantic="h1"
+            visual="main">
+            {{ section.name[locale] }}
+          </AppTitle>
+
+          <div class="flex flex-wrap justify-center -mx-20 mb-96 md:mb-132 lg:mb-196">
+
+            <!-- Subcategory -->
+            <AppSubCategory
               v-for="subcategory in section.children"
               :key="subcategory.slug"
-              class="subcategory__container">
-              <SubCategory
-                :category="category"
-                :subcategory="subcategory"/>
-            </div>
+              :category="category"
+              :subcategory="subcategory"/>
           </div>
         </div>
       </template>
 
       <!-- Subcategories without sections -->
       <template v-else>
-        <div class="subcategory__wrapper">
-          <div
+        <div class="flex flex-wrap justify-center -mx-20 mt-96">
+
+          <!-- Subcategory -->
+          <AppSubCategory
             v-for="subcategory in category.children"
             :key="subcategory.slug"
-            class="subcategory__container">
-            <SubCategory
-              :category="category"
-              :subcategory="subcategory"/>
-          </div>
+            :category="category"
+            :subcategory="subcategory"/>
         </div>
       </template>
-    </section>
+    </AppContentSection>
+
   </main>
 </template>
 
 <script>
-import Header from "@/components/Header";
-import SubCategory from "@/components/categories/SubCategory";
-import { mapGetters } from "vuex";
+import { mapGetters } from 'vuex';
+
+import AppTitle from '@/components/AppTitle';
+import AppHeader from '@/components/headers/AppHeader';
+import AppContentSection from '@/components/AppContentSection';
+import AppSubCategory from '@/components/categories/AppSubCategory';
 
 export default {
   head() {
@@ -67,29 +66,37 @@ export default {
     };
   },
   components: {
-    Header,
-    SubCategory
+    AppTitle,
+    AppHeader,
+    AppContentSection,
+    AppSubCategory
   },
   data() {
     return {
       category: {}
     };
   },
+  computed: {
+    ...mapGetters({
+      locale: 'locale'
+    }),
+    categoryHasSections() {
+      return this.category.children[0].is_section;
+    },
+    categoryName() {
+      return this.category.name[this.locale];
+    },
+    categoryDescription() {
+      return this.category.description[this.locale];
+    }
+  },
   async asyncData({ params, app }) {
-    let res = await app.$axios.$get(`/categories/${params.slug}`);
+    const res = await app.$axios.$get(`/categories/${params.slug}`);
 
     return {
       title: app.head.title,
       category: res.data
     };
-  },
-  computed: {
-    ...mapGetters({
-      locale: "locale"
-    }),
-    categoryHasSections() {
-      return this.category.children[0].is_section;
-    }
   }
 };
 </script>

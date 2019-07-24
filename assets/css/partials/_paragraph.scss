@@ -1,8 +1,4 @@
 .paragraph {
-  &__group {
-    @apply mt-80;
-  }
-
   &__large {
     @apply w-full max-w-800 text-18 leading-loose mx-auto my-60;
   }
@@ -28,6 +24,6 @@
   }
 
   &--spaced-large {
-    @apply mt-80;
+    @apply mt-72;
   }
 }

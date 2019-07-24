@@ -2,16 +2,12 @@
   <main>
 
     <!-- Header -->
-    <Header>
-      <template slot="icon">
-        <font-awesome-icon :icon="['far', 'search']"/>
-      </template>
-      <template slot="title">
-        <h1 class="header__title">{{ $t("pages.search.title") }}</h1>
-      </template>
-    </Header>
-    
-    <section class="section__container section__container--min-h-half-screen container">
+    <AppHeader
+      :title="$t('pages.search.title')"
+      :description="$t('pages.search.description')"
+      icon="search"/>
+
+    <AppContentSection class="min-h-half-screen">
 
       <!-- Search field -->
       <div class="search__input-group">
@@ -24,51 +20,61 @@
       <div class="search__results-wrapper">
 
         <!-- Product search results -->
-        <Result
+        <AppSearchResult
           :query="query"
           index-name="products"
           class="search__results-component search__results-component--left"/>
-        
+
         <!-- Shop search results -->
-        <Result
+        <AppSearchResult
           :query="query"
           index-name="shops"
           class="search__results-component search__results-component--right"/>
 
       </div>
-    </section>
+    </AppContentSection>
   </main>
 </template>
 
 <script>
-import Header from "@/components/Header";
-import Result from "@/components/search/Result";
 import { mapGetters } from 'vuex';
+
+import AppHeader from '@/components/headers/AppHeader';
+import AppContentSection from '@/components/AppContentSection';
+import AppSearchResult from '@/components/search/AppSearchResult';
 
 export default {
   head() {
     return {
-      title: `${this.$t("pages.search.title")} | ${this.title}`
+      title: `${this.$t('pages.search.title')} | ${this.title}`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: ''
+        }
+      ]
     };
   },
   components: {
-    Header,
-    Result
+    AppHeader,
+    AppContentSection,
+    AppSearchResult
   },
   data() {
     return {
-      query: ""
+      query: ''
     }
-  },
-  async asyncData({ app }) {
-    return {
-      title: app.head.title
-    };
   },
   computed: {
     ...mapGetters({
-      locale: "locale"
+      locale: 'locale'
     })
+  },
+  asyncData({ app }) {
+    return {
+      title: app.head.title
+    };
   }
 };
 

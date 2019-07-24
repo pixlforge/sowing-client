@@ -1,52 +1,59 @@
 <template>
   <main>
-    
-    <!-- Header -->
-    <Header>
-      <template slot="icon">
-        <font-awesome-icon :icon="['far', 'shipping-fast']"/>
-      </template>
-      <template slot="title">
-        <h1 class="header__title">{{ $t("pages.orders.title") }}</h1>
-      </template>
-    </Header>
 
-    <section class="section__container container">
-      
+    <!-- Header -->
+    <AppHeader
+      :title="$t('pages.orders.title')"
+      icon="shipping-fast"/>
+
+    <!-- Page contents -->
+    <AppContentSection>
       <div
         v-if="orders.length"
-        class="mt-100">
-        <Order
+        class="mt-96">
+        <AppOrder
           v-for="order in orders"
           :key="order.id"
           :order="order"/>
       </div>
-
       <div
         v-else
-        class="mt-100">
+        class="mt-96">
         <p>No orders yet</p>
       </div>
-
-    </section>
+    </AppContentSection>
 
   </main>
 </template>
 
 <script>
-import Header from "@/components/Header";
-import Order from "@/components/orders/Order";
+import AppOrder from '@/components/orders/AppOrder';
+import AppHeader from '@/components/headers/AppHeader';
+import AppContentSection from '@/components/AppContentSection';
 
 export default {
-  middleware: ["authenticated"],
+  middleware: ['authenticated'],
   head() {
     return {
-      title: `${this.$t("pages.orders.title")} | ${this.title}`
+      title: `${this.$t('pages.orders.title')} | ${this.title}`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: ''
+        },
+        {
+          hid: 'robots',
+          name: 'robots',
+          content: 'noindex'
+        }
+      ]
     };
   },
   components: {
-    Header,
-    Order
+    AppOrder,
+    AppHeader,
+    AppContentSection
   },
   data() {
     return {
@@ -54,7 +61,7 @@ export default {
     };
   },
   async asyncData({ app }) {
-    let res = await app.$axios.$get("/orders");
+    const res = await app.$axios.$get('/orders');
     return {
       orders: res.data,
       title: app.head.title

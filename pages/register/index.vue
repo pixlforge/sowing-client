@@ -2,17 +2,12 @@
   <main>
 
     <!-- Header -->
-    <Header>
-      <template slot="icon">
-        <font-awesome-icon :icon="['far', 'user-plus']"/>
-      </template>
-      <template slot="title">
-        <h1 class="header__title">{{ $t("pages.register.title") }}</h1>
-      </template>
-    </Header>
+    <AppHeader
+      :title="$t('pages.register.title')"
+      icon="user-plus"/>
 
     <!-- Form -->
-    <section class="section__container container">
+    <AppContentSection>
       <form
         class="form__container form__container--narrow"
         @submit.prevent="register">
@@ -35,7 +30,9 @@
             required
             autofocus>
           <template v-if="errors.name">
-            <p class="form__feedback">{{ errors.name[0] }}</p>
+            <p class="form__feedback">
+              {{ errors.name[0] }}
+            </p>
           </template>
         </div>
 
@@ -55,7 +52,9 @@
             class="form__input"
             required>
           <template v-if="errors.email">
-            <p class="form__feedback">{{ errors.email[0] }}</p>
+            <p class="form__feedback">
+              {{ errors.email[0] }}
+            </p>
           </template>
         </div>
 
@@ -75,7 +74,9 @@
             class="form__input"
             required>
           <template v-if="errors.password">
-            <p class="form__feedback">{{ errors.password[0] }}</p>
+            <p class="form__feedback">
+              {{ errors.password[0] }}
+            </p>
           </template>
         </div>
 
@@ -110,7 +111,7 @@
               class="form__checkbox-link">{{ $t("pages.register.links.terms") }}</nuxt-link>.
           </label>
         </div>
-          
+
         <!-- Submit -->
         <button
           :disabled="missingCredentials"
@@ -123,39 +124,49 @@
           {{ $t("buttons.create_account") }}
         </button>
       </form>
-    </section>
+    </AppContentSection>
   </main>
 </template>
 
 <script>
-import Header from "@/components/Header";
-import { mapActions } from "vuex";
+import { mapActions } from 'vuex';
+
+import AppHeader from '@/components/headers/AppHeader';
+import AppContentSection from '@/components/AppContentSection';
 
 export default {
-  middleware: ["guest"],
+  middleware: ['guest'],
   head() {
     return {
-      title: `${this.$t("pages.register.title")} | ${this.title}`
+      title: `${this.$t('pages.register.title')} | ${this.title}`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: ''
+        },
+        {
+          hid: 'robots',
+          name: 'robots',
+          content: 'noindex'
+        }
+      ]
     };
   },
   components: {
-    Header
+    AppHeader,
+    AppContentSection
   },
   data() {
     return {
       form: {
-        name: "",
-        email: "",
-        password: "",
-        password_confirmation: ""
+        name: '',
+        email: '',
+        password: '',
+        password_confirmation: ''
       },
       terms: false,
       errors: {}
-    };
-  },
-  async asyncData({ app }) {
-    return {
-      title: app.head.title
     };
   },
   computed: {
@@ -167,38 +178,43 @@ export default {
         !this.terms;
     }
   },
+  asyncData({ app }) {
+    return {
+      title: app.head.title
+    };
+  },
   mounted() {
     this.$refs.autofocus.focus();
   },
   methods: {
     ...mapActions({
-      getCart: "cart/getCart"
+      getCart: 'cart/getCart'
     }),
     async register() {
       if (!this.terms) {
-        this.$toast.error(this.$t("toasts.terms"));
+        this.$toast.error(this.$t('toasts.terms'));
         return;
       }
 
       this.errors = {};
 
       try {
-        let res = await this.$axios.$post("/auth/register", { ...this.form });
-        this.$toast.success(`${this.$t("toasts.welcome")} ${res.data.name}!`);
+        const res = await this.$axios.$post('/auth/register', { ...this.form });
+        this.$toast.success(`${this.$t('toasts.welcome')} ${res.data.name}!`);
         await this.login();
         this.next();
       } catch (e) {
         this.errors = e.response.data.errors;
-        this.$toast.error(this.$t("toasts.validation"));
+        this.$toast.error(this.$t('toasts.validation'));
       }
     },
     async login() {
-      await this.$auth.loginWith("local", {
+      await this.$auth.loginWith('local', {
         data: this.form
       });
     },
     next() {
-      this.$router.push(this.localePath({ name: "register-success" }));
+      this.$router.push(this.localePath({ name: 'register-success' }));
     }
   }
 };

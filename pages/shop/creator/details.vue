@@ -1,69 +1,93 @@
 <template>
   <main>
-    <section class="section__container container">
-      <div class="section__centered">
-        <h2 class="title__main title--center">
-          {{ $t("shop_creator.steps.details.title") }}
-        </h2>
 
-        <p class="paragraph__medium paragraph--center paragraph--narrow paragraph--spaced">
-          {{ $t("shop_creator.steps.details.paragraph") }}
-        </p>
+    <!-- Page contents -->
+    <AppContentSection>
 
-        <!-- Shop details -->
+      <!-- Title -->
+      <AppTitle
+        semantic="h1"
+        visual="main">
+        {{ $t("shop_creator.steps.details.title") }}
+      </AppTitle>
+
+      <p class="paragraph__medium paragraph--center paragraph--narrow paragraph--spaced">
+        {{ $t("shop_creator.steps.details.paragraph") }}
+      </p>
+
+      <!-- Shop details -->
+      <AppShopFeatureContainer>
         <AppShopDetails
           :countries="countries"
-          :errors="errors"
-          class="shop-creator__details-component"/>
+          :errors="errors"/>
+      </AppShopFeatureContainer>
 
-        <div class="shop-creator__controls">
+      <div class="shop-creator__controls">
 
-          <!-- Previous -->
-          <button
-            class="button button__previous"
-            @click.prevent="prev">
-            <font-awesome-icon
-              :icon="['far', 'chevron-circle-left']"
-              class="button__icon button__icon--small"/>
-            {{ $t("buttons.back") }}
-          </button>
+        <!-- Previous -->
+        <button
+          class="button button__previous"
+          @click.prevent="prev">
+          <font-awesome-icon
+            :icon="['far', 'chevron-circle-left']"
+            class="button__icon button__icon--small"/>
+          {{ $t("buttons.back") }}
+        </button>
 
-          <!-- Next -->
-          <button
-            :disabled="!shopPostalCode || !shopCity || !shopCountryId"
-            :class="!shopPostalCode || !shopCity || !shopCountryId ? 'button__disabled' : btnTheme"
-            class="button button__next"
-            @click.prevent="store">
-            <font-awesome-icon
-              :icon="['far', 'chevron-circle-right']"
-              class="button__icon button__icon--small"/>
-            {{ $t("buttons.next") }}
-          </button>
-        </div>
+        <!-- Next -->
+        <button
+          :disabled="!shopPostalCode || !shopCity || !shopCountryId"
+          :class="!shopPostalCode || !shopCity || !shopCountryId ? 'button__disabled' : btnTheme"
+          class="button button__next"
+          @click.prevent="store">
+          <font-awesome-icon
+            :icon="['far', 'chevron-circle-right']"
+            class="button__icon button__icon--small"/>
+          {{ $t("buttons.next") }}
+        </button>
       </div>
-    </section>
+    </AppContentSection>
   </main>
 </template>
 
 <script>
-import AppShopDetails from "@/components/shops/AppShopDetails";
-import theming from "@/mixins/theming";
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters, mapActions } from 'vuex';
+import theming from '@/mixins/theming';
+
+import AppTitle from '@/components/AppTitle';
+import AppShopDetails from '@/components/shops/AppShopDetails';
+import AppContentSection from '@/components/AppContentSection';
+import AppShopFeatureContainer from '@/components/shops/AppShopFeatureContainer';
 
 export default {
-  middleware: ["authenticated"],
+  middleware: ['authenticated'],
   head() {
     return {
-      title: `${this.$t("shop_creator.steps.details.title")} | ${this.title}`
+      title: `${this.$t('shop_creator.steps.details.title')} | ${this.title}`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: ''
+        },
+        {
+          hid: 'robots',
+          name: 'robots',
+          content: 'noindex'
+        }
+      ]
     };
   },
-  layout: "shop-creator",
+  layout: 'shop-creator',
   transition: {
-    name: "slide",
-    mode: "out-in"
+    name: 'slide',
+    mode: 'out-in'
   },
   components: {
-    AppShopDetails
+    AppTitle,
+    AppShopDetails,
+    AppContentSection,
+    AppShopFeatureContainer
   },
   mixins: [theming],
   data() {
@@ -72,34 +96,34 @@ export default {
       errors: {}
     };
   },
+  computed: {
+    ...mapGetters({
+      locale: 'locale',
+      shop: 'shop/shop',
+      terms: 'shop/terms',
+      stepName: 'shop/stepName',
+      shopCity: 'shop/shopCity',
+      shopExists: 'shop/shopExists',
+      stepDetails: 'shop/stepDetails',
+      shopCountryId: 'shop/shopCountryId',
+      shopPostalCode: 'shop/shopPostalCode'
+    })
+  },
   async asyncData({ app }) {
-    let countries = await app.$axios.$get("/countries");
+    const countries = await app.$axios.$get('/countries');
 
     return {
       countries: countries.data,
       title: app.head.title
     };
   },
-  computed: {
-    ...mapGetters({
-      locale: "locale",
-      shop: "shop/shop",
-      terms: "shop/terms",
-      stepName: "shop/stepName",
-      shopCity: "shop/shopCity",
-      shopExists: "shop/shopExists",
-      stepDetails: "shop/stepDetails",
-      shopCountryId: "shop/shopCountryId",
-      shopPostalCode: "shop/shopPostalCode"
-    })
-  },
   mounted() {
     if (!this.terms) {
-      return this.$router.push(this.localePath("shop-creator-terms"));
+      return this.$router.push(this.localePath('shop-creator-terms'));
     }
 
     if (!this.shopExists && this.$auth.user.has_shop) {
-      this.getShop();
+      this.getUserShop();
       this.setStepDetails(true);
     }
 
@@ -107,11 +131,11 @@ export default {
   },
   methods: {
     ...mapActions({
-      setShop: "shop/setShop",
-      getShop: "shop/getShop",
-      setStepName: "shop/setStepName",
-      setStepDetails: "shop/setStepDetails",
-      setUserHasShop: "setUserHasShop"
+      setShop: 'shop/setShop',
+      getUserShop: 'shop/getUserShop',
+      setStepName: 'shop/setStepName',
+      setStepDetails: 'shop/setStepDetails',
+      setUserHasShop: 'setUserHasShop'
     }),
     async store() {
       if (this.stepDetails) {
@@ -119,28 +143,28 @@ export default {
       } else {
         try {
           if (this.terms) {
-            let res = await this.$axios.$post("/shops", this.shop);
+            const res = await this.$axios.$post('/shops', this.shop);
             this.setShop(res.data);
             this.setUserHasShop(true);
             this.$toast.success(
-              "Votre nouvelle boutique a été créée avec succès!"
+              'Votre nouvelle boutique a été créée avec succès!'
             );
             this.next();
           } else {
-            this.$toast.error(this.$t("toasts.terms"));
+            this.$toast.error(this.$t('toasts.terms'));
           }
         } catch (e) {
           this.errors = e.response.data.errors;
-          this.$toast.error(this.$t("toasts.validation"));
+          this.$toast.error(this.$t('toasts.validation'));
         }
       }
     },
     prev() {
-      this.$router.push(this.localePath({ name: "shop-creator-name" }));
+      this.$router.push(this.localePath({ name: 'shop-creator-name' }));
     },
     next() {
       this.$router.push(
-        this.localePath({ name: "shop-creator-customization" })
+        this.localePath({ name: 'shop-creator-customization' })
       );
     }
   }

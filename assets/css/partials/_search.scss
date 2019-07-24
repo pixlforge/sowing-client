@@ -1,5 +1,5 @@
 .ais-pagination {
-  @apply flex justify-center mt-40;
+  @apply flex justify-center mt-48;
 
   &__item {
     @apply;
@@ -22,11 +22,11 @@
   }
 
   &__link {
-    @apply text-14 font-bold text-green-darkest no-underline transition w-30 h-30 rounded-full bg-green-lightest flex justify-center items-center mx-5;
+    @apply text-14 font-bold text-green-800 no-underline transition w-30 h-30 rounded-full bg-green-200 flex justify-center items-center mx-5;
 
     &--active,
     &:hover {
-      @apply w-30 h-30 rounded-full bg-green text-white flex justify-center items-center;
+      @apply w-30 h-30 rounded-full bg-green-400 text-white flex justify-center items-center;
     }
   }
 }
@@ -61,7 +61,7 @@
   }
 
   &__ais-results {
-    @apply mt-40;
+    @apply mt-48;
   }
 
   &__input-group {
@@ -69,7 +69,7 @@
   }
 
   &__results-wrapper {
-    @apply flex mt-100;
+    @apply flex mt-96;
   }
 
   &__results-component {
@@ -88,7 +88,7 @@
     @apply no-underline;
 
     &--product {
-      @apply text-green-darkest;
+      @apply text-green-800;
     }
   }
 
@@ -96,15 +96,15 @@
     @apply rounded-lg flex items-center p-20 my-10;
 
     &--product {
-      @apply bg-green-lightest;
+      @apply bg-green-200;
     }
   }
 
   &__result-icon {
-    @apply text-30 text-white ml-5 mr-40;
+    @apply text-30 text-white ml-5 mr-36;
 
     &--product {
-      @apply text-green-darkest;
+      @apply text-green-800;
     }
   }
 
@@ -112,7 +112,7 @@
     @apply text-24 text-white;
 
     &--product {
-      @apply text-green-darkest;
+      @apply text-green-800;
     }
   }
 
@@ -120,7 +120,7 @@
     @apply text-16 text-white leading-normal mt-10;
 
     &--product {
-      @apply text-green-darkest;
+      @apply text-green-800;
     }
   }
 }

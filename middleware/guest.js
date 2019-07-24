@@ -1,5 +1,5 @@
-export default function({ app, redirect }) {
+export default function ({ app, redirect }) {
   if (app.$auth.loggedIn) {
-    return redirect(app.localePath("index"));
+    return redirect(app.localePath('index'));
   }
 }

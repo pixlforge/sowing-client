@@ -8,7 +8,7 @@
   }
 
   &__checkbox-container {
-    @apply text-18 text-center leading-normal mt-80;
+    @apply text-18 text-center leading-normal mt-72;
   }
 
   &__checkbox-label {
@@ -20,7 +20,7 @@
   }
 
   &__checkbox-subtitle {
-    @apply block text-grey-lighter;
+    @apply block text-gray-300;
   }
 
   &__section {

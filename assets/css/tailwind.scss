@@ -2,13 +2,10 @@
 
 @tailwind components;
 
-@import "partials/alert";
-@import "partials/badge";
 @import "partials/base";
 @import "partials/button";
 @import "partials/cart";
 @import "partials/cart-product";
-@import "partials/category-bar";
 @import "partials/category-card";
 @import "partials/checkout";
 @import "partials/credit-card";
@@ -16,15 +13,11 @@
 @import "partials/dropdown";
 @import "partials/feature";
 @import "partials/featured-category";
-@import "partials/faq";
 @import "partials/form";
 @import "partials/footer";
-@import "partials/header";
 @import "partials/icon";
-@import "partials/illustration";
 @import "partials/link";
 @import "partials/list";
-@import "partials/navbar";
 @import "partials/paragraph";
 @import "partials/payment-method";
 @import "partials/payment-method-creator";
@@ -32,20 +25,14 @@
 @import "partials/product-details";
 @import "partials/review";
 @import "partials/search";
-@import "partials/section";
 @import "partials/shop";
 @import "partials/shop-card";
-@import "partials/shop-cover";
 @import "partials/shop-creator";
 @import "partials/shop-customization";
 @import "partials/shop-details";
 @import "partials/shop-navigation";
-@import "partials/side-menu";
-@import "partials/streak";
-@import "partials/subcategory";
 @import "partials/terms";
 @import "partials/tile";
-@import "partials/title";
 
 @tailwind utilities;
 

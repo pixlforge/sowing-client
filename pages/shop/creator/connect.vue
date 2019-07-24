@@ -1,20 +1,24 @@
 <template>
   <main>
-    <section class="section__container container">
-      <div class="section__centered">
-        <h2 class="title__main title--center">
-          {{ $t("shop_creator.steps.connect.title") }}
-        </h2>
 
-        <p
-          v-if="!shopStripeUserId || !shopStripePublishableKey"
-          class="paragraph__medium paragraph--center paragraph--narrow paragraph--spaced">
-          {{ $t("shop_creator.steps.connect.paragraph") }}
-        </p>
+    <!-- Page contents -->
+    <AppContentSection>
 
-        <section
-          v-if="!shopStripeUserId || !shopStripePublishableKey"
-          class="shop-creator__stripe-button-container">
+      <!-- Title -->
+      <AppTitle
+        semantic="h1"
+        visual="main">
+        {{ $t("shop_creator.steps.connect.title") }}
+      </AppTitle>
+
+      <p
+        v-if="!shopStripeUserId || !shopStripePublishableKey"
+        class="paragraph__medium paragraph--center paragraph--narrow paragraph--spaced">
+        {{ $t("shop_creator.steps.connect.paragraph") }}
+      </p>
+
+      <AppShopFeatureContainer>
+        <template v-if="!shopStripeUserId || !shopStripePublishableKey">
           <a
             :href="stripeConnectOAuthUrl"
             :class="btnTheme"
@@ -24,85 +28,93 @@
               class="button__icon button__icon--larger"/>
             {{ $t("buttons.connect_with_stripe") }}
           </a>
-        </section>
+        </template>
 
-        <section
-          v-if="shopStripeUserId && shopStripePublishableKey"
-          class="mt-150">
+        <template v-if="tried && shopStripeUserId && shopStripePublishableKey">
+          <AppSplash
+            type="success"
+            title="Félicitations!"
+            subtitle="Votre compte Stripe a bien été associé à votre boutique!"/>
+        </template>
+      </AppShopFeatureContainer>
 
-          <!-- Icon -->
-          <div class="icon__group">
-            <font-awesome-icon
-              :icon="['far', 'check-circle']"
-              class="icon__icon icon__icon--success"/>
-          </div>
+      <div class="shop-creator__controls">
 
-          <!-- Title -->
-          <h2 class="title__main title--center">
-            Félicitations!
-          </h2>
+        <!-- Previous -->
+        <button
+          class="button button__previous"
+          @click.prevent="prev">
+          <font-awesome-icon
+            :icon="['far', 'chevron-circle-left']"
+            class="button__icon button__icon--small"/>
+          {{ $t("buttons.back") }}
+        </button>
 
-          <!-- Paragraph -->
-          <p class="paragraph__large paragraph--center">
-            Votre compte Stripe a bien été associé à votre boutique!
-          </p>
-        </section>
-
-        <div class="shop-creator__controls">
-
-          <!-- Previous -->
-          <button
-            class="button button__previous"
-            @click.prevent="prev">
-            <font-awesome-icon
-              :icon="['far', 'chevron-circle-left']"
-              class="button__icon button__icon--small"/>
-            {{ $t("buttons.back") }}
-          </button>
-
-          <!-- Next -->
-          <button
-            :disabled="!shopStripeUserId || !shopStripePublishableKey"
-            :class="!shopStripeUserId || !shopStripePublishableKey ? 'button__disabled' : btnTheme"
-            class="button button__next"
-            @click.prevent="next">
-            <font-awesome-icon
-              :icon="['far', 'chevron-circle-right']"
-              class="button__icon button__icon--small"/>
-            {{ $t("buttons.finalize_shop_creation") }}
-          </button>
-        </div>
+        <!-- Next -->
+        <button
+          :disabled="!shopStripeUserId || !shopStripePublishableKey"
+          :class="!shopStripeUserId || !shopStripePublishableKey ? 'button__disabled' : btnTheme"
+          class="button button__next"
+          @click.prevent="next">
+          <font-awesome-icon
+            :icon="['far', 'chevron-circle-right']"
+            class="button__icon button__icon--small"/>
+          {{ $t("buttons.finalize_shop_creation") }}
+        </button>
       </div>
-    </section>
+    </AppContentSection>
   </main>
 </template>
 
 <script>
-import theming from "@/mixins/theming";
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters, mapActions } from 'vuex';
+import theming from '@/mixins/theming';
+
+import AppTitle from '@/components/AppTitle';
+import AppSplash from '@/components/AppSplash';
+import AppContentSection from '@/components/AppContentSection';
+import AppShopFeatureContainer from '@/components/shops/AppShopFeatureContainer';
 
 export default {
-  middleware: ["authenticated", "hasShop"],
+  middleware: ['authenticated', 'hasShop'],
   head() {
     return {
-      title: `${this.$t("shop_creator.steps.connect.title")} | ${this.title}`
+      title: `${this.$t('shop_creator.steps.connect.title')} | ${this.title}`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: ''
+        },
+        {
+          hid: 'robots',
+          name: 'robots',
+          content: 'noindex'
+        }
+      ]
     };
   },
-  layout: "shop-creator",
+  layout: 'shop-creator',
   transition: {
-    name: "slide",
-    mode: "out-in"
+    name: 'slide',
+    mode: 'out-in'
+  },
+  components: {
+    AppTitle,
+    AppSplash,
+    AppContentSection,
+    AppShopFeatureContainer
   },
   mixins: [theming],
-  async asyncData({ app }) {
+  data() {
     return {
-      title: app.head.title
-    };
+      tried: false
+    }
   },
   computed: {
     ...mapGetters({
-      shopStripeUserId: "shop/shopStripeUserId",
-      shopStripePublishableKey: "shop/shopStripePublishableKey"
+      shopStripeUserId: 'shop/shopStripeUserId',
+      shopStripePublishableKey: 'shop/shopStripePublishableKey'
     }),
     stripeConnectOAuthUrl() {
       return `https://dashboard.stripe.com/oauth/authorize?response_type=code&client_id=${
@@ -110,9 +122,14 @@ export default {
       }&scope=read_write`;
     }
   },
+  asyncData({ app }) {
+    return {
+      title: app.head.title
+    };
+  },
   async mounted() {
     if (!this.shopExists && this.$auth.user.has_shop) {
-      await this.getShop();
+      await this.getUserShop();
 
       if (this.$route.query.code && !this.shopStripeUserId) {
         this.requestTokens(this.$route.query.code);
@@ -125,26 +142,28 @@ export default {
   },
   methods: {
     ...mapActions({
-      getShop: "shop/getShop",
-      setStepName: "shop/setStepName",
-      setStepDetails: "shop/setStepDetails",
-      setStepCustomization: "shop/setStepCustomization"
+      getUserShop: 'shop/getUserShop',
+      setStepName: 'shop/setStepName',
+      setStepDetails: 'shop/setStepDetails',
+      setStepCustomization: 'shop/setStepCustomization'
     }),
     async requestTokens(code) {
       try {
-        await this.$axios.$post("/shops/connect", {
+        await this.$axios.$post('/shops/connect', {
           code: code
         });
-        await this.getShop();
+        await this.getUserShop();
       } catch (e) {}
+
+      this.tried = true;
     },
     prev() {
       this.$router.push(
-        this.localePath({ name: "shop-creator-customization" })
+        this.localePath({ name: 'shop-creator-customization' })
       );
     },
     next() {
-      this.$router.push(this.localePath({ name: "shop-creator-done" }));
+      this.$router.push(this.localePath({ name: 'shop-creator-done' }));
     }
   }
 };

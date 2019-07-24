@@ -1,13 +1,13 @@
 <template>
-  <div class="category-bar__background">
-    <div class="category-bar__container container">
-      <ul class="category-bar__list">
+  <div class="bg-green-200 py-5">
+    <div class="container h-full flex items-center px-20">
+      <ul class="w-full flex flex-wrap justify-between -mx-10">
         <li
           v-for="category in categories"
           :key="category.slug">
           <nuxt-link
             :to="localePath({ name: 'categories-slug', params: { slug: category.slug } })"
-            class="category-bar__link">
+            class="block no-underline text-16 font-semibold hover:text-green-400 transition outline-none focus:shadow-outline rounded-lg px-10 py-10">
             {{ category.name[locale] }}
           </nuxt-link>
         </li>
@@ -17,13 +17,13 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters } from 'vuex';
 
 export default {
   computed: {
     ...mapGetters({
-      categories: "categories",
-      locale: "locale"
+      categories: 'categories',
+      locale: 'locale'
     })
   }
 };

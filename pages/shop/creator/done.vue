@@ -1,84 +1,101 @@
 <template>
   <main>
-    <section class="section__container container">
-      <div class="section__centered">
-        <h2 class="title__main title--center">
-          {{ $t("shop_creator.steps.done.title") }}
-        </h2>
 
-        <p class="paragraph__medium paragraph--center paragraph--narrow paragraph--spaced">
-          {{ $t("shop_creator.steps.done.paragraph") }}<br>
-          {{ $t("shop_creator.steps.done.provision_shop") }}
-        </p>
+    <!-- Page contents -->
+    <AppContentSection>
 
-        <Success class="shop-creator__done-illustration"/>
+      <AppSplash
+        type="success"
+        :title="$t('shop_creator.steps.done.title')"
+        :subtitle="$t('shop_creator.steps.done.paragraph')"
+        class="max-w-800">
+        <template slot="illustration">
+          <IllustrationSuccess/>
+        </template>
+      </AppSplash>
 
-        <div class="shop-creator__controls">
+      <div class="shop-creator__controls">
 
-          <!-- Previous -->
-          <button
-            class="button button__previous"
-            @click.prevent="prev">
-            <font-awesome-icon
-              :icon="['far', 'chevron-circle-left']"
-              class="button__icon button__icon--small"/>
-            {{ $t("buttons.back") }}
-          </button>
+        <!-- Previous -->
+        <button
+          class="button button__previous"
+          @click.prevent="prev">
+          <font-awesome-icon
+            :icon="['far', 'chevron-circle-left']"
+            class="button__icon button__icon--small"/>
+          {{ $t("buttons.back") }}
+        </button>
 
-          <!-- Next -->
-          <button
-            :class="btnTheme"
-            class="button button__next"
-            @click.prevent="next">
-            <font-awesome-icon
-              :icon="['far', 'chevron-circle-right']"
-              class="button__icon button__icon--small"/>
-            {{ $t("buttons.finish") }}
-          </button>
-        </div>
+        <!-- Next -->
+        <button
+          :class="btnTheme"
+          class="button button__next"
+          @click.prevent="next">
+          <font-awesome-icon
+            :icon="['far', 'chevron-circle-right']"
+            class="button__icon button__icon--small"/>
+          {{ $t("buttons.finish") }}
+        </button>
       </div>
-    </section>
+    </AppContentSection>
   </main>
 </template>
 
 <script>
-import Success from "@/components/illustrations/Success";
-import theming from "@/mixins/theming";
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters, mapActions } from 'vuex';
+import theming from '@/mixins/theming';
+
+import AppSplash from '@/components/AppSplash';
+import AppContentSection from '@/components/AppContentSection';
+import IllustrationSuccess from '@/components/illustrations/IllustrationSuccess';
 
 export default {
-  middleware: ["authenticated", "hasShop"],
+  middleware: ['authenticated', 'hasShop'],
   head() {
     return {
-      title: `${this.$t("shop_creator.steps.done.title")} | ${this.title}`
+      title: `${this.$t('shop_creator.steps.done.title')} | ${this.title}`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: ''
+        },
+        {
+          hid: 'robots',
+          name: 'robots',
+          content: 'noindex'
+        }
+      ]
     };
   },
-  layout: "shop-creator",
+  layout: 'shop-creator',
   transition: {
-    name: "slide",
-    mode: "out-in"
+    name: 'slide',
+    mode: 'out-in'
   },
   components: {
-    Success
+    AppSplash,
+    AppContentSection,
+    IllustrationSuccess
   },
   mixins: [theming],
-  async asyncData({ app }) {
+  computed: {
+    ...mapGetters({
+      stepName: 'shop/stepName',
+      shopExists: 'shop/shopExists',
+      stepDetails: 'shop/stepDetails',
+      stepCustomization: 'shop/stepCustomization',
+      stepConnect: 'shop/stepConnect'
+    })
+  },
+  asyncData({ app }) {
     return {
       title: app.head.title
     };
   },
-  computed: {
-    ...mapGetters({
-      stepName: "shop/stepName",
-      shopExists: "shop/shopExists",
-      stepDetails: "shop/stepDetails",
-      stepCustomization: "shop/stepCustomization",
-      stepConnect: "shop/stepConnect"
-    })
-  },
   mounted() {
     if (!this.shopExists && this.$auth.user.has_shop) {
-      this.getShop();
+      this.getUserShop();
     }
 
     this.setStepName(true);
@@ -88,14 +105,14 @@ export default {
   },
   methods: {
     ...mapActions({
-      getShop: "shop/getShop",
-      setStepName: "shop/setStepName",
-      setStepDetails: "shop/setStepDetails",
-      setStepCustomization: "shop/setStepCustomization",
-      setStepConnect: "shop/setStepConnect"
+      getUserShop: 'shop/getUserShop',
+      setStepName: 'shop/setStepName',
+      setStepDetails: 'shop/setStepDetails',
+      setStepCustomization: 'shop/setStepCustomization',
+      setStepConnect: 'shop/setStepConnect'
     }),
     prev() {
-      this.$router.push(this.localePath({ name: "shop-creator-connect" }));
+      this.$router.push(this.localePath({ name: 'shop-creator-connect' }));
     },
     next() {
       if (
@@ -104,7 +121,7 @@ export default {
         this.stepCustomization &&
         this.stepConnect
       ) {
-        this.$router.push(this.localePath({ name: "shop" }));
+        this.$router.push(this.localePath({ name: 'shop' }));
       }
     }
   }

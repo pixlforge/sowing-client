@@ -1,11 +1,11 @@
 <template>
-  <div>
+  <div class="antialiased text-green-900">
 
     <!-- Alert -->
-    <TheAlert/>
+    <AppAlert/>
 
     <!-- Navbar -->
-    <Navbar/>
+    <AppNavbar/>
 
     <!-- Categories -->
     <AppCategoryBar/>
@@ -16,152 +16,139 @@
       :shop-cover="shopCover"/>
 
     <!-- Header -->
-    <Header :class="bgTheme">
-      <template slot="icon">
-        <div
-          v-if="shopAvatar"
-          :style="`background-image: url('${shopAvatar}');`"
-          class="header__avatar header__avatar--picture"/>
-        <div
-          v-else
-          :class="textTheme">
+    <AppHeader
+      v-if="shopExists"
+      :class="bgTheme"
+      :title="shopName"
+      :description="shop.description_short[locale]">
+      <AppHeaderList>
+        <li>
           <font-awesome-icon
-            :icon="['far', 'store']"
-            class="header__icon"/>
-        </div>
-      </template>
-      <template slot="title">
-        <h1 class="header__title">
-          <template v-if="shopName">{{ shopName }}</template>
-          <template v-else>{{ $t("pages.shop.title") }}</template>
-        </h1>
-      </template>
-      <template
-        v-if="shop.id"
-        slot="description">
-        <p class="header__description">
-          {{ shop.description_short[locale] }}
-        </p>
-        <ul class="list__address list__address--white">
-          <li>
-            <font-awesome-icon
-              :icon="['far', 'map-marker-alt']"
-              class="mr-5"/>
-            {{ shop.postal_code }} {{ shop.city }}
-          </li>
-          <li
-            v-if="shop.country"
-            class="ml-20">
-            {{ shop.country.name[locale] }}
-          </li>
-        </ul>
-      </template>
-    </Header>
+            :icon="['far', 'map-marker-alt']"
+            class="mr-5"/>
+          {{ shop.postal_code }} {{ shop.city }}
+        </li>
+        <li
+          v-if="shop.country"
+          class="ml-20">
+          {{ shop.country.name[locale] }}
+        </li>
+      </AppHeaderList>
+    </AppHeader>
 
     <!-- Main -->
     <main>
-      <section class="section__container container">
-        <div class="section__centered">
+      <AppContentSection>
 
-          <!-- User owns a shop -->
-          <template v-if="userHasShop">
+        <!-- User owns a shop -->
+        <template v-if="userHasShop">
 
-            <!-- Title -->
-            <h2 class="title__main title--center">
-              {{ $t("pages.shop.title") }}
-            </h2>
+          <!-- Title -->
+          <AppTitle
+            semantic="h1"
+            visual="main">
+            {{ $t("pages.shop.title") }}
+          </AppTitle>
 
-            <!-- Content -->
-            <div class="shop__columns-wrapper">
+          <!-- Content -->
+          <div class="shop__columns-wrapper">
 
-              <!-- Side menu -->
-              <aside class="shop__menu">
-                <AppSideMenu>
-                  <AppSideMenuItem
-                    label="Tableau de bord"
-                    route="shop-management-dashboard"/>
-                  <AppSideMenuItem
-                    label="Détails"
-                    route="shop-management-details"/>
-                  <AppSideMenuItem
-                    label="Thème"
-                    route="shop-management-theme"/>
-                </AppSideMenu>
-              </aside>
-              
-              <!-- Page content -->
-              <nuxt/>
-            </div>
-          </template>
-              
-          <!-- User does not own a shop -->
-          <template v-else>
+            <!-- Side menu -->
+            <aside class="shop__menu">
+              <AppSideMenu>
+                <AppSideMenuItem
+                  label="Tableau de bord"
+                  route="shop-management-dashboard"/>
+                <AppSideMenuItem
+                  label="Détails"
+                  route="shop-management-details"/>
+                <AppSideMenuItem
+                  label="Thème"
+                  route="shop-management-theme"/>
+              </AppSideMenu>
+            </aside>
 
-            <!-- Title -->
-            <h2 class="title__main title--center">
-              {{ $t("pages.shop.not_created_yet") }}
-            </h2>
+            <!-- Page content -->
+            <nuxt/>
+          </div>
+        </template>
 
-            <!-- Shop creation CTA -->
-            <p class="paragraph__large paragraph--center">
-              {{ $t("pages.shop.creation_cta_line_1") }}<br>
-              {{ $t("pages.shop.creation_cta_line_2") }}
-            </p>
+        <!-- User does not own a shop -->
+        <template v-else>
 
-            <!-- Illustration -->
-            <div class="illustration__container">
-              <img
-                src="~assets/img/under_construction.svg"
-                alt="Illustration of a building under construction"
-                class="illustration__image">
-            </div>
+          <!-- Title -->
+          <AppTitle
+            semantic="h1"
+            visual="main">
+            {{ $t("pages.shop.not_created_yet") }}
+          </AppTitle>
 
-            <!-- Shop creation link -->
-            <nuxt-link
-              :to="localePath({ name: 'shop-creator-terms' })"
-              class="button button__primary button--spaced-large">
-              <font-awesome-icon
-                :icon="['far', 'rocket']"
-                class="button__icon button__icon--small"/>
-              {{ $t("buttons.create_my_shop") }}
-            </nuxt-link>
-          </template>
-        </div>
-      </section>
+          <!-- Shop creation CTA -->
+          <p class="paragraph__large paragraph--center">
+            {{ $t("pages.shop.creation_cta_line_1") }}<br>
+            {{ $t("pages.shop.creation_cta_line_2") }}
+          </p>
+
+          <!-- Illustration -->
+          <div class="illustration__container">
+            <img
+              src="~assets/img/under_construction.svg"
+              alt="Illustration of a building under construction"
+              class="illustration__image">
+          </div>
+
+          <!-- Shop creation link -->
+          <nuxt-link
+            :to="localePath({ name: 'shop-creator-terms' })"
+            class="button button__primary button--spaced-large">
+            <font-awesome-icon
+              :icon="['far', 'rocket']"
+              class="button__icon button__icon--small"/>
+            {{ $t("buttons.create_my_shop") }}
+          </nuxt-link>
+        </template>
+      </AppContentSection>
     </main>
 
     <!-- Footer -->
-    <Footer/>
+    <AppFooter/>
 
     <!-- Disclaimer -->
-    <Disclaimer :class="bgTheme"/>
+    <AppDisclaimer :class="bgTheme"/>
   </div>
 </template>
 
 <script>
-import TheAlert from "@/components/globals/TheAlert";
-import Navbar from "@/components/Navbar";
-import AppCategoryBar from "@/components/categories/AppCategoryBar";
-import AppShopCover from "@/components/shops/AppShopCover";
-import Header from "@/components/Header";
-import AppSideMenu from "@/components/menus/AppSideMenu";
-import AppSideMenuItem from "@/components/menus/AppSideMenuItem";
-import Footer from "@/components/footer/Footer";
-import Disclaimer from "@/components/footer/Disclaimer";
-import theming from "@/mixins/theming";
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters, mapActions } from 'vuex';
+import theming from '@/mixins/theming';
+
+import AppTitle from '@/components/AppTitle';
+import AppNavbar from '@/components/AppNavbar';
+import AppAlert from '@/components/globals/AppAlert';
+import AppFooter from '@/components/footer/AppFooter';
+import AppHeader from '@/components/headers/AppHeader';
+import AppSideMenu from '@/components/menus/AppSideMenu';
+import AppShopCover from '@/components/shops/AppShopCover';
+import AppDisclaimer from '@/components/footer/AppDisclaimer';
+import AppContentSection from '@/components/AppContentSection';
+import AppHeaderList from '@/components/headers/AppHeaderList';
+import AppSideMenuItem from '@/components/menus/AppSideMenuItem';
+import AppCategoryBar from '@/components/categories/AppCategoryBar';
 
 export default {
   components: {
-    TheAlert,
-    Navbar,
-    AppCategoryBar,
-    AppShopCover,
-    Header,
+    AppTitle,
+    AppNavbar,
+    AppAlert,
+    AppFooter,
+    AppHeader,
     AppSideMenu,
+    AppShopCover,
+    AppDisclaimer,
+    AppContentSection,
+    AppHeaderList,
     AppSideMenuItem,
-    Footer,
-    Disclaimer
+    AppCategoryBar
   },
   mixins: [theming],
   computed: {
@@ -169,7 +156,8 @@ export default {
       shopCover: 'shop/shopCover',
       shopAvatar: 'shop/shopAvatar',
       shopName: 'shop/shopName',
-      userHasShop: "userHasShop",
+      shopExists: 'shop/shopExists',
+      userHasShop: 'userHasShop',
       shop: 'shop/shop',
       locale: 'locale'
     })
@@ -179,7 +167,7 @@ export default {
   },
   methods: {
     ...mapActions({
-      resetShop: "shop/resetShop"
+      resetShop: 'shop/resetShop'
     })
   }
 };

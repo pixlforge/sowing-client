@@ -8,7 +8,7 @@
   }
 
   &__group {
-    @apply relative mt-40;
+    @apply relative mt-48;
 
     &--first {
       @apply mt-0;
@@ -24,7 +24,7 @@
   }
 
   &__inline-group {
-    @apply w-full flex flex-col mt-50;
+    @apply w-full flex flex-col mt-48;
 
     @screen lg {
       @apply flex-row;
@@ -60,7 +60,7 @@
   }
 
   &__inline-group-description {
-    @apply text-16 text-grey-lighter leading-normal my-5;
+    @apply text-16 text-gray-300 leading-normal my-5;
   }
 
   &__select-group {
@@ -72,7 +72,7 @@
   }
 
   &__select {
-    @apply block h-42 text-16 w-full appearance-none bg-green-lightest border border-green-lightest rounded-lg text-green-darkest leading-tight outline-none px-15 mt-10;
+    @apply block h-42 text-16 w-full appearance-none bg-green-200 border border-green-200 rounded-lg text-green-800 leading-tight outline-none px-16 mt-10;
 
     &:focus {
       @apply shadow-outline;
@@ -89,16 +89,16 @@
     }
 
     &--disabled {
-      @apply bg-grey-faint text-grey-lighter cursor-not-allowed;
+      @apply bg-gray-100 text-gray-300 cursor-not-allowed;
     }
   }
 
   &__select-caret {
-    @apply absolute h-full inset-y-0 right-0 text-16 text-green-dark mr-20;
+    @apply absolute h-full inset-y-0 right-0 text-16 text-green-600 mr-20;
   }
 
   &__textarea {
-    @apply block w-full appearance-none bg-green-lightest rounded-lg text-16 text-green-darkest leading-normal outline-none px-15 py-15 mt-10;
+    @apply block w-full appearance-none bg-green-200 rounded-lg text-16 text-green-800 leading-normal outline-none px-16 py-16 mt-10;
 
     &--inline {
       @screen lg {
@@ -107,7 +107,7 @@
     }
 
     &--disabled {
-      @apply bg-grey-faint text-grey-lighter cursor-not-allowed;
+      @apply bg-gray-100 text-gray-300 cursor-not-allowed;
     }
   }
 
@@ -116,14 +116,14 @@
   }
 
   &__input {
-    @apply block h-42 text-16 w-full appearance-none bg-green-lightest rounded-lg text-green-darkest leading-tight outline-none border-green-lightest border px-15 mt-10;
+    @apply block h-42 text-16 w-full appearance-none bg-green-200 rounded-lg text-green-800 leading-tight outline-none border-green-200 border px-16 mt-10;
 
     &:focus {
       @apply shadow-outline;
     }
 
     &--grouped {
-      @apply w-full pl-15 mt-0;
+      @apply w-full pl-16 mt-0;
 
       @screen md {
         @apply w-350 rounded-r-none;
@@ -137,7 +137,7 @@
     }
 
     &--disabled {
-      @apply bg-grey-faint text-grey-lighter cursor-not-allowed;
+      @apply bg-gray-100 text-gray-300 cursor-not-allowed;
     }
 
     &--large {
@@ -150,7 +150,7 @@
   }
 
   &__feedback {
-    @apply absolute text-12 text-red mt-5;
+    @apply absolute text-12 text-red-400 mt-5;
 
     &--white {
       @apply text-white;
@@ -166,11 +166,11 @@
   }
 
   &__links {
-    @apply flex justify-center mt-40;
+    @apply flex justify-center mt-48;
   }
 
   &__link {
-    @apply text-14 text-grey-lighter no-underline outline-none ml-20;
+    @apply text-14 text-gray-300 no-underline outline-none ml-20;
 
     &:hover {
       @apply underline;
@@ -186,7 +186,7 @@
   }
 
   &__checkbox-group {
-    @apply mt-40;
+    @apply mt-48;
   }
 
   &__checkbox-input {
@@ -194,11 +194,11 @@
   }
 
   &__checkbox-label {
-    @apply text-14 text-grey-lighter select-none cursor-pointer;
+    @apply text-14 text-gray-300 select-none cursor-pointer;
   }
 
   &__checkbox-link {
-    @apply text-14 text-green no-underline select-none;
+    @apply text-14 text-green-400 no-underline select-none;
 
     &:hover {
       @apply underline;

@@ -1,13 +1,13 @@
 .shop-customization {
   &__group {
-    @apply w-full max-w-1000 mt-100;
+    @apply w-full max-w-1000 mt-96;
 
     &--first {
       @apply mt-0;
     }
 
     &--last {
-      @apply flex flex-col mt-100;
+      @apply flex flex-col mt-96;
       
       @screen lg {
         @apply flex-row;

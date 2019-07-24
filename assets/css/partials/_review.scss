@@ -1,18 +1,18 @@
 .review {
   &__wrapper {
-    @apply w-full mx-auto mt-100;
+    @apply w-full mx-auto mt-96;
 
     @screen xl {
       @apply w-3/4;
     }
 
-    @screen xxl {
+    @screen xl {
       @apply w-1/2;
     }
   }
 
   &__container {
-    @apply w-full flex flex-col mt-50;
+    @apply w-full flex flex-col mt-48;
 
     @screen md {
       @apply flex-row;
@@ -36,14 +36,14 @@
   }
 
   &__star {
-    @apply text-16 text-orange mt-10;
+    @apply text-16 text-orange-400 mt-10;
   }
 
   &__content {
-    @apply text-center px-20 mt-40;
+    @apply text-center px-20 mt-48;
 
     @screen sm {
-      @apply px-50;
+      @apply px-48;
     }
 
     @screen md {
@@ -52,10 +52,10 @@
   }
 
   &__name {
-    @apply text-24 text-green-darkest font-bold;
+    @apply text-24 text-green-800 font-bold;
   }
 
   &__body {
-    @apply text-16 text-green-darkest leading-loose mt-20;
+    @apply text-16 text-green-800 leading-loose mt-20;
   }
 }

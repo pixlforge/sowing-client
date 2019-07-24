@@ -1,60 +1,41 @@
 <template>
   <main>
-    
+
     <!-- Header -->
-    <Header>
-      <template slot="icon">
-        <font-awesome-icon :icon="['far', 'user-plus']"/>
+    <AppHeader
+      :title="$t('pages.register.title')"
+      icon="user-plus"/>
+
+    <!-- Splash -->
+    <AppSplash
+      :title="$t('pages.register_success.congratulations')"
+      :subtitle="$t('pages.register_success.account_created')"
+      type="success"
+      class="max-w-800">
+      <template slot="illustration">
+        <img
+          src="~assets/img/success_smiley.svg"
+          :alt="$t('pages.register_success.congratulations')">
       </template>
-      <template slot="title">
-        <h1 class="header__title">{{ $t("pages.register.title") }}</h1>
-      </template>
-    </Header>
-
-    <!-- Content -->
-    <section class="section__container container">
-      <div class="section__centered">
-        
-        <!-- Icon -->
-        <div class="icon__group">
-          <font-awesome-icon
-            :icon="['far', 'check-circle']"
-            class="icon__icon icon__icon--success"/>
-        </div>
-
-        <h2 class="title__main title--center">
-          {{ $t("pages.register_success.congratulations") }}
-        </h2>
-
-        <p class="paragraph__medium paragraph--center paragraph--narrow paragraph--spaced">
-          {{ $t("pages.register_success.account_created") }}
-        </p>
-
-        <!-- Illustration -->
-        <div class="illustration__container">
-          <img
-            src="~assets/img/success_smiley.svg"
-            alt=""
-            class="illustration__image">
-        </div>
-      </div>
-    </section>
+    </AppSplash>
   </main>
 </template>
 
 <script>
-import Header from "@/components/Header";
+import AppSplash from '@/components/AppSplash';
+import AppHeader from '@/components/headers/AppHeader';
 
 export default {
   head() {
     return {
-      title: `${this.$t("pages.register_success.title")} | ${this.title}`
+      title: `${this.$t('pages.register_success.title')} | ${this.title}`
     };
   },
   components: {
-    Header
+    AppSplash,
+    AppHeader
   },
-  async asyncData({ app }) {
+  asyncData({ app }) {
     return {
       title: app.head.title
     };

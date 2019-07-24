@@ -2,17 +2,12 @@
   <main>
 
     <!-- Header -->
-    <Header>
-      <template slot="icon">
-        <font-awesome-icon :icon="['far', 'redo-alt']"/>
-      </template>
-      <template slot="title">
-        <h1 class="header__title">{{ $t("pages.password_reset.title") }}</h1>
-      </template>
-    </Header>
-    
+    <AppHeader
+      :title="$t('pages.password_reset.title')"
+      icon="redo-alt"/>
+
     <!-- Form -->
-    <section class="section__container container">
+    <AppContentSection>
       <form
         class="form__container form__container--narrow"
         @submit.prevent="reset">
@@ -32,7 +27,9 @@
             name="email"
             class="form__input">
           <template v-if="errors.email">
-            <p class="form__feedback">{{ errors.email[0] }}</p>
+            <p class="form__feedback">
+              {{ errors.email[0] }}
+            </p>
           </template>
         </div>
 
@@ -50,7 +47,9 @@
             name="password"
             class="form__input">
           <template v-if="errors.email">
-            <p class="form__feedback">{{ errors.password[0] }}</p>
+            <p class="form__feedback">
+              {{ errors.password[0] }}
+            </p>
           </template>
         </div>
 
@@ -79,36 +78,51 @@
           {{ $t("buttons.password_reset") }}
         </button>
       </form>
-    </section>
+    </AppContentSection>
   </main>
 </template>
 
 <script>
-import Header from "@/components/Header";
 import { mapActions } from 'vuex';
 
+import AppHeader from '@/components/headers/AppHeader';
+import AppContentSection from '@/components/AppContentSection';
+
 export default {
-  middleware: ["guest"],
+  middleware: ['guest'],
   head() {
     return {
-      title: `${this.$t("pages.password_reset.title")} | ${this.title}`
+      title: `${this.$t('pages.password_reset.title')} | ${this.title}`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: ''
+        },
+        {
+          hid: 'robots',
+          name: 'robots',
+          content: 'noindex'
+        }
+      ]
     };
   },
   components: {
-    Header
+    AppHeader,
+    AppContentSection
   },
   data() {
     return {
       form: {
         token: null,
-        email: "",
-        password: "",
-        password_confirmation: "",
+        email: '',
+        password: '',
+        password_confirmation: ''
       },
       errors: {}
     };
   },
-  async asyncData({ app }) {
+  asyncData({ app }) {
     return {
       title: app.head.title
     };
@@ -118,7 +132,7 @@ export default {
   },
   methods: {
     ...mapActions({
-      flash: "alert/flash"
+      flash: 'alert/flash'
     }),
     async reset() {
       if (!this.form.token) {
@@ -126,14 +140,14 @@ export default {
       }
 
       try {
-        let res = await this.$axios.$post('/auth/reset', this.form);
+        const res = await this.$axios.$post('/auth/reset', this.form);
         this.$toast.success(res.message);
         this.flash({ message: res.message, type: 'success' });
         this.$router.push(this.localePath({ name: 'login' }));
       } catch (e) {
         this.errors = e.response.data.errors;
 
-        for (let error in this.errors) {
+        for (const error in this.errors) {
           this.$toast.error(this.errors[error]);
         }
       }
