@@ -2,9 +2,9 @@
   <main>
 
     <!-- Featured Categories -->
-    <section class="featured-category__wrapper">
+    <section class="w-full flex flex-col lg:flex-row">
       <AppFeaturedCategoryLarge/>
-      <div class="featured-category__wrapper featured-category__wrapper--small">
+      <div class="w-full lg:w-1/2 flex flex-col">
         <AppFeaturedCategorySmall/>
         <AppFeaturedCategorySmall/>
       </div>

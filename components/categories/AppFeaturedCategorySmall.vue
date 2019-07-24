@@ -1,8 +1,8 @@
 <template>
   <div
     :style="imgUrl"
-    class="featured-category__container">
-    <div class="featured-category__content">
+    class="relative w-full h-350 bg-cover bg-center bg-no-repeat flex items-end">
+    <div class="flex flex-col items-start px-48 pb-48 z-10">
 
       <!-- Title -->
       <AppTitle
@@ -13,7 +13,7 @@
       </AppTitle>
 
       <!-- Description -->
-      <p class="featured-category__description my-16">
+      <p class="text-16 md:text-20 text-white mb-36">
         Now let's put some happy little clouds in here. Have fun with it. It looks so good, I might as well not stop.
       </p>
 
@@ -26,7 +26,7 @@
     </div>
 
     <!-- Mask -->
-    <div class="featured-category__mask"/>
+    <div class="absolute w-full h-full bg-black opacity-25"/>
 
   </div>
 </template>

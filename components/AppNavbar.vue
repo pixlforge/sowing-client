@@ -6,40 +6,39 @@
       <AppLogo class="w-48"/>
     </nuxt-link>
 
-    <div class="flex">
+    <div class="flex -mx-10">
 
       <!-- Languages -->
-      <AppButtonLanguages class="mr-20"/>
+      <AppButtonLanguages class="mx-10"/>
 
       <!-- Login -->
-      <nuxt-link
+      <AppButtonLinkSecondary
         v-if="!loggedIn"
         :to="localePath({ name: 'login' })"
-        class="button button__default mr-20">
+        class="mx-10">
         {{ $t("buttons.login") }}
-      </nuxt-link>
+      </AppButtonLinkSecondary>
 
       <!-- Register -->
-      <nuxt-link
+      <AppButtonLinkPrimary
         v-if="!loggedIn"
         :to="localePath({ name: 'register' })"
-        class="button button__secondary mr-20">
-        <font-awesome-icon
-          :icon="['far', 'rocket']"
-          class="mr-5"/>
+        icon="rocket"
+        color="pink"
+        class="mx-10">
         {{ $t("buttons.register") }}
-      </nuxt-link>
+      </AppButtonLinkPrimary>
 
-      <!-- User -->
-      <AppButtonUser
+      <!-- Menu -->
+      <AppButtonMenu
         v-if="loggedIn"
-        class="mr-20"/>
+        class="mx-10"/>
 
       <!-- Search page link -->
-      <AppButtonSearch class="mr-20"/>
+      <AppButtonSearch class="mx-10"/>
 
       <!-- Cart page link -->
-      <AppButtonCart/>
+      <AppButtonCart class="mx-10"/>
     </div>
 
   </nav>
@@ -48,17 +47,21 @@
 <script>
 import AppLogo from '@/components/AppLogo';
 import AppButtonCart from '@/components/buttons/AppButtonCart';
-import AppButtonUser from '@/components/buttons/AppButtonUser';
+import AppButtonMenu from '@/components/buttons/AppButtonMenu';
 import AppButtonSearch from '@/components/buttons/AppButtonSearch';
 import AppButtonLanguages from '@/components/buttons/AppButtonLanguages';
+import AppButtonLinkPrimary from '@/components/buttons/AppButtonLinkPrimary';
+import AppButtonLinkSecondary from '@/components/buttons/AppButtonLinkSecondary';
 
 export default {
   components: {
     AppLogo,
     AppButtonCart,
-    AppButtonUser,
+    AppButtonMenu,
     AppButtonSearch,
-    AppButtonLanguages
+    AppButtonLanguages,
+    AppButtonLinkPrimary,
+    AppButtonLinkSecondary
   },
   computed: {
     loggedIn() {

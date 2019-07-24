@@ -2,7 +2,7 @@
   <nuxt-link
     :to="to"
     :class="classes"
-    class="block outline-none focus:shadow-outline rounded-lg text-12 text-white font-extrabold text-center uppercase transition no-underline whitespace-no-wrap px-30 py-12">
+    class="block outline-none focus:shadow-outline rounded-lg text-12 text-white font-bold text-center uppercase transition no-underline whitespace-no-wrap px-30 py-12">
     <font-awesome-icon
       v-if="icon"
       :icon="['far', icon]"
