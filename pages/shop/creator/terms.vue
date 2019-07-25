@@ -13,45 +13,44 @@
       <AppTerms/>
 
       <!-- Controls -->
-      <div class="terms__controls">
-        <div class="terms__checkbox-container">
+      <div class="flex flex-col items-center">
+        <div class="text-18 text-center leading-normal mb-36 md:mb-72">
           <label
             for="terms"
-            class="terms__checkbox-label">
+            class="select-none">
             <input
               id="terms"
               v-model="localTerms"
               type="checkbox"
               name="terms"
-              class="terms__checkbox-input">
+              class="mr-10">
             {{ $t("pages.terms.approve") }}
           </label>
-          <small class="terms__checkbox-subtitle">
+          <small class="block text-gray-300">
             {{ $t("pages.terms.must_approve") }}
           </small>
         </div>
 
-        <button
+        <!-- Next -->
+        <AppButtonPrimary
           :disabled="!userAgreesToTerms"
-          :class="{ 'button__disabled': !userAgreesToTerms }"
-          class="button button__primary button--spaced-large"
-          @click.prevent="next">
-          <font-awesome-icon
-            :icon="['far', 'chevron-circle-right']"
-            class="button__icon button__icon--small"/>
+          icon="chevron-circle-right"
+          @click.native="next">
           {{ $t("buttons.begin_shop_creation") }}
-        </button>
+        </AppButtonPrimary>
+
       </div>
     </AppContentSection>
   </main>
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
+import { mapGetters, mapActions } from 'vuex'
 
-import AppTerms from '@/components/terms/AppTerms';
-import AppHeader from '@/components/headers/AppHeader';
-import AppContentSection from '@/components/AppContentSection';
+import AppTerms from '@/components/terms/AppTerms'
+import AppHeader from '@/components/headers/AppHeader'
+import AppContentSection from '@/components/AppContentSection'
+import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 
 export default {
   middleware: ['authenticated'],
@@ -70,12 +69,13 @@ export default {
           content: 'noindex'
         }
       ]
-    };
+    }
   },
   components: {
     AppTerms,
     AppHeader,
-    AppContentSection
+    AppContentSection,
+    AppButtonPrimary
   },
   computed: {
     ...mapGetters({
@@ -83,20 +83,20 @@ export default {
     }),
     localTerms: {
       get() {
-        return this.terms;
+        return this.terms
       },
       set(terms) {
-        this.setTerms(terms);
+        this.setTerms(terms)
       }
     },
     userAgreesToTerms() {
-      return this.localTerms;
+      return this.localTerms
     }
   },
   asyncData({ app }) {
     return {
       title: app.head.title
-    };
+    }
   },
   methods: {
     ...mapActions({
@@ -104,9 +104,9 @@ export default {
     }),
     next() {
       if (this.terms) {
-        this.$router.push(this.localePath({ name: 'shop-creator-name' }));
+        this.$router.push(this.localePath({ name: 'shop-creator-name' }))
       }
     }
   }
-};
+}
 </script>

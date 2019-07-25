@@ -79,21 +79,21 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
-import theming from '@/mixins/theming';
+import { mapGetters, mapActions } from 'vuex'
+import theming from '@/mixins/theming'
 
-import AppTitle from '@/components/AppTitle';
-import AppHeader from '@/components/headers/AppHeader';
-import AppShopCover from '@/components/shops/AppShopCover';
-import AppContentSection from '@/components/AppContentSection';
-import AppHeaderList from '@/components/headers/AppHeaderList';
-import AppStreakRegister from '@/components/streaks/AppStreakRegister';
+import AppTitle from '@/components/AppTitle'
+import AppHeader from '@/components/headers/AppHeader'
+import AppShopCover from '@/components/shops/AppShopCover'
+import AppContentSection from '@/components/AppContentSection'
+import AppHeaderList from '@/components/headers/AppHeaderList'
+import AppStreakRegister from '@/components/streaks/AppStreakRegister'
 
 export default {
   head() {
     return {
       title: `${this.shop.name} | ${this.title}`
-    };
+    }
   },
   components: {
     AppTitle,
@@ -107,7 +107,7 @@ export default {
   data() {
     return {
       shop: {}
-    };
+    }
   },
   computed: {
     ...mapGetters({
@@ -117,25 +117,25 @@ export default {
       shopName: 'shop/shopName'
     }),
     imgUrl() {
-      return `https://bulma.io/images/placeholders/1280x960.png`;
+      return `https://bulma.io/images/placeholders/1280x960.png`
     },
     imgAlt() {
-      return this.$t('components.products.img.alt');
+      return this.$t('components.products.img.alt')
     }
   },
   async asyncData({ app, route }) {
-    const shop = await app.$axios.$get(`/shops/${route.params.slug}`);
+    const shop = await app.$axios.$get(`/shops/${route.params.slug}`)
 
     return {
       title: app.head.title,
       shop: shop.data
-    };
+    }
   },
   mounted() {
-    this.setShop(this.shop);
+    this.setShop(this.shop)
   },
   destroyed() {
-    this.resetShop();
+    this.resetShop()
   },
   methods: {
     ...mapActions({
@@ -143,5 +143,5 @@ export default {
       resetShop: 'shop/resetShop'
     })
   }
-};
+}
 </script>

@@ -32,17 +32,17 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters } from 'vuex'
 
-import AppStatusCompleted from '@/components/orders/statuses/AppStatusCompleted';
-import AppStatusPending from '@/components/orders/statuses/AppStatusPending';
-import AppStatusProcessing from '@/components/orders/statuses/AppStatusProcessing';
-import AppStatusPaymentFailed from '@/components/orders/statuses/AppStatusPaymentFailed';
+import AppStatusPending from '@/components/orders/statuses/AppStatusPending'
+import AppStatusCompleted from '@/components/orders/statuses/AppStatusCompleted'
+import AppStatusProcessing from '@/components/orders/statuses/AppStatusProcessing'
+import AppStatusPaymentFailed from '@/components/orders/statuses/AppStatusPaymentFailed'
 
 export default {
   components: {
-    completed: AppStatusCompleted,
     pending: AppStatusPending,
+    completed: AppStatusCompleted,
     processing: AppStatusProcessing,
     payment_failed: AppStatusPaymentFailed
   },
@@ -61,18 +61,18 @@ export default {
         'badge-warning': this.order.status === 'pending',
         'badge-danger': this.order.status === 'payment_failed'
       }
-    };
+    }
   },
   computed: {
     ...mapGetters({
       locale: 'locale'
     }),
     variations() {
-      return this.order.variations.slice(0, this.maxItems);
+      return this.order.variations.slice(0, this.maxItems)
     },
     moreItems() {
-      return this.order.variations.length - this.maxItems;
+      return this.order.variations.length - this.maxItems
     }
   }
-};
+}
 </script>

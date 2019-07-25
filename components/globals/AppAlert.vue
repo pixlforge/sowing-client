@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
   computed: {
@@ -39,5 +39,5 @@ export default {
       close: 'alert/close'
     })
   }
-};
+}
 </script>

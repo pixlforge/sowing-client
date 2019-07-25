@@ -32,8 +32,8 @@
 </template>
 
 <script>
-import AppTitle from '@/components/AppTitle';
-import AppButtonLinkPrimary from '@/components/buttons/AppButtonLinkPrimary';
+import AppTitle from '@/components/AppTitle'
+import AppButtonLinkPrimary from '@/components/buttons/AppButtonLinkPrimary'
 
 export default {
   components: {
@@ -42,9 +42,9 @@ export default {
   },
   computed: {
     imgUrl() {
-      const img = require('@/assets/img/placeholders/product.svg');
-      return `background-image: url(${img})`;
+      const img = require('@/assets/img/placeholders/product.svg')
+      return `background-image: url(${img})`
     }
   }
-};
+}
 </script>

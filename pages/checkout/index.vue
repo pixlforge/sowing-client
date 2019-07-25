@@ -107,15 +107,15 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
+import { mapGetters, mapActions } from 'vuex'
 
-import AppTitle from '@/components/AppTitle';
-import AppHeader from '@/components/headers/AppHeader';
-import AppContentSection from '@/components/AppContentSection';
-import AppCartOverviewProduct from '@/components/cart/AppCartOverviewProduct';
-import AppShippingMethods from '@/components/checkout/addresses/AppShippingMethods';
-import AppShippingAddress from '@/components/checkout/addresses/AppShippingAddress';
-import AppPaymentMethods from '@/components/checkout/paymentMethods/AppPaymentMethods';
+import AppTitle from '@/components/AppTitle'
+import AppHeader from '@/components/headers/AppHeader'
+import AppContentSection from '@/components/AppContentSection'
+import AppCartOverviewProduct from '@/components/cart/AppCartOverviewProduct'
+import AppShippingMethods from '@/components/checkout/addresses/AppShippingMethods'
+import AppShippingAddress from '@/components/checkout/addresses/AppShippingAddress'
+import AppPaymentMethods from '@/components/checkout/paymentMethods/AppPaymentMethods'
 
 export default {
   middleware: ['authenticated'],
@@ -134,7 +134,7 @@ export default {
           content: 'noindex'
         }
       ]
-    };
+    }
   },
   components: {
     AppTitle,
@@ -156,7 +156,7 @@ export default {
       shippingMethods: [],
       paymentMethods: [],
       submitting: false
-    };
+    }
   },
   computed: {
     ...mapGetters({
@@ -169,38 +169,38 @@ export default {
       addressManagersVisible: 'checkout/addressManagersVisible'
     }),
     pageTitle() {
-      return this.$t('pages.checkout.title');
+      return this.$t('pages.checkout.title')
     },
     shippingMethodId: {
       get() {
-        return this.shippingMethod ? this.shippingMethod.id : '';
+        return this.shippingMethod ? this.shippingMethod.id : ''
       },
       set(shippingMethodId) {
         this.setShippingMethod(
           this.shippingMethods.find(method => method.id === parseInt(shippingMethodId))
-        );
+        )
       }
     }
   },
   watch: {
     'form.address_id'(addressId) {
       this.getShippingMethodsForAddress(addressId).then(() => {
-        this.setShippingMethod(this.shippingMethods[0]);
-      });
+        this.setShippingMethod(this.shippingMethods[0])
+      })
     },
     shippingMethodId() {
-      this.getCart();
+      this.getCart()
     }
   },
   async asyncData({ app }) {
-    const addresses = await app.$axios.$get('/addresses');
-    const paymentMethods = await app.$axios.$get('/payment-methods');
+    const addresses = await app.$axios.$get('/addresses')
+    const paymentMethods = await app.$axios.$get('/payment-methods')
 
     return {
       title: app.head.title,
       addresses: addresses.data,
       paymentMethods: paymentMethods.data
-    };
+    }
   },
   methods: {
     ...mapActions({
@@ -209,36 +209,36 @@ export default {
       flash: 'alert/flash'
     }),
     async order() {
-      this.submitting = true;
+      this.submitting = true
       try {
         await this.$axios.$post(`/orders`, {
           ...this.form,
           shipping_method_id: this.shippingMethodId
-        });
-        this.$toast.success('It worked');
-        this.$router.push(this.localePath({ name: 'orders' }));
+        })
+        this.$toast.success('It worked')
+        this.$router.push(this.localePath({ name: 'orders' }))
       } catch (e) {
         this.flash({
           type: 'danger',
           message: e.response.data.message
-        });
-        this.$toast.error(e.response.data.message);
+        })
+        this.$toast.error(e.response.data.message)
       }
-      this.submitting = false;
-      this.getCart();
+      this.submitting = false
+      this.getCart()
     },
     async getShippingMethodsForAddress(addressId) {
       try {
-        const res = await this.$axios.$get(`/addresses/${addressId}/shipping`);
-        this.shippingMethods = res.data;
-        return res;
+        const res = await this.$axios.$get(`/addresses/${addressId}/shipping`)
+        this.shippingMethods = res.data
+        return res
       } catch (e) {
-        this.$toast.error('toasts.general_error');
+        this.$toast.error('toasts.general_error')
       }
     },
     addPaymentMethod(method) {
-      this.paymentMethods.push(method);
+      this.paymentMethods.push(method)
     }
   }
-};
+}
 </script>

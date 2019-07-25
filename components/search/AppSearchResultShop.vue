@@ -27,9 +27,9 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters } from 'vuex'
 
-import AppTitle from '@/components/AppTitle';
+import AppTitle from '@/components/AppTitle'
 
 export default {
   components: {

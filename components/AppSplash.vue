@@ -38,8 +38,8 @@
 </template>
 
 <script>
-import AppTitle from '@/components/AppTitle';
-import AppContentSection from '@/components/AppContentSection';
+import AppTitle from '@/components/AppTitle'
+import AppContentSection from '@/components/AppContentSection'
 
 export default {
   components: {
@@ -64,10 +64,10 @@ export default {
   },
   computed: {
     success() {
-      return this.type === 'success';
+      return this.type === 'success'
     },
     error() {
-      return this.type === 'error';
+      return this.type === 'error'
     }
   }
 }

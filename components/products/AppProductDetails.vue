@@ -133,10 +133,10 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
+import { mapGetters, mapActions } from 'vuex'
 
-import AppTitle from '@/components/AppTitle';
-import AppVariation from '@/components/products/AppVariation';
+import AppTitle from '@/components/AppTitle'
+import AppVariation from '@/components/products/AppVariation'
 
 export default {
   components: {
@@ -155,43 +155,43 @@ export default {
         variation: '',
         quantity: 1
       }
-    };
+    }
   },
   computed: {
     ...mapGetters({
       locale: 'locale'
     }),
     imgUrl() {
-      return require('@/assets/img/placeholders/category.svg');
+      return require('@/assets/img/placeholders/category.svg')
     },
     imgAlt() {
-      return this.$t('components.products.img.alt');
+      return this.$t('components.products.img.alt')
     },
     productName() {
-      return this.product.name[this.locale];
+      return this.product.name[this.locale]
     },
     productDescription() {
-      return this.product.description[this.locale];
+      return this.product.description[this.locale]
     },
     productCurrency() {
-      return this.product.price.currency;
+      return this.product.price.currency
     },
     productPrice() {
-      return this.product.price.amount;
+      return this.product.price.amount
     },
     quantityLabel() {
-      return this.$t('components.variations.labels.quantity');
+      return this.$t('components.variations.labels.quantity')
     },
     productsRemaining() {
-      return this.$t('components.products.details.remaining');
+      return this.$t('components.products.details.remaining')
     },
     productOutOfStock() {
-      return this.$t('components.products.details.out_of_stock');
+      return this.$t('components.products.details.out_of_stock')
     }
   },
   watch: {
     'form.variation'() {
-      this.form.quantity = 1;
+      this.form.quantity = 1
     }
   },
   methods: {
@@ -204,7 +204,7 @@ export default {
           id: this.form.variation.id,
           quantity: this.form.quantity
         }
-      ]);
+      ])
 
       this.$toast.success(
         `
@@ -214,13 +214,13 @@ export default {
           ${this.form.variation.name[this.locale]}
           ${this.form.quantity > 1 ? this.$t('toasts.cart.item_added_plural') : this.$t('toasts.cart.item_added_singular')}
         `
-      );
+      )
 
       this.form = {
         variation: '',
         quantity: 1
-      };
+      }
     }
   }
-};
+}
 </script>

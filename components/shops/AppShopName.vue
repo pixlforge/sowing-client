@@ -23,8 +23,8 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
-import theming from '@/mixins/theming';
+import { mapGetters, mapActions } from 'vuex'
+import theming from '@/mixins/theming'
 
 export default {
   mixins: [theming],
@@ -42,10 +42,10 @@ export default {
     }),
     localShopName: {
       get() {
-        return this.shopName;
+        return this.shopName
       },
       set(name) {
-        this.setShopName(name);
+        this.setShopName(name)
       }
     }
   },
@@ -59,28 +59,28 @@ export default {
       try {
         await this.$axios.$post('/shops/checker', {
           name: this.shopName
-        });
+        })
         this.$toast.success(
           `"<em>${this.shopName}</em>" ${this.$t('toasts.is_available')}!`
-        );
+        )
         this.flash({
           type: 'success',
           message: `"<em>${this.shopName}</em>" ${this.$t(
             'toasts.is_available'
           )}!`
-        });
+        })
       } catch (e) {
         this.$toast.error(
           `"<em>${this.shopName}</em>" ${this.$t('toasts.is_already_in_use')}.`
-        );
+        )
         this.flash({
           type: 'danger',
           message: `"<em>${this.shopName}</em>" ${this.$t(
             'toasts.is_already_in_use'
           )}!`
-        });
+        })
       }
     }
   }
-};
+}
 </script>

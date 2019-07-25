@@ -9,8 +9,8 @@
     <AppContentSection class="max-w-800">
       <AppParagraphGroup>
         <AppTitle
-          semantic="h3"
-          visual="h3">
+          semantic="h2"
+          visual="h2">
           Titre des conditions
         </AppTitle>
 
@@ -25,8 +25,8 @@
 
       <AppParagraphGroup>
         <AppTitle
-          semantic="h3"
-          visual="h3">
+          semantic="h2"
+          visual="h2">
           Titre des conditions
         </AppTitle>
 
@@ -41,8 +41,8 @@
 
       <AppParagraphGroup>
         <AppTitle
-          semantic="h3"
-          visual="h3">
+          semantic="h2"
+          visual="h2">
           Titre des conditions
         </AppTitle>
 
@@ -57,8 +57,8 @@
 
       <AppParagraphGroup>
         <AppTitle
-          semantic="h3"
-          visual="h3">
+          semantic="h2"
+          visual="h2">
           Titre des conditions
         </AppTitle>
 
@@ -76,10 +76,10 @@
 </template>
 
 <script>
-import AppTitle from '@/components/AppTitle';
-import AppContentSection from '@/components/AppContentSection';
-import AppParagraph from '@/components/paragraphs/AppParagraph';
-import AppParagraphGroup from '@/components/paragraphs/AppParagraphGroup';
+import AppTitle from '@/components/AppTitle'
+import AppContentSection from '@/components/AppContentSection'
+import AppParagraph from '@/components/paragraphs/AppParagraph'
+import AppParagraphGroup from '@/components/paragraphs/AppParagraphGroup'
 
 export default {
   components: {

@@ -3,7 +3,7 @@ export default function ({ $axios, store }) {
     request.data = {
       ...request.data,
       client_locale: store.getters.locale
-    };
-    return request;
-  });
+    }
+    return request
+  })
 }

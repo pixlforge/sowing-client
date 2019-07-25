@@ -59,11 +59,11 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapActions } from 'vuex'
 
-import AppTitle from '@/components/AppTitle';
-import AppHeader from '@/components/headers/AppHeader';
-import AppContentSection from '@/components/AppContentSection';
+import AppTitle from '@/components/AppTitle'
+import AppHeader from '@/components/headers/AppHeader'
+import AppContentSection from '@/components/AppContentSection'
 
 export default {
   middleware: ['guest'],
@@ -82,7 +82,7 @@ export default {
           content: 'noindex'
         }
       ]
-    };
+    }
   },
   components: {
     AppTitle,
@@ -93,12 +93,12 @@ export default {
     return {
       email: '',
       errors: {}
-    };
+    }
   },
   asyncData({ app }) {
     return {
       title: app.head.title
-    };
+    }
   },
   methods: {
     ...mapActions({
@@ -106,15 +106,15 @@ export default {
     }),
     async send() {
       try {
-        const res = await this.$axios.$post('/auth/forgot', { email: this.email });
-        this.$toast.success(res.message);
-        this.flash({ message: res.message, type: 'success' });
-        this.$router.push(this.localePath({ name: 'login' }));
+        const res = await this.$axios.$post('/auth/forgot', { email: this.email })
+        this.$toast.success(res.message)
+        this.flash({ message: res.message, type: 'success' })
+        this.$router.push(this.localePath({ name: 'login' }))
       } catch (e) {
-        this.errors = e.response.data.errors;
-        this.$toast.error(this.errors.email);
+        this.errors = e.response.data.errors
+        this.$toast.error(this.errors.email)
       }
     }
   }
-};
+}
 </script>

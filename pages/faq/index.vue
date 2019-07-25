@@ -58,12 +58,12 @@
 </template>
 
 <script>
-import AppTitle from '@/components/AppTitle';
-import AppHeader from '@/components/headers/AppHeader';
-import AppContentSection from '@/components/AppContentSection';
-import AppParagraph from '@/components/paragraphs/AppParagraph';
-import AppParagraphGroup from '@/components/paragraphs/AppParagraphGroup';
-import AppStreakNewsletter from '@/components/streaks/AppStreakNewsletter';
+import AppTitle from '@/components/AppTitle'
+import AppHeader from '@/components/headers/AppHeader'
+import AppContentSection from '@/components/AppContentSection'
+import AppParagraph from '@/components/paragraphs/AppParagraph'
+import AppParagraphGroup from '@/components/paragraphs/AppParagraphGroup'
+import AppStreakNewsletter from '@/components/streaks/AppStreakNewsletter'
 
 export default {
   head() {
@@ -76,7 +76,7 @@ export default {
           content: ''
         }
       ]
-    };
+    }
   },
   components: {
     AppTitle,
@@ -89,7 +89,7 @@ export default {
   asyncData({ app }) {
     return {
       title: app.head.title
-    };
+    }
   }
 }
 </script>

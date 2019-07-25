@@ -49,7 +49,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters } from 'vuex'
 
 export default {
   props: {
@@ -72,42 +72,42 @@ export default {
       locale: 'locale'
     }),
     outOfStock() {
-      return this.$t('components.variations.select.out_of_stock');
+      return this.$t('components.variations.select.out_of_stock')
     },
     variationType() {
-      return this.variations[0].type.name[this.locale];
+      return this.variations[0].type.name[this.locale]
     },
     selectionLabel() {
-      return this.$t('components.variations.labels.selection');
+      return this.$t('components.variations.labels.selection')
     },
     selectedVariationId() {
       if (!this.value) {
-        return '';
+        return ''
       }
 
       if (!this.findVariation(this.value.id)) {
-        return '';
+        return ''
       }
 
-      return this.value.id;
+      return this.value.id
     }
   },
   methods: {
     changed(event) {
-      this.$emit('input', this.findVariation(event.target.value));
+      this.$emit('input', this.findVariation(event.target.value))
     },
     findVariation(id) {
-      const variation = this.variations.find(variation => variation.id === parseInt(id));
+      const variation = this.variations.find(variation => variation.id === parseInt(id))
 
       if (typeof variation === 'undefined') {
-        return null;
+        return null
       }
 
-      return variation;
+      return variation
     },
     variationName(variation) {
-      return variation.name[this.locale];
+      return variation.name[this.locale]
     }
   }
-};
+}
 </script>

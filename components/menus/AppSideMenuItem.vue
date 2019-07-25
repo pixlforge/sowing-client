@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import theming from '@/mixins/theming';
+import theming from '@/mixins/theming'
 
 export default {
   mixins: [theming],
@@ -26,13 +26,13 @@ export default {
   },
   computed: {
     classes() {
-      let active;
+      let active
 
       if (this.$route.name.includes(this.route)) {
-        active = `text-white shadow-xl ${this.bgTheme}`;
+        active = `text-white shadow-xl ${this.bgTheme}`
       }
 
-      return `hover:${this.bgTheme} ${active}`;
+      return `hover:${this.bgTheme} ${active}`
     }
   }
 }

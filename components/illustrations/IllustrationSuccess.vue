@@ -790,16 +790,16 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters } from 'vuex'
 
 export default {
   computed: {
     ...mapGetters({
-      shopTheme: "shop/shopTheme"
+      shopTheme: 'shop/shopTheme'
     }),
     textTheme() {
-      return `text-${this.shopTheme}`;
+      return `text-${this.shopTheme}`
     }
   }
-};
+}
 </script>

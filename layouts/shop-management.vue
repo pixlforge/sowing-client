@@ -43,18 +43,11 @@
         <!-- User owns a shop -->
         <template v-if="userHasShop">
 
-          <!-- Title -->
-          <AppTitle
-            semantic="h1"
-            visual="main">
-            {{ $t("pages.shop.title") }}
-          </AppTitle>
-
           <!-- Content -->
-          <div class="shop__columns-wrapper">
+          <div class="w-full flex mt-96">
 
             <!-- Side menu -->
-            <aside class="shop__menu">
+            <aside class="w-1/5 pr-30">
               <AppSideMenu>
                 <AppSideMenuItem
                   label="Tableau de bord"
@@ -69,7 +62,9 @@
             </aside>
 
             <!-- Page content -->
-            <nuxt/>
+            <section class="w-4/5 pl-30">
+              <nuxt/>
+            </section>
           </div>
         </template>
 

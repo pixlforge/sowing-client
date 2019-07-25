@@ -28,17 +28,17 @@ export default {
         main: ' text-30 md:text-48 font-bold text-center tracking-tight',
         header: ' text-24 md:text-36 lg:text-48 text-white tracking-tight'
       }
-    };
+    }
   },
   computed: {
     classes() {
-      let classes = this.baseClasses[this.visual];
+      let classes = this.baseClasses[this.visual]
 
       if (this.utilities) {
-        classes += ` ${this.utilities}`;
+        classes += ` ${this.utilities}`
       }
 
-      return classes;
+      return classes
     }
   },
   render(createElement) {
@@ -46,7 +46,7 @@ export default {
       this.semantic,
       { attrs: { class: this.classes } },
       this.$slots.default
-    );
+    )
   }
 }
 </script>

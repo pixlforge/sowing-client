@@ -34,10 +34,10 @@ export default {
       let classes = `bg-${this.color}-500 hover:bg-${this.color}-700`
 
       if (this.color === 'pink') {
-        classes = `bg-${this.color}-600 hover:bg-${this.color}-700`;
+        classes = `bg-${this.color}-600 hover:bg-${this.color}-700`
       }
 
-      return classes;
+      return classes
     }
   }
 }

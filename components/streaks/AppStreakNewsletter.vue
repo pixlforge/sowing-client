@@ -56,8 +56,8 @@
 </template>
 
 <script>
-import AppTitle from '@/components/AppTitle';
-import AppButtonPrimary from '@/components/buttons/AppButtonPrimary';
+import AppTitle from '@/components/AppTitle'
+import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 
 export default {
   components: {
@@ -68,28 +68,28 @@ export default {
     return {
       email: '',
       errors: {}
-    };
+    }
   },
   computed: {
     placeholder() {
-      return this.$t('streaks.newsletter.placeholder');
+      return this.$t('streaks.newsletter.placeholder')
     }
   },
   methods: {
     async subscribe() {
-      this.errors = {};
+      this.errors = {}
 
       try {
         await this.$axios.$post('/newsletter/subscribe', {
           email: this.email
-        });
-        this.$toast.success(this.$t('toasts.subscribed'));
-        this.email = '';
+        })
+        this.$toast.success(this.$t('toasts.subscribed'))
+        this.email = ''
       } catch (e) {
-        this.errors = e.response.data.errors;
-        this.$toast.error(this.$t('toasts.validation'));
+        this.errors = e.response.data.errors
+        this.$toast.error(this.$t('toasts.validation'))
       }
     }
   }
-};
+}
 </script>

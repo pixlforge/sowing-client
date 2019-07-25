@@ -66,11 +66,11 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
+import { mapGetters, mapActions } from 'vuex'
 
-import AppHeader from '@/components/headers/AppHeader';
-import AppContentSection from '@/components/AppContentSection';
-import AppCartOverviewProduct from '@/components/cart/AppCartOverviewProduct';
+import AppHeader from '@/components/headers/AppHeader'
+import AppContentSection from '@/components/AppContentSection'
+import AppCartOverviewProduct from '@/components/cart/AppCartOverviewProduct'
 
 export default {
   middleware: ['authenticated'],
@@ -89,7 +89,7 @@ export default {
           content: 'noindex'
         }
       ]
-    };
+    }
   },
   components: {
     AppHeader,
@@ -105,19 +105,19 @@ export default {
       has_changed: 'cart/hasChanged'
     }),
     pageTitle() {
-      return this.$t('pages.cart.title');
+      return this.$t('pages.cart.title')
     }
   },
   asyncData({ app }) {
     return {
       title: app.head.title
-    };
+    }
   },
   mounted() {
-    this.getCart();
+    this.getCart()
 
     if (this.has_changed) {
-      this.$toast.info(`${this.$t('toasts.cart.has_changed')}`);
+      this.$toast.info(`${this.$t('toasts.cart.has_changed')}`)
     }
   },
   methods: {
@@ -125,5 +125,5 @@ export default {
       getCart: 'cart/getCart'
     })
   }
-};
+}
 </script>

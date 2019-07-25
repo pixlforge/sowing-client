@@ -35,8 +35,8 @@
 </template>
 
 <script>
-import AppTitle from '@/components/AppTitle';
-import AppButtonLinkPrimary from '@/components/buttons/AppButtonLinkPrimary';
+import AppTitle from '@/components/AppTitle'
+import AppButtonLinkPrimary from '@/components/buttons/AppButtonLinkPrimary'
 
 export default {
   components: {

@@ -200,8 +200,8 @@
 </template>
 
 <script>
-import AppLogo from '@/components/AppLogo';
-import IllustrationEcommerce from '@/components/illustrations/IllustrationEcommerce';
+import AppLogo from '@/components/AppLogo'
+import IllustrationEcommerce from '@/components/illustrations/IllustrationEcommerce'
 
 export default {
   components: {
@@ -213,21 +213,21 @@ export default {
     return {
       email: '',
       errors: {}
-    };
+    }
   },
   methods: {
     async subscribe() {
-      this.errors = {};
+      this.errors = {}
 
       try {
         await this.$axios.$post('/newsletter/subscribe', {
           email: this.email
-        });
-        this.$toast.success(this.$t('toasts.subscribed'));
-        this.email = '';
+        })
+        this.$toast.success(this.$t('toasts.subscribed'))
+        this.email = ''
       } catch (e) {
-        this.errors = e.response.data.errors;
-        this.$toast.error(this.$t('toasts.validation'));
+        this.errors = e.response.data.errors
+        this.$toast.error(this.$t('toasts.validation'))
       }
     }
   }

@@ -40,7 +40,7 @@ export default {
         classes = `text-${this.color}-600`
       }
 
-      return classes;
+      return classes
     }
   }
 }

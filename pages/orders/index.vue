@@ -27,9 +27,9 @@
 </template>
 
 <script>
-import AppOrder from '@/components/orders/AppOrder';
-import AppHeader from '@/components/headers/AppHeader';
-import AppContentSection from '@/components/AppContentSection';
+import AppOrder from '@/components/orders/AppOrder'
+import AppHeader from '@/components/headers/AppHeader'
+import AppContentSection from '@/components/AppContentSection'
 
 export default {
   middleware: ['authenticated'],
@@ -48,7 +48,7 @@ export default {
           content: 'noindex'
         }
       ]
-    };
+    }
   },
   components: {
     AppOrder,
@@ -58,14 +58,14 @@ export default {
   data() {
     return {
       orders: []
-    };
+    }
   },
   async asyncData({ app }) {
-    const res = await app.$axios.$get('/orders');
+    const res = await app.$axios.$get('/orders')
     return {
       orders: res.data,
       title: app.head.title
-    };
+    }
   }
-};
+}
 </script>

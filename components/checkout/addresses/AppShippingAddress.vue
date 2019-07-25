@@ -58,11 +58,11 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
+import { mapGetters, mapActions } from 'vuex'
 
-import AppTitle from '@/components/AppTitle';
-import AppShippingAddressCreator from '@/components/checkout/addresses/AppShippingAddressCreator';
-import AppShippingAddressSelector from '@/components/checkout/addresses/AppShippingAddressSelector';
+import AppTitle from '@/components/AppTitle'
+import AppShippingAddressCreator from '@/components/checkout/addresses/AppShippingAddressCreator'
+import AppShippingAddressSelector from '@/components/checkout/addresses/AppShippingAddressSelector'
 
 export default {
   components: {
@@ -80,7 +80,7 @@ export default {
     return {
       currentAddresses: this.addresses,
       selectedAddress: {}
-    };
+    }
   },
   computed: {
     ...mapGetters({
@@ -90,12 +90,12 @@ export default {
       addressManagersVisible: 'checkout/addressManagersVisible'
     }),
     defaultAddress() {
-      return this.currentAddresses.find(address => address.is_default);
+      return this.currentAddresses.find(address => address.is_default)
     }
   },
   created() {
     if (this.addresses.length) {
-      this.switchAddress(this.defaultAddress);
+      this.switchAddress(this.defaultAddress)
     }
   },
   methods: {
@@ -106,16 +106,16 @@ export default {
       closeAddressCreator: 'checkout/closeAddressCreator'
     }),
     switchAddress(address) {
-      this.selectedAddress = address;
-      this.closeAddressSelector();
-      this.$emit('input', this.selectedAddress.id);
+      this.selectedAddress = address
+      this.closeAddressSelector()
+      this.$emit('input', this.selectedAddress.id)
     },
     addAddress(address) {
-      this.currentAddresses.push(address);
-      this.switchAddress(address);
-      this.closeAddressCreator();
-      this.$toast.success(this.$t('toasts.addresses.created'));
+      this.currentAddresses.push(address)
+      this.switchAddress(address)
+      this.closeAddressCreator()
+      this.$toast.success(this.$t('toasts.addresses.created'))
     }
   }
-};
+}
 </script>

@@ -29,6 +29,7 @@
         </ul>
       </li>
     </ul>
+
     <button
       class="button button__primary button--centered button--spaced"
       @click.prevent="openCreator">
@@ -41,7 +42,7 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
   props: {
@@ -56,24 +57,24 @@ export default {
   },
   computed: {
     ...mapGetters({
-      locale: "locale"
+      locale: 'locale'
     })
   },
   methods: {
     ...mapActions({
-      closeAddressSelector: "checkout/closeAddressSelector",
-      openAddressCreator: "checkout/openAddressCreator"
+      closeAddressSelector: 'checkout/closeAddressSelector',
+      openAddressCreator: 'checkout/openAddressCreator'
     }),
 
     openCreator() {
-      this.closeAddressSelector();
-      this.openAddressCreator();
+      this.closeAddressSelector()
+      this.openAddressCreator()
     },
 
     selectAddress(address) {
-      this.$emit("address:selected", address);
-      this.$toast.success(this.$t("toasts.addresses.selected"));
+      this.$emit('address:selected', address)
+      this.$toast.success(this.$t('toasts.addresses.selected'))
     }
   }
-};
+}
 </script>

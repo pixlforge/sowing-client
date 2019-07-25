@@ -156,10 +156,10 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
-import theming from '@/mixins/theming';
+import { mapGetters } from 'vuex'
+import theming from '@/mixins/theming'
 
-import AppTitle from '@/components/AppTitle';
+import AppTitle from '@/components/AppTitle'
 
 export default {
   components: {
@@ -172,5 +172,5 @@ export default {
       categories: 'categories'
     })
   }
-};
+}
 </script>

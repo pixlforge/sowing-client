@@ -35,17 +35,17 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
-import theming from '@/mixins/theming';
+import { mapGetters, mapActions } from 'vuex'
+import theming from '@/mixins/theming'
 
-import AppNavbar from '@/components/AppNavbar';
-import AppAlert from '@/components/globals/AppAlert';
-import AppFooter from '@/components/footer/AppFooter';
-import AppHeader from '@/components/headers/AppHeader';
-import AppShopCover from '@/components/shops/AppShopCover';
-import AppDisclaimer from '@/components/footer/AppDisclaimer';
-import AppCategoryBar from '@/components/categories/AppCategoryBar';
-import AppShopNavigation from '@/components/shops/AppShopNavigation';
+import AppNavbar from '@/components/AppNavbar'
+import AppAlert from '@/components/globals/AppAlert'
+import AppFooter from '@/components/footer/AppFooter'
+import AppHeader from '@/components/headers/AppHeader'
+import AppShopCover from '@/components/shops/AppShopCover'
+import AppDisclaimer from '@/components/footer/AppDisclaimer'
+import AppCategoryBar from '@/components/categories/AppCategoryBar'
+import AppShopNavigation from '@/components/shops/AppShopNavigation'
 
 export default {
   components: {
@@ -67,12 +67,12 @@ export default {
     })
   },
   destroyed() {
-    this.resetShop();
+    this.resetShop()
   },
   methods: {
     ...mapActions({
       resetShop: 'shop/resetShop'
     })
   }
-};
+}
 </script>

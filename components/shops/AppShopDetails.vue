@@ -281,7 +281,7 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
   props: {
@@ -317,94 +317,94 @@ export default {
     }),
     localPostalCode: {
       get() {
-        return this.shopPostalCode;
+        return this.shopPostalCode
       },
       set(postalCode) {
-        this.setShopPostalCode(postalCode);
+        this.setShopPostalCode(postalCode)
       }
     },
     localCity: {
       get() {
-        return this.shopCity;
+        return this.shopCity
       },
       set(city) {
-        this.setShopCity(city);
+        this.setShopCity(city)
       }
     },
     localCountry: {
       get() {
-        return this.shopCountryId;
+        return this.shopCountryId
       },
       set(countryId) {
-        this.setShopCountryId(countryId);
+        this.setShopCountryId(countryId)
       }
     },
     localShortDescriptionFr: {
       get() {
-        return this.shopShortDescriptionFr;
+        return this.shopShortDescriptionFr
       },
       set(description) {
-        this.setShopShortDescriptionFr(description);
+        this.setShopShortDescriptionFr(description)
       }
     },
     localLongDescriptionFr: {
       get() {
-        return this.shopLongDescriptionFr;
+        return this.shopLongDescriptionFr
       },
       set(description) {
-        this.setShopLongDescriptionFr(description);
+        this.setShopLongDescriptionFr(description)
       }
     },
     localShortDescriptionEn: {
       get() {
-        return this.shopShortDescriptionEn;
+        return this.shopShortDescriptionEn
       },
       set(description) {
-        this.setShopShortDescriptionEn(description);
+        this.setShopShortDescriptionEn(description)
       }
     },
     localLongDescriptionEn: {
       get() {
-        return this.shopLongDescriptionEn;
+        return this.shopLongDescriptionEn
       },
       set(description) {
-        this.setShopLongDescriptionEn(description);
+        this.setShopLongDescriptionEn(description)
       }
     },
     localShortDescriptionDe: {
       get() {
-        return this.shopShortDescriptionDe;
+        return this.shopShortDescriptionDe
       },
       set(description) {
-        this.setShopShortDescriptionDe(description);
+        this.setShopShortDescriptionDe(description)
       }
     },
     localLongDescriptionDe: {
       get() {
-        return this.shopLongDescriptionDe;
+        return this.shopLongDescriptionDe
       },
       set(description) {
-        this.setShopLongDescriptionDe(description);
+        this.setShopLongDescriptionDe(description)
       }
     },
     localShortDescriptionIt: {
       get() {
-        return this.shopShortDescriptionIt;
+        return this.shopShortDescriptionIt
       },
       set(description) {
-        this.setShopShortDescriptionIt(description);
+        this.setShopShortDescriptionIt(description)
       }
     },
     localLongDescriptionIt: {
       get() {
-        return this.shopLongDescriptionIt;
+        return this.shopLongDescriptionIt
       },
       set(description) {
-        this.setShopLongDescriptionIt(description);
+        this.setShopLongDescriptionIt(description)
       }
     },
     shopExistsAndNotEditable() {
-      return this.shopExists && !this.editable;
+      return this.shopExists && !this.editable
     }
   },
   methods: {
@@ -422,5 +422,5 @@ export default {
       setShopShortDescriptionIt: 'shop/setShopShortDescriptionIt'
     })
   }
-};
+}
 </script>

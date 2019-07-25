@@ -52,18 +52,18 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters } from 'vuex'
 
-import AppTitle from '@/components/AppTitle';
-import AppHeader from '@/components/headers/AppHeader';
-import AppContentSection from '@/components/AppContentSection';
-import AppSubCategory from '@/components/categories/AppSubCategory';
+import AppTitle from '@/components/AppTitle'
+import AppHeader from '@/components/headers/AppHeader'
+import AppContentSection from '@/components/AppContentSection'
+import AppSubCategory from '@/components/categories/AppSubCategory'
 
 export default {
   head() {
     return {
       title: `${this.category.name[this.locale]} | ${this.title}`
-    };
+    }
   },
   components: {
     AppTitle,
@@ -74,29 +74,29 @@ export default {
   data() {
     return {
       category: {}
-    };
+    }
   },
   computed: {
     ...mapGetters({
       locale: 'locale'
     }),
     categoryHasSections() {
-      return this.category.children[0].is_section;
+      return this.category.children[0].is_section
     },
     categoryName() {
-      return this.category.name[this.locale];
+      return this.category.name[this.locale]
     },
     categoryDescription() {
-      return this.category.description[this.locale];
+      return this.category.description[this.locale]
     }
   },
   async asyncData({ params, app }) {
-    const res = await app.$axios.$get(`/categories/${params.slug}`);
+    const res = await app.$axios.$get(`/categories/${params.slug}`)
 
     return {
       title: app.head.title,
       category: res.data
-    };
+    }
   }
-};
+}
 </script>

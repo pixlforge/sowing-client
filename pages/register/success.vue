@@ -22,14 +22,14 @@
 </template>
 
 <script>
-import AppSplash from '@/components/AppSplash';
-import AppHeader from '@/components/headers/AppHeader';
+import AppSplash from '@/components/AppSplash'
+import AppHeader from '@/components/headers/AppHeader'
 
 export default {
   head() {
     return {
       title: `${this.$t('pages.register_success.title')} | ${this.title}`
-    };
+    }
   },
   components: {
     AppSplash,
@@ -38,7 +38,7 @@ export default {
   asyncData({ app }) {
     return {
       title: app.head.title
-    };
+    }
   }
-};
+}
 </script>

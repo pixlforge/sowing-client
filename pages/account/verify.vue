@@ -40,8 +40,8 @@
 </template>
 
 <script>
-import AppHeader from '@/components/headers/AppHeader';
-import AppSplash from '@/components/AppSplash';
+import AppHeader from '@/components/headers/AppHeader'
+import AppSplash from '@/components/AppSplash'
 
 export default {
   middleware: ['authenticated'],
@@ -60,7 +60,7 @@ export default {
           content: 'noindex'
         }
       ]
-    };
+    }
   },
   components: {
     AppHeader,
@@ -71,11 +71,11 @@ export default {
       tried: false,
       verified: false,
       error: null
-    };
+    }
   },
   computed: {
     verificationSuccessful() {
-      return this.verified;
+      return this.verified
     },
     verificationFailed() {
       return this.tried && !this.verified
@@ -85,29 +85,29 @@ export default {
     return {
       title: app.head.title,
       description: app.head.description
-    };
+    }
   },
   mounted() {
-    this.verifyEmailAddress();
+    this.verifyEmailAddress()
   },
   methods: {
     async verifyEmailAddress() {
-      const token = this.$route.query.token;
+      const token = this.$route.query.token
 
       if (!token) {
-        return;
+        return
       }
 
       try {
-        await this.$axios.$post('/auth/verify', { token });
-        this.verified = true;
-        this.$toast.success(this.$t('toasts.account_confirmed'));
+        await this.$axios.$post('/auth/verify', { token })
+        this.verified = true
+        this.$toast.success(this.$t('toasts.account_confirmed'))
       } catch (e) {
-        this.error = e.response.data.errors.token;
-        this.$toast.error(this.error);
+        this.error = e.response.data.errors.token
+        this.$toast.error(this.error)
       }
 
-      this.tried = true;
+      this.tried = true
     }
   }
 }

@@ -93,10 +93,10 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapActions } from 'vuex'
 
-import AppHeader from '@/components/headers/AppHeader';
-import AppContentSection from '@/components/AppContentSection';
+import AppHeader from '@/components/headers/AppHeader'
+import AppContentSection from '@/components/AppContentSection'
 
 export default {
   middleware: ['guest'],
@@ -115,7 +115,7 @@ export default {
           content: 'noindex'
         }
       ]
-    };
+    }
   },
   components: {
     AppHeader,
@@ -128,49 +128,49 @@ export default {
         password: ''
       },
       errors: {}
-    };
+    }
   },
   computed: {
     missingCredentials() {
-      return !this.form.email || this.form.password.length < 8;
+      return !this.form.email || this.form.password.length < 8
     }
   },
   asyncData({ app }) {
     return {
       title: app.head.title
-    };
+    }
   },
   mounted() {
-    this.$refs.autofocus.focus();
+    this.$refs.autofocus.focus()
   },
   methods: {
     ...mapActions({
       getCart: 'cart/getCart'
     }),
     async login() {
-      this.errors = {};
+      this.errors = {}
 
       try {
         await this.$auth.loginWith('local', {
           data: this.form
-        });
+        })
 
         if (this.$route.query.redirect) {
-          this.$router.push(this.$route.query.redirect);
+          this.$router.push(this.$route.query.redirect)
         } else {
-          this.$router.push(this.localePath({ name: 'index' }));
+          this.$router.push(this.localePath({ name: 'index' }))
         }
 
         this.$toast.success(
           `${this.$t('toasts.welcome')}, ${this.$auth.user.name}!`
-        );
+        )
 
-        await this.getCart();
+        await this.getCart()
       } catch (e) {
-        this.errors = e.response.data.errors;
-        this.$toast.error(this.errors.email);
+        this.errors = e.response.data.errors
+        this.$toast.error(this.errors.email)
       }
     }
   }
-};
+}
 </script>

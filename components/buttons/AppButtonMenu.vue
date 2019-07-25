@@ -27,7 +27,7 @@
       <!-- Shop -->
       <AppDropdownItem
         v-if="userHasShop"
-        :to="localePath({ name: 'orders' })"
+        :to="localePath({ name: 'shop-management-dashboard' })"
         icon="store">
         {{ $t("pages.shop.title") }}
       </AppDropdownItem>
@@ -59,11 +59,11 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
+import { mapGetters, mapActions } from 'vuex'
 
-import AppDropdownItem from '@/components/dropdowns/AppDropdownItem';
-import AppDropdownDivider from '@/components/dropdowns/AppDropdownDivider';
-import AppButtonLinkPrimary from '@/components/buttons/AppButtonLinkPrimary';
+import AppDropdownItem from '@/components/dropdowns/AppDropdownItem'
+import AppDropdownDivider from '@/components/dropdowns/AppDropdownDivider'
+import AppButtonLinkPrimary from '@/components/buttons/AppButtonLinkPrimary'
 
 export default {
   components: {
@@ -74,51 +74,51 @@ export default {
   data() {
     return {
       dropdownIsOpen: false
-    };
+    }
   },
   computed: {
     ...mapGetters({
       userHasShop: 'userHasShop'
     }),
     username() {
-      return this.$auth.user.name;
+      return this.$auth.user.name
     }
   },
   mounted() {
     const escapeHandler = (event) => {
       if (event.key === 'Escape' && this.dropdownIsOpen) {
-        this.dropdownIsOpen = false;
+        this.dropdownIsOpen = false
       }
-    };
-    document.addEventListener('keydown', escapeHandler);
+    }
+    document.addEventListener('keydown', escapeHandler)
 
     const clickHandler = (event) => {
-      const element = this.$refs.dropdownMenu;
-      const target = event.target;
+      const element = this.$refs.dropdownMenu
+      const target = event.target
       if (element !== target && !element.contains(target)) {
-        this.dropdownIsOpen = false;
+        this.dropdownIsOpen = false
       }
-    };
-    document.addEventListener('click', clickHandler);
+    }
+    document.addEventListener('click', clickHandler)
 
     this.$once('hook:destroyed', () => {
-      document.removeEventListener('keydown', escapeHandler);
-      document.removeEventListener('click', clickHandler);
-    });
+      document.removeEventListener('keydown', escapeHandler)
+      document.removeEventListener('click', clickHandler)
+    })
   },
   methods: {
     ...mapActions({
       emptyCart: 'cart/emptyCart'
     }),
     toggleDropdown() {
-      this.dropdownIsOpen = !this.dropdownIsOpen;
+      this.dropdownIsOpen = !this.dropdownIsOpen
     },
     async logout() {
-      this.$toast.success(`${this.$t('toasts.logged_out')}`);
-      this.$router.push(this.localePath({ name: 'index' }));
-      await this.$auth.logout();
-      await this.emptyCart();
+      this.$toast.success(`${this.$t('toasts.logged_out')}`)
+      this.$router.push(this.localePath({ name: 'index' }))
+      await this.$auth.logout()
+      await this.emptyCart()
     }
   }
-};
+}
 </script>

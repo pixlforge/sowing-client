@@ -65,8 +65,8 @@
 </template>
 
 <script>
-import AppSearchResultShop from '@/components/search/AppSearchResultShop';
-import AppSearchResultProduct from '@/components/search/AppSearchResultProduct';
+import AppSearchResultShop from '@/components/search/AppSearchResultShop'
+import AppSearchResultProduct from '@/components/search/AppSearchResultProduct'
 
 export default {
   components: {
@@ -89,7 +89,7 @@ export default {
         id: process.env.ALGOLIA_APP_ID,
         key: process.env.ALGOLIA_SECRET
       }
-    };
+    }
   }
 }
 </script>

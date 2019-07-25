@@ -44,7 +44,7 @@
 </template>
 
 <script>
-import AppTitle from '@/components/AppTitle';
+import AppTitle from '@/components/AppTitle'
 
 export default {
   components: {
@@ -58,8 +58,8 @@ export default {
   },
   computed: {
     style() {
-      return `background-color: ${this.shop.accent}`;
+      return `background-color: ${this.shop.accent}`
     }
   }
-};
+}
 </script>

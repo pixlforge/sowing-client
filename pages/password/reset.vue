@@ -83,10 +83,10 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapActions } from 'vuex'
 
-import AppHeader from '@/components/headers/AppHeader';
-import AppContentSection from '@/components/AppContentSection';
+import AppHeader from '@/components/headers/AppHeader'
+import AppContentSection from '@/components/AppContentSection'
 
 export default {
   middleware: ['guest'],
@@ -105,7 +105,7 @@ export default {
           content: 'noindex'
         }
       ]
-    };
+    }
   },
   components: {
     AppHeader,
@@ -120,15 +120,15 @@ export default {
         password_confirmation: ''
       },
       errors: {}
-    };
+    }
   },
   asyncData({ app }) {
     return {
       title: app.head.title
-    };
+    }
   },
   mounted() {
-    this.form.token = this.$route.query.token;
+    this.form.token = this.$route.query.token
   },
   methods: {
     ...mapActions({
@@ -136,22 +136,22 @@ export default {
     }),
     async reset() {
       if (!this.form.token) {
-        return;
+        return
       }
 
       try {
-        const res = await this.$axios.$post('/auth/reset', this.form);
-        this.$toast.success(res.message);
-        this.flash({ message: res.message, type: 'success' });
-        this.$router.push(this.localePath({ name: 'login' }));
+        const res = await this.$axios.$post('/auth/reset', this.form)
+        this.$toast.success(res.message)
+        this.flash({ message: res.message, type: 'success' })
+        this.$router.push(this.localePath({ name: 'login' }))
       } catch (e) {
-        this.errors = e.response.data.errors;
+        this.errors = e.response.data.errors
 
         for (const error in this.errors) {
-          this.$toast.error(this.errors[error]);
+          this.$toast.error(this.errors[error])
         }
       }
     }
   }
-};
+}
 </script>

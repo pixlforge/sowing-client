@@ -37,11 +37,11 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters } from 'vuex'
 
-import AppHeader from '@/components/headers/AppHeader';
-import AppContentSection from '@/components/AppContentSection';
-import AppSearchResult from '@/components/search/AppSearchResult';
+import AppHeader from '@/components/headers/AppHeader'
+import AppContentSection from '@/components/AppContentSection'
+import AppSearchResult from '@/components/search/AppSearchResult'
 
 export default {
   head() {
@@ -54,7 +54,7 @@ export default {
           content: ''
         }
       ]
-    };
+    }
   },
   components: {
     AppHeader,
@@ -74,8 +74,8 @@ export default {
   asyncData({ app }) {
     return {
       title: app.head.title
-    };
+    }
   }
-};
+}
 
 </script>

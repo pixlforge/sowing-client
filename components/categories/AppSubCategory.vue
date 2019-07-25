@@ -48,10 +48,10 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters } from 'vuex'
 
-import AppTitle from '@/components/AppTitle';
-import AppButtonLinkSecondary from '@/components/buttons/AppButtonLinkSecondary';
+import AppTitle from '@/components/AppTitle'
+import AppButtonLinkSecondary from '@/components/buttons/AppButtonLinkSecondary'
 
 export default {
   components: {
@@ -73,11 +73,11 @@ export default {
       locale: 'locale'
     }),
     alt() {
-      return this.$t('components.category.img.alt');
+      return this.$t('components.category.img.alt')
     },
     imgSrc() {
-      return require('@/assets/img/placeholders/category.svg');
+      return require('@/assets/img/placeholders/category.svg')
     }
   }
-};
+}
 </script>

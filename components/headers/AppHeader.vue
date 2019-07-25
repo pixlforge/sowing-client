@@ -36,9 +36,9 @@
 </template>
 
 <script>
-import AppTitle from '@/components/AppTitle';
-import AppHeaderIcon from '@/components/headers/AppHeaderIcon';
-import AppHeaderDescription from '@/components/headers/AppHeaderDescription';
+import AppTitle from '@/components/AppTitle'
+import AppHeaderIcon from '@/components/headers/AppHeaderIcon'
+import AppHeaderDescription from '@/components/headers/AppHeaderDescription'
 
 export default {
   components: {

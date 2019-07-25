@@ -56,9 +56,9 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters } from 'vuex'
 
-import AppTitle from '@/components/AppTitle';
+import AppTitle from '@/components/AppTitle'
 
 export default {
   components: {
@@ -75,23 +75,23 @@ export default {
       locale: 'locale'
     }),
     alt() {
-      return this.$t('components.products.img.alt');
+      return this.$t('components.products.img.alt')
     },
     imgSrc() {
-      return require('@/assets/img/placeholders/product.svg');
+      return require('@/assets/img/placeholders/product.svg')
     },
     productName() {
-      return this.product.name[this.locale];
+      return this.product.name[this.locale]
     },
     productCurrency() {
-      return this.product.price.currency;
+      return this.product.price.currency
     },
     productPrice() {
-      return this.product.price.amount;
+      return this.product.price.amount
     },
     shopName() {
-      return this.product.shop.name;
+      return this.product.shop.name
     }
   }
-};
+}
 </script>

@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters } from 'vuex'
 
 export default {
   props: {
@@ -46,14 +46,14 @@ export default {
       type: Array,
       required: false,
       default() {
-        return [];
+        return []
       }
     }
   },
   data() {
     return {
       countries: []
-    };
+    }
   },
   computed: {
     ...mapGetters({
@@ -61,13 +61,13 @@ export default {
     })
   },
   created() {
-    this.getCountries();
+    this.getCountries()
   },
   methods: {
     async getCountries() {
-      const res = await this.$axios.$get('/countries');
-      this.countries = res.data;
+      const res = await this.$axios.$get('/countries')
+      this.countries = res.data
     }
   }
-};
+}
 </script>

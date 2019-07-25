@@ -20,7 +20,6 @@ import nuxt_plugin_templatesplugin78f7ea79_bee685ac from 'nuxt_plugin_templatesp
 import nuxt_plugin_axios_30aa898a from 'nuxt_plugin_axios_30aa898a' // Source: ./axios.js (mode: 'all')
 import nuxt_plugin_axios_3566aa80 from 'nuxt_plugin_axios_3566aa80' // Source: ../plugins/axios (mode: 'all')
 import nuxt_plugin_vueinstantsearch_9a9113e8 from 'nuxt_plugin_vueinstantsearch_9a9113e8' // Source: ../plugins/vue-instantsearch (mode: 'all')
-import nuxt_plugin_mailchimpanalytics_0e6890b3 from 'nuxt_plugin_mailchimpanalytics_0e6890b3' // Source: ../plugins/mailchimp-analytics (mode: 'client')
 import nuxt_plugin_plugin_017a7174 from 'nuxt_plugin_plugin_017a7174' // Source: ./auth/plugin.js (mode: 'all')
 
 // Component: <NoSsr>
@@ -195,10 +194,6 @@ async function createApp(ssrContext) {
 
   if (typeof nuxt_plugin_vueinstantsearch_9a9113e8 === 'function') {
     await nuxt_plugin_vueinstantsearch_9a9113e8(app.context, inject)
-  }
-
-  if (process.client && typeof nuxt_plugin_mailchimpanalytics_0e6890b3 === 'function') {
-    await nuxt_plugin_mailchimpanalytics_0e6890b3(app.context, inject)
   }
 
   if (typeof nuxt_plugin_plugin_017a7174 === 'function') {

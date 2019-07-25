@@ -51,13 +51,13 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
-import theming from '@/mixins/theming';
+import { mapGetters, mapActions } from 'vuex'
+import theming from '@/mixins/theming'
 
-import AppTitle from '@/components/AppTitle';
-import AppShopDetails from '@/components/shops/AppShopDetails';
-import AppContentSection from '@/components/AppContentSection';
-import AppShopFeatureContainer from '@/components/shops/AppShopFeatureContainer';
+import AppTitle from '@/components/AppTitle'
+import AppShopDetails from '@/components/shops/AppShopDetails'
+import AppContentSection from '@/components/AppContentSection'
+import AppShopFeatureContainer from '@/components/shops/AppShopFeatureContainer'
 
 export default {
   middleware: ['authenticated'],
@@ -76,7 +76,7 @@ export default {
           content: 'noindex'
         }
       ]
-    };
+    }
   },
   layout: 'shop-creator',
   transition: {
@@ -94,7 +94,7 @@ export default {
     return {
       countries: [],
       errors: {}
-    };
+    }
   },
   computed: {
     ...mapGetters({
@@ -110,24 +110,24 @@ export default {
     })
   },
   async asyncData({ app }) {
-    const countries = await app.$axios.$get('/countries');
+    const countries = await app.$axios.$get('/countries')
 
     return {
       countries: countries.data,
       title: app.head.title
-    };
+    }
   },
   mounted() {
     if (!this.terms) {
-      return this.$router.push(this.localePath('shop-creator-terms'));
+      return this.$router.push(this.localePath('shop-creator-terms'))
     }
 
     if (!this.shopExists && this.$auth.user.has_shop) {
-      this.getUserShop();
-      this.setStepDetails(true);
+      this.getUserShop()
+      this.setStepDetails(true)
     }
 
-    this.setStepName(true);
+    this.setStepName(true)
   },
   methods: {
     ...mapActions({
@@ -139,34 +139,34 @@ export default {
     }),
     async store() {
       if (this.stepDetails) {
-        this.next();
+        this.next()
       } else {
         try {
           if (this.terms) {
-            const res = await this.$axios.$post('/shops', this.shop);
-            this.setShop(res.data);
-            this.setUserHasShop(true);
+            const res = await this.$axios.$post('/shops', this.shop)
+            this.setShop(res.data)
+            this.setUserHasShop(true)
             this.$toast.success(
               'Votre nouvelle boutique a été créée avec succès!'
-            );
-            this.next();
+            )
+            this.next()
           } else {
-            this.$toast.error(this.$t('toasts.terms'));
+            this.$toast.error(this.$t('toasts.terms'))
           }
         } catch (e) {
-          this.errors = e.response.data.errors;
-          this.$toast.error(this.$t('toasts.validation'));
+          this.errors = e.response.data.errors
+          this.$toast.error(this.$t('toasts.validation'))
         }
       }
     },
     prev() {
-      this.$router.push(this.localePath({ name: 'shop-creator-name' }));
+      this.$router.push(this.localePath({ name: 'shop-creator-name' }))
     },
     next() {
       this.$router.push(
         this.localePath({ name: 'shop-creator-customization' })
-      );
+      )
     }
   }
-};
+}
 </script>

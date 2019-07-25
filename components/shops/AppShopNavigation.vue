@@ -99,8 +99,8 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
-import theming from '@/mixins/theming';
+import { mapGetters, mapActions } from 'vuex'
+import theming from '@/mixins/theming'
 
 export default {
   mixins: [theming],
@@ -117,27 +117,27 @@ export default {
       close: 'alert/close'
     }),
     toShopCreatorName() {
-      this.close();
-      this.$router.push(this.localePath({ name: 'shop-creator-name' }));
+      this.close()
+      this.$router.push(this.localePath({ name: 'shop-creator-name' }))
     },
     toShopCreatorDetails() {
       if (this.stepName) {
-        this.close();
-        this.$router.push(this.localePath({ name: 'shop-creator-details' }));
+        this.close()
+        this.$router.push(this.localePath({ name: 'shop-creator-details' }))
       }
     },
     toShopCreatorCustomization() {
       if (this.stepName && this.stepDetails) {
-        this.close();
+        this.close()
         this.$router.push(
           this.localePath({ name: 'shop-creator-customization' })
-        );
+        )
       }
     },
     toShopCreatorConnect() {
       if (this.stepName && this.stepDetails && this.stepCustomization) {
-        this.close();
-        this.$router.push(this.localePath({ name: 'shop-creator-connect' }));
+        this.close()
+        this.$router.push(this.localePath({ name: 'shop-creator-connect' }))
       }
     },
     toShopCreatorDone() {
@@ -147,10 +147,10 @@ export default {
         this.stepCustomization &&
         this.stepConnect
       ) {
-        this.close();
-        this.$router.push(this.localePath({ name: 'shop-creator-done' }));
+        this.close()
+        this.$router.push(this.localePath({ name: 'shop-creator-done' }))
       }
     }
   }
-};
+}
 </script>

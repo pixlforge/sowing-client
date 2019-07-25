@@ -64,11 +64,11 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
+import { mapGetters, mapActions } from 'vuex'
 
-import 'vue2-dropzone/dist/vue2Dropzone.css';
-import Dropzone from 'nuxt-dropzone';
-import AppTile from '@/components/themes/AppTile';
+import 'vue2-dropzone/dist/vue2Dropzone.css'
+import Dropzone from 'nuxt-dropzone'
+import AppTile from '@/components/themes/AppTile'
 
 export default {
   components: {
@@ -95,7 +95,7 @@ export default {
         dictFallbackMessage: this.$t('dropzone.dict_fallback_message'),
         dictFileTooBig: this.$t('dropzone.dict_file_too_big')
       }
-    };
+    }
   },
   computed: {
     ...mapGetters({
@@ -108,13 +108,13 @@ export default {
         url: `${process.env.API_URL}/images/${
           this.shop.slug
         }/upload?type=avatar`
-      };
+      }
     },
     optionsForCover() {
       return {
         ...this.dzOptions,
         url: `${process.env.API_URL}/images/${this.shop.slug}/upload?type=cover`
-      };
+      }
     }
   },
   methods: {
@@ -123,27 +123,27 @@ export default {
       setAvatar: 'shop/setAvatar'
     }),
     deleteAvatar() {
-      console.log('delete avatar');
+      console.log('delete avatar')
     },
     deleteCover() {
-      console.log('delete cover');
+      console.log('delete cover')
     },
     dzMaxFilesExceeded(file) {
-      this.$refs.dropzoneProfile.removeFile(file);
+      this.$refs.dropzoneProfile.removeFile(file)
       this.$toast.error(
         "Vous devez d'abord supprimer ou annuler l'image existante."
-      );
+      )
     },
     updateShop(file, res) {
       if (res.media.type === 'avatar') {
-        this.setAvatar(res.media.url);
-        this.$toast.success(this.$t('toasts.shop_avatar_updated'));
+        this.setAvatar(res.media.url)
+        this.$toast.success(this.$t('toasts.shop_avatar_updated'))
       }
       if (res.media.type === 'cover') {
-        this.setCover(res.media.url);
-        this.$toast.success(this.$t('toasts.shop_cover_updated'));
+        this.setCover(res.media.url)
+        this.$toast.success(this.$t('toasts.shop_cover_updated'))
       }
     }
   }
-};
+}
 </script>

@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import AppTitle from '@/components/AppTitle';
+import AppTitle from '@/components/AppTitle'
 
 export default {
   components: {
@@ -55,9 +55,9 @@ export default {
       type: Array,
       required: false,
       default() {
-        return [];
+        return []
       }
     }
   }
-};
+}
 </script>

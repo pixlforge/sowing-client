@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config()
 
 export default {
   server: {
@@ -52,11 +52,11 @@ export default {
    */
   plugins: [
     '~/plugins/axios',
-    '~/plugins/vue-instantsearch',
-    {
-      src: '~/plugins/mailchimp-analytics',
-      ssr: false
-    }
+    '~/plugins/vue-instantsearch'
+    // {
+    //   src: '~/plugins/mailchimp-analytics',
+    //   ssr: false
+    // }
   ],
 
   /*
@@ -196,4 +196,4 @@ export default {
     extend(config, ctx) {
     }
   }
-};
+}

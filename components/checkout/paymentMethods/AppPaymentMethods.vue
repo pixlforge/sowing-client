@@ -27,10 +27,10 @@
 </template>
 
 <script>
-import AppCardVisa from '@/components/checkout/paymentMethods/cards/AppCardVisa';
-import AppCardAmex from '@/components/checkout/paymentMethods/cards/AppCardAmex';
-import AppCardMasterCard from '@/components/checkout/paymentMethods/cards/AppCardMasterCard';
-import AppPaymentMethodCreator from '@/components/checkout/paymentMethods/AppPaymentMethodCreator';
+import AppCardVisa from '@/components/checkout/paymentMethods/cards/AppCardVisa'
+import AppCardAmex from '@/components/checkout/paymentMethods/cards/AppCardAmex'
+import AppCardMasterCard from '@/components/checkout/paymentMethods/cards/AppCardMasterCard'
+import AppPaymentMethodCreator from '@/components/checkout/paymentMethods/AppPaymentMethodCreator'
 
 export default {
   components: {
@@ -49,27 +49,27 @@ export default {
     return {
       currentPaymentMethods: this.paymentMethods,
       selectedPaymentMethod: {}
-    };
+    }
   },
   computed: {
     defaultPaymentMethod() {
-      return this.currentPaymentMethods.find(method => method.is_default);
+      return this.currentPaymentMethods.find(method => method.is_default)
     }
   },
   created() {
     if (this.paymentMethods.length) {
-      this.switchPaymentMethod(this.defaultPaymentMethod);
+      this.switchPaymentMethod(this.defaultPaymentMethod)
     }
   },
   methods: {
     addPaymentMethod(method) {
-      this.switchPaymentMethod(method);
-      this.$emit('payment-method:added', method);
+      this.switchPaymentMethod(method)
+      this.$emit('payment-method:added', method)
     },
     switchPaymentMethod(method) {
-      this.selectedPaymentMethod = method;
-      this.$emit('input', this.selectedPaymentMethod.id);
+      this.selectedPaymentMethod = method
+      this.$emit('input', this.selectedPaymentMethod.id)
     }
   }
-};
+}
 </script>

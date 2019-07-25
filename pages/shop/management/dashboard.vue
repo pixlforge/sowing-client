@@ -1,13 +1,25 @@
 <template>
   <div>
-    Dashboard
+
+    <!-- Title -->
+    <AppTitle
+      semantic="h1"
+      visual="h1">
+      Dashboard
+    </AppTitle>
+
   </div>
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
+import { mapGetters, mapActions } from 'vuex'
+
+import AppTitle from '@/components/AppTitle'
 
 export default {
+  components: {
+    AppTitle
+  },
   middleware: ['authenticated'],
   head() {
     return {
@@ -24,7 +36,7 @@ export default {
           content: 'noindex'
         }
       ]
-    };
+    }
   },
   layout: 'shop-management',
   computed: {
@@ -33,16 +45,16 @@ export default {
     })
   },
   async asyncData({ app, store }) {
-    const shop = await app.$axios.$get('/user/shop');
+    const shop = await app.$axios.$get('/user/shop')
 
     return {
       shopData: shop.data,
       title: app.head.title
-    };
+    }
   },
   mounted() {
     if (!this.shopExists) {
-      this.setShop(this.shopData);
+      this.setShop(this.shopData)
     }
   },
   methods: {

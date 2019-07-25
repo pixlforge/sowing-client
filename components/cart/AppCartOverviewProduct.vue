@@ -77,7 +77,7 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
   props: {
@@ -92,38 +92,38 @@ export default {
     }),
     quantity: {
       get() {
-        return this.product.quantity;
+        return this.product.quantity
       },
       set(quantity) {
-        this.update({ productId: this.product.id, quantity });
+        this.update({ productId: this.product.id, quantity })
       }
     },
     imgUrl() {
-      return require('@/assets/img/placeholders/category.svg');
+      return require('@/assets/img/placeholders/category.svg')
     },
     imgAlt() {
-      return this.$t('components.products.img.alt');
+      return this.$t('components.products.img.alt')
     },
     labelPrice() {
-      return this.$t('components.cart.labels.price');
+      return this.$t('components.cart.labels.price')
     },
     labelQuantity() {
-      return this.$t('components.cart.labels.quantity');
+      return this.$t('components.cart.labels.quantity')
     },
     baseProductName() {
-      return this.product.product.name[this.locale];
+      return this.product.product.name[this.locale]
     },
     baseProductDescription() {
-      return this.product.product.description[this.locale];
+      return this.product.product.description[this.locale]
     },
     variationName() {
-      return this.product.name[this.locale];
+      return this.product.name[this.locale]
     },
     variationDescription() {
-      return this.product.description[this.locale];
+      return this.product.description[this.locale]
     },
     variationType() {
-      return this.product.type.name[this.locale];
+      return this.product.type.name[this.locale]
     }
   },
   methods: {
@@ -136,9 +136,9 @@ export default {
         `${this.baseProductName} ${this.variationType} ${
           this.variationName
         } ${this.$t('toasts.cart.product_removed')}`
-      );
-      this.destroy(productId);
+      )
+      this.destroy(productId)
     }
   }
-};
+}
 </script>

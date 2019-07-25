@@ -13,8 +13,8 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
-import theming from '@/mixins/theming';
+import { mapGetters } from 'vuex'
+import theming from '@/mixins/theming'
 
 export default {
   mixins: [theming],
@@ -23,5 +23,5 @@ export default {
       count: 'cart/count'
     })
   }
-};
+}
 </script>

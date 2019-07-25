@@ -42,12 +42,12 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
-import theming from '@/mixins/theming';
+import { mapGetters, mapActions } from 'vuex'
+import theming from '@/mixins/theming'
 
-import AppSplash from '@/components/AppSplash';
-import AppContentSection from '@/components/AppContentSection';
-import IllustrationSuccess from '@/components/illustrations/IllustrationSuccess';
+import AppSplash from '@/components/AppSplash'
+import AppContentSection from '@/components/AppContentSection'
+import IllustrationSuccess from '@/components/illustrations/IllustrationSuccess'
 
 export default {
   middleware: ['authenticated', 'hasShop'],
@@ -66,7 +66,7 @@ export default {
           content: 'noindex'
         }
       ]
-    };
+    }
   },
   layout: 'shop-creator',
   transition: {
@@ -91,17 +91,17 @@ export default {
   asyncData({ app }) {
     return {
       title: app.head.title
-    };
+    }
   },
   mounted() {
     if (!this.shopExists && this.$auth.user.has_shop) {
-      this.getUserShop();
+      this.getUserShop()
     }
 
-    this.setStepName(true);
-    this.setStepDetails(true);
-    this.setStepCustomization(true);
-    this.setStepConnect(true);
+    this.setStepName(true)
+    this.setStepDetails(true)
+    this.setStepCustomization(true)
+    this.setStepConnect(true)
   },
   methods: {
     ...mapActions({
@@ -112,7 +112,7 @@ export default {
       setStepConnect: 'shop/setStepConnect'
     }),
     prev() {
-      this.$router.push(this.localePath({ name: 'shop-creator-connect' }));
+      this.$router.push(this.localePath({ name: 'shop-creator-connect' }))
     },
     next() {
       if (
@@ -121,9 +121,9 @@ export default {
         this.stepCustomization &&
         this.stepConnect
       ) {
-        this.$router.push(this.localePath({ name: 'shop' }));
+        this.$router.push(this.localePath({ name: 'shop' }))
       }
     }
   }
-};
+}
 </script>

@@ -138,24 +138,24 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters } from 'vuex'
 
-import AppTitle from '@/components/AppTitle';
-import AppReview from '@/components/AppReview';
-import AppFeature from '@/components/AppFeature';
-import AppShopCard from '@/components/shops/AppShopCard';
-import AppContentSection from '@/components/AppContentSection';
-import AppCategoryCard from '@/components/categories/AppCategoryCard';
-import AppStreakRegister from '@/components/streaks/AppStreakRegister';
-import AppStreakNewsletter from '@/components/streaks/AppStreakNewsletter';
-import AppFeaturedCategoryLarge from '@/components/categories/AppFeaturedCategoryLarge';
-import AppFeaturedCategorySmall from '@/components/categories/AppFeaturedCategorySmall';
+import AppTitle from '@/components/AppTitle'
+import AppReview from '@/components/AppReview'
+import AppFeature from '@/components/AppFeature'
+import AppShopCard from '@/components/shops/AppShopCard'
+import AppContentSection from '@/components/AppContentSection'
+import AppCategoryCard from '@/components/categories/AppCategoryCard'
+import AppStreakRegister from '@/components/streaks/AppStreakRegister'
+import AppStreakNewsletter from '@/components/streaks/AppStreakNewsletter'
+import AppFeaturedCategoryLarge from '@/components/categories/AppFeaturedCategoryLarge'
+import AppFeaturedCategorySmall from '@/components/categories/AppFeaturedCategorySmall'
 
 export default {
   head() {
     return {
       title: `${this.$t('pages.home.title')} | ${this.title}`
-    };
+    }
   },
   components: {
     AppTitle,
@@ -209,7 +209,7 @@ export default {
           accent: '#42A5F5'
         }
       ]
-    };
+    }
   },
   computed: {
     ...mapGetters({
@@ -220,7 +220,7 @@ export default {
   asyncData({ app }) {
     return {
       title: app.head.title
-    };
+    }
   }
-};
+}
 </script>

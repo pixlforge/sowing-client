@@ -50,13 +50,13 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
-import theming from '@/mixins/theming';
+import { mapGetters, mapActions } from 'vuex'
+import theming from '@/mixins/theming'
 
-import AppTitle from '@/components/AppTitle';
-import AppShopName from '@/components/shops/AppShopName';
-import AppContentSection from '@/components/AppContentSection';
-import AppShopFeatureContainer from '@/components/shops/AppShopFeatureContainer';
+import AppTitle from '@/components/AppTitle'
+import AppShopName from '@/components/shops/AppShopName'
+import AppContentSection from '@/components/AppContentSection'
+import AppShopFeatureContainer from '@/components/shops/AppShopFeatureContainer'
 
 export default {
   middleware: ['authenticated'],
@@ -75,7 +75,7 @@ export default {
           content: 'noindex'
         }
       ]
-    };
+    }
   },
   layout: 'shop-creator',
   transition: {
@@ -98,24 +98,24 @@ export default {
     })
   },
   async asyncData({ app, store }) {
-    const shop = await app.$axios.$get('/user/shop');
+    const shop = await app.$axios.$get('/user/shop')
 
     if (shop.data) {
-      store.dispatch('shop/setShop', shop.data);
+      store.dispatch('shop/setShop', shop.data)
     }
 
     return {
       title: app.head.title
-    };
+    }
   },
   mounted() {
     if (!this.terms) {
-      return this.$router.push(this.localePath('shop-creator-terms'));
+      return this.$router.push(this.localePath('shop-creator-terms'))
     }
 
     if (this.$auth.user.has_shop) {
-      this.setStepName(true);
-      this.setStepDetails(true);
+      this.setStepName(true)
+      this.setStepDetails(true)
     }
   },
   methods: {
@@ -127,33 +127,33 @@ export default {
       setStepDetails: 'shop/setStepDetails'
     }),
     prev() {
-      this.$router.push(this.localePath({ name: 'shop-creator-terms' }));
+      this.$router.push(this.localePath({ name: 'shop-creator-terms' }))
     },
     async next() {
       if (this.shopExists) {
-        this.$router.push(this.localePath({ name: 'shop-creator-details' }));
-        return;
+        this.$router.push(this.localePath({ name: 'shop-creator-details' }))
+        return
       }
 
       try {
         await this.$axios.$post('/shops/checker', {
           name: this.shopName
-        });
-        this.close();
-        this.$router.push(this.localePath({ name: 'shop-creator-details' }));
+        })
+        this.close()
+        this.$router.push(this.localePath({ name: 'shop-creator-details' }))
       } catch (e) {
-        this.setStepName(false);
+        this.setStepName(false)
         this.$toast.error(
           `"<em>${this.shopName}</em>" ${this.$t('toasts.is_already_in_use')}.`
-        );
+        )
         this.flash({
           type: 'danger',
           message: `"<em>${this.shopName}</em>" ${this.$t(
             'toasts.is_already_in_use'
           )}!`
-        });
+        })
       }
     }
   }
-};
+}
 </script>

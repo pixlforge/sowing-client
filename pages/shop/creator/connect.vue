@@ -67,13 +67,13 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
-import theming from '@/mixins/theming';
+import { mapGetters, mapActions } from 'vuex'
+import theming from '@/mixins/theming'
 
-import AppTitle from '@/components/AppTitle';
-import AppSplash from '@/components/AppSplash';
-import AppContentSection from '@/components/AppContentSection';
-import AppShopFeatureContainer from '@/components/shops/AppShopFeatureContainer';
+import AppTitle from '@/components/AppTitle'
+import AppSplash from '@/components/AppSplash'
+import AppContentSection from '@/components/AppContentSection'
+import AppShopFeatureContainer from '@/components/shops/AppShopFeatureContainer'
 
 export default {
   middleware: ['authenticated', 'hasShop'],
@@ -92,7 +92,7 @@ export default {
           content: 'noindex'
         }
       ]
-    };
+    }
   },
   layout: 'shop-creator',
   transition: {
@@ -119,26 +119,26 @@ export default {
     stripeConnectOAuthUrl() {
       return `https://dashboard.stripe.com/oauth/authorize?response_type=code&client_id=${
         process.env.STRIPE_CONNECT
-      }&scope=read_write`;
+      }&scope=read_write`
     }
   },
   asyncData({ app }) {
     return {
       title: app.head.title
-    };
+    }
   },
   async mounted() {
     if (!this.shopExists && this.$auth.user.has_shop) {
-      await this.getUserShop();
+      await this.getUserShop()
 
       if (this.$route.query.code && !this.shopStripeUserId) {
-        this.requestTokens(this.$route.query.code);
+        this.requestTokens(this.$route.query.code)
       }
     }
 
-    this.setStepName(true);
-    this.setStepDetails(true);
-    this.setStepCustomization(true);
+    this.setStepName(true)
+    this.setStepDetails(true)
+    this.setStepCustomization(true)
   },
   methods: {
     ...mapActions({
@@ -151,20 +151,20 @@ export default {
       try {
         await this.$axios.$post('/shops/connect', {
           code: code
-        });
-        await this.getUserShop();
+        })
+        await this.getUserShop()
       } catch (e) {}
 
-      this.tried = true;
+      this.tried = true
     },
     prev() {
       this.$router.push(
         this.localePath({ name: 'shop-creator-customization' })
-      );
+      )
     },
     next() {
-      this.$router.push(this.localePath({ name: 'shop-creator-done' }));
+      this.$router.push(this.localePath({ name: 'shop-creator-done' }))
     }
   }
-};
+}
 </script>

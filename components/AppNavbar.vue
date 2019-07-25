@@ -45,13 +45,13 @@
 </template>
 
 <script>
-import AppLogo from '@/components/AppLogo';
-import AppButtonCart from '@/components/buttons/AppButtonCart';
-import AppButtonMenu from '@/components/buttons/AppButtonMenu';
-import AppButtonSearch from '@/components/buttons/AppButtonSearch';
-import AppButtonLanguages from '@/components/buttons/AppButtonLanguages';
-import AppButtonLinkPrimary from '@/components/buttons/AppButtonLinkPrimary';
-import AppButtonLinkSecondary from '@/components/buttons/AppButtonLinkSecondary';
+import AppLogo from '@/components/AppLogo'
+import AppButtonCart from '@/components/buttons/AppButtonCart'
+import AppButtonMenu from '@/components/buttons/AppButtonMenu'
+import AppButtonSearch from '@/components/buttons/AppButtonSearch'
+import AppButtonLanguages from '@/components/buttons/AppButtonLanguages'
+import AppButtonLinkPrimary from '@/components/buttons/AppButtonLinkPrimary'
+import AppButtonLinkSecondary from '@/components/buttons/AppButtonLinkSecondary'
 
 export default {
   components: {
@@ -65,8 +65,8 @@ export default {
   },
   computed: {
     loggedIn() {
-      return this.$auth.loggedIn;
+      return this.$auth.loggedIn
     }
   }
-};
+}
 </script>

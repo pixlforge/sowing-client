@@ -21,9 +21,9 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters } from 'vuex'
 
-import AppTitle from '@/components/AppTitle';
+import AppTitle from '@/components/AppTitle'
 
 export default {
   components: {
@@ -40,9 +40,9 @@ export default {
       locale: 'locale'
     }),
     imgUrl() {
-      const img = require('@/assets/img/placeholders/category.svg');
-      return `background-image: url(${img})`;
+      const img = require('@/assets/img/placeholders/category.svg')
+      return `background-image: url(${img})`
     }
   }
-};
+}
 </script>

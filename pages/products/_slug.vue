@@ -28,14 +28,14 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
-import theming from '@/mixins/theming';
+import { mapGetters, mapActions } from 'vuex'
+import theming from '@/mixins/theming'
 
-import AppHeader from '@/components/headers/AppHeader';
-import AppContentSection from '@/components/AppContentSection';
-import AppProductDetails from '@/components/products/AppProductDetails';
-import AppStreakNewsletter from '@/components/streaks/AppStreakNewsletter';
-import AppHeaderButtonLink from '@/components/buttons/AppHeaderButtonLink';
+import AppHeader from '@/components/headers/AppHeader'
+import AppContentSection from '@/components/AppContentSection'
+import AppProductDetails from '@/components/products/AppProductDetails'
+import AppStreakNewsletter from '@/components/streaks/AppStreakNewsletter'
+import AppHeaderButtonLink from '@/components/buttons/AppHeaderButtonLink'
 
 export default {
   head() {
@@ -48,7 +48,7 @@ export default {
           content: ''
         }
       ]
-    };
+    }
   },
   components: {
     AppHeader,
@@ -62,7 +62,7 @@ export default {
     return {
       product: {},
       shop: {}
-    };
+    }
   },
   computed: {
     ...mapGetters({
@@ -71,20 +71,20 @@ export default {
     })
   },
   async asyncData({ params, app }) {
-    const product = await app.$axios.$get(`/products/${params.slug}`);
-    const shop = await app.$axios.$get(`/shops/${product.data.shop.slug}`);
+    const product = await app.$axios.$get(`/products/${params.slug}`)
+    const shop = await app.$axios.$get(`/shops/${product.data.shop.slug}`)
 
     return {
       title: app.head.title,
       product: product.data,
       shop: shop.data
-    };
+    }
   },
   mounted() {
-    this.setShop(this.shop);
+    this.setShop(this.shop)
   },
   destroyed() {
-    this.resetShop();
+    this.resetShop()
   },
   methods: {
     ...mapActions({
@@ -92,5 +92,5 @@ export default {
       resetShop: 'shop/resetShop'
     })
   }
-};
+}
 </script>

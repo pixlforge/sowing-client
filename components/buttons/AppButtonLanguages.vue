@@ -32,9 +32,9 @@
 </template>
 
 <script>
-import theming from '@/mixins/theming';
+import theming from '@/mixins/theming'
 
-import AppDropdownItem from '@/components/dropdowns/AppDropdownItem';
+import AppDropdownItem from '@/components/dropdowns/AppDropdownItem'
 
 export default {
   components: {
@@ -44,34 +44,34 @@ export default {
   data() {
     return {
       dropdownIsOpen: false
-    };
+    }
   },
   mounted() {
     const escapeHandler = (event) => {
       if (event.key === 'Escape' && this.dropdownIsOpen) {
-        this.dropdownIsOpen = false;
+        this.dropdownIsOpen = false
       }
-    };
-    document.addEventListener('keydown', escapeHandler);
+    }
+    document.addEventListener('keydown', escapeHandler)
 
     const clickHandler = (event) => {
-      const element = this.$refs.dropdownMenu;
-      const target = event.target;
+      const element = this.$refs.dropdownMenu
+      const target = event.target
       if (element !== target && !element.contains(target)) {
-        this.dropdownIsOpen = false;
+        this.dropdownIsOpen = false
       }
-    };
-    document.addEventListener('click', clickHandler);
+    }
+    document.addEventListener('click', clickHandler)
 
     this.$once('hook:destroyed', () => {
-      document.removeEventListener('keydown', escapeHandler);
-      document.removeEventListener('click', clickHandler);
-    });
+      document.removeEventListener('keydown', escapeHandler)
+      document.removeEventListener('click', clickHandler)
+    })
   },
   methods: {
     toggleDropdown() {
-      this.dropdownIsOpen = !this.dropdownIsOpen;
+      this.dropdownIsOpen = !this.dropdownIsOpen
     }
   }
-};
+}
 </script>

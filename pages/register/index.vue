@@ -129,10 +129,10 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapActions } from 'vuex'
 
-import AppHeader from '@/components/headers/AppHeader';
-import AppContentSection from '@/components/AppContentSection';
+import AppHeader from '@/components/headers/AppHeader'
+import AppContentSection from '@/components/AppContentSection'
 
 export default {
   middleware: ['guest'],
@@ -151,7 +151,7 @@ export default {
           content: 'noindex'
         }
       ]
-    };
+    }
   },
   components: {
     AppHeader,
@@ -167,7 +167,7 @@ export default {
       },
       terms: false,
       errors: {}
-    };
+    }
   },
   computed: {
     missingCredentials() {
@@ -175,16 +175,16 @@ export default {
         !this.form.email ||
         this.form.password.length < 8 ||
         this.form.password_confirmation.length < 8 ||
-        !this.terms;
+        !this.terms
     }
   },
   asyncData({ app }) {
     return {
       title: app.head.title
-    };
+    }
   },
   mounted() {
-    this.$refs.autofocus.focus();
+    this.$refs.autofocus.focus()
   },
   methods: {
     ...mapActions({
@@ -192,30 +192,30 @@ export default {
     }),
     async register() {
       if (!this.terms) {
-        this.$toast.error(this.$t('toasts.terms'));
-        return;
+        this.$toast.error(this.$t('toasts.terms'))
+        return
       }
 
-      this.errors = {};
+      this.errors = {}
 
       try {
-        const res = await this.$axios.$post('/auth/register', { ...this.form });
-        this.$toast.success(`${this.$t('toasts.welcome')} ${res.data.name}!`);
-        await this.login();
-        this.next();
+        const res = await this.$axios.$post('/auth/register', { ...this.form })
+        this.$toast.success(`${this.$t('toasts.welcome')} ${res.data.name}!`)
+        await this.login()
+        this.next()
       } catch (e) {
-        this.errors = e.response.data.errors;
-        this.$toast.error(this.$t('toasts.validation'));
+        this.errors = e.response.data.errors
+        this.$toast.error(this.$t('toasts.validation'))
       }
     },
     async login() {
       await this.$auth.loginWith('local', {
         data: this.form
-      });
+      })
     },
     next() {
-      this.$router.push(this.localePath({ name: 'register-success' }));
+      this.$router.push(this.localePath({ name: 'register-success' }))
     }
   }
-};
+}
 </script>

@@ -23,17 +23,17 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters } from 'vuex'
 
-import AppHeader from '@/components/headers/AppHeader';
-import AppProduct from '@/components/products/AppProduct';
-import AppContentSection from '@/components/AppContentSection';
+import AppHeader from '@/components/headers/AppHeader'
+import AppProduct from '@/components/products/AppProduct'
+import AppContentSection from '@/components/AppContentSection'
 
 export default {
   head() {
     return {
       title: `${this.subcategory.name[this.locale]} | ${this.title}`
-    };
+    }
   },
   components: {
     AppHeader,
@@ -44,7 +44,7 @@ export default {
     return {
       subcategory: {},
       products: []
-    };
+    }
   },
   computed: {
     ...mapGetters({
@@ -54,16 +54,16 @@ export default {
   async asyncData({ params, app }) {
     const subcategory = await app.$axios.$get(
       `/categories/${params.subcategory}`
-    );
+    )
     const products = await app.$axios.$get(
       `/products?category=${params.subcategory}`
-    );
+    )
 
     return {
       title: app.head.title,
       subcategory: subcategory.data,
       products: products.data
-    };
+    }
   }
-};
+}
 </script>

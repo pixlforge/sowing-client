@@ -173,9 +173,9 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapActions } from 'vuex'
 
-import AppCountryDropdown from '@/components/forms/AppCountryDropdown';
+import AppCountryDropdown from '@/components/forms/AppCountryDropdown'
 
 export default {
   components: {
@@ -195,7 +195,7 @@ export default {
         is_default: true
       },
       errors: {}
-    };
+    }
   },
   methods: {
     ...mapActions({
@@ -203,13 +203,13 @@ export default {
     }),
     async store() {
       try {
-        const res = await this.$axios.$post('/addresses', this.form);
-        this.$emit('address:created', res.data);
+        const res = await this.$axios.$post('/addresses', this.form)
+        this.$emit('address:created', res.data)
       } catch (e) {
-        this.$toast.error(this.$t('toasts.validation'));
-        this.errors = e.response.data.errors;
+        this.$toast.error(this.$t('toasts.validation'))
+        this.errors = e.response.data.errors
       }
     }
   }
-};
+}
 </script>
