@@ -11,38 +11,36 @@
         {{ $t("shop_creator.steps.customization.title") }}
       </AppTitle>
 
-      <p class="paragraph__medium paragraph--center paragraph--narrow paragraph--spaced">
+      <!-- Infos -->
+      <AppParagraph class="max-w-800 text-center mx-auto my-36 md:my-72">
         {{ $t("shop_creator.steps.customization.paragraph") }}
-      </p>
+      </AppParagraph>
 
       <!-- Shop customization -->
       <AppShopFeatureContainer v-if="shop.id">
         <AppShopCustomization/>
       </AppShopFeatureContainer>
 
-      <div class="shop-creator__controls">
+      <!-- Controls -->
+      <AppShopCreatorControls>
 
         <!-- Previous -->
-        <button
-          class="button button__previous"
-          @click.prevent="prev">
-          <font-awesome-icon
-            :icon="['far', 'chevron-circle-left']"
-            class="button__icon button__icon--small"/>
+        <AppButtonTertiary
+          icon="chevron-circle-left"
+          class="order-1 md:order-none mx-5"
+          @click.native="prev">
           {{ $t("buttons.back") }}
-        </button>
+        </AppButtonTertiary>
 
         <!-- Next -->
-        <button
-          :class="btnTheme"
-          class="button button__next"
-          @click.prevent="next">
-          <font-awesome-icon
-            :icon="['far', 'chevron-circle-right']"
-            class="button__icon button__icon--small"/>
+        <AppButtonPrimary
+          :color="shopTheme"
+          icon="chevron-circle-right"
+          class="order-none md_order-1 mx-5"
+          @click.native="next">
           {{ $t("buttons.next") }}
-        </button>
-      </div>
+        </AppButtonPrimary>
+      </AppShopCreatorControls>
     </AppContentSection>
   </main>
 </template>
@@ -53,7 +51,11 @@ import theming from '@/mixins/theming'
 
 import AppTitle from '@/components/AppTitle'
 import AppContentSection from '@/components/AppContentSection'
+import AppParagraph from '@/components/paragraphs/AppParagraph'
+import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
+import AppButtonTertiary from '@/components/buttons/AppButtonTertiary'
 import AppShopCustomization from '@/components/shops/AppShopCustomization'
+import AppShopCreatorControls from '@/components/shops/AppShopCreatorControls'
 import AppShopFeatureContainer from '@/components/shops/AppShopFeatureContainer'
 
 export default {
@@ -83,7 +85,11 @@ export default {
   components: {
     AppTitle,
     AppContentSection,
+    AppParagraph,
+    AppButtonPrimary,
+    AppButtonTertiary,
     AppShopCustomization,
+    AppShopCreatorControls,
     AppShopFeatureContainer
   },
   mixins: [theming],

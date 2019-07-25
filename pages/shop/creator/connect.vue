@@ -11,14 +11,16 @@
         {{ $t("shop_creator.steps.connect.title") }}
       </AppTitle>
 
-      <p
+      <!-- Infos -->
+      <AppParagraph
         v-if="!shopStripeUserId || !shopStripePublishableKey"
-        class="paragraph__medium paragraph--center paragraph--narrow paragraph--spaced">
+        class="max-w-800 text-center mx-auto my-36 md:my-72">
         {{ $t("shop_creator.steps.connect.paragraph") }}
-      </p>
+      </AppParagraph>
 
+      <!-- Connect process -->
       <AppShopFeatureContainer>
-        <template v-if="!shopStripeUserId || !shopStripePublishableKey">
+        <template v-if="!stripeInfos">
           <a
             :href="stripeConnectOAuthUrl"
             :class="btnTheme"
@@ -30,7 +32,7 @@
           </a>
         </template>
 
-        <template v-if="tried && shopStripeUserId && shopStripePublishableKey">
+        <template v-if="stripeInfosReceived">
           <AppSplash
             type="success"
             title="Félicitations!"
@@ -38,30 +40,27 @@
         </template>
       </AppShopFeatureContainer>
 
-      <div class="shop-creator__controls">
+      <!-- Controls -->
+      <AppShopCreatorControls>
 
         <!-- Previous -->
-        <button
-          class="button button__previous"
-          @click.prevent="prev">
-          <font-awesome-icon
-            :icon="['far', 'chevron-circle-left']"
-            class="button__icon button__icon--small"/>
+        <AppButtonTertiary
+          icon="chevron-circle-left"
+          class="order-1 md:order-none mx-5"
+          @click.native="prev">
           {{ $t("buttons.back") }}
-        </button>
+        </AppButtonTertiary>
 
         <!-- Next -->
-        <button
-          :disabled="!shopStripeUserId || !shopStripePublishableKey"
-          :class="!shopStripeUserId || !shopStripePublishableKey ? 'button__disabled' : btnTheme"
-          class="button button__next"
-          @click.prevent="next">
-          <font-awesome-icon
-            :icon="['far', 'chevron-circle-right']"
-            class="button__icon button__icon--small"/>
+        <AppButtonPrimary
+          :disabled="!stripeInfos"
+          :color="stripeInfos ? shopTheme : ''"
+          icon="chevron-circle-right"
+          class="order-none md_order-1 mx-5"
+          @click.native="next">
           {{ $t("buttons.finalize_shop_creation") }}
-        </button>
-      </div>
+        </AppButtonPrimary>
+      </AppShopCreatorControls>
     </AppContentSection>
   </main>
 </template>
@@ -73,6 +72,10 @@ import theming from '@/mixins/theming'
 import AppTitle from '@/components/AppTitle'
 import AppSplash from '@/components/AppSplash'
 import AppContentSection from '@/components/AppContentSection'
+import AppParagraph from '@/components/paragraphs/AppParagraph'
+import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
+import AppButtonTertiary from '@/components/buttons/AppButtonTertiary'
+import AppShopCreatorControls from '@/components/shops/AppShopCreatorControls'
 import AppShopFeatureContainer from '@/components/shops/AppShopFeatureContainer'
 
 export default {
@@ -103,6 +106,10 @@ export default {
     AppTitle,
     AppSplash,
     AppContentSection,
+    AppParagraph,
+    AppButtonPrimary,
+    AppButtonTertiary,
+    AppShopCreatorControls,
     AppShopFeatureContainer
   },
   mixins: [theming],
@@ -120,6 +127,12 @@ export default {
       return `https://dashboard.stripe.com/oauth/authorize?response_type=code&client_id=${
         process.env.STRIPE_CONNECT
       }&scope=read_write`
+    },
+    stripeInfos() {
+      return this.shopStripeUserId && this.shopStripePublishableKey
+    },
+    stripeInfosReceived() {
+      return this.tried && this.shopStripeUserId && this.shopStripePublishableKey
     }
   },
   asyncData({ app }) {

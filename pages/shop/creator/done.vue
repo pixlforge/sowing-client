@@ -14,29 +14,26 @@
         </template>
       </AppSplash>
 
-      <div class="shop-creator__controls">
+      <!-- Controls -->
+      <AppShopCreatorControls>
 
         <!-- Previous -->
-        <button
-          class="button button__previous"
-          @click.prevent="prev">
-          <font-awesome-icon
-            :icon="['far', 'chevron-circle-left']"
-            class="button__icon button__icon--small"/>
+        <AppButtonTertiary
+          icon="chevron-circle-left"
+          class="order-1 md:order-none mx-5"
+          @click.native="prev">
           {{ $t("buttons.back") }}
-        </button>
+        </AppButtonTertiary>
 
         <!-- Next -->
-        <button
-          :class="btnTheme"
-          class="button button__next"
-          @click.prevent="next">
-          <font-awesome-icon
-            :icon="['far', 'chevron-circle-right']"
-            class="button__icon button__icon--small"/>
+        <AppButtonPrimary
+          :color="shopTheme"
+          icon="chevron-circle-right"
+          class="order-none md_order-1 mx-5"
+          @click.native="next">
           {{ $t("buttons.finish") }}
-        </button>
-      </div>
+        </AppButtonPrimary>
+      </AppShopCreatorControls>
     </AppContentSection>
   </main>
 </template>
@@ -47,6 +44,9 @@ import theming from '@/mixins/theming'
 
 import AppSplash from '@/components/AppSplash'
 import AppContentSection from '@/components/AppContentSection'
+import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
+import AppButtonTertiary from '@/components/buttons/AppButtonTertiary'
+import AppShopCreatorControls from '@/components/shops/AppShopCreatorControls'
 import IllustrationSuccess from '@/components/illustrations/IllustrationSuccess'
 
 export default {
@@ -76,6 +76,9 @@ export default {
   components: {
     AppSplash,
     AppContentSection,
+    AppButtonPrimary,
+    AppButtonTertiary,
+    AppShopCreatorControls,
     IllustrationSuccess
   },
   mixins: [theming],
@@ -121,7 +124,7 @@ export default {
         this.stepCustomization &&
         this.stepConnect
       ) {
-        this.$router.push(this.localePath({ name: 'shop' }))
+        this.$router.push(this.localePath({ name: 'shop-management-dashboard' }))
       }
     }
   }
