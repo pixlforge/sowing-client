@@ -7,7 +7,7 @@
       {{ username }}
       <font-awesome-icon
         :icon="['fas', 'caret-down']"
-        class="button__caret"/>
+        class="text-16 ml-14"/>
     </button>
 
     <ul
