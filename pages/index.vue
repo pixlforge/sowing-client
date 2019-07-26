@@ -60,11 +60,12 @@
         {{ $t("pages.home.titles.shops") }}
       </AppTitle>
 
-      <div class="shop-card__wrapper">
+      <div class="flex flex-wrap -mx-20 mt-60 sm:mt-96">
         <AppShopCard
           v-for="shop in shops"
           :key="shop.id"
-          :shop="shop"/>
+          :shop="shop"
+          class="w-full lg:w-1/2"/>
       </div>
     </AppContentSection>
 
