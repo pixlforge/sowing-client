@@ -17,7 +17,7 @@
           {{ $t("streaks.newsletter.title") }}
         </AppTitle>
 
-        <p class="text-20 xl:text-24 font-semibold text-white text-center lg:text-left mt-30">
+        <p class="text-20 xl:text-24 text-white text-center lg:text-left mt-30">
           {{ $t("streaks.newsletter.body") }}
         </p>
 

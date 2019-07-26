@@ -9,16 +9,14 @@
       name="name"
       type="text"
       class="form__input sm:rounded-r-none mt-0">
-    <button
+
+    <AppButtonPrimary
       :disabled="(shopExists || !shopName) && !editable"
-      :class="(shopExists || !shopName) && !editable ? 'button__disabled' : btnTheme"
-      class="button w-full sm:w-auto sm:rounded-l-none"
-      @click.prevent="check">
-      <font-awesome-icon
-        :icon="['far', 'rocket']"
-        class="mr-5"/>
+      icon="rocket"
+      class="w-full sm:w-auto sm:rounded-l-none"
+      @click.native="check">
       {{ $t("buttons.check_availability") }}
-    </button>
+    </AppButtonPrimary>
   </section>
 </template>
 
@@ -26,7 +24,12 @@
 import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
+import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
+
 export default {
+  components: {
+    AppButtonPrimary
+  },
   mixins: [theming],
   props: {
     editable: {

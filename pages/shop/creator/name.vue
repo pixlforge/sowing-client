@@ -12,12 +12,14 @@
       </AppTitle>
 
       <!-- Infos -->
-      <AppParagraph class="max-w-800 text-center mx-auto my-36 md:my-72">
+      <AppParagraph
+        class="max-w-800"
+        center>
         {{ $t("shop_creator.steps.name.paragraph") }}
       </AppParagraph>
 
       <!-- Shop name -->
-      <AppShopFeatureContainer>
+      <AppShopFeatureContainer class="max-w-600">
         <AppShopName/>
       </AppShopFeatureContainer>
 

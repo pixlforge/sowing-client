@@ -2,8 +2,9 @@
   <button
     :disabled="disabled"
     :type="type"
+    :title="title"
     :class="classes"
-    class="outline-none focus:shadow-outline rounded-lg text-12 text-white font-extrabold text-center uppercase transition no-underline whitespace-no-wrap px-30 py-12">
+    class="block outline-none focus:shadow-outline rounded-lg border border-transparent text-12 text-white font-extrabold text-center uppercase transition no-underline whitespace-no-wrap px-30 py-12">
     <font-awesome-icon
       v-if="icon"
       :icon="['far', icon]"
@@ -34,18 +35,40 @@ export default {
       type: Boolean,
       required: false,
       default: false
+    },
+    title: {
+      type: String,
+      required: false,
+      default: ''
+    },
+    large: {
+      type: Boolean,
+      required: false,
+      default: false
     }
   },
   computed: {
     classes() {
-      let classes = ''
-
+      return this.buttonColors + ' ' + this.buttonSize
+    },
+    buttonColors() {
       if (this.disabled) {
-        classes = 'bg-gray-200 text-white cursor-not-allowed'
-      } else if (this.color === 'pink') {
-        classes = `bg-${this.color}-600 hover:bg-${this.color}-700`
-      } else {
-        classes = `bg-${this.color}-500 hover:bg-${this.color}-700`
+        return 'bg-white text-gray-200 border-gray-200 cursor-not-allowed shadow-none'
+      }
+
+      let classes = `bg-${this.color}-500 hover:bg-${this.color}-700`
+
+      if (this.color === 'pink-dark') {
+        classes = 'bg-pink-600 hover:bg-pink-700'
+      }
+
+      return classes
+    },
+    buttonSize() {
+      let classes = 'text-12 font-bold px-30 py-12'
+
+      if (this.large) {
+        classes = 'text-16 font-black px-48 py-20'
       }
 
       return classes

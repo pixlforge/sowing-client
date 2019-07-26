@@ -17,7 +17,7 @@
           {{ $t("streaks.register.title") }}
         </AppTitle>
 
-        <p class="text-20 xl:text-24 font-semibold text-white text-center lg:text-left mt-30">
+        <p class="text-20 xl:text-24 text-white text-center lg:text-left mt-30">
           {{ $t("streaks.register.body") }}
         </p>
 
@@ -25,7 +25,7 @@
           <AppButtonLinkPrimary
             :to="localePath({ name: 'register' })"
             icon="store"
-            color="pink">
+            color="pink-dark">
             {{ $t("buttons.create_my_shop") }}
           </AppButtonLinkPrimary>
         </div>

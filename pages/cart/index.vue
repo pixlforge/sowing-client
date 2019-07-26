@@ -47,18 +47,14 @@
 
       <!-- Checkout button -->
       <div class="cart__checkout-button-container">
-        <nuxt-link
+        <AppButtonLinkPrimary
           v-if="products.length"
           :to="localePath({ name: 'checkout' })"
-          :class="{ 'button__disabled': is_empty }"
           :disabled="is_empty"
           :title="$t('pages.cart.checkout')"
-          class="button button__primary">
-          <font-awesome-icon
-            :icon="['far', 'check-circle']"
-            class="button__icon button__icon--small"/>
+          icon="check-circle">
           {{ $t("pages.cart.checkout") }}
-        </nuxt-link>
+        </AppButtonLinkPrimary>
       </div>
     </AppContentSection>
 
@@ -70,6 +66,7 @@ import { mapGetters, mapActions } from 'vuex'
 
 import AppHeader from '@/components/headers/AppHeader'
 import AppContentSection from '@/components/AppContentSection'
+import AppButtonLinkPrimary from '@/components/buttons/AppButtonLinkPrimary'
 import AppCartOverviewProduct from '@/components/cart/AppCartOverviewProduct'
 
 export default {
@@ -94,6 +91,7 @@ export default {
   components: {
     AppHeader,
     AppContentSection,
+    AppButtonLinkPrimary,
     AppCartOverviewProduct
   },
   computed: {

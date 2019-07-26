@@ -9,7 +9,7 @@
       <AppTitle
         semantic="h2"
         visual="h3"
-        utilities="text-white z-10">
+        utilities="text-white text-center z-10">
         {{ category.name[locale] }}
       </AppTitle>
 

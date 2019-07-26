@@ -7,85 +7,59 @@
       icon="key"/>
 
     <!-- Page contents -->
-    <AppContentSection>
-      <form
-        class="form__container form__container--narrow"
-        @submit.prevent="login">
+    <AppContentSection class="max-w-600">
+      <form @submit.prevent="login">
 
         <!-- Email -->
-        <div class="form__group form__group--first">
-          <label
-            for="email"
-            class="form__label">
+        <AppFormGroup>
+          <AppFormLabel name="email">
             {{ $t("forms.labels.email") }}
-          </label>
-          <input
-            id="email"
+          </AppFormLabel>
+          <AppFormInput
             ref="autofocus"
             v-model="form.email"
-            :class="{ 'border-red': errors.email }"
-            type="email"
+            :errors="errors"
             name="email"
-            class="form__input"
-            required
-            autofocus>
-          <template v-if="errors.email">
-            <p class="form__feedback">
-              {{ errors.email }}
-            </p>
-          </template>
-        </div>
+            type="email"
+            required/>
+          <AppFormValidation
+            :errors="errors"
+            name="email"/>
+        </AppFormGroup>
 
         <!-- Password -->
-        <div class="form__group">
-          <label
-            for="password"
-            class="form__label">
+        <AppFormGroup>
+          <AppFormLabel name="password">
             {{ $t("forms.labels.password") }}
-          </label>
-          <input
-            id="password"
+          </AppFormLabel>
+          <AppFormInput
             v-model="form.password"
-            :class="{ 'border-red': errors.password }"
-            type="password"
             name="password"
-            class="form__input"
-            required>
-          <template v-if="errors.password">
-            <p class="form__feedback">
-              {{ errors.password }}
-            </p>
-          </template>
-        </div>
+            type="password"
+            required/>
+        </AppFormGroup>
 
-        <div class="form__links">
+        <div class="flex flex-wrap justify-center my-36 md:my-60">
 
           <!-- Password forgotten -->
-          <nuxt-link
-            :to="localePath({ name: 'password-forgot' })"
-            class="form__link form__link--first">
+          <AppButtonLinkTertiary :to="localePath({ name: 'password-forgot' })">
             {{ $t("pages.login.links.password") }}
-          </nuxt-link>
+          </AppButtonLinkTertiary>
 
           <!-- Register an account -->
-          <nuxt-link
-            :to="localePath({ name: 'register' })"
-            class="form__link">
+          <AppButtonLinkTertiary :to="localePath({ name: 'register' })">
             {{ $t("pages.login.links.register") }}
-          </nuxt-link>
+          </AppButtonLinkTertiary>
         </div>
 
         <!-- Submit -->
-        <button
-          :class="{ 'button__disabled': missingCredentials }"
+        <AppButtonPrimary
           :disabled="missingCredentials"
           type="submit"
-          class="button button__primary button--centered button--spaced">
-          <font-awesome-icon
-            :icon="['far', 'key']"
-            class="button__icon button__icon--small"/>
+          icon="key"
+          class="shadow-xl mx-auto my-36 md:my-60">
           {{ $t("buttons.connection") }}
-        </button>
+        </AppButtonPrimary>
       </form>
     </AppContentSection>
 
@@ -96,7 +70,13 @@
 import { mapActions } from 'vuex'
 
 import AppHeader from '@/components/headers/AppHeader'
+import AppFormLabel from '@/components/forms/AppFormLabel'
+import AppFormInput from '@/components/forms/AppFormInput'
+import AppFormGroup from '@/components/forms/AppFormGroup'
 import AppContentSection from '@/components/AppContentSection'
+import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
+import AppFormValidation from '@/components/forms/AppFormValidation'
+import AppButtonLinkTertiary from '@/components/buttons/AppButtonLinkTertiary'
 
 export default {
   middleware: ['guest'],
@@ -119,7 +99,13 @@ export default {
   },
   components: {
     AppHeader,
-    AppContentSection
+    AppFormLabel,
+    AppFormInput,
+    AppFormGroup,
+    AppContentSection,
+    AppButtonPrimary,
+    AppFormValidation,
+    AppButtonLinkTertiary
   },
   data() {
     return {
@@ -141,7 +127,11 @@ export default {
     }
   },
   mounted() {
-    this.$refs.autofocus.focus()
+    // console.log(this.$refs.autofocus)
+    this.$refs.autofocus.$el.focus()
+    // console.log(this.$refs.autofocus_component)
+    // this.$refs.autofocus.$el.focus()
+    // console.log(this.$refs.autofocus.$el)
   },
   methods: {
     ...mapActions({

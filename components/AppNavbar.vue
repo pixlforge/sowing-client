@@ -24,7 +24,7 @@
         v-if="!loggedIn"
         :to="localePath({ name: 'register' })"
         icon="rocket"
-        color="pink"
+        color="pink-dark"
         class="mx-10">
         {{ $t("buttons.register") }}
       </AppButtonLinkPrimary>

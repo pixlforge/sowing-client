@@ -14,22 +14,24 @@
       <!-- Infos -->
       <AppParagraph
         v-if="!shopStripeUserId || !shopStripePublishableKey"
-        class="max-w-800 text-center mx-auto my-36 md:my-72">
+        class="max-w-800"
+        center>
         {{ $t("shop_creator.steps.connect.paragraph") }}
       </AppParagraph>
 
       <!-- Connect process -->
-      <AppShopFeatureContainer>
+      <AppShopFeatureContainer class="max-w-800">
         <template v-if="!stripeInfos">
-          <a
-            :href="stripeConnectOAuthUrl"
-            :class="btnTheme"
-            class="button button--large">
-            <font-awesome-icon
-              :icon="['fab', 'cc-stripe']"
-              class="button__icon button__icon--larger"/>
-            {{ $t("buttons.connect_with_stripe") }}
-          </a>
+          <div class="text-center">
+            <a
+              :href="stripeConnectOAuthUrl"
+              :class="btnTheme"
+              class="inline-block outline-none focus:shadow-outline rounded-lg text-white font-bold text-center uppercase transition no-underline whitespace-no-wrap text-16 font-black px-48 py-20">
+              <font-awesome-icon
+                :icon="['fab', 'cc-stripe']"/>
+              {{ $t("buttons.connect_with_stripe") }}
+            </a>
+          </div>
         </template>
 
         <template v-if="stripeInfosReceived">

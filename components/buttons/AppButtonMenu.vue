@@ -39,7 +39,7 @@
         <AppButtonLinkPrimary
           :to="localePath({ name: 'shop-creator-terms' })"
           icon="store"
-          color="pink"
+          color="pink-dark"
           class="shadow-md">
           {{ $t("buttons.create_my_shop") }}
         </AppButtonLinkPrimary>

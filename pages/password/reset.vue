@@ -7,10 +7,8 @@
       icon="redo-alt"/>
 
     <!-- Form -->
-    <AppContentSection>
-      <form
-        class="form__container form__container--narrow"
-        @submit.prevent="reset">
+    <AppContentSection class="max-w-600">
+      <form @submit.prevent="reset">
 
         <!-- Email -->
         <div class="form__group form__group--first">
@@ -69,14 +67,12 @@
         </div>
 
         <!-- Submit -->
-        <button
+        <AppButtonPrimary
           type="submit"
-          class="button button__primary button--centered button--spaced">
-          <font-awesome-icon
-            :icon="['far', 'redo-alt']"
-            class="button__icon button__icon--small"/>
+          icon="redo-alt"
+          class="mx-auto my-72">
           {{ $t("buttons.password_reset") }}
-        </button>
+        </AppButtonPrimary>
       </form>
     </AppContentSection>
   </main>
@@ -86,7 +82,12 @@
 import { mapActions } from 'vuex'
 
 import AppHeader from '@/components/headers/AppHeader'
+import AppFormGroup from '@/components/forms/AppFormGroup'
+import AppFormLabel from '@/components/forms/AppFormLabel'
+import AppFormInput from '@/components/forms/AppFormInput'
 import AppContentSection from '@/components/AppContentSection'
+import AppFormValidation from '@/components/forms/AppFormValidation'
+import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 
 export default {
   middleware: ['guest'],
@@ -109,7 +110,12 @@ export default {
   },
   components: {
     AppHeader,
-    AppContentSection
+    AppFormGroup,
+    AppFormLabel,
+    AppFormInput,
+    AppContentSection,
+    AppFormValidation,
+    AppButtonPrimary
   },
   data() {
     return {
@@ -128,6 +134,7 @@ export default {
     }
   },
   mounted() {
+    // this.$refs.autofocus.$el.focus()
     this.form.token = this.$route.query.token
   },
   methods: {

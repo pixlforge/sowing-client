@@ -2,56 +2,50 @@
   <div>
 
     <!-- Variation label -->
-    <label
-      for="variation"
-      class="form__label">
+    <AppFormLabel name="variation">
       {{ variationType }}
-    </label>
+    </AppFormLabel>
 
     <!-- Variation select -->
-    <div class="form__select-group">
-      <select
-        id="variation"
-        :value="selectedVariationId"
-        name="variation"
-        class="form__select"
-        @change="changed">
-        <option
-          value=""
-          selected>
-          {{ selectionLabel }}
-        </option>
-        <option
-          v-for="variation in variations"
-          :key="variation.id"
-          :value="variation.id"
-          :disabled="!variation.in_stock">
+    <AppFormSelect
+      :value="selectedVariationId"
+      name="variation"
+      @change.native="changed">
+      <option
+        v-for="variation in variations"
+        :key="variation.id"
+        :value="variation.id"
+        :disabled="!variation.in_stock">
 
-          <!-- Variation name -->
-          {{ variationName(variation) }}
+        <!-- Variation name -->
+        {{ variationName(variation) }}
 
-          <!-- Price variation -->
-          <template v-if="variation.price_varies">
-            ({{ variation.price.currency }} {{ variation.price.amount }})
-          </template>
+        <!-- Price variation -->
+        <template v-if="variation.price_varies">
+          ({{ variation.price.currency }} {{ variation.price.amount }})
+        </template>
 
-          <template v-if="!variation.in_stock">
-            ({{ outOfStock }})
-          </template>
+        <template v-if="!variation.in_stock">
+          ({{ outOfStock }})
+        </template>
 
-        </option>
-      </select>
-      <font-awesome-icon
-        :icon="['fas', 'caret-down']"
-        class="form__select-caret"/>
-    </div>
+      </option>
+    </AppFormSelect>
+
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
 
+import AppFormLabel from '@/components/forms/AppFormLabel'
+import AppFormSelect from '@/components/forms/AppFormSelect'
+
 export default {
+  components: {
+    AppFormLabel,
+    AppFormSelect
+  },
   props: {
     type: {
       type: String,

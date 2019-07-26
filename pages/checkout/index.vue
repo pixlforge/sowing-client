@@ -87,18 +87,15 @@
           </div>
 
           <!-- Checkout button -->
-          <button
+          <AppButtonPrimary
             v-if="products.length && !addressManagersVisible"
-            :class="{ 'button__disabled': is_empty || submitting }"
             :disabled="is_empty || submitting"
             :title="$t('pages.checkout.order')"
-            class="button button__primary button--spaced"
-            @click.prevent="order">
-            <font-awesome-icon
-              :icon="['far', 'check-circle']"
-              class="button__icon button__icon--small"/>
+            icon="check-circle"
+            class="shadow-xl mt-72"
+            @click.native="order">
             {{ $t("pages.checkout.order") }}
-          </button>
+          </AppButtonPrimary>
         </div>
       </div>
     </AppContentSection>
@@ -112,6 +109,7 @@ import { mapGetters, mapActions } from 'vuex'
 import AppTitle from '@/components/AppTitle'
 import AppHeader from '@/components/headers/AppHeader'
 import AppContentSection from '@/components/AppContentSection'
+import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 import AppCartOverviewProduct from '@/components/cart/AppCartOverviewProduct'
 import AppShippingMethods from '@/components/checkout/addresses/AppShippingMethods'
 import AppShippingAddress from '@/components/checkout/addresses/AppShippingAddress'
@@ -140,6 +138,7 @@ export default {
     AppTitle,
     AppHeader,
     AppContentSection,
+    AppButtonPrimary,
     AppCartOverviewProduct,
     AppShippingMethods,
     AppShippingAddress,

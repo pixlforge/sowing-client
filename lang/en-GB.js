@@ -416,4 +416,4 @@ export default {
     validation: 'The form contains errors. Please correct them and try again.',
     welcome: 'Welcome back'
   }
-};
+}

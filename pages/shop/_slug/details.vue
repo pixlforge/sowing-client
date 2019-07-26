@@ -60,15 +60,15 @@
         {{ $t("pages.shop_details.interested") }}
       </AppTitle>
 
-      <div class="shop-details__interested">
-        <a
-          :class="btnTheme"
-          class="button button--large">
-          <font-awesome-icon
-            :icon="['far', 'search']"
-            class="button__icon"/>
+      <div class="flex justify-center mt-72">
+        <AppButtonLinkPrimary
+          :to="localePath({ name: 'index' })"
+          icon="search"
+          :color="shopTheme"
+          class="shadow-2xl"
+          large>
           {{ $t("buttons.see_all_articles") }}
-        </a>
+        </AppButtonLinkPrimary>
       </div>
     </AppContentSection>
 
@@ -88,6 +88,7 @@ import AppShopCover from '@/components/shops/AppShopCover'
 import AppContentSection from '@/components/AppContentSection'
 import AppHeaderList from '@/components/headers/AppHeaderList'
 import AppStreakRegister from '@/components/streaks/AppStreakRegister'
+import AppButtonLinkPrimary from '@/components/buttons/AppButtonLinkPrimary'
 
 export default {
   head() {
@@ -101,7 +102,8 @@ export default {
     AppShopCover,
     AppContentSection,
     AppHeaderList,
-    AppStreakRegister
+    AppStreakRegister,
+    AppButtonLinkPrimary
   },
   mixins: [theming],
   data() {

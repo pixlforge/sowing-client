@@ -416,4 +416,4 @@ export default {
     validation: 'Das Formular enthält Fehler. Bitte korrigieren Sie sie und versuchen Sie es erneut.',
     welcome: 'Wilkommen'
   }
-};
+}

@@ -1,17 +1,17 @@
 <template>
-  <div class="product-details__container">
-    <div class="product-details__main">
+  <div>
+    <div class="flex flex-col lg:flex-row">
 
       <!-- Product featured image -->
-      <div class="product-details__featured-image-container">
+      <div class="w-full lg:w-1/2 lg:pr-36">
         <img
           :src="imgUrl"
           :alt="imgAlt"
-          class="product-details__featured-image">
+          class="block w-full rounded-lg shadow-2xl">
       </div>
 
       <!-- Product content -->
-      <div class="product-details__content">
+      <div class="w-full lg:w-1/2 flex flex-col items-center lg:items-start p-30">
 
         <!-- Base product name -->
         <AppTitle
@@ -21,16 +21,16 @@
         </AppTitle>
 
         <!-- Base product description -->
-        <p class="product-details__description">
+        <p class="text-18 leading-relaxed my-48">
           {{ productDescription }}
         </p>
 
         <!-- Base product price and currency -->
-        <div class="product-details__price-container">
-          <span class="product__currency">
+        <div class="flex items-start">
+          <span class="text-14 font-extrabold text-green-500 mr-10 mt-5">
             {{ productCurrency }}
           </span>
-          <span class="product__price">
+          <span class="text-24 font-extrabold">
             {{ productPrice }}
           </span>
         </div>
@@ -38,11 +38,11 @@
         <!-- Total products in stock -->
         <div
           v-if="product.in_stock"
-          class="product-details__stock-container">
+          class="flex items-baseline text-14 mt-48">
           <font-awesome-icon
             :icon="['far', 'boxes']"
-            class="product-details__icon product-details__icon--green"/>
-          <span class="product-details__stock-count">
+            class="text-green-500 mr-10"/>
+          <span class="font-bold mr-5">
             {{ product.stock_count }}
           </span>
           <span>
@@ -53,17 +53,17 @@
         <!-- Product is out of stock -->
         <div
           v-else
-          class="produce-details__out-of-stock-container">
+          class="flex items-start text-16 text-red-500 mt-48">
           <font-awesome-icon
             :icon="['far', 'boxes']"
-            class="product-details__icon"/>
-          <span class="product-details__stock-count product-details__stock-count--no-margin">
+            class="mr-10"/>
+          <span class="font-bold">
             {{ productOutOfStock }}
           </span>
         </div>
 
         <form
-          class="product-details__variation-container"
+          class="w-full mt-60"
           @submit.prevent="add">
 
           <!-- Variations -->
@@ -73,59 +73,51 @@
             v-model="form.variation"
             :type="type"
             :variations="variations"
-            class="mb-20"/>
+            class="mb-24"/>
 
           <!-- Quantity -->
-          <div
-            v-if="form.variation"
-            class="form__group form__group--tight">
-            <label
-              for="quantity"
-              class="form__label">
-              {{ quantityLabel }}
-            </label>
-            <div class="form__select-group">
-              <select
-                id="quantity"
-                v-model="form.quantity"
-                name="quantity"
-                class="form__select">
-                <option
-                  v-for="n in parseInt(form.variation.stock_count)"
-                  :key="n"
-                  :value="n">
-                  {{ n }}
-                </option>
-              </select>
-              <font-awesome-icon
-                :icon="['fas', 'caret-down']"
-                class="form__select-caret"/>
-            </div>
+          <AppFormDivider/>
 
-            <!-- Submit -->
-            <button
-              type="submit"
-              class="button button__primary button--centered button--spaced button--aligned-left-lg">
-              <font-awesome-icon
-                :icon="['far', 'cart-plus']"
-                class="button__icon button__icon--small"/>
-              {{ $t("buttons.add_to_cart") }}
-            </button>
-          </div>
+          <AppFormLabel name="quantity">
+            {{ quantityLabel }}
+          </AppFormLabel>
+          <AppFormSelect
+            v-model.number="form.quantity"
+            :disabled="!form.quantity"
+            name="quantity">
+            <option
+              v-for="n in form.variation.stock_count"
+              :key="n"
+              :value="n">
+              {{ n }}
+            </option>
+          </AppFormSelect>
+
+          <!-- Submit -->
+          <AppButtonPrimary
+            :disabled="!form.variation.id"
+            :color="shopTheme"
+            type="submit"
+            icon="cart-plus"
+            class="shadow-2xl mt-36"
+            large>
+            {{ $t("buttons.add_to_cart") }}
+          </AppButtonPrimary>
+
         </form>
       </div>
     </div>
 
     <!-- Additional product images -->
-    <div class="product-details__additional-images-container">
+    <div class="w-full flex flex-wrap items-center mt-72 lg:mt-132">
       <div
-        v-for="n in 13"
+        v-for="n in 5"
         :key="n"
-        class="product-details__additional-images">
+        class="w-1/2 sm:w-1/3 lg:w-1/4 xl:w-1/5 p-10 sm:p-20">
         <img
           :src="imgUrl"
           :alt="imgAlt"
-          class="product-details__image">
+          class="block rounded-lg shadow-lg mx-auto">
       </div>
     </div>
 
@@ -134,15 +126,25 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
+import theming from '@/mixins/theming'
 
 import AppTitle from '@/components/AppTitle'
+import AppFormLabel from '@/components/forms/AppFormLabel'
+import AppFormSelect from '@/components/forms/AppFormSelect'
 import AppVariation from '@/components/products/AppVariation'
+import AppFormDivider from '@/components/forms/AppFormDivider'
+import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 
 export default {
   components: {
     AppTitle,
-    AppVariation
+    AppFormLabel,
+    AppFormSelect,
+    AppVariation,
+    AppFormDivider,
+    AppButtonPrimary
   },
+  mixins: [theming],
   props: {
     product: {
       type: Object,
@@ -153,7 +155,7 @@ export default {
     return {
       form: {
         variation: '',
-        quantity: 1
+        quantity: null
       }
     }
   },

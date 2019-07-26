@@ -416,4 +416,4 @@ export default {
     validation: 'Il modulo contiene errori. Si prega di correggerli e riprovare.',
     welcome: 'Benvenuto'
   }
-};
+}

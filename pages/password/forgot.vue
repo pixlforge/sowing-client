@@ -7,52 +7,45 @@
       icon="redo-alt"/>
 
     <!-- Content -->
-    <AppContentSection>
+    <AppContentSection class="max-w-600">
       <AppTitle
         semantic="h1"
         visual="main">
         {{ $t("pages.password_email.paragraphs.first") }}
       </AppTitle>
 
-      <p class="paragraph__large  paragraph--center">
-        {{ $t("pages.password_email.paragraphs.second") }}
-      </p>
+      <!-- Infos -->
+      <AppParagraph center>
+        {{ $t("pages.password_email.paragraphs.second") }}}
+      </AppParagraph>
 
       <!-- Form -->
-      <form
-        class="form__container form__container--narrow"
-        @submit.prevent="send">
+      <form @submit.prevent="send">
 
         <!-- Email -->
-        <div>
-          <label
-            for="email"
-            class="form__label">
+        <AppFormGroup>
+          <AppFormLabel name="email">
             {{ $t("forms.labels.email") }}
-          </label>
-          <input
-            id="email"
+          </AppFormLabel>
+          <AppFormInput
+            ref="autofocus"
             v-model="email"
-            :class="{ 'border-red': errors.email }"
-            type="email"
+            :errors="errors"
             name="email"
-            class="form__input">
-          <template v-if="errors.email">
-            <p class="form__feedback">
-              {{ errors.email }}
-            </p>
-          </template>
-        </div>
+            type="email"
+            required/>
+          <AppFormValidation
+            :errors="errors"
+            name="email"/>
+        </AppFormGroup>
 
         <!-- Submit -->
-        <button
+        <AppButtonPrimary
           type="submit"
-          class="button button__primary button--centered button--spaced">
-          <font-awesome-icon
-            :icon="['far', 'redo-alt']"
-            class="button__icon button__icon--small"/>
+          icon="redo-alt"
+          class="mx-auto my-72">
           {{ $t("buttons.password_email") }}
-        </button>
+        </AppButtonPrimary>
       </form>
     </AppContentSection>
   </main>
@@ -63,7 +56,13 @@ import { mapActions } from 'vuex'
 
 import AppTitle from '@/components/AppTitle'
 import AppHeader from '@/components/headers/AppHeader'
+import AppFormGroup from '@/components/forms/AppFormGroup'
+import AppFormLabel from '@/components/forms/AppFormLabel'
+import AppFormInput from '@/components/forms/AppFormInput'
 import AppContentSection from '@/components/AppContentSection'
+import AppParagraph from '@/components/paragraphs/AppParagraph'
+import AppFormValidation from '@/components/forms/AppFormValidation'
+import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 
 export default {
   middleware: ['guest'],
@@ -87,7 +86,13 @@ export default {
   components: {
     AppTitle,
     AppHeader,
-    AppContentSection
+    AppFormGroup,
+    AppFormLabel,
+    AppFormInput,
+    AppContentSection,
+    AppParagraph,
+    AppFormValidation,
+    AppButtonPrimary
   },
   data() {
     return {
@@ -99,6 +104,9 @@ export default {
     return {
       title: app.head.title
     }
+  },
+  mounted() {
+    this.$refs.autofocus.$el.focus()
   },
   methods: {
     ...mapActions({

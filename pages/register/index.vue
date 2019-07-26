@@ -7,94 +7,69 @@
       icon="user-plus"/>
 
     <!-- Form -->
-    <AppContentSection>
-      <form
-        class="form__container form__container--narrow"
-        @submit.prevent="register">
+    <AppContentSection class="max-w-600">
+      <form @submit.prevent="register">
 
         <!-- Name -->
-        <div class="form__group form__group--first">
-          <label
-            for="name"
-            class="form__label">
+        <AppFormGroup>
+          <AppFormLabel name="name">
             {{ $t("forms.labels.name") }}
-          </label>
-          <input
-            id="name"
+          </AppFormLabel>
+          <AppFormInput
             ref="autofocus"
             v-model="form.name"
-            :class="{ 'border-red': errors.name }"
-            type="text"
+            :errors="errors"
             name="name"
-            class="form__input"
-            required
-            autofocus>
-          <template v-if="errors.name">
-            <p class="form__feedback">
-              {{ errors.name[0] }}
-            </p>
-          </template>
-        </div>
+            required/>
+          <AppFormValidation
+            :errors="errors"
+            name="name"/>
+        </AppFormGroup>
 
         <!-- Email -->
-        <div class="form__group">
-          <label
-            for="email"
-            class="form__label">
+        <AppFormGroup>
+          <AppFormLabel name="email">
             {{ $t("forms.labels.email") }}
-          </label>
-          <input
-            id="email"
+          </AppFormLabel>
+          <AppFormInput
             v-model="form.email"
-            :class="{ 'border-red': errors.email }"
-            type="email"
+            :errors="errors"
             name="email"
-            class="form__input"
-            required>
-          <template v-if="errors.email">
-            <p class="form__feedback">
-              {{ errors.email[0] }}
-            </p>
-          </template>
-        </div>
+            type="email"
+            required/>
+          <AppFormValidation
+            :errors="errors"
+            name="email"/>
+        </AppFormGroup>
 
         <!-- Password -->
-        <div class="form__group">
-          <label
-            for="password"
-            class="form__label">
+        <AppFormGroup>
+          <AppFormLabel name="password">
             {{ $t("forms.labels.password") }}
-          </label>
-          <input
-            id="password"
+          </AppFormLabel>
+          <AppFormInput
             v-model="form.password"
-            :class="{ 'border-red': errors.password }"
-            type="password"
+            :errors="errors"
             name="password"
-            class="form__input"
-            required>
-          <template v-if="errors.password">
-            <p class="form__feedback">
-              {{ errors.password[0] }}
-            </p>
-          </template>
-        </div>
+            type="password"
+            required/>
+          <AppFormValidation
+            :errors="errors"
+            name="password"/>
+        </AppFormGroup>
 
         <!-- Password confirmation -->
-        <div class="form__group">
-          <label
-            for="password_confirmation"
-            class="form__label">
+        <AppFormGroup>
+          <AppFormLabel name="password_confirmation">
             {{ $t("forms.labels.password_confirmation") }}
-          </label>
-          <input
-            id="password_confirmation"
+          </AppFormLabel>
+          <AppFormInput
             v-model="form.password_confirmation"
-            type="password"
+            :errors="errors"
             name="password_confirmation"
-            class="form__input"
-            required>
-        </div>
+            type="password"
+            required/>
+        </AppFormGroup>
 
         <!-- Terms -->
         <div class="form__checkbox-group">
@@ -113,16 +88,13 @@
         </div>
 
         <!-- Submit -->
-        <button
+        <AppButtonPrimary
           :disabled="missingCredentials"
-          :class="{ 'button__disabled': missingCredentials }"
           type="submit"
-          class="button button__primary button--centered button--spaced">
-          <font-awesome-icon
-            :icon="['far', 'user']"
-            class="button__icon button__icon--small"/>
+          icon="user"
+          class="shadow-xl mx-auto my-72">
           {{ $t("buttons.create_account") }}
-        </button>
+        </AppButtonPrimary>
       </form>
     </AppContentSection>
   </main>
@@ -132,7 +104,12 @@
 import { mapActions } from 'vuex'
 
 import AppHeader from '@/components/headers/AppHeader'
+import AppFormGroup from '@/components/forms/AppFormGroup'
+import AppFormLabel from '@/components/forms/AppFormLabel'
+import AppFormInput from '@/components/forms/AppFormInput'
 import AppContentSection from '@/components/AppContentSection'
+import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
+import AppFormValidation from '@/components/forms/AppFormValidation'
 
 export default {
   middleware: ['guest'],
@@ -155,7 +132,12 @@ export default {
   },
   components: {
     AppHeader,
-    AppContentSection
+    AppFormGroup,
+    AppFormLabel,
+    AppFormInput,
+    AppContentSection,
+    AppButtonPrimary,
+    AppFormValidation
   },
   data() {
     return {
@@ -184,7 +166,7 @@ export default {
     }
   },
   mounted() {
-    this.$refs.autofocus.focus()
+    this.$refs.autofocus.$el.focus()
   },
   methods: {
     ...mapActions({

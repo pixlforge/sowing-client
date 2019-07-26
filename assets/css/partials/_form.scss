@@ -1,6 +1,6 @@
 .form {
   &__container {
-    @apply mx-auto;
+    @apply w-full mx-auto;
 
     &--narrow {
       @apply max-w-500;
