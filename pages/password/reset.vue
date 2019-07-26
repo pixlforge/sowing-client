@@ -11,60 +11,50 @@
       <form @submit.prevent="reset">
 
         <!-- Email -->
-        <div class="form__group form__group--first">
-          <label
-            for="email"
-            class="form__label">
+        <AppFormGroup>
+          <AppFormLabel name="user">
             {{ $t("forms.labels.email") }}
-          </label>
-          <input
-            id="email"
+          </AppFormLabel>
+          <AppFormInput
+            ref="autofocus"
             v-model="form.email"
-            :class="{ 'border-red': errors.email }"
+            :errors="errors"
+            name="user"
             type="email"
-            name="email"
-            class="form__input">
-          <template v-if="errors.email">
-            <p class="form__feedback">
-              {{ errors.email[0] }}
-            </p>
-          </template>
-        </div>
+            required/>
+          <AppFormValidation
+            :errors="errors"
+            name="user"/>
+        </AppFormGroup>
 
         <!-- Password -->
-        <div class="form__group">
-          <label
-            for="password"
-            class="form__label">
+        <AppFormGroup>
+          <AppFormLabel name="password">
             {{ $t("forms.labels.password") }}
-          </label>
-          <input
-            id="password"
+          </AppFormLabel>
+          <AppFormInput
             v-model="form.password"
-            type="password"
+            :errors="errors"
             name="password"
-            class="form__input">
-          <template v-if="errors.email">
-            <p class="form__feedback">
-              {{ errors.password[0] }}
-            </p>
-          </template>
-        </div>
+            type="password"
+            required/>
+          <AppFormValidation
+            :errors="errors"
+            name="password"/>
+        </AppFormGroup>
 
         <!-- Password confirmation -->
-        <div class="form__group">
-          <label
-            for="password_confirmation"
-            class="form__label">
+        <AppFormGroup>
+          <AppFormLabel name="password_confirmation">
             {{ $t("forms.labels.password_confirmation") }}
-          </label>
-          <input
-            id="password_confirmation"
+          </AppFormLabel>
+          <AppFormInput
             v-model="form.password_confirmation"
-            type="password"
+            :errors="errors"
             name="password_confirmation"
-            class="form__input">
-        </div>
+            type="password"
+            required/>
+        </AppFormGroup>
 
         <!-- Submit -->
         <AppButtonPrimary
@@ -134,7 +124,7 @@ export default {
     }
   },
   mounted() {
-    // this.$refs.autofocus.$el.focus()
+    this.$refs.autofocus.$el.focus()
     this.form.token = this.$route.query.token
   },
   methods: {
