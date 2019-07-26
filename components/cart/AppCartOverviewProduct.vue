@@ -1,77 +1,79 @@
 <template>
-  <div class="cart-product__container">
+  <div class="relative bg-white rounded-lg shadow-xl hover:shadow-2xl transition flex items-center p-30 my-48">
 
     <!-- Product featured image -->
-    <div class="cart-product__featured-image-container">
+    <div class="w-1/5">
       <img
         :src="imgUrl"
         :alt="imgAlt"
-        class="cart-product__featured-image">
+        class="block w-full rounded-lg">
     </div>
 
     <!-- Name & description -->
-    <div class="cart-product__info-container">
-      <h3 class="cart-product__name">
+    <div class="w-2/5 pl-30">
+      <AppTitle
+        semantic="h3"
+        visual="h4">
         {{ baseProductName }} &ndash; {{ variationType }} &ndash; {{ variationName }}
-      </h3>
+      </AppTitle>
 
-      <p class="cart-product__description">
+      <p class="text-14 leading-relaxed mt-20">
         {{ baseProductDescription }}
       </p>
     </div>
 
     <!-- Price -->
-    <div class="cart-product__price-container">
-      <h5 class="cart-product__label">
+    <div class="w-1/5 text-center px-20">
+      <AppTitle
+        semantic="h5"
+        visual="h5"
+        utilities="text-12 text-gray-200">
         {{ labelPrice }}
-      </h5>
+      </AppTitle>
 
-      <div class="cart-product__price">
+      <div class="h-42 text-18 font-extrabold mt-20 flex justify-center items-center">
         {{ product.total.currency }} {{ product.total.amount }}
       </div>
     </div>
 
     <!-- Quantity -->
-    <div class="cart-product__quantity-container">
-      <h5 class="cart-product__label">
+    <div class="w-1/5 text-center px-20">
+      <AppTitle
+        semantic="h5"
+        visual="h5"
+        utilities="text-12 text-gray-200">
         {{ labelQuantity }}
-      </h5>
+      </AppTitle>
 
-      <div class="form__select-group form__select-group--spaced">
-        <select
-          id="quantity"
-          v-model="quantity"
-          name="quantity"
-          class="form__select">
-          <option
-            v-if="product.quantity == 0"
-            value="0"
-            disabled>
-            0
-          </option>
-          <option
-            v-for="n in parseInt(product.stock_count)"
-            :key="n"
-            :value="n"
-            :selected="n == product.quantity">
-            {{ n }}
-          </option>
-        </select>
-        <font-awesome-icon
-          :icon="['fas', 'caret-down']"
-          class="form__select-caret"/>
-      </div>
+      <AppFormSelect
+        v-model="quantity"
+        name="quantity"
+        class="mt-16">
+        <option
+          v-if="product.quantity == 0"
+          value="0"
+          disabled>
+          0
+        </option>
+        <option
+          v-for="n in parseInt(product.stock_count)"
+          :key="n"
+          :value="n"
+          :selected="n == product.quantity">
+          {{ n }}
+        </option>
+      </AppFormSelect>
     </div>
 
     <!-- Remove control -->
     <button
       role="button"
       title="Remove"
-      class="cart-product__delete-button"
+      class="absolute top-0 right-0 mt-20 mr-20"
       @click="remove(product.id)">
       <font-awesome-icon
         :icon="['far', 'times']"
-        class="cart-product__delete-button-icon"/>
+        class="text-20 text-gray-200 hover:text-red-500 cursor-pointer"/>
     </button>
   </div>
 </template>
@@ -79,7 +81,14 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 
+import AppTitle from '@/components/AppTitle'
+import AppFormSelect from '@/components/forms/AppFormSelect'
+
 export default {
+  components: {
+    AppTitle,
+    AppFormSelect
+  },
   props: {
     product: {
       type: Object,

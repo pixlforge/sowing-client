@@ -46,16 +46,16 @@
       </div>
 
       <!-- Checkout button -->
-      <div class="cart__checkout-button-container">
-        <AppButtonLinkPrimary
-          v-if="products.length"
-          :to="localePath({ name: 'checkout' })"
-          :disabled="is_empty"
-          :title="$t('pages.cart.checkout')"
-          icon="check-circle">
-          {{ $t("pages.cart.checkout") }}
-        </AppButtonLinkPrimary>
-      </div>
+      <AppButtonLinkPrimary
+        v-if="products.length"
+        :to="localePath({ name: 'checkout' })"
+        :disabled="is_empty"
+        :title="$t('pages.cart.checkout')"
+        icon="check-circle"
+        class="block shadow-2xl my-72 md:my-96"
+        large>
+        {{ $t("pages.cart.checkout") }}
+      </AppButtonLinkPrimary>
     </AppContentSection>
 
   </main>

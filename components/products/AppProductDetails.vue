@@ -25,46 +25,54 @@
           {{ productDescription }}
         </p>
 
-        <!-- Base product price and currency -->
-        <div class="flex items-start">
-          <span class="text-14 font-extrabold text-green-500 mr-10 mt-5">
-            {{ productCurrency }}
-          </span>
-          <span class="text-24 font-extrabold">
-            {{ productPrice }}
-          </span>
-        </div>
+        <div class="w-full flex justify-between items-center">
 
-        <!-- Total products in stock -->
-        <div
-          v-if="product.in_stock"
-          class="flex items-baseline text-14 mt-48">
-          <font-awesome-icon
-            :icon="['far', 'boxes']"
-            class="text-green-500 mr-10"/>
-          <span class="font-bold mr-5">
-            {{ product.stock_count }}
-          </span>
-          <span>
-            {{ productsRemaining }}
-          </span>
-        </div>
+          <!-- Base product price and currency -->
+          <div class="flex items-start">
+            <span
+              :class="`text-${shopTheme}-500`"
+              class="text-14 font-extrabold mr-10 mt-5">
+              {{ productCurrency }}
+            </span>
+            <span class="text-24 font-extrabold">
+              {{ productPrice }}
+            </span>
+          </div>
 
-        <!-- Product is out of stock -->
-        <div
-          v-else
-          class="flex items-start text-16 text-red-500 mt-48">
-          <font-awesome-icon
-            :icon="['far', 'boxes']"
-            class="mr-10"/>
-          <span class="font-bold">
-            {{ productOutOfStock }}
-          </span>
+          <!-- Total products in stock -->
+          <div
+            v-if="product.in_stock"
+            class="flex items-baseline text-14">
+            <font-awesome-icon
+              :icon="['far', 'boxes']"
+              :class="`text-${shopTheme}-500`"
+              class="mr-10"/>
+            <span class="font-bold mr-5">
+              {{ product.stock_count }}
+            </span>
+            <span>
+              {{ productsRemaining }}
+            </span>
+          </div>
+
+          <!-- Product is out of stock -->
+          <div
+            v-else
+            class="flex items-start text-16 text-red-500 mt-48">
+            <font-awesome-icon
+              :icon="['far', 'boxes']"
+              class="mr-10"/>
+            <span class="font-bold">
+              {{ productOutOfStock }}
+            </span>
+          </div>
         </div>
 
         <form
-          class="w-full mt-60"
+          class="w-full"
           @submit.prevent="add">
+
+          <AppFormDivider/>
 
           <!-- Variations -->
           <AppVariation
