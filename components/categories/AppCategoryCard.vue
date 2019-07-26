@@ -1,9 +1,9 @@
 <template>
-  <div class="category-card__container">
+  <div class="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4">
     <nuxt-link
       :to="localePath({ name: 'categories-slug', params: { slug: category.slug } })"
       :style="imgUrl"
-      class="category-card__body">
+      class="relative h-150 sm:h-315 flex justify-center items-center no-underline bg-cover bg-center bg-no-repeat">
 
       <!-- Name -->
       <AppTitle
@@ -14,7 +14,7 @@
       </AppTitle>
 
       <!-- Mask -->
-      <div class="category-card__mask"/>
+      <div class="absolute w-full h-full bg-black opacity-25"/>
 
     </nuxt-link>
   </div>

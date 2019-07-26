@@ -1,5 +1,5 @@
 <template>
-  <div class="p-20">
+  <div class="px-20 mb-36">
     <div class="flex flex-col md:flex-row rounded-lg shadow-2xl bg-white">
 
       <!-- Left side -->

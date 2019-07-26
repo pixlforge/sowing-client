@@ -11,41 +11,34 @@
     </section>
 
     <!-- Features -->
-    <AppContentSection>
+    <AppContentSection class="max-w-1000">
       <AppTitle
         semantic="h1"
-        visual="main">
+        visual="main"
+        utilities="mb-30 sm:mb-72 md:mb-60">
         {{ $t("pages.home.titles.features") }}
       </AppTitle>
 
-      <div class="feature__wrapper">
-        <AppFeature icon="lightbulb">
-          <template slot="title">
-            {{ $t("pages.home.features.first.title") }}
-          </template>
-          {{ $t("pages.home.features.first.body") }}
-        </AppFeature>
+      <div class="flex flex-wrap justify-between -mx-20">
+        <AppFeature
+          :title="$t('pages.home.features.first.title')"
+          :body="$t('pages.home.features.first.body')"
+          icon="lightbulb"/>
 
-        <AppFeature icon="eye">
-          <template slot="title">
-            {{ $t("pages.home.features.second.title") }}
-          </template>
-          {{ $t("pages.home.features.second.body") }}
-        </AppFeature>
+        <AppFeature
+          :title="$t('pages.home.features.second.title')"
+          :body="$t('pages.home.features.second.body')"
+          icon="eye"/>
 
-        <AppFeature icon="rocket">
-          <template slot="title">
-            {{ $t("pages.home.features.third.title") }}
-          </template>
-          {{ $t("pages.home.features.third.body") }}
-        </AppFeature>
+        <AppFeature
+          :title="$t('pages.home.features.third.title')"
+          :body="$t('pages.home.features.third.body')"
+          icon="rocket"/>
 
-        <AppFeature icon="shield-check">
-          <template slot="title">
-            {{ $t("pages.home.features.fourth.title") }}
-          </template>
-          {{ $t("pages.home.features.fourth.body") }}
-        </AppFeature>
+        <AppFeature
+          :title="$t('pages.home.features.fourth.title')"
+          :body="$t('pages.home.features.fourth.body')"
+          icon="shield-check"/>
       </div>
     </AppContentSection>
 
@@ -60,7 +53,7 @@
         {{ $t("pages.home.titles.shops") }}
       </AppTitle>
 
-      <div class="flex flex-wrap -mx-20 mt-60 sm:mt-96">
+      <div class="flex flex-wrap -mx-20 mt-60 sm:mt-132">
         <AppShopCard
           v-for="shop in shops"
           :key="shop.id"
@@ -77,7 +70,7 @@
         {{ $t("pages.home.titles.categories") }}
       </AppTitle>
 
-      <div class="category-card__wrapper">
+      <div class="flex flex-wrap justify-center shadow-2xl -mx-20 mt-60 sm:mt-132">
         <AppCategoryCard
           v-for="category in categories"
           :key="category.id"
@@ -86,49 +79,18 @@
     </AppContentSection>
 
     <!-- Reviews -->
-    <AppContentSection>
+    <AppContentSection class="max-w-1000">
       <AppTitle
         semantic="h1"
         visual="main">
         {{ $t("pages.home.titles.reviews") }}
       </AppTitle>
 
-      <div class="review__wrapper">
+      <div class="mt-60 sm:mt-132">
         <AppReview
-          :stars="3"
-          name="Marty McFly"
-          body="I think it's terrible. Girls chasing boys. When I was your age I never chased a boy, or called a boy, or sat in a parked car with a boy. He's a very strange young man. You can't, uh, that is, uh, nobody's home. Oh, you mean how you're supposed to act on a first date. I'll call you tonight.">
-          <template slot="avatar">
-            <img
-              src="~assets/img/reviews/avatars/marty.jpg"
-              alt="Avatar Marty McFly"
-              class="review__avatar">
-          </template>
-        </AppReview>
-
-        <AppReview
-          :stars="4"
-          name="Doc Brown"
-          body="Now which one was it, Greg or Craig? Wrecked? When did this happen and- There, there, now, just relax. You've been asleep for almost nine hours now. So tell me, Marty, how long have you been in port? Okay, okay you guys, oh ha ha ha very funny. Hey you guys are being real mature.">
-          <template slot="avatar">
-            <img
-              src="~assets/img/reviews/avatars/doc.png"
-              alt="Avatar Doc Brown"
-              class="review__avatar">
-          </template>
-        </AppReview>
-
-        <AppReview
-          :stars="4"
-          name="Biff Tannen"
-          body="Um, yeah, I'm on my way. Right. Oh, pleased to meet you, Calvin Marty Klein. Do you mind if I sit here? I over slept, look I need your help. I have to ask Lorraine out but I don't know how to do it. I have to ask Lorraine out but I don't know how to do it. Go.">
-          <template slot="avatar">
-            <img
-              src="~assets/img/reviews/avatars/biff.jpg"
-              alt="Avatar Biff Tannen"
-              class="review__avatar">
-          </template>
-        </AppReview>
+          v-for="review in reviews"
+          :key="review.id"
+          :review="review"/>
       </div>
     </AppContentSection>
 
@@ -172,6 +134,29 @@ export default {
   },
   data() {
     return {
+      reviews: [
+        {
+          id: 1,
+          name: 'Marty McFly',
+          comment: "I think it's terrible. Girls chasing boys. When I was your age I never chased a boy, or called a boy, or sat in a parked car with a boy. He's a very strange young man. You can't, uh, that is, uh, nobody's home. Oh, you mean how you're supposed to act on a first date. I'll call you tonight.",
+          stars: 3,
+          avatar: 'marty.jpg'
+        },
+        {
+          id: 2,
+          name: 'Doc Brown',
+          comment: "Now which one was it, Greg or Craig? Wrecked? When did this happen and- There, there, now, just relax. You've been asleep for almost nine hours now. So tell me, Marty, how long have you been in port? Okay, okay you guys, oh ha ha ha very funny. Hey you guys are being real mature.",
+          stars: 5,
+          avatar: 'doc.png'
+        },
+        {
+          id: 3,
+          name: 'Biff Tannen',
+          comment: "Um, yeah, I'm on my way. Right. Oh, pleased to meet you, Calvin Marty Klein. Do you mind if I sit here? I over slept, look I need your help. I have to ask Lorraine out but I don't know how to do it. I have to ask Lorraine out but I don't know how to do it. Go.",
+          stars: 3,
+          avatar: 'biff.jpg'
+        }
+      ],
       shops: [
         {
           id: 1,
