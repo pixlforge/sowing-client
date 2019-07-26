@@ -2,11 +2,11 @@
   <nuxt-link
     :to="localePath({ name: 'cart' })"
     :class="btnTheme"
-    class="button__round">
+    class="block relative w-40 h-40 outline-none focus:shadow-outline rounded-full transition flex justify-center items-center">
     <font-awesome-icon
       :icon="['far', 'shopping-cart']"
-      class="button__icon--large"/>
-    <div class="button__badge">
+      class="text-18"/>
+    <div class="absolute top-0 right-0 w-20 h-20 rounded-full bg-pink-600 text-12 font-extrabold text-white leading-none flex justify-center items-center">
       {{ count }}
     </div>
   </nuxt-link>
