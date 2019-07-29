@@ -8,43 +8,35 @@
       {{ $t("pages.checkout.delivery_method") }}
     </AppTitle>
 
-    <div class="form__select-group form__select-group--spaced">
-      <select
-        id="method"
-        :class="{ 'border-red': errors.length }"
-        name="method"
-        class="form__select form__select--white"
-        @change="$emit('input', $event.target.value)">
-        <option
-          value=""
-          disabled>
-          {{ $t("forms.select") }}
-        </option>
-        <option
-          v-for="method in methods"
-          :key="method.id"
-          :value="method.id">
-          {{ method.name }}
-        </option>
-      </select>
-      <font-awesome-icon
-        :icon="['fas', 'caret-down']"
-        class="form__select-caret"/>
-      <template v-if="errors">
-        <p class="form__feedback">
-          {{ errors[0] }}
-        </p>
-      </template>
-    </div>
+    <!-- Select -->
+    <AppFormSelect
+      name="method"
+      theme="light"
+      class="mt-20"
+      @change.native="$emit('input', $event.target.value)">
+      <option
+        v-for="method in methods"
+        :key="method.id"
+        :value="method.id">
+        {{ method.name }}
+      </option>
+    </AppFormSelect>
+    <AppFormValidation
+      :errors="errors"
+      name="method"/>
   </div>
 </template>
 
 <script>
 import AppTitle from '@/components/AppTitle'
+import AppFormSelect from '@/components/forms/AppFormSelect'
+import AppFormValidation from '@/components/forms/AppFormValidation'
 
 export default {
   components: {
-    AppTitle
+    AppTitle,
+    AppFormSelect,
+    AppFormValidation
   },
   props: {
     methods: {
@@ -52,10 +44,10 @@ export default {
       required: true
     },
     errors: {
-      type: Array,
+      type: Object,
       required: false,
-      default() {
-        return []
+      default: () => {
+        return {}
       }
     }
   }

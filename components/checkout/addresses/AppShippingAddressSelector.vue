@@ -1,13 +1,16 @@
 <template>
   <div>
-    <ul class="list__address list__address--push-top">
+    <ul class="text-14 leading-relaxed -mt-10">
       <li
         v-for="address in addresses"
         :key="address.id"
-        :class="{ 'border-green-400': address.id == selectedAddress.id, 'border-green-200': address.id != selectedAddress.id }"
-        class="list__item-bordered"
+        :class="{
+          'border-green-500': address.id == selectedAddress.id,
+          'border-transparent': address.id != selectedAddress.id
+        }"
+        class="text-14 border-l-4 hover:border-green-500 cursor-pointer pl-0 -ml-10"
         @click.prevent="selectAddress(address)">
-        <ul class="list__address list__address--selector">
+        <ul class="text-14 leading-relaxed pl-10 mt-20">
           <li>
             {{ address.first_name }} {{ address.last_name }}
           </li>
@@ -30,21 +33,25 @@
       </li>
     </ul>
 
-    <button
-      class="button button__primary button--centered button--spaced"
-      @click.prevent="openCreator">
-      <font-awesome-icon
-        :icon="['far', 'plus']"
-        class="button__icon button__icon--small"/>
+    <!-- Address creator button -->
+    <AppButtonPrimary
+      icon="plus"
+      class="w-full mt-20"
+      @click.native="openCreator">
       {{ $t("pages.checkout.new_address") }}
-    </button>
+    </AppButtonPrimary>
   </div>
 </template>
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
 
+import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
+
 export default {
+  components: {
+    AppButtonPrimary
+  },
   props: {
     addresses: {
       type: Array,

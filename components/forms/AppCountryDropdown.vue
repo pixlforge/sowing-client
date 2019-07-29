@@ -1,53 +1,43 @@
 <template>
   <div>
-    <label
-      for="country"
-      class="form__label">
+    <AppFormLabel name="country_id">
       {{ $t("forms.labels.country") }}
-    </label>
-    <div class="form__select-group">
-      <select
-        id="country"
-        :class="{ 'border-red': errors.length, 'border-green-200': !errors.length }"
-        name="country"
-        class="form__select form__select--white"
-        @change="$emit('input', $event.target.value)">
-        <option
-          value=""
-          selected
-          disabled>
-          {{ $t("forms.select") }}
-        </option>
-        <option
-          v-for="country in countries"
-          :key="country.id"
-          :value="country.id">
-          {{ country.name[locale] }}
-        </option>
-      </select>
-      <font-awesome-icon
-        :icon="['fas', 'caret-down']"
-        class="form__select-caret"/>
-    </div>
-    <template v-if="errors">
-      <p class="form__feedback">
-        {{ errors[0] }}
-      </p>
-    </template>
+    </AppFormLabel>
+    <AppFormSelect
+      :errors="errors"
+      name="country_id"
+      theme="light"
+      @change.native="$emit('input', $event.target.value)">
+      <option
+        v-for="country in countries"
+        :key="country.id"
+        :value="country.id">
+        {{ country.name[locale] }}
+      </option>
+    </AppFormSelect>
+    <AppFormValidation
+      :errors="errors"
+      name="country_id"/>
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
 
+import AppFormLabel from '@/components/forms/AppFormLabel'
+import AppFormSelect from '@/components/forms/AppFormSelect'
+import AppFormValidation from '@/components/forms/AppFormValidation'
+
 export default {
+  components: {
+    AppFormLabel,
+    AppFormSelect,
+    AppFormValidation
+  },
   props: {
     errors: {
-      type: Array,
-      required: false,
-      default() {
-        return []
-      }
+      type: Object,
+      required: true
     }
   },
   data() {

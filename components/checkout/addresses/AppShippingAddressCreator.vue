@@ -1,173 +1,137 @@
 <template>
-  <div>
+  <div class="mt-20">
     <form @submit.prevent="store">
 
       <!-- First name -->
-      <div class="form__group from__group--first">
-        <label
-          for="first_name"
-          class="form__label">
+      <AppFormGroup tight>
+        <AppFormLabel name="first_name">
           {{ $t("forms.labels.first_name") }}
-        </label>
-        <input
-          id="first_name"
+        </AppFormLabel>
+        <AppFormInput
           v-model="form.first_name"
-          :class="{ 'border-red': errors.first_name }"
-          type="text"
+          :errors="errors"
           name="first_name"
-          class="form__input form__input--white">
-        <template v-if="errors.first_name">
-          <p class="form__feedback">
-            {{ errors.first_name[0] }}
-          </p>
-        </template>
-      </div>
+          theme="light"/>
+        <AppFormValidation
+          :errors="errors"
+          name="first_name"/>
+      </AppFormGroup>
 
       <!-- Last name -->
-      <div class="form__group form__group--tight">
-        <label
-          for="last_name"
-          class="form__label">
+      <AppFormGroup tight>
+        <AppFormLabel name="last_name">
           {{ $t("forms.labels.last_name") }}
-        </label>
-        <input
-          id="last_name"
+        </AppFormLabel>
+        <AppFormInput
           v-model="form.last_name"
-          :class="{ 'border-red': errors.last_name }"
-          type="text"
+          :errors="errors"
           name="last_name"
-          class="form__input form__input--white">
-        <template v-if="errors.last_name">
-          <p class="form__feedback">
-            {{ errors.last_name[0] }}
-          </p>
-        </template>
-      </div>
+          theme="light"/>
+        <AppFormValidation
+          :errors="errors"
+          name="last_name"/>
+      </AppFormGroup>
 
       <!-- Company name -->
-      <div class="form__group form__group--tight">
-        <label
-          for="company_name"
-          class="form__label">
+      <AppFormGroup tight>
+        <AppFormLabel name="company_name">
           {{ $t("forms.labels.company_name") }}
-        </label>
-        <input
-          id="company_name"
+        </AppFormLabel>
+        <AppFormInput
           v-model="form.company_name"
-          :class="{ 'border-red': errors.company_name }"
-          type="text"
+          :errors="errors"
           name="company_name"
-          class="form__input form__input--white">
-        <template v-if="errors.company_name">
-          <p class="form__feedback">
-            {{ errors.company_name[0] }}
-          </p>
-        </template>
-      </div>
+          theme="light"/>
+        <AppFormValidation
+          :errors="errors"
+          name="company_name"/>
+      </AppFormGroup>
 
       <!-- Address line 1 -->
-      <div class="form__group form__group--tight">
-        <label
-          for="address_line_1"
-          class="form__label">
+      <AppFormGroup tight>
+        <AppFormLabel name="address_line_1">
           {{ $t("forms.labels.address_line_1") }}
-        </label>
-        <input
-          id="address_line_1"
+        </AppFormLabel>
+        <AppFormInput
           v-model="form.address_line_1"
-          :class="{ 'border-red': errors.address_line_1 }"
-          type="text"
+          :errors="errors"
           name="address_line_1"
-          class="form__input form__input--white">
-        <template v-if="errors.address_line_1">
-          <p class="form__feedback">
-            {{ errors.address_line_1[0] }}
-          </p>
-        </template>
-      </div>
+          theme="light"/>
+        <AppFormValidation
+          :errors="errors"
+          name="address_line_1"/>
+      </AppFormGroup>
 
       <!-- Address line 2 -->
-      <div class="form__group form__group--tight">
-        <label
-          for="address_line_2"
-          class="form__label">
+      <AppFormGroup tight>
+        <AppFormLabel name="address_line_2">
           {{ $t("forms.labels.address_line_2") }}
-        </label>
-        <input
-          id="address_line_2"
+        </AppFormLabel>
+        <AppFormInput
           v-model="form.address_line_2"
-          :class="{ 'border-red': errors.address_line_2 }"
-          type="text"
+          :errors="errors"
           name="address_line_2"
-          class="form__input form__input--white">
-        <template v-if="errors.address_line_2">
-          <p class="form__feedback">
-            {{ errors.address_line_2[0] }}
-          </p>
-        </template>
-      </div>
+          theme="light"/>
+        <AppFormValidation
+          :errors="errors"
+          name="address_line_2"/>
+      </AppFormGroup>
 
       <!-- Postal code -->
-      <div class="form__group form__group--tight">
-        <label
-          for="postal_code"
-          class="form__label">
+      <AppFormGroup tight>
+        <AppFormLabel name="postal_code">
           {{ $t("forms.labels.postal_code") }}
-        </label>
-        <input
-          id="postal_code"
+        </AppFormLabel>
+        <AppFormInput
           v-model="form.postal_code"
-          :class="{ 'border-red': errors.postal_code }"
-          type="text"
+          :errors="errors"
           name="postal_code"
-          class="form__input form__input--white">
-        <template v-if="errors.postal_code">
-          <p class="form__feedback">
-            {{ errors.postal_code[0] }}
-          </p>
-        </template>
-      </div>
+          theme="light"/>
+        <AppFormValidation
+          :errors="errors"
+          name="postal_code"/>
+      </AppFormGroup>
 
       <!-- City -->
-      <div class="form__group form__group--tight">
-        <label
-          for="city"
-          class="form__label">
+      <AppFormGroup tight>
+        <AppFormLabel name="city">
           {{ $t("forms.labels.city") }}
-        </label>
-        <input
-          id="city"
+        </AppFormLabel>
+        <AppFormInput
           v-model="form.city"
-          :class="{ 'border-red': errors.city }"
-          type="text"
+          :errors="errors"
           name="city"
-          class="form__input form__input--white">
-        <template v-if="errors.city">
-          <p class="form__feedback">
-            {{ errors.city[0] }}
-          </p>
-        </template>
-      </div>
+          theme="light"/>
+        <AppFormValidation
+          :errors="errors"
+          name="city"/>
+      </AppFormGroup>
 
       <!-- Country -->
-      <AppCountryDropdown
-        v-model="form.country_id"
-        :errors="errors.country_id"
-        class="form__group form__group--tight"/>
+      <AppFormGroup tight>
+        <AppCountryDropdown
+          v-model="form.country_id"
+          :errors="errors"/>
+      </AppFormGroup>
 
-      <!-- Submit -->
-      <div class="form__group form__group--inline">
-        <button
+      <!-- Controls -->
+      <AppFormGroup>
+
+        <!-- Submit -->
+        <AppButtonPrimary
+          icon="check"
           type="submit"
-          class="button button__primary mr-20">
+          class="w-full mt-20">
           {{ $t("buttons.create") }}
-        </button>
-        <button
-          class="button"
-          @click.prevent="closeAddressCreator">
+        </AppButtonPrimary>
+
+        <!-- Close -->
+        <AppButtonTertiary
+          class="w-full"
+          @click.native="closeAddressCreator">
           {{ $t("buttons.cancel") }}
-        </button>
-      </div>
+        </AppButtonTertiary>
+      </AppFormGroup>
     </form>
   </div>
 </template>
@@ -175,10 +139,22 @@
 <script>
 import { mapActions } from 'vuex'
 
+import AppFormGroup from '@/components/forms/AppFormGroup'
+import AppFormLabel from '@/components/forms/AppFormLabel'
+import AppFormInput from '@/components/forms/AppFormInput'
+import AppFormValidation from '@/components/forms/AppFormValidation'
+import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
+import AppButtonTertiary from '@/components/buttons/AppButtonTertiary'
 import AppCountryDropdown from '@/components/forms/AppCountryDropdown'
 
 export default {
   components: {
+    AppFormGroup,
+    AppFormLabel,
+    AppFormInput,
+    AppFormValidation,
+    AppButtonPrimary,
+    AppButtonTertiary,
     AppCountryDropdown
   },
   data() {

@@ -18,7 +18,7 @@
 
     <ul
       v-if="selectedAddress && selectedAddress.country && !addressManagersVisible"
-      class="list__address">
+      class="text-14 leading-relaxed mt-10">
       <li>
         {{ selectedAddress.first_name }} {{ selectedAddress.last_name }}
       </li>
@@ -40,20 +40,22 @@
     </ul>
 
     <!-- Change address -->
-    <a
+    <AppButtonPrimary
       v-if="addresses.length && !addressManagersVisible"
-      class="link__block"
-      @click.prevent="openAddressSelector">
+      icon="repeat-alt"
+      class="w-full mt-20"
+      @click.native="openAddressSelector">
       {{ $t("pages.checkout.change_address") }}
-    </a>
+    </AppButtonPrimary>
 
     <!-- Add an address -->
-    <a
+    <AppButtonPrimary
       v-if="!addresses.length && !addressManagersVisible"
-      class="link__block"
-      @click.prevent="openAddressCreator">
+      icon="plus"
+      class="w-full mt-20"
+      @click.native="openAddressCreator">
       {{ $t("pages.checkout.add_address") }}
-    </a>
+    </AppButtonPrimary>
   </div>
 </template>
 
@@ -61,12 +63,14 @@
 import { mapGetters, mapActions } from 'vuex'
 
 import AppTitle from '@/components/AppTitle'
+import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 import AppShippingAddressCreator from '@/components/checkout/addresses/AppShippingAddressCreator'
 import AppShippingAddressSelector from '@/components/checkout/addresses/AppShippingAddressSelector'
 
 export default {
   components: {
     AppTitle,
+    AppButtonPrimary,
     AppShippingAddressCreator,
     AppShippingAddressSelector
   },

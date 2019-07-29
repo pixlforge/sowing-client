@@ -8,7 +8,9 @@
       :class="{
         'border-red-500': errors[name],
         'bg-white text-gray-200 border-gray-200': disabled,
-        'bg-gray-100 text-gray-900 border-transparent': !disabled,
+        'text-gray-900 border-transparent': !disabled,
+        'bg-gray-100': theme !== 'light',
+        'bg-white': theme === 'light'
       }"
       class="block w-full appearance-none rounded-lg text-16 leading-tight outline-none border border-transparent px-16 py-12"
       @change="$emit('input', $event.target.value)">
@@ -55,6 +57,11 @@ export default {
       default: () => {
         return {}
       }
+    },
+    theme: {
+      type: String,
+      required: false,
+      default: ''
     }
   }
 }
