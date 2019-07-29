@@ -7,7 +7,7 @@
       :value="value"
       :class="{
         'border-red-500': errors[name],
-        'bg-white text-gray-200 border-gray-200': disabled,
+        'bg-white text-gray-200 border-gray-200 cursor-not-allowed': disabled,
         'text-gray-900 border-transparent': !disabled,
         'bg-gray-100': theme !== 'light' && !disabled,
         'bg-white': theme === 'light'

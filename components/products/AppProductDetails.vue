@@ -107,8 +107,8 @@
             :color="shopTheme"
             type="submit"
             icon="cart-plus"
-            class="shadow-2xl mt-36"
-            large>
+            size="large"
+            class="shadow-2xl mt-36">
             {{ $t("buttons.add_to_cart") }}
           </AppButtonPrimary>
 

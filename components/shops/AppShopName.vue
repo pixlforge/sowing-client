@@ -1,19 +1,16 @@
 <template>
   <section class="flex flex-col sm:flex-row justify-center items-center">
-    <input
-      id="name"
+    <AppFormInput
       v-model="localShopName"
       :disabled="shopExists && !editable"
-      :class="{ 'form__input--disabled': shopExists && !editable }"
       :placeholder="$t('shop_creator.steps.name.placeholder')"
       name="name"
-      type="text"
-      class="form__input sm:rounded-r-none mt-0">
+      class="sm:rounded-r-none"/>
 
     <AppButtonPrimary
       :disabled="(shopExists || !shopName) && !editable"
       icon="rocket"
-      class="w-full sm:w-auto sm:rounded-l-none"
+      class="w-full h-46 sm:w-auto sm:rounded-l-none"
       @click.native="check">
       {{ $t("buttons.check_availability") }}
     </AppButtonPrimary>
@@ -24,10 +21,12 @@
 import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
+import AppFormInput from '@/components/forms/AppFormInput'
 import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 
 export default {
   components: {
+    AppFormInput,
     AppButtonPrimary
   },
   mixins: [theming],

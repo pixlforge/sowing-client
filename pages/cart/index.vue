@@ -52,8 +52,8 @@
         :disabled="is_empty"
         :title="$t('pages.cart.checkout')"
         icon="check-circle"
-        class="block shadow-2xl my-72 md:my-96"
-        large>
+        size="large"
+        class="block shadow-2xl my-72 md:my-96">
         {{ $t("pages.cart.checkout") }}
       </AppButtonLinkPrimary>
     </AppContentSection>

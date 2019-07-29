@@ -1,18 +1,27 @@
 <template>
-  <div class="shop-creator__section">
+  <div class="w-full">
 
     <!-- Profile image -->
-    <section class="shop-customization__group shop-customization__group--first">
-      <div class="shop-customization__group-header">
-        <h5 class="shop-customization__label">
+    <section class="my-72">
+      <div class="flex justify-between items-center">
+
+        <!-- Title -->
+        <AppTitle
+          semantic="h1"
+          visual="h3">
           {{ $t("forms.labels.avatar") }}
-        </h5>
-        <button
-          class="button button__secondary button--small"
-          @click="deleteAvatar">
+        </AppTitle>
+
+        <!-- Delete avatar -->
+        <AppButtonPrimary
+          size="mini"
+          color="pink-dark"
+          @click.native="deleteAvatar">
           {{ $t("buttons.delete") }}
-        </button>
+        </AppButtonPrimary>
       </div>
+
+      <!-- Avatar dropzone -->
       <dropzone
         id="dropzoneProfile"
         ref="dropzoneProfile"
@@ -23,17 +32,26 @@
     </section>
 
     <!-- Cover image -->
-    <section class="shop-customization__group">
-      <div class="shop-customization__group-header">
-        <h5 class="shop-customization__label">
+    <section class="my-72">
+      <div class="flex justify-between items-center">
+
+        <!-- Title -->
+        <AppTitle
+          semantic="h1"
+          visual="h3">
           {{ $t("forms.labels.cover_image") }}
-        </h5>
-        <button
-          class="button button__secondary button--small"
-          @click="deleteCover">
+        </AppTitle>
+
+        <!-- Delete cover -->
+        <AppButtonPrimary
+          size="mini"
+          color="pink-dark"
+          @click.native="deleteCover">
           {{ $t("buttons.delete") }}
-        </button>
+        </AppButtonPrimary>
       </div>
+
+      <!-- Cover dropzone -->
       <dropzone
         id="dropzoneCover"
         ref="dropzoneCover"
@@ -43,23 +61,27 @@
         @vdropzone-success="updateShop"/>
     </section>
 
-    <section class="shop-customization__group shop-customization__group--last">
-      <div class="shop-customization__label-container">
-        <h5 class="shop-customization__label">
-          {{ $t("forms.labels.theme_selection") }}
-        </h5>
-      </div>
-      <div class="shop-customization__list-container">
-        <ul class="shop-customization__list">
-          <li
-            v-for="(theme, index) in availableThemes"
-            :key="index"
-            class="shop-customization__list-item">
-            <AppTile :theme="theme"/>
-          </li>
-        </ul>
-      </div>
+    <!-- Theme selection -->
+    <section class="my-72">
+
+      <!-- Title -->
+      <AppTitle
+        semantic="h1"
+        visual="h3">
+        {{ $t("forms.labels.theme_selection") }}
+      </AppTitle>
+
+      <!-- Tiles list -->
+      <ul class="w-full flex flex-wrap justify-start -mx-10 mt-30">
+        <li
+          v-for="(theme, index) in availableThemes"
+          :key="index"
+          class="mx-10 mt-20 lg:mt-0">
+          <AppTile :theme="theme"/>
+        </li>
+      </ul>
     </section>
+
   </div>
 </template>
 
@@ -68,12 +90,16 @@ import { mapGetters, mapActions } from 'vuex'
 
 import 'vue2-dropzone/dist/vue2Dropzone.css'
 import Dropzone from 'nuxt-dropzone'
+import AppTitle from '@/components/AppTitle'
 import AppTile from '@/components/themes/AppTile'
+import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 
 export default {
   components: {
     Dropzone,
-    AppTile
+    AppTitle,
+    AppTile,
+    AppButtonPrimary
   },
   data() {
     return {

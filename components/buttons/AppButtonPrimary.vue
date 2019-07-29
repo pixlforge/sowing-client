@@ -4,7 +4,7 @@
     :type="type"
     :title="title"
     :class="classes"
-    class="block outline-none focus:shadow-outline rounded-lg border border-transparent text-12 text-white font-extrabold text-center uppercase transition no-underline whitespace-no-wrap px-30 py-12">
+    class="block outline-none focus:shadow-outline rounded-lg border border-transparent text-white text-center uppercase transition no-underline whitespace-no-wrap">
     <font-awesome-icon
       v-if="icon"
       :icon="['far', icon]"
@@ -41,10 +41,10 @@ export default {
       required: false,
       default: ''
     },
-    large: {
-      type: Boolean,
+    size: {
+      type: String,
       required: false,
-      default: false
+      default: 'normal'
     }
   },
   computed: {
@@ -65,10 +65,14 @@ export default {
       return classes
     },
     buttonSize() {
-      let classes = 'text-12 font-bold px-30 py-12'
+      let classes = 'text-12 font-extrabold px-30 py-12'
 
-      if (this.large) {
+      if (this.size === 'large') {
         classes = 'text-16 font-black px-48 py-20'
+      }
+
+      if (this.size === 'mini') {
+        classes = 'text-10 font-extrabold px-10 py-5'
       }
 
       return classes
