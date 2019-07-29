@@ -1,5 +1,5 @@
 <template>
-  <div class="antialiased text-green-900">
+  <div class="antialiased text-gray-800">
 
     <!-- Alert -->
     <AppAlert/>
@@ -114,21 +114,21 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
-import theming from '@/mixins/theming';
+import { mapGetters, mapActions } from 'vuex'
+import theming from '@/mixins/theming'
 
-import AppTitle from '@/components/AppTitle';
-import AppNavbar from '@/components/AppNavbar';
-import AppAlert from '@/components/globals/AppAlert';
-import AppFooter from '@/components/footer/AppFooter';
-import AppHeader from '@/components/headers/AppHeader';
-import AppSideMenu from '@/components/menus/AppSideMenu';
-import AppShopCover from '@/components/shops/AppShopCover';
-import AppDisclaimer from '@/components/footer/AppDisclaimer';
-import AppContentSection from '@/components/AppContentSection';
-import AppHeaderList from '@/components/headers/AppHeaderList';
-import AppSideMenuItem from '@/components/menus/AppSideMenuItem';
-import AppCategoryBar from '@/components/categories/AppCategoryBar';
+import AppTitle from '@/components/AppTitle'
+import AppNavbar from '@/components/AppNavbar'
+import AppAlert from '@/components/globals/AppAlert'
+import AppFooter from '@/components/footer/AppFooter'
+import AppHeader from '@/components/headers/AppHeader'
+import AppSideMenu from '@/components/menus/AppSideMenu'
+import AppShopCover from '@/components/shops/AppShopCover'
+import AppDisclaimer from '@/components/footer/AppDisclaimer'
+import AppContentSection from '@/components/AppContentSection'
+import AppHeaderList from '@/components/headers/AppHeaderList'
+import AppSideMenuItem from '@/components/menus/AppSideMenuItem'
+import AppCategoryBar from '@/components/categories/AppCategoryBar'
 
 export default {
   components: {
@@ -158,12 +158,12 @@ export default {
     })
   },
   destroyed() {
-    this.resetShop();
+    this.resetShop()
   },
   methods: {
     ...mapActions({
       resetShop: 'shop/resetShop'
     })
   }
-};
+}
 </script>

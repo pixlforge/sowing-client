@@ -1,25 +1,37 @@
 <template>
   <div
-    :class="{ 'credit-card__container--selected': selectedPaymentMethod }"
-    class="credit-card__container">
+    :class="{
+      'border-green-500 shadow-2xl': selectedPaymentMethod,
+      'border-gray-200': !selectedPaymentMethod
+    }"
+    class="relative rounded-lg flex border transition flex-col items-center cursor-pointer p-36">
     <font-awesome-icon
       :icon="['fab', 'cc-mastercard']"
-      :class="{ 'credit-card__icon--selected': selectedPaymentMethod }"
-      class="credit-card__icon"/>
+      :class="{
+        'text-green-500': selectedPaymentMethod,
+        'text-gray-200': !selectedPaymentMethod
+      }"
+      class="text-72 transition"/>
     <h5
-      :class="{ 'credit-card__title--selected': selectedPaymentMethod }"
-      class="credit-card__title">
-      Mastercard
+      :class="{
+        'text-green-500': selectedPaymentMethod,
+        'text-gray-200': !selectedPaymentMethod
+      }"
+      class="text-16 font-extrabold uppercase transition mt-20">
+      MasterCard
     </h5>
     <p
-      :class="{ 'credit-card__last-four--selected': selectedPaymentMethod }"
-      class="credit-card__last-four">
+      :class="{
+        'text-green-500': selectedPaymentMethod,
+        'text-gray-200': !selectedPaymentMethod
+      }"
+      class="text-12 transition mt-5">
       {{ $t("credit_cards.ending_in") }} {{ paymentMethod.last_four }}
     </p>
     <font-awesome-icon
       v-if="selectedPaymentMethod"
       :icon="['far', 'check-circle']"
-      class="credit-card__icon-checked"/>
+      class="absolute top-0 left-0 text-30 text-green-400 ml-20 mt-20"/>
   </div>
 </template>
 

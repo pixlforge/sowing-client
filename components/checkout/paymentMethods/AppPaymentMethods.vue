@@ -1,10 +1,10 @@
 <template>
   <div>
-    <ul class="payment-method__list">
+    <ul class="flex flex-wrap -mx-20">
       <li
         v-if="!paymentMethods.length"
-        class="payment-method__list-item payment-method__list-item--empty">
-        <p class="payment-method__empty">
+        class="w-1/2 flex items-center px-20 mt-48">
+        <p class="text-16 text-center leading-relaxed">
           Aucun moyen de paiement n'est associé à votre compte pour le moment.<br>
           Cliquez sur le bouton pour ajouter votre première carte de crédit.
         </p>
@@ -12,14 +12,14 @@
       <li
         v-for="method in currentPaymentMethods"
         :key="method.id"
-        class="payment-method__list-item">
+        class="w-1/2 px-20 mt-48">
         <component
           :is="method.card_type_slug"
           :payment-method="method"
           :selected-payment-method="selectedPaymentMethod.id === method.id"
           @click.native="switchPaymentMethod(method)"/>
       </li>
-      <li class="payment-method__list-item">
+      <li class="w-1/2 px-20 mt-48">
         <AppPaymentMethodCreator @payment-method:added="addPaymentMethod"/>
       </li>
     </ul>

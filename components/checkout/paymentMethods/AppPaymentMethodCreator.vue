@@ -1,42 +1,51 @@
 <template>
-  <div class="payment-method-creator__container">
+  <div class="w-full h-full min-h-221 flex flex-col justify-center items-center px-20">
+
+    <!-- Button -->
     <button
       v-if="!showing"
-      class="payment-method-creator__button"
+      class="bg-gray-200 hover:bg-green-500 transition text-white w-80 h-80 rounded-full p-0"
       @click.prevent="showing = true">
       <font-awesome-icon
         :icon="['far', 'plus']"
-        class="payment-method-creator__button-icon"/>
+        class="text-36"/>
     </button>
+
     <form
       v-show="showing"
-      class="payment-method-creator__form"
+      class="w-full h-full flex flex-col items-center"
       @submit.prevent="store">
-      <div class="payment-method-creator__form-body">
+
+      <!-- Body -->
+      <div class="w-full mt-20">
         <label
           for="elements"
-          class="payment-method-creator__label">
+          class="block text-14 leading-normal mb-20">
           {{ $t("stripe.add_a_card") }}
         </label>
         <div
           id="elements"
-          class="payment-method-creator__input"/>
+          class="bg-green-200 rounded-lg pl-10 py-10"/>
       </div>
-      <div class="payment-method-creator__controls">
-        <button
+
+      <!-- Controls -->
+      <div class="flex mt-20">
+
+        <!-- Store -->
+        <AppButtonPrimary
           :disabled="storing"
-          :class="{ 'btn-disabled': storing }"
           type="submit"
-          class="button button__primary button--spaced-right">
+          icon="plus"
+          class="mr-5">
           {{ $t("buttons.add") }}
-        </button>
-        <button
+        </AppButtonPrimary>
+
+        <!-- Cancel -->
+        <AppButtonTertiary
           :disabled="storing"
-          type="submit"
-          class="button"
-          @click.prevent="showing = false">
+          @click.native.prevent="showing = false">
           {{ $t("buttons.cancel") }}
-        </button>
+        </AppButtonTertiary>
       </div>
     </form>
   </div>
@@ -45,7 +54,14 @@
 <script>
 import { mapGetters } from 'vuex'
 
+import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
+import AppButtonTertiary from '@/components/buttons/AppButtonTertiary'
+
 export default {
+  components: {
+    AppButtonPrimary,
+    AppButtonTertiary
+  },
   data() {
     return {
       storing: false,
