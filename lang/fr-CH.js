@@ -76,6 +76,8 @@ export default {
       }
     },
     category: {
+      featured_categories: 'Catégories vedettes',
+      in: 'dans',
       img: {
         alt: 'Image de la catégorie'
       },

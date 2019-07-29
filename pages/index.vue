@@ -2,11 +2,16 @@
   <main>
 
     <!-- Featured Categories -->
-    <section class="w-full flex flex-col lg:flex-row">
-      <AppFeaturedCategoryLarge/>
-      <div class="w-full lg:w-1/2 flex flex-col">
-        <AppFeaturedCategorySmall/>
-        <AppFeaturedCategorySmall/>
+    <section class="container">
+      <h1 class="sr-only">
+        {{ $t("components.category.featured_categories") }}
+      </h1>
+
+      <div class="flex flex-wrap -mx-24">
+        <AppFeaturedCategory
+          v-for="category in featuredCategories"
+          :key="category.id"
+          :category="category"/>
       </div>
     </section>
 
@@ -111,8 +116,9 @@ import AppContentSection from '@/components/AppContentSection'
 import AppCategoryCard from '@/components/categories/AppCategoryCard'
 import AppStreakRegister from '@/components/streaks/AppStreakRegister'
 import AppStreakNewsletter from '@/components/streaks/AppStreakNewsletter'
-import AppFeaturedCategoryLarge from '@/components/categories/AppFeaturedCategoryLarge'
-import AppFeaturedCategorySmall from '@/components/categories/AppFeaturedCategorySmall'
+import AppFeaturedCategory from '@/components/categories/AppFeaturedCategory'
+// import AppFeaturedCategoryLarge from '@/components/categories/AppFeaturedCategoryLarge'
+// import AppFeaturedCategorySmall from '@/components/categories/AppFeaturedCategorySmall'
 
 export default {
   head() {
@@ -129,8 +135,9 @@ export default {
     AppCategoryCard,
     AppStreakRegister,
     AppStreakNewsletter,
-    AppFeaturedCategoryLarge,
-    AppFeaturedCategorySmall
+    AppFeaturedCategory
+    // AppFeaturedCategoryLarge,
+    // AppFeaturedCategorySmall
   },
   data() {
     return {
@@ -203,8 +210,11 @@ export default {
       categories: 'categories'
     })
   },
-  asyncData({ app }) {
+  async asyncData({ app }) {
+    const featuredCategories = await app.$axios.$get('/categories/featured')
+
     return {
+      featuredCategories: featuredCategories.data,
       title: app.head.title
     }
   }

@@ -153,6 +153,7 @@ module.exports = {
       '315': '31.5rem',
       '350': '35rem',
       '400': '40rem',
+      '500': '50rem',
       '700': '70rem',
       full: '100%',
       screen: '100vh'
@@ -217,7 +218,8 @@ module.exports = {
       '-5': '-.5rem',
       '-10': '-1rem',
       '-14': '1.4rem',
-      '-20': '-2rem'
+      '-20': '-2rem',
+      '-24': '-2.4rem'
     },
     container: {
       center: true,
@@ -285,7 +287,7 @@ module.exports = {
     opacity: ['responsive'],
     outline: ['focus'],
     overflow: ['responsive'],
-    padding: ['responsive'],
+    padding: ['responsive', 'first', 'last'],
     position: ['responsive'],
     resize: [],
     stroke: [],
@@ -296,7 +298,7 @@ module.exports = {
     userSelect: [],
     whitespace: [],
     wordBreak: [],
-    width: ['responsive'],
+    width: ['responsive', 'first', 'last'],
     zIndex: []
   },
   corePlugins: {
@@ -312,15 +314,15 @@ module.exports = {
     function ({ addVariant, e }) {
       addVariant('first', ({ modifySelectors, separator }) => {
         modifySelectors(({ className }) => {
-          return `.${e(`first${separator}${className}`)}:first-child`;
-        });
-      });
+          return `.${e(`first${separator}${className}`)}:first-child`
+        })
+      })
 
       addVariant('last', ({ modifySelectors, separator }) => {
         modifySelectors(({ className }) => {
-          return `.${e(`last${separator}${className}`)}:last-child`;
-        });
-      });
+          return `.${e(`last${separator}${className}`)}:last-child`
+        })
+      })
     }
   ]
-};
+}

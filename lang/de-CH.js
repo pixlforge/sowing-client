@@ -76,6 +76,8 @@ export default {
       }
     },
     category: {
+      featured_categories: 'Beliebte Kategorien',
+      in: 'in',
       img: {
         alt: 'Kategorie Bild'
       },
