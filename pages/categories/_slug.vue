@@ -22,7 +22,7 @@
             {{ section.name[locale] }}
           </AppTitle>
 
-          <div class="flex flex-wrap justify-center -mx-20 mb-96 md:mb-132 lg:mb-196">
+          <div class="flex flex-wrap justify-center sm:-mx-36 mb-96 md:mb-132 lg:mb-196">
 
             <!-- Subcategory -->
             <AppSubCategory
@@ -36,7 +36,7 @@
 
       <!-- Subcategories without sections -->
       <template v-else>
-        <div class="flex flex-wrap justify-center -mx-20 mt-96">
+        <div class="flex flex-wrap justify-center sm:-mx-36 mt-96">
 
           <!-- Subcategory -->
           <AppSubCategory

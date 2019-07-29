@@ -7,15 +7,13 @@
       :description="subcategory.description[locale]"/>
 
     <AppContentSection>
-      <div class="product__wrapper">
+      <div class="flex flex-wrap justify-between sm:-mx-36">
 
         <!-- Products -->
-        <div
+        <AppProduct
           v-for="product in products"
           :key="product.id"
-          class="product__container">
-          <AppProduct :product="product"/>
-        </div>
+          :product="product"/>
       </div>
     </AppContentSection>
 

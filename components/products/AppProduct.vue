@@ -1,58 +1,57 @@
 <template>
-  <div class="product__body">
+  <nuxt-link
+    :to="localePath({ name: 'products-slug', params: { slug: product.slug } })"
+    class="w-full md:w-1/2 xl:w-1/3 px-20 md:px-36 my-24 md:my-48">
+    <div class="no-underline outline-none focus:shadow-outline rounded-lg shadow-2xl">
 
-    <!-- Product featured image -->
-    <div class="product__featured-image-container">
-      <nuxt-link :to="localePath({ name: 'products-slug', params: { slug: product.slug } })">
-        <img
-          :alt="alt"
-          :src="imgSrc"
-          class="product__featured-image">
-      </nuxt-link>
-    </div>
+      <!-- Product featured image -->
+      <div
+        :style="imgUrl"
+        class="w-full h-200 md:h-315 rounded-t-lg bg-cover bg-center bg-no-repeat"/>
 
-    <!-- Content -->
-    <div class="product__content">
+      <!-- Content -->
+      <div class="flex flex-col justify-between p-30">
 
-      <!-- Base product name -->
-      <nuxt-link
-        :to="localePath({ name: 'products-slug', params: { slug: product.slug } })"
-        class="product__name-link">
-        <AppTitle
-          semantic="h3"
-          visual="h3">
-          {{ productName }}
-        </AppTitle>
-      </nuxt-link>
-
-      <!-- Base product description -->
-      <p class="product__description">
-        {{ product.description[locale] }}
-      </p>
-
-      <!-- Base product price and currency -->
-      <p class="product__price-container">
-        <span class="product__currency">
-          {{ productCurrency }}
-        </span>
-        <span class="product__price">
-          {{ productPrice }}
-        </span>
-      </p>
-
-      <div class="product__meta">
-        <font-awesome-icon
-          :icon="['far', 'store']"
-          class="product__meta-icon"/>
+        <!-- Base product name -->
         <nuxt-link
-          :to="localePath({ name: 'shop-slug-details', params: { slug: product.shop.slug } })"
-          class="product__meta-link">
-          {{ shopName }}
+          :to="localePath({ name: 'products-slug', params: { slug: product.slug } })"
+          class="no-underline">
+          <AppTitle
+            semantic="h3"
+            visual="h3">
+            {{ productName }}
+          </AppTitle>
         </nuxt-link>
-      </div>
 
+        <!-- Base product description -->
+        <p class="text-14 leading-relaxed mt-16">
+          {{ product.description[locale] }}
+        </p>
+
+        <!-- Base product price and currency -->
+        <p class="text-20 flex items-start my-30">
+          <span class="text-14 font-extrabold text-green-500 mr-10">
+            {{ productCurrency }}
+          </span>
+          <span class="text-18 font-extrabold">
+            {{ productPrice }}
+          </span>
+        </p>
+
+        <div class="flex items-start text-14 text-green-400 mt-16">
+          <font-awesome-icon
+            :icon="['far', 'store']"
+            class="mr-10"/>
+          <nuxt-link
+            :to="localePath({ name: 'shop-slug-details', params: { slug: product.shop.slug } })"
+            class="text-green-400 font-semibold no-underline hover:underline">
+            {{ shopName }}
+          </nuxt-link>
+        </div>
+
+      </div>
     </div>
-  </div>
+  </nuxt-link>
 </template>
 
 <script>
@@ -77,8 +76,13 @@ export default {
     alt() {
       return this.$t('components.products.img.alt')
     },
-    imgSrc() {
-      return require('@/assets/img/placeholders/product.svg')
+    imgUrl() {
+      if (!this.product.media) {
+        const img = require('@/assets/img/placeholders/product.svg')
+        return `background-image: url(${img});`
+      }
+
+      return `background-image: url(${this.product.media});`
     },
     productName() {
       return this.product.name[this.locale]

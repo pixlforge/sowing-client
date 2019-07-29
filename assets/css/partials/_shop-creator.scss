@@ -3,14 +3,6 @@
     @apply w-full;
   }
 
-  &__name-section {
-    @apply w-full flex flex-col;
-
-    @screen md {
-      @apply flex-row;
-    }
-  }
-
   &__controls {
     @apply flex flex-col mt-96;
 

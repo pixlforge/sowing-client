@@ -3,27 +3,11 @@
     @apply w-full max-w-800 text-18 leading-loose mx-auto my-60;
   }
 
-  &__medium {
-    @apply text-18 leading-loose my-20;
-  }
-
   &--narrow {
     @apply max-w-1000 mx-auto;
   }
 
   &--center {
     @apply text-center;
-  }
-
-  &--white {
-    @apply text-white;
-  }
-
-  &--spaced {
-    @apply mt-60;
-  }
-
-  &--spaced-large {
-    @apply mt-72;
   }
 }
