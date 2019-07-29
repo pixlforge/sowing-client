@@ -38,10 +38,10 @@
 
     <!-- Main -->
     <main>
-      <AppContentSection>
 
-        <!-- User owns a shop -->
-        <template v-if="userHasShop">
+      <!-- User owns a shop -->
+      <template v-if="userHasShop">
+        <AppContentSection>
 
           <!-- Content -->
           <div class="w-full flex mt-96">
@@ -66,43 +66,34 @@
               <nuxt/>
             </section>
           </div>
-        </template>
+        </AppContentSection>
+      </template>
 
-        <!-- User does not own a shop -->
-        <template v-else>
-
-          <!-- Title -->
-          <AppTitle
-            semantic="h1"
-            visual="main">
-            {{ $t("pages.shop.not_created_yet") }}
-          </AppTitle>
-
-          <!-- Shop creation CTA -->
-          <p class="paragraph__large paragraph--center">
-            {{ $t("pages.shop.creation_cta_line_1") }}<br>
-            {{ $t("pages.shop.creation_cta_line_2") }}
-          </p>
-
-          <!-- Illustration -->
-          <div class="illustration__container">
-            <img
-              src="~assets/img/under_construction.svg"
-              alt="Illustration of a building under construction"
-              class="illustration__image">
-          </div>
+      <!-- User does not own a shop -->
+      <template v-else>
+        <AppContentSection class="max-w-800">
+          <AppSplash
+            :title="$t('pages.shop.not_created_yet')"
+            class="max-w-800">
+            <template slot="subtitle">
+              {{ $t("pages.shop.creation_cta_line_1") }}
+            </template>
+            <template slot="illustration">
+              <img
+                src="~assets/img/under_construction.svg"
+                alt="Illustration of a building under construction">
+            </template>
+          </AppSplash>
 
           <!-- Shop creation link -->
-          <nuxt-link
+          <AppButtonLinkPrimary
             :to="localePath({ name: 'shop-creator-terms' })"
-            class="button button__primary button--spaced-large">
-            <font-awesome-icon
-              :icon="['far', 'rocket']"
-              class="button__icon button__icon--small"/>
+            icon="rocket"
+            size="large">
             {{ $t("buttons.create_my_shop") }}
-          </nuxt-link>
-        </template>
-      </AppContentSection>
+          </AppButtonLinkPrimary>
+        </AppContentSection>
+      </template>
     </main>
 
     <!-- Footer -->
@@ -117,7 +108,7 @@
 import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
-import AppTitle from '@/components/AppTitle'
+import AppSplash from '@/components/AppSplash'
 import AppNavbar from '@/components/AppNavbar'
 import AppAlert from '@/components/globals/AppAlert'
 import AppFooter from '@/components/footer/AppFooter'
@@ -129,10 +120,11 @@ import AppContentSection from '@/components/AppContentSection'
 import AppHeaderList from '@/components/headers/AppHeaderList'
 import AppSideMenuItem from '@/components/menus/AppSideMenuItem'
 import AppCategoryBar from '@/components/categories/AppCategoryBar'
+import AppButtonLinkPrimary from '@/components/buttons/AppButtonLinkPrimary'
 
 export default {
   components: {
-    AppTitle,
+    AppSplash,
     AppNavbar,
     AppAlert,
     AppFooter,
@@ -143,7 +135,8 @@ export default {
     AppContentSection,
     AppHeaderList,
     AppSideMenuItem,
-    AppCategoryBar
+    AppCategoryBar,
+    AppButtonLinkPrimary
   },
   mixins: [theming],
   computed: {

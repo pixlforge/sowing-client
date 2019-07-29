@@ -201,7 +201,9 @@ export default {
       checkout: 'Proceed to checkout',
       in_your_cart: 'Your cart contains',
       products: 'products',
-      for: 'for'
+      for: 'for',
+      cart_is_empty: 'Your cart is empty',
+      add_something: 'Add something to it!'
     },
     checkout: {
       add_address: 'Add an address',

@@ -6,7 +6,7 @@ export default {
       shopTheme: 'shop/shopTheme'
     }),
     btnTheme() {
-      return `button__${this.shopTheme}`
+      return `bg-${this.shopTheme}-500`
     },
     bgTheme() {
       return `bg-${this.shopTheme}-500`

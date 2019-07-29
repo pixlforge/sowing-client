@@ -1,9 +1,0 @@
-.link {
-  &__block {
-    @apply block text-14 no-underline text-green-400 font-bold cursor-pointer mt-20;
-
-    &:hover {
-      @apply underline;
-    }
-  }
-}

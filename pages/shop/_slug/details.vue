@@ -33,21 +33,21 @@
       </AppTitle>
 
       <p
-        class="paragraph__large paragraph--center paragraph--narrow"
+        class="max-w-600 text-16 leading-loose text-center mx-auto my-36 md:my-72 mt-72 sm:mt-132"
         v-html="shop.description_long[locale]"/>
     </AppContentSection>
 
     <!-- Additional images -->
     <AppContentSection>
-      <div class="shop-details__images-section">
+      <div class="flex flex-wrap justify-center items-start -m-20">
         <div
           v-for="n in 10"
           :key="n"
-          class="shop-details__images-container">
+          class="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 p-20">
           <img
             :src="imgUrl"
             :alt="imgAlt"
-            class="shop-details__image">
+            class="rounded-lg shadow-xl">
         </div>
       </div>
     </AppContentSection>
@@ -65,8 +65,8 @@
           :to="localePath({ name: 'index' })"
           icon="search"
           :color="shopTheme"
-          class="shadow-2xl"
-          large>
+          size="large"
+          class="shadow-2xl">
           {{ $t("buttons.see_all_articles") }}
         </AppButtonLinkPrimary>
       </div>
@@ -87,6 +87,7 @@ import AppHeader from '@/components/headers/AppHeader'
 import AppShopCover from '@/components/shops/AppShopCover'
 import AppContentSection from '@/components/AppContentSection'
 import AppHeaderList from '@/components/headers/AppHeaderList'
+import AppParagraph from '@/components/paragraphs/AppParagraph'
 import AppStreakRegister from '@/components/streaks/AppStreakRegister'
 import AppButtonLinkPrimary from '@/components/buttons/AppButtonLinkPrimary'
 
@@ -102,6 +103,7 @@ export default {
     AppShopCover,
     AppContentSection,
     AppHeaderList,
+    AppParagraph,
     AppStreakRegister,
     AppButtonLinkPrimary
   },

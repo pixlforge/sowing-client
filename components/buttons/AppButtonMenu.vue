@@ -2,7 +2,7 @@
   <div class="relative">
     <button
       ref="dropdownMenu"
-      class="outline-none focus:shadow-outline rounded-lg border border-gray-200 text-12 text-gray-500 font-bold text-center uppercase transition no-underline whitespace-no-wrap flex px-30 py-12"
+      class="outline-none focus:shadow-outline rounded-lg border border-gray-200 text-12 text-gray-500 font-extrabold text-center uppercase transition no-underline whitespace-no-wrap flex px-30 py-12"
       @click.prevent="toggleDropdown">
       {{ username }}
       <font-awesome-icon
@@ -26,24 +26,25 @@
 
       <!-- Shop -->
       <AppDropdownItem
-        v-if="userHasShop"
         :to="localePath({ name: 'shop-management-dashboard' })"
         icon="store">
         {{ $t("pages.shop.title") }}
       </AppDropdownItem>
 
-      <!-- Shop create -->
-      <li
-        v-else
-        class="my-16">
-        <AppButtonLinkPrimary
-          :to="localePath({ name: 'shop-creator-terms' })"
-          icon="store"
-          color="pink-dark"
-          class="shadow-md">
-          {{ $t("buttons.create_my_shop") }}
-        </AppButtonLinkPrimary>
-      </li>
+      <template v-if="!userHasShop">
+        <AppDropdownDivider/>
+
+        <!-- Shop create -->
+        <li class="my-16">
+          <AppButtonLinkPrimary
+            :to="localePath({ name: 'shop-creator-terms' })"
+            icon="store"
+            color="pink-dark"
+            class="shadow-md">
+            {{ $t("buttons.create_my_shop") }}
+          </AppButtonLinkPrimary>
+        </li>
+      </template>
 
       <AppDropdownDivider/>
 

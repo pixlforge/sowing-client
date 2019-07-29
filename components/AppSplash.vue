@@ -2,16 +2,21 @@
   <AppContentSection>
 
     <!-- Icon -->
-    <div class="icon__group">
+    <div class="text-center mb-60">
       <template v-if="success">
         <font-awesome-icon
           :icon="['far', 'check-circle']"
-          class="icon__icon icon__icon--success"/>
+          class="text-72 text-green-500"/>
       </template>
       <template v-else-if="error">
         <font-awesome-icon
           :icon="['far', 'exclamation-triangle']"
-          class="icon__icon icon__icon--danger"/>
+          class="text-72 text-red-500"/>
+      </template>
+      <template v-else>
+        <font-awesome-icon
+          :icon="['far', 'comment-alt-smile']"
+          class="text-72 text-blue-500"/>
       </template>
     </div>
 
@@ -49,7 +54,8 @@ export default {
   props: {
     type: {
       type: String,
-      required: true
+      required: false,
+      default: ''
     },
     title: {
       type: String,

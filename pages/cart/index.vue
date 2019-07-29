@@ -17,30 +17,33 @@
             :key="product.id"
             :product="product"/>
         </template>
-        <div
-          v-else
-          class="section__centered">
-          <p class="title__main title--centered">
-            Votre panier est vide.
-          </p>
-          <img
-            src="~assets/img/empty.svg"
-            alt="Illustration of an empty box"
-            class="cart__illustration">
+        <div v-else>
+
+          <AppSplash
+            :title="$t('pages.cart.cart_is_empty')"
+            :subtitle="$t('pages.cart.add_something')"
+            class="max-w-800">
+            <template slot="illustration">
+              <img
+                src="~assets/img/empty.svg"
+                alt="Illustration of an empty box">
+            </template>
+          </AppSplash>
+
         </div>
       </div>
 
       <div
         v-if="products.length"
-        class="cart__products">
+        class="text-24 font-semibold text-center mt-96">
         {{ $t("pages.cart.in_your_cart") }}
-        <span class="cart__product-emphasis">
+        <span class="text-green-500">
           {{ products.length }}
         </span>
         {{ $t("pages.cart.products") }}
         {{ $t("pages.cart.for") }}
         {{ subtotal.currency }}
-        <span class="cart__product-emphasis">
+        <span class="text-green-500">
           {{ subtotal.amount }}
         </span>
       </div>
@@ -64,6 +67,7 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 
+import AppSplash from '@/components/AppSplash'
 import AppHeader from '@/components/headers/AppHeader'
 import AppContentSection from '@/components/AppContentSection'
 import AppButtonLinkPrimary from '@/components/buttons/AppButtonLinkPrimary'
@@ -89,6 +93,7 @@ export default {
     }
   },
   components: {
+    AppSplash,
     AppHeader,
     AppContentSection,
     AppButtonLinkPrimary,

@@ -201,7 +201,9 @@ export default {
       checkout: 'Zur Kasse',
       in_your_cart: 'Ihr Warenkorb enthält',
       products: 'Produkte',
-      for: 'für'
+      for: 'für',
+      cart_is_empty: 'Ihr Warenkorb ist leer',
+      add_something: 'Füge etwas hinzu!'
     },
     checkout: {
       add_address: 'Adresse hinzufügen',
