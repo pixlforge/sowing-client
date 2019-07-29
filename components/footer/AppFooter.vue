@@ -1,156 +1,66 @@
 <template>
-  <footer class="footer__background">
-    <div class="footer__container container">
+  <footer class="bg-green-100">
+    <div class="container flex flex-wrap pb-96">
 
       <!-- Categories -->
-      <section class="footer__column">
-        <AppTitle
-          semantic="h5"
-          visual="h5">
-          {{ $t('footer.titles.categories') }}
-        </AppTitle>
-        <ul class="footer__list">
-          <li
-            v-for="category in categories"
-            :key="category.slug">
-            <nuxt-link
-              :to="localePath({ name: 'categories-slug', params: { slug: category.slug } })"
-              class="footer__link">
-              {{ category.name[locale] }}
-            </nuxt-link>
-          </li>
-        </ul>
-      </section>
+      <AppFooterColumn :title="$t('footer.titles.categories')">
+        <AppFooterItem
+          v-for="category in categories"
+          :key="category.slug"
+          :to="localePath({ name: 'categories-slug', params: { slug: category.slug } })"
+          :label="category.name[locale]"/>
+      </AppFooterColumn>
 
       <!-- Selling -->
-      <section class="footer__column">
-        <AppTitle
-          semantic="h5"
-          visual="h5">
-          {{ $t("footer.titles.sell_on_sowing") }}
-        </AppTitle>
-        <ul class="footer__list">
-          <li>
-            <nuxt-link
-              :to="localePath({ name: 'index' })"
-              class="footer__link">
-              {{ $t("footer.links.login") }}
-            </nuxt-link>
-          </li>
-          <li>
-            <nuxt-link
-              :to="localePath({ name: 'index' })"
-              class="footer__link">
-              {{ $t("footer.links.your_own_store") }}
-            </nuxt-link>
-          </li>
-          <li>
-            <nuxt-link
-              :to="localePath({ name: 'index' })"
-              class="footer__link">
-              {{ $t("footer.links.new_vendors") }}
-            </nuxt-link>
-          </li>
-        </ul>
-      </section>
+      <AppFooterColumn :title="$t('footer.titles.sell_on_sowing')">
+        <AppFooterItem
+          :to="localePath({ name: 'index' })"
+          :label="$t('footer.links.login')"/>
+        <AppFooterItem
+          :to="localePath({ name: 'index' })"
+          :label="$t('footer.links.your_own_store')"/>
+        <AppFooterItem
+          :to="localePath({ name: 'index' })"
+          :label="$t('footer.links.new_vendors')"/>
+      </AppFooterColumn>
 
       <!-- About -->
-      <section class="footer__column">
-        <AppTitle
-          semantic="h5"
-          visual="h5">
-          {{ $t("footer.titles.about") }}
-        </AppTitle>
-        <ul class="footer__list">
-          <li>
-            <nuxt-link
-              :to="localePath({ name: 'index' })"
-              class="footer__link">
-              {{ $t("footer.links.terms") }}
-            </nuxt-link>
-          </li>
-          <li>
-            <nuxt-link
-              :to="localePath({ name: 'index' })"
-              class="footer__link">
-              {{ $t("footer.links.payments") }}
-            </nuxt-link>
-          </li>
-          <li>
-            <nuxt-link
-              :to="localePath({ name: 'index' })"
-              class="footer__link">
-              {{ $t("footer.links.shipments") }}
-            </nuxt-link>
-          </li>
-          <li>
-            <nuxt-link
-              :to="localePath({ name: 'faq' })"
-              class="footer__link">
-              {{ $t("footer.links.faq") }}
-            </nuxt-link>
-          </li>
-        </ul>
-      </section>
+      <AppFooterColumn :title="$t('footer.titles.about')">
+        <AppFooterItem
+          :to="localePath({ name: 'index' })"
+          :label="$t('footer.links.terms')"/>
+        <AppFooterItem
+          :to="localePath({ name: 'index' })"
+          :label="$t('footer.links.payments')"/>
+        <AppFooterItem
+          :to="localePath({ name: 'index' })"
+          :label="$t('footer.links.shipments')"/>
+        <AppFooterItem
+          :to="localePath({ name: 'faq' })"
+          :label="$t('footer.links.faq')"/>
+      </AppFooterColumn>
 
       <!-- Languages -->
-      <section class="footer__column">
-        <AppTitle
-          semantic="h5"
-          visual="h5">
-          {{ $t("footer.titles.language") }}
-        </AppTitle>
-        <ul class="footer__list">
-          <li
-            v-for="locale in $i18n.locales"
-            :key="locale.code">
-            <nuxt-link
-              :to="switchLocalePath(locale.code)"
-              class="footer__link">
-              {{ locale.name }}
-            </nuxt-link>
-          </li>
-        </ul>
-      </section>
+      <AppFooterColumn :title="$t('footer.titles.language')">
+        <AppFooterItem
+          v-for="locale in $i18n.locales"
+          :key="locale.code"
+          :to="switchLocalePath(locale.code)"
+          :label="locale.name"/>
+      </AppFooterColumn>
 
       <!-- Social Networks -->
-      <section class="footer__column">
-        <AppTitle
-          semantic="h5"
-          visual="h5">
-          {{ $t("footer.titles.social_networks") }}
-        </AppTitle>
-        <ul class="footer__list">
-          <li>
-            <a
-              href="https://www.facebook.com/Sowingch-1065130827008521/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="footer__link footer__link--social">
-              <div :class="textTheme">
-                <font-awesome-icon
-                  :icon="['fab', 'facebook']"
-                  class="footer__social-icon"/>
-              </div>
-              Facebook
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.instagram.com/sowing.ch/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="footer__link footer__link--social">
-              <div :class="textTheme">
-                <font-awesome-icon
-                  :icon="['fab', 'instagram']"
-                  class="footer__social-icon"/>
-              </div>
-              Instagram
-            </a>
-          </li>
-        </ul>
-      </section>
+      <AppFooterColumn :title="$t('footer.titles.social_networks')">
+        <AppFooterItemSocial
+          url="https://www.facebook.com/Sowingch-1065130827008521/"
+          icon="facebook"
+          label="Facebook"/>
+        <AppFooterItemSocial
+          url="https://www.instagram.com/sowing.ch/"
+          icon="instagram"
+          label="Instagram"/>
+      </AppFooterColumn>
+
     </div>
   </footer>
 </template>
@@ -159,11 +69,15 @@
 import { mapGetters } from 'vuex'
 import theming from '@/mixins/theming'
 
-import AppTitle from '@/components/AppTitle'
+import AppFooterItem from '@/components/footer/AppFooterItem'
+import AppFooterColumn from '@/components/footer/AppFooterColumn'
+import AppFooterItemSocial from '@/components/footer/AppFooterItemSocial'
 
 export default {
   components: {
-    AppTitle
+    AppFooterItem,
+    AppFooterColumn,
+    AppFooterItemSocial
   },
   mixins: [theming],
   computed: {
