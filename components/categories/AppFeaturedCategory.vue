@@ -43,7 +43,7 @@
       </div>
 
       <!-- Mask -->
-      <div class="absolute w-full h-full bg-black opacity-25"/>
+      <div class="absolute w-full h-full bg-black opacity-50"/>
 
     </div>
   </div>
@@ -78,8 +78,12 @@ export default {
       return this.category.description[this.locale]
     },
     imgUrl() {
-      const img = require('@/assets/img/placeholders/product.svg')
-      return `background-image: url(${img})`
+      if (!this.category.media) {
+        const img = require('@/assets/img/placeholders/product.svg')
+        return `background-image: url(${img});`
+      }
+
+      return `background-image: url(${this.category.media});`
     }
   }
 }
