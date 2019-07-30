@@ -45,7 +45,7 @@ import AppHeader from '@/components/headers/AppHeader'
 import AppShopCover from '@/components/shops/AppShopCover'
 import AppDisclaimer from '@/components/footer/AppDisclaimer'
 import AppCategoryBar from '@/components/categories/AppCategoryBar'
-import AppShopNavigation from '@/components/shops/AppShopNavigation'
+import AppShopNavigation from '@/components/shops/navigation/AppShopNavigation'
 
 export default {
   components: {
