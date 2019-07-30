@@ -7,8 +7,8 @@
       icon="cash-register"/>
 
     <AppContentSection>
-      <div class="checkout__section">
-        <div class="checkout__content">
+      <div class="flex">
+        <div class="w-3/4 mr-48">
 
           <!-- Payment methods -->
           <AppTitle
@@ -37,7 +37,7 @@
         </div>
 
         <!-- Sidebar -->
-        <div class="checkout__sidebar">
+        <div class="w-1/4 bg-green-200 rounded-lg flex flex-col justify-start p-30 mt-48">
 
           <!-- Shipping address -->
           <AppShippingAddress
@@ -55,10 +55,10 @@
           <!-- Price block -->
           <div
             v-if="!addressManagersVisible"
-            class="checkout__price-container">
+            class="mt-48">
 
             <!-- Subtotal -->
-            <div class="checkout__subtotal">
+            <div class="w-full text-gray-300 text-14 flex justify-between">
               <div>
                 {{ $t("pages.checkout.subtotal") }}
               </div>
@@ -68,7 +68,7 @@
             </div>
 
             <!-- Shipping -->
-            <div class="checkout__shipping">
+            <div class="w-full text-gray-300 text-14 flex justify-between mt-5">
               <div>{{ $t("pages.checkout.delivery") }}</div>
               <div v-if="shippingMethod">
                 {{ shippingMethod.price.currency }} {{ shippingMethod.price.amount }}
@@ -76,7 +76,7 @@
             </div>
 
             <!-- Total -->
-            <div class="checkout__total">
+            <div class="w-full text-20 font-bold uppercase flex justify-between mt-16">
               <div>
                 {{ $t("pages.checkout.total") }}
               </div>
