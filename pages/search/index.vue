@@ -11,10 +11,11 @@
 
       <!-- Search field -->
       <div class="search__input-group">
-        <input
+        <AppFormInput
           v-model="query"
           :placeholder="$t('pages.search.placeholder')"
-          class="form__input form__input--large">
+          :aria-label="$t('pages.search.placeholder')"
+          class="text-30 font-normal px-24 py-20"/>
       </div>
 
       <div class="search__results-wrapper">
@@ -40,6 +41,7 @@
 import { mapGetters } from 'vuex'
 
 import AppHeader from '@/components/headers/AppHeader'
+import AppFormInput from '@/components/forms/AppFormInput'
 import AppContentSection from '@/components/AppContentSection'
 import AppSearchResult from '@/components/search/AppSearchResult'
 
@@ -58,6 +60,7 @@ export default {
   },
   components: {
     AppHeader,
+    AppFormInput,
     AppContentSection,
     AppSearchResult
   },

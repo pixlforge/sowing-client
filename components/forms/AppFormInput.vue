@@ -7,6 +7,7 @@
     :value="value"
     :placeholder="placeholder"
     :required="required"
+    :aria-label="ariaLabel"
     :class="{
       'border-red-500': errors[name],
       'bg-white text-gray-200 border-gray-200 cursor-not-allowed': disabled,
@@ -59,6 +60,11 @@ export default {
       default: false
     },
     theme: {
+      type: String,
+      required: false,
+      default: ''
+    },
+    ariaLabel: {
       type: String,
       required: false,
       default: ''

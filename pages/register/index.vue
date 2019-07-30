@@ -72,20 +72,24 @@
         </AppFormGroup>
 
         <!-- Terms -->
-        <div class="form__checkbox-group">
+        <AppFormGroup>
           <label for="terms">
             <input
               id="terms"
               v-model="terms"
               type="checkbox"
               name="terms"
-              class="form__checkbox-input">
-            <span class="form__checkbox-label">{{ $t("pages.register.terms") }}</span>
+              class="text-20 mr-10">
+            <span class="text-14 text-gray-300 select-none cursor-pointer">
+              {{ $t("pages.register.terms") }}
+            </span>
             <nuxt-link
               :to="localePath({ name: 'index' })"
-              class="form__checkbox-link">{{ $t("pages.register.links.terms") }}</nuxt-link>.
+              class="text-14 text-green-500 no-underline hover:underline select-none">
+              {{ $t("pages.register.links.terms") }}
+            </nuxt-link>
           </label>
-        </div>
+        </AppFormGroup>
 
         <!-- Submit -->
         <AppButtonPrimary

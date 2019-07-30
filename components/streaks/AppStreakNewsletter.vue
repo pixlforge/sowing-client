@@ -26,27 +26,26 @@
           @submit.prevent="subscribe">
 
           <div class="flex flex-col md:flex-row justify-center lg:justify-start mt-48">
-            <input
-              id="email"
+            <AppFormInput
               v-model="email"
               :placeholder="placeholder"
               :aria-label="$t('aria.inputs.email')"
-              type="email"
               name="email"
-              class="form__input form__input--grouped"
-              required>
+              type="email"
+              class="md:max-w-400 md:rounded-r-none shadow-2xl"
+              required/>
 
             <AppButtonPrimary
               icon="paper-plane"
               type="submit"
-              class="md:rounded-l-none mt-20 md:mt-0">
+              class="md:rounded-l-none shadow-2xl mt-20 md:mt-0">
               {{ $t("buttons.subscribe") }}
             </AppButtonPrimary>
           </div>
 
           <p
             v-if="errors.email"
-            class="form__feedback form__feedback--white form__feedback--centered">
+            class="absolute w-full text-12 text-white text-center lg:text-left mt-5">
             {{ errors.email[0] }}
           </p>
         </form>
@@ -57,11 +56,13 @@
 
 <script>
 import AppTitle from '@/components/AppTitle'
+import AppFormInput from '@/components/forms/AppFormInput'
 import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 
 export default {
   components: {
     AppTitle,
+    AppFormInput,
     AppButtonPrimary
   },
   data() {
