@@ -31,6 +31,7 @@ export default {
       email: 'Adresse e-mail'
     },
     links: {
+      cart: 'Panier',
       search: 'Recherche'
     }
   },

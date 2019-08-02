@@ -31,6 +31,7 @@ export default {
       email: 'Indirizzo e-mail'
     },
     links: {
+      cart: 'Carrello',
       search: 'Ricerca'
     }
   },
