@@ -1,7 +1,8 @@
 <template>
   <label
     :for="name"
-    class="block text-12 font-extrabold uppercase tracking-wide mb-12">
+    class="block text-12 font-extrabold uppercase tracking-wide mb-12"
+  >
     <slot/>
   </label>
 </template>

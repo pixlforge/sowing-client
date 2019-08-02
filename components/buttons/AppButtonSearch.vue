@@ -3,10 +3,12 @@
     :to="localePath({ name: 'search' })"
     :class="classes"
     :aria-label="$t('aria.links.search')"
-    class="block relative w-40 h-40 outline-none focus:shadow-outline rounded-full transition text-white flex justify-center items-center">
+    class="block relative w-40 h-40 outline-none focus:shadow-outline rounded-full transition text-white flex justify-center items-center"
+  >
     <font-awesome-icon
       :icon="['far', 'search']"
-      class="text-18"/>
+      class="text-18"
+    />
   </nuxt-link>
 </template>
 

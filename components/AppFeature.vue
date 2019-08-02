@@ -3,12 +3,14 @@
     <div class="w-90 h-90 border-4 border-pink-600 rounded-full flex justify-center items-center mx-auto">
       <font-awesome-icon
         :icon="['far', icon]"
-        class="text-48 text-pink-600"/>
+        class="text-48 text-pink-600"
+      />
     </div>
     <AppTitle
       semantic="h2"
       visual="h4"
-      utilities="text-center my-30">
+      utilities="text-center my-30"
+    >
       {{ title }}
     </AppTitle>
     <p class="text-14 lg:text-16 text-center leading-loose">

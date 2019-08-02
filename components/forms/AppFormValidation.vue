@@ -1,7 +1,8 @@
 <template>
   <p
     v-if="errorPresent"
-    class="absolute text-12 text-red-500 mt-5">
+    class="absolute text-12 text-red-500 mt-5"
+  >
     {{ errorMessage }}
   </p>
 </template>

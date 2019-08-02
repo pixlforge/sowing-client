@@ -7,17 +7,20 @@
       :errors="errors"
       name="country_id"
       theme="light"
-      @change.native="$emit('input', $event.target.value)">
+      @change.native="$emit('input', $event.target.value)"
+    >
       <option
         v-for="country in countries"
         :key="country.id"
-        :value="country.id">
+        :value="country.id"
+      >
         {{ country.name[locale] }}
       </option>
     </AppFormSelect>
     <AppFormValidation
       :errors="errors"
-      name="country_id"/>
+      name="country_id"
+    />
   </div>
 </template>
 

@@ -2,7 +2,8 @@
   <div class="terms__wrapper">
     <AppTitle
       semantic="h2"
-      visual="main">
+      visual="main"
+    >
       {{ $t("pages.terms.title") }}
     </AppTitle>
 
@@ -10,7 +11,8 @@
       <AppParagraphGroup>
         <AppTitle
           semantic="h2"
-          visual="h2">
+          visual="h2"
+        >
           Titre des conditions
         </AppTitle>
 
@@ -26,7 +28,8 @@
       <AppParagraphGroup>
         <AppTitle
           semantic="h2"
-          visual="h2">
+          visual="h2"
+        >
           Titre des conditions
         </AppTitle>
 
@@ -42,7 +45,8 @@
       <AppParagraphGroup>
         <AppTitle
           semantic="h2"
-          visual="h2">
+          visual="h2"
+        >
           Titre des conditions
         </AppTitle>
 
@@ -58,7 +62,8 @@
       <AppParagraphGroup>
         <AppTitle
           semantic="h2"
-          visual="h2">
+          visual="h2"
+        >
           Titre des conditions
         </AppTitle>
 

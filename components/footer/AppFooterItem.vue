@@ -3,7 +3,8 @@
     <nuxt-link
       :to="to"
       :class="`hover:text-${shopTheme}-500`"
-      class="text-14 no-underline">
+      class="text-14 no-underline"
+    >
       {{ label }}
     </nuxt-link>
   </li>

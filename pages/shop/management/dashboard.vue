@@ -4,7 +4,8 @@
     <!-- Title -->
     <AppTitle
       semantic="h1"
-      visual="h1">
+      visual="h1"
+    >
       Dashboard
     </AppTitle>
 

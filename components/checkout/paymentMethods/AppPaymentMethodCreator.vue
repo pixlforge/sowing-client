@@ -5,27 +5,32 @@
     <button
       v-if="!showing"
       class="bg-gray-200 hover:bg-green-500 transition text-white w-80 h-80 rounded-full p-0"
-      @click.prevent="showing = true">
+      @click.prevent="showing = true"
+    >
       <font-awesome-icon
         :icon="['far', 'plus']"
-        class="text-36"/>
+        class="text-36"
+      />
     </button>
 
     <form
       v-show="showing"
       class="w-full h-full flex flex-col items-center"
-      @submit.prevent="store">
+      @submit.prevent="store"
+    >
 
       <!-- Body -->
       <div class="w-full mt-20">
         <label
           for="elements"
-          class="block text-14 leading-normal mb-20">
+          class="block text-14 leading-normal mb-20"
+        >
           {{ $t("stripe.add_a_card") }}
         </label>
         <div
           id="elements"
-          class="bg-green-200 rounded-lg pl-10 py-10"/>
+          class="bg-green-200 rounded-lg pl-10 py-10"
+        />
       </div>
 
       <!-- Controls -->
@@ -36,14 +41,16 @@
           :disabled="storing"
           type="submit"
           icon="plus"
-          class="mr-5">
+          class="mr-5"
+        >
           {{ $t("buttons.add") }}
         </AppButtonPrimary>
 
         <!-- Cancel -->
         <AppButtonTertiary
           :disabled="storing"
-          @click.native.prevent="showing = false">
+          @click.native.prevent="showing = false"
+        >
           {{ $t("buttons.cancel") }}
         </AppButtonTertiary>
       </div>

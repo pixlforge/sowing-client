@@ -4,11 +4,13 @@
     :type="type"
     :title="title"
     :class="classes"
-    class="block outline-none focus:shadow-outline rounded-lg border border-transparent text-white text-center uppercase transition no-underline whitespace-no-wrap">
+    class="block outline-none focus:shadow-outline rounded-lg border border-transparent text-white text-center uppercase transition no-underline whitespace-no-wrap"
+  >
     <font-awesome-icon
       v-if="icon"
       :icon="['far', icon]"
-      class="mr-10"/>
+      class="mr-10"
+    />
     <slot/>
   </button>
 </template>

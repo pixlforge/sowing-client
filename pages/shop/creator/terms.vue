@@ -4,7 +4,8 @@
     <!-- Header -->
     <AppHeader
       :title="$t('pages.shop.creation')"
-      icon="file-contract"/>
+      icon="file-contract"
+    />
 
     <!-- Page contents -->
     <AppContentSection>
@@ -17,13 +18,15 @@
         <div class="text-18 text-center leading-normal mb-36 md:mb-72">
           <label
             for="terms"
-            class="select-none">
+            class="select-none"
+          >
             <input
               id="terms"
               v-model="localTerms"
               type="checkbox"
               name="terms"
-              class="mr-10">
+              class="mr-10"
+            >
             {{ $t("pages.terms.approve") }}
           </label>
           <small class="block text-gray-300">
@@ -35,7 +38,8 @@
         <AppButtonPrimary
           :disabled="!userAgreesToTerms"
           icon="chevron-circle-right"
-          @click.native="next">
+          @click.native="next"
+        >
           {{ $t("buttons.begin_shop_creation") }}
         </AppButtonPrimary>
 

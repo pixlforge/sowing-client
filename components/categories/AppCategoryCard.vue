@@ -3,13 +3,15 @@
     <nuxt-link
       :to="localePath({ name: 'categories-slug', params: { slug: category.slug } })"
       :style="imgUrl"
-      class="relative h-150 sm:h-315 flex justify-center items-center no-underline bg-cover bg-center bg-no-repeat">
+      class="relative h-150 sm:h-315 flex justify-center items-center no-underline bg-cover bg-center bg-no-repeat"
+    >
 
       <!-- Name -->
       <AppTitle
         semantic="h2"
         visual="h3"
-        utilities="text-white text-center z-10">
+        utilities="text-white text-center z-10"
+      >
         {{ category.name[locale] }}
       </AppTitle>
 

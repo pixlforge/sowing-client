@@ -4,7 +4,8 @@
       'flex-grow': !last,
       'flex-initial': last
     }"
-    class="relative flex items-center">
+    class="relative flex items-center"
+  >
     <slot/>
   </div>
 </template>

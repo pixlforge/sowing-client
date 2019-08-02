@@ -8,12 +8,14 @@
           :class="bgTheme"
           class="text-white"
           label="1"
-          @click.native="toShopCreatorName"/>
+          @click.native="toShopCreatorName"
+        />
         <NavLine :class="stepName ? bgTheme : 'bg-white'"/>
         <NavLabel
           :label="$t('shop_creator.navigation.name')"
           :class="textTheme"
-          @click.native="toShopCreatorName"/>
+          @click.native="toShopCreatorName"
+        />
       </NavGroup>
 
       <!-- Details -->
@@ -21,12 +23,14 @@
         <NavOval
           :class="stepName ? `${bgTheme} text-white` : 'bg-white text-gray-200'"
           label="2"
-          @click.native="toShopCreatorDetails"/>
+          @click.native="toShopCreatorDetails"
+        />
         <NavLine :class="stepDetails ? bgTheme : 'bg-white'"/>
         <NavLabel
           :label="$t('shop_creator.navigation.details')"
           :class="stepName ? textTheme : 'text-gray-200'"
-          @click.native="toShopCreatorDetails"/>
+          @click.native="toShopCreatorDetails"
+        />
       </NavGroup>
 
       <!-- Customize -->
@@ -34,12 +38,14 @@
         <NavOval
           :class="stepDetails ? `${bgTheme} text-white` : 'bg-white text-gray-200'"
           label="3"
-          @click.native="toShopCreatorCustomization"/>
+          @click.native="toShopCreatorCustomization"
+        />
         <NavLine :class="stepCustomization ? bgTheme : 'bg-white'"/>
         <NavLabel
           :label="$t('shop_creator.navigation.customize')"
           :class="stepDetails ? textTheme : 'text-gray-200'"
-          @click.native="toShopCreatorCustomization"/>
+          @click.native="toShopCreatorCustomization"
+        />
       </NavGroup>
 
       <!-- Connect -->
@@ -47,12 +53,14 @@
         <NavOval
           :class="stepCustomization ? `${bgTheme} text-white` : 'bg-white text-gray-200'"
           label="4"
-          @click.native="toShopCreatorConnect"/>
+          @click.native="toShopCreatorConnect"
+        />
         <NavLine :class="stepConnect ? bgTheme : 'bg-white'"/>
         <NavLabel
           :label="$t('shop_creator.navigation.connect')"
           :class="stepCustomization ? textTheme : 'text-gray-200'"
-          @click.native="toShopCreatorConnect"/>
+          @click.native="toShopCreatorConnect"
+        />
       </NavGroup>
 
       <!-- Done -->
@@ -60,11 +68,13 @@
         <NavOval
           :class="stepConnect ? `${bgTheme} text-white` : 'bg-white text-gray-200'"
           label="5"
-          @click.native="toShopCreatorDone"/>
+          @click.native="toShopCreatorDone"
+        />
         <NavLabel
           :label="$t('shop_creator.navigation.done')"
           :class="stepConnect ? textTheme : 'text-gray-200'"
-          @click.native="toShopCreatorDone"/>
+          @click.native="toShopCreatorDone"
+        />
       </NavGroup>
 
     </div>

@@ -6,19 +6,22 @@
         href="https://www.sowing.ch/"
         target="_blank"
         rel="noopener noreferrer"
-        class="no-underline hover:underline text-white uppercase">Sowing</a>.
+        class="no-underline hover:underline text-white uppercase"
+      >Sowing</a>.
     </p>
     <p>
       {{ $t("footer.disclaimer.made_with") }}
       <font-awesome-icon
         :icon="['fas', 'heart']"
-        class="text-red-500"/>
+        class="text-red-500"
+      />
       {{ $t("footer.disclaimer.by") }}
       <a
         href="https://www.pixlforge.ch/"
         target="_blank"
         rel="noopener noreferrer"
-        class="no-underline hover:underline text-white font-semibold">Pixlforge</a>.
+        class="no-underline hover:underline text-white font-semibold"
+      >Pixlforge</a>.
     </p>
   </div>
 </template>

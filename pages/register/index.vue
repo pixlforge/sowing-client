@@ -4,7 +4,8 @@
     <!-- Header -->
     <AppHeader
       :title="$t('pages.register.title')"
-      icon="user-plus"/>
+      icon="user-plus"
+    />
 
     <!-- Form -->
     <AppContentSection class="max-w-600">
@@ -20,10 +21,12 @@
             v-model="form.name"
             :errors="errors"
             name="name"
-            required/>
+            required
+          />
           <AppFormValidation
             :errors="errors"
-            name="name"/>
+            name="name"
+          />
         </AppFormGroup>
 
         <!-- Email -->
@@ -36,10 +39,12 @@
             :errors="errors"
             name="email"
             type="email"
-            required/>
+            required
+          />
           <AppFormValidation
             :errors="errors"
-            name="email"/>
+            name="email"
+          />
         </AppFormGroup>
 
         <!-- Password -->
@@ -52,10 +57,12 @@
             :errors="errors"
             name="password"
             type="password"
-            required/>
+            required
+          />
           <AppFormValidation
             :errors="errors"
-            name="password"/>
+            name="password"
+          />
         </AppFormGroup>
 
         <!-- Password confirmation -->
@@ -68,7 +75,8 @@
             :errors="errors"
             name="password_confirmation"
             type="password"
-            required/>
+            required
+          />
         </AppFormGroup>
 
         <!-- Terms -->
@@ -79,13 +87,15 @@
               v-model="terms"
               type="checkbox"
               name="terms"
-              class="text-20 mr-10">
+              class="text-20 mr-10"
+            >
             <span class="text-14 text-gray-300 select-none cursor-pointer">
               {{ $t("pages.register.terms") }}
             </span>
             <nuxt-link
               :to="localePath({ name: 'index' })"
-              class="text-14 text-green-500 no-underline hover:underline select-none">
+              class="text-14 text-green-500 no-underline hover:underline select-none"
+            >
               {{ $t("pages.register.links.terms") }}
             </nuxt-link>
           </label>
@@ -96,7 +106,8 @@
           :disabled="missingCredentials"
           type="submit"
           icon="user"
-          class="shadow-xl mx-auto my-72">
+          class="shadow-xl mx-auto my-72"
+        >
           {{ $t("buttons.create_account") }}
         </AppButtonPrimary>
       </form>

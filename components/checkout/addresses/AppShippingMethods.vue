@@ -4,7 +4,8 @@
     <!-- Title -->
     <AppTitle
       semantic="h5"
-      visual="h5">
+      visual="h5"
+    >
       {{ $t("pages.checkout.delivery_method") }}
     </AppTitle>
 
@@ -13,17 +14,20 @@
       name="method"
       theme="light"
       class="mt-20"
-      @change.native="$emit('input', $event.target.value)">
+      @change.native="$emit('input', $event.target.value)"
+    >
       <option
         v-for="method in methods"
         :key="method.id"
-        :value="method.id">
+        :value="method.id"
+      >
         {{ method.name }}
       </option>
     </AppFormSelect>
     <AppFormValidation
       :errors="errors"
-      name="method"/>
+      name="method"
+    />
   </div>
 </template>
 

@@ -4,13 +4,15 @@
     <!-- Header -->
     <AppHeader
       :title="$t('pages.password_email.title')"
-      icon="redo-alt"/>
+      icon="redo-alt"
+    />
 
     <!-- Content -->
     <AppContentSection class="max-w-600">
       <AppTitle
         semantic="h1"
-        visual="main">
+        visual="main"
+      >
         {{ $t("pages.password_email.paragraphs.first") }}
       </AppTitle>
 
@@ -33,17 +35,20 @@
             :errors="errors"
             name="email"
             type="email"
-            required/>
+            required
+          />
           <AppFormValidation
             :errors="errors"
-            name="email"/>
+            name="email"
+          />
         </AppFormGroup>
 
         <!-- Submit -->
         <AppButtonPrimary
           type="submit"
           icon="redo-alt"
-          class="mx-auto my-72">
+          class="mx-auto my-72"
+        >
           {{ $t("buttons.password_email") }}
         </AppButtonPrimary>
       </form>

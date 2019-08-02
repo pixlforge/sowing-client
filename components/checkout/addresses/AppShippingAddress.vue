@@ -2,7 +2,8 @@
   <div>
     <AppTitle
       semantic="h5"
-      visual="h5">
+      visual="h5"
+    >
       {{ $t("pages.checkout.delivery_address") }}
     </AppTitle>
 
@@ -10,15 +11,18 @@
       v-if="addressSelector"
       :addresses="currentAddresses"
       :selected-address="selectedAddress"
-      @address:selected="switchAddress"/>
+      @address:selected="switchAddress"
+    />
 
     <AppShippingAddressCreator
       v-if="addressCreator"
-      @address:created="addAddress"/>
+      @address:created="addAddress"
+    />
 
     <ul
       v-if="selectedAddress && selectedAddress.country && !addressManagersVisible"
-      class="text-14 leading-relaxed mt-10">
+      class="text-14 leading-relaxed mt-10"
+    >
       <li>
         {{ selectedAddress.first_name }} {{ selectedAddress.last_name }}
       </li>
@@ -44,7 +48,8 @@
       v-if="addresses.length && !addressManagersVisible"
       icon="repeat-alt"
       class="w-full mt-20"
-      @click.native="openAddressSelector">
+      @click.native="openAddressSelector"
+    >
       {{ $t("pages.checkout.change_address") }}
     </AppButtonPrimary>
 
@@ -53,7 +58,8 @@
       v-if="!addresses.length && !addressManagersVisible"
       icon="plus"
       class="w-full mt-20"
-      @click.native="openAddressCreator">
+      @click.native="openAddressCreator"
+    >
       {{ $t("pages.checkout.add_address") }}
     </AppButtonPrimary>
   </div>

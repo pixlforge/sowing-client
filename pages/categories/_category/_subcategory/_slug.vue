@@ -4,7 +4,8 @@
     <!-- Header -->
     <AppHeader
       :title="subcategory.name[locale]"
-      :description="subcategory.description[locale]"/>
+      :description="subcategory.description[locale]"
+    />
 
     <AppContentSection>
       <div class="flex flex-wrap justify-between sm:-mx-36">
@@ -13,7 +14,8 @@
         <AppProduct
           v-for="product in products"
           :key="product.id"
-          :product="product"/>
+          :product="product"
+        />
       </div>
     </AppContentSection>
 

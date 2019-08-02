@@ -8,7 +8,8 @@
         type="success"
         :title="$t('shop_creator.steps.done.title')"
         :subtitle="$t('shop_creator.steps.done.paragraph')"
-        class="max-w-800">
+        class="max-w-800"
+      >
         <template slot="illustration">
           <IllustrationSuccess/>
         </template>
@@ -21,7 +22,8 @@
         <AppButtonTertiary
           icon="chevron-circle-left"
           class="order-1 md:order-none mx-5"
-          @click.native="prev">
+          @click.native="prev"
+        >
           {{ $t("buttons.back") }}
         </AppButtonTertiary>
 
@@ -30,7 +32,8 @@
           :color="shopTheme"
           icon="chevron-circle-right"
           class="order-none md_order-1 mx-5"
-          @click.native="next">
+          @click.native="next"
+        >
           {{ $t("buttons.finish") }}
         </AppButtonPrimary>
       </AppShopCreatorControls>

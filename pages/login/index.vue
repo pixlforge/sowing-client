@@ -4,7 +4,8 @@
     <!-- Header -->
     <AppHeader
       :title="$t('pages.login.title')"
-      icon="key"/>
+      icon="key"
+    />
 
     <!-- Page contents -->
     <AppContentSection class="max-w-600">
@@ -21,10 +22,12 @@
             :errors="errors"
             name="email"
             type="email"
-            required/>
+            required
+          />
           <AppFormValidation
             :errors="errors"
-            name="email"/>
+            name="email"
+          />
         </AppFormGroup>
 
         <!-- Password -->
@@ -36,7 +39,8 @@
             v-model="form.password"
             name="password"
             type="password"
-            required/>
+            required
+          />
         </AppFormGroup>
 
         <div class="flex flex-wrap justify-center my-36 md:my-60">
@@ -57,7 +61,8 @@
           :disabled="missingCredentials"
           type="submit"
           icon="key"
-          class="shadow-xl mx-auto my-36 md:my-60">
+          class="shadow-xl mx-auto my-36 md:my-60"
+        >
           {{ $t("buttons.connection") }}
         </AppButtonPrimary>
       </form>

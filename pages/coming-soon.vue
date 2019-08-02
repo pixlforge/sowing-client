@@ -21,10 +21,12 @@
           <ul class="flex">
             <li
               v-for="locale in $i18n.locales"
-              :key="locale.code">
+              :key="locale.code"
+            >
               <nuxt-link
                 :to="switchLocalePath(locale.code)"
-                class="block text-12 text-gray-300 px-10 py-10">
+                class="block text-12 text-gray-300 px-10 py-10"
+              >
                 {{ locale.name }}
               </nuxt-link>
             </li>
@@ -50,18 +52,21 @@
 
           <form
             class="max-w-600 shadow-xl flex mx-auto"
-            @submit.prevent="subscribe">
+            @submit.prevent="subscribe"
+          >
             <input
               id="email"
               v-model="email"
               name="email"
               type="email"
               class="w-2/3 outline-none focus:shadow-outline rounded-l-lg text-20 text-gray-900 text-center p-12"
-              placeholder="elon@musk.ch">
+              placeholder="elon@musk.ch"
+            >
 
             <button
               type="submit"
-              class="w-1/3 outline-none focus:shadow-outline bg-pink-600 hover:bg-pink-700 rounded-r-lg text-14 font-black uppercase">
+              class="w-1/3 outline-none focus:shadow-outline bg-pink-600 hover:bg-pink-700 rounded-r-lg text-14 font-black uppercase"
+            >
               {{ $t("landing.button") }}
             </button>
           </form>
@@ -76,31 +81,36 @@
           <li class="flex items-center my-20">
             <font-awesome-icon
               :icon="['fas', 'arrow-alt-circle-right']"
-              class="text-24 text-green-500 mr-20"/>
+              class="text-24 text-green-500 mr-20"
+            />
             <span>{{ $t("landing.features.first") }}</span>
           </li>
           <li class="flex items-center my-20">
             <font-awesome-icon
               :icon="['fas', 'arrow-alt-circle-right']"
-              class="text-24 text-green-500 mr-20"/>
+              class="text-24 text-green-500 mr-20"
+            />
             <span>{{ $t("landing.features.second") }}</span>
           </li>
           <li class="flex items-center my-20">
             <font-awesome-icon
               :icon="['fas', 'arrow-alt-circle-right']"
-              class="text-24 text-green-500 mr-20"/>
+              class="text-24 text-green-500 mr-20"
+            />
             <span>{{ $t("landing.features.third") }}</span>
           </li>
           <li class="flex items-center my-20">
             <font-awesome-icon
               :icon="['fas', 'arrow-alt-circle-right']"
-              class="text-24 text-green-500 mr-20"/>
+              class="text-24 text-green-500 mr-20"
+            />
             <span>{{ $t("landing.features.fourth") }}</span>
           </li>
           <li class="flex items-center my-20">
             <font-awesome-icon
               :icon="['fas', 'arrow-alt-circle-right']"
-              class="text-24 text-green-500 mr-20"/>
+              class="text-24 text-green-500 mr-20"
+            />
             <span>{{ $t("landing.features.fifth") }}</span>
           </li>
         </ul>
@@ -116,18 +126,21 @@
 
           <form
             class="max-w-600 shadow-xl flex mx-auto"
-            @submit.prevent="subscribe">
+            @submit.prevent="subscribe"
+          >
             <input
               id="email"
               v-model="email"
               name="email"
               type="email"
               class="w-2/3 outline-none focus:shadow-outline rounded-l-lg text-20 text-gray-900 text-center p-12"
-              placeholder="elon@musk.ch">
+              placeholder="elon@musk.ch"
+            >
 
             <button
               type="submit"
-              class="w-1/3 outline-none focus:shadow-outline bg-pink-600 hover:bg-pink-700 rounded-r-lg text-14 font-black uppercase">
+              class="w-1/3 outline-none focus:shadow-outline bg-pink-600 hover:bg-pink-700 rounded-r-lg text-14 font-black uppercase"
+            >
               {{ $t("landing.button") }}
             </button>
           </form>
@@ -149,10 +162,12 @@
               href="https://www.facebook.com/sowing.ch"
               target="_blank"
               rel="noopener noreferrer"
-              class="group">
+              class="group"
+            >
               <font-awesome-icon
                 :icon="['fab', 'facebook-square']"
-                class="block text-60 text-green-500 group-hover:text-blue-600 mx-auto mb-10"/>
+                class="block text-60 text-green-500 group-hover:text-blue-600 mx-auto mb-10"
+              />
               <span>Facebook</span>
             </a>
           </li>
@@ -161,10 +176,12 @@
               href="https://www.instagram.com/sowing.ch/"
               target="_blank"
               rel="noopener noreferrer"
-              class="group">
+              class="group"
+            >
               <font-awesome-icon
                 :icon="['fab', 'instagram']"
-                class="block text-60 text-green-500 group-hover:text-pink-600 mx-auto mb-10"/>
+                class="block text-60 text-green-500 group-hover:text-pink-600 mx-auto mb-10"
+              />
               <span>Instagram</span>
             </a>
           </li>
@@ -174,7 +191,8 @@
           <p>
             2019
             <font-awesome-icon
-              :icon="['far', 'copyright']"/>
+              :icon="['far', 'copyright']"
+            />
             Sowing
             {{ $t("footer.disclaimer.rights") }}
           </p>
@@ -182,13 +200,15 @@
             {{ $t("footer.disclaimer.made_with") }}
             <font-awesome-icon
               :icon="['fas', 'heart']"
-              class="text-red-500"/>
+              class="text-red-500"
+            />
             {{ $t("footer.disclaimer.by") }}
             <a
               href="https://www.pixlforge.ch"
               target="_blank"
               rel="noopener noreferrer"
-              class="hover:text-green-500">
+              class="hover:text-green-500"
+            >
               Pixlforge
             </a>
           </p>

@@ -6,14 +6,16 @@
         <img
           src="~assets/img/rocket.svg"
           alt="Illustration representing a rocket"
-          class="block w-full">
+          class="block w-full"
+        >
       </div>
 
       <div class="w-full lg:w-1/2 xl:w-2/3 py-132">
         <AppTitle
           semantic="h1"
           visual="main"
-          utilities="text-white lg:text-left">
+          utilities="text-white lg:text-left"
+        >
           {{ $t("streaks.register.title") }}
         </AppTitle>
 
@@ -25,7 +27,8 @@
           <AppButtonLinkPrimary
             :to="localePath({ name: 'register' })"
             icon="store"
-            color="pink-dark">
+            color="pink-dark"
+          >
             {{ $t("buttons.create_my_shop") }}
           </AppButtonLinkPrimary>
         </div>

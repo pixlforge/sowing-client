@@ -4,10 +4,12 @@
       <ul class="w-full flex flex-wrap justify-between -mx-10">
         <li
           v-for="category in categories"
-          :key="category.slug">
+          :key="category.slug"
+        >
           <nuxt-link
             :to="localePath({ name: 'categories-slug', params: { slug: category.slug } })"
-            class="block no-underline text-14 hover:text-green-400 transition outline-none focus:shadow-outline rounded-lg px-12 py-10">
+            class="block no-underline text-14 hover:text-green-400 transition outline-none focus:shadow-outline rounded-lg px-12 py-10"
+          >
             {{ category.name[locale] }}
           </nuxt-link>
         </li>

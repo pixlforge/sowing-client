@@ -4,14 +4,16 @@
     <!-- Header -->
     <AppHeader
       :title="$t('pages.faq.title')"
-      icon="question"/>
+      icon="question"
+    />
 
     <!-- Content -->
     <AppContentSection class="max-w-800">
       <AppParagraphGroup>
         <AppTitle
           semantic="h2"
-          visual="h3">
+          visual="h3"
+        >
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo neque rerum ipsam. Quia debitis aliquid distinctio nihil saepe veniam numquam deleniti culpa tenetur adipisci aut perferendis reprehenderit, eveniet eius facere.
         </AppTitle>
         <AppParagraph>
@@ -25,7 +27,8 @@
       <AppParagraphGroup>
         <AppTitle
           semantic="h2"
-          visual="h3">
+          visual="h3"
+        >
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo neque rerum ipsam. Quia debitis aliquid distinctio nihil saepe veniam numquam deleniti culpa tenetur adipisci aut perferendis reprehenderit, eveniet eius facere.
         </AppTitle>
         <AppParagraph>
@@ -39,7 +42,8 @@
       <AppParagraphGroup>
         <AppTitle
           semantic="h2"
-          visual="h3">
+          visual="h3"
+        >
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo neque rerum ipsam. Quia debitis aliquid distinctio nihil saepe veniam numquam deleniti culpa tenetur adipisci aut perferendis reprehenderit, eveniet eius facere.
         </AppTitle>
         <AppParagraph>

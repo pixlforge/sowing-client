@@ -8,7 +8,8 @@
         <!-- Title -->
         <AppTitle
           semantic="h1"
-          visual="h3">
+          visual="h3"
+        >
           {{ $t("forms.labels.avatar") }}
         </AppTitle>
 
@@ -16,7 +17,8 @@
         <AppButtonPrimary
           size="mini"
           color="pink-dark"
-          @click.native="deleteAvatar">
+          @click.native="deleteAvatar"
+        >
           {{ $t("buttons.delete") }}
         </AppButtonPrimary>
       </div>
@@ -28,7 +30,8 @@
         :options="optionsForAvatar"
         :destroy-dropzone="true"
         @vdropzone-max-files-exceeded="dzMaxFilesExceeded"
-        @vdropzone-success="updateShop"/>
+        @vdropzone-success="updateShop"
+      />
     </section>
 
     <!-- Cover image -->
@@ -38,7 +41,8 @@
         <!-- Title -->
         <AppTitle
           semantic="h1"
-          visual="h3">
+          visual="h3"
+        >
           {{ $t("forms.labels.cover_image") }}
         </AppTitle>
 
@@ -46,7 +50,8 @@
         <AppButtonPrimary
           size="mini"
           color="pink-dark"
-          @click.native="deleteCover">
+          @click.native="deleteCover"
+        >
           {{ $t("buttons.delete") }}
         </AppButtonPrimary>
       </div>
@@ -58,7 +63,8 @@
         :options="optionsForCover"
         :destroy-dropzone="true"
         @vdropzone-max-files-exceeded="dzMaxFilesExceeded"
-        @vdropzone-success="updateShop"/>
+        @vdropzone-success="updateShop"
+      />
     </section>
 
     <!-- Theme selection -->
@@ -67,7 +73,8 @@
       <!-- Title -->
       <AppTitle
         semantic="h1"
-        visual="h3">
+        visual="h3"
+      >
         {{ $t("forms.labels.theme_selection") }}
       </AppTitle>
 
@@ -76,7 +83,8 @@
         <li
           v-for="(theme, index) in availableThemes"
           :key="index"
-          class="mx-10 mt-20 lg:mt-0">
+          class="mx-10 mt-20 lg:mt-0"
+        >
           <AppTile :theme="theme"/>
         </li>
       </ul>

@@ -5,11 +5,13 @@
       :class="`hover:text-${shopTheme}-500`"
       target="_blank"
       rel="noopener noreferrer"
-      class="text-14 no-underline flex items-center">
+      class="text-14 no-underline flex items-center"
+    >
       <font-awesome-icon
         :icon="['fab', icon]"
         :class="`text-${shopTheme}-500`"
-        class="block text-16 mr-10"/>
+        class="block text-16 mr-10"
+      />
       {{ label }}
     </a>
   </li>

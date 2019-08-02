@@ -2,7 +2,8 @@
   <div class="w-full lg:w-1/2 first:w-full h-500 p-24 first:pt-0 first:mt-48">
     <div
       :style="imgUrl"
-      class="relative h-full bg-cover bg-center bg-no-repeat flex items-end shadow-2xl">
+      class="relative h-full bg-cover bg-center bg-no-repeat flex items-end shadow-2xl"
+    >
 
       <div class="flex flex-col items-start px-48 pb-48 z-10">
 
@@ -10,7 +11,8 @@
         <AppTitle
           semantic="h2"
           visual="h1"
-          utilities="text-white">
+          utilities="text-white"
+        >
           {{ category.name[locale] }}
         </AppTitle>
 
@@ -37,7 +39,8 @@
               slug: category.slug
             }
           })"
-          class="shadow-xl">
+          class="shadow-xl"
+        >
           {{ $t("components.category.link.see_all") }}
         </AppButtonLinkPrimary>
       </div>

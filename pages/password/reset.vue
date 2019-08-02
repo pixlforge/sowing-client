@@ -4,7 +4,8 @@
     <!-- Header -->
     <AppHeader
       :title="$t('pages.password_reset.title')"
-      icon="redo-alt"/>
+      icon="redo-alt"
+    />
 
     <!-- Form -->
     <AppContentSection class="max-w-600">
@@ -21,10 +22,12 @@
             :errors="errors"
             name="user"
             type="email"
-            required/>
+            required
+          />
           <AppFormValidation
             :errors="errors"
-            name="user"/>
+            name="user"
+          />
         </AppFormGroup>
 
         <!-- Password -->
@@ -37,10 +40,12 @@
             :errors="errors"
             name="password"
             type="password"
-            required/>
+            required
+          />
           <AppFormValidation
             :errors="errors"
-            name="password"/>
+            name="password"
+          />
         </AppFormGroup>
 
         <!-- Password confirmation -->
@@ -53,14 +58,16 @@
             :errors="errors"
             name="password_confirmation"
             type="password"
-            required/>
+            required
+          />
         </AppFormGroup>
 
         <!-- Submit -->
         <AppButtonPrimary
           type="submit"
           icon="redo-alt"
-          class="mx-auto my-72">
+          class="mx-auto my-72"
+        >
           {{ $t("buttons.password_reset") }}
         </AppButtonPrimary>
       </form>

@@ -10,10 +10,12 @@
       <ul class="text-left">
         <li
           v-for="variation in variations"
-          :key="variation.id">
+          :key="variation.id"
+        >
           <nuxt-link
             :to="localePath({ name: 'products-slug', params: { slug: variation.product.slug } })"
-            class="text-green-400 no-underline hover:underline">
+            class="text-green-400 no-underline hover:underline"
+          >
             {{ variation.product.name[locale] }} {{ variation.type.name[locale] }} {{ variation.name[locale] }}
           </nuxt-link>
         </li>

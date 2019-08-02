@@ -3,7 +3,8 @@
     <div class="lg:w-1/2 lg:pr-10">
       <AppTitle
         semantic="h5"
-        visual="h3">
+        visual="h3"
+      >
         {{ title }}
       </AppTitle>
     </div>

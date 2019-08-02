@@ -4,7 +4,8 @@
     <!-- Header -->
     <AppHeader
       :title="pageTitle"
-      icon="shopping-cart"/>
+      icon="shopping-cart"
+    />
 
     <!-- Page contents -->
     <AppContentSection>
@@ -15,18 +16,21 @@
           <AppCartOverviewProduct
             v-for="product in products"
             :key="product.id"
-            :product="product"/>
+            :product="product"
+          />
         </template>
         <div v-else>
 
           <AppSplash
             :title="$t('pages.cart.cart_is_empty')"
             :subtitle="$t('pages.cart.add_something')"
-            class="max-w-800">
+            class="max-w-800"
+          >
             <template slot="illustration">
               <img
                 src="~assets/img/empty.svg"
-                alt="Illustration of an empty box">
+                alt="Illustration of an empty box"
+              >
             </template>
           </AppSplash>
 
@@ -35,7 +39,8 @@
 
       <div
         v-if="products.length"
-        class="text-24 font-semibold text-center mt-96">
+        class="text-24 font-semibold text-center mt-96"
+      >
         {{ $t("pages.cart.in_your_cart") }}
         <span class="text-green-500">
           {{ products.length }}
@@ -56,7 +61,8 @@
         :title="$t('pages.cart.checkout')"
         icon="check-circle"
         size="large"
-        class="block shadow-2xl my-72 md:my-96">
+        class="block shadow-2xl my-72 md:my-96"
+      >
         {{ $t("pages.cart.checkout") }}
       </AppButtonLinkPrimary>
     </AppContentSection>

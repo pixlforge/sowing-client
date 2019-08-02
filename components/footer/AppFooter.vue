@@ -8,36 +8,44 @@
           v-for="category in categories"
           :key="category.slug"
           :to="localePath({ name: 'categories-slug', params: { slug: category.slug } })"
-          :label="category.name[locale]"/>
+          :label="category.name[locale]"
+        />
       </AppFooterColumn>
 
       <!-- Selling -->
       <AppFooterColumn :title="$t('footer.titles.sell_on_sowing')">
         <AppFooterItem
           :to="localePath({ name: 'index' })"
-          :label="$t('footer.links.login')"/>
+          :label="$t('footer.links.login')"
+        />
         <AppFooterItem
           :to="localePath({ name: 'index' })"
-          :label="$t('footer.links.your_own_store')"/>
+          :label="$t('footer.links.your_own_store')"
+        />
         <AppFooterItem
           :to="localePath({ name: 'index' })"
-          :label="$t('footer.links.new_vendors')"/>
+          :label="$t('footer.links.new_vendors')"
+        />
       </AppFooterColumn>
 
       <!-- About -->
       <AppFooterColumn :title="$t('footer.titles.about')">
         <AppFooterItem
           :to="localePath({ name: 'index' })"
-          :label="$t('footer.links.terms')"/>
+          :label="$t('footer.links.terms')"
+        />
         <AppFooterItem
           :to="localePath({ name: 'index' })"
-          :label="$t('footer.links.payments')"/>
+          :label="$t('footer.links.payments')"
+        />
         <AppFooterItem
           :to="localePath({ name: 'index' })"
-          :label="$t('footer.links.shipments')"/>
+          :label="$t('footer.links.shipments')"
+        />
         <AppFooterItem
           :to="localePath({ name: 'faq' })"
-          :label="$t('footer.links.faq')"/>
+          :label="$t('footer.links.faq')"
+        />
       </AppFooterColumn>
 
       <!-- Languages -->
@@ -46,7 +54,8 @@
           v-for="locale in $i18n.locales"
           :key="locale.code"
           :to="switchLocalePath(locale.code)"
-          :label="locale.name"/>
+          :label="locale.name"
+        />
       </AppFooterColumn>
 
       <!-- Social Networks -->
@@ -54,11 +63,13 @@
         <AppFooterItemSocial
           url="https://www.facebook.com/Sowingch-1065130827008521/"
           icon="facebook"
-          label="Facebook"/>
+          label="Facebook"
+        />
         <AppFooterItemSocial
           url="https://www.instagram.com/sowing.ch/"
           icon="instagram"
-          label="Instagram"/>
+          label="Instagram"
+        />
       </AppFooterColumn>
 
     </div>

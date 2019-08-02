@@ -3,7 +3,8 @@
     <nuxt-link
       :to="localePath({ name: route })"
       :class="classes"
-      class="block rounded-lg hover:text-white hover:shadow-xl pl-20 py-12">
+      class="block rounded-lg hover:text-white hover:shadow-xl pl-20 py-12"
+    >
       {{ label }}
     </nuxt-link>
   </li>

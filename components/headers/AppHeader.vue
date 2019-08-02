@@ -15,7 +15,8 @@
         <slot name="title">
           <AppTitle
             semantic="h1"
-            visual="header">
+            visual="header"
+          >
             {{ title }}
           </AppTitle>
         </slot>

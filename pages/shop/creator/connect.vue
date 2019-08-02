@@ -7,7 +7,8 @@
       <!-- Title -->
       <AppTitle
         semantic="h1"
-        visual="main">
+        visual="main"
+      >
         {{ $t("shop_creator.steps.connect.title") }}
       </AppTitle>
 
@@ -15,7 +16,8 @@
       <AppParagraph
         v-if="!shopStripeUserId || !shopStripePublishableKey"
         class="max-w-800"
-        center>
+        center
+      >
         {{ $t("shop_creator.steps.connect.paragraph") }}
       </AppParagraph>
 
@@ -26,9 +28,11 @@
             <a
               :href="stripeConnectOAuthUrl"
               :class="btnTheme"
-              class="inline-block outline-none focus:shadow-outline rounded-lg text-white font-bold text-center uppercase transition no-underline whitespace-no-wrap text-16 font-black px-48 py-20">
+              class="inline-block outline-none focus:shadow-outline rounded-lg text-white font-bold text-center uppercase transition no-underline whitespace-no-wrap text-16 font-black px-48 py-20"
+            >
               <font-awesome-icon
-                :icon="['fab', 'cc-stripe']"/>
+                :icon="['fab', 'cc-stripe']"
+              />
               {{ $t("buttons.connect_with_stripe") }}
             </a>
           </div>
@@ -38,7 +42,8 @@
           <AppSplash
             type="success"
             title="Félicitations!"
-            subtitle="Votre compte Stripe a bien été associé à votre boutique!"/>
+            subtitle="Votre compte Stripe a bien été associé à votre boutique!"
+          />
         </template>
       </AppShopFeatureContainer>
 
@@ -49,7 +54,8 @@
         <AppButtonTertiary
           icon="chevron-circle-left"
           class="order-1 md:order-none mx-5"
-          @click.native="prev">
+          @click.native="prev"
+        >
           {{ $t("buttons.back") }}
         </AppButtonTertiary>
 
@@ -59,7 +65,8 @@
           :color="stripeInfos ? shopTheme : ''"
           icon="chevron-circle-right"
           class="order-none md_order-1 mx-5"
-          @click.native="next">
+          @click.native="next"
+        >
           {{ $t("buttons.finalize_shop_creation") }}
         </AppButtonPrimary>
       </AppShopCreatorControls>

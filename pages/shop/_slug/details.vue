@@ -4,18 +4,21 @@
     <!-- Cover -->
     <AppShopCover
       v-if="shopCover"
-      :shop-cover="shopCover"/>
+      :shop-cover="shopCover"
+    />
 
     <!-- Header -->
     <AppHeader
       :class="bgTheme"
       :title="shopName"
-      :description="shop.description_short[locale]">
+      :description="shop.description_short[locale]"
+    >
       <AppHeaderList>
         <li>
           <font-awesome-icon
             :icon="['far', 'map-marker-alt']"
-            class="mr-5"/>
+            class="mr-5"
+          />
           {{ shop.postal_code }} {{ shop.city }}
         </li>
         <li class="ml-20">
@@ -28,13 +31,15 @@
     <AppContentSection>
       <AppTitle
         semantic="h1"
-        visual="main">
+        visual="main"
+      >
         {{ $t("pages.shop_details.welcome") }}
       </AppTitle>
 
       <p
         class="max-w-600 text-16 leading-loose text-center mx-auto my-36 md:my-72 mt-72 sm:mt-132"
-        v-html="shop.description_long[locale]"/>
+        v-html="shop.description_long[locale]"
+      />
     </AppContentSection>
 
     <!-- Additional images -->
@@ -43,11 +48,13 @@
         <div
           v-for="n in 10"
           :key="n"
-          class="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 p-20">
+          class="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 p-20"
+        >
           <img
             :src="imgUrl"
             :alt="imgAlt"
-            class="rounded-lg shadow-xl">
+            class="rounded-lg shadow-xl"
+          >
         </div>
       </div>
     </AppContentSection>
@@ -56,7 +63,8 @@
     <AppContentSection>
       <AppTitle
         semantic="h2"
-        visual="main">
+        visual="main"
+      >
         {{ $t("pages.shop_details.interested") }}
       </AppTitle>
 
@@ -66,7 +74,8 @@
           icon="search"
           :color="shopTheme"
           size="large"
-          class="shadow-2xl">
+          class="shadow-2xl"
+        >
           {{ $t("buttons.see_all_articles") }}
         </AppButtonLinkPrimary>
       </div>

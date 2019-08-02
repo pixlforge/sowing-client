@@ -5,13 +5,15 @@
       <!-- Left side -->
       <div
         :style="style"
-        class="w-full md:w-1/4 flex justify-center items-center rounded-t-lg md:rounded-tr-none md:rounded-bl-lg py-30 md:py-0">
+        class="w-full md:w-1/4 flex justify-center items-center rounded-t-lg md:rounded-tr-none md:rounded-bl-lg py-30 md:py-0"
+      >
 
         <!-- Avatar -->
         <img
           :src="shop.avatar"
           class="w-75 h-75 rounded-full border-4 border-white"
-          alt="Shop avatar">
+          alt="Shop avatar"
+        >
       </div>
 
       <!-- Right side -->
@@ -20,7 +22,8 @@
         <!-- Title -->
         <AppTitle
           semantic="h5"
-          visual="h4">
+          visual="h4"
+        >
           {{ shop.name }}
         </AppTitle>
 
@@ -33,7 +36,8 @@
         <div class="flex justify-center md:justify-start items-center text-14 text-gray-300 mt-30">
           <font-awesome-icon
             :icon="['far', 'box-full']"
-            class="mr-10"/>
+            class="mr-10"
+          />
           <span>
             {{ shop.articles }} articles
           </span>

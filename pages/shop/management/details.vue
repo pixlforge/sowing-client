@@ -4,7 +4,8 @@
     <!-- Title -->
     <AppTitle
       semantic="h1"
-      visual="h1">
+      visual="h1"
+    >
       Détails
     </AppTitle>
 
@@ -13,13 +14,15 @@
       :countries="countries"
       :errors="errors"
       class="my-72"
-      editable/>
+      editable
+    />
 
     <!-- Save changes -->
     <AppButtonPrimary
       icon="check"
       :color="shopTheme"
-      @click.native="update">
+      @click.native="update"
+    >
       {{ $t("buttons.update") }}
     </AppButtonPrimary>
 

@@ -15,7 +15,8 @@
       <AppButtonLinkSecondary
         v-if="!loggedIn"
         :to="localePath({ name: 'login' })"
-        class="mx-10">
+        class="mx-10"
+      >
         {{ $t("buttons.login") }}
       </AppButtonLinkSecondary>
 
@@ -25,14 +26,16 @@
         :to="localePath({ name: 'register' })"
         icon="rocket"
         color="pink-dark"
-        class="mx-10">
+        class="mx-10"
+      >
         {{ $t("buttons.register") }}
       </AppButtonLinkPrimary>
 
       <!-- Menu -->
       <AppButtonMenu
         v-if="loggedIn"
-        class="mx-10"/>
+        class="mx-10"
+      />
 
       <!-- Search page link -->
       <AppButtonSearch class="mx-10"/>

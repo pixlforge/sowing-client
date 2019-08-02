@@ -3,7 +3,8 @@
     <div class="">
       <AppTitle
         semantic="h5"
-        visual="h3">
+        visual="h3"
+      >
         {{ title }}
       </AppTitle>
       <p class="text-16 leading-relaxed capitalize my-10">

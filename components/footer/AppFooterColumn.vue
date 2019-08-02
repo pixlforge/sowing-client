@@ -2,7 +2,8 @@
   <section class="w-1/3 lg:w-1/5 mx-auto mt-48 lg:mt-96">
     <AppTitle
       semantic="h5"
-      visual="h5">
+      visual="h5"
+    >
       {{ title }}
     </AppTitle>
     <ul class="leading-loose mt-16">

@@ -1,13 +1,15 @@
 <template>
   <nuxt-link
     :to="localePath({ name: 'products-slug', params: { slug: product.slug } })"
-    class="w-full md:w-1/2 xl:w-1/3 px-20 md:px-36 my-24 md:my-48">
+    class="w-full md:w-1/2 xl:w-1/3 px-20 md:px-36 my-24 md:my-48"
+  >
     <div class="no-underline outline-none focus:shadow-outline rounded-lg shadow-2xl">
 
       <!-- Product featured image -->
       <div
         :style="imgUrl"
-        class="w-full h-200 md:h-315 rounded-t-lg bg-cover bg-center bg-no-repeat"/>
+        class="w-full h-200 md:h-315 rounded-t-lg bg-cover bg-center bg-no-repeat"
+      />
 
       <!-- Content -->
       <div class="flex flex-col justify-between p-30">
@@ -15,10 +17,12 @@
         <!-- Base product name -->
         <nuxt-link
           :to="localePath({ name: 'products-slug', params: { slug: product.slug } })"
-          class="no-underline">
+          class="no-underline"
+        >
           <AppTitle
             semantic="h3"
-            visual="h3">
+            visual="h3"
+          >
             {{ productName }}
           </AppTitle>
         </nuxt-link>
@@ -41,10 +45,12 @@
         <div class="flex items-start text-14 text-green-400 mt-16">
           <font-awesome-icon
             :icon="['far', 'store']"
-            class="mr-10"/>
+            class="mr-10"
+          />
           <nuxt-link
             :to="localePath({ name: 'shop-slug-details', params: { slug: product.shop.slug } })"
-            class="text-green-400 font-semibold no-underline hover:underline">
+            class="text-green-400 font-semibold no-underline hover:underline"
+          >
             {{ shopName }}
           </nuxt-link>
         </div>
@@ -88,10 +94,10 @@ export default {
       return this.product.name[this.locale]
     },
     productCurrency() {
-      return this.product.price.currency
+      return this.product.price.detailed.currency
     },
     productPrice() {
-      return this.product.price.amount
+      return this.product.price.detailed.amount
     },
     shopName() {
       return this.product.shop.name

@@ -13,7 +13,8 @@
       'bg-white': theme === 'light'
     }"
     class="block w-full appearance-none rounded-lg text-16 leading-tight outline-none border border-transparent px-16 py-12"
-    @input="$emit('input', $event.target.value)"/>
+    @input="$emit('input', $event.target.value)"
+  />
 </template>
 
 <script>

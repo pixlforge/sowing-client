@@ -2,11 +2,13 @@
   <div
     :class="bgTheme"
     class="w-60 h-60 rounded-lg flex justify-center items-center cursor-pointer"
-    @click.prevent="update">
+    @click.prevent="update"
+  >
     <font-awesome-icon
       v-if="theme === shopTheme"
       :icon="['far', 'check-circle']"
-      class="text-24 text-white"/>
+      class="text-24 text-white"
+    />
   </div>
 </template>
 

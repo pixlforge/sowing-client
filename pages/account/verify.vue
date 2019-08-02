@@ -4,7 +4,8 @@
     <!-- Header -->
     <AppHeader
       :title="$t('pages.verify.title')"
-      icon="shield-check"/>
+      icon="shield-check"
+    />
 
     <!-- Verification successful -->
     <template v-if="verificationSuccessful">
@@ -12,11 +13,13 @@
         :title="$t('pages.verify.success')"
         :subtitle="$t('toasts.account_confirmed')"
         type="success"
-        class="max-w-800">
+        class="max-w-800"
+      >
         <template slot="illustration">
           <img
             src="~assets/img/success2.svg"
-            :alt="$t('pages.verify.success')">
+            :alt="$t('pages.verify.success')"
+          >
         </template>
       </AppSplash>
     </template>
@@ -27,11 +30,13 @@
         :title="$t('pages.verify.fail')"
         :subtitle="error"
         type="error"
-        class="max-w-800">
+        class="max-w-800"
+      >
         <template slot="illustration">
           <img
             src="~assets/img/warning.svg"
-            :alt="$t('pages.verify.fail')">
+            :alt="$t('pages.verify.fail')"
+          >
         </template>
       </AppSplash>
     </template>

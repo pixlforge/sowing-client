@@ -11,7 +11,8 @@
         <AppFeaturedCategory
           v-for="category in featuredCategories"
           :key="category.id"
-          :category="category"/>
+          :category="category"
+        />
       </div>
     </section>
 
@@ -20,7 +21,8 @@
       <AppTitle
         semantic="h1"
         visual="main"
-        utilities="mb-30 sm:mb-72 md:mb-60">
+        utilities="mb-30 sm:mb-72 md:mb-60"
+      >
         {{ $t("pages.home.titles.features") }}
       </AppTitle>
 
@@ -28,22 +30,26 @@
         <AppFeature
           :title="$t('pages.home.features.first.title')"
           :body="$t('pages.home.features.first.body')"
-          icon="lightbulb"/>
+          icon="lightbulb"
+        />
 
         <AppFeature
           :title="$t('pages.home.features.second.title')"
           :body="$t('pages.home.features.second.body')"
-          icon="eye"/>
+          icon="eye"
+        />
 
         <AppFeature
           :title="$t('pages.home.features.third.title')"
           :body="$t('pages.home.features.third.body')"
-          icon="rocket"/>
+          icon="rocket"
+        />
 
         <AppFeature
           :title="$t('pages.home.features.fourth.title')"
           :body="$t('pages.home.features.fourth.body')"
-          icon="shield-check"/>
+          icon="shield-check"
+        />
       </div>
     </AppContentSection>
 
@@ -54,7 +60,8 @@
     <AppContentSection>
       <AppTitle
         semantic="h1"
-        visual="main">
+        visual="main"
+      >
         {{ $t("pages.home.titles.shops") }}
       </AppTitle>
 
@@ -63,7 +70,8 @@
           v-for="shop in shops"
           :key="shop.id"
           :shop="shop"
-          class="w-full lg:w-1/2"/>
+          class="w-full lg:w-1/2"
+        />
       </div>
     </AppContentSection>
 
@@ -71,7 +79,8 @@
     <AppContentSection>
       <AppTitle
         semantic="h1"
-        visual="main">
+        visual="main"
+      >
         {{ $t("pages.home.titles.categories") }}
       </AppTitle>
 
@@ -79,7 +88,8 @@
         <AppCategoryCard
           v-for="category in categories"
           :key="category.id"
-          :category="category"/>
+          :category="category"
+        />
       </div>
     </AppContentSection>
 
@@ -87,7 +97,8 @@
     <AppContentSection class="max-w-1000">
       <AppTitle
         semantic="h1"
-        visual="main">
+        visual="main"
+      >
         {{ $t("pages.home.titles.reviews") }}
       </AppTitle>
 
@@ -95,7 +106,8 @@
         <AppReview
           v-for="review in reviews"
           :key="review.id"
-          :review="review"/>
+          :review="review"
+        />
       </div>
     </AppContentSection>
 
@@ -117,8 +129,6 @@ import AppCategoryCard from '@/components/categories/AppCategoryCard'
 import AppStreakRegister from '@/components/streaks/AppStreakRegister'
 import AppStreakNewsletter from '@/components/streaks/AppStreakNewsletter'
 import AppFeaturedCategory from '@/components/categories/AppFeaturedCategory'
-// import AppFeaturedCategoryLarge from '@/components/categories/AppFeaturedCategoryLarge'
-// import AppFeaturedCategorySmall from '@/components/categories/AppFeaturedCategorySmall'
 
 export default {
   head() {
@@ -136,8 +146,6 @@ export default {
     AppStreakRegister,
     AppStreakNewsletter,
     AppFeaturedCategory
-    // AppFeaturedCategoryLarge,
-    // AppFeaturedCategorySmall
   },
   data() {
     return {

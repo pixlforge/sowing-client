@@ -3,11 +3,13 @@
     <button
       ref="dropdownMenu"
       class="outline-none focus:shadow-outline rounded-lg border border-gray-200 text-12 text-gray-500 font-extrabold text-center uppercase transition no-underline whitespace-no-wrap flex px-30 py-12"
-      @click.prevent="toggleDropdown">
+      @click.prevent="toggleDropdown"
+    >
       {{ username }}
       <font-awesome-icon
         :icon="['fas', 'caret-down']"
-        class="text-16 ml-14"/>
+        class="text-16 ml-14"
+      />
     </button>
 
     <ul
@@ -15,19 +17,22 @@
         'block': dropdownIsOpen,
         'hidden': !dropdownIsOpen
       }"
-      class="absolute bg-white shadow-2xl rounded-lg text-left top-0 left-0 px-30 py-20 mt-48 z-20">
+      class="absolute bg-white shadow-2xl rounded-lg text-left top-0 left-0 px-30 py-20 mt-48 z-20"
+    >
 
       <!-- Orders -->
       <AppDropdownItem
         :to="localePath({ name: 'orders' })"
-        icon="shipping-fast">
+        icon="shipping-fast"
+      >
         {{ $t("pages.orders.title") }}
       </AppDropdownItem>
 
       <!-- Shop -->
       <AppDropdownItem
         :to="localePath({ name: 'shop-management-dashboard' })"
-        icon="store">
+        icon="store"
+      >
         {{ $t("pages.shop.title") }}
       </AppDropdownItem>
 
@@ -40,7 +45,8 @@
             :to="localePath({ name: 'shop-creator-terms' })"
             icon="store"
             color="pink-dark"
-            class="shadow-md">
+            class="shadow-md"
+          >
             {{ $t("buttons.create_my_shop") }}
           </AppButtonLinkPrimary>
         </li>
@@ -52,7 +58,8 @@
       <AppDropdownItem
         color="pink"
         icon="sign-out"
-        @click.native="logout">
+        @click.native="logout"
+      >
         {{ $t("components.navbar.user.logout") }}
       </AppDropdownItem>
     </ul>

@@ -1,7 +1,8 @@
 <template>
   <hr
     :class="classes"
-    class="border border-gray-100">
+    class="border border-gray-100"
+  >
 </template>
 
 <script>

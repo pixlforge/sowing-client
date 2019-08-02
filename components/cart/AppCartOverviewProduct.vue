@@ -6,14 +6,16 @@
       <img
         :src="imgUrl"
         :alt="imgAlt"
-        class="block w-full rounded-lg">
+        class="block w-full rounded-lg"
+      >
     </div>
 
     <!-- Name & description -->
     <div class="w-2/5 pl-30">
       <AppTitle
         semantic="h3"
-        visual="h4">
+        visual="h4"
+      >
         {{ baseProductName }} &ndash; {{ variationType }} &ndash; {{ variationName }}
       </AppTitle>
 
@@ -27,7 +29,8 @@
       <AppTitle
         semantic="h5"
         visual="h5"
-        utilities="text-12 text-gray-200">
+        utilities="text-12 text-gray-200"
+      >
         {{ labelPrice }}
       </AppTitle>
 
@@ -41,25 +44,29 @@
       <AppTitle
         semantic="h5"
         visual="h5"
-        utilities="text-12 text-gray-200">
+        utilities="text-12 text-gray-200"
+      >
         {{ labelQuantity }}
       </AppTitle>
 
       <AppFormSelect
         v-model="quantity"
         name="quantity"
-        class="mt-16">
+        class="mt-16"
+      >
         <option
           v-if="product.quantity == 0"
           value="0"
-          disabled>
+          disabled
+        >
           0
         </option>
         <option
           v-for="n in parseInt(product.stock_count)"
           :key="n"
           :value="n"
-          :selected="n == product.quantity">
+          :selected="n == product.quantity"
+        >
           {{ n }}
         </option>
       </AppFormSelect>
@@ -70,10 +77,12 @@
       role="button"
       title="Remove"
       class="absolute top-0 right-0 mt-20 mr-20"
-      @click="remove(product.id)">
+      @click="remove(product.id)"
+    >
       <font-awesome-icon
         :icon="['far', 'times']"
-        class="text-20 text-gray-200 hover:text-red-500 cursor-pointer"/>
+        class="text-20 text-gray-200 hover:text-red-500 cursor-pointer"
+      />
     </button>
   </div>
 </template>

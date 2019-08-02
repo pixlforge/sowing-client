@@ -7,14 +7,16 @@
       <!-- Title -->
       <AppTitle
         semantic="h1"
-        visual="main">
+        visual="main"
+      >
         {{ $t("shop_creator.steps.name.title") }}
       </AppTitle>
 
       <!-- Infos -->
       <AppParagraph
         class="max-w-800"
-        center>
+        center
+      >
         {{ $t("shop_creator.steps.name.paragraph") }}
       </AppParagraph>
 
@@ -30,7 +32,8 @@
         <AppButtonTertiary
           icon="chevron-circle-left"
           class="order-1 md:order-none mx-5"
-          @click.native="prev">
+          @click.native="prev"
+        >
           {{ $t("buttons.back") }}
         </AppButtonTertiary>
 
@@ -40,7 +43,8 @@
           :color="basicInfosProvided ? shopTheme : ''"
           icon="chevron-circle-right"
           class="order-none md_order-1 mx-5"
-          @click.native="next">
+          @click.native="next"
+        >
           {{ $t("buttons.next") }}
         </AppButtonPrimary>
       </AppShopCreatorControls>

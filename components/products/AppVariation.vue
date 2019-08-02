@@ -10,19 +10,21 @@
     <AppFormSelect
       :value="selectedVariationId"
       name="variation"
-      @change.native="changed">
+      @change.native="changed"
+    >
       <option
         v-for="variation in variations"
         :key="variation.id"
         :value="variation.id"
-        :disabled="!variation.in_stock">
+        :disabled="!variation.in_stock"
+      >
 
         <!-- Variation name -->
         {{ variationName(variation) }}
 
         <!-- Price variation -->
         <template v-if="variation.price_varies">
-          ({{ variation.price.currency }} {{ variation.price.amount }})
+          ({{ variation.price.detailed.currency }} {{ variation.price.detailed.amount }})
         </template>
 
         <template v-if="!variation.in_stock">

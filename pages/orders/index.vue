@@ -4,21 +4,25 @@
     <!-- Header -->
     <AppHeader
       :title="$t('pages.orders.title')"
-      icon="shipping-fast"/>
+      icon="shipping-fast"
+    />
 
     <!-- Page contents -->
     <AppContentSection>
       <div
         v-if="orders.length"
-        class="mt-96">
+        class="mt-96"
+      >
         <AppOrder
           v-for="order in orders"
           :key="order.id"
-          :order="order"/>
+          :order="order"
+        />
       </div>
       <div
         v-else
-        class="mt-96">
+        class="mt-96"
+      >
         <p>No orders yet</p>
       </div>
     </AppContentSection>

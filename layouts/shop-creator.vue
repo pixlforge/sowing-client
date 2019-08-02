@@ -13,12 +13,14 @@
     <!-- Shop cover image -->
     <AppShopCover
       v-if="shopCover"
-      :shop-cover="shopCover"/>
+      :shop-cover="shopCover"
+    />
 
     <!-- Header -->
     <AppHeader
       :class="bgTheme"
-      :title="shopName ? shopName : $t('pages.shop.creation')"/>
+      :title="shopName ? shopName : $t('pages.shop.creation')"
+    />
 
     <!-- Navigation -->
     <AppShopNavigation/>

@@ -3,11 +3,13 @@
     :disabled="disabled"
     :type="type"
     :title="title"
-    class="outline-none focus:shadow-outline rounded-lg border border-gray-200 text-12 text-gray-500 font-bold text-center uppercase transition no-underline whitespace-no-wrap px-30 py-12">
+    class="outline-none focus:shadow-outline rounded-lg border border-gray-200 text-12 text-gray-500 font-bold text-center uppercase transition no-underline whitespace-no-wrap px-30 py-12"
+  >
     <font-awesome-icon
       v-if="icon"
       :icon="['far', icon]"
-      class="mr-10"/>
+      class="mr-10"
+    />
     <slot/>
     <slot name="icon"/>
   </button>

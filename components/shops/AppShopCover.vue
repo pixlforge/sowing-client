@@ -1,7 +1,8 @@
 <template>
   <div
     :style="`background-image: url('${shopCover}');`"
-    class="block w-full h-400 bg-center bg-no-repeat bg-cover"/>
+    class="block w-full h-400 bg-center bg-no-repeat bg-cover"
+  />
 </template>
 
 <script>

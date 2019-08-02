@@ -4,7 +4,8 @@
     <!-- Header -->
     <AppHeader
       :title="pageTitle"
-      icon="cash-register"/>
+      icon="cash-register"
+    />
 
     <AppContentSection>
       <div class="flex">
@@ -13,7 +14,8 @@
           <!-- Payment methods -->
           <AppTitle
             semantic="h2"
-            visual="h3">
+            visual="h3"
+          >
             {{ $t("pages.checkout.payment") }}
           </AppTitle>
 
@@ -21,19 +23,22 @@
             v-model="form.payment_method_id"
             :payment-methods="paymentMethods"
             class="mb-72 lg:mb-132 xl:mb-196"
-            @payment-method:added="addPaymentMethod"/>
+            @payment-method:added="addPaymentMethod"
+          />
 
           <!-- Cart Overview -->
           <AppTitle
             semantic="h2"
-            visual="h3">
+            visual="h3"
+          >
             {{ $t("pages.cart.title") }}
           </AppTitle>
 
           <AppCartOverviewProduct
             v-for="product in products"
             :key="product.id"
-            :product="product"/>
+            :product="product"
+          />
         </div>
 
         <!-- Sidebar -->
@@ -42,7 +47,8 @@
           <!-- Shipping address -->
           <AppShippingAddress
             v-model="form.address_id"
-            :addresses="addresses"/>
+            :addresses="addresses"
+          />
 
           <!-- Shipping methods dropdown -->
           <AppShippingMethods
@@ -50,12 +56,14 @@
             v-model="shippingMethodId"
             :methods="shippingMethods"
             :errors="errors.shipping_method_id"
-            class="mt-48"/>
+            class="mt-48"
+          />
 
           <!-- Price block -->
           <div
             v-if="!addressManagersVisible"
-            class="mt-48">
+            class="mt-48"
+          >
 
             <!-- Subtotal -->
             <div class="w-full text-gray-300 text-14 flex justify-between">
@@ -93,7 +101,8 @@
             :title="$t('pages.checkout.order')"
             icon="check-circle"
             class="shadow-xl mt-72"
-            @click.native="order">
+            @click.native="order"
+          >
             {{ $t("pages.checkout.order") }}
           </AppButtonPrimary>
         </div>

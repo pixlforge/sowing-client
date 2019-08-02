@@ -7,14 +7,16 @@
       <!-- Title -->
       <AppTitle
         semantic="h1"
-        visual="main">
+        visual="main"
+      >
         {{ $t("shop_creator.steps.details.title") }}
       </AppTitle>
 
       <!-- Infos -->
       <AppParagraph
         class="max-w-800"
-        center>
+        center
+      >
         {{ $t("shop_creator.steps.details.paragraph") }}
       </AppParagraph>
 
@@ -22,7 +24,8 @@
       <AppShopFeatureContainer class="max-w-800">
         <AppShopDetails
           :countries="countries"
-          :errors="errors"/>
+          :errors="errors"
+        />
       </AppShopFeatureContainer>
 
       <!-- Controls -->
@@ -32,7 +35,8 @@
         <AppButtonTertiary
           icon="chevron-circle-left"
           class="order-1 md:order-none mx-5"
-          @click.native="prev">
+          @click.native="prev"
+        >
           {{ $t("buttons.back") }}
         </AppButtonTertiary>
 
@@ -42,7 +46,8 @@
           :color="basicInfosProvided ? shopTheme : ''"
           icon="chevron-circle-right"
           class="order-none md_order-1 mx-5"
-          @click.native="store">
+          @click.native="store"
+        >
           {{ $t("buttons.next") }}
         </AppButtonPrimary>
       </AppShopCreatorControls>

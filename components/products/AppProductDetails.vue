@@ -7,7 +7,8 @@
         <img
           :src="imgUrl"
           :alt="imgAlt"
-          class="block w-full rounded-lg shadow-2xl">
+          class="block w-full rounded-lg shadow-2xl"
+        >
       </div>
 
       <!-- Product content -->
@@ -16,7 +17,8 @@
         <!-- Base product name -->
         <AppTitle
           semantic="h1"
-          visual="main">
+          visual="main"
+        >
           {{ productName }}
         </AppTitle>
 
@@ -31,7 +33,8 @@
           <div class="flex items-start">
             <span
               :class="`text-${shopTheme}-500`"
-              class="text-14 font-extrabold mr-10 mt-5">
+              class="text-14 font-extrabold mr-10 mt-5"
+            >
               {{ productCurrency }}
             </span>
             <span class="text-24 font-extrabold">
@@ -42,11 +45,13 @@
           <!-- Total products in stock -->
           <div
             v-if="product.in_stock"
-            class="flex items-baseline text-14">
+            class="flex items-baseline text-14"
+          >
             <font-awesome-icon
               :icon="['far', 'boxes']"
               :class="`text-${shopTheme}-500`"
-              class="mr-10"/>
+              class="mr-10"
+            />
             <span class="font-bold mr-5">
               {{ product.stock_count }}
             </span>
@@ -58,10 +63,12 @@
           <!-- Product is out of stock -->
           <div
             v-else
-            class="flex items-start text-16 text-red-500 mt-48">
+            class="flex items-start text-16 text-red-500 mt-48"
+          >
             <font-awesome-icon
               :icon="['far', 'boxes']"
-              class="mr-10"/>
+              class="mr-10"
+            />
             <span class="font-bold">
               {{ productOutOfStock }}
             </span>
@@ -70,7 +77,8 @@
 
         <form
           class="w-full"
-          @submit.prevent="add">
+          @submit.prevent="add"
+        >
 
           <AppFormDivider/>
 
@@ -81,7 +89,8 @@
             v-model="form.variation"
             :type="type"
             :variations="variations"
-            class="mb-24"/>
+            class="mb-24"
+          />
 
           <!-- Quantity -->
           <AppFormDivider/>
@@ -92,11 +101,13 @@
           <AppFormSelect
             v-model.number="form.quantity"
             :disabled="!form.quantity"
-            name="quantity">
+            name="quantity"
+          >
             <option
               v-for="n in form.variation.stock_count"
               :key="n"
-              :value="n">
+              :value="n"
+            >
               {{ n }}
             </option>
           </AppFormSelect>
@@ -108,7 +119,8 @@
             type="submit"
             icon="cart-plus"
             size="large"
-            class="shadow-2xl mt-36">
+            class="shadow-2xl mt-36"
+          >
             {{ $t("buttons.add_to_cart") }}
           </AppButtonPrimary>
 
@@ -121,11 +133,13 @@
       <div
         v-for="n in 5"
         :key="n"
-        class="w-1/2 sm:w-1/3 lg:w-1/4 xl:w-1/5 p-10 sm:p-20">
+        class="w-1/2 sm:w-1/3 lg:w-1/4 xl:w-1/5 p-10 sm:p-20"
+      >
         <img
           :src="imgUrl"
           :alt="imgAlt"
-          class="block rounded-lg shadow-lg mx-auto">
+          class="block rounded-lg shadow-lg mx-auto"
+        >
       </div>
     </div>
 
@@ -184,10 +198,10 @@ export default {
       return this.product.description[this.locale]
     },
     productCurrency() {
-      return this.product.price.currency
+      return this.product.price.detailed.currency
     },
     productPrice() {
-      return this.product.price.amount
+      return this.product.price.detailed.amount
     },
     quantityLabel() {
       return this.$t('components.variations.labels.quantity')

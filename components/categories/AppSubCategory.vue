@@ -9,11 +9,13 @@
             category: category.slug,
             slug: subcategory.slug
           }
-        })">
+        })"
+      >
         <img
           :alt="alt"
           :src="imgSrc"
-          class="block w-full rounded-t-lg">
+          class="block w-full rounded-t-lg"
+        >
       </nuxt-link>
 
       <div class="p-20">
@@ -22,7 +24,8 @@
         <AppTitle
           semantic="h2"
           visual="h3"
-          utilities="text-center">
+          utilities="text-center"
+        >
           {{ subcategory.name[locale] }}
         </AppTitle>
 
@@ -39,7 +42,8 @@
               category: category.slug,
               slug: subcategory.slug
             }
-          })">
+          })"
+        >
           {{ $t("components.category.link.see_all") }}
         </AppButtonLinkSecondary>
       </div>

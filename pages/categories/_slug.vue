@@ -4,7 +4,8 @@
     <!-- Header -->
     <AppHeader
       :title="categoryName"
-      :description="categoryDescription"/>
+      :description="categoryDescription"
+    />
 
     <!-- Content -->
     <AppContentSection>
@@ -13,12 +14,14 @@
       <template v-if="categoryHasSections">
         <div
           v-for="section in category.children"
-          :key="section.id">
+          :key="section.id"
+        >
 
           <!-- Section name -->
           <AppTitle
             semantic="h1"
-            visual="main">
+            visual="main"
+          >
             {{ section.name[locale] }}
           </AppTitle>
 
@@ -29,7 +32,8 @@
               v-for="subcategory in section.children"
               :key="subcategory.slug"
               :category="category"
-              :subcategory="subcategory"/>
+              :subcategory="subcategory"
+            />
           </div>
         </div>
       </template>
@@ -43,7 +47,8 @@
             v-for="subcategory in category.children"
             :key="subcategory.slug"
             :category="category"
-            :subcategory="subcategory"/>
+            :subcategory="subcategory"
+          />
         </div>
       </template>
     </AppContentSection>

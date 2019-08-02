@@ -5,7 +5,8 @@
     <AppHeader
       :title="$t('pages.search.title')"
       :description="$t('pages.search.description')"
-      icon="search"/>
+      icon="search"
+    />
 
     <AppContentSection class="min-h-half-screen">
 
@@ -15,7 +16,8 @@
           v-model="query"
           :placeholder="$t('pages.search.placeholder')"
           :aria-label="$t('pages.search.placeholder')"
-          class="text-30 font-normal px-24 py-20"/>
+          class="text-30 font-normal px-24 py-20"
+        />
       </div>
 
       <div class="search__results-wrapper">
@@ -24,13 +26,15 @@
         <AppSearchResult
           :query="query"
           index-name="products"
-          class="search__results-component search__results-component--left"/>
+          class="search__results-component search__results-component--left"
+        />
 
         <!-- Shop search results -->
         <AppSearchResult
           :query="query"
           index-name="shops"
-          class="search__results-component search__results-component--right"/>
+          class="search__results-component search__results-component--right"
+        />
 
       </div>
     </AppContentSection>

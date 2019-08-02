@@ -4,15 +4,18 @@
       ref="dropdownMenu"
       :aria-label="$t('aria.buttons.languages')"
       class="outline-none focus:shadow-outline rounded-lg border border-gray-200 text-12 text-gray-500 font-bold text-center uppercase transition no-underline whitespace-no-wrap flex px-20 py-12"
-      @click.prevent="toggleDropdown">
+      @click.prevent="toggleDropdown"
+    >
       <div :class="textTheme">
         <font-awesome-icon
           :icon="['far', 'globe-europe']"
-          class="text-16 mr-5"/>
+          class="text-16 mr-5"
+        />
       </div>
       <font-awesome-icon
         :icon="['fas', 'caret-down']"
-        class="text-16 ml-14"/>
+        class="text-16 ml-14"
+      />
     </button>
 
     <ul
@@ -20,11 +23,13 @@
         'block': dropdownIsOpen,
         'hidden': !dropdownIsOpen
       }"
-      class="absolute bg-white shadow-2xl rounded-lg text-left top-0 left-0 px-30 py-20 mt-48 z-20">
+      class="absolute bg-white shadow-2xl rounded-lg text-left top-0 left-0 px-30 py-20 mt-48 z-20"
+    >
       <AppDropdownItem
         v-for="locale in $i18n.locales"
         :key="locale.code"
-        :to="switchLocalePath(locale.code)">
+        :to="switchLocalePath(locale.code)"
+      >
         {{ locale.name }}
       </AppDropdownItem>
     </ul>

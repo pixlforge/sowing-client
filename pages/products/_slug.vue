@@ -5,12 +5,14 @@
     <AppHeader
       :title="product.shop.name"
       :description="product.shop.description_short[locale]"
-      :class="bgTheme">
+      :class="bgTheme"
+    >
       <template>
         <AppHeaderButtonLink
           :to="localePath({ name: 'shop-slug-details', params: { slug: product.shop.slug } })"
           :color="shopTheme"
-          class="mt-16 shadow-2xl">
+          class="mt-16 shadow-2xl"
+        >
           {{ $t("pages.shop.visit") }}
         </AppHeaderButtonLink>
       </template>

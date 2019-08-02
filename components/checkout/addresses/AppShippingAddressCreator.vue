@@ -11,10 +11,12 @@
           v-model="form.first_name"
           :errors="errors"
           name="first_name"
-          theme="light"/>
+          theme="light"
+        />
         <AppFormValidation
           :errors="errors"
-          name="first_name"/>
+          name="first_name"
+        />
       </AppFormGroup>
 
       <!-- Last name -->
@@ -26,10 +28,12 @@
           v-model="form.last_name"
           :errors="errors"
           name="last_name"
-          theme="light"/>
+          theme="light"
+        />
         <AppFormValidation
           :errors="errors"
-          name="last_name"/>
+          name="last_name"
+        />
       </AppFormGroup>
 
       <!-- Company name -->
@@ -41,10 +45,12 @@
           v-model="form.company_name"
           :errors="errors"
           name="company_name"
-          theme="light"/>
+          theme="light"
+        />
         <AppFormValidation
           :errors="errors"
-          name="company_name"/>
+          name="company_name"
+        />
       </AppFormGroup>
 
       <!-- Address line 1 -->
@@ -56,10 +62,12 @@
           v-model="form.address_line_1"
           :errors="errors"
           name="address_line_1"
-          theme="light"/>
+          theme="light"
+        />
         <AppFormValidation
           :errors="errors"
-          name="address_line_1"/>
+          name="address_line_1"
+        />
       </AppFormGroup>
 
       <!-- Address line 2 -->
@@ -71,10 +79,12 @@
           v-model="form.address_line_2"
           :errors="errors"
           name="address_line_2"
-          theme="light"/>
+          theme="light"
+        />
         <AppFormValidation
           :errors="errors"
-          name="address_line_2"/>
+          name="address_line_2"
+        />
       </AppFormGroup>
 
       <!-- Postal code -->
@@ -86,10 +96,12 @@
           v-model="form.postal_code"
           :errors="errors"
           name="postal_code"
-          theme="light"/>
+          theme="light"
+        />
         <AppFormValidation
           :errors="errors"
-          name="postal_code"/>
+          name="postal_code"
+        />
       </AppFormGroup>
 
       <!-- City -->
@@ -101,17 +113,20 @@
           v-model="form.city"
           :errors="errors"
           name="city"
-          theme="light"/>
+          theme="light"
+        />
         <AppFormValidation
           :errors="errors"
-          name="city"/>
+          name="city"
+        />
       </AppFormGroup>
 
       <!-- Country -->
       <AppFormGroup tight>
         <AppCountryDropdown
           v-model="form.country_id"
-          :errors="errors"/>
+          :errors="errors"
+        />
       </AppFormGroup>
 
       <!-- Controls -->
@@ -121,14 +136,16 @@
         <AppButtonPrimary
           icon="check"
           type="submit"
-          class="w-full mt-20">
+          class="w-full mt-20"
+        >
           {{ $t("buttons.create") }}
         </AppButtonPrimary>
 
         <!-- Close -->
         <AppButtonTertiary
           class="w-full"
-          @click.native="closeAddressCreator">
+          @click.native="closeAddressCreator"
+        >
           {{ $t("buttons.cancel") }}
         </AppButtonTertiary>
       </AppFormGroup>

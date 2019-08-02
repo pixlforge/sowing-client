@@ -3,48 +3,58 @@
 
     <!-- Postal code -->
     <AppShopDetailsGroupInline
-      :title="$t('forms.labels.postal_code')">
+      :title="$t('forms.labels.postal_code')"
+    >
       <AppFormInput
         v-model="localPostalCode"
         :disabled="shopExistsAndNotEditable"
         :errors="errors"
-        name="postal_code"/>
+        name="postal_code"
+      />
       <AppFormValidation
         :errors="errors"
-        name="postal_code"/>
+        name="postal_code"
+      />
     </AppShopDetailsGroupInline>
 
     <!-- City -->
     <AppShopDetailsGroupInline
-      :title="$t('forms.labels.city')">
+      :title="$t('forms.labels.city')"
+    >
       <AppFormInput
         v-model="localCity"
         :disabled="shopExistsAndNotEditable"
         :errors="errors"
-        name="city"/>
+        name="city"
+      />
       <AppFormValidation
         :errors="errors"
-        name="city"/>
+        name="city"
+      />
     </AppShopDetailsGroupInline>
 
     <!-- Country -->
     <AppShopDetailsGroupInline
-      :title="$t('forms.labels.country')">
+      :title="$t('forms.labels.country')"
+    >
       <AppFormSelect
         v-model="localCountry"
         :disabled="shopExistsAndNotEditable"
         :errors="errors"
-        name="country_id">
+        name="country_id"
+      >
         <option
           v-for="country in countries"
           :key="country.id"
-          :value="country.id">
+          :value="country.id"
+        >
           {{ country.name[locale] }}
         </option>
       </AppFormSelect>
       <AppFormValidation
         :errors="errors"
-        name="country_id"/>
+        name="country_id"
+      />
     </AppShopDetailsGroupInline>
 
     <AppFormDivider large/>
@@ -54,12 +64,14 @@
       :title="$t('forms.labels.description_short')"
       :language="$t('languages.french')"
       :description="$t('shop_creator.steps.details.description_short_description')"
-      class="my-72">
+      class="my-72"
+    >
       <AppFormInput
         v-model="localShortDescriptionFr"
         :disabled="shopExistsAndNotEditable"
         :errors="errors"
-        name="description_short"/>
+        name="description_short"
+      />
     </AppShopDetailsGroup>
 
     <!-- Long description FR -->
@@ -67,12 +79,14 @@
       :title="$t('forms.labels.description_long')"
       :language="$t('languages.french')"
       :description="$t('shop_creator.steps.details.description_long_description')"
-      class="my-72">
+      class="my-72"
+    >
       <AppFormTextarea
         v-model="localLongDescriptionFr"
         :disabled="shopExistsAndNotEditable"
         :errors="errors"
-        name="description_long"/>
+        name="description_long"
+      />
     </AppShopDetailsGroup>
 
     <AppFormDivider large/>
@@ -82,12 +96,14 @@
       :title="$t('forms.labels.description_short')"
       :language="$t('languages.english')"
       :description="$t('shop_creator.steps.details.description_short_description')"
-      class="my-72">
+      class="my-72"
+    >
       <AppFormInput
         v-model="localShortDescriptionEn"
         :disabled="shopExistsAndNotEditable"
         :errors="errors"
-        name="description_short"/>
+        name="description_short"
+      />
     </AppShopDetailsGroup>
 
     <!-- Long description EN -->
@@ -95,12 +111,14 @@
       :title="$t('forms.labels.description_long')"
       :language="$t('languages.english')"
       :description="$t('shop_creator.steps.details.description_long_description')"
-      class="my-72">
+      class="my-72"
+    >
       <AppFormTextarea
         v-model="localLongDescriptionEn"
         :disabled="shopExistsAndNotEditable"
         :errors="errors"
-        name="description_long"/>
+        name="description_long"
+      />
     </AppShopDetailsGroup>
 
     <AppFormDivider large/>
@@ -110,12 +128,14 @@
       :title="$t('forms.labels.description_short')"
       :language="$t('languages.german')"
       :description="$t('shop_creator.steps.details.description_short_description')"
-      class="my-72">
+      class="my-72"
+    >
       <AppFormInput
         v-model="localShortDescriptionDe"
         :disabled="shopExistsAndNotEditable"
         :errors="errors"
-        name="description_short"/>
+        name="description_short"
+      />
     </AppShopDetailsGroup>
 
     <!-- Long description DE -->
@@ -123,12 +143,14 @@
       :title="$t('forms.labels.description_long')"
       :language="$t('languages.german')"
       :description="$t('shop_creator.steps.details.description_long_description')"
-      class="my-72">
+      class="my-72"
+    >
       <AppFormTextarea
         v-model="localLongDescriptionDe"
         :disabled="shopExistsAndNotEditable"
         :errors="errors"
-        name="description_long"/>
+        name="description_long"
+      />
     </AppShopDetailsGroup>
 
     <AppFormDivider large/>
@@ -138,12 +160,14 @@
       :title="$t('forms.labels.description_short')"
       :language="$t('languages.italian')"
       :description="$t('shop_creator.steps.details.description_short_description')"
-      class="my-72">
+      class="my-72"
+    >
       <AppFormInput
         v-model="localShortDescriptionIt"
         :disabled="shopExistsAndNotEditable"
         :errors="errors"
-        name="description_short"/>
+        name="description_short"
+      />
     </AppShopDetailsGroup>
 
     <!-- Long description IT -->
@@ -151,12 +175,14 @@
       :title="$t('forms.labels.description_long')"
       :language="$t('languages.italian')"
       :description="$t('shop_creator.steps.details.description_long_description')"
-      class="my-72">
+      class="my-72"
+    >
       <AppFormTextarea
         v-model="localLongDescriptionIt"
         :disabled="shopExistsAndNotEditable"
         :errors="errors"
-        name="description_long"/>
+        name="description_long"
+      />
     </AppShopDetailsGroup>
 
   </section>

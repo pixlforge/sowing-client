@@ -5,13 +5,15 @@
       :disabled="shopExists && !editable"
       :placeholder="$t('shop_creator.steps.name.placeholder')"
       name="name"
-      class="sm:rounded-r-none"/>
+      class="sm:rounded-r-none"
+    />
 
     <AppButtonPrimary
       :disabled="(shopExists || !shopName) && !editable"
       icon="rocket"
       class="w-full h-46 sm:w-auto sm:rounded-l-none"
-      @click.native="check">
+      @click.native="check"
+    >
       {{ $t("buttons.check_availability") }}
     </AppButtonPrimary>
   </section>

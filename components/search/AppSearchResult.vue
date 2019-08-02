@@ -4,14 +4,16 @@
     :api-key="api.key"
     :query="query"
     :index-name="indexName"
-    class="search__index">
+    class="search__index"
+  >
     <ais-stats class="search__ais-stats">
       <template slot-scope="{ totalResults }">
 
         <!-- Index titles -->
         <AppTitle
           semantic="h3"
-          visual="h3">
+          visual="h3"
+        >
           <template v-if="indexName === 'products'">
             {{ $t("pages.search.products") }}
           </template>
@@ -45,11 +47,13 @@
     <!-- Results -->
     <ais-results
       :results-per-page="5"
-      class="search__ais-results">
+      class="search__ais-results"
+    >
       <component
         :is="indexName"
         slot-scope="{ result }"
-        :result="result"/>
+        :result="result"
+      />
     </ais-results>
 
     <!-- Pagination -->

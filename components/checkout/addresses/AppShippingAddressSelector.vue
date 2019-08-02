@@ -9,7 +9,8 @@
           'border-transparent': address.id != selectedAddress.id
         }"
         class="text-14 border-l-4 hover:border-green-500 cursor-pointer pl-0 -ml-10"
-        @click.prevent="selectAddress(address)">
+        @click.prevent="selectAddress(address)"
+      >
         <ul class="text-14 leading-relaxed pl-10 mt-20">
           <li>
             {{ address.first_name }} {{ address.last_name }}
@@ -37,7 +38,8 @@
     <AppButtonPrimary
       icon="plus"
       class="w-full mt-20"
-      @click.native="openCreator">
+      @click.native="openCreator"
+    >
       {{ $t("pages.checkout.new_address") }}
     </AppButtonPrimary>
   </div>

@@ -6,24 +6,28 @@
       <template v-if="success">
         <font-awesome-icon
           :icon="['far', 'check-circle']"
-          class="text-72 text-green-500"/>
+          class="text-72 text-green-500"
+        />
       </template>
       <template v-else-if="error">
         <font-awesome-icon
           :icon="['far', 'exclamation-triangle']"
-          class="text-72 text-red-500"/>
+          class="text-72 text-red-500"
+        />
       </template>
       <template v-else>
         <font-awesome-icon
           :icon="['far', 'comment-alt-smile']"
-          class="text-72 text-blue-500"/>
+          class="text-72 text-blue-500"
+        />
       </template>
     </div>
 
     <!-- Title -->
     <AppTitle
       semantic="h2"
-      visual="main">
+      visual="main"
+    >
       <slot name="title">
         {{ title }}
       </slot>

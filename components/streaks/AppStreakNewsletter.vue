@@ -6,14 +6,16 @@
         <img
           src="~assets/img/newsletter.svg"
           alt="Illustration representing a newsletter"
-          class="block w-4/5">
+          class="block w-4/5"
+        >
       </div>
 
       <div class="w-full lg:w-1/2 xl:w-2/3 py-132">
         <AppTitle
           semantic="h1"
           visual="main"
-          utilities="text-white lg:text-left">
+          utilities="text-white lg:text-left"
+        >
           {{ $t("streaks.newsletter.title") }}
         </AppTitle>
 
@@ -23,7 +25,8 @@
 
         <form
           class="relative"
-          @submit.prevent="subscribe">
+          @submit.prevent="subscribe"
+        >
 
           <div class="flex flex-col md:flex-row justify-center lg:justify-start mt-48">
             <AppFormInput
@@ -33,19 +36,22 @@
               name="email"
               type="email"
               class="md:max-w-400 md:rounded-r-none shadow-2xl"
-              required/>
+              required
+            />
 
             <AppButtonPrimary
               icon="paper-plane"
               type="submit"
-              class="md:rounded-l-none shadow-2xl mt-20 md:mt-0">
+              class="md:rounded-l-none shadow-2xl mt-20 md:mt-0"
+            >
               {{ $t("buttons.subscribe") }}
             </AppButtonPrimary>
           </div>
 
           <p
             v-if="errors.email"
-            class="absolute w-full text-12 text-white text-center lg:text-left mt-5">
+            class="absolute w-full text-12 text-white text-center lg:text-left mt-5"
+          >
             {{ errors.email[0] }}
           </p>
         </form>

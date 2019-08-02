@@ -13,24 +13,28 @@
     <!-- Shop cover image -->
     <AppShopCover
       v-if="shopCover"
-      :shop-cover="shopCover"/>
+      :shop-cover="shopCover"
+    />
 
     <!-- Header -->
     <AppHeader
       v-if="shopExists"
       :class="bgTheme"
       :title="shopName"
-      :description="shop.description_short[locale]">
+      :description="shop.description_short[locale]"
+    >
       <AppHeaderList>
         <li>
           <font-awesome-icon
             :icon="['far', 'map-marker-alt']"
-            class="mr-5"/>
+            class="mr-5"
+          />
           {{ shop.postal_code }} {{ shop.city }}
         </li>
         <li
           v-if="shop.country"
-          class="ml-20">
+          class="ml-20"
+        >
           {{ shop.country.name[locale] }}
         </li>
       </AppHeaderList>
@@ -51,13 +55,16 @@
               <AppSideMenu>
                 <AppSideMenuItem
                   label="Tableau de bord"
-                  route="shop-management-dashboard"/>
+                  route="shop-management-dashboard"
+                />
                 <AppSideMenuItem
                   label="Détails"
-                  route="shop-management-details"/>
+                  route="shop-management-details"
+                />
                 <AppSideMenuItem
                   label="Thème"
-                  route="shop-management-theme"/>
+                  route="shop-management-theme"
+                />
               </AppSideMenu>
             </aside>
 
@@ -74,14 +81,16 @@
         <AppContentSection class="max-w-800">
           <AppSplash
             :title="$t('pages.shop.not_created_yet')"
-            class="max-w-800">
+            class="max-w-800"
+          >
             <template slot="subtitle">
               {{ $t("pages.shop.creation_cta_line_1") }}
             </template>
             <template slot="illustration">
               <img
                 src="~assets/img/under_construction.svg"
-                alt="Illustration of a building under construction">
+                alt="Illustration of a building under construction"
+              >
             </template>
           </AppSplash>
 
@@ -89,7 +98,8 @@
           <AppButtonLinkPrimary
             :to="localePath({ name: 'shop-creator-terms' })"
             icon="rocket"
-            size="large">
+            size="large"
+          >
             {{ $t("buttons.create_my_shop") }}
           </AppButtonLinkPrimary>
         </AppContentSection>

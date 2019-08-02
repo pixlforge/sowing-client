@@ -13,12 +13,14 @@
         'bg-white': theme === 'light'
       }"
       class="block w-full appearance-none rounded-lg text-16 leading-tight outline-none border border-transparent px-16 py-12"
-      @change="$emit('input', $event.target.value)">
+      @change="$emit('input', $event.target.value)"
+    >
       <option
         v-if="!value"
         value=""
         selected
-        disabled>
+        disabled
+      >
         {{ $t("forms.select") }}
       </option>
       <slot/>
@@ -29,7 +31,8 @@
         'text-gray-200': disabled,
         'text-gray-900': !disabled
       }"
-      class="absolute h-full inset-y-0 right-0 text-16 mr-20"/>
+      class="absolute h-full inset-y-0 right-0 text-16 mr-20"
+    />
   </div>
 </template>
 

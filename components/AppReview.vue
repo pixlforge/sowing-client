@@ -5,20 +5,23 @@
         <img
           :src="`img/reviews/avatars/${review.avatar}`"
           :alt="review.name"
-          class="block rounded-full">
+          class="block rounded-full"
+        >
       </div>
       <div class="flex justify-center">
         <font-awesome-icon
           v-for="(star, index) in review.stars"
           :key="index"
           :icon="['fas', 'star']"
-          class="text-16 text-orange-400 mt-10"/>
+          class="text-16 text-orange-400 mt-10"
+        />
       </div>
     </div>
     <div class="text-center md:text-left px-20 sm:px-48 mt-48 md:mt-0">
       <AppTitle
         semantic="h5"
-        visual="h4">
+        visual="h4"
+      >
         {{ review.name }}
       </AppTitle>
       <p class="text-16 leading-loose mt-20">
