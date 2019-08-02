@@ -3,7 +3,17 @@
     :disabled="disabled"
     :type="type"
     :title="title"
-    :class="classes"
+    :class="[
+      disabled
+        ? 'bg-white text-gray-200 border-gray-200 cursor-not-allowed shadow-none'
+        : `bg-${color}-500 hover:bg-${color}-700`,
+      {
+        'text-12 font-bold px-30 py-12': size === 'normal',
+        'text-16 font-black px-48 py-20': size === 'large',
+        'text-10 font-extrabold px-10 py-5': size === 'mini',
+        'bg-pink-600 hover:bg-pink-700': color && color === 'pink-dark'
+      }
+    ]"
     class="block outline-none focus:shadow-outline rounded-lg border border-transparent text-white text-center uppercase transition no-underline whitespace-no-wrap"
   >
     <font-awesome-icon
@@ -47,37 +57,6 @@ export default {
       type: String,
       required: false,
       default: 'normal'
-    }
-  },
-  computed: {
-    classes() {
-      return this.buttonColors + ' ' + this.buttonSize
-    },
-    buttonColors() {
-      if (this.disabled) {
-        return 'bg-white text-gray-200 border-gray-200 cursor-not-allowed shadow-none'
-      }
-
-      let classes = `bg-${this.color}-500 hover:bg-${this.color}-700`
-
-      if (this.color === 'pink-dark') {
-        classes = 'bg-pink-600 hover:bg-pink-700'
-      }
-
-      return classes
-    },
-    buttonSize() {
-      let classes = 'text-12 font-extrabold px-30 py-12'
-
-      if (this.size === 'large') {
-        classes = 'text-16 font-black px-48 py-20'
-      }
-
-      if (this.size === 'mini') {
-        classes = 'text-10 font-extrabold px-10 py-5'
-      }
-
-      return classes
     }
   }
 }

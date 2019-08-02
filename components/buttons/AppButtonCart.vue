@@ -1,7 +1,7 @@
 <template>
   <nuxt-link
     :to="localePath({ name: 'cart' })"
-    :class="classes"
+    :class="`bg-${shopTheme}-500 hover:bg-${shopTheme}-700`"
     class="block relative w-40 h-40 outline-none focus:shadow-outline rounded-full transition text-white flex justify-center items-center"
   >
     <font-awesome-icon
@@ -23,10 +23,7 @@ export default {
   computed: {
     ...mapGetters({
       count: 'cart/count'
-    }),
-    classes() {
-      return `bg-${this.shopTheme}-500 hover:bg-${this.shopTheme}-600`
-    }
+    })
   }
 }
 </script>
