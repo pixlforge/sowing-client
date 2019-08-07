@@ -4,9 +4,7 @@
     :type="type"
     :title="title"
     :class="[
-      disabled
-        ? 'bg-white text-gray-200 border-gray-200 cursor-not-allowed shadow-none'
-        : `bg-${color}-500 hover:bg-${color}-700`,
+      `bg-${color}-500 hover:bg-${color}-700`,
       {
         'text-12 font-bold px-30 py-12': size === 'normal',
         'text-16 font-black px-48 py-20': size === 'large',
@@ -14,7 +12,7 @@
         'bg-pink-600 hover:bg-pink-700': color === 'pink-dark'
       }
     ]"
-    class="block outline-none focus:shadow-outline rounded-lg border border-transparent text-white text-center uppercase transition no-underline whitespace-no-wrap"
+    class="block disabled:bg-white outline-none focus:shadow-outline disabled:shadow-none rounded-lg border border-transparent disabled:border-gray-200 text-white disabled:text-gray-200 text-center uppercase transition no-underline whitespace-no-wrap disabled:cursor-not-allowed"
   >
     <font-awesome-icon
       v-if="icon"

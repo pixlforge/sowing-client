@@ -1,3 +1,4 @@
+// See default config https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
 module.exports = {
   theme: {
     colors: {
@@ -250,22 +251,23 @@ module.exports = {
     }
   },
   variants: {
+    accessibility: [],
     alignContent: ['responsive'],
     alignItems: ['responsive'],
     alignSelf: ['responsive'],
     appearance: [],
     backgroundAttachment: ['responsive'],
-    backgroundColor: ['responsive', 'hover', 'focus', 'group-hover'],
+    backgroundColor: ['responsive', 'hover', 'focus', 'group-hover', 'disabled'],
     backgroundPosition: ['responsive'],
     backgroundRepeat: ['responsive'],
     backgroundSize: ['responsive'],
     borderCollapse: [],
-    borderColor: ['responsive', 'hover', 'focus'],
+    borderColor: ['responsive', 'hover', 'focus', 'disabled'],
     borderRadius: ['responsive'],
     borderStyle: ['responsive'],
     borderWidth: ['responsive'],
-    boxShadow: ['responsive', 'hover', 'focus'],
-    cursor: [],
+    boxShadow: ['responsive', 'hover', 'focus', 'disabled'],
+    cursor: ['disabled'],
     display: ['responsive'],
     fill: [],
     flex: ['responsive'],
@@ -288,15 +290,16 @@ module.exports = {
     minHeight: ['responsive'],
     minWidth: ['responsive'],
     negativeMargin: ['responsive'],
-    opacity: ['responsive'],
+    opacity: [],
     outline: ['focus'],
     overflow: ['responsive'],
     padding: ['responsive', 'first', 'last'],
+    placeholderColor: [],
     position: ['responsive'],
     resize: [],
     stroke: [],
     textAlign: ['responsive'],
-    textColor: ['responsive', 'hover', 'focus', 'group-hover'],
+    textColor: ['responsive', 'hover', 'focus', 'group-hover', 'disabled'],
     textDecoration: ['responsive', 'hover'],
     textTransform: ['responsive', 'hover'],
     userSelect: [],
@@ -314,19 +317,5 @@ module.exports = {
     verticalAlign: false,
     visibility: false
   },
-  plugins: [
-    function ({ addVariant, e }) {
-      addVariant('first', ({ modifySelectors, separator }) => {
-        modifySelectors(({ className }) => {
-          return `.${e(`first${separator}${className}`)}:first-child`
-        })
-      })
-
-      addVariant('last', ({ modifySelectors, separator }) => {
-        modifySelectors(({ className }) => {
-          return `.${e(`last${separator}${className}`)}:last-child`
-        })
-      })
-    }
-  ]
+  plugins: []
 }

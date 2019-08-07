@@ -10,12 +10,10 @@
     :aria-label="ariaLabel"
     :class="{
       'border-red-500': errors[name],
-      'bg-white text-gray-200 border-gray-200 cursor-not-allowed': disabled,
-      'text-gray-900 border-transparent': !disabled,
-      'bg-gray-100': theme !== 'light' && !disabled,
+      'bg-gray-100': theme !== 'light',
       'bg-white': theme === 'light'
     }"
-    class="block w-full appearance-none rounded-lg text-16 leading-tight outline-none focus:shadow-outline border px-16 py-12"
+    class="block w-full appearance-none disabled:bg-white rounded-lg text-16 leading-tight text-gray-900 disabled:text-gray-200 placeholder-gray-200 outline-none focus:shadow-outline border border-transparent disabled:border-gray-200 disabled:cursor-not-allowed px-16 py-12"
     @input="$emit('input', $event.target.value)"
   >
 </template>

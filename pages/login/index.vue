@@ -22,6 +22,7 @@
             :errors="errors"
             name="email"
             type="email"
+            placeholder="elon@musk.ch"
             required
           />
           <AppFormValidation
@@ -39,6 +40,7 @@
             v-model="form.password"
             name="password"
             type="password"
+            placeholder="••••••••"
             required
           />
         </AppFormGroup>
