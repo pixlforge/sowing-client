@@ -44,7 +44,7 @@
       </AppButtonLinkPrimary>
 
       <!-- Menu -->
-      <AppButtonMenu
+      <AppMenu
         v-if="loggedIn"
         class="ml-10 lg:ml-20"
       />
@@ -64,8 +64,8 @@
 
 <script>
 import AppLogo from '@/components/AppLogo'
+import AppMenu from '@/components/menus/AppMenu'
 import AppButtonCart from '@/components/buttons/AppButtonCart'
-import AppButtonMenu from '@/components/buttons/AppButtonMenu'
 import AppButtonSearch from '@/components/buttons/AppButtonSearch'
 import AppButtonLanguages from '@/components/buttons/AppButtonLanguages'
 import AppButtonLinkPrimary from '@/components/buttons/AppButtonLinkPrimary'
@@ -74,8 +74,8 @@ import AppButtonLinkSecondary from '@/components/buttons/AppButtonLinkSecondary'
 export default {
   components: {
     AppLogo,
+    AppMenu,
     AppButtonCart,
-    AppButtonMenu,
     AppButtonSearch,
     AppButtonLanguages,
     AppButtonLinkPrimary,

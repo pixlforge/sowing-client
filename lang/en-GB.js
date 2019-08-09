@@ -197,6 +197,9 @@ export default {
    * Pages
    */
   pages: {
+    account: {
+      title: 'My account'
+    },
     cart: {
       title: 'My cart',
       checkout: 'Proceed to checkout',

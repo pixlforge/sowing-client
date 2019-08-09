@@ -15,6 +15,14 @@
     <DropdownTransition>
       <AppDropdownContainer v-if="dropdownIsOpen">
 
+        <!-- Account -->
+        <AppDropdownItem
+          :to="localePath({ name: 'account' })"
+          icon="user"
+        >
+          {{ $t("pages.account.title") }}
+        </AppDropdownItem>
+
         <!-- Orders -->
         <AppDropdownItem
           :to="localePath({ name: 'orders' })"

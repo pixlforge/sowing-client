@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import { interopDefault } from './utils'
 
+const _7338a832 = () => interopDefault(import('../pages/account/index.vue' /* webpackChunkName: "pages/account/index" */))
 const _202ee15e = () => interopDefault(import('../pages/cart/index.vue' /* webpackChunkName: "pages/cart/index" */))
 const _61cceef7 = () => interopDefault(import('../pages/checkout/index.vue' /* webpackChunkName: "pages/checkout/index" */))
 const _c8b0dcee = () => interopDefault(import('../pages/coming-soon.vue' /* webpackChunkName: "pages/coming-soon" */))
@@ -104,6 +105,26 @@ export function createRouter() {
     scrollBehavior,
 
     routes: [{
+      path: "/en/account",
+      component: _7338a832,
+      name: "account___en"
+    }, {
+      path: "/account",
+      component: _7338a832,
+      name: "account___fr___default"
+    }, {
+      path: "/fr/account",
+      component: _7338a832,
+      name: "account___fr"
+    }, {
+      path: "/de/account",
+      component: _7338a832,
+      name: "account___de"
+    }, {
+      path: "/it/account",
+      component: _7338a832,
+      name: "account___it"
+    }, {
       path: "/en/cart",
       component: _202ee15e,
       name: "cart___en"
