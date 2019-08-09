@@ -16,19 +16,12 @@
       <!-- Controls -->
       <div class="flex flex-col items-center">
         <div class="text-18 text-center leading-normal mb-36 md:mb-72">
-          <label
-            for="terms"
-            class="select-none"
+          <AppFormCheckbox
+            v-model="localTerms"
+            name="terms"
           >
-            <input
-              id="terms"
-              v-model="localTerms"
-              type="checkbox"
-              name="terms"
-              class="mr-10"
-            >
             {{ $t("pages.terms.approve") }}
-          </label>
+          </AppFormCheckbox>
           <small class="block text-gray-300">
             {{ $t("pages.terms.must_approve") }}
           </small>
@@ -54,6 +47,7 @@ import { mapGetters, mapActions } from 'vuex'
 import AppTerms from '@/components/terms/AppTerms'
 import AppHeader from '@/components/headers/AppHeader'
 import AppContentSection from '@/components/AppContentSection'
+import AppFormCheckbox from '@/components/forms/AppFormCheckbox'
 import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 
 export default {
@@ -79,6 +73,7 @@ export default {
     AppTerms,
     AppHeader,
     AppContentSection,
+    AppFormCheckbox,
     AppButtonPrimary
   },
   computed: {

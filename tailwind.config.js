@@ -317,5 +317,7 @@ module.exports = {
     verticalAlign: false,
     visibility: false
   },
-  plugins: []
+  plugins: [
+    require('@tailwindcss/custom-forms')
+  ]
 }

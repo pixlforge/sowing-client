@@ -81,24 +81,22 @@
 
         <!-- Terms -->
         <AppFormGroup>
-          <label for="terms">
-            <input
-              id="terms"
-              v-model="terms"
-              type="checkbox"
-              name="terms"
-              class="text-20 mr-10"
-            >
-            <span class="text-14 text-gray-300 select-none cursor-pointer">
-              {{ $t("pages.register.terms") }}
-            </span>
-            <nuxt-link
-              :to="localePath({ name: 'index' })"
-              class="text-14 text-green-500 no-underline hover:underline select-none"
-            >
-              {{ $t("pages.register.links.terms") }}
-            </nuxt-link>
-          </label>
+          <AppFormCheckbox
+            v-model="terms"
+            name="terms"
+          >
+            <div class="flex flex-wrap">
+              <span class="text-14 text-gray-300 select-none cursor-pointer mr-5">
+                {{ $t("pages.register.terms") }}
+              </span>
+              <nuxt-link
+                :to="localePath({ name: 'index' })"
+                class="text-14 text-green-500 no-underline hover:underline select-none"
+              >
+                {{ $t("pages.register.links.terms") }}
+              </nuxt-link>
+            </div>
+          </AppFormCheckbox>
         </AppFormGroup>
 
         <!-- Submit -->
@@ -123,6 +121,7 @@ import AppFormGroup from '@/components/forms/AppFormGroup'
 import AppFormLabel from '@/components/forms/AppFormLabel'
 import AppFormInput from '@/components/forms/AppFormInput'
 import AppContentSection from '@/components/AppContentSection'
+import AppFormCheckbox from '@/components/forms/AppFormCheckbox'
 import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 import AppFormValidation from '@/components/forms/AppFormValidation'
 
@@ -151,6 +150,7 @@ export default {
     AppFormLabel,
     AppFormInput,
     AppContentSection,
+    AppFormCheckbox,
     AppButtonPrimary,
     AppFormValidation
   },
