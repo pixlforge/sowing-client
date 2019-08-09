@@ -28,7 +28,7 @@
             <a
               :href="stripeConnectOAuthUrl"
               :class="btnTheme"
-              class="inline-block outline-none focus:shadow-outline rounded-lg text-white font-bold text-center uppercase transition no-underline whitespace-no-wrap text-16 font-black px-48 py-20"
+              class="inline-block outline-none focus:shadow-outline rounded-lg text-white font-bold text-center uppercase transition-color transition-faster no-underline whitespace-no-wrap text-16 font-black px-48 py-20"
             >
               <font-awesome-icon
                 :icon="['fab', 'cc-stripe']"

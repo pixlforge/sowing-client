@@ -4,7 +4,7 @@
     <!-- Button -->
     <button
       v-if="!showing"
-      class="bg-gray-200 hover:bg-green-500 transition text-white w-80 h-80 rounded-full p-0"
+      class="bg-gray-200 hover:bg-green-500 transition-color transition-faster text-white w-80 h-80 rounded-full p-0"
       @click.prevent="showing = true"
     >
       <font-awesome-icon

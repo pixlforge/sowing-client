@@ -1,0 +1,100 @@
+@variants responsive {
+  .origin {
+    &-center {
+      transform-origin: center;
+    }
+    &-top {
+      transform-origin: top;
+      &-right {
+        transform-origin: top right;
+      }
+      &-left {
+        transform-origin: top left;
+      }
+    }
+    &-right {
+      transform-origin: right;
+    }
+    &-bottom {
+      transform-origin: bottom;
+      &-right {
+        transform-origin: bottom right;
+      }
+      &-left {
+        transform-origin: bottom left;
+      }
+    }
+    &-left {
+      transform-origin: left;
+    }
+  }
+
+  .transition {
+    &-color {
+      transition-property: color, background-color;
+    }
+    &-opacity {
+      transition-property: opacity;
+    }
+    &-shadow {
+      transition-property: box-shadow;
+    }
+    &-transform {
+      transition-property: transform;
+    }
+    &-all {
+      transition-property: all;
+    }
+    &-fastest {
+      transition-duration: 50ms;
+    }
+    &-faster {
+      transition-duration: 100ms;
+    }
+    &-fast {
+      transition-duration: 150ms;
+    }
+    &-medium {
+      transition-duration: 200ms;
+    }
+    &-slow {
+      transition-duration: 250ms;
+    }
+    &-slower {
+      transition-duration: 300ms;
+    }
+    &-slowest {
+      transition-duration: 400ms;
+    }
+  }
+
+  .ease {
+    &-in {
+      transition-timing-function: cubic-bezier(.55, .085, .68, .53);
+    }
+    &-out {
+      transition-timing-function: cubic-bezier(.25, .46, .45, .94);
+    }
+    &-in-out {
+      transition-timing-function: cubic-bezier(.455, .03, .515, .955);
+    }
+  }
+
+  .scale {
+    &-0 {
+      transform: scale(0);
+    }
+    &-25 {
+      transform: scale(.25);
+    }
+    &-50 {
+      transform: scale(.5);
+    }
+    &-75 {
+      transform: scale(.75);
+    }
+    &-100 {
+      transform: scale(1);
+    }
+  }
+}

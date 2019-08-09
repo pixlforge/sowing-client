@@ -1,5 +1,5 @@
 <template>
-  <div class="relative bg-white rounded-lg shadow-xl hover:shadow-2xl transition flex items-center p-30 my-48">
+  <div class="relative bg-white rounded-lg shadow-xl hover:shadow-2xl transition-shadow transition-fast flex items-center p-30 my-48">
 
     <!-- Product featured image -->
     <div class="w-1/5">

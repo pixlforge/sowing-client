@@ -2,7 +2,7 @@
   <nuxt-link
     :to="to"
     :class="`bg-${color}-600 hover:bg-${color}-700`"
-    class="inline-block outline-none rounded-lg text-12 font-extrabold text-center uppercase text-white transition no-underline whitespace-no-wrap px-30 py-12"
+    class="inline-block outline-none rounded-lg text-12 font-extrabold text-center uppercase text-white transition-color transition-faster no-underline whitespace-no-wrap px-30 py-12"
   >
     <slot/>
   </nuxt-link>

@@ -4,7 +4,7 @@
       ref="dropdownMenu"
       :title="$t('aria.buttons.languages')"
       :aria-label="$t('aria.buttons.languages')"
-      class="outline-none focus:shadow-outline rounded-lg border border-gray-200 text-12 text-gray-500 font-bold text-center uppercase transition no-underline whitespace-no-wrap flex px-20 py-12"
+      class="outline-none focus:shadow-outline rounded-lg border border-gray-200 text-12 text-gray-500 font-bold text-center uppercase no-underline whitespace-no-wrap flex px-20 py-12"
       @click.prevent="toggleDropdown"
     >
       <div :class="textTheme">
@@ -19,21 +19,20 @@
       />
     </button>
 
-    <ul
-      :class="{
-        'block': dropdownIsOpen,
-        'hidden': !dropdownIsOpen
-      }"
-      class="absolute bg-white shadow-2xl rounded-lg text-left top-0 left-0 px-30 py-20 mt-48 z-20"
-    >
-      <AppDropdownItem
-        v-for="locale in $i18n.locales"
-        :key="locale.code"
-        :to="switchLocalePath(locale.code)"
+    <DropdownTransition>
+      <ul
+        v-if="dropdownIsOpen"
+        class="origin-top-left absolute bg-white shadow-2xl rounded-lg text-left top-0 left-0 px-30 py-20 mt-48 z-20"
       >
-        {{ locale.name }}
-      </AppDropdownItem>
-    </ul>
+        <AppDropdownItem
+          v-for="locale in $i18n.locales"
+          :key="locale.code"
+          :to="switchLocalePath(locale.code)"
+        >
+          {{ locale.name }}
+        </AppDropdownItem>
+      </ul>
+    </DropdownTransition>
   </div>
 </template>
 
@@ -41,10 +40,12 @@
 import theming from '@/mixins/theming'
 
 import AppDropdownItem from '@/components/dropdowns/AppDropdownItem'
+import DropdownTransition from '@/components/transitions/DropdownTransition'
 
 export default {
   components: {
-    AppDropdownItem
+    AppDropdownItem,
+    DropdownTransition
   },
   mixins: [theming],
   data() {

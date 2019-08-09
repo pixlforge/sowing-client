@@ -10,7 +10,7 @@
         'bg-pink-600 hover:bg-pink-700': color === 'pink-dark'
       }
     ]"
-    class="block outline-none focus:shadow-outline rounded-lg text-white font-bold text-center uppercase transition no-underline whitespace-no-wrap"
+    class="block outline-none focus:shadow-outline rounded-lg text-white font-bold text-center uppercase transition-color transition-faster no-underline whitespace-no-wrap"
   >
     <font-awesome-icon
       v-if="icon"
