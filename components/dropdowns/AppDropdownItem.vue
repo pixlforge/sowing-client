@@ -2,8 +2,13 @@
   <li>
     <nuxt-link
       :to="to"
-      :class="classes"
-      class="block text-14 md:text-12 text-gray-400 hover:text-green-400 font-bold leading-normal uppercase no-underline whitespace-no-wrap text-gray-500 transition-color transition-faster py-5 cursor-pointer"
+      :class="[
+        `text-${color}-500 hover:text-${shopTheme}-500`,
+        {
+          'text-pink-600': color === 'pink-dark'
+        }
+      ]"
+      class="block text-14 md:text-12 font-bold leading-normal uppercase no-underline whitespace-no-wrap transition-color transition-faster py-5 cursor-pointer"
     >
       <font-awesome-icon
         v-if="icon"
@@ -16,6 +21,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   props: {
     to: {
@@ -35,15 +42,9 @@ export default {
     }
   },
   computed: {
-    classes() {
-      let classes = `text-${this.color}-400`
-
-      if (this.color === 'pink') {
-        classes = `text-${this.color}-600`
-      }
-
-      return classes
-    }
+    ...mapGetters({
+      shopTheme: 'shop/shopTheme'
+    })
   }
 }
 </script>

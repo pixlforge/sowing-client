@@ -51,7 +51,7 @@
 
         <!-- Logout -->
         <AppDropdownItem
-          color="pink"
+          color="red"
           icon="sign-out"
           @click.native="logout"
         >
