@@ -1,21 +1,33 @@
 <template>
-  <nav class="container flex justify-between items-center px-20 py-30">
+  <nav class="container flex flex-col md:flex-row items-center px-20 py-30">
 
-    <!-- Logo -->
-    <nuxt-link :to="localePath({ name: 'index' })">
-      <AppLogo class="w-48"/>
-    </nuxt-link>
+    <div class="w-full flex justify-between items-center">
 
-    <div class="flex -mx-10">
+      <!-- Logo -->
+      <nuxt-link :to="localePath({ name: 'index' })">
+        <AppLogo class="w-48"/>
+      </nuxt-link>
+
+      <div class="flex md:hidden">
+
+        <!-- Search page link -->
+        <AppButtonSearch/>
+
+        <!-- Cart page link -->
+        <AppButtonCart class="ml-10"/>
+      </div>
+    </div>
+
+    <div class="w-full md:flex-1 flex justify-between md:justify-end mt-36 md:mt-0">
 
       <!-- Languages -->
-      <AppButtonLanguages class="mx-10"/>
+      <AppButtonLanguages/>
 
       <!-- Login -->
       <AppButtonLinkSecondary
         v-if="!loggedIn"
         :to="localePath({ name: 'login' })"
-        class="mx-10"
+        class="ml-10 lg:ml-20"
       >
         {{ $t("buttons.login") }}
       </AppButtonLinkSecondary>
@@ -26,7 +38,7 @@
         :to="localePath({ name: 'register' })"
         icon="rocket"
         color="pink-dark"
-        class="mx-10"
+        class="hidden md:block ml-10 lg:ml-20"
       >
         {{ $t("buttons.register") }}
       </AppButtonLinkPrimary>
@@ -34,14 +46,17 @@
       <!-- Menu -->
       <AppButtonMenu
         v-if="loggedIn"
-        class="mx-10"
+        class="ml-10 lg:ml-20"
       />
 
-      <!-- Search page link -->
-      <AppButtonSearch class="mx-10"/>
+      <div class="hidden md:flex">
 
-      <!-- Cart page link -->
-      <AppButtonCart class="mx-10"/>
+        <!-- Search page link -->
+        <AppButtonSearch class="ml-10 lg:ml-20"/>
+
+        <!-- Cart page link -->
+        <AppButtonCart class="ml-10 lg:ml-20"/>
+      </div>
     </div>
 
   </nav>

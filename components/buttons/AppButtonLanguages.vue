@@ -1,5 +1,5 @@
 <template>
-  <div class="relative">
+  <div class="md:relative">
     <button
       ref="dropdownMenu"
       :title="$t('aria.buttons.languages')"
@@ -20,10 +20,7 @@
     </button>
 
     <DropdownTransition>
-      <ul
-        v-if="dropdownIsOpen"
-        class="origin-top-left absolute bg-white shadow-2xl rounded-lg text-left top-0 left-0 px-30 py-20 mt-48 z-20"
-      >
+      <AppDropdownContainer v-if="dropdownIsOpen">
         <AppDropdownItem
           v-for="locale in $i18n.locales"
           :key="locale.code"
@@ -31,7 +28,7 @@
         >
           {{ locale.name }}
         </AppDropdownItem>
-      </ul>
+      </AppDropdownContainer>
     </DropdownTransition>
   </div>
 </template>
@@ -41,11 +38,13 @@ import theming from '@/mixins/theming'
 
 import AppDropdownItem from '@/components/dropdowns/AppDropdownItem'
 import DropdownTransition from '@/components/transitions/DropdownTransition'
+import AppDropdownContainer from '@/components/dropdowns/AppDropdownContainer'
 
 export default {
   components: {
     AppDropdownItem,
-    DropdownTransition
+    DropdownTransition,
+    AppDropdownContainer
   },
   mixins: [theming],
   data() {

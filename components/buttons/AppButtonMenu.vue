@@ -1,5 +1,5 @@
 <template>
-  <div class="relative">
+  <div class="md:relative">
     <button
       ref="dropdownMenu"
       class="outline-none focus:shadow-outline rounded-lg border border-gray-200 text-12 text-gray-500 font-extrabold text-center uppercase no-underline whitespace-no-wrap flex px-30 py-12"
@@ -13,10 +13,7 @@
     </button>
 
     <DropdownTransition>
-      <ul
-        v-if="dropdownIsOpen"
-        class="origin-top-left absolute bg-white shadow-2xl rounded-lg text-left top-0 left-0 px-30 py-20 mt-48 z-20"
-      >
+      <AppDropdownContainer v-if="dropdownIsOpen">
 
         <!-- Orders -->
         <AppDropdownItem
@@ -60,7 +57,7 @@
         >
           {{ $t("components.navbar.user.logout") }}
         </AppDropdownItem>
-      </ul>
+      </AppDropdownContainer>
     </DropdownTransition>
   </div>
 </template>
@@ -72,13 +69,15 @@ import AppDropdownItem from '@/components/dropdowns/AppDropdownItem'
 import AppDropdownDivider from '@/components/dropdowns/AppDropdownDivider'
 import AppButtonLinkPrimary from '@/components/buttons/AppButtonLinkPrimary'
 import DropdownTransition from '@/components/transitions/DropdownTransition'
+import AppDropdownContainer from '@/components/dropdowns/AppDropdownContainer'
 
 export default {
   components: {
     AppDropdownItem,
     AppDropdownDivider,
     AppButtonLinkPrimary,
-    DropdownTransition
+    DropdownTransition,
+    AppDropdownContainer
   },
   data() {
     return {
