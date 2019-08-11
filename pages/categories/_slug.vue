@@ -25,7 +25,7 @@
             {{ section.name[locale] }}
           </AppTitle>
 
-          <div class="flex flex-wrap justify-center sm:-mx-36 mb-96 md:mb-132 lg:mb-196">
+          <div class="flex flex-wrap justify-center -mx-16 mb-96 md:mb-132 lg:mb-196">
 
             <!-- Subcategory -->
             <AppSubCategory

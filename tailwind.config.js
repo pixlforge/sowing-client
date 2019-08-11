@@ -222,7 +222,8 @@ module.exports = {
       '-5': '-.5rem',
       '-10': '-1rem',
       '-12': '-1.2rem',
-      '-14': '1.4rem',
+      '-14': '-1.4rem',
+      '-16': '-1.6rem',
       '-20': '-2rem',
       '-24': '-2.4rem',
       '-36': '-3.6rem'
@@ -267,7 +268,7 @@ module.exports = {
     borderRadius: ['responsive'],
     borderStyle: ['responsive'],
     borderWidth: ['responsive'],
-    boxShadow: ['responsive', 'hover', 'focus', 'disabled'],
+    boxShadow: ['responsive', 'hover', 'focus', 'group-hover', 'disabled'],
     cursor: ['disabled'],
     display: ['responsive'],
     fill: [],

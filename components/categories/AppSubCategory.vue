@@ -1,66 +1,52 @@
 <template>
-  <div class="w-full sm:w-1/2 xl:w-1/3 px-20 md:px-36 my-24 md:my-48">
-    <div class="rounded-lg shadow-2xl">
+  <nuxt-link
+    :to="localePath({
+      name: 'categories-category-subcategory-slug',
+      params: {
+        category: category.slug,
+        slug: subcategory.slug
+      }
+    })"
+    class="w-full sm:w-1/2 xl:w-1/3 group px-20 md:px-36 my-24 md:my-48"
+  >
 
-      <nuxt-link
-        :to="localePath({
-          name: 'categories-category-subcategory-slug',
-          params: {
-            category: category.slug,
-            slug: subcategory.slug
-          }
-        })"
-      >
-        <img
-          :alt="alt"
-          :src="imgSrc"
-          class="block w-full rounded-t-lg"
-        >
-      </nuxt-link>
+    <!-- Image -->
+    <img
+      :src="imgSrc"
+      :alt="imgAlt"
+      class="w-full h-250 sm:h-300 md:h-300 lg:h-350 object-cover rounded-lg shadow-md group-hover:shadow-lg transition-shadow transition-faster"
+    >
 
-      <div class="p-20">
+    <!-- Card content -->
+    <div class="relative px-20 sm:px-30 -mt-36">
+      <div class="bg-white outline-none focus:shadow-outline rounded-lg shadow-lg group-hover:shadow-xl transition-shadow transition-faster overflow-hidden px-20 sm:px-24 py-36">
 
         <!-- Title -->
         <AppTitle
           semantic="h2"
-          visual="h3"
+          visual="h4"
           utilities="text-center"
         >
           {{ subcategory.name[locale] }}
         </AppTitle>
 
         <!-- Description -->
-        <p class="text-16 text-center leading-relaxed my-30">
+        <p class="text-12 sm:text-14 text-center text-gray-500 leading-relaxed mt-30">
           {{ subcategory.description[locale] }}
         </p>
-
-        <!-- Subcategory link -->
-        <AppButtonLinkSecondary
-          :to="localePath({
-            name: 'categories-category-subcategory-slug',
-            params: {
-              category: category.slug,
-              slug: subcategory.slug
-            }
-          })"
-        >
-          {{ $t("components.category.link.see_all") }}
-        </AppButtonLinkSecondary>
       </div>
     </div>
-  </div>
+  </nuxt-link>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
 
 import AppTitle from '@/components/AppTitle'
-import AppButtonLinkSecondary from '@/components/buttons/AppButtonLinkSecondary'
 
 export default {
   components: {
-    AppTitle,
-    AppButtonLinkSecondary
+    AppTitle
   },
   props: {
     category: {
@@ -76,11 +62,11 @@ export default {
     ...mapGetters({
       locale: 'locale'
     }),
-    alt() {
-      return this.$t('components.category.img.alt')
-    },
     imgSrc() {
       return require('@/assets/img/placeholders/category.svg')
+    },
+    imgAlt() {
+      return this.$t('components.category.img.alt')
     }
   }
 }

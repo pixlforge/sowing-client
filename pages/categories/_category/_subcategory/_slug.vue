@@ -8,7 +8,7 @@
     />
 
     <AppContentSection>
-      <div class="flex flex-wrap justify-start -mx-20">
+      <div class="flex flex-wrap justify-center -mx-16">
 
         <!-- Products -->
         <AppProduct

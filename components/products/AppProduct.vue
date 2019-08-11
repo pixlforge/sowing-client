@@ -1,43 +1,45 @@
 <template>
   <nuxt-link
     :to="localePath({ name: 'products-slug', params: { slug: product.slug } })"
-    class="w-full md:w-1/2 lg:w-1/3 px-20 my-24"
+    class="w-full md:w-1/2 xl:w-1/3 group px-16 my-24"
   >
-    <div class="no-underline outline-none focus:shadow-outline rounded-lg shadow-xl overflow-hidden">
+    <!-- Product featured image -->
+    <img
+      :src="imgUrl"
+      :alt="imgAlt"
+      class="w-full h-250 sm:h-300 md:h-300 lg:h-350 object-cover rounded-lg shadow-md group-hover:shadow-lg transition-shadow transition-faster"
+    >
 
-      <!-- Product featured image -->
-      <img
-        :src="imgUrl"
-        :alt="imgAlt"
-        class="w-full h-200 md:h-250 object-cover"
-      >
+    <div class="relative px-20 sm:px-30 -mt-36">
+      <div class="bg-white outline-none focus:shadow-outline rounded-lg shadow-lg group-hover:shadow-xl transition-shadow transition-faster overflow-hidden">
 
-      <!-- Content -->
-      <div class="flex flex-col justify-between p-30">
+        <!-- Content -->
+        <div class="flex flex-col justify-between px-20 sm:px-24 py-36">
 
-        <!-- Base product name -->
-        <AppTitle
-          semantic="h3"
-          visual="h3"
-        >
-          {{ productName }}
-        </AppTitle>
+          <!-- Base product name -->
+          <AppTitle
+            semantic="h3"
+            visual="h4"
+          >
+            {{ productName }}
+          </AppTitle>
 
-        <!-- Base product description -->
-        <p class="text-14 leading-relaxed mt-16">
-          {{ product.description[locale] }}
-        </p>
+          <!-- Base product description -->
+          <p class="text-12 sm:text-14 leading-relaxed mt-16">
+            {{ product.description[locale] }}
+          </p>
 
-        <!-- Base product price and currency -->
-        <p class="text-20 flex items-start my-30">
-          <span class="text-14 font-extrabold text-green-500 mr-10">
-            {{ productCurrency }}
-          </span>
-          <span class="text-18 font-extrabold">
-            {{ productPrice }}
-          </span>
-        </p>
+          <!-- Base product price and currency -->
+          <p class="text-20 flex items-start mt-30">
+            <span class="text-14 font-extrabold text-green-500 mr-10">
+              {{ productCurrency }}
+            </span>
+            <span class="text-18 font-extrabold">
+              {{ productPrice }}
+            </span>
+          </p>
 
+        </div>
       </div>
     </div>
   </nuxt-link>
