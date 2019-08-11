@@ -8,7 +8,7 @@
     />
 
     <AppContentSection>
-      <div class="flex flex-wrap justify-between sm:-mx-36">
+      <div class="flex flex-wrap justify-start -mx-20">
 
         <!-- Products -->
         <AppProduct

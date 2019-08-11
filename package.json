@@ -40,7 +40,7 @@
     "eslint": "^5.16.0",
     "eslint-config-standard": ">=12.0.0",
     "eslint-plugin-import": ">=2.16.0",
-    "eslint-plugin-jest": "^22.14.1",
+    "eslint-plugin-jest": "^22.15.0",
     "eslint-plugin-node": ">=8.0.1",
     "eslint-plugin-nuxt": ">=0.4.2",
     "eslint-plugin-promise": ">=4.0.1",
@@ -48,7 +48,7 @@
     "eslint-plugin-vue": "^5.2.3",
     "node-sass": "^4.12.0",
     "nodemon": "^1.19.1",
-    "sass-loader": "^7.1.0",
-    "tailwindcss": "^1.1.0"
+    "sass-loader": "^7.2.0",
+    "tailwindcss": "^1.1.1"
   }
 }
