@@ -198,7 +198,16 @@ export default {
    */
   pages: {
     account: {
-      title: 'My account'
+      title: 'My account',
+      dashboard: {
+        title: 'Dashboard'
+      },
+      details: {
+        title: 'Account details'
+      },
+      password: {
+        title: 'Password'
+      }
     },
     cart: {
       title: 'My cart',

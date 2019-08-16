@@ -198,7 +198,16 @@ export default {
    */
   pages: {
     account: {
-      title: 'Mein Konto'
+      title: 'Mein Konto',
+      dashboard: {
+        title: 'Instrumententafel'
+      },
+      details: {
+        title: 'Kontodetails'
+      },
+      password: {
+        title: 'Passwort'
+      }
     },
     cart: {
       title: 'Mein Warenkorb',

@@ -198,7 +198,16 @@ export default {
    */
   pages: {
     account: {
-      title: 'Il mio account'
+      title: 'Il mio account',
+      dashboard: {
+        title: 'Cruscotto'
+      },
+      details: {
+        title: 'Dettagli account'
+      },
+      password: {
+        title: 'Password'
+      }
     },
     cart: {
       title: 'Il mio carrello',

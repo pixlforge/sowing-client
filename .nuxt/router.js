@@ -2,7 +2,6 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import { interopDefault } from './utils'
 
-const _7338a832 = () => interopDefault(import('../pages/account/index.vue' /* webpackChunkName: "pages/account/index" */))
 const _202ee15e = () => interopDefault(import('../pages/cart/index.vue' /* webpackChunkName: "pages/cart/index" */))
 const _61cceef7 = () => interopDefault(import('../pages/checkout/index.vue' /* webpackChunkName: "pages/checkout/index" */))
 const _c8b0dcee = () => interopDefault(import('../pages/coming-soon.vue' /* webpackChunkName: "pages/coming-soon" */))
@@ -11,6 +10,9 @@ const _1f7774ee = () => interopDefault(import('../pages/login/index.vue' /* webp
 const _4d115756 = () => interopDefault(import('../pages/orders/index.vue' /* webpackChunkName: "pages/orders/index" */))
 const _3584ffd8 = () => interopDefault(import('../pages/register/index.vue' /* webpackChunkName: "pages/register/index" */))
 const _3df3fb4e = () => interopDefault(import('../pages/search/index.vue' /* webpackChunkName: "pages/search/index" */))
+const _296594f4 = () => interopDefault(import('../pages/account/dashboard.vue' /* webpackChunkName: "pages/account/dashboard" */))
+const _052c30bc = () => interopDefault(import('../pages/account/details.vue' /* webpackChunkName: "pages/account/details" */))
+const _7f40eceb = () => interopDefault(import('../pages/account/password.vue' /* webpackChunkName: "pages/account/password" */))
 const _e73cec6e = () => interopDefault(import('../pages/account/verify.vue' /* webpackChunkName: "pages/account/verify" */))
 const _1f6b6cd9 = () => interopDefault(import('../pages/password/forgot.vue' /* webpackChunkName: "pages/password/forgot" */))
 const _13ee37ee = () => interopDefault(import('../pages/password/reset.vue' /* webpackChunkName: "pages/password/reset" */))
@@ -105,26 +107,6 @@ export function createRouter() {
     scrollBehavior,
 
     routes: [{
-      path: "/en/account",
-      component: _7338a832,
-      name: "account___en"
-    }, {
-      path: "/account",
-      component: _7338a832,
-      name: "account___fr___default"
-    }, {
-      path: "/fr/account",
-      component: _7338a832,
-      name: "account___fr"
-    }, {
-      path: "/de/account",
-      component: _7338a832,
-      name: "account___de"
-    }, {
-      path: "/it/account",
-      component: _7338a832,
-      name: "account___it"
-    }, {
       path: "/en/cart",
       component: _202ee15e,
       name: "cart___en"
@@ -284,6 +266,66 @@ export function createRouter() {
       path: "/it/search",
       component: _3df3fb4e,
       name: "search___it"
+    }, {
+      path: "/en/account/dashboard",
+      component: _296594f4,
+      name: "account-dashboard___en"
+    }, {
+      path: "/account/dashboard",
+      component: _296594f4,
+      name: "account-dashboard___fr___default"
+    }, {
+      path: "/fr/account/dashboard",
+      component: _296594f4,
+      name: "account-dashboard___fr"
+    }, {
+      path: "/de/account/dashboard",
+      component: _296594f4,
+      name: "account-dashboard___de"
+    }, {
+      path: "/it/account/dashboard",
+      component: _296594f4,
+      name: "account-dashboard___it"
+    }, {
+      path: "/en/account/details",
+      component: _052c30bc,
+      name: "account-details___en"
+    }, {
+      path: "/account/details",
+      component: _052c30bc,
+      name: "account-details___fr___default"
+    }, {
+      path: "/fr/account/details",
+      component: _052c30bc,
+      name: "account-details___fr"
+    }, {
+      path: "/de/account/details",
+      component: _052c30bc,
+      name: "account-details___de"
+    }, {
+      path: "/it/account/details",
+      component: _052c30bc,
+      name: "account-details___it"
+    }, {
+      path: "/en/account/password",
+      component: _7f40eceb,
+      name: "account-password___en"
+    }, {
+      path: "/account/password",
+      component: _7f40eceb,
+      name: "account-password___fr___default"
+    }, {
+      path: "/fr/account/password",
+      component: _7f40eceb,
+      name: "account-password___fr"
+    }, {
+      path: "/de/account/password",
+      component: _7f40eceb,
+      name: "account-password___de"
+    }, {
+      path: "/it/account/password",
+      component: _7f40eceb,
+      name: "account-password___it"
     }, {
       path: "/en/account/verify",
       component: _e73cec6e,

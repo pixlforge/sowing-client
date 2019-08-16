@@ -198,7 +198,16 @@ export default {
    */
   pages: {
     account: {
-      title: 'Mon compte'
+      title: 'Mon compte',
+      dashboard: {
+        title: 'Tableau de bord'
+      },
+      details: {
+        title: 'Détails du compte'
+      },
+      password: {
+        title: 'Mot de passe'
+      }
     },
     cart: {
       title: 'Mon panier',

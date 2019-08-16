@@ -17,7 +17,7 @@
 
         <!-- Account -->
         <AppDropdownItem
-          :to="localePath({ name: 'account' })"
+          :to="localePath({ name: 'account-dashboard' })"
           icon="user"
         >
           {{ $t("pages.account.title") }}
