@@ -12,8 +12,8 @@ const _4d115756 = () => interopDefault(import('../pages/orders/index.vue' /* web
 const _3584ffd8 = () => interopDefault(import('../pages/register/index.vue' /* webpackChunkName: "pages/register/index" */))
 const _3df3fb4e = () => interopDefault(import('../pages/search/index.vue' /* webpackChunkName: "pages/search/index" */))
 const _296594f4 = () => interopDefault(import('../pages/account/dashboard.vue' /* webpackChunkName: "pages/account/dashboard" */))
-const _052c30bc = () => interopDefault(import('../pages/account/details.vue' /* webpackChunkName: "pages/account/details" */))
 const _7f40eceb = () => interopDefault(import('../pages/account/password.vue' /* webpackChunkName: "pages/account/password" */))
+const _fdb118ee = () => interopDefault(import('../pages/account/profile.vue' /* webpackChunkName: "pages/account/profile" */))
 const _e73cec6e = () => interopDefault(import('../pages/account/verify.vue' /* webpackChunkName: "pages/account/verify" */))
 const _1f6b6cd9 = () => interopDefault(import('../pages/password/forgot.vue' /* webpackChunkName: "pages/password/forgot" */))
 const _13ee37ee = () => interopDefault(import('../pages/password/reset.vue' /* webpackChunkName: "pages/password/reset" */))
@@ -223,26 +223,6 @@ export const routerOptions = {
       component: _296594f4,
       name: "account-dashboard___it"
     }, {
-      path: "/en/account/details",
-      component: _052c30bc,
-      name: "account-details___en"
-    }, {
-      path: "/account/details",
-      component: _052c30bc,
-      name: "account-details___fr___default"
-    }, {
-      path: "/fr/account/details",
-      component: _052c30bc,
-      name: "account-details___fr"
-    }, {
-      path: "/de/account/details",
-      component: _052c30bc,
-      name: "account-details___de"
-    }, {
-      path: "/it/account/details",
-      component: _052c30bc,
-      name: "account-details___it"
-    }, {
       path: "/en/account/password",
       component: _7f40eceb,
       name: "account-password___en"
@@ -262,6 +242,26 @@ export const routerOptions = {
       path: "/it/account/password",
       component: _7f40eceb,
       name: "account-password___it"
+    }, {
+      path: "/en/account/profile",
+      component: _fdb118ee,
+      name: "account-profile___en"
+    }, {
+      path: "/account/profile",
+      component: _fdb118ee,
+      name: "account-profile___fr___default"
+    }, {
+      path: "/fr/account/profile",
+      component: _fdb118ee,
+      name: "account-profile___fr"
+    }, {
+      path: "/de/account/profile",
+      component: _fdb118ee,
+      name: "account-profile___de"
+    }, {
+      path: "/it/account/profile",
+      component: _fdb118ee,
+      name: "account-profile___it"
     }, {
       path: "/en/account/verify",
       component: _e73cec6e,

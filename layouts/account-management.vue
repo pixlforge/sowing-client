@@ -22,15 +22,15 @@
         <div class="w-full flex mt-96">
 
           <!-- Side menu -->
-          <aside class="w-1/5 pr-30">
+          <aside class="w-1/4">
             <AppSideMenu>
               <AppSideMenuItem
                 :label="$t('pages.account.dashboard.title')"
                 route="account-dashboard"
               />
               <AppSideMenuItem
-                :label="$t('pages.account.details.title')"
-                route="account-details"
+                :label="$t('pages.account.profile.title')"
+                route="account-profile"
               />
               <AppSideMenuItem
                 :label="$t('pages.account.password.title')"
@@ -40,7 +40,7 @@
           </aside>
 
           <!-- Page content -->
-          <section class="w-4/5 pl-30">
+          <section class="w-3/4 pl-96">
             <nuxt/>
           </section>
         </div>

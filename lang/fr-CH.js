@@ -164,7 +164,7 @@ export default {
     labels: {
       avatar: 'Avatar',
       cover_image: 'Image de couverture',
-      email: 'Email',
+      email: 'Adresse e-mail',
       name: 'Nom',
       password: 'Mot de passe',
       password_confirmation: 'Confirmer le mot de passe',
@@ -202,8 +202,8 @@ export default {
       dashboard: {
         title: 'Tableau de bord'
       },
-      details: {
-        title: 'Détails du compte'
+      profile: {
+        title: 'Profil'
       },
       password: {
         title: 'Mot de passe'
