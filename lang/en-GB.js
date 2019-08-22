@@ -21,6 +21,13 @@ export default {
   },
 
   /**
+   * Alerts
+   */
+  alerts: {
+    verify_email_updated: 'Your email address has been updated successfully. A verification email has been sent to your new address.'
+  },
+
+  /**
    * ARIA
    */
   aria: {

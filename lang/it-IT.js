@@ -21,6 +21,13 @@ export default {
   },
 
   /**
+   * Alerts
+   */
+  alerts: {
+    verify_email_updated: 'Il vostro indirizzo email è stato aggiornato con successo. Una mail di verifica è stata inviata al vostro nuovo indirizzo.'
+  },
+
+  /**
    * ARIA
    */
   aria: {
