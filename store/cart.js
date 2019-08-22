@@ -15,27 +15,21 @@ export const getters = {
   products(state) {
     return state.products
   },
-
   count(state) {
     return state.products.length
   },
-
   isEmpty(state) {
     return state.meta.is_empty
   },
-
   subtotal(state) {
     return state.meta.subtotal
   },
-
   total(state) {
     return state.meta.total
   },
-
   hasChanged(state) {
     return state.meta.has_changed
   },
-
   shippingMethod(state) {
     return state.shippingMethod
   }
@@ -45,28 +39,22 @@ export const mutations = {
   SET_PRODUCTS(state, products) {
     state.products = products
   },
-
   SET_EMPTY(state, isEmpty) {
     state.meta.is_empty = isEmpty
   },
-
   EMPTY_CART(state) {
     state.products = []
     state.meta.is_empty = true
   },
-
   SET_SUBTOTAL(state, subtotal) {
     state.meta.subtotal = subtotal
   },
-
   SET_TOTAL(state, total) {
     state.meta.total = total
   },
-
   SET_CHANGED(state, hasChanged) {
     state.meta.has_changed = hasChanged
   },
-
   SET_SHIPPING_METHOD(state, shippingMethod) {
     state.shippingMethod = shippingMethod
   }
@@ -90,13 +78,11 @@ export const actions = {
 
     return res
   },
-
   async destroy({ dispatch }, productId) {
     await this.$axios.$delete(`/cart/${productId}`)
 
     dispatch('getCart')
   },
-
   async update({ dispatch }, { productId, quantity }) {
     await this.$axios.$patch(`/cart/${productId}`, {
       quantity
@@ -104,7 +90,6 @@ export const actions = {
 
     dispatch('getCart')
   },
-
   async store({ dispatch }, variations) {
     await this.$axios.$post('/cart', {
       variations
@@ -112,11 +97,9 @@ export const actions = {
 
     dispatch('getCart')
   },
-
   emptyCart({ commit }) {
     commit('EMPTY_CART')
   },
-
   setShippingMethod({ commit }, shippingMethod) {
     commit('SET_SHIPPING_METHOD', shippingMethod)
   }

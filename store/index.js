@@ -23,6 +23,9 @@ export const mutations = {
   },
   SET_USER_HAS_SHOP(state, value) {
     state.auth.user.has_shop = value
+  },
+  SET_USER(state, user) {
+    state.auth.user = user
   }
 }
 
@@ -38,5 +41,8 @@ export const actions = {
   },
   setUserHasShop({ commit }, value) {
     commit('SET_USER_HAS_SHOP', value)
+  },
+  setUser({ commit }, user) {
+    commit('SET_USER', user)
   }
 }

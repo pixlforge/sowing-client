@@ -203,7 +203,8 @@ export default {
         title: 'Tableau de bord'
       },
       profile: {
-        title: 'Profil'
+        title: 'Profil',
+        updated: 'Votre profil a été mis à jour avec succès!'
       },
       password: {
         title: 'Mot de passe'

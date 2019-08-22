@@ -203,7 +203,8 @@ export default {
         title: 'Dashboard'
       },
       profile: {
-        title: 'Profile'
+        title: 'Profile',
+        updated: 'Your profile was updated successfully!'
       },
       password: {
         title: 'Password'

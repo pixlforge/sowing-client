@@ -203,7 +203,8 @@ export default {
         title: 'Cruscotto'
       },
       profile: {
-        title: 'Profilo'
+        title: 'Profilo',
+        updated: 'Il vostro profilo è stato aggiornato con successo'
       },
       password: {
         title: 'Password'

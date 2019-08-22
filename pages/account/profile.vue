@@ -9,32 +9,41 @@
       {{ $t("pages.account.profile.title") }}
     </AppTitle>
 
-    <!-- Name -->
-    <AppFormGroup>
-      <AppFormLabel name="name">
-        {{ $t("forms.labels.name") }}
-      </AppFormLabel>
-      <AppFormInput
-        v-model="form.name"
-        :errors="errors"
-        name="name"
-      />
-      <AppFormValidation name="name"/>
-    </AppFormGroup>
+    <div class="my-72 md:my-96">
 
-    <!-- Email -->
-    <AppFormGroup>
-      <AppFormLabel name="email">
-        {{ $t("forms.labels.email") }}
-      </AppFormLabel>
-      <AppFormInput
-        v-model="form.email"
-        :errors="errors"
-        name="email"
-        type="email"
-      />
-      <AppFormValidation name="email"/>
-    </AppFormGroup>
+      <!-- Name -->
+      <AppFormGroup>
+        <AppFormLabel name="name">
+          {{ $t("forms.labels.name") }}
+        </AppFormLabel>
+        <AppFormInput
+          v-model="form.name"
+          :errors="errors"
+          name="name"
+        />
+        <AppFormValidation
+          :errors="errors"
+          name="name"
+        />
+      </AppFormGroup>
+
+      <!-- Email -->
+      <AppFormGroup>
+        <AppFormLabel name="email">
+          {{ $t("forms.labels.email") }}
+        </AppFormLabel>
+        <AppFormInput
+          v-model="form.email"
+          :errors="errors"
+          name="email"
+          type="email"
+        />
+        <AppFormValidation
+          :errors="errors"
+          name="email"
+        />
+      </AppFormGroup>
+    </div>
 
     <!-- Save changes -->
     <AppButtonPrimary
@@ -48,6 +57,8 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 import AppTitle from '@/components/AppTitle'
 import AppFormGroup from '@/components/forms/AppFormGroup'
 import AppFormInput from '@/components/forms/AppFormInput'
@@ -96,12 +107,28 @@ export default {
     }
   },
   mounted() {
-    this.form.name = this.user.name
-    this.form.email = this.user.email
+    this.hydrateUser()
   },
   methods: {
-    update() {
-      console.log('update')
+    ...mapActions({
+      setUser: 'setUser'
+    }),
+    async update() {
+      try {
+        const res = await this.$axios.$patch('/user/account', {
+          id: this.$auth.user.id,
+          ...this.form
+        })
+        this.setUser(res.data)
+        this.$toast.success(this.$t('pages.account.profile.updated'))
+      } catch (e) {
+        this.errors = e.response.data.errors
+        this.$toast.error(this.$t('toasts.validation'))
+      }
+    },
+    hydrateUser() {
+      this.form.name = this.user.name
+      this.form.email = this.user.email
     }
   }
 }

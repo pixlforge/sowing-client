@@ -203,7 +203,8 @@ export default {
         title: 'Instrumententafel'
       },
       profile: {
-        title: 'Profil'
+        title: 'Profil',
+        updated: 'Ihr Profil wurde erfolgreich aktualisiert'
       },
       password: {
         title: 'Passwort'
