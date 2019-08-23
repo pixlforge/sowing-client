@@ -9,49 +9,51 @@
       {{ $t("pages.account.profile.title") }}
     </AppTitle>
 
-    <div class="my-72 md:my-96">
+    <form @submit.prevent="update">
+      <div class="my-72 md:my-96">
 
-      <!-- Name -->
-      <AppFormGroup>
-        <AppFormLabel name="name">
-          {{ $t("forms.labels.name") }}
-        </AppFormLabel>
-        <AppFormInput
-          v-model="form.name"
-          :errors="errors"
-          name="name"
-        />
-        <AppFormValidation
-          :errors="errors"
-          name="name"
-        />
-      </AppFormGroup>
+        <!-- Name -->
+        <AppFormGroup>
+          <AppFormLabel name="name">
+            {{ $t("forms.labels.name") }}
+          </AppFormLabel>
+          <AppFormInput
+            v-model="form.name"
+            :errors="errors"
+            name="name"
+          />
+          <AppFormValidation
+            :errors="errors"
+            name="name"
+          />
+        </AppFormGroup>
 
-      <!-- Email -->
-      <AppFormGroup>
-        <AppFormLabel name="email">
-          {{ $t("forms.labels.email") }}
-        </AppFormLabel>
-        <AppFormInput
-          v-model="form.email"
-          :errors="errors"
-          name="email"
-          type="email"
-        />
-        <AppFormValidation
-          :errors="errors"
-          name="email"
-        />
-      </AppFormGroup>
-    </div>
+        <!-- Email -->
+        <AppFormGroup>
+          <AppFormLabel name="email">
+            {{ $t("forms.labels.email") }}
+          </AppFormLabel>
+          <AppFormInput
+            v-model="form.email"
+            :errors="errors"
+            name="email"
+            type="email"
+          />
+          <AppFormValidation
+            :errors="errors"
+            name="email"
+          />
+        </AppFormGroup>
+      </div>
 
-    <!-- Save changes -->
-    <AppButtonPrimary
-      icon="check"
-      @click.native="update"
-    >
-      {{ $t("buttons.update") }}
-    </AppButtonPrimary>
+      <!-- Save changes -->
+      <AppButtonPrimary
+        icon="check"
+        type="submit"
+      >
+        {{ $t("buttons.update") }}
+      </AppButtonPrimary>
+    </form>
 
   </div>
 </template>
