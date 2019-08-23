@@ -97,6 +97,8 @@ export default {
         name: '',
         email: ''
       },
+      oldEmail: '',
+      newEmail: '',
       errors: {}
     }
   },
@@ -118,29 +120,30 @@ export default {
     }),
     async update() {
       try {
-        const oldEmail = this.$auth.user.email
-
+        this.oldEmail = this.$auth.user.email
         const res = await this.$axios.$patch('/user/account', {
           id: this.$auth.user.id,
           ...this.form
         })
-
         this.setUser(res.data)
-
-        const newEmail = this.$auth.user.email
-
-        if (newEmail !== oldEmail) {
-          this.flash({
-            type: 'success',
-            message: this.$t('alerts.verify_email_updated')
-          })
-        }
-
-        this.$toast.success(this.$t('pages.account.profile.updated'))
+        this.newEmail = this.$auth.user.email
+        this.displaySuccessFeedback()
       } catch (e) {
         this.errors = e.response.data.errors
-        this.$toast.error(this.$t('toasts.validation'))
+        this.displayErrorsFeedback()
       }
+    },
+    displaySuccessFeedback() {
+      if (this.newEmail !== this.oldEmail) {
+        this.flash({
+          type: 'success',
+          message: this.$t('alerts.verify_email_updated')
+        })
+      }
+      this.$toast.success(this.$t('pages.account.profile.updated'))
+    },
+    displayErrorsFeedback() {
+      this.$toast.error(this.$t('toasts.validation'))
     },
     hydrateUser() {
       this.form.name = this.user.name
