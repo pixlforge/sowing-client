@@ -226,7 +226,8 @@ module.exports = {
       '-16': '-1.6rem',
       '-20': '-2rem',
       '-24': '-2.4rem',
-      '-36': '-3.6rem'
+      '-36': '-3.6rem',
+      '-48': '-4.8rem'
     },
     container: {
       center: true,
@@ -292,7 +293,7 @@ module.exports = {
     minHeight: ['responsive'],
     minWidth: ['responsive'],
     negativeMargin: ['responsive'],
-    opacity: [],
+    opacity: ['group-hover'],
     outline: ['focus'],
     overflow: ['responsive'],
     padding: ['responsive', 'first', 'last'],
@@ -305,6 +306,7 @@ module.exports = {
     textDecoration: ['responsive', 'hover'],
     textTransform: ['responsive', 'hover'],
     userSelect: [],
+    visibility: ['group-hover'],
     whitespace: [],
     wordBreak: [],
     width: ['responsive', 'first', 'last'],
@@ -316,8 +318,7 @@ module.exports = {
     listStyleType: false,
     maxHeight: false,
     pointerEvents: false,
-    verticalAlign: false,
-    visibility: false
+    verticalAlign: false
   },
   plugins: [
     require('@tailwindcss/custom-forms')

@@ -9,15 +9,22 @@
       {{ $t("pages.account.dashboard.title") }}
     </AppTitle>
 
+    <AppAccountCard
+      :user="user"
+      class="my-72 md:my-96"
+    />
+
   </div>
 </template>
 
 <script>
 import AppTitle from '@/components/AppTitle'
+import AppAccountCard from '@/components/account/AppAccountCard'
 
 export default {
   components: {
-    AppTitle
+    AppTitle,
+    AppAccountCard
   },
   middleware: ['authenticated'],
   layout: 'account-management',
@@ -33,8 +40,11 @@ export default {
       ]
     }
   },
-  asyncData({ app }) {
+  async asyncData({ app }) {
+    const user = await app.$axios.$get('/user/account')
+
     return {
+      user: user.data,
       title: app.head.title
     }
   }

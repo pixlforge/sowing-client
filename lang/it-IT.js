@@ -78,6 +78,11 @@ export default {
    * Components
    */
   components: {
+    account_card: {
+      member_for: 'Membro dal',
+      verified: 'Questo account è verificato.',
+      verification_pending: 'Verifica in sospeso.'
+    },
     cart: {
       labels: {
         price: 'Prezzo',
