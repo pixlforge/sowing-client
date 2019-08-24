@@ -40,6 +40,10 @@
                 :label="$t('pages.account.addresses.title')"
                 route="account-addresses"
               />
+              <AppSideMenuItem
+                :label="$t('pages.account.payment_methods.title')"
+                route="account-payment-methods"
+              />
             </AppSideMenu>
           </aside>
 

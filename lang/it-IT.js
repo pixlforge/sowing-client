@@ -223,7 +223,10 @@ export default {
         title: 'Password'
       },
       addresses: {
-        title: 'I miei indirizzi'
+        title: 'Indirizzi'
+      },
+      payment_methods: {
+        title: 'Modalità di pagamento'
       }
     },
     cart: {
