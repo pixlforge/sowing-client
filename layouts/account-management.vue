@@ -36,6 +36,10 @@
                 :label="$t('pages.account.password.title')"
                 route="account-password"
               />
+              <AppSideMenuItem
+                :label="$t('pages.account.addresses.title')"
+                route="account-addresses"
+              />
             </AppSideMenu>
           </aside>
 

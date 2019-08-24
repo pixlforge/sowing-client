@@ -221,6 +221,9 @@ export default {
       },
       password: {
         title: 'Password'
+      },
+      addresses: {
+        title: 'I miei indirizzi'
       }
     },
     cart: {

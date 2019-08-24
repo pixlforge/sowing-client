@@ -11,6 +11,7 @@ const _1f7774ee = () => interopDefault(import('../pages/login/index.vue' /* webp
 const _4d115756 = () => interopDefault(import('../pages/orders/index.vue' /* webpackChunkName: "pages/orders/index" */))
 const _3584ffd8 = () => interopDefault(import('../pages/register/index.vue' /* webpackChunkName: "pages/register/index" */))
 const _3df3fb4e = () => interopDefault(import('../pages/search/index.vue' /* webpackChunkName: "pages/search/index" */))
+const _458fef02 = () => interopDefault(import('../pages/account/addresses.vue' /* webpackChunkName: "pages/account/addresses" */))
 const _296594f4 = () => interopDefault(import('../pages/account/dashboard.vue' /* webpackChunkName: "pages/account/dashboard" */))
 const _7f40eceb = () => interopDefault(import('../pages/account/password.vue' /* webpackChunkName: "pages/account/password" */))
 const _fdb118ee = () => interopDefault(import('../pages/account/profile.vue' /* webpackChunkName: "pages/account/profile" */))
@@ -202,6 +203,26 @@ export const routerOptions = {
       path: "/it/search",
       component: _3df3fb4e,
       name: "search___it"
+    }, {
+      path: "/en/account/addresses",
+      component: _458fef02,
+      name: "account-addresses___en"
+    }, {
+      path: "/account/addresses",
+      component: _458fef02,
+      name: "account-addresses___fr___default"
+    }, {
+      path: "/fr/account/addresses",
+      component: _458fef02,
+      name: "account-addresses___fr"
+    }, {
+      path: "/de/account/addresses",
+      component: _458fef02,
+      name: "account-addresses___de"
+    }, {
+      path: "/it/account/addresses",
+      component: _458fef02,
+      name: "account-addresses___it"
     }, {
       path: "/en/account/dashboard",
       component: _296594f4,
