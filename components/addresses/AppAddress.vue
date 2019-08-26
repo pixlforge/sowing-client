@@ -1,5 +1,5 @@
 <template>
-  <div class="w-1/2 px-10 my-20">
+  <div class="w-full sm:w-1/2 px-10 my-20">
     <div class="relative h-full border border-gray-200 rounded-lg flex py-30 px-36">
       <button class="absolute top-0 right-0 w-25 h-25 bg-gray-100 hover:bg-red-100 rounded-full flex justify-center items-center group transition-color transition-fast mt-10 mr-10">
         <font-awesome-icon

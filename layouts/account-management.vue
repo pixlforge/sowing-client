@@ -19,10 +19,10 @@
       <AppContentSection>
 
         <!-- Content -->
-        <div class="w-full flex mt-96">
+        <div class="w-full flex flex-wrap">
 
           <!-- Side menu -->
-          <aside class="w-1/4">
+          <aside class="w-full lg:w-1/4">
             <AppSideMenu>
               <AppSideMenuItem
                 :label="$t('pages.account.dashboard.title')"
@@ -48,7 +48,7 @@
           </aside>
 
           <!-- Page content -->
-          <section class="w-3/4 pl-96">
+          <section class="w-full lg:w-3/4 lg:pl-96 mt-72 lg:mt-0">
             <nuxt/>
           </section>
         </div>
