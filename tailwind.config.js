@@ -140,6 +140,7 @@ module.exports = {
       auto: 'auto',
       '3': '.3rem',
       '20': '2rem',
+      '25': '2.5rem',
       '30': '3rem',
       '40': '4rem',
       '42': '4.2rem',
@@ -240,6 +241,7 @@ module.exports = {
       },
       width: {
         '20': '2rem',
+        '25': '2.5rem',
         '30': '3rem',
         '40': '4rem',
         '50': '5rem',

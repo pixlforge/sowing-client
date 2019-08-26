@@ -9,15 +9,25 @@
       {{ $t("pages.account.addresses.title") }}
     </AppTitle>
 
+    <div class="flex flex-wrap -mx-10">
+      <AppAddress
+        v-for="address in addresses"
+        :key="address.id"
+        :address="address"
+      />
+    </div>
+
   </div>
 </template>
 
 <script>
 import AppTitle from '@/components/AppTitle'
+import AppAddress from '@/components/addresses/AppAddress'
 
 export default {
   components: {
-    AppTitle
+    AppTitle,
+    AppAddress
   },
   middleware: ['authenticated'],
   layout: 'account-management',
@@ -33,11 +43,16 @@ export default {
       ]
     }
   },
-  asyncData({ app }) {
-    // const user = await app.$axios.$get('/user/account')
+  data() {
+    return {
+      addresses: []
+    }
+  },
+  async asyncData({ app }) {
+    const addresses = await app.$axios.$get('/addresses')
 
     return {
-      // user: user.data,
+      addresses: addresses.data,
       title: app.head.title
     }
   }
