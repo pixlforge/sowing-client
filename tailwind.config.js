@@ -173,6 +173,7 @@ module.exports = {
       screen: '100vh'
     },
     maxWidth: {
+      '200': '20rem',
       '400': '40rem',
       '500': '50rem',
       '600': '60rem',

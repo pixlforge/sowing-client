@@ -8,46 +8,49 @@
       </h1>
 
       <!-- Header -->
-      <header class="pt-60 pb-196">
+      <header class="pt-24 pb-72 sm:pb-196">
+        <ul class="flex justify-center">
+          <li
+            v-for="locale in $i18n.locales"
+            :key="locale.code"
+          >
+            <nuxt-link
+              :to="switchLocalePath(locale.code)"
+              class="block text-12 text-gray-300 px-10 py-10"
+            >
+              {{ locale.name }}
+            </nuxt-link>
+          </li>
+        </ul>
+
         <h1 class="sr-only">
           Sowing
         </h1>
-        <h5 class="text-14 uppercase text-gray-300 mb-72">
+
+        <h5 class="text-14 uppercase text-gray-300 my-36 sm:my-72">
           {{ $t("landing.soon") }}
         </h5>
-        <AppLogo class="w-350 mx-auto"/>
 
-        <div class="absolute right-0 top-0 mr-60 mt-24">
-          <ul class="flex">
-            <li
-              v-for="locale in $i18n.locales"
-              :key="locale.code"
-            >
-              <nuxt-link
-                :to="switchLocalePath(locale.code)"
-                class="block text-12 text-gray-300 px-10 py-10"
-              >
-                {{ locale.name }}
-              </nuxt-link>
-            </li>
-          </ul>
-        </div>
+        <AppLogo class="w-full max-w-200 sm:max-w-400 mx-auto px-20"/>
       </header>
 
       <!-- Intro -->
       <section class="intro bg-green-500 py-72 md:py-132 lg:py-196">
-        <div class="intro-content container text-white px-60">
+        <div class="intro-content container max-w-600 sm:max-w-800 text-white px-60">
           <h1 class="font-extrabold">
-            <div class="text-24 uppercase tracking-tight">
+            <div class="text-18 sm:text-24 uppercase tracking-tight">
               {{ $t("landing.title") }}
             </div>
-            <div class="text-48 tracking-wide">
+            <div class="text-24 sm:text-48 tracking-wide">
               {{ $t("landing.subtitle") }}
             </div>
           </h1>
-          <p class="text-20 my-48">
+          <p class="text-16 sm:text-20 my-30 sm:my-48">
             {{ $t("landing.description_first_line") }}<br>
             {{ $t("landing.description_second_line") }}
+          </p>
+          <p class="text-16 sm:text-20 my-30 sm:my-48">
+            {{ $t("landing.subscribe") }}
           </p>
 
           <form
@@ -59,13 +62,13 @@
               v-model="email"
               name="email"
               type="email"
-              class="w-2/3 outline-none focus:shadow-outline rounded-l-lg text-20 text-gray-900 text-center p-12"
+              class="w-2/3 outline-none focus:shadow-outline rounded-l-lg text-16 sm:text-20 text-gray-900 text-center p-12"
               placeholder="elon@musk.ch"
             >
 
             <button
               type="submit"
-              class="w-1/3 outline-none focus:shadow-outline bg-pink-600 hover:bg-pink-700 rounded-r-lg text-14 font-black uppercase"
+              class="w-1/3 outline-none focus:shadow-outline bg-pink-600 hover:bg-pink-700 rounded-r-lg text-12 sm:text-14 font-extrabold uppercase"
             >
               {{ $t("landing.button") }}
             </button>
@@ -118,10 +121,13 @@
 
       <!-- Subscribe -->
       <section class="bg-green-500 py-72 md:py-132">
-        <div class="container text-white px-20">
-          <p class="text-20 mb-48">
+        <div class="container max-w-800 text-white px-20">
+          <p class="text-16 sm:text-20 mb-30 sm:mb-48">
             {{ $t("landing.description_first_line") }}<br>
             {{ $t("landing.description_second_line") }}
+          </p>
+          <p class="text-16 sm:text-20 my-30 sm:my-48">
+            {{ $t("landing.subscribe") }}
           </p>
 
           <form
@@ -133,13 +139,13 @@
               v-model="email"
               name="email"
               type="email"
-              class="w-2/3 outline-none focus:shadow-outline rounded-l-lg text-20 text-gray-900 text-center p-12"
+              class="w-2/3 outline-none focus:shadow-outline rounded-l-lg text-16 sm:text-20 text-gray-900 text-center p-12"
               placeholder="elon@musk.ch"
             >
 
             <button
               type="submit"
-              class="w-1/3 outline-none focus:shadow-outline bg-pink-600 hover:bg-pink-700 rounded-r-lg text-14 font-black uppercase"
+              class="w-1/3 outline-none focus:shadow-outline bg-pink-600 hover:bg-pink-700 rounded-r-lg text-12 sm:text-14 font-extrabold uppercase"
             >
               {{ $t("landing.button") }}
             </button>
@@ -152,7 +158,7 @@
           {{ $t("landing.social_networks") }}
         </h1>
 
-        <p class="text-24">
+        <p class="text-16 sm:text-24">
           {{ $t("landing.follow_us") }}
         </p>
 

@@ -6,6 +6,7 @@ export default {
     soon: 'Coming soon',
     title: 'E-commerce Marketplace',
     subtitle: 'Crafts & Handmade',
+    subscribe: 'Enter your email address to be kept informed of the official opening of Sowing and if you wish to create your shop before the platform launches.',
     description_first_line: 'Market place dedicated to crafts and handmade.',
     description_second_line: 'Create the shop that suits you and sell your creations.',
     button: 'Keep me updated',
