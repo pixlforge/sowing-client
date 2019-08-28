@@ -9,7 +9,7 @@
       {{ $t("pages.account.addresses.title") }}
     </AppTitle>
 
-    <div class="flex flex-wrap -mx-10">
+    <div class="flex flex-wrap -mx-10 mt-36">
       <AppAddress
         v-for="address in addresses"
         :key="address.id"

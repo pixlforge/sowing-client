@@ -224,7 +224,9 @@ export default {
         title: 'Mot de passe'
       },
       addresses: {
-        title: 'Adresses'
+        title: 'Adresses',
+        my_address: 'Mon adresse',
+        is_default: "Il s'agit de votre adresse par défaut."
       },
       payment_methods: {
         title: 'Moyens de paiement'

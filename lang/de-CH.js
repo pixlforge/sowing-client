@@ -224,7 +224,9 @@ export default {
         title: 'Passwort'
       },
       addresses: {
-        title: 'Adressen'
+        title: 'Adressen',
+        my_address: 'Meine Adresse',
+        is_default: 'Dies ist Ihre Standardadresse.'
       },
       payment_methods: {
         title: 'Zahlungsarten'

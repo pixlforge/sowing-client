@@ -229,7 +229,8 @@ module.exports = {
       '-20': '-2rem',
       '-24': '-2.4rem',
       '-36': '-3.6rem',
-      '-48': '-4.8rem'
+      '-48': '-4.8rem',
+      '-60': '-6rem'
     },
     container: {
       center: true,
@@ -253,6 +254,9 @@ module.exports = {
         '110': '11rem',
         '300': '30rem',
         '350': '35rem'
+      },
+      opacity: {
+        '10': '.1'
       }
     }
   },
@@ -310,7 +314,7 @@ module.exports = {
     textTransform: ['responsive', 'hover'],
     userSelect: [],
     visibility: ['group-hover'],
-    whitespace: [],
+    whitespace: ['responsive'],
     wordBreak: [],
     width: ['responsive', 'first', 'last'],
     zIndex: []

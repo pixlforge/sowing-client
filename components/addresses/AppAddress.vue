@@ -1,12 +1,9 @@
 <template>
   <div class="w-full sm:w-1/2 px-10 my-20">
-    <div class="relative h-full border border-gray-200 rounded-lg flex py-30 px-36">
-      <button class="absolute top-0 right-0 w-25 h-25 bg-gray-100 hover:bg-red-100 rounded-full flex justify-center items-center group transition-color transition-fast mt-10 mr-10">
-        <font-awesome-icon
-          :icon="['fas', 'times']"
-          class="text-12 text-gray-300 group-hover:text-red-500 transition-color transition-fast"
-        />
-      </button>
+    <nuxt-link
+      :to="localePath({ name: 'account-addresses-id', params: { id: address.id } })"
+      class="relative h-full border border-gray-200 rounded-lg shadow-lg transition-shadow transition-medium flex overflow-hidden group py-30 px-36"
+    >
       <ul>
         <li class="text-20 font-bold">
           {{ address.first_name }} {{ address.last_name }}
@@ -29,7 +26,13 @@
           {{ address.country.code }} &ndash; {{ address.postal_code }} {{ address.city }}
         </li>
       </ul>
-    </div>
+      <div class="absolute top-0 left-0 w-full h-full bg-gray-900 opacity-0 group-hover:opacity-10 transition-opacity transition-fast flex justify-center items-center">
+        <font-awesome-icon
+          :icon="['fas', 'eye']"
+          class="text-48 text-white"
+        />
+      </div>
+    </nuxt-link>
   </div>
 </template>
 

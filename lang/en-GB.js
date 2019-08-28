@@ -224,7 +224,9 @@ export default {
         title: 'Password'
       },
       addresses: {
-        title: 'Addresses'
+        title: 'Addresses',
+        my_address: 'My address',
+        is_default: 'This is your default address.'
       },
       payment_methods: {
         title: 'Payment methods'
