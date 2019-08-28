@@ -62,6 +62,7 @@ export default {
     create_my_shop: 'Create my shop',
     customize_my_shop: 'Customize my shop',
     delete: 'Delete',
+    edit: 'Edit',
     finalize_shop_creation: 'Finalize the creation of my shop',
     finish: 'Finish',
     login: 'Log in',

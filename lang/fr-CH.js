@@ -62,6 +62,7 @@ export default {
     create_my_shop: 'Créer ma boutique',
     customize_my_shop: 'Personnaliser ma boutique',
     delete: 'Supprimer',
+    edit: 'Modifier',
     finalize_shop_creation: 'Finaliser la création de ma boutique',
     finish: 'Terminer',
     login: 'Connexion',

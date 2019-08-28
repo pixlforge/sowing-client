@@ -1,113 +1,267 @@
 <template>
   <div>
-
     <div class="flex justify-between">
+      <div class="flex">
 
-      <!-- Page title -->
-      <AppTitle
-        semantic="h1"
-        visual="h2"
-      >
-        {{ $t('pages.account.addresses.my_address') }}
-      </AppTitle>
+        <!-- Back -->
+        <AppBackButton class="mr-20"/>
+
+        <!-- Page title -->
+        <AppTitle
+          semantic="h1"
+          visual="h2"
+        >
+          {{ $t('pages.account.addresses.my_address') }}
+        </AppTitle>
+      </div>
 
       <!-- Controls -->
       <div class="flex items-center">
 
         <!-- Edit -->
-        <button
-          class="text-20 text-gray-300 hover:text-green-500 mr-20"
-          title="Edit"
-          @click.prevent="editing = true"
-        >
-          <font-awesome-icon :icon="['far', 'edit']"/>
-        </button>
+        <AppEditButton @click.native="openEdit"/>
 
         <!-- Delete -->
-        <button
-          class="text-20 text-gray-300 hover:text-red-500"
-          title="Delete"
-        >
-          <font-awesome-icon :icon="['far', 'trash-alt']"/>
-        </button>
+        <AppDeleteButton/>
       </div>
     </div>
 
     <!-- Card -->
-    <div class="max-w-400 sm:max-w-600 rounded-lg shadow-lg border border-gray-200 flex flex-col sm:flex-row mt-36 sm:mt-72 mx-auto lg:mx-0">
+    <AppAddressCard :address="form"/>
 
-      <!-- Icon -->
-      <div class="w-full sm:w-1/4 bg-gray-200 flex justify-center items-center py-20 sm:py-0">
-        <div class="w-60 sm:w-90 h-60 sm:h-90 bg-white rounded-full flex justify-center items-center">
-          <font-awesome-icon
-            :icon="['fas', 'mailbox']"
-            class="text-24 sm:text-36 text-gray-200"
-          />
-        </div>
-      </div>
+    <!-- Edition -->
+    <transition
+      enter-active-class="transition-all transition-medium ease-out"
+      leave-active-class="transition-all transition-slow ease-in"
+      enter-class="opacity-25 scale-75"
+      enter-to-class="opacity-100 scale-100"
+      leave-class="opacity-100 scale-100"
+      leave-to-class="opacity-25 scale-75"
+    >
+      <section
+        v-if="editing"
+        class="origin-top"
+      >
+        <AppFormDivider/>
+        <AppTitle
+          semantic="h1"
+          visual="h2"
+        >
+          Édition
+        </AppTitle>
 
-      <!-- Content -->
-      <ul class="w-full sm:w-3/4 leading-relaxed p-20 sm:p-30">
-        <li class="relative text-18 sm:text-24 font-bold flex">
-          {{ address.first_name }} {{ address.last_name }}
-          <div class="group">
-            <font-awesome-icon
-              v-if="address.is_default"
-              :icon="['fas', 'check-circle']"
-              class="text-blue-500 ml-10"
+        <form
+          class="mt-36"
+          @submit.prevent
+        >
+
+          <!-- First name -->
+          <AppFormGroup>
+            <AppFormLabel name="first_name">
+              {{ $t('forms.labels.first_name') }}
+            </AppFormLabel>
+            <AppFormInput
+              v-model="form.first_name"
+              :errors="errors"
+              name="first_name"
             />
+            <AppFormValidation
+              :errors="errors"
+              name="first_name"
+            />
+          </AppFormGroup>
 
-            <div class="absolute top-0 left-0 sm:left-auto w-auto invisible group-hover:visible">
-              <div class="opacity-0 group-hover:opacity-100 transition-opacity transition-medium bg-blue-500 rounded-lg shadow-lg text-12 text-white text-center sm:whitespace-no-wrap px-20 py-10 -mt-60 sm:-mt-48">
-                {{ $t('pages.account.addresses.is_default') }}
-              </div>
-            </div>
+          <!-- Last name -->
+          <AppFormGroup>
+            <AppFormLabel name="last_name">
+              {{ $t('forms.labels.last_name') }}
+            </AppFormLabel>
+            <AppFormInput
+              v-model="form.last_name"
+              :errors="errors"
+              name="last_name"
+            />
+            <AppFormValidation
+              :errors="errors"
+              name="last_name"
+            />
+          </AppFormGroup>
+
+          <!-- Company name -->
+          <AppFormGroup>
+            <AppFormLabel name="company_name">
+              {{ $t('forms.labels.company_name') }}
+            </AppFormLabel>
+            <AppFormInput
+              v-model="form.company_name"
+              :errors="errors"
+              name="company_name"
+            />
+            <AppFormValidation
+              :errors="errors"
+              name="company_name"
+            />
+          </AppFormGroup>
+
+          <!-- Address line 1 -->
+          <AppFormGroup>
+            <AppFormLabel name="address_line_1">
+              {{ $t('forms.labels.address_line_1') }}
+            </AppFormLabel>
+            <AppFormInput
+              v-model="form.address_line_1"
+              :errors="errors"
+              name="address_line_1"
+            />
+            <AppFormValidation
+              :errors="errors"
+              name="address_line_1"
+            />
+          </AppFormGroup>
+
+          <!-- Address line 2 -->
+          <AppFormGroup>
+            <AppFormLabel name="address_line_2">
+              {{ $t('forms.labels.address_line_2') }}
+            </AppFormLabel>
+            <AppFormInput
+              v-model="form.address_line_2"
+              :errors="errors"
+              name="address_line_2"
+            />
+            <AppFormValidation
+              :errors="errors"
+              name="address_line_2"
+            />
+          </AppFormGroup>
+
+          <!-- Postal code -->
+          <AppFormGroup>
+            <AppFormLabel name="postal_code">
+              {{ $t('forms.labels.postal_code') }}
+            </AppFormLabel>
+            <AppFormInput
+              v-model="form.postal_code"
+              :errors="errors"
+              name="postal_code"
+            />
+            <AppFormValidation
+              :errors="errors"
+              name="postal_code"
+            />
+          </AppFormGroup>
+
+          <!-- City -->
+          <AppFormGroup>
+            <AppFormLabel name="city">
+              {{ $t('forms.labels.city') }}
+            </AppFormLabel>
+            <AppFormInput
+              v-model="form.city"
+              :errors="errors"
+              name="city"
+            />
+            <AppFormValidation
+              :errors="errors"
+              name="city"
+            />
+          </AppFormGroup>
+
+          <!-- Country -->
+          <AppFormGroup>
+            <AppCountryDropdown
+              v-model="form.country_id"
+              :errors="errors"
+            />
+          </AppFormGroup>
+
+          <!-- Controls -->
+          <div class="flex">
+
+            <!-- Submit -->
+            <AppButtonPrimary
+              icon="check-circle"
+              type="submit"
+              class="mr-10"
+            >
+              {{ $t('buttons.update') }}
+            </AppButtonPrimary>
+
+            <!-- Cancel -->
+            <AppButtonTertiary
+              icon="times"
+              @click.native="cancelEdit"
+            >
+              {{ $t('buttons.cancel') }}
+            </AppButtonTertiary>
           </div>
-        </li>
-        <li class="text-16 sm:text-20 font-semibold text-gray-400">
-          {{ address.company_name }}
-        </li>
-        <li class="text-14 sm:text-16 mt-5 sm:mt-12">
-          {{ address.address_line_1 }}
-        </li>
-        <li class="text-14 sm:text-16">
-          {{ address.address_line_2 }}
-        </li>
-        <li class="text-14 sm:text-16">
-          {{ address.country.code }} &ndash; {{ address.postal_code }} {{ address.city }} ({{ address.country.name[locale] }})
-        </li>
-      </ul>
+        </form>
+      </section>
+    </transition>
 
-    </div>
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
-
 import AppTitle from '@/components/AppTitle'
+import AppFormGroup from '@/components/forms/AppFormGroup'
+import AppFormLabel from '@/components/forms/AppFormLabel'
+import AppFormInput from '@/components/forms/AppFormInput'
+import AppBackButton from '@/components/buttons/AppBackButton'
+import AppEditButton from '@/components/buttons/AppEditButton'
+import AppFormDivider from '@/components/forms/AppFormDivider'
+import AppDeleteButton from '@/components/buttons/AppDeleteButton'
+import AppAddressCard from '@/components/addresses/AppAddressCard'
+import AppFormValidation from '@/components/forms/AppFormValidation'
+import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
+import AppCountryDropdown from '@/components/forms/AppCountryDropdown'
+import AppButtonTertiary from '@/components/buttons/AppButtonTertiary'
 
 export default {
   components: {
-    AppTitle
+    AppTitle,
+    AppFormGroup,
+    AppFormLabel,
+    AppFormInput,
+    AppBackButton,
+    AppEditButton,
+    AppFormDivider,
+    AppDeleteButton,
+    AppAddressCard,
+    AppFormValidation,
+    AppButtonPrimary,
+    AppCountryDropdown,
+    AppButtonTertiary
   },
   layout: 'account-management',
   data() {
     return {
+      form: {},
       address: {},
-      editing: false
+      errors: {},
+      editing: true // TODO: change to false
     }
-  },
-  computed: {
-    ...mapGetters({
-      locale: 'locale'
-    })
   },
   async asyncData({ app, route }) {
     const address = await app.$axios.$get(`/addresses/${route.params.id}`)
 
     return {
       address: address.data
+    }
+  },
+  created() {
+    this.assignFormValues()
+  },
+  methods: {
+    openEdit() {
+      this.editing = true
+    },
+    cancelEdit() {
+      this.assignFormValues()
+      this.editing = false
+    },
+    assignFormValues() {
+      this.form = { ...this.address }
     }
   }
 }
