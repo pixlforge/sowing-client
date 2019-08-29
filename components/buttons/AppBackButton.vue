@@ -1,18 +1,19 @@
 <template>
-  <button
+  <nuxt-link
+    :to="url"
     class="text-20 text-gray-300 hover:text-gray-400"
     :title="$t('buttons.back')"
-    @click.prevent="back"
   >
     <font-awesome-icon :icon="['far', 'arrow-alt-circle-left']"/>
-  </button>
+  </nuxt-link>
 </template>
 
 <script>
 export default {
-  methods: {
-    back() {
-      this.$router.go(-1)
+  props: {
+    url: {
+      type: String,
+      required: true
     }
   }
 }

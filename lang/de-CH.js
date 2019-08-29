@@ -179,6 +179,7 @@ export default {
     labels: {
       avatar: 'Avatar',
       cover_image: 'Titelbild',
+      default_address: 'Diese Adresse ist meine Standardadresse',
       email: 'E-mail Adresse',
       name: 'Name',
       password: 'Passwort',

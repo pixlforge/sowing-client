@@ -6,13 +6,13 @@
     <AppFormSelect
       :errors="errors"
       name="country_id"
-      theme="light"
       @change.native="$emit('input', $event.target.value)"
     >
       <option
         v-for="country in countries"
         :key="country.id"
         :value="country.id"
+        :selected="country.id === value"
       >
         {{ country.name[locale] }}
       </option>
@@ -38,6 +38,11 @@ export default {
     AppFormValidation
   },
   props: {
+    value: {
+      type: [String, Number],
+      required: false,
+      default: ''
+    },
     errors: {
       type: Object,
       required: true

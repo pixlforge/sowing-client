@@ -120,7 +120,9 @@ module.exports = {
         700: '#2A373D',
         800: '#222C31',
         900: '#151C1E'
-      }
+      },
+
+      'backdrop': 'rgba(0, 0, 0, .25)'
     },
     fontSize: {
       '10': '1rem',
