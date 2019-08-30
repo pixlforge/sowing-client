@@ -437,7 +437,8 @@ export default {
     account_confirmed: 'Vielen Dank! Ihr Konto ist jetzt verifiziert.',
     addresses: {
       created: 'Neue Adresse erfolgreich erstellt!',
-      selected: 'Adresse ausgewählt.'
+      selected: 'Adresse ausgewählt.',
+      updated: 'Adresse aktualisiert!'
     },
     cart: {
       has_changed: 'Ein oder mehrere Artikel in Ihrem Warenkorb wurden aktualisiert. Bitte überprüfen Sie sie vor der Bestellung.',

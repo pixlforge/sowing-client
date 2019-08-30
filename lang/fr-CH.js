@@ -437,7 +437,8 @@ export default {
     account_confirmed: 'Merci! Votre compte est maintenant vérifié.',
     addresses: {
       created: 'Nouvelle adresse créée avec succès!',
-      selected: 'Adresse sélectionnée.'
+      selected: 'Adresse sélectionnée.',
+      updated: 'Adresse mise à jour!'
     },
     cart: {
       has_changed: 'Un ou plusieurs objets de votre panier ont été modifiés, vous devriez les passer en revue avant de commander',

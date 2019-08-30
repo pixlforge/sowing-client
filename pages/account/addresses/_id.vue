@@ -31,7 +31,7 @@
 
       <form
         class="mt-36"
-        @submit.prevent
+        @submit.prevent="update"
       >
 
         <!-- First row -->
@@ -200,6 +200,7 @@
       </form>
     </section>
 
+    <!-- Delete confirmation modal -->
     <ModalTransition>
       <div
         v-if="showDeleteConfirmation"
@@ -320,6 +321,15 @@ export default {
       this.form = {
         country_id: this.address.country.id,
         ...this.address
+      }
+    },
+    async update() {
+      try {
+        const res = await this.$axios.$patch(`/addresses/${this.address.id}`, this.form)
+        this.address = res.data
+        this.$toast.success(this.$t('toasts.addresses.updated'))
+      } catch (e) {
+        this.errors = e.response.data.errors
       }
     }
   }

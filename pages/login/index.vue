@@ -134,11 +134,7 @@ export default {
     }
   },
   mounted() {
-    // console.log(this.$refs.autofocus)
     this.$refs.autofocus.$el.focus()
-    // console.log(this.$refs.autofocus_component)
-    // this.$refs.autofocus.$el.focus()
-    // console.log(this.$refs.autofocus.$el)
   },
   methods: {
     ...mapActions({
