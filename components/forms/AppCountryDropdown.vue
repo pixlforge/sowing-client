@@ -12,7 +12,7 @@
         v-for="country in countries"
         :key="country.id"
         :value="country.id"
-        :selected="country.id === value"
+        :selected="country.id == value"
       >
         {{ country.name[locale] }}
       </option>
