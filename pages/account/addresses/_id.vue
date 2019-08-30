@@ -191,6 +191,7 @@
 
           <!-- Cancel -->
           <AppButtonTertiary
+            type="button"
             icon="times"
             @click.native="cancelEdit"
           >
