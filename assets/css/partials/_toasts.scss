@@ -1,9 +1,11 @@
 .toasted {
-  font-size: 1.8rem !important;
-  font-weight: 400 !important;
+  @apply tracking-wide;
+  font-size: 1.6rem !important;
+  font-weight: 700 !important;
 }
 
 .toasted.toasted-primary.success {
+  @apply px-24 py-12 shadow-2xl;
   background-color: #5fb881 !important;
 }
 
