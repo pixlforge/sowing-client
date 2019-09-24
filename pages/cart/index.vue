@@ -47,9 +47,9 @@
         </span>
         {{ $t("pages.cart.products") }}
         {{ $t("pages.cart.for") }}
-        {{ subtotal.currency }}
+        {{ subtotal.detailed.currency }}
         <span class="text-green-500">
-          {{ subtotal.amount }}
+          {{ subtotal.detailed.amount }}
         </span>
       </div>
 

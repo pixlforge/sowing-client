@@ -71,7 +71,7 @@
                 {{ $t("pages.checkout.subtotal") }}
               </div>
               <div>
-                {{ subtotal.currency }} {{ subtotal.amount }}
+                {{ subtotal.formatted }}
               </div>
             </div>
 
@@ -89,7 +89,7 @@
                 {{ $t("pages.checkout.total") }}
               </div>
               <div>
-                {{ total.currency }} {{ total.amount }}
+                {{ total.formatted }}
               </div>
             </div>
           </div>
@@ -219,7 +219,7 @@ export default {
     async order() {
       this.submitting = true
       try {
-        await this.$axios.$post(`/orders`, {
+        await this.$axios.$post('/orders', {
           ...this.form,
           shipping_method_id: this.shippingMethodId
         })

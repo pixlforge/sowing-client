@@ -35,7 +35,7 @@
       </AppTitle>
 
       <div class="h-42 text-18 font-extrabold mt-20 flex justify-center items-center">
-        {{ product.total.currency }} {{ product.total.amount }}
+        {{ product.total.formatted }}
       </div>
     </div>
 
