@@ -11,15 +11,12 @@
       <header class="pt-24 pb-72 sm:pb-196">
         <ul class="flex justify-center">
           <li
-            v-for="locale in $i18n.locales"
+            v-for="locale in availableLocales"
             :key="locale.code"
+            class="block text-12 text-gray-300 cursor-pointer px-10 py-10"
+            @click.prevent="setLocale(locale)"
           >
-            <nuxt-link
-              :to="switchLocalePath(locale.code)"
-              class="block text-12 text-gray-300 px-10 py-10"
-            >
-              {{ locale.name }}
-            </nuxt-link>
+            {{ locale.name }}
           </li>
         </ul>
 
@@ -241,7 +238,15 @@ export default {
       errors: {}
     }
   },
+  computed: {
+    availableLocales() {
+      return this.$i18n.locales
+    }
+  },
   methods: {
+    setLocale(locale) {
+      this.$i18n.setLocale(locale.code)
+    },
     async subscribe() {
       this.errors = {}
 
