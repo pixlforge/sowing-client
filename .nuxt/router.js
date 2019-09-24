@@ -46,645 +46,133 @@ export const routerOptions = {
   scrollBehavior,
 
   routes: [{
-      path: "/en/cart",
-      component: _202ee15e,
-      name: "cart___en"
-    }, {
       path: "/cart",
       component: _202ee15e,
-      name: "cart___fr___default"
-    }, {
-      path: "/fr/cart",
-      component: _202ee15e,
-      name: "cart___fr"
-    }, {
-      path: "/de/cart",
-      component: _202ee15e,
-      name: "cart___de"
-    }, {
-      path: "/it/cart",
-      component: _202ee15e,
-      name: "cart___it"
-    }, {
-      path: "/en/checkout",
-      component: _61cceef7,
-      name: "checkout___en"
+      name: "cart"
     }, {
       path: "/checkout",
       component: _61cceef7,
-      name: "checkout___fr___default"
-    }, {
-      path: "/fr/checkout",
-      component: _61cceef7,
-      name: "checkout___fr"
-    }, {
-      path: "/de/checkout",
-      component: _61cceef7,
-      name: "checkout___de"
-    }, {
-      path: "/it/checkout",
-      component: _61cceef7,
-      name: "checkout___it"
-    }, {
-      path: "/en/coming-soon",
-      component: _c8b0dcee,
-      name: "coming-soon___en"
+      name: "checkout"
     }, {
       path: "/coming-soon",
       component: _c8b0dcee,
-      name: "coming-soon___fr___default"
-    }, {
-      path: "/fr/coming-soon",
-      component: _c8b0dcee,
-      name: "coming-soon___fr"
-    }, {
-      path: "/de/coming-soon",
-      component: _c8b0dcee,
-      name: "coming-soon___de"
-    }, {
-      path: "/it/coming-soon",
-      component: _c8b0dcee,
-      name: "coming-soon___it"
-    }, {
-      path: "/en/faq",
-      component: _51f57edb,
-      name: "faq___en"
+      name: "coming-soon"
     }, {
       path: "/faq",
       component: _51f57edb,
-      name: "faq___fr___default"
-    }, {
-      path: "/fr/faq",
-      component: _51f57edb,
-      name: "faq___fr"
-    }, {
-      path: "/de/faq",
-      component: _51f57edb,
-      name: "faq___de"
-    }, {
-      path: "/it/faq",
-      component: _51f57edb,
-      name: "faq___it"
-    }, {
-      path: "/en/login",
-      component: _1f7774ee,
-      name: "login___en"
+      name: "faq"
     }, {
       path: "/login",
       component: _1f7774ee,
-      name: "login___fr___default"
-    }, {
-      path: "/fr/login",
-      component: _1f7774ee,
-      name: "login___fr"
-    }, {
-      path: "/de/login",
-      component: _1f7774ee,
-      name: "login___de"
-    }, {
-      path: "/it/login",
-      component: _1f7774ee,
-      name: "login___it"
-    }, {
-      path: "/en/orders",
-      component: _4d115756,
-      name: "orders___en"
+      name: "login"
     }, {
       path: "/orders",
       component: _4d115756,
-      name: "orders___fr___default"
-    }, {
-      path: "/fr/orders",
-      component: _4d115756,
-      name: "orders___fr"
-    }, {
-      path: "/de/orders",
-      component: _4d115756,
-      name: "orders___de"
-    }, {
-      path: "/it/orders",
-      component: _4d115756,
-      name: "orders___it"
-    }, {
-      path: "/en/register",
-      component: _3584ffd8,
-      name: "register___en"
+      name: "orders"
     }, {
       path: "/register",
       component: _3584ffd8,
-      name: "register___fr___default"
-    }, {
-      path: "/fr/register",
-      component: _3584ffd8,
-      name: "register___fr"
-    }, {
-      path: "/de/register",
-      component: _3584ffd8,
-      name: "register___de"
-    }, {
-      path: "/it/register",
-      component: _3584ffd8,
-      name: "register___it"
-    }, {
-      path: "/en/search",
-      component: _3df3fb4e,
-      name: "search___en"
+      name: "register"
     }, {
       path: "/search",
       component: _3df3fb4e,
-      name: "search___fr___default"
-    }, {
-      path: "/fr/search",
-      component: _3df3fb4e,
-      name: "search___fr"
-    }, {
-      path: "/de/search",
-      component: _3df3fb4e,
-      name: "search___de"
-    }, {
-      path: "/it/search",
-      component: _3df3fb4e,
-      name: "search___it"
-    }, {
-      path: "/en/account/addresses",
-      component: _0d39ac05,
-      name: "account-addresses___en"
+      name: "search"
     }, {
       path: "/account/addresses",
       component: _0d39ac05,
-      name: "account-addresses___fr___default"
-    }, {
-      path: "/fr/account/addresses",
-      component: _0d39ac05,
-      name: "account-addresses___fr"
-    }, {
-      path: "/de/account/addresses",
-      component: _0d39ac05,
-      name: "account-addresses___de"
-    }, {
-      path: "/it/account/addresses",
-      component: _0d39ac05,
-      name: "account-addresses___it"
-    }, {
-      path: "/en/account/dashboard",
-      component: _296594f4,
-      name: "account-dashboard___en"
+      name: "account-addresses"
     }, {
       path: "/account/dashboard",
       component: _296594f4,
-      name: "account-dashboard___fr___default"
-    }, {
-      path: "/fr/account/dashboard",
-      component: _296594f4,
-      name: "account-dashboard___fr"
-    }, {
-      path: "/de/account/dashboard",
-      component: _296594f4,
-      name: "account-dashboard___de"
-    }, {
-      path: "/it/account/dashboard",
-      component: _296594f4,
-      name: "account-dashboard___it"
-    }, {
-      path: "/en/account/password",
-      component: _7f40eceb,
-      name: "account-password___en"
+      name: "account-dashboard"
     }, {
       path: "/account/password",
       component: _7f40eceb,
-      name: "account-password___fr___default"
-    }, {
-      path: "/fr/account/password",
-      component: _7f40eceb,
-      name: "account-password___fr"
-    }, {
-      path: "/de/account/password",
-      component: _7f40eceb,
-      name: "account-password___de"
-    }, {
-      path: "/it/account/password",
-      component: _7f40eceb,
-      name: "account-password___it"
-    }, {
-      path: "/en/account/payment-methods",
-      component: _169c2bcb,
-      name: "account-payment-methods___en"
+      name: "account-password"
     }, {
       path: "/account/payment-methods",
       component: _169c2bcb,
-      name: "account-payment-methods___fr___default"
-    }, {
-      path: "/fr/account/payment-methods",
-      component: _169c2bcb,
-      name: "account-payment-methods___fr"
-    }, {
-      path: "/de/account/payment-methods",
-      component: _169c2bcb,
-      name: "account-payment-methods___de"
-    }, {
-      path: "/it/account/payment-methods",
-      component: _169c2bcb,
-      name: "account-payment-methods___it"
-    }, {
-      path: "/en/account/profile",
-      component: _fdb118ee,
-      name: "account-profile___en"
+      name: "account-payment-methods"
     }, {
       path: "/account/profile",
       component: _fdb118ee,
-      name: "account-profile___fr___default"
-    }, {
-      path: "/fr/account/profile",
-      component: _fdb118ee,
-      name: "account-profile___fr"
-    }, {
-      path: "/de/account/profile",
-      component: _fdb118ee,
-      name: "account-profile___de"
-    }, {
-      path: "/it/account/profile",
-      component: _fdb118ee,
-      name: "account-profile___it"
-    }, {
-      path: "/en/account/verify",
-      component: _e73cec6e,
-      name: "account-verify___en"
+      name: "account-profile"
     }, {
       path: "/account/verify",
       component: _e73cec6e,
-      name: "account-verify___fr___default"
-    }, {
-      path: "/fr/account/verify",
-      component: _e73cec6e,
-      name: "account-verify___fr"
-    }, {
-      path: "/de/account/verify",
-      component: _e73cec6e,
-      name: "account-verify___de"
-    }, {
-      path: "/it/account/verify",
-      component: _e73cec6e,
-      name: "account-verify___it"
-    }, {
-      path: "/en/password/forgot",
-      component: _1f6b6cd9,
-      name: "password-forgot___en"
+      name: "account-verify"
     }, {
       path: "/password/forgot",
       component: _1f6b6cd9,
-      name: "password-forgot___fr___default"
-    }, {
-      path: "/fr/password/forgot",
-      component: _1f6b6cd9,
-      name: "password-forgot___fr"
-    }, {
-      path: "/de/password/forgot",
-      component: _1f6b6cd9,
-      name: "password-forgot___de"
-    }, {
-      path: "/it/password/forgot",
-      component: _1f6b6cd9,
-      name: "password-forgot___it"
-    }, {
-      path: "/en/password/reset",
-      component: _13ee37ee,
-      name: "password-reset___en"
+      name: "password-forgot"
     }, {
       path: "/password/reset",
       component: _13ee37ee,
-      name: "password-reset___fr___default"
-    }, {
-      path: "/fr/password/reset",
-      component: _13ee37ee,
-      name: "password-reset___fr"
-    }, {
-      path: "/de/password/reset",
-      component: _13ee37ee,
-      name: "password-reset___de"
-    }, {
-      path: "/it/password/reset",
-      component: _13ee37ee,
-      name: "password-reset___it"
-    }, {
-      path: "/en/register/success",
-      component: _2f25d445,
-      name: "register-success___en"
+      name: "password-reset"
     }, {
       path: "/register/success",
       component: _2f25d445,
-      name: "register-success___fr___default"
-    }, {
-      path: "/fr/register/success",
-      component: _2f25d445,
-      name: "register-success___fr"
-    }, {
-      path: "/de/register/success",
-      component: _2f25d445,
-      name: "register-success___de"
-    }, {
-      path: "/it/register/success",
-      component: _2f25d445,
-      name: "register-success___it"
-    }, {
-      path: "/en/shop/creator/connect",
-      component: _47fb1bc8,
-      name: "shop-creator-connect___en"
+      name: "register-success"
     }, {
       path: "/shop/creator/connect",
       component: _47fb1bc8,
-      name: "shop-creator-connect___fr___default"
-    }, {
-      path: "/fr/shop/creator/connect",
-      component: _47fb1bc8,
-      name: "shop-creator-connect___fr"
-    }, {
-      path: "/de/shop/creator/connect",
-      component: _47fb1bc8,
-      name: "shop-creator-connect___de"
-    }, {
-      path: "/it/shop/creator/connect",
-      component: _47fb1bc8,
-      name: "shop-creator-connect___it"
-    }, {
-      path: "/en/shop/creator/customization",
-      component: _88a72df6,
-      name: "shop-creator-customization___en"
+      name: "shop-creator-connect"
     }, {
       path: "/shop/creator/customization",
       component: _88a72df6,
-      name: "shop-creator-customization___fr___default"
-    }, {
-      path: "/fr/shop/creator/customization",
-      component: _88a72df6,
-      name: "shop-creator-customization___fr"
-    }, {
-      path: "/de/shop/creator/customization",
-      component: _88a72df6,
-      name: "shop-creator-customization___de"
-    }, {
-      path: "/it/shop/creator/customization",
-      component: _88a72df6,
-      name: "shop-creator-customization___it"
-    }, {
-      path: "/en/shop/creator/details",
-      component: _07cb0118,
-      name: "shop-creator-details___en"
+      name: "shop-creator-customization"
     }, {
       path: "/shop/creator/details",
       component: _07cb0118,
-      name: "shop-creator-details___fr___default"
-    }, {
-      path: "/fr/shop/creator/details",
-      component: _07cb0118,
-      name: "shop-creator-details___fr"
-    }, {
-      path: "/de/shop/creator/details",
-      component: _07cb0118,
-      name: "shop-creator-details___de"
-    }, {
-      path: "/it/shop/creator/details",
-      component: _07cb0118,
-      name: "shop-creator-details___it"
-    }, {
-      path: "/en/shop/creator/done",
-      component: _07adafc0,
-      name: "shop-creator-done___en"
+      name: "shop-creator-details"
     }, {
       path: "/shop/creator/done",
       component: _07adafc0,
-      name: "shop-creator-done___fr___default"
-    }, {
-      path: "/fr/shop/creator/done",
-      component: _07adafc0,
-      name: "shop-creator-done___fr"
-    }, {
-      path: "/de/shop/creator/done",
-      component: _07adafc0,
-      name: "shop-creator-done___de"
-    }, {
-      path: "/it/shop/creator/done",
-      component: _07adafc0,
-      name: "shop-creator-done___it"
-    }, {
-      path: "/en/shop/creator/name",
-      component: _302d5a49,
-      name: "shop-creator-name___en"
+      name: "shop-creator-done"
     }, {
       path: "/shop/creator/name",
       component: _302d5a49,
-      name: "shop-creator-name___fr___default"
-    }, {
-      path: "/fr/shop/creator/name",
-      component: _302d5a49,
-      name: "shop-creator-name___fr"
-    }, {
-      path: "/de/shop/creator/name",
-      component: _302d5a49,
-      name: "shop-creator-name___de"
-    }, {
-      path: "/it/shop/creator/name",
-      component: _302d5a49,
-      name: "shop-creator-name___it"
-    }, {
-      path: "/en/shop/creator/terms",
-      component: _086ecab9,
-      name: "shop-creator-terms___en"
+      name: "shop-creator-name"
     }, {
       path: "/shop/creator/terms",
       component: _086ecab9,
-      name: "shop-creator-terms___fr___default"
-    }, {
-      path: "/fr/shop/creator/terms",
-      component: _086ecab9,
-      name: "shop-creator-terms___fr"
-    }, {
-      path: "/de/shop/creator/terms",
-      component: _086ecab9,
-      name: "shop-creator-terms___de"
-    }, {
-      path: "/it/shop/creator/terms",
-      component: _086ecab9,
-      name: "shop-creator-terms___it"
-    }, {
-      path: "/en/shop/management/dashboard",
-      component: _c6f278fa,
-      name: "shop-management-dashboard___en"
+      name: "shop-creator-terms"
     }, {
       path: "/shop/management/dashboard",
       component: _c6f278fa,
-      name: "shop-management-dashboard___fr___default"
-    }, {
-      path: "/fr/shop/management/dashboard",
-      component: _c6f278fa,
-      name: "shop-management-dashboard___fr"
-    }, {
-      path: "/de/shop/management/dashboard",
-      component: _c6f278fa,
-      name: "shop-management-dashboard___de"
-    }, {
-      path: "/it/shop/management/dashboard",
-      component: _c6f278fa,
-      name: "shop-management-dashboard___it"
-    }, {
-      path: "/en/shop/management/details",
-      component: _b659241e,
-      name: "shop-management-details___en"
+      name: "shop-management-dashboard"
     }, {
       path: "/shop/management/details",
       component: _b659241e,
-      name: "shop-management-details___fr___default"
-    }, {
-      path: "/fr/shop/management/details",
-      component: _b659241e,
-      name: "shop-management-details___fr"
-    }, {
-      path: "/de/shop/management/details",
-      component: _b659241e,
-      name: "shop-management-details___de"
-    }, {
-      path: "/it/shop/management/details",
-      component: _b659241e,
-      name: "shop-management-details___it"
-    }, {
-      path: "/en/shop/management/theme",
-      component: _11c86fb8,
-      name: "shop-management-theme___en"
+      name: "shop-management-details"
     }, {
       path: "/shop/management/theme",
       component: _11c86fb8,
-      name: "shop-management-theme___fr___default"
-    }, {
-      path: "/fr/shop/management/theme",
-      component: _11c86fb8,
-      name: "shop-management-theme___fr"
-    }, {
-      path: "/de/shop/management/theme",
-      component: _11c86fb8,
-      name: "shop-management-theme___de"
-    }, {
-      path: "/it/shop/management/theme",
-      component: _11c86fb8,
-      name: "shop-management-theme___it"
-    }, {
-      path: "/en/account/addresses/:id",
-      component: _be4628a6,
-      name: "account-addresses-id___en"
+      name: "shop-management-theme"
     }, {
       path: "/account/addresses/:id",
       component: _be4628a6,
-      name: "account-addresses-id___fr___default"
-    }, {
-      path: "/fr/account/addresses/:id",
-      component: _be4628a6,
-      name: "account-addresses-id___fr"
-    }, {
-      path: "/de/account/addresses/:id",
-      component: _be4628a6,
-      name: "account-addresses-id___de"
-    }, {
-      path: "/it/account/addresses/:id",
-      component: _be4628a6,
-      name: "account-addresses-id___it"
-    }, {
-      path: "/en/categories/:slug?",
-      component: _55bb8585,
-      name: "categories-slug___en"
+      name: "account-addresses-id"
     }, {
       path: "/categories/:slug?",
       component: _55bb8585,
-      name: "categories-slug___fr___default"
-    }, {
-      path: "/fr/categories/:slug?",
-      component: _55bb8585,
-      name: "categories-slug___fr"
-    }, {
-      path: "/de/categories/:slug?",
-      component: _55bb8585,
-      name: "categories-slug___de"
-    }, {
-      path: "/it/categories/:slug?",
-      component: _55bb8585,
-      name: "categories-slug___it"
-    }, {
-      path: "/en/products/:slug?",
-      component: _98c27766,
-      name: "products-slug___en"
+      name: "categories-slug"
     }, {
       path: "/products/:slug?",
       component: _98c27766,
-      name: "products-slug___fr___default"
-    }, {
-      path: "/fr/products/:slug?",
-      component: _98c27766,
-      name: "products-slug___fr"
-    }, {
-      path: "/de/products/:slug?",
-      component: _98c27766,
-      name: "products-slug___de"
-    }, {
-      path: "/it/products/:slug?",
-      component: _98c27766,
-      name: "products-slug___it"
-    }, {
-      path: "/en/shop/:slug?/details",
-      component: _c372bddc,
-      name: "shop-slug-details___en"
+      name: "products-slug"
     }, {
       path: "/shop/:slug?/details",
       component: _c372bddc,
-      name: "shop-slug-details___fr___default"
-    }, {
-      path: "/fr/shop/:slug?/details",
-      component: _c372bddc,
-      name: "shop-slug-details___fr"
-    }, {
-      path: "/de/shop/:slug?/details",
-      component: _c372bddc,
-      name: "shop-slug-details___de"
-    }, {
-      path: "/it/shop/:slug?/details",
-      component: _c372bddc,
-      name: "shop-slug-details___it"
-    }, {
-      path: "/en/categories/:category?/:subcategory?/:slug?",
-      component: _669364c1,
-      name: "categories-category-subcategory-slug___en"
+      name: "shop-slug-details"
     }, {
       path: "/categories/:category?/:subcategory?/:slug?",
       component: _669364c1,
-      name: "categories-category-subcategory-slug___fr___default"
-    }, {
-      path: "/fr/categories/:category?/:subcategory?/:slug?",
-      component: _669364c1,
-      name: "categories-category-subcategory-slug___fr"
-    }, {
-      path: "/de/categories/:category?/:subcategory?/:slug?",
-      component: _669364c1,
-      name: "categories-category-subcategory-slug___de"
-    }, {
-      path: "/it/categories/:category?/:subcategory?/:slug?",
-      component: _669364c1,
-      name: "categories-category-subcategory-slug___it"
-    }, {
-      path: "/en/",
-      component: _427590d8,
-      name: "index___en"
+      name: "categories-category-subcategory-slug"
     }, {
       path: "/",
       component: _427590d8,
-      name: "index___fr___default"
-    }, {
-      path: "/fr/",
-      component: _427590d8,
-      name: "index___fr"
-    }, {
-      path: "/de/",
-      component: _427590d8,
-      name: "index___de"
-    }, {
-      path: "/it/",
-      component: _427590d8,
-      name: "index___it"
+      name: "index"
     }],
 
   fallback: false

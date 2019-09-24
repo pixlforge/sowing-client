@@ -109,13 +109,16 @@ export default {
           syncLocale: true
         },
         defaultLocale: 'fr',
-        strategy: 'prefix_and_default',
+        vueI18n: {
+          fallbackLocale: 'fr'
+        },
+        strategy: 'no_prefix',
         lazy: true,
         langDir: 'lang/',
         detectBrowserLanguage: {
           useCookie: true,
           cookieKey: 'i18n_redirected',
-          alwaysRedirect: false
+          alwaysRedirect: true
         }
       }
     ]

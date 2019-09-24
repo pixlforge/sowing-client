@@ -51,10 +51,10 @@
       <!-- Languages -->
       <AppFooterColumn :title="$t('footer.titles.language')">
         <AppFooterItem
-          v-for="locale in $i18n.locales"
+          v-for="locale in availableLocales"
           :key="locale.code"
-          :to="switchLocalePath(locale.code)"
           :label="locale.name"
+          @click.native="setLocale(locale)"
         />
       </AppFooterColumn>
 
@@ -95,7 +95,15 @@ export default {
     ...mapGetters({
       locale: 'locale',
       categories: 'categories'
-    })
+    }),
+    availableLocales() {
+      return this.$i18n.locales
+    }
+  },
+  methods: {
+    setLocale(locale) {
+      this.$i18n.setLocale(locale.code)
+    }
   }
 }
 </script>

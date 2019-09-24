@@ -18,7 +18,8 @@ export default {
   props: {
     to: {
       type: String,
-      required: true
+      required: false,
+      default: ''
     },
     label: {
       type: String,

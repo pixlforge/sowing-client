@@ -22,9 +22,9 @@
     <DropdownTransition>
       <AppDropdownContainer v-if="dropdownIsOpen">
         <AppDropdownItem
-          v-for="locale in $i18n.locales"
+          v-for="locale in availableLocales"
           :key="locale.code"
-          :to="switchLocalePath(locale.code)"
+          @click.native="setLocale(locale)"
         >
           {{ locale.name }}
         </AppDropdownItem>
@@ -52,6 +52,11 @@ export default {
       dropdownIsOpen: false
     }
   },
+  computed: {
+    availableLocales() {
+      return this.$i18n.locales
+    }
+  },
   mounted() {
     const escapeHandler = (event) => {
       if (event.key === 'Escape' && this.dropdownIsOpen) {
@@ -77,6 +82,9 @@ export default {
   methods: {
     toggleDropdown() {
       this.dropdownIsOpen = !this.dropdownIsOpen
+    },
+    setLocale(locale) {
+      this.$i18n.setLocale(locale.code)
     }
   }
 }
