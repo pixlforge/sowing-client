@@ -23,7 +23,10 @@
     </div>
 
     <!-- Card -->
-    <AppAddressCard :address="form"/>
+    <AppAddressCard
+      :address="form"
+      class="my-72 md:my-96"
+    />
 
     <!-- Edition -->
     <section>
@@ -36,176 +39,175 @@
         {{ $t('pages.account.addresses.update_title') }}
       </AppTitle>
 
-      <form
-        class="mt-36"
-        @submit.prevent="update"
-      >
+      <section class="my-72 md:my-96">
+        <form @submit.prevent="update">
 
-        <!-- First row -->
-        <AppFormRow>
+          <!-- First row -->
+          <AppFormRow>
 
-          <!-- First name -->
-          <AppFormRowGroup>
-            <AppFormLabel name="first_name">
-              {{ $t('forms.labels.first_name') }}
+            <!-- First name -->
+            <AppFormRowGroup>
+              <AppFormLabel name="first_name">
+                {{ $t('forms.labels.first_name') }}
+              </AppFormLabel>
+              <AppFormInput
+                v-model="form.first_name"
+                :errors="errors"
+                name="first_name"
+              />
+              <AppFormValidation
+                :errors="errors"
+                name="first_name"
+              />
+            </AppFormRowGroup>
+
+            <!-- Last name -->
+            <AppFormRowGroup>
+              <AppFormLabel name="last_name">
+                {{ $t('forms.labels.last_name') }}
+              </AppFormLabel>
+              <AppFormInput
+                v-model="form.last_name"
+                :errors="errors"
+                name="last_name"
+              />
+              <AppFormValidation
+                :errors="errors"
+                name="last_name"
+              />
+            </AppFormRowGroup>
+          </AppFormRow>
+
+          <!-- Company name -->
+          <AppFormGroup>
+            <AppFormLabel name="company_name">
+              {{ $t('forms.labels.company_name') }}
             </AppFormLabel>
             <AppFormInput
-              v-model="form.first_name"
+              v-model="form.company_name"
               :errors="errors"
-              name="first_name"
+              name="company_name"
             />
             <AppFormValidation
               :errors="errors"
-              name="first_name"
+              name="company_name"
             />
-          </AppFormRowGroup>
+          </AppFormGroup>
 
-          <!-- Last name -->
-          <AppFormRowGroup>
-            <AppFormLabel name="last_name">
-              {{ $t('forms.labels.last_name') }}
-            </AppFormLabel>
-            <AppFormInput
-              v-model="form.last_name"
+          <AppFormRow>
+
+            <!-- Address line 1 -->
+            <AppFormRowGroup>
+              <AppFormLabel name="address_line_1">
+                {{ $t('forms.labels.address_line_1') }}
+              </AppFormLabel>
+              <AppFormInput
+                v-model="form.address_line_1"
+                :errors="errors"
+                name="address_line_1"
+              />
+              <AppFormValidation
+                :errors="errors"
+                name="address_line_1"
+              />
+            </AppFormRowGroup>
+
+            <!-- Address line 2 -->
+            <AppFormRowGroup>
+              <AppFormLabel name="address_line_2">
+                {{ $t('forms.labels.address_line_2') }}
+              </AppFormLabel>
+              <AppFormInput
+                v-model="form.address_line_2"
+                :errors="errors"
+                name="address_line_2"
+              />
+              <AppFormValidation
+                :errors="errors"
+                name="address_line_2"
+              />
+            </AppFormRowGroup>
+          </AppFormRow>
+
+          <!-- Third row -->
+          <AppFormRow>
+
+            <!-- Postal code -->
+            <AppFormRowGroup>
+              <AppFormLabel name="postal_code">
+                {{ $t('forms.labels.postal_code') }}
+              </AppFormLabel>
+              <AppFormInput
+                v-model="form.postal_code"
+                :errors="errors"
+                name="postal_code"
+              />
+              <AppFormValidation
+                :errors="errors"
+                name="postal_code"
+              />
+            </AppFormRowGroup>
+
+            <!-- City -->
+            <AppFormRowGroup>
+              <AppFormLabel name="city">
+                {{ $t('forms.labels.city') }}
+              </AppFormLabel>
+              <AppFormInput
+                v-model="form.city"
+                :errors="errors"
+                name="city"
+              />
+              <AppFormValidation
+                :errors="errors"
+                name="city"
+              />
+            </AppFormRowGroup>
+          </AppFormRow>
+
+          <!-- Country -->
+          <AppFormGroup>
+            <AppCountryDropdown
+              v-model="form.country_id"
               :errors="errors"
-              name="last_name"
             />
-            <AppFormValidation
-              :errors="errors"
-              name="last_name"
-            />
-          </AppFormRowGroup>
-        </AppFormRow>
+          </AppFormGroup>
 
-        <!-- Company name -->
-        <AppFormGroup>
-          <AppFormLabel name="company_name">
-            {{ $t('forms.labels.company_name') }}
-          </AppFormLabel>
-          <AppFormInput
-            v-model="form.company_name"
-            :errors="errors"
-            name="company_name"
-          />
-          <AppFormValidation
-            :errors="errors"
-            name="company_name"
-          />
-        </AppFormGroup>
+          <!-- Default -->
+          <AppFormGroup>
+            <AppFormCheckbox
+              v-model="form.is_default"
+              name="is_default"
+            >
+              <AppFormCheckboxLabel name="is_default">
+                {{ $t('forms.labels.default_address') }}
+              </AppFormCheckboxLabel>
+            </AppFormCheckbox>
+          </AppFormGroup>
 
-        <AppFormRow>
+          <!-- Controls -->
+          <div class="flex">
 
-          <!-- Address line 1 -->
-          <AppFormRowGroup>
-            <AppFormLabel name="address_line_1">
-              {{ $t('forms.labels.address_line_1') }}
-            </AppFormLabel>
-            <AppFormInput
-              v-model="form.address_line_1"
-              :errors="errors"
-              name="address_line_1"
-            />
-            <AppFormValidation
-              :errors="errors"
-              name="address_line_1"
-            />
-          </AppFormRowGroup>
+            <!-- Submit -->
+            <AppButtonPrimary
+              icon="check-circle"
+              type="submit"
+              class="mr-10"
+            >
+              {{ $t('buttons.update') }}
+            </AppButtonPrimary>
 
-          <!-- Address line 2 -->
-          <AppFormRowGroup>
-            <AppFormLabel name="address_line_2">
-              {{ $t('forms.labels.address_line_2') }}
-            </AppFormLabel>
-            <AppFormInput
-              v-model="form.address_line_2"
-              :errors="errors"
-              name="address_line_2"
-            />
-            <AppFormValidation
-              :errors="errors"
-              name="address_line_2"
-            />
-          </AppFormRowGroup>
-        </AppFormRow>
-
-        <!-- Third row -->
-        <AppFormRow>
-
-          <!-- Postal code -->
-          <AppFormRowGroup>
-            <AppFormLabel name="postal_code">
-              {{ $t('forms.labels.postal_code') }}
-            </AppFormLabel>
-            <AppFormInput
-              v-model="form.postal_code"
-              :errors="errors"
-              name="postal_code"
-            />
-            <AppFormValidation
-              :errors="errors"
-              name="postal_code"
-            />
-          </AppFormRowGroup>
-
-          <!-- City -->
-          <AppFormRowGroup>
-            <AppFormLabel name="city">
-              {{ $t('forms.labels.city') }}
-            </AppFormLabel>
-            <AppFormInput
-              v-model="form.city"
-              :errors="errors"
-              name="city"
-            />
-            <AppFormValidation
-              :errors="errors"
-              name="city"
-            />
-          </AppFormRowGroup>
-        </AppFormRow>
-
-        <!-- Country -->
-        <AppFormGroup>
-          <AppCountryDropdown
-            v-model="form.country_id"
-            :errors="errors"
-          />
-        </AppFormGroup>
-
-        <!-- Default -->
-        <AppFormGroup>
-          <AppFormCheckbox
-            v-model="form.is_default"
-            name="is_default"
-          >
-            <AppFormCheckboxLabel name="is_default">
-              {{ $t('forms.labels.default_address') }}
-            </AppFormCheckboxLabel>
-          </AppFormCheckbox>
-        </AppFormGroup>
-
-        <!-- Controls -->
-        <div class="flex">
-
-          <!-- Submit -->
-          <AppButtonPrimary
-            icon="check-circle"
-            type="submit"
-            class="mr-10"
-          >
-            {{ $t('buttons.update') }}
-          </AppButtonPrimary>
-
-          <!-- Cancel -->
-          <AppButtonTertiary
-            type="button"
-            icon="times"
-            @click.native="cancelEdit"
-          >
-            {{ $t('buttons.cancel') }}
-          </AppButtonTertiary>
-        </div>
-      </form>
+            <!-- Cancel -->
+            <AppButtonTertiary
+              type="button"
+              icon="times"
+              @click.native="cancelEdit"
+            >
+              {{ $t('buttons.cancel') }}
+            </AppButtonTertiary>
+          </div>
+        </form>
+      </section>
     </section>
 
     <!-- Delete confirmation modal -->

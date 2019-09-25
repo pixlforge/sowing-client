@@ -50,6 +50,7 @@ export default {
    */
   buttons: {
     add: 'Ajouter',
+    add_address: 'Ajouter une adresse',
     add_to_cart: 'Ajouter au panier',
     back: 'Retour',
     begin_shop_creation: 'Commencer la création de ma boutique',
@@ -229,7 +230,8 @@ export default {
         title: 'Adresses',
         my_address: 'Mon adresse',
         is_default: "Il s'agit de votre adresse par défaut.",
-        update_title: 'Mettre à jour mon adresse'
+        update_title: 'Mettre à jour mon adresse',
+        create_title: 'Nouvelle adresse'
       },
       payment_methods: {
         title: 'Moyens de paiement'

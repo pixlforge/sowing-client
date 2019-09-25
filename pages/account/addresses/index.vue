@@ -1,15 +1,23 @@
 <template>
   <div>
+    <div class="flex justify-between items-baseline">
 
-    <!-- Page title -->
-    <AppTitle
-      semantic="h1"
-      visual="h2"
-    >
-      {{ $t("pages.account.addresses.title") }}
-    </AppTitle>
+      <!-- Page title -->
+      <AppTitle
+        semantic="h1"
+        visual="h2"
+      >
+        {{ $t("pages.account.addresses.title") }}
+      </AppTitle>
 
-    <div class="flex flex-wrap -mx-10 mt-36">
+      <!-- Add an address -->
+      <AppAddButtonLink
+        :to="localePath({ name: 'account-addresses-create' })"
+        :label="$t('buttons.add_address')"
+      />
+    </div>
+
+    <div class="flex flex-wrap -mx-10 my-72 md:my-96">
       <AppAddress
         v-for="address in addresses"
         :key="address.id"
@@ -23,11 +31,13 @@
 <script>
 import AppTitle from '@/components/AppTitle'
 import AppAddress from '@/components/addresses/AppAddress'
+import AppAddButtonLink from '@/components/buttons/AppAddButtonLink'
 
 export default {
   components: {
     AppTitle,
-    AppAddress
+    AppAddress,
+    AppAddButtonLink
   },
   middleware: ['authenticated'],
   layout: 'account-management',

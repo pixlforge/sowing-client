@@ -50,6 +50,7 @@ export default {
    */
   buttons: {
     add: 'Add',
+    add_address: 'Add an address',
     add_to_cart: 'Add to cart',
     back: 'Back',
     begin_shop_creation: 'Start the creation of my shop',
@@ -229,7 +230,8 @@ export default {
         title: 'Addresses',
         my_address: 'My address',
         is_default: 'This is your default address.',
-        update_title: 'Update my address'
+        update_title: 'Update my address',
+        create_title: 'New address'
       },
       payment_methods: {
         title: 'Payment methods'

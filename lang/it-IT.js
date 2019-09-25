@@ -50,7 +50,8 @@ export default {
    */
   buttons: {
     add: 'Inserire',
-    add_to_cart: 'Aggiungi al carrello',
+    add_address: 'Aggiungete un indirizzo',
+    add_to_cart: 'Aggiungete al carrello',
     back: 'Indietro',
     begin_shop_creation: 'Iniziare la creazione del mio negozio',
     cancel: 'Annulla',
@@ -229,7 +230,8 @@ export default {
         title: 'Indirizzi',
         my_address: 'Il mio indirizzo',
         is_default: 'Questo è il vostro indirizzo predefinito.',
-        update_title: 'Aggiorna il mio indirizzo'
+        update_title: 'Aggiorna il mio indirizzo',
+        create_title: 'Nuovo indirizzo'
       },
       payment_methods: {
         title: 'Modalità di pagamento'

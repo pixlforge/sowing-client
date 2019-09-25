@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full sm:w-1/2 px-10 my-20">
+  <div class="w-full sm:w-1/2 px-10 mb-36">
     <nuxt-link
       :to="localePath({ name: 'account-addresses-id', params: { id: address.id } })"
       class="relative h-full border border-gray-200 rounded-lg shadow-lg transition-shadow transition-medium flex overflow-hidden group py-30 px-36"

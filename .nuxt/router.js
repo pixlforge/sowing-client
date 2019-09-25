@@ -20,6 +20,7 @@ const _e73cec6e = () => interopDefault(import('../pages/account/verify.vue' /* w
 const _1f6b6cd9 = () => interopDefault(import('../pages/password/forgot.vue' /* webpackChunkName: "pages/password/forgot" */))
 const _13ee37ee = () => interopDefault(import('../pages/password/reset.vue' /* webpackChunkName: "pages/password/reset" */))
 const _2f25d445 = () => interopDefault(import('../pages/register/success.vue' /* webpackChunkName: "pages/register/success" */))
+const _7c9fc14e = () => interopDefault(import('../pages/account/addresses/create.vue' /* webpackChunkName: "pages/account/addresses/create" */))
 const _47fb1bc8 = () => interopDefault(import('../pages/shop/creator/connect.vue' /* webpackChunkName: "pages/shop/creator/connect" */))
 const _88a72df6 = () => interopDefault(import('../pages/shop/creator/customization.vue' /* webpackChunkName: "pages/shop/creator/customization" */))
 const _07cb0118 = () => interopDefault(import('../pages/shop/creator/details.vue' /* webpackChunkName: "pages/shop/creator/details" */))
@@ -113,6 +114,10 @@ export const routerOptions = {
       path: "/register/success",
       component: _2f25d445,
       name: "register-success"
+    }, {
+      path: "/account/addresses/create",
+      component: _7c9fc14e,
+      name: "account-addresses-create"
     }, {
       path: "/shop/creator/connect",
       component: _47fb1bc8,
