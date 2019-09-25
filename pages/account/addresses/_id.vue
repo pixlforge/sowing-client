@@ -29,6 +29,13 @@
     <section>
       <AppFormDivider large/>
 
+      <AppTitle
+        semantic="h1"
+        visual="h3"
+      >
+        {{ $t('pages.account.addresses.update_title') }}
+      </AppTitle>
+
       <form
         class="mt-36"
         @submit.prevent="update"

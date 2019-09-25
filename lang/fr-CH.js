@@ -228,7 +228,8 @@ export default {
       addresses: {
         title: 'Adresses',
         my_address: 'Mon adresse',
-        is_default: "Il s'agit de votre adresse par défaut."
+        is_default: "Il s'agit de votre adresse par défaut.",
+        update_title: 'Mettre à jour mon adresse'
       },
       payment_methods: {
         title: 'Moyens de paiement'

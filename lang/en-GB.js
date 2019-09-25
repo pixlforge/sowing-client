@@ -228,7 +228,8 @@ export default {
       addresses: {
         title: 'Addresses',
         my_address: 'My address',
-        is_default: 'This is your default address.'
+        is_default: 'This is your default address.',
+        update_title: 'Update my address'
       },
       payment_methods: {
         title: 'Payment methods'
