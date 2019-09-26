@@ -1,12 +1,16 @@
 require('dotenv').config()
 
 export default {
+  /*
+   ** Node server configuration
+   */
   server: {
     port: 8871
   },
-
+  /*
+   ** App mode
+   */
   mode: 'universal',
-
   /*
    ** Headers of the page
    */
@@ -20,11 +24,12 @@ export default {
     script: [{ src: 'https://js.stripe.com/v3/' }],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
-
+  /*
+   ** Router configuration
+   */
   router: {
     middleware: ['landing-page-redirect']
   },
-
   /*
    ** Customize the progress-bar color
    */
@@ -32,12 +37,12 @@ export default {
     color: '#5FB881',
     height: '5px'
   },
-
   /*
    ** Global CSS
    */
-  css: ['~/assets/css/tailwind.scss'],
-
+  css: [
+    '~/assets/css/tailwind.scss'
+  ],
   /**
    * Web font loader configuration
    */
@@ -46,7 +51,6 @@ export default {
       families: ['Montserrat:300,400,700,800,900']
     }
   },
-
   /*
    ** Plugins to load before mounting the App
    */
@@ -58,7 +62,6 @@ export default {
     //   ssr: false
     // }
   ],
-
   /*
    ** Nuxt.js modules
    */
@@ -123,7 +126,6 @@ export default {
       }
     ]
   ],
-
   /*
    ** Axios module configuration
    */
@@ -131,7 +133,6 @@ export default {
     // See https://github.com/nuxt-community/axios-module#options
     baseURL: process.env.API_URL
   },
-
   /**
    * Auth module configuration
    */
@@ -158,7 +159,6 @@ export default {
       home: false
     }
   },
-
   /**
    * Font Awesome configuration
    */
@@ -178,13 +178,13 @@ export default {
       }
     ]
   },
-
   /**
-   * Toasted configuration
+   * Toast configuration
    */
   toast: {
     position: 'bottom-right',
-    duration: 6000
+    duration: 6000,
+    className: ['custom']
   },
 
   build: {

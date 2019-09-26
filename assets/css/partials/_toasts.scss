@@ -1,18 +1,21 @@
-.toasted {
-  @apply tracking-wide;
-  font-size: 1.6rem !important;
-  font-weight: 700 !important;
+.toasted.custom.toasted-primary {
+  @apply text-16 font-semibold tracking-wide rounded-lg justify-center;
 }
 
-.toasted.toasted-primary.success {
-  @apply px-24 py-12 shadow-2xl;
-  background-color: #5fb881 !important;
+.toasted.custom.toasted-primary.success,
+.toasted.custom.toasted-primary.info,
+.toasted.custom.toasted-primary.error {
+  @apply px-24 py-16 shadow-xl;
 }
 
-.toasted.toasted-primary.info {
-  background-color: #42a5f5 !important;
+.toasted.custom.toasted-primary.success {
+  @apply bg-green-500;
 }
 
-.toasted.toasted-primary.error {
-  background-color: #e3342f !important;
+.toasted.custom.toasted-primary.info {
+  @apply bg-blue-500;
+}
+
+.toasted.custom.toasted-primary.error {
+  @apply bg-red-500;
 }
