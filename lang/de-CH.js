@@ -231,7 +231,8 @@ export default {
         my_address: 'Meine Adresse',
         is_default: 'Dies ist Ihre Standardadresse.',
         update_title: 'Aktualisiere meine Adresse',
-        create_title: 'Neue Adresse'
+        create_title: 'Neue Adresse',
+        no_address_found: 'Sie haben noch keine Adresse.'
       },
       payment_methods: {
         title: 'Zahlungsarten'

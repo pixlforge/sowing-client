@@ -18,11 +18,18 @@
     </div>
 
     <div class="flex flex-wrap -mx-10 my-72 md:my-96">
-      <AppAddress
-        v-for="address in addresses"
-        :key="address.id"
-        :address="address"
-      />
+      <template v-if="addresses.length">
+        <AppAddress
+          v-for="address in addresses"
+          :key="address.id"
+          :address="address"
+        />
+      </template>
+      <template v-else>
+        <p class="w-full text-14 text-gray-300 text-center">
+          {{ $t('pages.account.addresses.no_address_found') }}
+        </p>
+      </template>
     </div>
 
   </div>
