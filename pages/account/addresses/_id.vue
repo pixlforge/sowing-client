@@ -54,6 +54,7 @@
                 v-model="form.first_name"
                 :errors="errors"
                 name="first_name"
+                required
               />
               <AppFormValidation
                 :errors="errors"
@@ -70,6 +71,7 @@
                 v-model="form.last_name"
                 :errors="errors"
                 name="last_name"
+                required
               />
               <AppFormValidation
                 :errors="errors"
@@ -105,6 +107,7 @@
                 v-model="form.address_line_1"
                 :errors="errors"
                 name="address_line_1"
+                required
               />
               <AppFormValidation
                 :errors="errors"
@@ -141,6 +144,7 @@
                 v-model="form.postal_code"
                 :errors="errors"
                 name="postal_code"
+                required
               />
               <AppFormValidation
                 :errors="errors"
@@ -157,6 +161,7 @@
                 v-model="form.city"
                 :errors="errors"
                 name="city"
+                required
               />
               <AppFormValidation
                 :errors="errors"
@@ -170,6 +175,7 @@
             <AppCountryDropdown
               v-model="form.country_id"
               :errors="errors"
+              required
             />
           </AppFormGroup>
 
@@ -299,6 +305,19 @@ export default {
     AppFormCheckboxLabel
   },
   layout: 'account-management',
+  middleware: ['authenticated'],
+  head() {
+    return {
+      title: `${this.$t('pages.account.addresses.update_title')} | ${this.$t('pages.account.title')} | ${this.title}`,
+      meta: [
+        {
+          hid: 'robots',
+          name: 'robots',
+          content: 'noindex'
+        }
+      ]
+    }
+  },
   data() {
     return {
       form: {},
@@ -311,7 +330,8 @@ export default {
     const address = await app.$axios.$get(`/addresses/${route.params.id}`)
 
     return {
-      address: address.data
+      address: address.data,
+      title: app.head.title
     }
   },
   created() {
