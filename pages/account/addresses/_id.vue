@@ -247,6 +247,7 @@
                 color="red"
                 icon="trash-alt"
                 class="mr-10"
+                @click.native="destroy"
               >
                 {{ $t('buttons.delete') }}
               </AppButtonPrimary>
@@ -351,6 +352,15 @@ export default {
       this.form = {
         country_id: this.address.country.id,
         ...this.address
+      }
+    },
+    async destroy() {
+      try {
+        await this.$axios.$delete(`/addresses/${this.address.id}`)
+        this.$toast.success('Deleted') // TODO: add translation
+        this.$router.push(this.localePath({ name: 'account-addresses' }))
+      } catch (e) {
+        this.$toast.error('Error') // TODO: add translation
       }
     },
     async update() {
