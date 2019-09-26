@@ -32,6 +32,7 @@
               v-model="form.first_name"
               :errors="errors"
               name="first_name"
+              required
             />
             <AppFormValidation
               :errors="errors"
@@ -48,6 +49,7 @@
               v-model="form.last_name"
               :errors="errors"
               name="last_name"
+              required
             />
             <AppFormValidation
               :errors="errors"
@@ -83,6 +85,7 @@
               v-model="form.address_line_1"
               :errors="errors"
               name="address_line_1"
+              required
             />
             <AppFormValidation
               :errors="errors"
@@ -119,6 +122,7 @@
               v-model="form.postal_code"
               :errors="errors"
               name="postal_code"
+              required
             />
             <AppFormValidation
               :errors="errors"
@@ -135,6 +139,7 @@
               v-model="form.city"
               :errors="errors"
               name="city"
+              required
             />
             <AppFormValidation
               :errors="errors"
@@ -148,6 +153,7 @@
           <AppCountryDropdown
             v-model="form.country_id"
             :errors="errors"
+            required
           />
         </AppFormGroup>
 
@@ -176,13 +182,12 @@
           </AppButtonPrimary>
 
           <!-- Cancel -->
-          <AppButtonTertiary
-            type="button"
+          <AppButtonLinkTertiary
+            :to="localePath({ name: 'account-addresses' })"
             icon="times"
-            @click.native="cancelEdit"
           >
             {{ $t('buttons.cancel') }}
-          </AppButtonTertiary>
+          </AppButtonLinkTertiary>
         </div>
       </form>
     </section>
@@ -202,8 +207,8 @@ import AppFormCheckbox from '@/components/forms/AppFormCheckbox'
 import AppFormValidation from '@/components/forms/AppFormValidation'
 import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 import AppCountryDropdown from '@/components/forms/AppCountryDropdown'
-import AppButtonTertiary from '@/components/buttons/AppButtonTertiary'
 import AppFormCheckboxLabel from '@/components/forms/AppFormCheckboxLabel'
+import AppButtonLinkTertiary from '@/components/buttons/AppButtonLinkTertiary'
 
 export default {
   components: {
@@ -218,10 +223,23 @@ export default {
     AppFormValidation,
     AppButtonPrimary,
     AppCountryDropdown,
-    AppButtonTertiary,
+    AppButtonLinkTertiary,
     AppFormCheckboxLabel
   },
   layout: 'account-management',
+  middleware: ['authenticated'],
+  head() {
+    return {
+      title: `${this.$t('pages.account.addresses.create_title')} | ${this.$t('pages.account.title')} | ${this.title}`,
+      meta: [
+        {
+          hid: 'robots',
+          name: 'robots',
+          content: 'noindex'
+        }
+      ]
+    }
+  },
   data() {
     return {
       form: {
@@ -236,6 +254,11 @@ export default {
         is_default: false
       },
       errors: {}
+    }
+  },
+  asyncData({ app }) {
+    return {
+      title: app.head.title
     }
   },
   methods: {

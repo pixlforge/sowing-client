@@ -6,6 +6,7 @@
     <AppFormSelect
       :errors="errors"
       name="country_id"
+      :required="required"
       @change.native="$emit('input', $event.target.value)"
     >
       <option
@@ -46,6 +47,11 @@ export default {
     errors: {
       type: Object,
       required: true
+    },
+    required: {
+      type: Boolean,
+      required: false,
+      default: false
     }
   },
   data() {

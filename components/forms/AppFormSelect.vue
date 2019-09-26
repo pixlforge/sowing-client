@@ -11,6 +11,7 @@
         'bg-white': theme === 'light'
       }"
       class="block w-full appearance-none disabled:bg-white rounded-lg text-16 leading-tight text-gray-900 disabled:text-gray-200 placeholder-gray-200 outline-none border border-transparent disabled:border-gray-200 disabled:cursor-not-allowed px-16 py-12"
+      :required="required"
       @change="$emit('input', $event.target.value)"
     >
       <option
@@ -63,6 +64,11 @@ export default {
       type: String,
       required: false,
       default: ''
+    },
+    required: {
+      type: Boolean,
+      required: false,
+      default: false
     }
   }
 }
