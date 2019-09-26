@@ -441,7 +441,8 @@ export default {
     addresses: {
       created: 'Nouvelle adresse créée avec succès!',
       selected: 'Adresse sélectionnée.',
-      updated: 'Adresse mise à jour!'
+      updated: 'Adresse mise à jour!',
+      deleted: 'Adresse supprimée avec succès.'
     },
     cart: {
       has_changed: 'Un ou plusieurs objets de votre panier ont été modifiés, vous devriez les passer en revue avant de commander',

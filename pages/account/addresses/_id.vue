@@ -357,10 +357,10 @@ export default {
     async destroy() {
       try {
         await this.$axios.$delete(`/addresses/${this.address.id}`)
-        this.$toast.success('Deleted') // TODO: add translation
+        this.$toast.success(this.$t('toasts.addresses.deleted'))
         this.$router.push(this.localePath({ name: 'account-addresses' }))
       } catch (e) {
-        this.$toast.error('Error') // TODO: add translation
+        this.$toast.error(this.$t('toasts.general_error'))
       }
     },
     async update() {
