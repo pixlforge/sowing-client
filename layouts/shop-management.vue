@@ -51,7 +51,7 @@
           <div class="w-full flex mt-96">
 
             <!-- Side menu -->
-            <aside class="w-1/5 pr-30">
+            <aside class="w-1/4">
               <AppSideMenu>
                 <AppSideMenuItem
                   label="Tableau de bord"
@@ -69,7 +69,7 @@
             </aside>
 
             <!-- Page content -->
-            <section class="w-4/5 pl-30">
+            <section class="w-full lg:w-3/4 lg:pl-60 mt-72 lg:mt-0">
               <nuxt/>
             </section>
           </div>

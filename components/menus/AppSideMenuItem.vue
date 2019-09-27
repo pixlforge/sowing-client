@@ -3,7 +3,7 @@
     <nuxt-link
       :to="localePath({ name: route })"
       :class="classes"
-      class="block rounded-lg hover:text-white hover:shadow-xl pl-20 py-12"
+      class="block text-gray-300 border-l-4 border-transparent pl-30 py-12"
     >
       {{ label }}
     </nuxt-link>
@@ -26,14 +26,17 @@ export default {
     }
   },
   computed: {
+    isCurrentRoute() {
+      return this.$route.name.includes(this.route)
+    },
     classes() {
       let active
 
-      if (this.$route.name.includes(this.route)) {
-        active = `text-white shadow-xl ${this.bgTheme}`
+      if (this.isCurrentRoute) {
+        active = `border-${this.shopTheme}-500 text-gray-800`
       }
 
-      return `hover:${this.bgTheme} ${active}`
+      return `hover:border-${this.shopTheme}-500 ${active}`
     }
   }
 }
