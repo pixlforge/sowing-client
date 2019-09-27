@@ -19,7 +19,7 @@
       </div>
 
       <!-- Delete -->
-      <AppDeleteButton @click.native="confirmDelete"/>
+      <AppDeleteButton @click.native="displayConfirmationModal(true)"/>
     </div>
 
     <!-- Card -->
@@ -216,57 +216,15 @@
       </section>
     </section>
 
-    <!-- Delete confirmation modal -->
-    <ModalTransition>
-      <div
-        v-if="showDeleteConfirmation"
-        class="fixed inset-x-0 inset-y-0 bg-backdrop flex justify-center items-center"
-      >
-        <div class="w-full max-w-600 bg-white rounded-lg shadow-xl border-t-8 border-red-500 flex px-24 py-48">
-          <div class="w-1/4 flex justify-center">
-            <div class="w-60 h-60 bg-red-100 rounded-full flex justify-center items-center">
-              <div class="w-40 h-40 bg-red-200 rounded-full flex justify-center items-center">
-                <div>
-                  <font-awesome-icon
-                    :icon="['far', 'exclamation-circle']"
-                    class="text-30 text-red-600"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="w-3/4">
-            <h1 class="text-20 font-bold mb-12">
-              Supprimer une adresse
-            </h1>
-            <div class="text-14 mb-30">
-              Êtes-vous certain de vouloir supprimer cette adresse?
-            </div>
-            <div class="flex items-center">
-              <AppButtonPrimary
-                color="red"
-                icon="trash-alt"
-                class="mr-10"
-                @click.native="destroy"
-              >
-                {{ $t('buttons.delete') }}
-              </AppButtonPrimary>
-              <AppButtonTertiary
-                icon="times"
-                @click.native="cancelDelete"
-              >
-                {{ $t('buttons.cancel') }}
-              </AppButtonTertiary>
-            </div>
-          </div>
-        </div>
-      </div>
-    </ModalTransition>
+    <!-- Confirmation modal -->
+    <AppConfirmationModal @resource:destroy="destroy"/>
 
   </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 import AppTitle from '@/components/AppTitle'
 import AppFormRow from '@/components/forms/AppFormRow'
 import AppFormGroup from '@/components/forms/AppFormGroup'
@@ -281,9 +239,9 @@ import AppAddressCard from '@/components/addresses/AppAddressCard'
 import AppFormValidation from '@/components/forms/AppFormValidation'
 import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 import AppCountryDropdown from '@/components/forms/AppCountryDropdown'
-import ModalTransition from '@/components/transitions/ModalTransition'
 import AppButtonTertiary from '@/components/buttons/AppButtonTertiary'
 import AppFormCheckboxLabel from '@/components/forms/AppFormCheckboxLabel'
+import AppConfirmationModal from '@/components/modals/AppConfirmationModal'
 
 export default {
   components: {
@@ -301,9 +259,9 @@ export default {
     AppFormValidation,
     AppButtonPrimary,
     AppCountryDropdown,
-    ModalTransition,
     AppButtonTertiary,
-    AppFormCheckboxLabel
+    AppFormCheckboxLabel,
+    AppConfirmationModal
   },
   layout: 'account-management',
   middleware: ['authenticated'],
@@ -323,8 +281,7 @@ export default {
     return {
       form: {},
       address: {},
-      errors: {},
-      showDeleteConfirmation: false
+      errors: {}
     }
   },
   async asyncData({ app, route }) {
@@ -339,12 +296,9 @@ export default {
     this.assignFormValues()
   },
   methods: {
-    confirmDelete() {
-      this.showDeleteConfirmation = true
-    },
-    cancelDelete() {
-      this.showDeleteConfirmation = false
-    },
+    ...mapActions({
+      displayConfirmationModal: 'confirmation/displayConfirmationModal'
+    }),
     cancelEdit() {
       this.assignFormValues()
     },
