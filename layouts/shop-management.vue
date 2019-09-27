@@ -69,7 +69,7 @@
             </aside>
 
             <!-- Page content -->
-            <section class="w-full lg:w-3/4 lg:pl-60 mt-72 lg:mt-0">
+            <section class="w-full lg:w-3/4 lg:pl-20 mt-72 lg:mt-0">
               <nuxt/>
             </section>
           </div>

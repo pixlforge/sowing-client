@@ -211,6 +211,18 @@ export default {
   },
 
   /**
+   * Modals
+   */
+  modals: {
+    addresses: {
+      delete: {
+        title: "Cancellazione dell'indirizzo",
+        body: 'Siete sicuro di voler eliminare questo indirizzo?'
+      }
+    }
+  },
+
+  /**
    * Pages
    */
   pages: {

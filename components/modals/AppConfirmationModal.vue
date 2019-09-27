@@ -4,14 +4,24 @@
       v-if="showConfirmationModal"
       class="fixed inset-x-0 inset-y-0 bg-backdrop flex justify-center items-center z-10"
     >
-      <div class="w-full max-w-600 bg-white rounded-lg shadow-xl border-t-8 border-red-500 flex px-24 py-48">
+      <div
+        :class="`border-${color}-500`"
+        class="w-full max-w-600 bg-white rounded-lg shadow-xl border-t-8 flex px-24 py-48"
+      >
         <div class="w-1/4 flex justify-center">
-          <div class="w-60 h-60 bg-red-100 rounded-full flex justify-center items-center">
-            <div class="w-40 h-40 bg-red-200 rounded-full flex justify-center items-center">
+          <div
+            :class="`bg-${color}-100`"
+            class="w-60 h-60 rounded-full flex justify-center items-center"
+          >
+            <div
+              :class="`bg-${color}-200`"
+              class="w-40 h-40 rounded-full flex justify-center items-center"
+            >
               <div>
                 <font-awesome-icon
-                  :icon="['far', 'exclamation-circle']"
-                  class="text-30 text-red-600"
+                  :icon="['far', icon]"
+                  :class="`text-${color}-600`"
+                  class="text-30"
                 />
               </div>
             </div>
@@ -19,19 +29,19 @@
         </div>
         <div class="w-3/4">
           <h1 class="text-20 font-bold mb-12">
-            Supprimer une adresse
+            {{ title }}
           </h1>
           <div class="text-14 mb-30">
-            Êtes-vous certain de vouloir supprimer cette adresse?
+            {{ body }}
           </div>
           <div class="flex items-center">
             <AppButtonPrimary
-              color="red"
-              icon="trash-alt"
+              :color="color"
+              :icon="buttonIcon"
               class="mr-10"
-              @click.native="$emit('resource:destroy')"
+              @click.native="$emit('confirm')"
             >
-              {{ $t('buttons.delete') }}
+              {{ buttonLabel }}
             </AppButtonPrimary>
             <AppButtonTertiary
               icon="times"
@@ -58,6 +68,32 @@ export default {
     AppButtonPrimary,
     AppButtonTertiary,
     ModalTransition
+  },
+  props: {
+    title: {
+      type: String,
+      required: true
+    },
+    body: {
+      type: String,
+      required: true
+    },
+    icon: {
+      type: String,
+      required: true
+    },
+    buttonLabel: {
+      type: String,
+      required: true
+    },
+    buttonIcon: {
+      type: String,
+      required: true
+    },
+    color: {
+      type: String,
+      required: true
+    }
   },
   computed: {
     ...mapGetters({

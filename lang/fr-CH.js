@@ -211,6 +211,18 @@ export default {
   },
 
   /**
+   * Modals
+   */
+  modals: {
+    addresses: {
+      delete: {
+        title: 'Supprimer une adresse',
+        body: 'Êtes-vous certain de vouloir supprimer cette adresse?'
+      }
+    }
+  },
+
+  /**
    * Pages
    */
   pages: {

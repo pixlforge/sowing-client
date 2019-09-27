@@ -217,7 +217,15 @@
     </section>
 
     <!-- Confirmation modal -->
-    <AppConfirmationModal @resource:destroy="destroy"/>
+    <AppConfirmationModal
+      :title="$t('modals.addresses.delete.title')"
+      :body="$t('modals.addresses.delete.body')"
+      :button-label="$t('buttons.delete')"
+      button-icon="trash-alt"
+      icon="exclamation-circle"
+      color="red"
+      @confirm="destroy"
+    />
 
   </div>
 </template>
