@@ -2,6 +2,7 @@
   <ModalTransition>
     <div
       v-if="showConfirmationModal"
+      ref="confirmationModalBackdrop"
       class="fixed inset-x-0 inset-y-0 bg-backdrop flex justify-center items-center z-10"
     >
       <div
@@ -98,6 +99,37 @@ export default {
   computed: {
     ...mapGetters({
       showConfirmationModal: 'confirmation/showConfirmationModal'
+    })
+  },
+  watch: {
+    showConfirmationModal() {
+      if (this.showConfirmationModal) {
+        document.querySelector('body').classList.add('overflow-hidden')
+      } else {
+        document.querySelector('body').classList.remove('overflow-hidden')
+      }
+    }
+  },
+  mounted() {
+    const escapeHandler = (event) => {
+      if (event.key === 'Escape' && this.showConfirmationModal) {
+        this.displayConfirmationModal(false)
+      }
+    }
+    document.addEventListener('keydown', escapeHandler)
+
+    const clickHandler = (event) => {
+      const element = this.$refs.confirmationModalBackdrop
+      const target = event.target
+      if (element === target && element.contains(target)) {
+        this.displayConfirmationModal(false)
+      }
+    }
+    document.addEventListener('click', clickHandler)
+
+    this.$once('hook:destroyed', () => {
+      document.removeEventListener('keydown', escapeHandler)
+      document.removeEventListener('click', clickHandler)
     })
   },
   methods: {
