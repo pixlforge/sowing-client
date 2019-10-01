@@ -119,9 +119,9 @@ import AppTitle from '@/components/AppTitle'
 import AppHeader from '@/components/headers/AppHeader'
 import AppContentSection from '@/components/AppContentSection'
 import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
+import AppShippingMethods from '@/components/addresses/AppShippingMethods'
+import AppShippingAddress from '@/components/addresses/AppShippingAddress'
 import AppCartOverviewProduct from '@/components/cart/AppCartOverviewProduct'
-import AppShippingMethods from '@/components/checkout/addresses/AppShippingMethods'
-import AppShippingAddress from '@/components/checkout/addresses/AppShippingAddress'
 import AppPaymentMethods from '@/components/checkout/paymentMethods/AppPaymentMethods'
 
 export default {
@@ -148,9 +148,9 @@ export default {
     AppHeader,
     AppContentSection,
     AppButtonPrimary,
-    AppCartOverviewProduct,
     AppShippingMethods,
     AppShippingAddress,
+    AppCartOverviewProduct,
     AppPaymentMethods
   },
   data() {

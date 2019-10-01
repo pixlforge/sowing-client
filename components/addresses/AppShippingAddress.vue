@@ -70,8 +70,8 @@ import { mapGetters, mapActions } from 'vuex'
 
 import AppTitle from '@/components/AppTitle'
 import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
-import AppShippingAddressCreator from '@/components/checkout/addresses/AppShippingAddressCreator'
-import AppShippingAddressSelector from '@/components/checkout/addresses/AppShippingAddressSelector'
+import AppShippingAddressCreator from '@/components/addresses/AppShippingAddressCreator'
+import AppShippingAddressSelector from '@/components/addresses/AppShippingAddressSelector'
 
 export default {
   components: {
