@@ -14,7 +14,7 @@ const _3df3fb4e = () => interopDefault(import('../pages/search/index.vue' /* web
 const _0d39ac05 = () => interopDefault(import('../pages/account/addresses/index.vue' /* webpackChunkName: "pages/account/addresses/index" */))
 const _296594f4 = () => interopDefault(import('../pages/account/dashboard.vue' /* webpackChunkName: "pages/account/dashboard" */))
 const _7f40eceb = () => interopDefault(import('../pages/account/password.vue' /* webpackChunkName: "pages/account/password" */))
-const _169c2bcb = () => interopDefault(import('../pages/account/payment-methods.vue' /* webpackChunkName: "pages/account/payment-methods" */))
+const _63ed6e0e = () => interopDefault(import('../pages/account/payment-methods/index.vue' /* webpackChunkName: "pages/account/payment-methods/index" */))
 const _fdb118ee = () => interopDefault(import('../pages/account/profile.vue' /* webpackChunkName: "pages/account/profile" */))
 const _e73cec6e = () => interopDefault(import('../pages/account/verify.vue' /* webpackChunkName: "pages/account/verify" */))
 const _1f6b6cd9 = () => interopDefault(import('../pages/password/forgot.vue' /* webpackChunkName: "pages/password/forgot" */))
@@ -92,7 +92,7 @@ export const routerOptions = {
       name: "account-password"
     }, {
       path: "/account/payment-methods",
-      component: _169c2bcb,
+      component: _63ed6e0e,
       name: "account-payment-methods"
     }, {
       path: "/account/profile",

@@ -30,10 +30,10 @@
 </template>
 
 <script>
-import AppCardVisa from '@/components/paymentMethods/cards/AppCardVisa'
-import AppCardAmex from '@/components/paymentMethods/cards/AppCardAmex'
-import AppCardMasterCard from '@/components/paymentMethods/cards/AppCardMasterCard'
-import AppPaymentMethodCreator from '@/components/paymentMethods/AppPaymentMethodCreator'
+import AppCardVisa from '@/components/payment-methods/cards/AppCardVisa'
+import AppCardAmex from '@/components/payment-methods/cards/AppCardAmex'
+import AppCardMasterCard from '@/components/payment-methods/cards/AppCardMasterCard'
+import AppPaymentMethodCreator from '@/components/payment-methods/AppPaymentMethodCreator'
 
 export default {
   components: {

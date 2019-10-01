@@ -122,7 +122,7 @@ import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 import AppShippingMethods from '@/components/addresses/AppShippingMethods'
 import AppShippingAddress from '@/components/addresses/AppShippingAddress'
 import AppCartOverviewProduct from '@/components/cart/AppCartOverviewProduct'
-import AppPaymentMethods from '@/components/paymentMethods/AppPaymentMethods'
+import AppPaymentMethods from '@/components/payment-methods/AppPaymentMethods'
 
 export default {
   middleware: ['authenticated'],
