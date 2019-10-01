@@ -1,15 +1,21 @@
 <template>
   <ModalTransition>
+
+    <!-- Backdrop -->
     <div
       v-if="showConfirmationModal"
       ref="confirmationModalBackdrop"
       class="fixed inset-x-0 inset-y-0 bg-backdrop flex justify-center items-center z-10"
     >
+
+      <!-- Modal background -->
       <div
         :class="`border-${color}-500`"
-        class="w-full max-w-600 bg-white rounded-lg shadow-xl border-t-8 flex px-24 py-48"
+        class="w-full max-w-600 bg-white rounded-lg shadow-xl border-t-8 flex flex-col md:flex-row px-24 py-48"
       >
-        <div class="w-1/4 flex justify-center">
+
+        <!-- Icon container -->
+        <div class="w-full md:w-1/4 flex justify-center">
           <div
             :class="`bg-${color}-100`"
             class="w-60 h-60 rounded-full flex justify-center items-center"
@@ -28,14 +34,23 @@
             </div>
           </div>
         </div>
-        <div class="w-3/4">
-          <h1 class="text-20 font-bold mb-12">
+
+        <!-- Content container -->
+        <div class="w-full md:w-3/4 mt-16 md:mt-0">
+
+          <!-- Modal title -->
+          <h1 class="text-16 md:text-20 font-bold text-center md:text-left mb-12">
             {{ title }}
           </h1>
-          <div class="text-14 mb-30">
+
+          <!-- Modal body -->
+          <div class="text-14 text-center md:text-left mb-30">
             {{ body }}
           </div>
-          <div class="flex items-center">
+
+          <div class="flex justify-center md:justify-start items-center">
+
+            <!-- Confirm -->
             <AppButtonPrimary
               :color="color"
               :icon="buttonIcon"
@@ -44,6 +59,8 @@
             >
               {{ buttonLabel }}
             </AppButtonPrimary>
+
+            <!-- Cancel -->
             <AppButtonTertiary
               icon="times"
               @click.native="displayConfirmationModal(false)"
