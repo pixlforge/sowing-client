@@ -248,7 +248,8 @@ export default {
         no_address_found: 'Sie haben noch keine Adresse.'
       },
       payment_methods: {
-        title: 'Zahlungsarten'
+        title: 'Zahlungsarten',
+        is_default: 'Dies ist Ihre Standardzahlungsmethode.'
       }
     },
     cart: {

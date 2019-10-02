@@ -248,7 +248,8 @@ export default {
         no_address_found: 'You have no address yet.'
       },
       payment_methods: {
-        title: 'Payment methods'
+        title: 'Payment methods',
+        is_default: 'This is your default payment method.'
       }
     },
     cart: {
