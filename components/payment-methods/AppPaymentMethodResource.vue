@@ -1,31 +1,34 @@
 <template>
-  <li class="odd:bg-green-100 flex items-center text-14 text-center px-20 py-16">
+  <li class="odd:bg-green-100 flex flex-col md:flex-row items-center text-center px-20 py-16">
 
     <!-- Card type icon -->
-    <div class="w-1/12">
+    <div class="hidden md:block md:w-1/12">
       <font-awesome-icon
         :icon="['fab', cardType]"
-        class="text-48 text-gray-300"
+        class="text-36 lg:text-48 text-gray-300"
       />
     </div>
 
-    <!-- Card type -->
-    <div class="w-4/12">
-      {{ paymentMethod.card_type }}
-    </div>
+    <div class="w-full md:w-7/12 flex items-center py-20 md:py-0">
 
-    <!-- Last four -->
-    <div class="w-3/12">
-      <div class="text-10 text-gray-300">
-        {{ $t('credit_cards.ending_in') }}
+      <!-- Card type -->
+      <div class="w-full md:w-1/2 text-12 md:text-14">
+        {{ paymentMethod.card_type }}
       </div>
-      <div class="text-gray-400">
-        {{ paymentMethod.last_four }}
+
+      <!-- Last four -->
+      <div class="w-full md:w-1/2">
+        <div class="text-10 text-gray-300">
+          {{ $t('credit_cards.ending_in') }}
+        </div>
+        <div class="text-12 text-gray-400">
+          {{ paymentMethod.last_four }}
+        </div>
       </div>
     </div>
 
     <!-- Default payment method -->
-    <div class="w-1/12">
+    <div class="hidden md:block md:w-1/12">
       <div
         v-if="paymentMethod.is_default"
         class="relative group cursor-pointer"
@@ -42,7 +45,7 @@
     </div>
 
     <!-- Controls -->
-    <div class="w-3/12 flex justify-end items-center">
+    <div class="w-full md:w-3/12 flex justify-center md:justify-end items-center py-20 md:py-0">
       <AppViewButton
         :route="{
           name: 'account-payment-methods-id-details',
