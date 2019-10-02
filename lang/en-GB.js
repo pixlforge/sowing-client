@@ -74,7 +74,8 @@ export default {
     see_all_articles: 'See all articles',
     subscribe: 'Subscribe',
     to_my_shop_details: 'To my shop details',
-    update: 'Update'
+    update: 'Update',
+    view: 'View'
   },
 
   /**

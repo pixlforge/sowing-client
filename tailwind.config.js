@@ -269,7 +269,7 @@ module.exports = {
     alignSelf: ['responsive'],
     appearance: [],
     backgroundAttachment: ['responsive'],
-    backgroundColor: ['responsive', 'hover', 'focus', 'group-hover', 'disabled'],
+    backgroundColor: ['responsive', 'hover', 'focus', 'group-hover', 'disabled', 'odd'],
     backgroundPosition: ['responsive'],
     backgroundRepeat: ['responsive'],
     backgroundSize: ['responsive'],

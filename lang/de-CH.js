@@ -74,7 +74,8 @@ export default {
     see_all_articles: 'Alle Artikel anzeigen',
     subscribe: 'Anmeldung',
     to_my_shop_details: 'Zu meinen Shopdetails',
-    update: 'Aktualisieren'
+    update: 'Aktualisieren',
+    view: 'Ansicht'
   },
 
   /**
