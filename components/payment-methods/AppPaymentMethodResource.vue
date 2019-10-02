@@ -4,7 +4,7 @@
     <!-- Card type icon -->
     <div class="w-1/12">
       <font-awesome-icon
-        :icon="['fab', 'cc-mastercard']"
+        :icon="['fab', cardType]"
         class="text-48 text-gray-300"
       />
     </div>
@@ -79,6 +79,15 @@ export default {
     paymentMethod: {
       type: Object,
       required: true
+    }
+  },
+  computed: {
+    cardType() {
+      if (this.paymentMethod.card_type_slug === 'american-express') {
+        return 'cc-amex'
+      }
+
+      return 'cc-' + this.paymentMethod.card_type_slug
     }
   }
 }
