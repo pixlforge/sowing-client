@@ -4,9 +4,7 @@
     <!-- Controls -->
     <div
       ref="controls"
-      :class="{
-        'w-full': controlsOpen
-      }"
+      :class="{ 'w-full': controlsOpen }"
       class="absolute w-0 h-full bg-white flex justify-center items-center -mx-20 origin-left transition-all transition-medium z-10"
     >
       <template v-if="controlsOpen">
@@ -26,14 +24,12 @@
             }
           }"
         />
-        <AppDeleteButton/>
+        <AppDeleteButton @click.native="displayConfirmation"/>
       </template>
     </div>
 
     <!-- Content -->
-    <div
-      class="w-full flex items-center text-center"
-    >
+    <div class="w-full flex items-center text-center">
 
       <!-- Card type icon -->
       <div class="hidden md:block md:w-1/12">
@@ -44,12 +40,12 @@
       </div>
 
       <!-- Card type -->
-      <div class="w-full md:w-5/12 text-12 md:text-14">
+      <div class="w-3/6 md:w-5/12 text-12 md:text-14">
         {{ paymentMethod.card_type }}
       </div>
 
       <!-- Last four -->
-      <div class="w-full md:w-4/12">
+      <div class="w-2/6 md:w-4/12">
         <div class="text-10 text-gray-300">
           {{ $t('credit_cards.ending_in') }}
         </div>
@@ -75,17 +71,9 @@
         </div>
       </div>
 
-      <!-- Open button -->
-      <div class="md:w-1/12 flex justify-end">
-        <button
-          class="text-gray-300 hover:text-gray-800 transition-color transition-faster px-10"
-          @click.prevent="controlsOpen = !controlsOpen"
-        >
-          <font-awesome-icon
-            :icon="['far', 'ellipsis-v']"
-            class="text-20"
-          />
-        </button>
+      <!-- Controls button -->
+      <div class="w-1/6 md:w-1/12 flex justify-end">
+        <AppResourceControlsButton @click.native="controlsOpen = !controlsOpen"/>
       </div>
     </div>
 
@@ -93,15 +81,19 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 import AppViewButton from '@/components/buttons/AppViewButton'
 import AppEditButton from '@/components/buttons/AppEditButton'
 import AppDeleteButton from '@/components/buttons/AppDeleteButton'
+import AppResourceControlsButton from '@/components/buttons/AppResourceControlsButton'
 
 export default {
   components: {
     AppViewButton,
     AppEditButton,
-    AppDeleteButton
+    AppDeleteButton,
+    AppResourceControlsButton
   },
   props: {
     paymentMethod: {
@@ -144,6 +136,15 @@ export default {
       document.removeEventListener('keydown', escapeHandler)
       document.removeEventListener('click', clickHandler)
     })
+  },
+  methods: {
+    ...mapActions({
+      displayConfirmationModal: 'confirmation/displayConfirmationModal'
+    }),
+    displayConfirmation() {
+      this.displayConfirmationModal(true)
+      this.controlsOpen = false
+    }
   }
 }
 </script>

@@ -18,16 +18,31 @@
       />
     </ul>
 
+    <!-- Confirmation modal -->
+    <AppConfirmationModal
+      :title="$t('modals.addresses.delete.title')"
+      :body="$t('modals.addresses.delete.body')"
+      :button-label="$t('buttons.delete')"
+      button-icon="trash-alt"
+      icon="exclamation-circle"
+      color="red"
+      @confirm="destroy"
+    />
+
   </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 import AppTitle from '@/components/AppTitle'
+import AppConfirmationModal from '@/components/modals/AppConfirmationModal'
 import AppPaymentMethodResource from '@/components/payment-methods/AppPaymentMethodResource'
 
 export default {
   components: {
     AppTitle,
+    AppConfirmationModal,
     AppPaymentMethodResource
   },
   middleware: ['authenticated'],
@@ -55,6 +70,15 @@ export default {
     return {
       paymentMethods: paymentMethods.data,
       title: app.head.title
+    }
+  },
+  methods: {
+    ...mapActions({
+      displayConfirmationModal: 'confirmation/displayConfirmationModal'
+    }),
+    async destroy() {
+      await console.log('Destroy payment method')
+      this.displayConfirmationModal(false)
     }
   }
 }
