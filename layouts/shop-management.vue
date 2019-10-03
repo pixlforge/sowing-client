@@ -7,9 +7,6 @@
     <!-- Navbar -->
     <AppNavbar/>
 
-    <!-- Categories -->
-    <AppCategoryBar/>
-
     <!-- Shop cover image -->
     <AppShopCover
       v-if="shopCover"
@@ -129,7 +126,6 @@ import AppDisclaimer from '@/components/footer/AppDisclaimer'
 import AppContentSection from '@/components/AppContentSection'
 import AppHeaderList from '@/components/headers/AppHeaderList'
 import AppSideMenuItem from '@/components/menus/AppSideMenuItem'
-import AppCategoryBar from '@/components/categories/AppCategoryBar'
 import AppButtonLinkPrimary from '@/components/buttons/AppButtonLinkPrimary'
 
 export default {
@@ -145,7 +141,6 @@ export default {
     AppContentSection,
     AppHeaderList,
     AppSideMenuItem,
-    AppCategoryBar,
     AppButtonLinkPrimary
   },
   mixins: [theming],

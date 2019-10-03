@@ -7,9 +7,6 @@
     <!-- Navbar -->
     <AppNavbar/>
 
-    <!-- Categories -->
-    <AppCategoryBar/>
-
     <!-- Header -->
     <AppHeader
       :title="$t('pages.account.title')"
@@ -72,7 +69,6 @@ import AppSideMenu from '@/components/menus/AppSideMenu'
 import AppDisclaimer from '@/components/footer/AppDisclaimer'
 import AppContentSection from '@/components/AppContentSection'
 import AppSideMenuItem from '@/components/menus/AppSideMenuItem'
-import AppCategoryBar from '@/components/categories/AppCategoryBar'
 
 export default {
   components: {
@@ -83,8 +79,7 @@ export default {
     AppSideMenu,
     AppDisclaimer,
     AppContentSection,
-    AppSideMenuItem,
-    AppCategoryBar
+    AppSideMenuItem
   }
 }
 </script>
