@@ -229,6 +229,7 @@ export default {
   pages: {
     account: {
       title: 'Mein Konto',
+      description: 'Richten Sie Ihr Sowing-Konto nach Belieben ein.',
       dashboard: {
         title: 'Instrumententafel'
       },

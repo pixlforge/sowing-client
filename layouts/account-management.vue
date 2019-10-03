@@ -10,6 +10,7 @@
     <!-- Header -->
     <AppHeader
       :title="$t('pages.account.title')"
+      :description="$t('pages.account.description')"
     />
 
     <main>

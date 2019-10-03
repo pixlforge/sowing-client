@@ -26,7 +26,7 @@ export default {
         h4: 'text-16 sm:text-20 font-extrabold leading-normal',
         h5: 'text-14 font-extrabold uppercase leading-normal',
         main: ' text-30 md:text-48 font-extrabold text-center tracking-tight',
-        header: ' text-24 md:text-36 font-extrabold text-white tracking-tight'
+        header: ' text-24 md:text-30 font-extrabold text-white tracking-tight'
       }
     }
   },

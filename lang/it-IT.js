@@ -229,6 +229,7 @@ export default {
   pages: {
     account: {
       title: 'Il mio account',
+      description: 'Imposta il vostro account di semina come ritenete opportuno.',
       dashboard: {
         title: 'Cruscotto'
       },

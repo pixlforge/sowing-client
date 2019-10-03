@@ -229,6 +229,7 @@ export default {
   pages: {
     account: {
       title: 'My account',
+      description: 'Set up your Sowing account as you see fit.',
       dashboard: {
         title: 'Dashboard'
       },
