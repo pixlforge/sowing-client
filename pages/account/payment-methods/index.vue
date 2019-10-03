@@ -10,7 +10,7 @@
     </AppTitle>
 
     <!-- Payment methods -->
-    <ul class="w-full rounded-lg border-2 border-gray-100 overflow-hidden my-72 md:my-96">
+    <ul class="w-full rounded-lg border-2 border-gray-100 my-72 md:my-96">
       <AppPaymentMethodResource
         v-for="paymentMethod in paymentMethods"
         :key="paymentMethod.id"

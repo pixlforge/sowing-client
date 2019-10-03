@@ -5,7 +5,7 @@
     <div
       ref="controls"
       :class="{ 'w-full': controlsOpen }"
-      class="absolute w-0 h-full bg-white flex justify-center items-center -mx-20 origin-left transition-all transition-medium z-10"
+      class="absolute w-0 h-full bg-white rounded-lg flex justify-center items-center -mx-20 origin-left transition-all transition-medium z-10"
     >
       <template v-if="controlsOpen">
         <AppViewButton
