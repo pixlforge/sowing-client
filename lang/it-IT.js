@@ -229,7 +229,7 @@ export default {
   pages: {
     account: {
       title: 'Il mio account',
-      description: 'Imposta il vostro account di semina come ritenete opportuno.',
+      description: 'Configura il vostro account Sowing come meglio credi.',
       dashboard: {
         title: 'Cruscotto'
       },
