@@ -51,6 +51,7 @@ export default {
   buttons: {
     add: 'Ajouter',
     add_address: 'Ajouter une adresse',
+    add_payment_method: 'Ajouter un moyen de paiement',
     add_to_cart: 'Ajouter au panier',
     back: 'Retour',
     begin_shop_creation: 'Commencer la création de ma boutique',
@@ -250,7 +251,8 @@ export default {
       },
       payment_methods: {
         title: 'Moyens de paiement',
-        is_default: "Il s'agit de votre moyen de paiement par défaut."
+        is_default: "Il s'agit de votre moyen de paiement par défaut.",
+        no_payment_method_found: "Vous ne disposez d'aucun moyen de paiement pour le moment."
       }
     },
     cart: {
@@ -471,6 +473,9 @@ export default {
     is_already_in_use: 'est déjà utilisé',
     is_available: 'est disponible',
     logged_out: 'Vous êtes maintenant déconnecté(e)',
+    payment_methods: {
+      deleted: 'Carte supprimée avec succès.'
+    },
     shop_avatar_updated: "L'avatar de votre boutique à été mis à jour avec succès!",
     shop_cover_updated: 'La couverture de votre boutique a été mise à jour avec succès!',
     subscribed: 'Merci! Vous êtes maintenant inscrit à notre newsletter!',

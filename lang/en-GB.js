@@ -51,6 +51,7 @@ export default {
   buttons: {
     add: 'Add',
     add_address: 'Add an address',
+    add_payment_method: 'Add a payment method',
     add_to_cart: 'Add to cart',
     back: 'Back',
     begin_shop_creation: 'Start the creation of my shop',
@@ -250,7 +251,8 @@ export default {
       },
       payment_methods: {
         title: 'Payment methods',
-        is_default: 'This is your default payment method.'
+        is_default: 'This is your default payment method.',
+        no_payment_method_found: "You don't have any payment method saved, yet."
       }
     },
     cart: {
@@ -471,6 +473,9 @@ export default {
     is_already_in_use: 'is already in use',
     is_available: 'is available',
     logged_out: 'You are now logged out.',
+    payment_methods: {
+      deleted: 'Card deleted successfully.'
+    },
     shop_avatar_updated: 'The avatar of your shop has been updated successfully!',
     shop_cover_updated: 'The cover of your shop has been updated successfully!',
     subscribed: 'Thank you! You are now subscribed to our newsletter!',

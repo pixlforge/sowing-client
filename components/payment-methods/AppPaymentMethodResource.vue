@@ -157,7 +157,7 @@ export default {
     async destroy() {
       try {
         await this.$axios.$delete(`/payment-methods/${this.paymentMethod.id}`)
-        this.$toasted.success('Youpi')
+        this.$toasted.success(this.$t('toasts.payment_methods.deleted'))
         this.controlsOpen = false
       } catch (e) {
         this.$toasted.error(this.$t('toasts.general_error'))

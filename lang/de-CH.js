@@ -51,6 +51,7 @@ export default {
   buttons: {
     add: 'Hinzufügen',
     add_address: 'Adresse hinzufügen',
+    add_payment_method: 'Fügen Sie eine Zahlungsmethode hinzu',
     add_to_cart: 'Zum Warenkorb hinzufügen',
     back: 'Zurück',
     begin_shop_creation: 'Beginnen Sie mit der Erstellung meines Shops',
@@ -250,7 +251,8 @@ export default {
       },
       payment_methods: {
         title: 'Zahlungsarten',
-        is_default: 'Dies ist Ihre Standardzahlungsmethode.'
+        is_default: 'Dies ist Ihre Standardzahlungsmethode.',
+        no_payment_method_found: 'Sie haben noch keine Zahlungsmethode gespeichert.'
       }
     },
     cart: {
@@ -471,6 +473,9 @@ export default {
     is_already_in_use: 'wird bereits verwendet',
     is_available: 'ist verfügbar',
     logged_out: 'Sie sind jetzt ausgeloggt.',
+    payment_methods: {
+      deleted: 'Karte erfolgreich gelöscht.'
+    },
     shop_avatar_updated: 'Der Avatar Ihres Shops wurde erfolgreich aktualisiert!',
     shop_cover_updated: 'Das Cover Ihres Shops wurde erfolgreich aktualisiert!',
     subscribed: 'Vielen Dank! Sie haben jetzt unseren Newsletter abonniert!',

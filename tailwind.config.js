@@ -172,6 +172,7 @@ module.exports = {
       '160': '16rem',
       '221': '22.1rem',
       full: '100%',
+      'third-screen': '33vh',
       'half-screen': '50vh',
       screen: '100vh'
     },

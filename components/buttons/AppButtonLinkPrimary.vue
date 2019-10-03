@@ -10,7 +10,7 @@
         'bg-pink-600 hover:bg-pink-700': color === 'pink-dark'
       }
     ]"
-    class="block outline-none focus:shadow-outline rounded-lg text-white font-bold text-center uppercase transition-color transition-faster no-underline whitespace-no-wrap"
+    class="inline-block outline-none focus:shadow-outline rounded-lg text-white font-bold text-center uppercase transition-color transition-faster no-underline whitespace-no-wrap"
   >
     <font-awesome-icon
       v-if="icon"
@@ -25,7 +25,7 @@
 export default {
   props: {
     to: {
-      type: String,
+      type: Object,
       required: true
     },
     color: {
