@@ -20,7 +20,7 @@ export default {
   data() {
     return {
       baseClasses: {
-        h1: 'text-30 sm:text-36 font-extrabold leading-tight',
+        h1: 'text-24 sm:text-30 font-extrabold leading-tight text-center md:text-left',
         h2: 'text-24 sm:text-30 font-extrabold leading-normal',
         h3: 'text-20 sm:text-24 font-extrabold leading-normal',
         h4: 'text-16 sm:text-20 font-extrabold leading-normal',

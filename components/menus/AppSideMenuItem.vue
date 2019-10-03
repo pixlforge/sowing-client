@@ -3,7 +3,7 @@
     <nuxt-link
       :to="localePath({ name: route })"
       :class="classes"
-      class="block text-gray-300 border-l-4 border-transparent pl-30 py-12"
+      class="block py-12"
     >
       {{ label }}
     </nuxt-link>
@@ -33,10 +33,10 @@ export default {
       let active
 
       if (this.isCurrentRoute) {
-        active = `border-${this.shopTheme}-500 text-gray-800`
+        active = `text-${this.shopTheme}-900`
       }
 
-      return `hover:border-${this.shopTheme}-500 ${active}`
+      return `hover:text-${this.shopTheme}-500 ${active}`
     }
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <section class="container my-72 sm:my-132">
+  <section class="container my-36 sm:my-72">
     <slot/>
   </section>
 </template>
