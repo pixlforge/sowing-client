@@ -16,14 +16,6 @@
             }
           }"
         />
-        <AppEditButton
-          :route="{
-            name: 'account-payment-methods-id-edit',
-            params: {
-              id: paymentMethod.id
-            }
-          }"
-        />
         <AppDeleteButton @click.native="confirmDelete"/>
       </template>
     </div>
