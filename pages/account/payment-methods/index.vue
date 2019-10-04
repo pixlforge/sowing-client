@@ -106,8 +106,8 @@ export default {
     async destroy() {
       try {
         await this.$axios.$delete(`/payment-methods/${this.getResourceId}`)
-        this.$toasted.success(this.$t('toasts.payment_methods.deleted'))
         await this.getPaymentMethods()
+        this.$toasted.success(this.$t('toasts.payment_methods.deleted'))
       } catch (e) {
         this.$toasted.error(this.$t('toasts.general_error'))
       }
