@@ -76,14 +76,12 @@
 import { mapActions } from 'vuex'
 
 import AppViewButton from '@/components/buttons/AppViewButton'
-import AppEditButton from '@/components/buttons/AppEditButton'
 import AppDeleteButton from '@/components/buttons/AppDeleteButton'
 import AppResourceControlsButton from '@/components/buttons/AppResourceControlsButton'
 
 export default {
   components: {
     AppViewButton,
-    AppEditButton,
     AppDeleteButton,
     AppResourceControlsButton
   },
