@@ -4,7 +4,7 @@ export const state = () => ({
 })
 
 export const getters = {
-  showConfirmationModal(state) {
+  showModal(state) {
     return state.show
   },
   getResourceId(state) {

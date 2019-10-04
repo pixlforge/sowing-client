@@ -3,7 +3,7 @@
 
     <!-- Backdrop -->
     <div
-      v-if="showConfirmationModal"
+      v-if="showModal"
       ref="confirmationModalBackdrop"
       class="fixed inset-x-0 inset-y-0 bg-backdrop flex justify-center items-center z-10"
     >
@@ -115,12 +115,12 @@ export default {
   },
   computed: {
     ...mapGetters({
-      showConfirmationModal: 'confirmation/showConfirmationModal'
+      showModal: 'confirmation/showModal'
     })
   },
   watch: {
-    showConfirmationModal() {
-      if (this.showConfirmationModal) {
+    showModal() {
+      if (this.showModal) {
         document.querySelector('body').classList.add('overflow-hidden')
       } else {
         document.querySelector('body').classList.remove('overflow-hidden')
@@ -129,8 +129,8 @@ export default {
   },
   mounted() {
     const escapeHandler = (event) => {
-      if (event.key === 'Escape' && this.showConfirmationModal) {
-        this.displayConfirmationModal(false)
+      if (event.key === 'Escape' && this.showModal) {
+        this.closeModal()
       }
     }
     document.addEventListener('keydown', escapeHandler)
@@ -139,7 +139,7 @@ export default {
       const element = this.$refs.confirmationModalBackdrop
       const target = event.target
       if (element === target && element.contains(target)) {
-        this.displayConfirmationModal(false)
+        this.closeModal()
       }
     }
     document.addEventListener('click', clickHandler)
