@@ -1,21 +1,36 @@
 export const state = () => ({
-  show: false
+  show: false,
+  resourceId: null
 })
 
 export const getters = {
   showConfirmationModal(state) {
     return state.show
+  },
+  getResourceId(state) {
+    return state.resourceId
   }
 }
 
 export const mutations = {
-  SET_SHOW(state, show) {
-    state.show = show
+  TOGGLE_SHOW(state) {
+    state.show = !state.show
+  },
+  SET_RESOURCE_ID(state, resourceId) {
+    state.resourceId = resourceId
+  },
+  CLEAR_RESOURCE_ID(state) {
+    state.resourceId = null
   }
 }
 
 export const actions = {
-  displayConfirmationModal({ commit }, show) {
-    commit('SET_SHOW', show)
+  openModal({ commit }, resourceId) {
+    commit('TOGGLE_SHOW')
+    commit('SET_RESOURCE_ID', resourceId)
+  },
+  closeModal({ commit }) {
+    commit('TOGGLE_SHOW')
+    commit('CLEAR_RESOURCE_ID')
   }
 }

@@ -24,7 +24,7 @@
             }
           }"
         />
-        <AppDeleteButton @click.native="displayConfirmationModal(true)"/>
+        <AppDeleteButton @click.native="confirmDelete"/>
       </template>
     </div>
 
@@ -77,17 +77,6 @@
       </div>
     </div>
 
-    <!-- Confirmation modal -->
-    <AppConfirmationModal
-      :title="$t('modals.addresses.delete.title')"
-      :body="$t('modals.addresses.delete.body')"
-      :button-label="$t('buttons.delete')"
-      button-icon="trash-alt"
-      icon="exclamation-circle"
-      color="red"
-      @confirm="destroy"
-    />
-
   </li>
 </template>
 
@@ -97,7 +86,6 @@ import { mapActions } from 'vuex'
 import AppViewButton from '@/components/buttons/AppViewButton'
 import AppEditButton from '@/components/buttons/AppEditButton'
 import AppDeleteButton from '@/components/buttons/AppDeleteButton'
-import AppConfirmationModal from '@/components/modals/AppConfirmationModal'
 import AppResourceControlsButton from '@/components/buttons/AppResourceControlsButton'
 
 export default {
@@ -105,7 +93,6 @@ export default {
     AppViewButton,
     AppEditButton,
     AppDeleteButton,
-    AppConfirmationModal,
     AppResourceControlsButton
   },
   props: {
@@ -152,17 +139,11 @@ export default {
   },
   methods: {
     ...mapActions({
-      displayConfirmationModal: 'confirmation/displayConfirmationModal'
+      openModal: 'confirmation/openModal'
     }),
-    async destroy() {
-      try {
-        await this.$axios.$delete(`/payment-methods/${this.paymentMethod.id}`)
-        this.$toasted.success(this.$t('toasts.payment_methods.deleted'))
-        this.controlsOpen = false
-      } catch (e) {
-        this.$toasted.error(this.$t('toasts.general_error'))
-      }
-      this.displayConfirmationModal(false)
+    confirmDelete() {
+      this.openModal(this.paymentMethod.id)
+      this.controlsOpen = false
     }
   }
 }
