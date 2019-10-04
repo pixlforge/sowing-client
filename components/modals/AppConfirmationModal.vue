@@ -63,7 +63,7 @@
             <!-- Cancel -->
             <AppButtonTertiary
               icon="times"
-              @click.native="displayConfirmationModal(false)"
+              @click.native="closeModal"
             >
               {{ $t('buttons.cancel') }}
             </AppButtonTertiary>
@@ -151,7 +151,7 @@ export default {
   },
   methods: {
     ...mapActions({
-      displayConfirmationModal: 'confirmation/displayConfirmationModal'
+      closeModal: 'confirmation/closeModal'
     })
   }
 }
