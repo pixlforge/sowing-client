@@ -32,6 +32,7 @@ const _b659241e = () => interopDefault(import('../pages/shop/management/details.
 const _11c86fb8 = () => interopDefault(import('../pages/shop/management/theme.vue' /* webpackChunkName: "pages/shop/management/theme" */))
 const _be4628a6 = () => interopDefault(import('../pages/account/addresses/_id.vue' /* webpackChunkName: "pages/account/addresses/_id" */))
 const _6af2bba9 = () => interopDefault(import('../pages/account/payment-methods/_id/details.vue' /* webpackChunkName: "pages/account/payment-methods/_id/details" */))
+const _e8aea39a = () => interopDefault(import('../pages/account/payment-methods/_id/edit.vue' /* webpackChunkName: "pages/account/payment-methods/_id/edit" */))
 const _55bb8585 = () => interopDefault(import('../pages/categories/_slug.vue' /* webpackChunkName: "pages/categories/_slug" */))
 const _98c27766 = () => interopDefault(import('../pages/products/_slug.vue' /* webpackChunkName: "pages/products/_slug" */))
 const _c372bddc = () => interopDefault(import('../pages/shop/_slug/details.vue' /* webpackChunkName: "pages/shop/_slug/details" */))
@@ -163,6 +164,10 @@ export const routerOptions = {
     path: "/account/payment-methods/:id?/details",
     component: _6af2bba9,
     name: "account-payment-methods-id-details"
+  }, {
+    path: "/account/payment-methods/:id?/edit",
+    component: _e8aea39a,
+    name: "account-payment-methods-id-edit"
   }, {
     path: "/categories/:slug?",
     component: _55bb8585,

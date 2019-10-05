@@ -1,6 +1,6 @@
 <template>
   <nuxt-link
-    :to="url"
+    :to="route"
     class="text-20 text-gray-300 hover:text-gray-400"
     :title="$t('buttons.back')"
   >
@@ -11,8 +11,8 @@
 <script>
 export default {
   props: {
-    url: {
-      type: String,
+    route: {
+      type: Object,
       required: true
     }
   }

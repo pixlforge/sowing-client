@@ -17,6 +17,9 @@ export const mutations = {
     state.show = !state.show
   },
   SET_RESOURCE_ID(state, resourceId) {
+    if (typeof resourceId === 'object') {
+      return
+    }
     state.resourceId = resourceId
   },
   CLEAR_RESOURCE_ID(state) {
