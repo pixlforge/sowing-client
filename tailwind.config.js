@@ -136,7 +136,8 @@ module.exports = {
       '36': '3.6rem',
       '48': '4.8rem',
       '60': '6rem',
-      '72': '7.2rem'
+      '72': '7.2rem',
+      '132': '13.2rem'
     },
     height: {
       auto: 'auto',

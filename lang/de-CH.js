@@ -133,7 +133,8 @@ export default {
    * Credit Cards
    */
   credit_cards: {
-    ending_in: 'Endet in'
+    ending_in: 'Endet in',
+    card_added_on: 'Kreditkarte hinzugefügt am'
   },
 
   /**
@@ -257,6 +258,7 @@ export default {
       },
       payment_methods: {
         title: 'Zahlungsarten',
+        my_payment_method: 'Meine Karte im Detail',
         is_default: 'Dies ist Ihre Standardzahlungsmethode.',
         no_payment_method_found: 'Sie haben noch keine Zahlungsmethode gespeichert.'
       }

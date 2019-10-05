@@ -8,6 +8,8 @@
       class="absolute w-0 h-full bg-white rounded-lg flex justify-center items-center -mx-20 origin-left transition-all transition-medium z-10"
     >
       <template v-if="controlsOpen">
+
+        <!-- View -->
         <AppViewButton
           :route="{
             name: 'account-payment-methods-id-details',
@@ -16,6 +18,8 @@
             }
           }"
         />
+
+        <!-- Edit -->
         <AppEditButton
           :route="{
             name: 'account-payment-methods-id-edit',
@@ -24,6 +28,8 @@
             }
           }"
         />
+
+        <!-- Delete -->
         <AppDeleteButton @click.native="confirmDelete"/>
       </template>
     </div>
@@ -111,7 +117,6 @@ export default {
       if (this.paymentMethod.card_type_slug === 'american-express') {
         return 'cc-amex'
       }
-
       return 'cc-' + this.paymentMethod.card_type_slug
     }
   },
