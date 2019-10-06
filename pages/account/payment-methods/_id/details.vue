@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header class="flex flex-col md:flex-row justify-between">
+    <header class="flex flex-col sm:flex-row justify-between">
       <div class="flex items-center">
 
         <!-- Back -->
@@ -19,7 +19,7 @@
           </AppTitle>
         </div>
       </div>
-      <div class="flex justify-end mt-30 md:mt-0">
+      <div class="flex justify-center items-center mt-48 sm:mt-0">
 
         <!-- Edit -->
         <AppEditButton
