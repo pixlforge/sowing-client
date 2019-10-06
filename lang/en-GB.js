@@ -249,16 +249,21 @@ export default {
         title: 'Password'
       },
       addresses: {
-        title: 'Addresses',
-        my_address: 'My address',
+        titles: {
+          index: 'Addresses',
+          show: 'My address',
+          create: 'New address',
+          edit: 'Update my address'
+        },
         is_default: 'This is your default address.',
-        update_title: 'Update my address',
-        create_title: 'New address',
         no_address_found: 'You have no address yet.'
       },
       payment_methods: {
-        title: 'Payment methods',
-        my_payment_method: 'My card in details',
+        titles: {
+          index: 'Payment methods',
+          show: 'My card in details',
+          edit: 'Update my card'
+        },
         is_default: 'This is your default payment method.',
         no_payment_method_found: "You don't have any payment method saved, yet."
       }

@@ -14,7 +14,7 @@
           semantic="h1"
           visual="h2"
         >
-          {{ $t('pages.account.addresses.my_address') }}
+          {{ $t('pages.account.addresses.titles.show') }}
         </AppTitle>
       </div>
 
@@ -36,7 +36,7 @@
         semantic="h1"
         visual="h3"
       >
-        {{ $t('pages.account.addresses.update_title') }}
+        {{ $t('pages.account.addresses.titles.edit') }}
       </AppTitle>
 
       <section class="my-72 md:my-96">
@@ -275,7 +275,7 @@ export default {
   middleware: ['authenticated'],
   head() {
     return {
-      title: `${this.$t('pages.account.addresses.update_title')} | ${this.$t('pages.account.title')} | ${this.title}`,
+      title: `${this.$t('pages.account.addresses.titles.show')} | ${this.$t('pages.account.title')} | ${this.title}`,
       meta: [
         {
           hid: 'robots',

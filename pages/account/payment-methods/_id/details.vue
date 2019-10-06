@@ -15,7 +15,7 @@
             semantic="h1"
             visual="h1"
           >
-            {{ $t('pages.account.payment_methods.my_payment_method') }}
+            {{ $t('pages.account.payment_methods.titles.show') }}
           </AppTitle>
         </div>
       </div>
@@ -118,7 +118,7 @@ export default {
   layout: 'account-management',
   head() {
     return {
-      title: `${this.$t('pages.account.payment_methods.title')} | ${this.$t('pages.account.title')} | ${this.title}`,
+      title: `${this.$t('pages.account.payment_methods.titles.show')} | ${this.$t('pages.account.title')} | ${this.title}`,
       meta: [
         {
           hid: 'robots',

@@ -6,7 +6,7 @@
       semantic="h1"
       visual="h1"
     >
-      {{ $t("pages.account.payment_methods.title") }}
+      {{ $t("pages.account.payment_methods.titles.index") }}
     </AppTitle>
 
     <!-- Payment methods -->
@@ -71,7 +71,7 @@ export default {
   layout: 'account-management',
   head() {
     return {
-      title: `${this.$t('pages.account.payment_methods.title')} | ${this.$t('pages.account.title')} | ${this.title}`,
+      title: `${this.$t('pages.account.payment_methods.titles.index')} | ${this.$t('pages.account.title')} | ${this.title}`,
       meta: [
         {
           hid: 'robots',

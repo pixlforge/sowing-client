@@ -7,7 +7,7 @@
         semantic="h1"
         visual="h2"
       >
-        {{ $t("pages.account.addresses.title") }}
+        {{ $t("pages.account.addresses.titles.index") }}
       </AppTitle>
 
       <!-- Add an address -->
@@ -50,7 +50,7 @@ export default {
   layout: 'account-management',
   head() {
     return {
-      title: `${this.$t('pages.account.addresses.title')} | ${this.$t('pages.account.title')} | ${this.title}`,
+      title: `${this.$t('pages.account.addresses.titles.index')} | ${this.$t('pages.account.title')} | ${this.title}`,
       meta: [
         {
           hid: 'robots',

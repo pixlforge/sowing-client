@@ -249,16 +249,21 @@ export default {
         title: 'Mot de passe'
       },
       addresses: {
-        title: 'Adresses',
-        my_address: 'Mon adresse',
+        titles: {
+          index: 'Adresses',
+          show: 'Mon adresse',
+          create: 'Nouvelle adresse',
+          edit: 'Mettre à jour mon adresse'
+        },
         is_default: "Il s'agit de votre adresse par défaut.",
-        update_title: 'Mettre à jour mon adresse',
-        create_title: 'Nouvelle adresse',
         no_address_found: "Vous ne disposez d'aucune adresse pour le moment."
       },
       payment_methods: {
-        title: 'Moyens de paiement',
-        my_payment_method: 'Ma carte en détails',
+        titles: {
+          index: 'Moyens de paiement',
+          show: 'Ma carte en détails',
+          edit: 'Mettre à jour ma carte'
+        },
         is_default: "Il s'agit de votre moyen de paiement par défaut.",
         no_payment_method_found: "Vous ne disposez d'aucun moyen de paiement pour le moment."
       }

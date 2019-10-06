@@ -249,16 +249,21 @@ export default {
         title: 'Password'
       },
       addresses: {
-        title: 'Indirizzi',
-        my_address: 'Il mio indirizzo',
+        titles: {
+          index: 'Indirizzi',
+          show: 'Il mio indirizzo',
+          create: 'Nuovo indirizzo',
+          edit: 'Aggiorna il mio indirizzo'
+        },
         is_default: 'Questo è il vostro indirizzo predefinito.',
-        update_title: 'Aggiorna il mio indirizzo',
-        create_title: 'Nuovo indirizzo',
         no_address_found: 'Non avete ancora un indirizzo.'
       },
       payment_methods: {
-        title: 'Modalità di pagamento',
-        my_payment_method: 'La mia carta in dettaglio',
+        titles: {
+          index: 'Modalità di pagamento',
+          show: 'La mia carta in dettaglio',
+          edit: 'Aggiorna la mia carta'
+        },
         is_default: 'Questo è il vostro metodo di pagamento predefinito.',
         no_payment_method_found: 'Non avete ancora alcun metodo di pagamento salvato.'
       }

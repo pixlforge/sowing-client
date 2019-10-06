@@ -13,7 +13,7 @@
         semantic="h1"
         visual="h2"
       >
-        {{ $t('pages.account.addresses.create_title') }}
+        {{ $t('pages.account.addresses.titles.create') }}
       </AppTitle>
     </div>
 
@@ -230,7 +230,7 @@ export default {
   middleware: ['authenticated'],
   head() {
     return {
-      title: `${this.$t('pages.account.addresses.create_title')} | ${this.$t('pages.account.title')} | ${this.title}`,
+      title: `${this.$t('pages.account.addresses.titles.create')} | ${this.$t('pages.account.title')} | ${this.title}`,
       meta: [
         {
           hid: 'robots',

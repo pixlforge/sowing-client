@@ -35,11 +35,11 @@
                 route="account-password"
               />
               <AppSideMenuItem
-                :label="$t('pages.account.addresses.title')"
+                :label="$t('pages.account.addresses.titles.index')"
                 route="account-addresses"
               />
               <AppSideMenuItem
-                :label="$t('pages.account.payment_methods.title')"
+                :label="$t('pages.account.payment_methods.titles.index')"
                 route="account-payment-methods"
               />
             </AppSideMenu>
