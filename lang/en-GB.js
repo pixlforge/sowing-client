@@ -63,6 +63,7 @@ export default {
     create_account: 'Create account',
     create_my_shop: 'Create my shop',
     customize_my_shop: 'Customize my shop',
+    default: 'Set as default',
     delete: 'Delete',
     edit: 'Edit',
     finalize_shop_creation: 'Finalize the creation of my shop',
@@ -259,6 +260,9 @@ export default {
         no_address_found: 'You have no address yet.'
       },
       payment_methods: {
+        edit: {
+          paragraph: 'Set this card as your new default payment method.'
+        },
         titles: {
           index: 'Payment methods',
           show: 'My card in details',
@@ -487,6 +491,7 @@ export default {
     is_available: 'is available',
     logged_out: 'You are now logged out.',
     payment_methods: {
+      updated: 'Card set as default successfully.',
       deleted: 'Card deleted successfully.'
     },
     shop_avatar_updated: 'The avatar of your shop has been updated successfully!',

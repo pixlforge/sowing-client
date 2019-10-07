@@ -63,6 +63,7 @@ export default {
     create_account: "Creare l'account",
     create_my_shop: 'Creare il mio negozio',
     customize_my_shop: 'Personalizzare il mio negozio',
+    default: 'Imposta come predefinito',
     delete: 'Cancellare',
     edit: 'Modificare',
     finalize_shop_creation: 'Finalizzare la creazione del mio negozio',
@@ -259,6 +260,9 @@ export default {
         no_address_found: 'Non avete ancora un indirizzo.'
       },
       payment_methods: {
+        edit: {
+          paragraph: 'Impostate questa carta come nuovo metodo di pagamento predefinito.'
+        },
         titles: {
           index: 'Modalità di pagamento',
           show: 'La mia carta in dettaglio',
@@ -487,6 +491,7 @@ export default {
     is_available: 'è disponibile',
     logged_out: 'Ora siete disconnessi.',
     payment_methods: {
+      updated: 'Scheda impostata come predefinita correttamente.',
       deleted: 'Scheda eliminata correttamente.'
     },
     shop_avatar_updated: "L'avatar del vostro negozio è stato aggiornato con successo!",

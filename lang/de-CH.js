@@ -63,6 +63,7 @@ export default {
     create_account: 'Konto erstellen',
     create_my_shop: 'Schaffe meinen Shop',
     customize_my_shop: 'Passen Sie meinen Shop an',
+    default: 'Als Standard festlegen',
     delete: 'Entfernen',
     edit: 'Bearbeiten',
     finalize_shop_creation: 'Beenden Sie die Erstellung meines Shops',
@@ -259,6 +260,9 @@ export default {
         no_address_found: 'Sie haben noch keine Adresse.'
       },
       payment_methods: {
+        edit: {
+          paragraph: 'Legen Sie diese Karte als Ihre neue Standardzahlungsmethode fest.'
+        },
         titles: {
           index: 'Zahlungsarten',
           show: 'Meine Karte im Detail',
@@ -487,6 +491,7 @@ export default {
     is_available: 'ist verfügbar',
     logged_out: 'Sie sind jetzt ausgeloggt.',
     payment_methods: {
+      updated: 'Karte wurde erfolgreich als Standard festgelegt.',
       deleted: 'Karte erfolgreich gelöscht.'
     },
     shop_avatar_updated: 'Der Avatar Ihres Shops wurde erfolgreich aktualisiert!',
