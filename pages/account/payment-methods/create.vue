@@ -1,11 +1,135 @@
 <template>
   <div>
-    Create page
+    <header class="flex items-center">
+
+      <!-- Back -->
+      <AppBackButton
+        :route="{ name: 'account-payment-methods' }"
+        class="sm:mr-20"
+      />
+
+      <!-- Page title -->
+      <AppTitle
+        semantic="h1"
+        visual="h1"
+        utilities="mx-auto sm:mx-0"
+      >
+        {{ $t('pages.account.payment_methods.titles.create') }}
+      </AppTitle>
+    </header>
+
+    <div class="my-72 md:my-96">
+      <AppParagraph class="text-center md:text-left">
+        {{ $t("stripe.add_a_card") }}
+      </AppParagraph>
+
+      <form
+        class="md:max-w-600"
+        @submit.prevent="store"
+      >
+
+        <!-- Body -->
+        <div class="my-60">
+          <div
+            id="elements"
+            class="bg-gray-100 rounded-lg px-24 py-20"
+          />
+        </div>
+
+        <!-- Store -->
+        <AppButtonPrimary
+          :disabled="storing"
+          type="submit"
+          icon="plus"
+          class="mx-auto md:mx-0"
+        >
+          {{ $t("buttons.add") }}
+        </AppButtonPrimary>
+      </form>
+    </div>
+
   </div>
 </template>
 
 <script>
-export default {
+import { mapGetters } from 'vuex'
 
+import AppTitle from '@/components/AppTitle'
+import AppBackButton from '@/components/buttons/AppBackButton'
+import AppParagraph from '@/components/paragraphs/AppParagraph'
+import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
+
+export default {
+  components: {
+    AppTitle,
+    AppBackButton,
+    AppParagraph,
+    AppButtonPrimary
+  },
+  middleware: ['authenticated'],
+  layout: 'account-management',
+  head() {
+    return {
+      title: `${this.$t('pages.account.payment_methods.titles.create')} | ${this.$t('pages.account.title')} | ${this.title}`,
+      meta: [
+        {
+          hid: 'robots',
+          name: 'robots',
+          content: 'noindex'
+        }
+      ]
+    }
+  },
+  data() {
+    return {
+      storing: false,
+      stripe: {},
+      card: {},
+      options: {
+        hidePostalCode: true,
+        iconStyle: 'solid',
+        style: {
+          base: {
+            color: '#101010',
+            fontSize: '16px',
+            fontFamily: 'Montserrat',
+            iconColor: '#5FB881'
+          }
+        }
+      }
+    }
+  },
+  computed: {
+    ...mapGetters({
+      locale: 'locale'
+    })
+  },
+  mounted() {
+    this.stripe = window.Stripe(process.env.STRIPE_PUBLIC)
+
+    this.card = this.stripe
+      .elements({ locale: this.locale })
+      .create('card', this.options)
+    this.card.mount('#elements')
+  },
+  methods: {
+    async store() {
+      this.storing = true
+      const { token, error } = await this.stripe.createToken(this.card)
+
+      if (error) {
+        this.$toast.error(this.$t('toasts.general_error'))
+      } else {
+        await this.$axios.$post('/payment-methods', {
+          token: token.id
+        })
+        this.$toast.success(this.$t('toasts.cc_added'))
+        this.card.clear()
+        this.$router.push({ name: 'account-payment-methods' })
+      }
+
+      this.storing = false
+    }
+  }
 }
 </script>

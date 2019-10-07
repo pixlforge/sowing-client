@@ -265,6 +265,7 @@ export default {
         },
         titles: {
           index: 'Modalità di pagamento',
+          create: 'Aggiungete un metodo di pagamento',
           show: 'La mia carta in dettaglio',
           edit: 'Aggiorna la mia carta'
         },

@@ -265,6 +265,7 @@ export default {
         },
         titles: {
           index: 'Zahlungsarten',
+          create: 'Zahlungsmethode hinzufügen',
           show: 'Meine Karte im Detail',
           edit: 'Aktualisiere meine Karte'
         },

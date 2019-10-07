@@ -265,6 +265,7 @@ export default {
         },
         titles: {
           index: 'Moyens de paiement',
+          create: 'Ajouter un moyen de paiement',
           show: 'Ma carte en détails',
           edit: 'Mettre à jour ma carte'
         },

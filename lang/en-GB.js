@@ -265,6 +265,7 @@ export default {
         },
         titles: {
           index: 'Payment methods',
+          create: 'Add a payment method',
           show: 'My card in details',
           edit: 'Update my card'
         },
