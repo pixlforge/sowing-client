@@ -16,9 +16,8 @@
 export default {
   props: {
     to: {
-      type: String,
-      required: false,
-      default: ''
+      type: Object,
+      required: true
     },
     label: {
       type: String,

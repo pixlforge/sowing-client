@@ -1,13 +1,22 @@
 <template>
   <div>
+    <div class="flex flex-col md:flex-row justify-between items-center md:items-baseline">
 
-    <!-- Page title -->
-    <AppTitle
-      semantic="h1"
-      visual="h1"
-    >
-      {{ $t("pages.account.payment_methods.titles.index") }}
-    </AppTitle>
+      <!-- Page title -->
+      <AppTitle
+        semantic="h1"
+        visual="h1"
+      >
+        {{ $t("pages.account.payment_methods.titles.index") }}
+      </AppTitle>
+
+      <!-- Add a payment method -->
+      <AppAddButtonLink
+        :to="{ name: 'account-payment-methods-create' }"
+        :label="$t('buttons.add_payment_method')"
+        class="mt-60 md:mt-0"
+      />
+    </div>
 
     <!-- Payment methods -->
     <ul
@@ -55,6 +64,7 @@ import { mapActions, mapGetters } from 'vuex'
 
 import AppTitle from '@/components/AppTitle'
 import AppParagraph from '@/components/paragraphs/AppParagraph'
+import AppAddButtonLink from '@/components/buttons/AppAddButtonLink'
 import AppConfirmationModal from '@/components/modals/AppConfirmationModal'
 import AppButtonLinkPrimary from '@/components/buttons/AppButtonLinkPrimary'
 import AppPaymentMethodResource from '@/components/payment-methods/AppPaymentMethodResource'
@@ -63,6 +73,7 @@ export default {
   components: {
     AppTitle,
     AppParagraph,
+    AppAddButtonLink,
     AppConfirmationModal,
     AppButtonLinkPrimary,
     AppPaymentMethodResource

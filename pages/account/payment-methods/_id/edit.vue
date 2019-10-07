@@ -5,13 +5,14 @@
       <!-- Back -->
       <AppBackButton
         :route="{ name: 'account-payment-methods' }"
-        class="mr-20"
+        class="sm:mr-20"
       />
 
       <!-- Page title -->
       <AppTitle
         semantic="h1"
         visual="h1"
+        utilities="mx-auto sm:mx-0"
       >
         {{ $t('pages.account.payment_methods.titles.edit') }}
       </AppTitle>
