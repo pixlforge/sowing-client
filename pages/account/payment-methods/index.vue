@@ -12,7 +12,7 @@
 
       <!-- Add a payment method -->
       <AppAddButtonLink
-        :to="{ name: 'account-payment-methods-create' }"
+        :route="{ name: 'account-payment-methods-create' }"
         :label="$t('buttons.add_payment_method')"
         class="mt-60 md:mt-0"
       />

@@ -7,7 +7,12 @@
         <AppFooterItem
           v-for="category in categories"
           :key="category.slug"
-          :to="localePath({ name: 'categories-slug', params: { slug: category.slug } })"
+          :to="{
+            name: 'categories-slug',
+            params: {
+              slug: category.slug
+            }
+          }"
           :label="category.name[locale]"
         />
       </AppFooterColumn>
@@ -15,15 +20,15 @@
       <!-- Selling -->
       <AppFooterColumn :title="$t('footer.titles.sell_on_sowing')">
         <AppFooterItem
-          :to="localePath({ name: 'index' })"
+          :to="{ name: 'index' }"
           :label="$t('footer.links.login')"
         />
         <AppFooterItem
-          :to="localePath({ name: 'index' })"
+          :to="{ name: 'index' }"
           :label="$t('footer.links.your_own_store')"
         />
         <AppFooterItem
-          :to="localePath({ name: 'index' })"
+          :to="{ name: 'index' }"
           :label="$t('footer.links.new_vendors')"
         />
       </AppFooterColumn>
@@ -31,19 +36,19 @@
       <!-- About -->
       <AppFooterColumn :title="$t('footer.titles.about')">
         <AppFooterItem
-          :to="localePath({ name: 'index' })"
+          :to="{ name: 'index' }"
           :label="$t('footer.links.terms')"
         />
         <AppFooterItem
-          :to="localePath({ name: 'index' })"
+          :to="{ name: 'index' }"
           :label="$t('footer.links.payments')"
         />
         <AppFooterItem
-          :to="localePath({ name: 'index' })"
+          :to="{ name: 'index' }"
           :label="$t('footer.links.shipments')"
         />
         <AppFooterItem
-          :to="localePath({ name: 'faq' })"
+          :to="{ name: 'faq' }"
           :label="$t('footer.links.faq')"
         />
       </AppFooterColumn>

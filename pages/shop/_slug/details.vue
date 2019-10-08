@@ -70,7 +70,7 @@
 
       <div class="flex justify-center mt-72">
         <AppButtonLinkPrimary
-          :to="localePath({ name: 'index' })"
+          :route="{ name: 'index' }"
           icon="search"
           :color="shopTheme"
           size="large"

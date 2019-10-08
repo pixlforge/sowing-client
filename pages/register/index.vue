@@ -90,7 +90,7 @@
                 {{ $t("pages.register.terms") }}
               </span>
               <nuxt-link
-                :to="localePath({ name: 'index' })"
+                :to="{ name: 'index' }"
                 class="text-14 text-green-500 no-underline hover:underline select-none"
               >
                 {{ $t("pages.register.links.terms") }}
@@ -211,7 +211,7 @@ export default {
       })
     },
     next() {
-      this.$router.push(this.localePath({ name: 'register-success' }))
+      this.$router.push({ name: 'register-success' })
     }
   }
 }

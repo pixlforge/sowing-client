@@ -1,6 +1,6 @@
 <template>
   <nuxt-link
-    :to="to"
+    :to="route"
     :class="`bg-${color}-600 hover:bg-${color}-700`"
     class="inline-block outline-none rounded-lg text-12 font-extrabold text-center uppercase text-white transition-color transition-faster no-underline whitespace-no-wrap px-30 py-12"
   >
@@ -11,8 +11,8 @@
 <script>
 export default {
   props: {
-    to: {
-      type: String,
+    route: {
+      type: Object,
       required: true
     },
     color: {

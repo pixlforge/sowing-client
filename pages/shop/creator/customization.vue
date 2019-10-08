@@ -130,11 +130,11 @@ export default {
       setStepDetails: 'shop/setStepDetails'
     }),
     prev() {
-      this.$router.push(this.localePath({ name: 'shop-creator-details' }))
+      this.$router.push({ name: 'shop-creator-details' })
     },
     next() {
       if (this.stepName && this.stepDetails) {
-        this.$router.push(this.localePath({ name: 'shop-creator-connect' }))
+        this.$router.push({ name: 'shop-creator-connect' })
       }
     }
   }

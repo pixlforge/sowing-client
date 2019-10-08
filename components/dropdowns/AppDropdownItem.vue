@@ -26,9 +26,11 @@ import { mapGetters } from 'vuex'
 export default {
   props: {
     to: {
-      type: String,
+      type: Object,
       required: false,
-      default: ''
+      default: () => {
+        return {}
+      }
     },
     color: {
       type: String,

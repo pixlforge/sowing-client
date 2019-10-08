@@ -1,6 +1,11 @@
 <template>
   <nuxt-link
-    :to="localePath({ name: 'products-slug', params: { slug: product.slug } })"
+    :to="{
+      name: 'products-slug',
+      params: {
+        slug: product.slug
+      }
+    }"
     class="w-full md:w-1/2 xl:w-1/3 group px-16 my-24"
   >
     <!-- Product featured image -->

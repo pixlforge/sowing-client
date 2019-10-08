@@ -124,7 +124,7 @@ export default {
   },
   mounted() {
     if (!this.terms) {
-      return this.$router.push(this.localePath('shop-creator-terms'))
+      return this.$router.push('shop-creator-terms')
     }
 
     if (this.$auth.user.has_shop) {
@@ -141,11 +141,11 @@ export default {
       setStepDetails: 'shop/setStepDetails'
     }),
     prev() {
-      this.$router.push(this.localePath({ name: 'shop-creator-terms' }))
+      this.$router.push({ name: 'shop-creator-terms' })
     },
     async next() {
       if (this.shopExists) {
-        this.$router.push(this.localePath({ name: 'shop-creator-details' }))
+        this.$router.push({ name: 'shop-creator-details' })
         return
       }
 
@@ -154,7 +154,7 @@ export default {
           name: this.shopName
         })
         this.close()
-        this.$router.push(this.localePath({ name: 'shop-creator-details' }))
+        this.$router.push({ name: 'shop-creator-details' })
       } catch (e) {
         this.setStepName(false)
         this.$toast.error(

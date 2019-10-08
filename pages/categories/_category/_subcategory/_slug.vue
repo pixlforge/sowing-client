@@ -51,7 +51,7 @@ export default {
       locale: 'locale'
     })
   },
-  async asyncData({ params, app }) {
+  async asyncData({ app, params }) {
     const subcategory = await app.$axios.$get(
       `/categories/${params.subcategory}`
     )
@@ -60,9 +60,9 @@ export default {
     )
 
     return {
-      title: app.head.title,
       subcategory: subcategory.data,
-      products: products.data
+      products: products.data,
+      title: app.head.title
     }
   }
 }

@@ -13,7 +13,12 @@
           :key="variation.id"
         >
           <nuxt-link
-            :to="localePath({ name: 'products-slug', params: { slug: variation.product.slug } })"
+            :to="{
+              name: 'products-slug',
+              params: {
+                slug: variation.product.slug
+              }
+            }"
             class="text-green-400 no-underline hover:underline"
           >
             {{ variation.product.name[locale] }} {{ variation.type.name[locale] }} {{ variation.name[locale] }}

@@ -135,7 +135,7 @@ export default {
   },
   mounted() {
     if (!this.terms) {
-      return this.$router.push(this.localePath('shop-creator-terms'))
+      return this.$router.push('shop-creator-terms')
     }
 
     if (!this.shopExists && this.$auth.user.has_shop) {
@@ -176,12 +176,10 @@ export default {
       }
     },
     prev() {
-      this.$router.push(this.localePath({ name: 'shop-creator-name' }))
+      this.$router.push({ name: 'shop-creator-name' })
     },
     next() {
-      this.$router.push(
-        this.localePath({ name: 'shop-creator-customization' })
-      )
+      this.$router.push({ name: 'shop-creator-customization' })
     }
   }
 }

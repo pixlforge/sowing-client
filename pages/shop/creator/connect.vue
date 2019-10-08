@@ -180,12 +180,10 @@ export default {
       this.tried = true
     },
     prev() {
-      this.$router.push(
-        this.localePath({ name: 'shop-creator-customization' })
-      )
+      this.$router.push({ name: 'shop-creator-customization' })
     },
     next() {
-      this.$router.push(this.localePath({ name: 'shop-creator-done' }))
+      this.$router.push({ name: 'shop-creator-done' })
     }
   }
 }

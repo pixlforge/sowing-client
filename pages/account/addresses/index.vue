@@ -12,7 +12,7 @@
 
       <!-- Add an address -->
       <AppAddButtonLink
-        :to="localePath({ name: 'account-addresses-create' })"
+        :route="{ name: 'account-addresses-create' }"
         :label="$t('buttons.add_address')"
       />
     </div>

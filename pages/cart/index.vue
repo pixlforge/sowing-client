@@ -56,12 +56,12 @@
       <!-- Checkout button -->
       <AppButtonLinkPrimary
         v-if="products.length"
-        :to="localePath({ name: 'checkout' })"
+        :route="{ name: 'checkout' }"
         :disabled="is_empty"
         :title="$t('pages.cart.checkout')"
         icon="check-circle"
         size="large"
-        class="block shadow-2xl my-72 md:my-96"
+        class="w-full shadow-2xl my-72 md:my-96"
       >
         {{ $t("pages.cart.checkout") }}
       </AppButtonLinkPrimary>

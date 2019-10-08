@@ -1,7 +1,7 @@
 <template>
   <li class="mb-5 last:mb-0">
     <nuxt-link
-      :to="localePath({ name: route })"
+      :to="{ name: route }"
       :class="classes"
       class="block py-12"
     >

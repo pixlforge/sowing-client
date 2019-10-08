@@ -1,6 +1,11 @@
 <template>
   <nuxt-link
-    :to="localePath({ name: 'shop-slug-details', params: { slug: result.slug } })"
+    :to="{
+      name: 'shop-slug-details',
+      params: {
+        slug: result.slug
+      }
+    }"
     class="search__result-link"
   >
     <div
@@ -22,10 +27,12 @@
         </AppTitle>
 
         <!-- Description -->
+        <!-- eslint-disable -->
         <p
           class="search__result-description"
           v-html="result.description_short[locale]"
         />
+        <!-- eslint-enable -->
       </div>
     </div>
   </nuxt-link>

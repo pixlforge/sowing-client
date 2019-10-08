@@ -1,6 +1,6 @@
 <template>
   <nuxt-link
-    :to="to"
+    :to="route"
     :class="[
       `bg-${color}-500 hover:bg-${color}-700`,
       {
@@ -24,7 +24,7 @@
 <script>
 export default {
   props: {
-    to: {
+    route: {
       type: Object,
       required: true
     },

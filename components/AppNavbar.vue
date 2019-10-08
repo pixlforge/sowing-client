@@ -4,7 +4,7 @@
     <div class="w-full flex justify-between items-center">
 
       <!-- Logo -->
-      <nuxt-link :to="localePath({ name: 'index' })">
+      <nuxt-link :to="{ name: 'index' }">
         <AppLogo class="w-48"/>
       </nuxt-link>
 
@@ -26,7 +26,7 @@
       <!-- Login -->
       <AppButtonLinkSecondary
         v-if="!loggedIn"
-        :to="localePath({ name: 'login' })"
+        :route="{ name: 'login' }"
         class="ml-10 lg:ml-20"
       >
         {{ $t("buttons.login") }}
@@ -35,7 +35,7 @@
       <!-- Register -->
       <AppButtonLinkPrimary
         v-if="!loggedIn"
-        :to="localePath({ name: 'register' })"
+        :route="{ name: 'register' }"
         icon="rocket"
         color="pink-dark"
         class="hidden md:block ml-10 lg:ml-20"

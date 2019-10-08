@@ -1,12 +1,13 @@
 <template>
   <nuxt-link
-    :to="localePath({
+    :to="{
       name: 'categories-category-subcategory-slug',
       params: {
         category: category.slug,
+        subcategory: subcategory.slug,
         slug: subcategory.slug
       }
-    })"
+    }"
     class="w-full sm:w-1/2 xl:w-1/3 group px-20 md:px-36 my-24 md:my-48"
   >
 

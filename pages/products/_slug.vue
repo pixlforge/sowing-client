@@ -9,7 +9,12 @@
     >
       <template>
         <AppHeaderButtonLink
-          :to="localePath({ name: 'shop-slug-details', params: { slug: product.shop.slug } })"
+          :route="{
+            name: 'shop-slug-details',
+            params: {
+              slug: product.shop.slug
+            }
+          }"
           :color="shopTheme"
           class="mt-16 shadow-2xl"
         >

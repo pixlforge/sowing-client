@@ -4,7 +4,7 @@
 
       <!-- Back -->
       <AppBackButton
-        :url="localePath({ name: 'account-addresses' })"
+        :route="{ name: 'account-addresses' }"
         class="mr-20"
       />
 
@@ -183,7 +183,7 @@
 
           <!-- Cancel -->
           <AppButtonLinkTertiary
-            :to="localePath({ name: 'account-addresses' })"
+            :route="{ name: 'account-addresses' }"
             icon="times"
           >
             {{ $t('buttons.cancel') }}
@@ -266,7 +266,7 @@ export default {
       try {
         await this.$axios.$post('/addresses', this.form)
         this.$toast.success(this.$t('toasts.addresses.created'))
-        this.$router.push(this.localePath({ name: 'account-addresses' }))
+        this.$router.push({ name: 'account-addresses' })
       } catch (e) {
         this.errors = e.response.data.errors
         this.$toast.error(this.$t('toasts.validation'))

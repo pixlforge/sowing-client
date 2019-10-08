@@ -103,7 +103,7 @@ export default {
     }),
     next() {
       if (this.terms) {
-        this.$router.push(this.localePath({ name: 'shop-creator-name' }))
+        this.$router.push({ name: 'shop-creator-name' })
       }
     }
   }

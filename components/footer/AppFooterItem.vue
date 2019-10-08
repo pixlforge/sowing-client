@@ -17,9 +17,11 @@ export default {
   mixins: [theming],
   props: {
     to: {
-      type: String,
+      type: Object,
       required: false,
-      default: ''
+      default: () => {
+        return {}
+      }
     },
     label: {
       type: String,

@@ -48,12 +48,12 @@
         <div class="flex flex-wrap justify-center my-36 md:my-60">
 
           <!-- Password forgotten -->
-          <AppButtonLinkTertiary :to="localePath({ name: 'password-forgot' })">
+          <AppButtonLinkTertiary :route="{ name: 'password-forgot' }">
             {{ $t("pages.login.links.password") }}
           </AppButtonLinkTertiary>
 
           <!-- Register an account -->
-          <AppButtonLinkTertiary :to="localePath({ name: 'register' })">
+          <AppButtonLinkTertiary :route="{ name: 'register' }">
             {{ $t("pages.login.links.register") }}
           </AppButtonLinkTertiary>
         </div>
@@ -151,7 +151,7 @@ export default {
         if (this.$route.query.redirect) {
           this.$router.push(this.$route.query.redirect)
         } else {
-          this.$router.push(this.localePath({ name: 'index' }))
+          this.$router.push({ name: 'index' })
         }
 
         this.$toast.success(

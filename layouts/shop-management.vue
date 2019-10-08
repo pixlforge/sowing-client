@@ -93,9 +93,10 @@
 
           <!-- Shop creation link -->
           <AppButtonLinkPrimary
-            :to="localePath({ name: 'shop-creator-terms' })"
+            :route="{ name: 'shop-creator-terms' }"
             icon="rocket"
             size="large"
+            class="w-full"
           >
             {{ $t("buttons.create_my_shop") }}
           </AppButtonLinkPrimary>

@@ -1,6 +1,6 @@
 <template>
   <nuxt-link
-    :to="localePath({ name: 'search' })"
+    :to="{ name: 'search' }"
     :title="$t('aria.links.search')"
     :aria-label="$t('aria.links.search')"
     :class="`bg-${shopTheme}-500 hover:bg-${shopTheme}-700`"

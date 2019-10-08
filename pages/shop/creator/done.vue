@@ -118,7 +118,7 @@ export default {
       setStepConnect: 'shop/setStepConnect'
     }),
     prev() {
-      this.$router.push(this.localePath({ name: 'shop-creator-connect' }))
+      this.$router.push({ name: 'shop-creator-connect' })
     },
     next() {
       if (
@@ -127,7 +127,7 @@ export default {
         this.stepCustomization &&
         this.stepConnect
       ) {
-        this.$router.push(this.localePath({ name: 'shop-management-dashboard' }))
+        this.$router.push({ name: 'shop-management-dashboard' })
       }
     }
   }

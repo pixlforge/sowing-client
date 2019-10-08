@@ -8,7 +8,12 @@
           class="w-1/2 md:w-auto"
         >
           <nuxt-link
-            :to="localePath({ name: 'categories-slug', params: { slug: category.slug } })"
+            :to="{
+              name: 'categories-slug',
+              params: {
+                slug: category.slug
+              }
+            }"
             :class="`hover:text-${shopTheme}-500`"
             class="block h-full no-underline text-12 sm:text-14 text-center transition-color transition-faster outline-none focus:shadow-outline rounded-lg px-20 xl:px-12 py-12 xl:py-10 flex justify-center items-center"
           >

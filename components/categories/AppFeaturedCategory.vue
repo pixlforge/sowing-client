@@ -32,13 +32,13 @@
 
         <!-- Link -->
         <AppButtonLinkPrimary
-          :to="localePath({
+          :route="{
             name: 'categories-category-subcategory-slug',
             params: {
               subcategory: category.parent.slug,
               slug: category.slug
             }
-          })"
+          }"
           class="shadow-xl"
         >
           {{ $t("components.category.link.see_all") }}

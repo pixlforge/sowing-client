@@ -224,7 +224,7 @@ export default {
           shipping_method_id: this.shippingMethodId
         })
         this.$toast.success('It worked')
-        this.$router.push(this.localePath({ name: 'orders' }))
+        this.$router.push({ name: 'orders' })
       } catch (e) {
         this.flash({
           type: 'danger',

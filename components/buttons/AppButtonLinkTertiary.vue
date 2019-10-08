@@ -1,6 +1,6 @@
 <template>
   <nuxt-link
-    :to="to"
+    :to="route"
     class="outline-none focus:shadow-outline rounded-lg border border-transparent text-12 text-gray-300 font-bold text-center uppercase no-underline whitespace-no-wrap px-30 py-12"
   >
     <font-awesome-icon
@@ -15,8 +15,8 @@
 <script>
 export default {
   props: {
-    to: {
-      type: String,
+    route: {
+      type: Object,
       required: true
     },
     icon: {

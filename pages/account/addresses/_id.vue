@@ -5,7 +5,7 @@
 
         <!-- Back -->
         <AppBackButton
-          :url="localePath({ name: 'account-addresses' })"
+          :route="{ name: 'account-addresses' }"
           class="mr-20"
         />
 
@@ -320,7 +320,7 @@ export default {
       try {
         await this.$axios.$delete(`/addresses/${this.address.id}`)
         this.$toast.success(this.$t('toasts.addresses.deleted'))
-        this.$router.push(this.localePath({ name: 'account-addresses' }))
+        this.$router.push({ name: 'account-addresses' })
       } catch (e) {
         this.$toast.error(this.$t('toasts.general_error'))
       }

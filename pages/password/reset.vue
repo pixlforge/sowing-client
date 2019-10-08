@@ -147,7 +147,7 @@ export default {
         const res = await this.$axios.$post('/auth/reset', this.form)
         this.$toast.success(res.message)
         this.flash({ message: res.message, type: 'success' })
-        this.$router.push(this.localePath({ name: 'login' }))
+        this.$router.push({ name: 'login' })
       } catch (e) {
         this.errors = e.response.data.errors
 

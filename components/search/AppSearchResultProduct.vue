@@ -1,6 +1,11 @@
 <template>
   <nuxt-link
-    :to="localePath({ name: 'products-slug', params: { slug: result.slug } })"
+    :to="{
+      name: 'products-slug',
+      params: {
+        slug: result.slug
+      }
+    }"
     class="search__result-link search__result-link--product group"
   >
     <div class="search__result-content search__result-content--product group-hover:bg-green-400 group-hover:text-white">

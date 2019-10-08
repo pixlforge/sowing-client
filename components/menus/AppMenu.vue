@@ -17,7 +17,7 @@
 
         <!-- Account -->
         <AppDropdownItem
-          :to="localePath({ name: 'account-dashboard' })"
+          :to="{ name: 'account-dashboard' }"
           icon="user"
         >
           {{ $t("pages.account.title") }}
@@ -25,7 +25,7 @@
 
         <!-- Orders -->
         <AppDropdownItem
-          :to="localePath({ name: 'orders' })"
+          :to="{ name: 'orders' }"
           icon="shipping-fast"
         >
           {{ $t("pages.orders.title") }}
@@ -33,7 +33,7 @@
 
         <!-- Shop -->
         <AppDropdownItem
-          :to="localePath({ name: 'shop-management-dashboard' })"
+          :to="{ name: 'shop-management-dashboard' }"
           icon="store"
         >
           {{ $t("pages.shop.title") }}
@@ -45,7 +45,7 @@
           <!-- Shop create -->
           <li class="my-16">
             <AppButtonLinkPrimary
-              :to="localePath({ name: 'shop-creator-terms' })"
+              :route="{ name: 'shop-creator-terms' }"
               icon="store"
               color="pink-dark"
               class="shadow-md"
@@ -131,7 +131,7 @@ export default {
     },
     async logout() {
       this.$toast.success(`${this.$t('toasts.logged_out')}`)
-      this.$router.push(this.localePath({ name: 'index' }))
+      this.$router.push({ name: 'index' })
       await this.$auth.logout()
       await this.emptyCart()
     }
