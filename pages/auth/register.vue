@@ -1,15 +1,22 @@
 <template>
   <main>
 
-    <!-- Header -->
-    <AppHeader
-      :title="$t('pages.register.title')"
-      icon="user-plus"
-    />
-
     <!-- Form -->
     <AppContentSection class="max-w-600">
-      <form @submit.prevent="register">
+
+      <!-- Page title -->
+      <AppTitle
+        semantic="h1"
+        visual="h1"
+        utilities="md:text-center"
+      >
+        {{ $t('pages.register.title') }}
+      </AppTitle>
+
+      <form
+        class="mt-36 sm:mt-72"
+        @submit.prevent="register"
+      >
 
         <!-- Name -->
         <AppFormGroup>
@@ -116,7 +123,7 @@
 <script>
 import { mapActions } from 'vuex'
 
-import AppHeader from '@/components/headers/AppHeader'
+import AppTitle from '@/components/AppTitle'
 import AppFormGroup from '@/components/forms/AppFormGroup'
 import AppFormLabel from '@/components/forms/AppFormLabel'
 import AppFormInput from '@/components/forms/AppFormInput'
@@ -126,6 +133,7 @@ import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 import AppFormValidation from '@/components/forms/AppFormValidation'
 
 export default {
+  layout: 'auth',
   middleware: ['guest'],
   head() {
     return {
@@ -145,7 +153,7 @@ export default {
     }
   },
   components: {
-    AppHeader,
+    AppTitle,
     AppFormGroup,
     AppFormLabel,
     AppFormInput,

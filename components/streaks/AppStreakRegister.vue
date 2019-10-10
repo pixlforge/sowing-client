@@ -25,7 +25,7 @@
 
         <div class="flex flex-col md:flex-row justify-center lg:justify-start mt-48">
           <AppButtonLinkPrimary
-            :route="{ name: 'register' }"
+            :route="{ name: 'auth-register' }"
             icon="store"
             color="pink-dark"
           >

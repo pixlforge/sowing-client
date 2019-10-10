@@ -26,7 +26,7 @@
       <!-- Login -->
       <AppButtonLinkSecondary
         v-if="!loggedIn"
-        :route="{ name: 'login' }"
+        :route="{ name: 'auth-login' }"
         class="ml-10 lg:ml-20"
       >
         {{ $t("buttons.login") }}
@@ -35,7 +35,7 @@
       <!-- Register -->
       <AppButtonLinkPrimary
         v-if="!loggedIn"
-        :route="{ name: 'register' }"
+        :route="{ name: 'auth-register' }"
         icon="rocket"
         color="pink-dark"
         class="hidden md:block ml-10 lg:ml-20"

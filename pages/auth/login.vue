@@ -1,15 +1,22 @@
 <template>
   <main>
 
-    <!-- Header -->
-    <AppHeader
-      :title="$t('pages.login.title')"
-      icon="key"
-    />
-
     <!-- Page contents -->
     <AppContentSection class="max-w-600">
-      <form @submit.prevent="login">
+
+      <!-- Page title -->
+      <AppTitle
+        semantic="h1"
+        visual="h1"
+        utilities="md:text-center"
+      >
+        {{ $t('pages.login.title') }}
+      </AppTitle>
+
+      <form
+        class="mt-36 sm:mt-72"
+        @submit.prevent="login"
+      >
 
         <!-- Email -->
         <AppFormGroup>
@@ -48,12 +55,12 @@
         <div class="flex flex-wrap justify-center my-36 md:my-60">
 
           <!-- Password forgotten -->
-          <AppButtonLinkTertiary :route="{ name: 'password-forgot' }">
+          <AppButtonLinkTertiary :route="{ name: 'auth-forgot' }">
             {{ $t("pages.login.links.password") }}
           </AppButtonLinkTertiary>
 
           <!-- Register an account -->
-          <AppButtonLinkTertiary :route="{ name: 'register' }">
+          <AppButtonLinkTertiary :route="{ name: 'auth-register' }">
             {{ $t("pages.login.links.register") }}
           </AppButtonLinkTertiary>
         </div>
@@ -76,7 +83,7 @@
 <script>
 import { mapActions } from 'vuex'
 
-import AppHeader from '@/components/headers/AppHeader'
+import AppTitle from '@/components/AppTitle'
 import AppFormLabel from '@/components/forms/AppFormLabel'
 import AppFormInput from '@/components/forms/AppFormInput'
 import AppFormGroup from '@/components/forms/AppFormGroup'
@@ -86,6 +93,7 @@ import AppFormValidation from '@/components/forms/AppFormValidation'
 import AppButtonLinkTertiary from '@/components/buttons/AppButtonLinkTertiary'
 
 export default {
+  layout: 'auth',
   middleware: ['guest'],
   head() {
     return {
@@ -105,7 +113,7 @@ export default {
     }
   },
   components: {
-    AppHeader,
+    AppTitle,
     AppFormLabel,
     AppFormInput,
     AppFormGroup,

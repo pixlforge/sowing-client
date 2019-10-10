@@ -1,28 +1,28 @@
 <template>
   <main>
 
-    <!-- Header -->
-    <AppHeader
-      :title="$t('pages.password_email.title')"
-      icon="redo-alt"
-    />
-
     <!-- Content -->
     <AppContentSection class="max-w-600">
+
+      <!-- Page title -->
       <AppTitle
         semantic="h1"
-        visual="main"
+        visual="h1"
+        utilities="md:text-center"
       >
         {{ $t("pages.password_email.paragraphs.first") }}
       </AppTitle>
 
       <!-- Infos -->
       <AppParagraph center>
-        {{ $t("pages.password_email.paragraphs.second") }}}
+        {{ $t("pages.password_email.paragraphs.second") }}
       </AppParagraph>
 
       <!-- Form -->
-      <form @submit.prevent="send">
+      <form
+        class="mt-36 sm:mt-72"
+        @submit.prevent="send"
+      >
 
         <!-- Email -->
         <AppFormGroup>
@@ -35,6 +35,7 @@
             :errors="errors"
             name="email"
             type="email"
+            placeholder="elon@musk.ch"
             required
           />
           <AppFormValidation
@@ -60,7 +61,6 @@
 import { mapActions } from 'vuex'
 
 import AppTitle from '@/components/AppTitle'
-import AppHeader from '@/components/headers/AppHeader'
 import AppFormGroup from '@/components/forms/AppFormGroup'
 import AppFormLabel from '@/components/forms/AppFormLabel'
 import AppFormInput from '@/components/forms/AppFormInput'
@@ -70,6 +70,7 @@ import AppFormValidation from '@/components/forms/AppFormValidation'
 import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 
 export default {
+  layout: 'auth',
   middleware: ['guest'],
   head() {
     return {
@@ -90,7 +91,6 @@ export default {
   },
   components: {
     AppTitle,
-    AppHeader,
     AppFormGroup,
     AppFormLabel,
     AppFormInput,
@@ -122,7 +122,7 @@ export default {
         const res = await this.$axios.$post('/auth/forgot', { email: this.email })
         this.$toast.success(res.message)
         this.flash({ message: res.message, type: 'success' })
-        this.$router.push({ name: 'login' })
+        this.$router.push({ name: 'auth-login' })
       } catch (e) {
         this.errors = e.response.data.errors
         this.$toast.error(this.errors.email)

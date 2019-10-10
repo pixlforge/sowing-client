@@ -20,11 +20,11 @@
       <!-- Selling -->
       <AppFooterColumn :title="$t('footer.titles.sell_on_sowing')">
         <AppFooterItem
-          :to="{ name: 'index' }"
+          :to="{ name: 'auth-login' }"
           :label="$t('footer.links.login')"
         />
         <AppFooterItem
-          :to="{ name: 'index' }"
+          :to="{ name: 'auth-register' }"
           :label="$t('footer.links.your_own_store')"
         />
         <AppFooterItem

@@ -7,9 +7,7 @@ const _202ee15e = () => interopDefault(import('../pages/cart/index.vue' /* webpa
 const _61cceef7 = () => interopDefault(import('../pages/checkout/index.vue' /* webpackChunkName: "pages/checkout/index" */))
 const _c8b0dcee = () => interopDefault(import('../pages/coming-soon.vue' /* webpackChunkName: "pages/coming-soon" */))
 const _51f57edb = () => interopDefault(import('../pages/faq/index.vue' /* webpackChunkName: "pages/faq/index" */))
-const _1f7774ee = () => interopDefault(import('../pages/login/index.vue' /* webpackChunkName: "pages/login/index" */))
 const _4d115756 = () => interopDefault(import('../pages/orders/index.vue' /* webpackChunkName: "pages/orders/index" */))
-const _3584ffd8 = () => interopDefault(import('../pages/register/index.vue' /* webpackChunkName: "pages/register/index" */))
 const _3df3fb4e = () => interopDefault(import('../pages/search/index.vue' /* webpackChunkName: "pages/search/index" */))
 const _0d39ac05 = () => interopDefault(import('../pages/account/addresses/index.vue' /* webpackChunkName: "pages/account/addresses/index" */))
 const _296594f4 = () => interopDefault(import('../pages/account/dashboard.vue' /* webpackChunkName: "pages/account/dashboard" */))
@@ -17,9 +15,11 @@ const _7f40eceb = () => interopDefault(import('../pages/account/password.vue' /*
 const _63ed6e0e = () => interopDefault(import('../pages/account/payment-methods/index.vue' /* webpackChunkName: "pages/account/payment-methods/index" */))
 const _fdb118ee = () => interopDefault(import('../pages/account/profile.vue' /* webpackChunkName: "pages/account/profile" */))
 const _e73cec6e = () => interopDefault(import('../pages/account/verify.vue' /* webpackChunkName: "pages/account/verify" */))
-const _1f6b6cd9 = () => interopDefault(import('../pages/password/forgot.vue' /* webpackChunkName: "pages/password/forgot" */))
-const _13ee37ee = () => interopDefault(import('../pages/password/reset.vue' /* webpackChunkName: "pages/password/reset" */))
-const _2f25d445 = () => interopDefault(import('../pages/register/success.vue' /* webpackChunkName: "pages/register/success" */))
+const _435bb4ac = () => interopDefault(import('../pages/auth/forgot.vue' /* webpackChunkName: "pages/auth/forgot" */))
+const _a687ea20 = () => interopDefault(import('../pages/auth/login.vue' /* webpackChunkName: "pages/auth/login" */))
+const _0d0de7ec = () => interopDefault(import('../pages/auth/register.vue' /* webpackChunkName: "pages/auth/register" */))
+const _05f6ec22 = () => interopDefault(import('../pages/auth/register-success.vue' /* webpackChunkName: "pages/auth/register-success" */))
+const _e8525454 = () => interopDefault(import('../pages/auth/reset.vue' /* webpackChunkName: "pages/auth/reset" */))
 const _7c9fc14e = () => interopDefault(import('../pages/account/addresses/create.vue' /* webpackChunkName: "pages/account/addresses/create" */))
 const _41749e70 = () => interopDefault(import('../pages/account/payment-methods/create.vue' /* webpackChunkName: "pages/account/payment-methods/create" */))
 const _47fb1bc8 = () => interopDefault(import('../pages/shop/creator/connect.vue' /* webpackChunkName: "pages/shop/creator/connect" */))
@@ -66,17 +66,9 @@ export const routerOptions = {
     component: _51f57edb,
     name: "faq"
   }, {
-    path: "/login",
-    component: _1f7774ee,
-    name: "login"
-  }, {
     path: "/orders",
     component: _4d115756,
     name: "orders"
-  }, {
-    path: "/register",
-    component: _3584ffd8,
-    name: "register"
   }, {
     path: "/search",
     component: _3df3fb4e,
@@ -106,17 +98,25 @@ export const routerOptions = {
     component: _e73cec6e,
     name: "account-verify"
   }, {
-    path: "/password/forgot",
-    component: _1f6b6cd9,
-    name: "password-forgot"
+    path: "/auth/forgot",
+    component: _435bb4ac,
+    name: "auth-forgot"
   }, {
-    path: "/password/reset",
-    component: _13ee37ee,
-    name: "password-reset"
+    path: "/auth/login",
+    component: _a687ea20,
+    name: "auth-login"
   }, {
-    path: "/register/success",
-    component: _2f25d445,
-    name: "register-success"
+    path: "/auth/register",
+    component: _0d0de7ec,
+    name: "auth-register"
+  }, {
+    path: "/auth/register-success",
+    component: _05f6ec22,
+    name: "auth-register-success"
+  }, {
+    path: "/auth/reset",
+    component: _e8525454,
+    name: "auth-reset"
   }, {
     path: "/account/addresses/create",
     component: _7c9fc14e,

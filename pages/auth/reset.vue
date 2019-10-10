@@ -1,15 +1,22 @@
 <template>
   <main>
 
-    <!-- Header -->
-    <AppHeader
-      :title="$t('pages.password_reset.title')"
-      icon="redo-alt"
-    />
-
-    <!-- Form -->
+    <!-- Content -->
     <AppContentSection class="max-w-600">
-      <form @submit.prevent="reset">
+
+      <!-- Page title -->
+      <AppTitle
+        semantic="h1"
+        visual="h1"
+        utilities="md:text-center"
+      >
+        {{ $t("pages.password_reset.title") }}
+      </AppTitle>
+
+      <form
+        class="mt-36 sm:mt-72"
+        @submit.prevent="reset"
+      >
 
         <!-- Email -->
         <AppFormGroup>
@@ -78,7 +85,7 @@
 <script>
 import { mapActions } from 'vuex'
 
-import AppHeader from '@/components/headers/AppHeader'
+import AppTitle from '@/components/AppTitle'
 import AppFormGroup from '@/components/forms/AppFormGroup'
 import AppFormLabel from '@/components/forms/AppFormLabel'
 import AppFormInput from '@/components/forms/AppFormInput'
@@ -87,6 +94,7 @@ import AppFormValidation from '@/components/forms/AppFormValidation'
 import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 
 export default {
+  layout: 'auth',
   middleware: ['guest'],
   head() {
     return {
@@ -106,7 +114,7 @@ export default {
     }
   },
   components: {
-    AppHeader,
+    AppTitle,
     AppFormGroup,
     AppFormLabel,
     AppFormInput,
@@ -146,8 +154,11 @@ export default {
       try {
         const res = await this.$axios.$post('/auth/reset', this.form)
         this.$toast.success(res.message)
-        this.flash({ message: res.message, type: 'success' })
-        this.$router.push({ name: 'login' })
+        this.flash({
+          message: res.message,
+          type: 'success'
+        })
+        this.$router.push({ name: 'auth-login' })
       } catch (e) {
         this.errors = e.response.data.errors
 
