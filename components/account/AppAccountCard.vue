@@ -31,10 +31,10 @@
               class="opacity-0 group-hover:opacity-100 transition-opacity transition-medium rounded-lg shadow-lg text-12 text-white px-20 py-10 -mt-48"
             >
               <template v-if="userIsVerified">
-                {{ $t('components.account_card.verified') }}
+                {{ $t('account_card.verified') }}
               </template>
               <template v-else>
-                {{ $t('components.account_card.verification_pending') }}
+                {{ $t('account_card.verification_pending') }}
               </template>
             </div>
           </div>
@@ -66,7 +66,7 @@
             :icon="['far', 'birthday-cake']"
             class="mr-10"
           />
-          {{ $t("components.account_card.member_for") }} {{ user.member_for[locale] }}
+          {{ $t("account_card.member_for") }} {{ user.member_for[locale] }}
         </div>
       </div>
 
