@@ -31,10 +31,6 @@
           {{ subcategory.name[locale] }}
         </AppTitle>
 
-        <!-- Description -->
-        <p class="text-12 sm:text-14 text-center text-gray-500 leading-relaxed mt-30">
-          {{ subcategory.description[locale] }}
-        </p>
       </div>
     </div>
   </nuxt-link>
