@@ -1,8 +1,8 @@
 export default {
   /**
-   * Temporary landing page
+   * Coming soon page
    */
-  landing: {
+  coming_soon: {
     soon: 'Bientôt disponible',
     title: 'Place de marché e-commerce',
     subtitle: 'Artisanat & Fait main',
@@ -164,6 +164,7 @@ export default {
     links: {
       login: 'Connexion',
       your_own_store: 'Votre propre boutique',
+      advice_to_creators: 'Conseils aux créateurs',
       new_vendors: 'Nouveaux vendeurs',
       terms: "Conditions d'utilisation",
       payments: 'Modes de paiement',

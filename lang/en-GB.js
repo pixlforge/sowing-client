@@ -2,7 +2,7 @@ export default {
   /**
    * Temporary landing page
    */
-  landing: {
+  coming_soon: {
     soon: 'Coming soon',
     title: 'E-commerce Marketplace',
     subtitle: 'Crafts & Handmade',
@@ -164,6 +164,7 @@ export default {
     links: {
       login: 'Log in',
       your_own_store: 'Your own store',
+      advice_to_creators: 'Advice to creators',
       new_vendors: 'Newest vendors',
       terms: 'Terms of use',
       payments: 'Payment methods',

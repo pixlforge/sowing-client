@@ -2,7 +2,7 @@ export default {
   /**
    * Temporary landing page
    */
-  landing: {
+  coming_soon: {
     soon: 'Verfügbar in Kürze',
     title: 'E-Commerce-Marktplatz',
     subtitle: 'Kunsthandwerk & Handarbeit',
@@ -164,6 +164,7 @@ export default {
     links: {
       login: 'Einloggen',
       your_own_store: 'Ihr eigenes Geschäft',
+      advice_to_creators: 'Rat an die Schöpfer',
       new_vendors: 'Neue Verkäufer',
       terms: 'Nutzungsbedingungen',
       payments: 'Zahlungsmethoden',

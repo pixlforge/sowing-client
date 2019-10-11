@@ -29,6 +29,10 @@
         />
         <AppFooterItem
           :to="{ name: 'index' }"
+          :label="$t('footer.links.advice_to_creators')"
+        />
+        <AppFooterItem
+          :to="{ name: 'index' }"
           :label="$t('footer.links.new_vendors')"
         />
       </AppFooterColumn>

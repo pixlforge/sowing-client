@@ -3,10 +3,11 @@ import Router from 'vue-router'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
+const _1d93817c = () => interopDefault(import('../pages/advice-for-creators.vue' /* webpackChunkName: "pages/advice-for-creators" */))
 const _202ee15e = () => interopDefault(import('../pages/cart/index.vue' /* webpackChunkName: "pages/cart/index" */))
 const _61cceef7 = () => interopDefault(import('../pages/checkout/index.vue' /* webpackChunkName: "pages/checkout/index" */))
 const _c8b0dcee = () => interopDefault(import('../pages/coming-soon.vue' /* webpackChunkName: "pages/coming-soon" */))
-const _51f57edb = () => interopDefault(import('../pages/faq/index.vue' /* webpackChunkName: "pages/faq/index" */))
+const _6d001a58 = () => interopDefault(import('../pages/faq.vue' /* webpackChunkName: "pages/faq" */))
 const _4d115756 = () => interopDefault(import('../pages/orders/index.vue' /* webpackChunkName: "pages/orders/index" */))
 const _3df3fb4e = () => interopDefault(import('../pages/search/index.vue' /* webpackChunkName: "pages/search/index" */))
 const _0d39ac05 = () => interopDefault(import('../pages/account/addresses/index.vue' /* webpackChunkName: "pages/account/addresses/index" */))
@@ -50,6 +51,10 @@ export const routerOptions = {
   scrollBehavior,
 
   routes: [{
+    path: "/advice-for-creators",
+    component: _1d93817c,
+    name: "advice-for-creators"
+  }, {
     path: "/cart",
     component: _202ee15e,
     name: "cart"
@@ -63,7 +68,7 @@ export const routerOptions = {
     name: "coming-soon"
   }, {
     path: "/faq",
-    component: _51f57edb,
+    component: _6d001a58,
     name: "faq"
   }, {
     path: "/orders",

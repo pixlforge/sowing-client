@@ -2,7 +2,7 @@ export default {
   /**
    * Temporary landing page
    */
-  landing: {
+  coming_soon: {
     soon: 'Presto disponibile',
     title: 'Mercato e-commerce',
     subtitle: 'Artigianato e fatti a mano',
@@ -164,6 +164,7 @@ export default {
     links: {
       login: 'Log in',
       your_own_store: 'Il vostro negozio',
+      advice_to_creators: 'Consigli ai creatori',
       new_vendors: 'Nuovi venditori',
       terms: "Condizioni d'uso",
       payments: 'Metodi di pagamento',

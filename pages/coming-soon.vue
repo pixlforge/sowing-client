@@ -4,7 +4,7 @@
     <main class="grid">
 
       <h1 class="sr-only">
-        {{ $t("landing.soon") }}
+        {{ $t("coming_soon.soon") }}
       </h1>
 
       <!-- Header -->
@@ -25,7 +25,7 @@
         </h1>
 
         <h5 class="text-14 uppercase text-gray-300 my-36 sm:my-72">
-          {{ $t("landing.soon") }}
+          {{ $t("coming_soon.soon") }}
         </h5>
 
         <AppLogo class="w-full max-w-200 sm:max-w-400 mx-auto px-20"/>
@@ -36,18 +36,18 @@
         <div class="intro-content container max-w-600 sm:max-w-800 text-white px-60">
           <h1 class="font-extrabold">
             <div class="text-18 sm:text-24 uppercase tracking-tight">
-              {{ $t("landing.title") }}
+              {{ $t("coming_soon.title") }}
             </div>
             <div class="text-24 sm:text-48 tracking-wide">
-              {{ $t("landing.subtitle") }}
+              {{ $t("coming_soon.subtitle") }}
             </div>
           </h1>
           <p class="text-16 sm:text-20 my-30 sm:my-48">
-            {{ $t("landing.description_first_line") }}<br>
-            {{ $t("landing.description_second_line") }}
+            {{ $t("coming_soon.description_first_line") }}<br>
+            {{ $t("coming_soon.description_second_line") }}
           </p>
           <p class="text-16 sm:text-20 my-30 sm:my-48">
-            {{ $t("landing.subscribe") }}
+            {{ $t("coming_soon.subscribe") }}
           </p>
 
           <form
@@ -67,7 +67,7 @@
               type="submit"
               class="w-1/3 outline-none focus:shadow-outline bg-pink-600 hover:bg-pink-700 rounded-r-lg text-12 sm:text-14 font-extrabold uppercase"
             >
-              {{ $t("landing.button") }}
+              {{ $t("coming_soon.button") }}
             </button>
           </form>
         </div>
@@ -83,35 +83,35 @@
               :icon="['fas', 'arrow-alt-circle-right']"
               class="text-24 text-green-500 mr-20"
             />
-            <span>{{ $t("landing.features.first") }}</span>
+            <span>{{ $t("coming_soon.features.first") }}</span>
           </li>
           <li class="flex items-center my-20">
             <font-awesome-icon
               :icon="['fas', 'arrow-alt-circle-right']"
               class="text-24 text-green-500 mr-20"
             />
-            <span>{{ $t("landing.features.second") }}</span>
+            <span>{{ $t("coming_soon.features.second") }}</span>
           </li>
           <li class="flex items-center my-20">
             <font-awesome-icon
               :icon="['fas', 'arrow-alt-circle-right']"
               class="text-24 text-green-500 mr-20"
             />
-            <span>{{ $t("landing.features.third") }}</span>
+            <span>{{ $t("coming_soon.features.third") }}</span>
           </li>
           <li class="flex items-center my-20">
             <font-awesome-icon
               :icon="['fas', 'arrow-alt-circle-right']"
               class="text-24 text-green-500 mr-20"
             />
-            <span>{{ $t("landing.features.fourth") }}</span>
+            <span>{{ $t("coming_soon.features.fourth") }}</span>
           </li>
           <li class="flex items-center my-20">
             <font-awesome-icon
               :icon="['fas', 'arrow-alt-circle-right']"
               class="text-24 text-green-500 mr-20"
             />
-            <span>{{ $t("landing.features.fifth") }}</span>
+            <span>{{ $t("coming_soon.features.fifth") }}</span>
           </li>
         </ul>
       </section>
@@ -120,11 +120,11 @@
       <section class="bg-green-500 py-72 md:py-132">
         <div class="container max-w-800 text-white px-20">
           <p class="text-16 sm:text-20 mb-30 sm:mb-48">
-            {{ $t("landing.description_first_line") }}<br>
-            {{ $t("landing.description_second_line") }}
+            {{ $t("coming_soon.description_first_line") }}<br>
+            {{ $t("coming_soon.description_second_line") }}
           </p>
           <p class="text-16 sm:text-20 my-30 sm:my-48">
-            {{ $t("landing.subscribe") }}
+            {{ $t("coming_soon.subscribe") }}
           </p>
 
           <form
@@ -144,7 +144,7 @@
               type="submit"
               class="w-1/3 outline-none focus:shadow-outline bg-pink-600 hover:bg-pink-700 rounded-r-lg text-12 sm:text-14 font-extrabold uppercase"
             >
-              {{ $t("landing.button") }}
+              {{ $t("coming_soon.button") }}
             </button>
           </form>
         </div>
@@ -152,11 +152,11 @@
 
       <footer class="container py-96">
         <h1 class="sr-only">
-          {{ $t("landing.social_networks") }}
+          {{ $t("coming_soon.social_networks") }}
         </h1>
 
         <p class="text-16 sm:text-24">
-          {{ $t("landing.follow_us") }}
+          {{ $t("coming_soon.follow_us") }}
         </p>
 
         <ul class="flex justify-center my-60 md:my-96">
