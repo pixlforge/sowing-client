@@ -70,7 +70,7 @@ export default {
       locale: 'locale'
     }),
     imgAlt() {
-      return this.$t('components.products.img.alt')
+      return this.$t('products.img.alt')
     },
     imgUrl() {
       if (!this.product.media) {

@@ -68,13 +68,13 @@ export default {
       locale: 'locale'
     }),
     outOfStock() {
-      return this.$t('components.variations.select.out_of_stock')
+      return this.$t('products.variations.select.out_of_stock')
     },
     variationType() {
       return this.variations[0].type.name[this.locale]
     },
     selectionLabel() {
-      return this.$t('components.variations.labels.selection')
+      return this.$t('products.variations.labels.selection')
     },
     selectedVariationId() {
       if (!this.value) {

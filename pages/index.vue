@@ -4,7 +4,7 @@
     <!-- Featured Categories -->
     <section class="container">
       <h1 class="sr-only">
-        {{ $t("components.category.featured_categories") }}
+        {{ $t("categories.featured_categories") }}
       </h1>
 
       <div class="flex flex-wrap -mx-24">

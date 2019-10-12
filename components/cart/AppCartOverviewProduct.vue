@@ -120,13 +120,13 @@ export default {
       return require('@/assets/img/placeholders/category.svg')
     },
     imgAlt() {
-      return this.$t('components.products.img.alt')
+      return this.$t('products.img.alt')
     },
     labelPrice() {
-      return this.$t('components.cart.labels.price')
+      return this.$t('cart.labels.price')
     },
     labelQuantity() {
-      return this.$t('components.cart.labels.quantity')
+      return this.$t('cart.labels.quantity')
     },
     baseProductName() {
       return this.product.product.name[this.locale]

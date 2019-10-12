@@ -18,7 +18,7 @@
 
         <div class="text-white leading-none">
           <span class="text-16">
-            {{ $t("components.category.in") }}
+            {{ $t("categories.in") }}
           </span>
           <span class="text-20 font-extrabold">
             {{ category.parent.name[locale] }}
@@ -41,7 +41,7 @@
           }"
           class="shadow-xl"
         >
-          {{ $t("components.category.link.see_all") }}
+          {{ $t("categories.link.see_all") }}
         </AppButtonLinkPrimary>
       </div>
 

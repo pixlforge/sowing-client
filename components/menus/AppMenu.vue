@@ -63,7 +63,7 @@
           icon="sign-out"
           @click.native="logout"
         >
-          {{ $t("components.navbar.user.logout") }}
+          {{ $t("navbar.user.logout") }}
         </AppDropdownItem>
       </AppDropdownContainer>
     </DropdownTransition>

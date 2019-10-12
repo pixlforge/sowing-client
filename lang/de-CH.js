@@ -39,6 +39,16 @@ export default {
   },
 
   /**
+   * Cart
+   */
+  cart: {
+    labels: {
+      price: 'Preis',
+      quantity: 'Menge'
+    }
+  },
+
+  /**
    * Buttons
    */
   buttons: {
@@ -74,6 +84,20 @@ export default {
   },
 
   /**
+   * Categories
+   */
+  categories: {
+    featured_categories: 'Beliebte Kategorien',
+    in: 'in',
+    img: {
+      alt: 'Kategorie Bild'
+    },
+    link: {
+      see_all: 'Siehe all Produkte'
+    }
+  },
+
+  /**
    * Coming soon page
    */
   coming_soon: {
@@ -93,51 +117,6 @@ export default {
     },
     social_networks: 'Soziale Netzwerke',
     follow_us: 'Folgen Sie uns auch in sozialen Netzwerken'
-  },
-
-  /**
-   * Components
-   */
-  components: {
-    cart: {
-      labels: {
-        price: 'Preis',
-        quantity: 'Menge'
-      }
-    },
-    category: {
-      featured_categories: 'Beliebte Kategorien',
-      in: 'in',
-      img: {
-        alt: 'Kategorie Bild'
-      },
-      link: {
-        see_all: 'Siehe all Produkte'
-      }
-    },
-    navbar: {
-      user: {
-        logout: 'Ausloggen'
-      }
-    },
-    products: {
-      img: {
-        alt: 'Produktbild'
-      },
-      details: {
-        remaining: 'Produkte auf Lager',
-        out_of_stock: 'Ausverkauft'
-      }
-    },
-    variations: {
-      labels: {
-        quantity: 'Menge',
-        selection: 'Auswahl'
-      },
-      select: {
-        out_of_stock: 'Ausverkauft'
-      }
-    }
   },
 
   /**
@@ -223,6 +202,15 @@ export default {
     english: 'englisch',
     german: 'deutsch',
     italian: 'italienisch'
+  },
+
+  /**
+   * Navbar
+   */
+  navbar: {
+    user: {
+      logout: 'Ausloggen'
+    }
   },
 
   /**
@@ -416,6 +404,28 @@ export default {
       title: 'Bestätigung der E-Mail-Adresse',
       success: 'Überprüfung abgeschlossen!',
       fail: 'Oops...'
+    }
+  },
+
+  /**
+   * Products
+   */
+  products: {
+    img: {
+      alt: 'Produktbild'
+    },
+    details: {
+      remaining: 'Produkte auf Lager',
+      out_of_stock: 'Ausverkauft'
+    },
+    variations: {
+      labels: {
+        quantity: 'Menge',
+        selection: 'Auswahl'
+      },
+      select: {
+        out_of_stock: 'Ausverkauft'
+      }
     }
   },
 

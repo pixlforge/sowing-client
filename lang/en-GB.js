@@ -74,6 +74,30 @@ export default {
   },
 
   /**
+   * Cart
+   */
+  cart: {
+    labels: {
+      price: 'Price',
+      quantity: 'Quantity'
+    }
+  },
+
+  /**
+   * Categories
+   */
+  categories: {
+    featured_categories: 'Featured categories',
+    in: 'in',
+    img: {
+      alt: 'Category image'
+    },
+    link: {
+      see_all: 'Show all products'
+    }
+  },
+
+  /**
    * Coming soon page
    */
   coming_soon: {
@@ -93,51 +117,6 @@ export default {
     },
     social_networks: 'Social networks',
     follow_us: 'Follow us also on social networks'
-  },
-
-  /**
-   * Components
-   */
-  components: {
-    cart: {
-      labels: {
-        price: 'Price',
-        quantity: 'Quantity'
-      }
-    },
-    category: {
-      featured_categories: 'Featured categories',
-      in: 'in',
-      img: {
-        alt: 'Category image'
-      },
-      link: {
-        see_all: 'Show all products'
-      }
-    },
-    navbar: {
-      user: {
-        logout: 'Log out'
-      }
-    },
-    products: {
-      img: {
-        alt: 'Product image'
-      },
-      details: {
-        remaining: 'products in stock',
-        out_of_stock: 'Out of stock'
-      }
-    },
-    variations: {
-      labels: {
-        quantity: 'Quantity',
-        selection: 'Select'
-      },
-      select: {
-        out_of_stock: 'Out of stock'
-      }
-    }
   },
 
   /**
@@ -223,6 +202,15 @@ export default {
     english: 'english',
     german: 'german',
     italian: 'italian'
+  },
+
+  /**
+   * Navbar
+   */
+  navbar: {
+    user: {
+      logout: 'Log out'
+    }
   },
 
   /**
@@ -416,6 +404,28 @@ export default {
       title: 'Email address verification',
       success: 'Verification completed!',
       fail: 'Oops...'
+    }
+  },
+
+  /**
+   * Products
+   */
+  products: {
+    img: {
+      alt: 'Product image'
+    },
+    details: {
+      remaining: 'products in stock',
+      out_of_stock: 'Out of stock'
+    },
+    variations: {
+      labels: {
+        quantity: 'Quantity',
+        selection: 'Select'
+      },
+      select: {
+        out_of_stock: 'Out of stock'
+      }
     }
   },
 

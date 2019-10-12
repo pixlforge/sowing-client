@@ -74,6 +74,30 @@ export default {
   },
 
   /**
+   * Categories
+   */
+  categories: {
+    featured_categories: 'Categorie in primo piano',
+    in: 'in',
+    img: {
+      alt: 'Immagine della categoria'
+    },
+    link: {
+      see_all: 'Vedi tutti i prodotti'
+    }
+  },
+
+  /**
+   * Cart
+   */
+  cart: {
+    labels: {
+      price: 'Prezzo',
+      quantity: 'Quantità'
+    }
+  },
+
+  /**
    * Coming soon page
    */
   coming_soon: {
@@ -93,51 +117,6 @@ export default {
     },
     social_networks: 'Reti sociali',
     follow_us: 'Seguici anche sui social network'
-  },
-
-  /**
-   * Components
-   */
-  components: {
-    cart: {
-      labels: {
-        price: 'Prezzo',
-        quantity: 'Quantità'
-      }
-    },
-    category: {
-      featured_categories: 'Categorie in primo piano',
-      in: 'in',
-      img: {
-        alt: 'Immagine della categoria'
-      },
-      link: {
-        see_all: 'Vedi tutti i prodotti'
-      }
-    },
-    navbar: {
-      user: {
-        logout: 'Disconnettersi'
-      }
-    },
-    products: {
-      img: {
-        alt: 'Immagine del prodotto'
-      },
-      details: {
-        remaining: 'prodotti in magazzino',
-        out_of_stock: 'Esaurito'
-      }
-    },
-    variations: {
-      labels: {
-        quantity: 'Quantità',
-        selection: 'Selezione'
-      },
-      select: {
-        out_of_stock: 'Esaurito'
-      }
-    }
   },
 
   /**
@@ -223,6 +202,15 @@ export default {
     english: 'inglese',
     german: 'tedesco',
     italian: 'italiano'
+  },
+
+  /**
+   * Navbar
+   */
+  navbar: {
+    user: {
+      logout: 'Disconnettersi'
+    }
   },
 
   /**
@@ -416,6 +404,28 @@ export default {
       title: "Verifica dell'indirizzo email",
       success: 'Verifica completata!',
       fail: 'Oops...'
+    }
+  },
+
+  /**
+   * Products
+   */
+  products: {
+    img: {
+      alt: 'Immagine del prodotto'
+    },
+    details: {
+      remaining: 'prodotti in magazzino',
+      out_of_stock: 'Esaurito'
+    },
+    variations: {
+      labels: {
+        quantity: 'Quantità',
+        selection: 'Selezione'
+      },
+      select: {
+        out_of_stock: 'Esaurito'
+      }
     }
   },
 

@@ -63,7 +63,7 @@ export default {
       return require('@/assets/img/placeholders/category.svg')
     },
     imgAlt() {
-      return this.$t('components.category.img.alt')
+      return this.$t('categories.img.alt')
     }
   }
 }

@@ -130,10 +130,10 @@ export default {
       shopName: 'shop/shopName'
     }),
     imgUrl() {
-      return `https://bulma.io/images/placeholders/1280x960.png`
+      return 'https://bulma.io/images/placeholders/1280x960.png'
     },
     imgAlt() {
-      return this.$t('components.products.img.alt')
+      return this.$t('products.img.alt')
     }
   },
   async asyncData({ app, route }) {

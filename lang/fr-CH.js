@@ -74,6 +74,30 @@ export default {
   },
 
   /**
+   * Cart
+   */
+  cart: {
+    labels: {
+      price: 'Prix',
+      quantity: 'Quantité'
+    }
+  },
+
+  /**
+   * Categories
+   */
+  categories: {
+    featured_categories: 'Catégories vedettes',
+    in: 'dans',
+    img: {
+      alt: 'Image de la catégorie'
+    },
+    link: {
+      see_all: 'Voir tous les produits'
+    }
+  },
+
+  /**
    * Coming soon page
    */
   coming_soon: {
@@ -93,51 +117,6 @@ export default {
     },
     social_networks: 'Réseaux sociaux',
     follow_us: 'Suivez-nous également sur les réseaux sociaux'
-  },
-
-  /**
-   * Components
-   */
-  components: {
-    cart: {
-      labels: {
-        price: 'Prix',
-        quantity: 'Quantité'
-      }
-    },
-    category: {
-      featured_categories: 'Catégories vedettes',
-      in: 'dans',
-      img: {
-        alt: 'Image de la catégorie'
-      },
-      link: {
-        see_all: 'Voir tous les produits'
-      }
-    },
-    navbar: {
-      user: {
-        logout: 'Déconnexion'
-      }
-    },
-    products: {
-      img: {
-        alt: 'Image du produit'
-      },
-      details: {
-        remaining: 'articles en stock',
-        out_of_stock: 'Rupture de stock'
-      }
-    },
-    variations: {
-      labels: {
-        quantity: 'Quantité',
-        selection: 'Sélection'
-      },
-      select: {
-        out_of_stock: 'Rupture de stock'
-      }
-    }
   },
 
   /**
@@ -240,6 +219,15 @@ export default {
         title: 'Supprimer un moyen de paiement',
         body: 'Êtes-vous certain de vouloir supprimer ce moyen de paiement?'
       }
+    }
+  },
+
+  /**
+   * Navbar
+   */
+  navbar: {
+    user: {
+      logout: 'Déconnexion'
     }
   },
 
@@ -416,6 +404,28 @@ export default {
       title: 'Vérification de votre adresse e-mail',
       success: 'Vérification terminée!',
       fail: 'Oops...'
+    }
+  },
+
+  /**
+   * Products
+   */
+  products: {
+    img: {
+      alt: 'Image du produit'
+    },
+    details: {
+      remaining: 'articles en stock',
+      out_of_stock: 'Rupture de stock'
+    },
+    variations: {
+      labels: {
+        quantity: 'Quantité',
+        selection: 'Sélection'
+      },
+      select: {
+        out_of_stock: 'Rupture de stock'
+      }
     }
   },
 

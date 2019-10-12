@@ -189,7 +189,7 @@ export default {
       return require('@/assets/img/placeholders/category.svg')
     },
     imgAlt() {
-      return this.$t('components.products.img.alt')
+      return this.$t('products.img.alt')
     },
     productName() {
       return this.product.name[this.locale]
@@ -204,13 +204,13 @@ export default {
       return this.product.price.detailed.amount
     },
     quantityLabel() {
-      return this.$t('components.variations.labels.quantity')
+      return this.$t('products.variations.labels.quantity')
     },
     productsRemaining() {
-      return this.$t('components.products.details.remaining')
+      return this.$t('products.details.remaining')
     },
     productOutOfStock() {
-      return this.$t('components.products.details.out_of_stock')
+      return this.$t('products.details.out_of_stock')
     }
   },
   watch: {
