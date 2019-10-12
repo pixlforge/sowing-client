@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="flex flex-col md:flex-row justify-between items-center md:items-baseline">
+    <AppResourceHeader>
 
       <!-- Page title -->
       <AppTitle
@@ -16,20 +16,18 @@
         :label="$t('buttons.add_payment_method')"
         class="mt-60 md:mt-0"
       />
-    </div>
+    </AppResourceHeader>
 
     <!-- Payment methods -->
-    <ul
-      v-if="paymentMethods.length"
-      class="w-full rounded-lg border-2 border-gray-100 my-72 md:my-96"
-    >
-      <AppPaymentMethodResource
+    <AppResourceList v-if="paymentMethods.length">
+      <AppPaymentMethodItem
         v-for="paymentMethod in paymentMethods"
         :key="paymentMethod.id"
         :payment-method="paymentMethod"
       />
-    </ul>
+    </AppResourceList>
 
+    <!-- No payment method found -->
     <div
       v-else
       class="text-center mt-60"
@@ -38,7 +36,7 @@
         {{ $t('pages.account.payment_methods.no_payment_method_found') }}
       </AppParagraph>
       <AppButtonLinkPrimary
-        :to="{ name: 'account-payment-methods' }"
+        :route="{ name: 'account-payment-methods-create' }"
         icon="plus-circle"
       >
         {{ $t('buttons.add_payment_method') }}
@@ -65,18 +63,22 @@ import { mapActions, mapGetters } from 'vuex'
 import AppTitle from '@/components/AppTitle'
 import AppParagraph from '@/components/paragraphs/AppParagraph'
 import AppAddButtonLink from '@/components/buttons/AppAddButtonLink'
+import AppResourceList from '@/components/resources/AppResourceList'
+import AppResourceHeader from '@/components/resources/AppResourceHeader'
 import AppConfirmationModal from '@/components/modals/AppConfirmationModal'
 import AppButtonLinkPrimary from '@/components/buttons/AppButtonLinkPrimary'
-import AppPaymentMethodResource from '@/components/payment-methods/AppPaymentMethodResource'
+import AppPaymentMethodItem from '@/components/payment-methods/AppPaymentMethodItem'
 
 export default {
   components: {
     AppTitle,
     AppParagraph,
     AppAddButtonLink,
+    AppResourceList,
+    AppResourceHeader,
     AppConfirmationModal,
     AppButtonLinkPrimary,
-    AppPaymentMethodResource
+    AppPaymentMethodItem
   },
   middleware: ['authenticated'],
   layout: 'account-management',
