@@ -23,31 +23,31 @@
         visual="main"
         utilities="mb-30 sm:mb-72 md:mb-60"
       >
-        {{ $t("pages.home.titles.features") }}
+        {{ $t("home.titles.features") }}
       </AppTitle>
 
       <div class="flex flex-wrap justify-between -mx-20">
         <AppFeature
-          :title="$t('pages.home.features.first.title')"
-          :body="$t('pages.home.features.first.body')"
+          :title="$t('home.features.first.title')"
+          :body="$t('home.features.first.body')"
           icon="lightbulb"
         />
 
         <AppFeature
-          :title="$t('pages.home.features.second.title')"
-          :body="$t('pages.home.features.second.body')"
+          :title="$t('home.features.second.title')"
+          :body="$t('home.features.second.body')"
           icon="eye"
         />
 
         <AppFeature
-          :title="$t('pages.home.features.third.title')"
-          :body="$t('pages.home.features.third.body')"
+          :title="$t('home.features.third.title')"
+          :body="$t('home.features.third.body')"
           icon="rocket"
         />
 
         <AppFeature
-          :title="$t('pages.home.features.fourth.title')"
-          :body="$t('pages.home.features.fourth.body')"
+          :title="$t('home.features.fourth.title')"
+          :body="$t('home.features.fourth.body')"
           icon="shield-check"
         />
       </div>
@@ -62,7 +62,7 @@
         semantic="h1"
         visual="main"
       >
-        {{ $t("pages.home.titles.shops") }}
+        {{ $t("home.titles.shops") }}
       </AppTitle>
 
       <div class="flex flex-wrap -mx-20 mt-60 sm:mt-132">
@@ -81,7 +81,7 @@
         semantic="h1"
         visual="main"
       >
-        {{ $t("pages.home.titles.categories") }}
+        {{ $t("home.titles.categories") }}
       </AppTitle>
 
       <div class="flex flex-wrap justify-center shadow-2xl -mx-20 mt-60 sm:mt-132">
@@ -99,7 +99,7 @@
         semantic="h1"
         visual="main"
       >
-        {{ $t("pages.home.titles.reviews") }}
+        {{ $t("home.titles.reviews") }}
       </AppTitle>
 
       <div class="mt-60 sm:mt-132">
@@ -133,7 +133,7 @@ import AppFeaturedCategory from '@/components/categories/AppFeaturedCategory'
 export default {
   head() {
     return {
-      title: `${this.$t('pages.home.title')} | ${this.title}`
+      title: `${this.$t('home.title')} | ${this.title}`
     }
   },
   components: {
