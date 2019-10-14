@@ -20,7 +20,7 @@
       </AppParagraph>
       <AppList
         :items="advices"
-        icon="thumbs-up"
+        icon="chevron-circle-right"
         icon-color="green"
       />
       <AppParagraph class="font-bold">

@@ -7,7 +7,7 @@
     >
       <font-awesome-icon
         v-if="icon"
-        :icon="['far', icon]"
+        :icon="['fas', icon]"
         :class="`text-${iconColor}-500`"
         class="mr-10"
       />
