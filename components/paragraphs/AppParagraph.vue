@@ -4,7 +4,7 @@
       'text-center mx-auto my-36 md:my-72': center,
       'my-20 last:mb-0': !center
     }"
-    class="text-16 leading-loose"
+    class="text-14 md:text-16 leading-loose"
   >
     <slot/>
   </p>

@@ -28,7 +28,7 @@
           :label="$t('footer.links.your_own_store')"
         />
         <AppFooterItem
-          :to="{ name: 'index' }"
+          :to="{ name: 'advice-to-creators' }"
           :label="$t('footer.links.advice_to_creators')"
         />
         <AppFooterItem

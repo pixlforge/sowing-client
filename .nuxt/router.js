@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _1d93817c = () => interopDefault(import('../pages/advice-for-creators.vue' /* webpackChunkName: "pages/advice-for-creators" */))
+const _0a61419c = () => interopDefault(import('../pages/advice-to-creators.vue' /* webpackChunkName: "pages/advice-to-creators" */))
 const _202ee15e = () => interopDefault(import('../pages/cart/index.vue' /* webpackChunkName: "pages/cart/index" */))
 const _61cceef7 = () => interopDefault(import('../pages/checkout/index.vue' /* webpackChunkName: "pages/checkout/index" */))
 const _c8b0dcee = () => interopDefault(import('../pages/coming-soon.vue' /* webpackChunkName: "pages/coming-soon" */))
@@ -52,9 +52,9 @@ export const routerOptions = {
   scrollBehavior,
 
   routes: [{
-    path: "/advice-for-creators",
-    component: _1d93817c,
-    name: "advice-for-creators"
+    path: "/advice-to-creators",
+    component: _0a61419c,
+    name: "advice-to-creators"
   }, {
     path: "/cart",
     component: _202ee15e,
