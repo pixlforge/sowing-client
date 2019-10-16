@@ -92,7 +92,7 @@ export const actions = {
   },
   async store({ dispatch }, variations) {
     await this.$axios.$post('/cart', {
-      variations
+      'product_variations': variations
     })
 
     dispatch('getCart')
