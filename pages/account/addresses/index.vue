@@ -5,7 +5,7 @@
       <!-- Page title -->
       <AppTitle
         semantic="h1"
-        visual="h2"
+        visual="h1"
       >
         {{ $t("pages.account.addresses.titles.index") }}
       </AppTitle>

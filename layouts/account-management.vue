@@ -22,26 +22,28 @@
 
           <!-- Side menu -->
           <AppSideMenu>
-            <AppSideMenuItem
-              :label="$t('pages.account.dashboard.title')"
-              route="account-dashboard"
-            />
-            <AppSideMenuItem
-              :label="$t('pages.account.profile.title')"
-              route="account-profile"
-            />
-            <AppSideMenuItem
-              :label="$t('pages.account.password.title')"
-              route="account-password"
-            />
-            <AppSideMenuItem
-              :label="$t('pages.account.addresses.titles.index')"
-              route="account-addresses"
-            />
-            <AppSideMenuItem
-              :label="$t('pages.account.payment_methods.titles.index')"
-              route="account-payment-methods"
-            />
+            <AppSideMenuList>
+              <AppSideMenuItem
+                :label="$t('pages.account.dashboard.title')"
+                route="account-dashboard"
+              />
+              <AppSideMenuItem
+                :label="$t('pages.account.profile.title')"
+                route="account-profile"
+              />
+              <AppSideMenuItem
+                :label="$t('pages.account.password.title')"
+                route="account-password"
+              />
+              <AppSideMenuItem
+                :label="$t('pages.account.addresses.titles.index')"
+                route="account-addresses"
+              />
+              <AppSideMenuItem
+                :label="$t('pages.account.payment_methods.titles.index')"
+                route="account-payment-methods"
+              />
+            </AppSideMenuList>
           </AppSideMenu>
 
           <!-- Page content -->
@@ -68,6 +70,7 @@ import AppHeader from '@/components/headers/AppHeader'
 import AppSideMenu from '@/components/menus/AppSideMenu'
 import AppDisclaimer from '@/components/footer/AppDisclaimer'
 import AppContentSection from '@/components/AppContentSection'
+import AppSideMenuList from '@/components/menus/AppSideMenuList'
 import AppSideMenuItem from '@/components/menus/AppSideMenuItem'
 
 export default {
@@ -79,6 +82,7 @@ export default {
     AppSideMenu,
     AppDisclaimer,
     AppContentSection,
+    AppSideMenuList,
     AppSideMenuItem
   }
 }

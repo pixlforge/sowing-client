@@ -49,18 +49,25 @@
 
             <!-- Side menu -->
             <AppSideMenu>
-              <AppSideMenuItem
-                label="Tableau de bord"
-                route="shop-management-dashboard"
-              />
-              <AppSideMenuItem
-                label="Détails"
-                route="shop-management-details"
-              />
-              <AppSideMenuItem
-                label="Thème"
-                route="shop-management-theme"
-              />
+              <AppSideMenuList>
+                <AppSideMenuItem
+                  label="Tableau de bord"
+                  route="shop-management-dashboard"
+                />
+              </AppSideMenuList>
+              <AppSideMenuTitle>
+                Ma boutique
+              </AppSideMenuTitle>
+              <AppSideMenuList>
+                <AppSideMenuItem
+                  label="Détails"
+                  route="shop-management-details"
+                />
+                <AppSideMenuItem
+                  label="Thème"
+                  route="shop-management-theme"
+                />
+              </AppSideMenuList>
             </AppSideMenu>
 
             <!-- Page content -->
@@ -124,7 +131,9 @@ import AppShopCover from '@/components/shops/AppShopCover'
 import AppDisclaimer from '@/components/footer/AppDisclaimer'
 import AppContentSection from '@/components/AppContentSection'
 import AppHeaderList from '@/components/headers/AppHeaderList'
+import AppSideMenuList from '@/components/menus/AppSideMenuList'
 import AppSideMenuItem from '@/components/menus/AppSideMenuItem'
+import AppSideMenuTitle from '@/components/menus/AppSideMenuTitle'
 import AppButtonLinkPrimary from '@/components/buttons/AppButtonLinkPrimary'
 
 export default {
@@ -139,7 +148,9 @@ export default {
     AppDisclaimer,
     AppContentSection,
     AppHeaderList,
+    AppSideMenuList,
     AppSideMenuItem,
+    AppSideMenuTitle,
     AppButtonLinkPrimary
   },
   mixins: [theming],
