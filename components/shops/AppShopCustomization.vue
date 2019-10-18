@@ -2,7 +2,7 @@
   <div class="w-full">
 
     <!-- Profile image -->
-    <section class="my-72">
+    <section>
       <div class="flex justify-between items-center">
 
         <!-- Title -->
@@ -68,7 +68,7 @@
     </section>
 
     <!-- Theme selection -->
-    <section class="my-72">
+    <section>
 
       <!-- Title -->
       <AppTitle

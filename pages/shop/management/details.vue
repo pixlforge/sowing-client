@@ -10,21 +10,22 @@
     </AppTitle>
 
     <!-- Shop details -->
-    <AppShopDetails
-      :countries="countries"
-      :errors="errors"
-      class="my-72"
-      editable
-    />
+    <AppCard>
+      <AppShopDetails
+        :countries="countries"
+        :errors="errors"
+        editable
+      />
 
-    <!-- Save changes -->
-    <AppButtonPrimary
-      icon="check"
-      :color="shopTheme"
-      @click.native="update"
-    >
-      {{ $t("buttons.update") }}
-    </AppButtonPrimary>
+      <!-- Save changes -->
+      <AppButtonPrimary
+        icon="check"
+        :color="shopTheme"
+        @click.native="update"
+      >
+        {{ $t("buttons.update") }}
+      </AppButtonPrimary>
+    </AppCard>
 
   </div>
 </template>
@@ -33,6 +34,7 @@
 import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
+import AppCard from '@/components/AppCard'
 import AppTitle from '@/components/AppTitle'
 import AppShopDetails from '@/components/shops/AppShopDetails'
 import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
@@ -58,6 +60,7 @@ export default {
   },
   layout: 'shop-management',
   components: {
+    AppCard,
     AppTitle,
     AppShopDetails,
     AppButtonPrimary

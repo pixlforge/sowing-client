@@ -18,30 +18,33 @@
       />
     </AppResourceHeader>
 
-    <!-- Addresses -->
-    <AppResourceList v-if="addresses.length">
-      <AppAddressItem
-        v-for="address in addresses"
-        :key="address.id"
-        :address="address"
-      />
-    </AppResourceList>
+    <AppCard>
 
-    <!-- No address found -->
-    <div
-      v-else
-      class="text-center mt-60"
-    >
-      <AppParagraph class="text-center mb-60">
-        {{ $t('pages.account.addresses.no_address_found') }}
-      </AppParagraph>
-      <AppButtonLinkPrimary
-        :route="{ name: 'account-addresses-create' }"
-        icon="plus-circle"
+      <!-- Addresses -->
+      <AppResourceList v-if="addresses.length">
+        <AppAddressItem
+          v-for="address in addresses"
+          :key="address.id"
+          :address="address"
+        />
+      </AppResourceList>
+
+      <!-- No address found -->
+      <div
+        v-else
+        class="text-center"
       >
-        {{ $t('buttons.add_address') }}
-      </AppButtonLinkPrimary>
-    </div>
+        <AppParagraph class="text-center mb-60">
+          {{ $t('pages.account.addresses.no_address_found') }}
+        </AppParagraph>
+        <AppButtonLinkPrimary
+          :route="{ name: 'account-addresses-create' }"
+          icon="plus-circle"
+        >
+          {{ $t('buttons.add_address') }}
+        </AppButtonLinkPrimary>
+      </div>
+    </AppCard>
 
     <!-- Confirmation modal -->
     <AppConfirmationModal
@@ -60,6 +63,7 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 
+import AppCard from '@/components/AppCard'
 import AppTitle from '@/components/AppTitle'
 import AppParagraph from '@/components/paragraphs/AppParagraph'
 import AppAddressItem from '@/components/addresses/AppAddressItem'
@@ -71,6 +75,7 @@ import AppButtonLinkPrimary from '@/components/buttons/AppButtonLinkPrimary'
 
 export default {
   components: {
+    AppCard,
     AppTitle,
     AppParagraph,
     AppAddressItem,

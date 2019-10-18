@@ -9,20 +9,21 @@
       {{ $t("pages.account.dashboard.title") }}
     </AppTitle>
 
-    <AppAccountCard
-      :user="user"
-      class="my-72 md:my-96"
-    />
+    <AppCard>
+      <AppAccountCard :user="user"/>
+    </AppCard>
 
   </div>
 </template>
 
 <script>
+import AppCard from '@/components/AppCard'
 import AppTitle from '@/components/AppTitle'
 import AppAccountCard from '@/components/account/AppAccountCard'
 
 export default {
   components: {
+    AppCard,
     AppTitle,
     AppAccountCard
   },

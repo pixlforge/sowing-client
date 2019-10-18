@@ -9,16 +9,22 @@
       Dashboard
     </AppTitle>
 
+    <AppCard>
+      this is the dashboard of the shop management section
+    </AppCard>
+
   </div>
 </template>
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
 
+import AppCard from '@/components/AppCard'
 import AppTitle from '@/components/AppTitle'
 
 export default {
   components: {
+    AppCard,
     AppTitle
   },
   middleware: ['authenticated'],

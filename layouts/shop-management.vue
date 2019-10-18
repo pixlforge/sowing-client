@@ -38,35 +38,33 @@
     </AppHeader>
 
     <!-- Main -->
-    <main>
+    <main class="bg-gray-100">
 
       <!-- User owns a shop -->
       <template v-if="userHasShop">
         <AppContentSection>
 
           <!-- Content -->
-          <div class="w-full flex mt-96">
+          <div class="w-full flex">
 
             <!-- Side menu -->
-            <aside class="w-1/4">
-              <AppSideMenu>
-                <AppSideMenuItem
-                  label="Tableau de bord"
-                  route="shop-management-dashboard"
-                />
-                <AppSideMenuItem
-                  label="Détails"
-                  route="shop-management-details"
-                />
-                <AppSideMenuItem
-                  label="Thème"
-                  route="shop-management-theme"
-                />
-              </AppSideMenu>
-            </aside>
+            <AppSideMenu>
+              <AppSideMenuItem
+                label="Tableau de bord"
+                route="shop-management-dashboard"
+              />
+              <AppSideMenuItem
+                label="Détails"
+                route="shop-management-details"
+              />
+              <AppSideMenuItem
+                label="Thème"
+                route="shop-management-theme"
+              />
+            </AppSideMenu>
 
             <!-- Page content -->
-            <section class="w-full lg:w-3/4 lg:pl-20 mt-72 lg:mt-0">
+            <section class="w-full lg:w-3/4 mt-72 lg:mt-0">
               <nuxt/>
             </section>
           </div>

@@ -10,7 +10,10 @@
     </AppTitle>
 
     <!-- Shop customization -->
-    <AppShopCustomization class="mt-72"/>
+    <AppCard>
+      <AppShopCustomization/>
+    </AppCard>
+
   </div>
 </template>
 
@@ -18,6 +21,7 @@
 import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
+import AppCard from '@/components/AppCard'
 import AppTitle from '@/components/AppTitle'
 import AppShopCustomization from '@/components/shops/AppShopCustomization'
 
@@ -42,6 +46,7 @@ export default {
   },
   layout: 'shop-management',
   components: {
+    AppCard,
     AppTitle,
     AppShopCustomization
   },

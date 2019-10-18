@@ -13,40 +13,39 @@
       :description="$t('pages.account.description')"
     />
 
-    <main>
+    <!-- Main -->
+    <main class="bg-gray-100">
       <AppContentSection>
 
         <!-- Content -->
         <div class="w-full flex flex-wrap">
 
           <!-- Side menu -->
-          <aside class="w-full lg:w-1/4">
-            <AppSideMenu>
-              <AppSideMenuItem
-                :label="$t('pages.account.dashboard.title')"
-                route="account-dashboard"
-              />
-              <AppSideMenuItem
-                :label="$t('pages.account.profile.title')"
-                route="account-profile"
-              />
-              <AppSideMenuItem
-                :label="$t('pages.account.password.title')"
-                route="account-password"
-              />
-              <AppSideMenuItem
-                :label="$t('pages.account.addresses.titles.index')"
-                route="account-addresses"
-              />
-              <AppSideMenuItem
-                :label="$t('pages.account.payment_methods.titles.index')"
-                route="account-payment-methods"
-              />
-            </AppSideMenu>
-          </aside>
+          <AppSideMenu>
+            <AppSideMenuItem
+              :label="$t('pages.account.dashboard.title')"
+              route="account-dashboard"
+            />
+            <AppSideMenuItem
+              :label="$t('pages.account.profile.title')"
+              route="account-profile"
+            />
+            <AppSideMenuItem
+              :label="$t('pages.account.password.title')"
+              route="account-password"
+            />
+            <AppSideMenuItem
+              :label="$t('pages.account.addresses.titles.index')"
+              route="account-addresses"
+            />
+            <AppSideMenuItem
+              :label="$t('pages.account.payment_methods.titles.index')"
+              route="account-payment-methods"
+            />
+          </AppSideMenu>
 
           <!-- Page content -->
-          <section class="w-full lg:w-3/4 lg:pl-20 mt-72 lg:mt-0">
+          <section class="w-full lg:w-3/4 xl:w-4/5 mt-72 lg:mt-0">
             <nuxt/>
           </section>
         </div>

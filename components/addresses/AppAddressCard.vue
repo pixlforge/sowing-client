@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-400 sm:max-w-600 rounded-lg shadow-lg border border-gray-200 flex flex-col sm:flex-row mt-36 sm:mt-72 mx-auto lg:mx-0">
+  <div class="max-w-400 sm:max-w-600 rounded-lg shadow-lg border border-gray-200 flex flex-col sm:flex-row mx-auto lg:mx-0">
 
     <!-- Icon -->
     <div class="w-full sm:w-1/4 bg-gray-200 flex justify-center items-center py-20 sm:py-0">

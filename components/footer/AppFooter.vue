@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-green-100">
+  <footer class="bg-white">
     <div class="container flex flex-wrap pb-96">
 
       <!-- Categories -->
