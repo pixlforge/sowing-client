@@ -402,10 +402,10 @@ export default {
           title: 'Dashboard'
         },
         details: {
-          title: 'Managing the details of my shop'
+          title: 'Details'
         },
         theme: {
-          title: 'Managing the theme of my shop'
+          title: 'Theme'
         }
       },
       visit: 'Browse shop'
@@ -436,6 +436,14 @@ export default {
     details: {
       remaining: 'products in stock',
       out_of_stock: 'Out of stock'
+    },
+    management: {
+      index: {
+        title: 'Products'
+      },
+      create: {
+        title: 'Add a product'
+      }
     },
     variations: {
       labels: {
@@ -485,6 +493,14 @@ export default {
         provision_shop: 'Vous pouvrez dès à présent approvisionner votre boutique en y ajoutant des produits.'
       }
     }
+  },
+
+  /**
+   * Side menu
+   */
+  side_menu: {
+    products: 'Products',
+    shop: 'Shop'
   },
 
   /**

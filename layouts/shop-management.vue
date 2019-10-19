@@ -51,30 +51,34 @@
             <AppSideMenu>
               <AppSideMenuList>
                 <AppSideMenuItem
-                  label="Tableau de bord"
+                  :label="$t('pages.shop.management.dashboard.title')"
                   route="shop-management-dashboard"
+                  icon="home"
                 />
               </AppSideMenuList>
               <AppSideMenuTitle>
-                Boutique
+                {{ $t('side_menu.shop') }}
               </AppSideMenuTitle>
               <AppSideMenuList>
                 <AppSideMenuItem
-                  label="Détails"
+                  :label="$t('pages.shop.management.details.title')"
                   route="shop-management-details"
+                  icon="cog"
                 />
                 <AppSideMenuItem
-                  label="Thème"
+                  :label="$t('pages.shop.management.theme.title')"
                   route="shop-management-theme"
+                  icon="palette"
                 />
               </AppSideMenuList>
               <AppSideMenuTitle>
-                Produits
+                {{ $t('side_menu.products') }}
               </AppSideMenuTitle>
               <AppSideMenuList>
                 <AppSideMenuItem
-                  label="Mes produits"
+                  :label="$t('products.management.index.title')"
                   route="shop-management-products"
+                  icon="box-full"
                 />
               </AppSideMenuList>
             </AppSideMenu>

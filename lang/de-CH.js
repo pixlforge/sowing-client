@@ -402,10 +402,10 @@ export default {
           title: 'Instrumententafel'
         },
         details: {
-          title: 'Verwaltung der Details meines Shops'
+          title: 'Details'
         },
         theme: {
-          title: 'Verwaltung des Themas meines Shops'
+          title: 'Thema'
         }
       },
       visit: 'Shop durchsuchen'
@@ -436,6 +436,14 @@ export default {
     details: {
       remaining: 'Produkte auf Lager',
       out_of_stock: 'Ausverkauft'
+    },
+    management: {
+      index: {
+        title: 'Produkte'
+      },
+      create: {
+        title: 'Produkt hinzufügen'
+      }
     },
     variations: {
       labels: {
@@ -485,6 +493,14 @@ export default {
         provision_shop: 'Vous pouvrez dès à présent approvisionner votre boutique en y ajoutant des produits.'
       }
     }
+  },
+
+  /**
+   * Side menu
+   */
+  side_menu: {
+    products: 'Produkte',
+    shop: 'Geschäft'
   },
 
   /**

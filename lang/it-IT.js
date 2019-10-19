@@ -402,10 +402,10 @@ export default {
           title: 'Cruscotto'
         },
         details: {
-          title: 'Gestire i dettagli del mio negozio'
+          title: 'Dettagli'
         },
         theme: {
-          title: 'Gestione del tema del mio negozio'
+          title: 'Tema'
         }
       },
       visit: 'Sfoglia negozio'
@@ -436,6 +436,14 @@ export default {
     details: {
       remaining: 'prodotti in magazzino',
       out_of_stock: 'Esaurito'
+    },
+    management: {
+      index: {
+        title: 'Prodotti'
+      },
+      create: {
+        title: 'Aggiungete un prodotto'
+      }
     },
     variations: {
       labels: {
@@ -485,6 +493,14 @@ export default {
         provision_shop: 'Vous pouvrez dès à présent approvisionner votre boutique en y ajoutant des produits.'
       }
     }
+  },
+
+  /**
+   * Side menu
+   */
+  side_menu: {
+    products: 'Prodotti',
+    shop: 'Negozio'
   },
 
   /**

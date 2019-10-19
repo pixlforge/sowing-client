@@ -31,8 +31,9 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex'
+import { mapActions } from 'vuex'
 import theming from '@/mixins/theming'
+import shopManagement from '@/mixins/shop-management'
 
 import AppCard from '@/components/AppCard'
 import AppTitle from '@/components/AppTitle'
@@ -65,35 +66,26 @@ export default {
     AppShopDetails,
     AppButtonPrimary
   },
-  mixins: [theming],
+  mixins: [
+    theming,
+    shopManagement
+  ],
   data() {
     return {
       errors: {}
     }
   },
-  computed: {
-    ...mapGetters({
-      shopExists: 'shop/shopExists'
-    })
-  },
-  async asyncData({ app, store }) {
+  async asyncData({ app }) {
     const shop = await app.$axios.$get('/user/shop')
     const countries = await app.$axios.$get('/countries')
 
     return {
       shopData: shop.data,
-      countries: countries.data,
-      title: app.head.title
-    }
-  },
-  mounted() {
-    if (!this.shopExists) {
-      this.setShop(this.shopData)
+      countries: countries.data
     }
   },
   methods: {
     ...mapActions({
-      setShop: 'shop/setShop',
       updateShop: 'shop/updateShop'
     }),
     async update() {

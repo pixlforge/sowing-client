@@ -26,22 +26,27 @@
               <AppSideMenuItem
                 :label="$t('pages.account.dashboard.title')"
                 route="account-dashboard"
+                icon="home"
               />
               <AppSideMenuItem
                 :label="$t('pages.account.profile.title')"
                 route="account-profile"
+                icon="user"
               />
               <AppSideMenuItem
                 :label="$t('pages.account.password.title')"
                 route="account-password"
+                icon="shield-alt"
               />
               <AppSideMenuItem
                 :label="$t('pages.account.addresses.titles.index')"
                 route="account-addresses"
+                icon="address-book"
               />
               <AppSideMenuItem
                 :label="$t('pages.account.payment_methods.titles.index')"
                 route="account-payment-methods"
+                icon="credit-card"
               />
             </AppSideMenuList>
           </AppSideMenu>

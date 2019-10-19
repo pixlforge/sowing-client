@@ -7,7 +7,7 @@
         semantic="h1"
         visual="h1"
       >
-        {{ $t("pages.account.addresses.titles.index") }}
+        {{ $t("products.management.index.title") }}
       </AppTitle>
 
       <!-- Add a product -->
@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex'
+import shopManagement from '@/mixins/shop-management'
 
 import AppCard from '@/components/AppCard'
 import AppTitle from '@/components/AppTitle'
@@ -42,28 +42,6 @@ export default {
     AppAddButtonLink,
     AppResourceHeader
   },
-  computed: {
-    ...mapGetters({
-      shopExists: 'shop/shopExists'
-    })
-  },
-  async asyncData({ app, store }) {
-    const shop = await app.$axios.$get('/user/shop')
-
-    return {
-      shopData: shop.data,
-      title: app.head.title
-    }
-  },
-  mounted() {
-    if (!this.shopExists) {
-      this.setShop(this.shopData)
-    }
-  },
-  methods: {
-    ...mapActions({
-      setShop: 'shop/setShop'
-    })
-  }
+  mixins: [shopManagement]
 }
 </script>
