@@ -59,6 +59,7 @@ export default {
     add: 'Add',
     add_address: 'Add an address',
     add_payment_method: 'Add a payment method',
+    add_product: 'Add a product',
     add_to_cart: 'Add to cart',
     back: 'Back',
     begin_shop_creation: 'Start the creation of my shop',

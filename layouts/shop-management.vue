@@ -56,7 +56,7 @@
                 />
               </AppSideMenuList>
               <AppSideMenuTitle>
-                Ma boutique
+                Boutique
               </AppSideMenuTitle>
               <AppSideMenuList>
                 <AppSideMenuItem
@@ -66,6 +66,15 @@
                 <AppSideMenuItem
                   label="Thème"
                   route="shop-management-theme"
+                />
+              </AppSideMenuList>
+              <AppSideMenuTitle>
+                Produits
+              </AppSideMenuTitle>
+              <AppSideMenuList>
+                <AppSideMenuItem
+                  label="Mes produits"
+                  route="shop-management-products"
                 />
               </AppSideMenuList>
             </AppSideMenu>

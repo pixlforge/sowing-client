@@ -69,6 +69,7 @@ export default {
     add: 'Hinzufügen',
     add_address: 'Adresse hinzufügen',
     add_payment_method: 'Fügen Sie eine Zahlungsmethode hinzu',
+    add_product: 'Produkt hinzufügen',
     add_to_cart: 'Zum Warenkorb hinzufügen',
     back: 'Zurück',
     begin_shop_creation: 'Beginnen Sie mit der Erstellung meines Shops',

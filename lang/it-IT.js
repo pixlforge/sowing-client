@@ -59,6 +59,7 @@ export default {
     add: 'Inserire',
     add_address: 'Aggiungete un indirizzo',
     add_payment_method: 'Aggiungete un metodo di pagamento',
+    add_product: 'Aggiungete un prodotto',
     add_to_cart: 'Aggiungete al carrello',
     back: 'Indietro',
     begin_shop_creation: 'Iniziare la creazione del mio negozio',
