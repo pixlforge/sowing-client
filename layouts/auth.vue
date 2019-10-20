@@ -9,9 +9,9 @@
       <!-- Logo -->
       <nuxt-link
         :to="{ name: 'index' }"
-        class="my-36 px-20"
+        class="w-full max-w-200 sm:max-w-300 lg:max-w-400 my-36 px-20"
       >
-        <AppLogo class="w-1/2 sm:w-full mx-auto"/>
+        <AppLogo/>
       </nuxt-link>
 
       <nuxt/>
