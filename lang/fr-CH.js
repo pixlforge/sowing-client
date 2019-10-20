@@ -202,6 +202,7 @@ export default {
       postal_code: 'Code postal',
       city: 'Ville',
       country: 'Pays',
+      description: 'Description',
       description_short: 'Description courte',
       description_long: 'Description détaillée',
       theme_selection: 'Sélection du thème'

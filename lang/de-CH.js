@@ -202,6 +202,7 @@ export default {
       postal_code: 'Postleitzahl',
       city: 'Ort',
       country: 'Land',
+      description: 'Beschreibung',
       description_short: 'Kurze Beschreibung',
       description_long: 'Ausführliche Beschreibung',
       theme_selection: 'Themenauswahl'
