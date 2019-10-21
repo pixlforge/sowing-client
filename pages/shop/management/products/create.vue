@@ -17,10 +17,16 @@
       </AppTitle>
     </header>
 
-    <AppCard>
-      <form @submit.prevent="store">
+    <!-- Form -->
+    <form @submit.prevent="store">
 
-        <!-- Name FR -->
+      <!-- French -->
+      <AppFormFieldset>
+        <AppFormLegend>
+          {{ $t('languages.french') }}
+        </AppFormLegend>
+
+        <!-- Name -->
         <AppFormGroup>
           <AppFormLabel name="name.fr">
             {{ $t('forms.labels.name') }}
@@ -39,7 +45,7 @@
           />
         </AppFormGroup>
 
-        <!-- Description FR -->
+        <!-- Description -->
         <AppFormGroup>
           <AppFormLabel name="description.fr">
             {{ $t('forms.labels.description') }}
@@ -57,8 +63,15 @@
             name="description.fr"
           />
         </AppFormGroup>
+      </AppFormFieldset>
 
-        <!-- Name EN -->
+      <!-- English -->
+      <AppFormFieldset>
+        <AppFormLegend>
+          {{ $t('languages.english') }}
+        </AppFormLegend>
+
+        <!-- Name -->
         <AppFormGroup>
           <AppFormLabel name="name.en">
             {{ $t('forms.labels.name') }}
@@ -77,7 +90,7 @@
           />
         </AppFormGroup>
 
-        <!-- Description EN -->
+        <!-- Description -->
         <AppFormGroup>
           <AppFormLabel name="description.en">
             {{ $t('forms.labels.description') }}
@@ -95,8 +108,15 @@
             name="description.en"
           />
         </AppFormGroup>
+      </AppFormFieldset>
 
-        <!-- Name DE -->
+      <!-- German -->
+      <AppFormFieldset>
+        <AppFormLegend>
+          {{ $t('languages.german') }}
+        </AppFormLegend>
+
+        <!-- Name -->
         <AppFormGroup>
           <AppFormLabel name="name.de">
             {{ $t('forms.labels.name') }}
@@ -115,7 +135,7 @@
           />
         </AppFormGroup>
 
-        <!-- Description DE -->
+        <!-- Description -->
         <AppFormGroup>
           <AppFormLabel name="description.de">
             {{ $t('forms.labels.description') }}
@@ -133,8 +153,15 @@
             name="description.de"
           />
         </AppFormGroup>
+      </AppFormFieldset>
 
-        <!-- Name IT -->
+      <!-- Italian -->
+      <AppFormFieldset>
+        <AppFormLegend>
+          {{ $t('languages.italian') }}
+        </AppFormLegend>
+
+        <!-- Name -->
         <AppFormGroup>
           <AppFormLabel name="name.it">
             {{ $t('forms.labels.name') }}
@@ -153,7 +180,7 @@
           />
         </AppFormGroup>
 
-        <!-- Description IT -->
+        <!-- Description -->
         <AppFormGroup>
           <AppFormLabel name="description.it">
             {{ $t('forms.labels.description') }}
@@ -171,8 +198,71 @@
             name="description.it"
           />
         </AppFormGroup>
+      </AppFormFieldset>
 
-        <!-- Controls -->
+      <!-- Price -->
+      <AppFormFieldset>
+        <AppFormLegend>
+          {{ $t('forms.labels.price') }}
+        </AppFormLegend>
+
+        <AppFormGroup>
+          <AppFormLabel name="price">
+            {{ $t('forms.labels.price') }}
+          </AppFormLabel>
+          <AppFormInput
+            v-model="form.price"
+            :errors="errors"
+            name="price"
+          />
+          <AppFormValidation
+            :errors="errors"
+            name="price"
+          />
+        </AppFormGroup>
+      </AppFormFieldset>
+
+      <!-- Category -->
+      <AppFormFieldset>
+        <AppFormLegend>
+          {{ $t('forms.labels.category') }}
+        </AppFormLegend>
+
+        <AppFormGroup>
+          <AppFormLabel name="category_id">
+            {{ $t('forms.labels.category') }}
+          </AppFormLabel>
+          <AppFormSelect
+            v-model.number="form.category_id"
+            name="category_id"
+            :errors="errors"
+          >
+            <optgroup
+              v-for="category in filteredCategories"
+              :key="category.id"
+              :label="category.name[locale]"
+            >
+              <option
+                v-for="subcategory in category.children"
+                :key="subcategory.id"
+                :value="subcategory.id"
+              >
+                {{ subcategory.name[locale] }}
+                <template v-if="subcategory.parent">
+                  &mdash; {{ subcategory.parent.name[locale] }}
+                </template>
+              </option>
+            </optgroup>
+          </AppFormSelect>
+          <AppFormValidation
+            :errors="errors"
+            name="category_id"
+          />
+        </AppFormGroup>
+      </AppFormFieldset>
+
+      <!-- Controls -->
+      <AppFormFieldset>
         <div class="flex">
 
           <!-- Submit -->
@@ -193,22 +283,25 @@
             {{ $t('buttons.cancel') }}
           </AppButtonLinkTertiary>
         </div>
-      </form>
-    </AppCard>
+      </AppFormFieldset>
+    </form>
 
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import theming from '@/mixins/theming'
 import shopManagement from '@/mixins/shop-management'
 
-import AppCard from '@/components/AppCard'
 import AppTitle from '@/components/AppTitle'
 import AppFormGroup from '@/components/forms/AppFormGroup'
 import AppFormLabel from '@/components/forms/AppFormLabel'
 import AppFormInput from '@/components/forms/AppFormInput'
+import AppFormLegend from '@/components/forms/AppFormLegend'
+import AppFormSelect from '@/components/forms/AppFormSelect'
 import AppBackButton from '@/components/buttons/AppBackButton'
+import AppFormFieldset from '@/components/forms/AppFormFieldset'
 import AppFormTextarea from '@/components/forms/AppFormTextarea'
 import AppFormValidation from '@/components/forms/AppFormValidation'
 import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
@@ -219,12 +312,14 @@ export default {
   layout: 'shop-management',
   middleware: ['authenticated', 'hasShop'],
   components: {
-    AppCard,
     AppTitle,
     AppFormGroup,
     AppFormLabel,
     AppFormInput,
+    AppFormLegend,
+    AppFormSelect,
     AppBackButton,
+    AppFormFieldset,
     AppFormTextarea,
     AppFormValidation,
     AppButtonPrimary,
@@ -254,6 +349,26 @@ export default {
         category_id: null
       },
       errors: {}
+    }
+  },
+  computed: {
+    ...mapGetters({
+      categories: 'categories',
+      locale: 'locale'
+    }),
+    filteredCategories() {
+      return this.categories.map((category) => {
+        const parentCategory = {
+          ...category,
+          children: category.children.map((subcategory) => {
+            if (subcategory.is_section) {
+              return subcategory.children
+            }
+            return subcategory
+          }).reduce((a, b) => a.concat(b), [])
+        }
+        return parentCategory
+      })
     }
   },
   methods: {
