@@ -408,10 +408,11 @@ export default {
     async store() {
       try {
         await this.$axios.$post('/products', this.form)
-        this.$toasted.success('Success') // TODO: Translate
+        this.$toasted.success(this.$t('toasts.products.created'))
+        this.$router.push({ name: 'shop-management-products' })
       } catch (e) {
         this.errors = e.response.data.errors
-        this.$toasted.error('Error') // TODO: Translate
+        this.$toasted.error(this.$t('toasts.validation'))
       }
     },
     initAutoNumeric() {

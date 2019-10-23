@@ -554,6 +554,9 @@ export default {
       updated: 'Card set as default successfully.',
       deleted: 'Card deleted successfully.'
     },
+    products: {
+      created: 'Your product has been added successfully.'
+    },
     shop_avatar_updated: 'The avatar of your shop has been updated successfully!',
     shop_cover_updated: 'The cover of your shop has been updated successfully!',
     subscribed: 'Thank you! You are now subscribed to our newsletter!',

@@ -554,6 +554,9 @@ export default {
       updated: 'Karte wurde erfolgreich als Standard festgelegt.',
       deleted: 'Karte erfolgreich gelöscht.'
     },
+    products: {
+      created: 'Ihr Produkt wurde erfolgreich hinzugefügt.'
+    },
     shop_avatar_updated: 'Der Avatar Ihres Shops wurde erfolgreich aktualisiert!',
     shop_cover_updated: 'Das Cover Ihres Shops wurde erfolgreich aktualisiert!',
     subscribed: 'Vielen Dank! Sie haben jetzt unseren Newsletter abonniert!',

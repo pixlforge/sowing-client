@@ -554,6 +554,9 @@ export default {
       updated: 'Scheda impostata come predefinita correttamente.',
       deleted: 'Scheda eliminata correttamente.'
     },
+    products: {
+      created: 'Il vostro prodotto è stato aggiunto correttamente.'
+    },
     shop_avatar_updated: "L'avatar del vostro negozio è stato aggiornato con successo!",
     shop_cover_updated: 'La copertina del vostro negozio è stata aggiornata con successo!',
     subscribed: 'Grazie! Ora siete iscritti alla nostra newsletter!',

@@ -554,6 +554,9 @@ export default {
       updated: 'Carte définie par défaut avec succès.',
       deleted: 'Carte supprimée avec succès.'
     },
+    products: {
+      created: 'Votre produit a été ajouté avec succès.'
+    },
     shop_avatar_updated: "L'avatar de votre boutique à été mis à jour avec succès!",
     shop_cover_updated: 'La couverture de votre boutique a été mise à jour avec succès!',
     subscribed: 'Merci! Vous êtes maintenant inscrit à notre newsletter!',
