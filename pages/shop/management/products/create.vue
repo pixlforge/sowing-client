@@ -210,8 +210,12 @@
           <AppFormLabel name="price">
             {{ $t('forms.labels.price') }}
           </AppFormLabel>
+          <AppFormLabelDescription>
+            Fixez le prix de votre produit en francs suisses (CHF) en tenant compte des frais d'envoi ainsi que des frais perçus par la plateforme.
+          </AppFormLabelDescription>
           <AppFormInput
-            v-model="form.price"
+            ref="priceInput"
+            v-model="displayPrice"
             :errors="errors"
             name="price"
           />
@@ -232,6 +236,9 @@
           <AppFormLabel name="category_id">
             {{ $t('forms.labels.category') }}
           </AppFormLabel>
+          <AppFormLabelDescription>
+            Associez votre produit à une catégorie afin que nous puissions le répertorier dans le catalogue.
+          </AppFormLabelDescription>
           <AppFormSelect
             v-model.number="form.category_id"
             name="category_id"
@@ -290,6 +297,7 @@
 </template>
 
 <script>
+import AutoNumeric from 'autonumeric'
 import { mapGetters } from 'vuex'
 import theming from '@/mixins/theming'
 import shopManagement from '@/mixins/shop-management'
@@ -348,6 +356,8 @@ export default {
         price: null,
         category_id: null
       },
+      displayPrice: null,
+      autoNumeric: {},
       errors: {}
     }
   },
@@ -371,6 +381,15 @@ export default {
       })
     }
   },
+  watch: {
+    displayPrice() {
+      this.autoNumeric.reformat()
+      this.form.price = this.autoNumeric.rawValue * 100
+    }
+  },
+  mounted() {
+    this.initAutoNumeric()
+  },
   methods: {
     async store() {
       try {
@@ -381,6 +400,19 @@ export default {
         this.errors = e.response.data.errors
         this.$toasted.error('Error') // TODO: Translate
       }
+    },
+    initAutoNumeric() {
+      this.autoNumeric = new AutoNumeric(this.$refs.priceInput.$el, {
+        digitGroupSeparator: "'",
+        decimalCharacter: '.',
+        decimalCharacterAlternative: ',',
+        currencySymbol: 'CHF ',
+        currencySymbolPlacement: AutoNumeric.options.currencySymbolPlacement.prefix,
+        roundingMethod: AutoNumeric.options.roundingMethod.toNearest05Alt,
+        minimumValue: '1',
+        selectNumberOnly: true,
+        modifyValueOnWheel: false
+      })
     }
   }
 }
