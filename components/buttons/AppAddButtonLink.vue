@@ -2,6 +2,7 @@
   <nuxt-link
     :to="route"
     :title="$t('buttons.add_address')"
+    :class="`text-${shopTheme}-500 hover:text-${shopTheme}-600`"
     class="inline-block text-14 font-semibold text-green-500 hover:text-green-600 flex items-center rounded-lg outline-none focus:shadow-outline"
   >
     <font-awesome-icon
@@ -13,7 +14,10 @@
 </template>
 
 <script>
+import theming from '@/mixins/theming'
+
 export default {
+  mixins: [theming],
   props: {
     route: {
       type: Object,

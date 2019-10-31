@@ -18,7 +18,7 @@
       </AppTitle>
     </header>
 
-    <div class="my-72 md:my-96">
+    <AppCard>
       <AppParagraph class="text-center md:text-left">
         {{ $t("stripe.add_a_card") }}
       </AppParagraph>
@@ -46,7 +46,7 @@
           {{ $t("buttons.add") }}
         </AppButtonPrimary>
       </form>
-    </div>
+    </AppCard>
 
   </div>
 </template>
@@ -54,6 +54,7 @@
 <script>
 import { mapGetters } from 'vuex'
 
+import AppCard from '@/components/AppCard'
 import AppTitle from '@/components/AppTitle'
 import AppBackButton from '@/components/buttons/AppBackButton'
 import AppParagraph from '@/components/paragraphs/AppParagraph'
@@ -61,6 +62,7 @@ import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 
 export default {
   components: {
+    AppCard,
     AppTitle,
     AppBackButton,
     AppParagraph,

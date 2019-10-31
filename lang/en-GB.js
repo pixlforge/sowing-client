@@ -59,6 +59,7 @@ export default {
     add: 'Add',
     add_address: 'Add an address',
     add_payment_method: 'Add a payment method',
+    add_product: 'Add a product',
     add_to_cart: 'Add to cart',
     back: 'Back',
     begin_shop_creation: 'Start the creation of my shop',
@@ -186,23 +187,26 @@ export default {
    */
   forms: {
     labels: {
+      address_line_1: 'Address line 1',
+      address_line_2: 'Address line 2',
       avatar: 'Avatar',
+      category: 'Category',
+      city: 'City',
+      company_name: 'Company',
+      country: 'Country',
       cover_image: 'Cover image',
       default_address: 'This address is my default address',
+      description: 'Description',
+      description_short: 'Short description',
+      description_long: 'Detailed description',
       email: 'Email address',
+      first_name: 'First name',
+      last_name: 'Last name',
       name: 'Name',
       password: 'Password',
       password_confirmation: 'Confirm password',
-      first_name: 'First name',
-      last_name: 'Last name',
-      company_name: 'Company',
-      address_line_1: 'Address line 1',
-      address_line_2: 'Address line 2',
       postal_code: 'Postal code',
-      city: 'City',
-      country: 'Country',
-      description_short: 'Short description',
-      description_long: 'Detailed description',
+      price: 'Price',
       theme_selection: 'Theme selection'
     },
     select: 'Select'
@@ -401,10 +405,10 @@ export default {
           title: 'Dashboard'
         },
         details: {
-          title: 'Managing the details of my shop'
+          title: 'Details'
         },
         theme: {
-          title: 'Managing the theme of my shop'
+          title: 'Theme'
         }
       },
       visit: 'Browse shop'
@@ -435,6 +439,14 @@ export default {
     details: {
       remaining: 'products in stock',
       out_of_stock: 'Out of stock'
+    },
+    management: {
+      index: {
+        title: 'Products'
+      },
+      create: {
+        title: 'Add a product'
+      }
     },
     variations: {
       labels: {
@@ -487,6 +499,14 @@ export default {
   },
 
   /**
+   * Side menu
+   */
+  side_menu: {
+    products: 'Products',
+    shop: 'Shop'
+  },
+
+  /**
    * Streaks
    */
   streaks: {
@@ -533,6 +553,9 @@ export default {
     payment_methods: {
       updated: 'Card set as default successfully.',
       deleted: 'Card deleted successfully.'
+    },
+    products: {
+      created: 'Your product has been added successfully.'
     },
     shop_avatar_updated: 'The avatar of your shop has been updated successfully!',
     shop_cover_updated: 'The cover of your shop has been updated successfully!',

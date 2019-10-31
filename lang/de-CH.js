@@ -69,6 +69,7 @@ export default {
     add: 'Hinzufügen',
     add_address: 'Adresse hinzufügen',
     add_payment_method: 'Fügen Sie eine Zahlungsmethode hinzu',
+    add_product: 'Produkt hinzufügen',
     add_to_cart: 'Zum Warenkorb hinzufügen',
     back: 'Zurück',
     begin_shop_creation: 'Beginnen Sie mit der Erstellung meines Shops',
@@ -186,23 +187,26 @@ export default {
    */
   forms: {
     labels: {
+      address_line_1: 'Anschrift Zeile 1',
+      address_line_2: 'Anschrift Zeile 2',
       avatar: 'Avatar',
+      category: 'Kategorie',
+      city: 'Ort',
+      company_name: 'Firma',
+      country: 'Land',
       cover_image: 'Titelbild',
       default_address: 'Diese Adresse ist meine Standardadresse',
+      description: 'Beschreibung',
+      description_short: 'Kurze Beschreibung',
+      description_long: 'Ausführliche Beschreibung',
       email: 'E-mail Adresse',
+      first_name: 'Vorname',
+      last_name: 'Nachname',
       name: 'Name',
       password: 'Passwort',
       password_confirmation: 'Passwort bestätigen',
-      first_name: 'Vorname',
-      last_name: 'Nachname',
-      company_name: 'Firma',
-      address_line_1: 'Anschrift Zeile 1',
-      address_line_2: 'Anschrift Zeile 2',
       postal_code: 'Postleitzahl',
-      city: 'Ort',
-      country: 'Land',
-      description_short: 'Kurze Beschreibung',
-      description_long: 'Ausführliche Beschreibung',
+      price: 'Preis',
       theme_selection: 'Themenauswahl'
     },
     select: 'Wählen'
@@ -401,10 +405,10 @@ export default {
           title: 'Instrumententafel'
         },
         details: {
-          title: 'Verwaltung der Details meines Shops'
+          title: 'Details'
         },
         theme: {
-          title: 'Verwaltung des Themas meines Shops'
+          title: 'Thema'
         }
       },
       visit: 'Shop durchsuchen'
@@ -435,6 +439,14 @@ export default {
     details: {
       remaining: 'Produkte auf Lager',
       out_of_stock: 'Ausverkauft'
+    },
+    management: {
+      index: {
+        title: 'Produkte'
+      },
+      create: {
+        title: 'Produkt hinzufügen'
+      }
     },
     variations: {
       labels: {
@@ -487,6 +499,14 @@ export default {
   },
 
   /**
+   * Side menu
+   */
+  side_menu: {
+    products: 'Produkte',
+    shop: 'Geschäft'
+  },
+
+  /**
    * Streaks
    */
   streaks: {
@@ -533,6 +553,9 @@ export default {
     payment_methods: {
       updated: 'Karte wurde erfolgreich als Standard festgelegt.',
       deleted: 'Karte erfolgreich gelöscht.'
+    },
+    products: {
+      created: 'Ihr Produkt wurde erfolgreich hinzugefügt.'
     },
     shop_avatar_updated: 'Der Avatar Ihres Shops wurde erfolgreich aktualisiert!',
     shop_cover_updated: 'Das Cover Ihres Shops wurde erfolgreich aktualisiert!',

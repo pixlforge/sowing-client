@@ -179,6 +179,7 @@ module.exports = {
     },
     maxWidth: {
       '200': '20rem',
+      '300': '30rem',
       '400': '40rem',
       '500': '50rem',
       '600': '60rem',
@@ -208,6 +209,7 @@ module.exports = {
     margin: {
       auto: 'auto',
       '0': '0',
+      '2': '.2rem',
       '5': '.5rem',
       '10': '1rem',
       '12': '1.2rem',

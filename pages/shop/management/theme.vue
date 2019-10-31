@@ -10,14 +10,18 @@
     </AppTitle>
 
     <!-- Shop customization -->
-    <AppShopCustomization class="mt-72"/>
+    <AppCard>
+      <AppShopCustomization/>
+    </AppCard>
+
   </div>
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
+import shopManagement from '@/mixins/shop-management'
 
+import AppCard from '@/components/AppCard'
 import AppTitle from '@/components/AppTitle'
 import AppShopCustomization from '@/components/shops/AppShopCustomization'
 
@@ -42,32 +46,13 @@ export default {
   },
   layout: 'shop-management',
   components: {
+    AppCard,
     AppTitle,
     AppShopCustomization
   },
-  mixins: [theming],
-  computed: {
-    ...mapGetters({
-      shopExists: 'shop/shopExists'
-    })
-  },
-  async asyncData({ app, store }) {
-    const shop = await app.$axios.$get('/user/shop')
-
-    return {
-      shopData: shop.data,
-      title: app.head.title
-    }
-  },
-  mounted() {
-    if (!this.shopExists) {
-      this.setShop(this.shopData)
-    }
-  },
-  methods: {
-    ...mapActions({
-      setShop: 'shop/setShop'
-    })
-  }
+  mixins: [
+    theming,
+    shopManagement
+  ]
 }
 </script>

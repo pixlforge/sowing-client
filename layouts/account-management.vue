@@ -13,40 +13,46 @@
       :description="$t('pages.account.description')"
     />
 
-    <main>
+    <!-- Main -->
+    <main class="bg-gray-100">
       <AppContentSection>
 
         <!-- Content -->
         <div class="w-full flex flex-wrap">
 
           <!-- Side menu -->
-          <aside class="w-full lg:w-1/4">
-            <AppSideMenu>
+          <AppSideMenu>
+            <AppSideMenuList>
               <AppSideMenuItem
                 :label="$t('pages.account.dashboard.title')"
                 route="account-dashboard"
+                icon="home"
               />
               <AppSideMenuItem
                 :label="$t('pages.account.profile.title')"
                 route="account-profile"
+                icon="user"
               />
               <AppSideMenuItem
                 :label="$t('pages.account.password.title')"
                 route="account-password"
+                icon="shield-alt"
               />
               <AppSideMenuItem
                 :label="$t('pages.account.addresses.titles.index')"
                 route="account-addresses"
+                icon="address-book"
               />
               <AppSideMenuItem
                 :label="$t('pages.account.payment_methods.titles.index')"
                 route="account-payment-methods"
+                icon="credit-card"
               />
-            </AppSideMenu>
-          </aside>
+            </AppSideMenuList>
+          </AppSideMenu>
 
           <!-- Page content -->
-          <section class="w-full lg:w-3/4 lg:pl-20 mt-72 lg:mt-0">
+          <section class="w-full lg:w-3/4 xl:w-4/5 mt-72 lg:mt-0">
             <nuxt/>
           </section>
         </div>
@@ -69,6 +75,7 @@ import AppHeader from '@/components/headers/AppHeader'
 import AppSideMenu from '@/components/menus/AppSideMenu'
 import AppDisclaimer from '@/components/footer/AppDisclaimer'
 import AppContentSection from '@/components/AppContentSection'
+import AppSideMenuList from '@/components/menus/AppSideMenuList'
 import AppSideMenuItem from '@/components/menus/AppSideMenuItem'
 
 export default {
@@ -80,6 +87,7 @@ export default {
     AppSideMenu,
     AppDisclaimer,
     AppContentSection,
+    AppSideMenuList,
     AppSideMenuItem
   }
 }

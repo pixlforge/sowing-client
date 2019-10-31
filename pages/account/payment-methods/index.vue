@@ -18,30 +18,33 @@
       />
     </AppResourceHeader>
 
-    <!-- Payment methods -->
-    <AppResourceList v-if="paymentMethods.length">
-      <AppPaymentMethodItem
-        v-for="paymentMethod in paymentMethods"
-        :key="paymentMethod.id"
-        :payment-method="paymentMethod"
-      />
-    </AppResourceList>
+    <AppCard>
 
-    <!-- No payment method found -->
-    <div
-      v-else
-      class="text-center mt-60"
-    >
-      <AppParagraph class="text-center mb-60">
-        {{ $t('pages.account.payment_methods.no_payment_method_found') }}
-      </AppParagraph>
-      <AppButtonLinkPrimary
-        :route="{ name: 'account-payment-methods-create' }"
-        icon="plus-circle"
+      <!-- Payment methods -->
+      <AppResourceList v-if="paymentMethods.length">
+        <AppPaymentMethodItem
+          v-for="paymentMethod in paymentMethods"
+          :key="paymentMethod.id"
+          :payment-method="paymentMethod"
+        />
+      </AppResourceList>
+
+      <!-- No payment method found -->
+      <div
+        v-else
+        class="text-center"
       >
-        {{ $t('buttons.add_payment_method') }}
-      </AppButtonLinkPrimary>
-    </div>
+        <AppParagraph class="text-center mb-60">
+          {{ $t('pages.account.payment_methods.no_payment_method_found') }}
+        </AppParagraph>
+        <AppButtonLinkPrimary
+          :route="{ name: 'account-payment-methods-create' }"
+          icon="plus-circle"
+        >
+          {{ $t('buttons.add_payment_method') }}
+        </AppButtonLinkPrimary>
+      </div>
+    </AppCard>
 
     <!-- Confirmation modal -->
     <AppConfirmationModal
@@ -60,6 +63,7 @@
 <script>
 import { mapActions, mapGetters } from 'vuex'
 
+import AppCard from '@/components/AppCard'
 import AppTitle from '@/components/AppTitle'
 import AppParagraph from '@/components/paragraphs/AppParagraph'
 import AppAddButtonLink from '@/components/buttons/AppAddButtonLink'
@@ -71,6 +75,7 @@ import AppPaymentMethodItem from '@/components/payment-methods/AppPaymentMethodI
 
 export default {
   components: {
+    AppCard,
     AppTitle,
     AppParagraph,
     AppAddButtonLink,

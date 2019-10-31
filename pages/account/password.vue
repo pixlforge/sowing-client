@@ -9,8 +9,8 @@
       {{ $t("pages.account.password.title") }}
     </AppTitle>
 
-    <form @submit.prevent="update">
-      <div class="my-72 md:my-96">
+    <AppCard>
+      <form @submit.prevent="update">
 
         <!-- Password -->
         <AppFormGroup>
@@ -41,22 +41,23 @@
             type="password"
           />
         </AppFormGroup>
-      </div>
 
-      <!-- Save changes -->
-      <AppButtonPrimary
-        icon="check"
-        type="submit"
-      >
-        {{ $t("buttons.update") }}
-      </AppButtonPrimary>
-    </form>
+        <!-- Save changes -->
+        <AppButtonPrimary
+          icon="check"
+          type="submit"
+        >
+          {{ $t("buttons.update") }}
+        </AppButtonPrimary>
+      </form>
+    </AppCard>
   </div>
 </template>
 
 <script>
 import { mapActions } from 'vuex'
 
+import AppCard from '@/components/AppCard'
 import AppTitle from '@/components/AppTitle'
 import AppFormGroup from '@/components/forms/AppFormGroup'
 import AppFormInput from '@/components/forms/AppFormInput'
@@ -66,6 +67,7 @@ import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 
 export default {
   components: {
+    AppCard,
     AppTitle,
     AppFormGroup,
     AppFormInput,

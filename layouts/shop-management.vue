@@ -38,35 +38,53 @@
     </AppHeader>
 
     <!-- Main -->
-    <main>
+    <main class="bg-gray-100">
 
       <!-- User owns a shop -->
       <template v-if="userHasShop">
         <AppContentSection>
 
           <!-- Content -->
-          <div class="w-full flex mt-96">
+          <div class="w-full flex">
 
             <!-- Side menu -->
-            <aside class="w-1/4">
-              <AppSideMenu>
+            <AppSideMenu>
+              <AppSideMenuList>
                 <AppSideMenuItem
-                  label="Tableau de bord"
+                  :label="$t('pages.shop.management.dashboard.title')"
                   route="shop-management-dashboard"
+                  icon="home"
                 />
+              </AppSideMenuList>
+              <AppSideMenuTitle>
+                {{ $t('side_menu.shop') }}
+              </AppSideMenuTitle>
+              <AppSideMenuList>
                 <AppSideMenuItem
-                  label="Détails"
+                  :label="$t('pages.shop.management.details.title')"
                   route="shop-management-details"
+                  icon="cog"
                 />
                 <AppSideMenuItem
-                  label="Thème"
+                  :label="$t('pages.shop.management.theme.title')"
                   route="shop-management-theme"
+                  icon="palette"
                 />
-              </AppSideMenu>
-            </aside>
+              </AppSideMenuList>
+              <AppSideMenuTitle>
+                {{ $t('side_menu.products') }}
+              </AppSideMenuTitle>
+              <AppSideMenuList>
+                <AppSideMenuItem
+                  :label="$t('products.management.index.title')"
+                  route="shop-management-products"
+                  icon="box-full"
+                />
+              </AppSideMenuList>
+            </AppSideMenu>
 
             <!-- Page content -->
-            <section class="w-full lg:w-3/4 lg:pl-20 mt-72 lg:mt-0">
+            <section class="w-full lg:w-3/4 mt-72 lg:mt-0">
               <nuxt/>
             </section>
           </div>
@@ -126,7 +144,9 @@ import AppShopCover from '@/components/shops/AppShopCover'
 import AppDisclaimer from '@/components/footer/AppDisclaimer'
 import AppContentSection from '@/components/AppContentSection'
 import AppHeaderList from '@/components/headers/AppHeaderList'
+import AppSideMenuList from '@/components/menus/AppSideMenuList'
 import AppSideMenuItem from '@/components/menus/AppSideMenuItem'
+import AppSideMenuTitle from '@/components/menus/AppSideMenuTitle'
 import AppButtonLinkPrimary from '@/components/buttons/AppButtonLinkPrimary'
 
 export default {
@@ -141,7 +161,9 @@ export default {
     AppDisclaimer,
     AppContentSection,
     AppHeaderList,
+    AppSideMenuList,
     AppSideMenuItem,
+    AppSideMenuTitle,
     AppButtonLinkPrimary
   },
   mixins: [theming],

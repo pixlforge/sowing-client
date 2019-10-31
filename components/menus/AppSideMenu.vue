@@ -1,5 +1,5 @@
 <template>
-  <ul class="rounded-lg text-14 text-gray-300 text-center lg:text-left">
+  <aside class="w-full lg:w-1/4 xl:w-1/5">
     <slot/>
-  </ul>
+  </aside>
 </template>

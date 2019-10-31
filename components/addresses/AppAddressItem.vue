@@ -134,7 +134,7 @@ export default {
       openModal: 'confirmation/openModal'
     }),
     confirmDelete() {
-      this.openModal(this.paymentMethod.id)
+      this.openModal(this.address.id)
       this.controlsOpen = false
     }
   }

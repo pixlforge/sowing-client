@@ -59,6 +59,7 @@ export default {
     add: 'Ajouter',
     add_address: 'Ajouter une adresse',
     add_payment_method: 'Ajouter un moyen de paiement',
+    add_product: 'Ajouter un produit',
     add_to_cart: 'Ajouter au panier',
     back: 'Retour',
     begin_shop_creation: 'Commencer la création de ma boutique',
@@ -186,23 +187,26 @@ export default {
    */
   forms: {
     labels: {
+      address_line_1: 'Adresse ligne 1',
+      address_line_2: 'Adresse ligne 2',
       avatar: 'Avatar',
+      category: 'Catégorie',
+      city: 'Ville',
+      company_name: 'Société',
+      country: 'Pays',
       cover_image: 'Image de couverture',
       default_address: 'Cette adresse est mon adresse par défaut',
+      description: 'Description',
+      description_short: 'Description courte',
+      description_long: 'Description détaillée',
       email: 'Adresse e-mail',
+      first_name: 'Prénom',
+      last_name: 'Nom',
       name: 'Nom',
       password: 'Mot de passe',
       password_confirmation: 'Confirmer le mot de passe',
-      first_name: 'Prénom',
-      last_name: 'Nom',
-      company_name: 'Société',
-      address_line_1: 'Adresse ligne 1',
-      address_line_2: 'Adresse ligne 2',
       postal_code: 'Code postal',
-      city: 'Ville',
-      country: 'Pays',
-      description_short: 'Description courte',
-      description_long: 'Description détaillée',
+      price: 'Prix',
       theme_selection: 'Sélection du thème'
     },
     select: 'Sélectionner'
@@ -401,10 +405,10 @@ export default {
           title: 'Tableau de bord'
         },
         details: {
-          title: 'Gestion des détails de ma boutique'
+          title: 'Détails'
         },
         theme: {
-          title: 'Gestion du thème de ma boutique'
+          title: 'Thème'
         }
       },
       visit: 'Visiter la boutique'
@@ -435,6 +439,14 @@ export default {
     details: {
       remaining: 'articles en stock',
       out_of_stock: 'Rupture de stock'
+    },
+    management: {
+      index: {
+        title: 'Produits'
+      },
+      create: {
+        title: 'Ajouter un produit'
+      }
     },
     variations: {
       labels: {
@@ -487,6 +499,14 @@ export default {
   },
 
   /**
+   * Side menu
+   */
+  side_menu: {
+    products: 'Produits',
+    shop: 'Boutique'
+  },
+
+  /**
    * Streaks
    */
   streaks: {
@@ -533,6 +553,9 @@ export default {
     payment_methods: {
       updated: 'Carte définie par défaut avec succès.',
       deleted: 'Carte supprimée avec succès.'
+    },
+    products: {
+      created: 'Votre produit a été ajouté avec succès.'
     },
     shop_avatar_updated: "L'avatar de votre boutique à été mis à jour avec succès!",
     shop_cover_updated: 'La couverture de votre boutique a été mise à jour avec succès!',

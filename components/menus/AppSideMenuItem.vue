@@ -1,10 +1,15 @@
 <template>
-  <li class="mb-5 last:mb-0">
+  <li>
     <nuxt-link
       :to="{ name: route }"
       :class="classes"
-      class="block py-12"
+      class="block py-10"
     >
+      <font-awesome-icon
+        v-if="icon"
+        :icon="['far', icon]"
+        class="mr-2"
+      />
       {{ label }}
     </nuxt-link>
   </li>
@@ -23,6 +28,11 @@ export default {
     route: {
       type: String,
       required: true
+    },
+    icon: {
+      type: String,
+      required: false,
+      default: ''
     }
   },
   computed: {
