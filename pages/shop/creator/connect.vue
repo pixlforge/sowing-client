@@ -52,9 +52,9 @@
 
         <!-- Previous -->
         <AppButtonTertiary
+          @click.native="prev"
           icon="chevron-circle-left"
           class="order-1 md:order-none mx-5"
-          @click.native="prev"
         >
           {{ $t("buttons.back") }}
         </AppButtonTertiary>
@@ -63,9 +63,9 @@
         <AppButtonPrimary
           :disabled="!stripeInfos"
           :color="stripeInfos ? shopTheme : ''"
+          @click.native="next"
           icon="chevron-circle-right"
           class="order-none md_order-1 mx-5"
-          @click.native="next"
         >
           {{ $t("buttons.finalize_shop_creation") }}
         </AppButtonPrimary>
@@ -88,10 +88,13 @@ import AppShopCreatorControls from '@/components/shops/AppShopCreatorControls'
 import AppShopFeatureContainer from '@/components/shops/AppShopFeatureContainer'
 
 export default {
-  middleware: ['authenticated', 'hasShop'],
+  middleware: [
+    'authenticated',
+    'hasShop'
+  ],
   head() {
     return {
-      title: `${this.$t('shop_creator.steps.connect.title')} | ${this.title}`,
+      title: this.$t('shop_creator.steps.connect.title'),
       meta: [
         {
           hid: 'description',
@@ -142,11 +145,6 @@ export default {
     },
     stripeInfosReceived() {
       return this.tried && this.shopStripeUserId && this.shopStripePublishableKey
-    }
-  },
-  asyncData({ app }) {
-    return {
-      title: app.head.title
     }
   },
   async mounted() {

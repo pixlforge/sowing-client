@@ -30,8 +30,8 @@
         <!-- Next -->
         <AppButtonPrimary
           :disabled="!userAgreesToTerms"
-          icon="chevron-circle-right"
           @click.native="next"
+          icon="chevron-circle-right"
         >
           {{ $t("buttons.begin_shop_creation") }}
         </AppButtonPrimary>
@@ -54,7 +54,7 @@ export default {
   middleware: ['authenticated'],
   head() {
     return {
-      title: `${this.$t('pages.terms.title')} | ${this.title}`,
+      title: this.$t('pages.terms.title'),
       meta: [
         {
           hid: 'description',
@@ -90,11 +90,6 @@ export default {
     },
     userAgreesToTerms() {
       return this.localTerms
-    }
-  },
-  asyncData({ app }) {
-    return {
-      title: app.head.title
     }
   },
   methods: {

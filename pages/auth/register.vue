@@ -14,8 +14,8 @@
       </AppTitle>
 
       <form
-        class="mt-36 sm:mt-72"
         @submit.prevent="register"
+        class="mt-36 sm:mt-72"
       >
 
         <!-- Name -->
@@ -137,7 +137,7 @@ export default {
   middleware: ['guest'],
   head() {
     return {
-      title: `${this.$t('pages.register.title')} | ${this.title}`,
+      title: this.$t('pages.register.title'),
       meta: [
         {
           hid: 'description',
@@ -183,11 +183,6 @@ export default {
         !this.terms
     }
   },
-  asyncData({ app }) {
-    return {
-      title: app.head.title
-    }
-  },
   mounted() {
     this.$refs.autofocus.$el.focus()
   },
@@ -207,7 +202,7 @@ export default {
         const res = await this.$axios.$post('/auth/register', { ...this.form })
         this.$toast.success(`${this.$t('toasts.welcome')} ${res.data.name}!`)
         await this.login()
-        this.next()
+        this.$router.push({ name: 'auth-register-success' })
       } catch (e) {
         this.errors = e.response.data.errors
         this.$toast.error(this.$t('toasts.validation'))
@@ -217,9 +212,6 @@ export default {
       await this.$auth.loginWith('local', {
         data: this.form
       })
-    },
-    next() {
-      this.$router.push({ name: 'register-success' })
     }
   }
 }

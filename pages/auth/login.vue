@@ -14,8 +14,8 @@
       </AppTitle>
 
       <form
-        class="mt-36 sm:mt-72"
         @submit.prevent="login"
+        class="mt-36 sm:mt-72"
       >
 
         <!-- Email -->
@@ -97,7 +97,7 @@ export default {
   middleware: ['guest'],
   head() {
     return {
-      title: `${this.$t('pages.login.title')} | ${this.title}`,
+      title: this.$t('pages.login.title'),
       meta: [
         {
           hid: 'description',
@@ -134,11 +134,6 @@ export default {
   computed: {
     missingCredentials() {
       return !this.form.email || this.form.password.length < 8
-    }
-  },
-  asyncData({ app }) {
-    return {
-      title: app.head.title
     }
   },
   mounted() {

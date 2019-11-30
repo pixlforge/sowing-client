@@ -79,7 +79,7 @@ export default {
   layout: 'account-management',
   head() {
     return {
-      title: `${this.$t('pages.account.password.title')} | ${this.$t('pages.account.title')} | ${this.title}`,
+      title: `${this.$t('pages.account.password.title')} | ${this.$t('pages.account.title')}`,
       meta: [
         {
           hid: 'robots',
@@ -96,11 +96,6 @@ export default {
         password_confirmation: ''
       },
       errors: {}
-    }
-  },
-  asyncData({ app }) {
-    return {
-      title: app.head.title
     }
   },
   methods: {

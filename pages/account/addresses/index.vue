@@ -51,10 +51,10 @@
       :title="$t('modals.addresses.delete.title')"
       :body="$t('modals.addresses.delete.body')"
       :button-label="$t('buttons.delete')"
+      @confirm="destroy"
       button-icon="trash-alt"
       icon="exclamation-circle"
       color="red"
-      @confirm="destroy"
     />
 
   </div>
@@ -89,7 +89,7 @@ export default {
   layout: 'account-management',
   head() {
     return {
-      title: `${this.$t('pages.account.addresses.titles.index')} | ${this.$t('pages.account.title')} | ${this.title}`,
+      title: `${this.$t('pages.account.addresses.titles.index')} | ${this.$t('pages.account.title')}`,
       meta: [
         {
           hid: 'robots',
@@ -113,8 +113,7 @@ export default {
     const addresses = await app.$axios.$get('/addresses')
 
     return {
-      addresses: addresses.data,
-      title: app.head.title
+      addresses: addresses.data
     }
   },
   methods: {

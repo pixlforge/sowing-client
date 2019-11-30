@@ -18,10 +18,6 @@ import {
 } from './utils.js'
 import { createApp, NuxtError } from './index.js'
 import NuxtLink from './components/nuxt-link.client.js' // should be included after ./index.js
-import consola from 'consola'
-
-consola.wrapConsole()
-console.log = console.__log
 
 // Component: <NuxtLink>
 Vue.component(NuxtLink.name, NuxtLink)
@@ -41,11 +37,12 @@ const NUXT = window.__NUXT__ || {}
 Object.assign(Vue.config, {"silent":false,"performance":true})
 
 const logs = NUXT.logs || []
-if (logs.length > 0) {
-  console.group("%c🚀 Nuxt SSR Logs", 'font-size: 110%')
-  logs.forEach(logObj => consola[logObj.type](logObj))
+  if (logs.length > 0) {
+  const ssrLogSyle = 'background: #2E495E;border-radius: 0.5em;color: white;font-weight: bold;padding: 2px 0.5em;'
+  console.group && console.group ("%cNuxt SSR", ssrLogSyle)
+  logs.forEach(logObj => (console[logObj.type] || console.log)(...logObj.args))
   delete NUXT.logs
-  console.groupEnd()
+  console.groupEnd && console.groupEnd()
 }
 
 // Setup global Vue error handler
@@ -205,7 +202,7 @@ function resolveComponents (router) {
 }
 
 function callMiddleware (Components, context, layout) {
-  let midd = ["landing-page-redirect","i18n"]
+  let midd = ["landing-page-redirect","nuxti18n"]
   let unknownMiddleware = false
 
   // If layout is undefined, only call global middleware

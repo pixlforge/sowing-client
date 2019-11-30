@@ -83,7 +83,7 @@ export default {
   middleware: ['authenticated'],
   head() {
     return {
-      title: `${this.pageTitle} | ${this.title}`,
+      title: this.pageTitle,
       meta: [
         {
           hid: 'description',
@@ -115,11 +115,6 @@ export default {
     }),
     pageTitle() {
       return this.$t('pages.cart.title')
-    }
-  },
-  asyncData({ app }) {
-    return {
-      title: app.head.title
     }
   },
   mounted() {

@@ -250,8 +250,8 @@
             </AppFormLabelDescription>
             <AppFormSelect
               v-model.number="form.category_id"
-              name="category_id"
               :errors="errors"
+              name="category_id"
             >
               <optgroup
                 v-for="category in filteredCategories"
@@ -330,8 +330,28 @@ import AppButtonLinkTertiary from '@/components/buttons/AppButtonLinkTertiary'
 import AppFormLabelDescription from '@/components/forms/AppFormLabelDescription'
 
 export default {
+  head() {
+    return {
+      title: this.$t('products.management.create.title'),
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: ''
+        },
+        {
+          hid: 'robots',
+          name: 'robots',
+          content: 'noindex'
+        }
+      ]
+    }
+  },
   layout: 'shop-management',
-  middleware: ['authenticated', 'hasShop'],
+  middleware: [
+    'authenticated',
+    'hasShop'
+  ],
   components: {
     AppTitle,
     AppFormGroup,

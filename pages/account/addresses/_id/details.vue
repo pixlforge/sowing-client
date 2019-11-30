@@ -31,10 +31,10 @@
       :title="$t('modals.addresses.delete.title')"
       :body="$t('modals.addresses.delete.body')"
       :button-label="$t('buttons.delete')"
+      @confirm="destroy"
       button-icon="trash-alt"
       icon="exclamation-circle"
       color="red"
-      @confirm="destroy"
     />
 
   </div>
@@ -63,7 +63,7 @@ export default {
   middleware: ['authenticated'],
   head() {
     return {
-      title: `${this.$t('pages.account.addresses.titles.show')} | ${this.$t('pages.account.title')} | ${this.title}`,
+      title: `${this.$t('pages.account.addresses.titles.show')} | ${this.$t('pages.account.title')}`,
       meta: [
         {
           hid: 'robots',
@@ -83,8 +83,7 @@ export default {
     const res = await app.$axios.$get(`/addresses/${params.id}`)
 
     return {
-      address: res.data,
-      title: app.head.title
+      address: res.data
     }
   },
   methods: {

@@ -67,7 +67,7 @@ import AppSubCategory from '@/components/categories/AppSubCategory'
 export default {
   head() {
     return {
-      title: `${this.category.name[this.locale]} | ${this.title}`
+      title: this.category.name[this.locale]
     }
   },
   components: {
@@ -99,7 +99,6 @@ export default {
     const res = await app.$axios.$get(`/categories/${params.slug}`)
 
     return {
-      title: app.head.title,
       category: res.data
     }
   }

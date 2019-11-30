@@ -24,8 +24,8 @@
       </AppParagraph>
 
       <form
-        class="md:max-w-600"
         @submit.prevent="store"
+        class="md:max-w-600"
       >
 
         <!-- Body -->
@@ -72,7 +72,7 @@ export default {
   layout: 'account-management',
   head() {
     return {
-      title: `${this.$t('pages.account.payment_methods.titles.create')} | ${this.$t('pages.account.title')} | ${this.title}`,
+      title: `${this.$t('pages.account.payment_methods.titles.create')} | ${this.$t('pages.account.title')}`,
       meta: [
         {
           hid: 'robots',

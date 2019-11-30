@@ -24,9 +24,9 @@
       </AppParagraph>
 
       <AppButtonPrimary
+        @click.native="update"
         icon="star"
         class="mx-auto"
-        @click.native="update"
       >
         {{ $t('buttons.default') }}
       </AppButtonPrimary>
@@ -54,7 +54,7 @@ export default {
   layout: 'account-management',
   head() {
     return {
-      title: `${this.$t('pages.account.payment_methods.titles.edit')} | ${this.$t('pages.account.title')} | ${this.title}`,
+      title: `${this.$t('pages.account.payment_methods.titles.edit')} | ${this.$t('pages.account.title')}`,
       meta: [
         {
           hid: 'robots',
@@ -68,8 +68,7 @@ export default {
     const res = await app.$axios.$get(`/payment-methods/${route.params.id}`)
 
     return {
-      paymentMethod: res.data,
-      title: app.head.title
+      paymentMethod: res.data
     }
   },
   methods: {

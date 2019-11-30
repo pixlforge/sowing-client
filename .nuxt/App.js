@@ -23,7 +23,7 @@ import _6259fcc4 from '../layouts/shop-management.vue'
 const layouts = { "_account-management": _5589e659,"_auth": _2d217e9e,"_default": _6f6c098b,"_full-screen": _2df55098,"_shop-creator": _0478334b,"_shop-management": _6259fcc4 }
 
 export default {
-  head: {"title":"Sowing","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"Sowing client"}],"script":[{"src":"https:\u002F\u002Fjs.stripe.com\u002Fv3\u002F"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"}],"style":[]},
+  head: {"titleTemplate":"%s | Sowing","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"Sowing client"}],"script":[{"src":"https:\u002F\u002Fjs.stripe.com\u002Fv3\u002F"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"}],"style":[]},
 
   render (h, props) {
     const loadingEl = h('NuxtLoading', { ref: 'loading' })

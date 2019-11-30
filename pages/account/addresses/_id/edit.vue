@@ -185,9 +185,9 @@
 
           <!-- Cancel -->
           <AppButtonTertiary
+            @click.native="cancelEdit"
             type="button"
             icon="times"
-            @click.native="cancelEdit"
           >
             {{ $t('buttons.cancel') }}
           </AppButtonTertiary>
@@ -237,7 +237,7 @@ export default {
   middleware: ['authenticated'],
   head() {
     return {
-      title: `${this.$t('pages.account.addresses.titles.edit')} | ${this.$t('pages.account.title')} | ${this.title}`,
+      title: `${this.$t('pages.account.addresses.titles.edit')} | ${this.$t('pages.account.title')}`,
       meta: [
         {
           hid: 'robots',
@@ -258,8 +258,7 @@ export default {
     const address = await app.$axios.$get(`/addresses/${route.params.id}`)
 
     return {
-      address: address.data,
-      title: app.head.title
+      address: address.data
     }
   },
   created() {

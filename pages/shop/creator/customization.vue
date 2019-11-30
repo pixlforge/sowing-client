@@ -33,9 +33,9 @@
 
         <!-- Previous -->
         <AppButtonTertiary
+          @click.native="prev"
           icon="chevron-circle-left"
           class="order-1 md:order-none mx-5"
-          @click.native="prev"
         >
           {{ $t("buttons.back") }}
         </AppButtonTertiary>
@@ -43,9 +43,9 @@
         <!-- Next -->
         <AppButtonPrimary
           :color="shopTheme"
+          @click.native="next"
           icon="chevron-circle-right"
           class="order-none md_order-1 mx-5"
-          @click.native="next"
         >
           {{ $t("buttons.next") }}
         </AppButtonPrimary>
@@ -71,7 +71,7 @@ export default {
   middleware: ['authenticated', 'hasShop'],
   head() {
     return {
-      title: `${this.$t('shop_creator.steps.customization.title')} | ${this.title}`,
+      title: this.$t('shop_creator.steps.customization.title'),
       meta: [
         {
           hid: 'description',
@@ -109,11 +109,6 @@ export default {
       shopExists: 'shop/shopExists',
       stepDetails: 'shop/stepDetails'
     })
-  },
-  asyncData({ app }) {
-    return {
-      title: app.head.title
-    }
   },
   mounted() {
     if (!this.shopExists && this.$auth.user.has_shop) {

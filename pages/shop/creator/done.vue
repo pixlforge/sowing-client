@@ -5,9 +5,9 @@
     <AppContentSection>
 
       <AppSplash
-        type="success"
         :title="$t('shop_creator.steps.done.title')"
         :subtitle="$t('shop_creator.steps.done.paragraph')"
+        type="success"
         class="max-w-800"
       >
         <template slot="illustration">
@@ -20,9 +20,9 @@
 
         <!-- Previous -->
         <AppButtonTertiary
+          @click.native="prev"
           icon="chevron-circle-left"
           class="order-1 md:order-none mx-5"
-          @click.native="prev"
         >
           {{ $t("buttons.back") }}
         </AppButtonTertiary>
@@ -30,9 +30,9 @@
         <!-- Next -->
         <AppButtonPrimary
           :color="shopTheme"
+          @click.native="next"
           icon="chevron-circle-right"
           class="order-none md_order-1 mx-5"
-          @click.native="next"
         >
           {{ $t("buttons.finish") }}
         </AppButtonPrimary>
@@ -56,7 +56,7 @@ export default {
   middleware: ['authenticated', 'hasShop'],
   head() {
     return {
-      title: `${this.$t('shop_creator.steps.done.title')} | ${this.title}`,
+      title: this.$t('shop_creator.steps.done.title'),
       meta: [
         {
           hid: 'description',
@@ -93,11 +93,6 @@ export default {
       stepCustomization: 'shop/stepCustomization',
       stepConnect: 'shop/stepConnect'
     })
-  },
-  asyncData({ app }) {
-    return {
-      title: app.head.title
-    }
   },
   mounted() {
     if (!this.shopExists && this.$auth.user.has_shop) {

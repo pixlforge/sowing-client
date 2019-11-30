@@ -13,8 +13,8 @@
           <li
             v-for="locale in availableLocales"
             :key="locale.code"
-            class="block text-12 text-gray-300 cursor-pointer px-10 py-10"
             @click.prevent="setLocale(locale)"
+            class="block text-12 text-gray-300 cursor-pointer px-10 py-10"
           >
             {{ locale.name }}
           </li>
@@ -51,8 +51,8 @@
           </p>
 
           <form
-            class="max-w-600 shadow-xl flex mx-auto"
             @submit.prevent="subscribe"
+            class="max-w-600 shadow-xl flex mx-auto"
           >
             <input
               id="email"
@@ -128,8 +128,8 @@
           </p>
 
           <form
-            class="max-w-600 shadow-xl flex mx-auto"
             @submit.prevent="subscribe"
+            class="max-w-600 shadow-xl flex mx-auto"
           >
             <input
               id="email"
@@ -227,6 +227,11 @@ import AppLogo from '@/components/AppLogo'
 import IllustrationEcommerce from '@/components/illustrations/IllustrationEcommerce'
 
 export default {
+  head() {
+    return {
+      titleTemplate: 'Sowing'
+    }
+  },
   components: {
     AppLogo,
     IllustrationEcommerce

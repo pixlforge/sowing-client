@@ -23,14 +23,9 @@ import AppCard from '@/components/AppCard'
 import AppTitle from '@/components/AppTitle'
 
 export default {
-  components: {
-    AppCard,
-    AppTitle
-  },
-  middleware: ['authenticated'],
   head() {
     return {
-      title: `${this.$t('pages.shop.management.dashboard.title')} | ${this.title}`,
+      title: this.$t('pages.shop.management.dashboard.title'),
       meta: [
         {
           hid: 'description',
@@ -45,6 +40,11 @@ export default {
       ]
     }
   },
+  components: {
+    AppCard,
+    AppTitle
+  },
+  middleware: ['authenticated'],
   layout: 'shop-management',
   mixins: [shopManagement]
 }

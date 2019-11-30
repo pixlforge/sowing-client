@@ -33,9 +33,9 @@
 
         <!-- Previous -->
         <AppButtonTertiary
+          @click.native="prev"
           icon="chevron-circle-left"
           class="order-1 md:order-none mx-5"
-          @click.native="prev"
         >
           {{ $t("buttons.back") }}
         </AppButtonTertiary>
@@ -44,9 +44,9 @@
         <AppButtonPrimary
           :disabled="!basicInfosProvided"
           :color="basicInfosProvided ? shopTheme : ''"
+          @click.native="store"
           icon="chevron-circle-right"
           class="order-none md_order-1 mx-5"
-          @click.native="store"
         >
           {{ $t("buttons.next") }}
         </AppButtonPrimary>
@@ -72,7 +72,7 @@ export default {
   middleware: ['authenticated'],
   head() {
     return {
-      title: `${this.$t('shop_creator.steps.details.title')} | ${this.title}`,
+      title: this.$t('shop_creator.steps.details.title'),
       meta: [
         {
           hid: 'description',
@@ -129,8 +129,7 @@ export default {
     const countries = await app.$axios.$get('/countries')
 
     return {
-      countries: countries.data,
-      title: app.head.title
+      countries: countries.data
     }
   },
   mounted() {

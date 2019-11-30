@@ -89,10 +89,10 @@
       :title="$t('modals.payment_methods.delete.title')"
       :body="$t('modals.payment_methods.delete.body')"
       :button-label="$t('buttons.delete')"
+      @confirm="destroy"
       button-icon="trash-alt"
       icon="exclamation-circle"
       color="red"
-      @confirm="destroy"
     />
 
   </div>
@@ -121,7 +121,7 @@ export default {
   layout: 'account-management',
   head() {
     return {
-      title: `${this.$t('pages.account.payment_methods.titles.show')} | ${this.$t('pages.account.title')} | ${this.title}`,
+      title: `${this.$t('pages.account.payment_methods.titles.show')} | ${this.$t('pages.account.title')}`,
       meta: [
         {
           hid: 'robots',
@@ -146,8 +146,7 @@ export default {
     const res = await app.$axios.$get(`/payment-methods/${route.params.id}`)
 
     return {
-      paymentMethod: res.data,
-      title: app.head.title
+      paymentMethod: res.data
     }
   },
   methods: {

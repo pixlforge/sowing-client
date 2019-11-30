@@ -52,7 +52,7 @@ import AppSearchResult from '@/components/search/AppSearchResult'
 export default {
   head() {
     return {
-      title: `${this.$t('pages.search.title')} | ${this.title}`,
+      title: this.$t('pages.search.title'),
       meta: [
         {
           hid: 'description',
@@ -77,12 +77,6 @@ export default {
     ...mapGetters({
       locale: 'locale'
     })
-  },
-  asyncData({ app }) {
-    return {
-      title: app.head.title
-    }
   }
 }
-
 </script>

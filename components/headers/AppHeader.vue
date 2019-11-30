@@ -3,7 +3,7 @@
     <div class="container flex items-center md:items-start py-36">
 
       <!-- Icon -->
-      <div class="w-50 sm:w-80 h-50 sm:h-80 rounded-full bg-white flex justify-center items-center text-20 sm:text-36 text-green-500">
+      <div class="w-50 sm:w-80 h-50 sm:h-80 rounded-full bg-white flex flex-shrink-0 justify-center items-center text-20 sm:text-36 text-green-500">
         <slot name="icon">
           <AppHeaderIcon :icon="icon"/>
         </slot>

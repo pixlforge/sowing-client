@@ -9,7 +9,7 @@ export default {
   },
 
   /**
-   * Advice for creators page
+   * Advice to creators page
    */
   advice_to_creators: {
     title: 'Conseils pour les créateurs',

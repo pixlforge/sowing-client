@@ -34,6 +34,23 @@ import AppAddButtonLink from '@/components/buttons/AppAddButtonLink'
 import AppResourceHeader from '@/components/resources/AppResourceHeader'
 
 export default {
+  head() {
+    return {
+      title: this.$t('products.management.index.title'),
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: ''
+        },
+        {
+          hid: 'robots',
+          name: 'robots',
+          content: 'noindex'
+        }
+      ]
+    }
+  },
   layout: 'shop-management',
   middleware: ['authenticated', 'hasShop'],
   components: {

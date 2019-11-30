@@ -22,8 +22,8 @@
           <AppPaymentMethods
             v-model="form.payment_method_id"
             :payment-methods="paymentMethods"
-            class="mb-72 lg:mb-132 xl:mb-196"
             @payment-method:added="addPaymentMethod"
+            class="mb-72 lg:mb-132 xl:mb-196"
           />
 
           <!-- Cart Overview -->
@@ -99,9 +99,9 @@
             v-if="products.length && !addressManagersVisible"
             :disabled="is_empty || submitting"
             :title="$t('pages.checkout.order')"
+            @click.native="order"
             icon="check-circle"
             class="shadow-xl mt-72"
-            @click.native="order"
           >
             {{ $t("pages.checkout.order") }}
           </AppButtonPrimary>
@@ -128,7 +128,7 @@ export default {
   middleware: ['authenticated'],
   head() {
     return {
-      title: `${this.pageTitle} | ${this.title}`,
+      title: this.pageTitle,
       meta: [
         {
           hid: 'description',

@@ -14,8 +14,8 @@
       </AppTitle>
 
       <form
-        class="mt-36 sm:mt-72"
         @submit.prevent="reset"
+        class="mt-36 sm:mt-72"
       >
 
         <!-- Email -->
@@ -98,7 +98,7 @@ export default {
   middleware: ['guest'],
   head() {
     return {
-      title: `${this.$t('pages.password_reset.title')} | ${this.title}`,
+      title: this.$t('pages.password_reset.title'),
       meta: [
         {
           hid: 'description',
@@ -131,11 +131,6 @@ export default {
         password_confirmation: ''
       },
       errors: {}
-    }
-  },
-  asyncData({ app }) {
-    return {
-      title: app.head.title
     }
   },
   mounted() {

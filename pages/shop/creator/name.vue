@@ -30,9 +30,9 @@
 
         <!-- Previous -->
         <AppButtonTertiary
+          @click.native="prev"
           icon="chevron-circle-left"
           class="order-1 md:order-none mx-5"
-          @click.native="prev"
         >
           {{ $t("buttons.back") }}
         </AppButtonTertiary>
@@ -41,9 +41,9 @@
         <AppButtonPrimary
           :disabled="!basicInfosProvided"
           :color="basicInfosProvided ? shopTheme : ''"
+          @click.native="next"
           icon="chevron-circle-right"
           class="order-none md_order-1 mx-5"
-          @click.native="next"
         >
           {{ $t("buttons.next") }}
         </AppButtonPrimary>
@@ -69,7 +69,7 @@ export default {
   middleware: ['authenticated'],
   head() {
     return {
-      title: `${this.$t('shop_creator.steps.name.title')} | ${this.title}`,
+      title: this.$t('shop_creator.steps.name.title'),
       meta: [
         {
           hid: 'description',
@@ -116,10 +116,6 @@ export default {
 
     if (shop.data) {
       store.dispatch('shop/setShop', shop.data)
-    }
-
-    return {
-      title: app.head.title
     }
   },
   mounted() {

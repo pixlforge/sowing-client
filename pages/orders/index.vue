@@ -39,7 +39,7 @@ export default {
   middleware: ['authenticated'],
   head() {
     return {
-      title: `${this.$t('pages.orders.title')} | ${this.title}`,
+      title: this.$t('pages.orders.title'),
       meta: [
         {
           hid: 'description',
@@ -66,9 +66,9 @@ export default {
   },
   async asyncData({ app }) {
     const res = await app.$axios.$get('/orders')
+
     return {
-      orders: res.data,
-      title: app.head.title
+      orders: res.data
     }
   }
 }

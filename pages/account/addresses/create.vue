@@ -232,7 +232,7 @@ export default {
   middleware: ['authenticated'],
   head() {
     return {
-      title: `${this.$t('pages.account.addresses.titles.create')} | ${this.$t('pages.account.title')} | ${this.title}`,
+      title: `${this.$t('pages.account.addresses.titles.create')} | ${this.$t('pages.account.title')}`,
       meta: [
         {
           hid: 'robots',
@@ -256,11 +256,6 @@ export default {
         is_default: false
       },
       errors: {}
-    }
-  },
-  asyncData({ app }) {
-    return {
-      title: app.head.title
     }
   },
   methods: {

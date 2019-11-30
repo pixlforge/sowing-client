@@ -133,7 +133,7 @@ import AppFeaturedCategory from '@/components/categories/AppFeaturedCategory'
 export default {
   head() {
     return {
-      title: `${this.$t('home.title')} | ${this.title}`
+      title: this.$t('home.title')
     }
   },
   components: {
@@ -222,8 +222,7 @@ export default {
     const featuredCategories = await app.$axios.$get('/categories/featured')
 
     return {
-      featuredCategories: featuredCategories.data,
-      title: app.head.title
+      featuredCategories: featuredCategories.data
     }
   }
 }

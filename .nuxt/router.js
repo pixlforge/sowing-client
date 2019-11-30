@@ -15,12 +15,12 @@ const _296594f4 = () => interopDefault(import('../pages/account/dashboard.vue' /
 const _7f40eceb = () => interopDefault(import('../pages/account/password.vue' /* webpackChunkName: "pages/account/password" */))
 const _63ed6e0e = () => interopDefault(import('../pages/account/payment-methods/index.vue' /* webpackChunkName: "pages/account/payment-methods/index" */))
 const _fdb118ee = () => interopDefault(import('../pages/account/profile.vue' /* webpackChunkName: "pages/account/profile" */))
-const _e73cec6e = () => interopDefault(import('../pages/account/verify.vue' /* webpackChunkName: "pages/account/verify" */))
 const _435bb4ac = () => interopDefault(import('../pages/auth/forgot.vue' /* webpackChunkName: "pages/auth/forgot" */))
 const _a687ea20 = () => interopDefault(import('../pages/auth/login.vue' /* webpackChunkName: "pages/auth/login" */))
 const _0d0de7ec = () => interopDefault(import('../pages/auth/register.vue' /* webpackChunkName: "pages/auth/register" */))
 const _05f6ec22 = () => interopDefault(import('../pages/auth/register-success.vue' /* webpackChunkName: "pages/auth/register-success" */))
 const _e8525454 = () => interopDefault(import('../pages/auth/reset.vue' /* webpackChunkName: "pages/auth/reset" */))
+const _17fdbf02 = () => interopDefault(import('../pages/auth/verify.vue' /* webpackChunkName: "pages/auth/verify" */))
 const _7c9fc14e = () => interopDefault(import('../pages/account/addresses/create.vue' /* webpackChunkName: "pages/account/addresses/create" */))
 const _41749e70 = () => interopDefault(import('../pages/account/payment-methods/create.vue' /* webpackChunkName: "pages/account/payment-methods/create" */))
 const _47fb1bc8 = () => interopDefault(import('../pages/shop/creator/connect.vue' /* webpackChunkName: "pages/shop/creator/connect" */))
@@ -102,10 +102,6 @@ export const routerOptions = {
     component: _fdb118ee,
     name: "account-profile"
   }, {
-    path: "/account/verify",
-    component: _e73cec6e,
-    name: "account-verify"
-  }, {
     path: "/auth/forgot",
     component: _435bb4ac,
     name: "auth-forgot"
@@ -125,6 +121,10 @@ export const routerOptions = {
     path: "/auth/reset",
     component: _e8525454,
     name: "auth-reset"
+  }, {
+    path: "/auth/verify",
+    component: _17fdbf02,
+    name: "auth-verify"
   }, {
     path: "/account/addresses/create",
     component: _7c9fc14e,

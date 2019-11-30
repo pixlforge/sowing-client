@@ -31,7 +31,7 @@ export default {
   layout: 'account-management',
   head() {
     return {
-      title: `${this.$t('pages.account.dashboard.title')} | ${this.$t('pages.account.title')} | ${this.title}`,
+      title: `${this.$t('pages.account.dashboard.title')} | ${this.$t('pages.account.title')}`,
       meta: [
         {
           hid: 'robots',
@@ -45,8 +45,7 @@ export default {
     const user = await app.$axios.$get('/user/account')
 
     return {
-      user: user.data,
-      title: app.head.title
+      user: user.data
     }
   }
 }

@@ -47,7 +47,7 @@ import AppHeaderButtonLink from '@/components/buttons/AppHeaderButtonLink'
 export default {
   head() {
     return {
-      title: `${this.product.name[this.locale]} | ${this.title}`,
+      title: this.product.name[this.locale],
       meta: [
         {
           hid: 'description',
@@ -82,7 +82,6 @@ export default {
     const shop = await app.$axios.$get(`/shops/${product.data.shop.slug}`)
 
     return {
-      title: app.head.title,
       product: product.data,
       shop: shop.data
     }

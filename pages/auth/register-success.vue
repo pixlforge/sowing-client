@@ -16,8 +16,8 @@
     >
       <template slot="illustration">
         <img
-          src="~assets/img/success_smiley.svg"
           :alt="$t('pages.register_success.congratulations')"
+          src="~assets/img/success_smiley.svg"
         >
       </template>
     </AppSplash>
@@ -29,19 +29,15 @@ import AppSplash from '@/components/AppSplash'
 import AppHeader from '@/components/headers/AppHeader'
 
 export default {
+  middleware: ['authenticated'],
   head() {
     return {
-      title: `${this.$t('pages.register_success.title')} | ${this.title}`
+      title: this.$t('pages.register_success.title')
     }
   },
   components: {
     AppSplash,
     AppHeader
-  },
-  asyncData({ app }) {
-    return {
-      title: app.head.title
-    }
   }
 }
 </script>

@@ -72,7 +72,7 @@ import AppStreakNewsletter from '@/components/streaks/AppStreakNewsletter'
 export default {
   head() {
     return {
-      title: `${this.$t('pages.faq.title')} | ${this.title}`,
+      title: this.$t('pages.faq.title'),
       meta: [
         {
           hid: 'description',

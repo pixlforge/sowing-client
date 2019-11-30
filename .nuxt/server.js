@@ -123,7 +123,7 @@ export default async (ssrContext) => {
   /*
   ** Call global middleware (nuxt.config.js)
   */
-  let midd = ["landing-page-redirect","i18n"]
+  let midd = ["landing-page-redirect","nuxti18n"]
   midd = midd.map((name) => {
     if (typeof name === 'function') {
       return name

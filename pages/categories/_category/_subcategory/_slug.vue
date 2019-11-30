@@ -32,7 +32,7 @@ import AppContentSection from '@/components/AppContentSection'
 export default {
   head() {
     return {
-      title: `${this.subcategory.name[this.locale]} | ${this.title}`
+      title: this.subcategory.name[this.locale]
     }
   },
   components: {
@@ -52,17 +52,12 @@ export default {
     })
   },
   async asyncData({ app, params }) {
-    const subcategory = await app.$axios.$get(
-      `/categories/${params.subcategory}`
-    )
-    const products = await app.$axios.$get(
-      `/products?category=${params.subcategory}`
-    )
+    const subcategory = await app.$axios.$get(`/categories/${params.subcategory}`)
+    const products = await app.$axios.$get(`/products?category=${params.subcategory}`)
 
     return {
       subcategory: subcategory.data,
-      products: products.data,
-      title: app.head.title
+      products: products.data
     }
   }
 }

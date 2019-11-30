@@ -19,9 +19,9 @@
 
       <!-- Save changes -->
       <AppButtonPrimary
-        icon="check"
         :color="shopTheme"
         @click.native="update"
+        icon="check"
       >
         {{ $t("buttons.update") }}
       </AppButtonPrimary>
@@ -44,7 +44,7 @@ export default {
   middleware: ['authenticated'],
   head() {
     return {
-      title: `${this.$t('pages.shop.management.details.title')} | ${this.title}`,
+      title: this.$t('pages.shop.management.details.title'),
       meta: [
         {
           hid: 'description',

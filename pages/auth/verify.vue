@@ -17,8 +17,8 @@
       >
         <template slot="illustration">
           <img
-            src="~assets/img/success2.svg"
             :alt="$t('pages.verify.success')"
+            src="~assets/img/success2.svg"
           >
         </template>
       </AppSplash>
@@ -34,8 +34,8 @@
       >
         <template slot="illustration">
           <img
-            src="~assets/img/warning.svg"
             :alt="$t('pages.verify.fail')"
+            src="~assets/img/warning.svg"
           >
         </template>
       </AppSplash>
@@ -52,7 +52,7 @@ export default {
   middleware: ['authenticated'],
   head() {
     return {
-      title: `${this.$t('pages.verify.title')} | ${this.title}`,
+      title: this.$t('pages.verify.title'),
       meta: [
         {
           hid: 'description',
@@ -84,12 +84,6 @@ export default {
     },
     verificationFailed() {
       return this.tried && !this.verified
-    }
-  },
-  asyncData({ app }) {
-    return {
-      title: app.head.title,
-      description: app.head.description
     }
   },
   mounted() {

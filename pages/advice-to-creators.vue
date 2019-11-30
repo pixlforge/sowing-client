@@ -51,7 +51,7 @@ import IllustrationNewIdeas from '@/components/illustrations/IllustrationNewIdea
 export default {
   head() {
     return {
-      title: `${this.$t('pages.faq.title')} | ${this.title}`,
+      title: this.$t('advice_to_creators.title'),
       meta: [
         {
           hid: 'description',
