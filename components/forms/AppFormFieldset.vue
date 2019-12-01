@@ -1,5 +1,5 @@
 <template>
-  <fieldset class="relative bg-white rounded-lg px-20 lg:px-36 xl:px-60 py-20 lg:py-36 xl:py-48">
+  <fieldset class="relative bg-white rounded-lg p-20 lg:p-36 xl:p-48">
     <slot/>
   </fieldset>
 </template>
