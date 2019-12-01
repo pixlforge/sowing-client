@@ -1,21 +1,5 @@
 <template>
   <div>
-    <header class="flex items-center">
-
-      <!-- Back -->
-      <AppBackButton
-        :route="{ name: 'shop-management-products' }"
-        class="mr-20"
-      />
-
-      <!-- Page title -->
-      <AppTitle
-        semantic="h1"
-        visual="h2"
-      >
-        {{ $t("products.management.create.title") }}
-      </AppTitle>
-    </header>
 
     <!-- Form -->
     <form @submit.prevent="store">
@@ -347,7 +331,7 @@ export default {
       ]
     }
   },
-  layout: 'shop-management',
+  layout: 'create-product',
   middleware: [
     'authenticated',
     'hasShop'
