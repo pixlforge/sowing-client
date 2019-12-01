@@ -1,6 +1,28 @@
 <template>
   <div>
 
+    <AppProductCreatorStep>
+      1/5
+    </AppProductCreatorStep>
+
+    <header class="flex flex-wrap items-center my-30">
+
+      <!-- Back -->
+      <AppBackButton
+        :route="{ name: 'shop-management-products' }"
+        class="mr-20"
+      />
+
+      <!-- Page title -->
+      <h1 class="text-20 sm:text-24 md:text-30 font-extrabold leading-relaxed text-center md:text-left">
+        {{ form.name[locale] || $t('products.management.create.unnamed') }}
+      </h1>
+    </header>
+
+    <AppInfoTip icon="info">
+      {{ $t('products.management.create.base_product_translation_advice') }}
+    </AppInfoTip>
+
     <!-- Form -->
     <form @submit.prevent="store">
 
@@ -268,28 +290,27 @@
 
       <!-- Controls -->
       <AppFormSection class="lg:w-full">
-        <AppFormFieldset>
-          <div class="flex">
+        <div class="flex justify-center items-center">
 
-            <!-- Submit -->
-            <AppButtonPrimary
-              :color="shopTheme"
-              icon="check-circle"
-              type="submit"
-              class="mr-10"
-            >
-              {{ $t('buttons.add') }}
-            </AppButtonPrimary>
+          <!-- Submit -->
+          <AppButtonPrimary
+            :color="shopTheme"
+            icon="check-circle"
+            size="large"
+            type="submit"
+            class="mr-10"
+          >
+            {{ $t('buttons.add') }}
+          </AppButtonPrimary>
 
-            <!-- Cancel -->
-            <AppButtonLinkTertiary
-              :route="{ name: 'shop-management-products' }"
-              icon="times"
-            >
-              {{ $t('buttons.cancel') }}
-            </AppButtonLinkTertiary>
-          </div>
-        </AppFormFieldset>
+          <!-- Cancel -->
+          <AppButtonLinkTertiary
+            :route="{ name: 'shop-management-products' }"
+            icon="times"
+          >
+            {{ $t('buttons.cancel') }}
+          </AppButtonLinkTertiary>
+        </div>
       </AppFormSection>
     </form>
 
@@ -302,10 +323,12 @@ import { mapGetters } from 'vuex'
 import theming from '@/mixins/theming'
 import shopManagement from '@/mixins/shop-management'
 
+import AppInfoTip from '@/components/globals/AppInfoTip'
 import AppFormGroup from '@/components/forms/AppFormGroup'
 import AppFormLabel from '@/components/forms/AppFormLabel'
 import AppFormInput from '@/components/forms/AppFormInput'
 import AppFormSelect from '@/components/forms/AppFormSelect'
+import AppBackButton from '@/components/buttons/AppBackButton'
 import AppFormSection from '@/components/forms/AppFormSection'
 import AppFormFieldset from '@/components/forms/AppFormFieldset'
 import AppFormTextarea from '@/components/forms/AppFormTextarea'
@@ -314,6 +337,7 @@ import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 import AppFormSectionTitle from '@/components/forms/AppFormSectionTitle'
 import AppButtonLinkTertiary from '@/components/buttons/AppButtonLinkTertiary'
 import AppFormLabelDescription from '@/components/forms/AppFormLabelDescription'
+import AppProductCreatorStep from '@/components/products/creator/AppProductCreatorStep'
 
 export default {
   head() {
@@ -339,10 +363,12 @@ export default {
     'hasShop'
   ],
   components: {
+    AppInfoTip,
     AppFormGroup,
     AppFormLabel,
     AppFormInput,
     AppFormSelect,
+    AppBackButton,
     AppFormSection,
     AppFormFieldset,
     AppFormTextarea,
@@ -350,7 +376,8 @@ export default {
     AppButtonPrimary,
     AppFormSectionTitle,
     AppButtonLinkTertiary,
-    AppFormLabelDescription
+    AppFormLabelDescription,
+    AppProductCreatorStep
   },
   mixins: [
     theming,
@@ -413,7 +440,7 @@ export default {
       try {
         await this.$axios.$post('/products', this.form)
         this.$toasted.success(this.$t('toasts.products.created'))
-        this.$router.push({ name: 'shop-management-products' })
+        // this.$router.push({ name: 'shop-management-products' })
       } catch (e) {
         this.errors = e.response.data.errors
         this.$toasted.error(this.$t('toasts.validation'))

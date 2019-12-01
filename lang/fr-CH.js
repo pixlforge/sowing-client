@@ -445,7 +445,9 @@ export default {
         title: 'Produits'
       },
       create: {
-        title: 'Ajouter un produit'
+        title: 'Ajouter un produit',
+        unnamed: 'Nouveau produit sans nom',
+        base_product_translation_advice: "Nommez et décrivez en détails les caractéristiques et les points forts de votre produit. Traduire le nom et la description de votre produit n'est pas obligatoire mais augmente les probabilités qu'il soit remarqué."
       }
     },
     variations: {

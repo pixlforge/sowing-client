@@ -12,7 +12,7 @@
 
       <!-- Add a product -->
       <AppAddButtonLink
-        :route="{ name: 'shop-management-products-create' }"
+        :route="{ name: 'shop-management-products-create-product-name' }"
         :label="$t('buttons.add_product')"
         class="mt-60 md:mt-0"
       />
