@@ -195,8 +195,12 @@ export default {
     ...mapActions({
       setShop: 'shop/setShop'
     }),
-    update() {
-      console.log('Update')
+    async update() {
+      try {
+        await this.$axios.$patch(`/products/${this.product.slug}`, this.form)
+      } catch (e) {
+        this.errors = e.response.data.errors
+      }
     },
     initAutoNumeric() {
       this.autoNumeric = new AutoNumeric(this.$refs.priceInput.$el, {
@@ -210,6 +214,8 @@ export default {
         selectNumberOnly: true,
         modifyValueOnWheel: false
       })
+      this.autoNumeric.set(this.product.price.detailed.amount)
+      this.form.price = this.autoNumeric.rawValue * 100
     }
   }
 }
