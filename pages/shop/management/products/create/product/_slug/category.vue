@@ -214,13 +214,23 @@ export default {
   },
   mounted() {
     this.setShop(this.shop)
+    this.determineCurrentCategory()
   },
   methods: {
     ...mapActions({
       setShop: 'shop/setShop'
     }),
-    update() {
-      console.log('Update')
+    async update() {
+      try {
+        await this.$axios.$patch(`/products/${this.product.slug}`, this.form)
+      } catch (e) {
+        this.errors = e.response.data.errors
+      }
+    },
+    determineCurrentCategory() {
+      if (this.product.category !== null) {
+        this.form.category_id = this.product.category.id
+      }
     }
   }
 }
