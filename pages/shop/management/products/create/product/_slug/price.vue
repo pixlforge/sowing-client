@@ -214,8 +214,10 @@ export default {
         selectNumberOnly: true,
         modifyValueOnWheel: false
       })
-      this.autoNumeric.set(this.product.price.detailed.amount)
-      this.form.price = this.autoNumeric.rawValue * 100
+      if (this.product.price.detailed.amount > 0) {
+        this.autoNumeric.set(this.product.price.detailed.amount)
+        this.form.price = this.autoNumeric.rawValue * 100
+      }
     }
   }
 }

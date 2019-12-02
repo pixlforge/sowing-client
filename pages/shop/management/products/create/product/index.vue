@@ -17,7 +17,10 @@
 
       <!-- Page title -->
       <h1 class="text-20 sm:text-24 md:text-30 font-extrabold leading-relaxed text-center md:text-left">
-        {{ form.name[locale] || $t('products.management.create.unnamed') }}
+        {{ $t('products.management.create.name_and_description_for') }}
+        <span :class="`text-${shopTheme}-500`">
+          {{ form.name[locale] || $t('products.management.create.unnamed') }}
+        </span>
       </h1>
     </header>
 
@@ -220,33 +223,6 @@
         </AppFormFieldset>
       </AppFormSection>
 
-      <!-- Price -->
-      <AppFormSection>
-        <AppFormSectionTitle>
-          {{ $t('forms.labels.price') }}
-        </AppFormSectionTitle>
-        <AppFormFieldset>
-          <AppFormGroup>
-            <AppFormLabel name="price">
-              {{ $t('forms.labels.price') }}
-            </AppFormLabel>
-            <AppFormLabelDescription>
-              Fixez le prix de votre produit en francs suisses (CHF) en tenant compte des frais d'envoi ainsi que des frais perçus par la plateforme.
-            </AppFormLabelDescription>
-            <AppFormInput
-              ref="priceInput"
-              v-model="displayPrice"
-              :errors="errors"
-              name="price"
-            />
-            <AppFormValidation
-              :errors="errors"
-              name="price"
-            />
-          </AppFormGroup>
-        </AppFormFieldset>
-      </AppFormSection>
-
       <!-- Controls -->
       <AppFormSection class="lg:w-full">
         <div class="flex justify-center items-center">
@@ -277,7 +253,6 @@
 </template>
 
 <script>
-import AutoNumeric from 'autonumeric'
 import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
@@ -350,11 +325,8 @@ export default {
           fr: '',
           de: '',
           it: ''
-        },
-        price: null
+        }
       },
-      displayPrice: null,
-      autoNumeric: {},
       errors: {}
     }
   },
@@ -363,12 +335,6 @@ export default {
       categories: 'categories',
       locale: 'locale'
     })
-  },
-  watch: {
-    displayPrice() {
-      this.autoNumeric.reformat()
-      this.form.price = this.autoNumeric.rawValue * 100
-    }
   },
   async asyncData({ app, params }) {
     const shop = await app.$axios.$get('/user/shop')
@@ -379,7 +345,6 @@ export default {
   },
   mounted() {
     this.setShop(this.shop)
-    this.initAutoNumeric()
   },
   methods: {
     ...mapActions({
@@ -398,19 +363,6 @@ export default {
       } catch (e) {
         this.errors = e.response.data.errors
       }
-    },
-    initAutoNumeric() {
-      this.autoNumeric = new AutoNumeric(this.$refs.priceInput.$el, {
-        digitGroupSeparator: "'",
-        decimalCharacter: '.',
-        decimalCharacterAlternative: ',',
-        currencySymbol: 'CHF ',
-        currencySymbolPlacement: AutoNumeric.options.currencySymbolPlacement.prefix,
-        roundingMethod: AutoNumeric.options.roundingMethod.toNearest05Alt,
-        minimumValue: '1',
-        selectNumberOnly: true,
-        modifyValueOnWheel: false
-      })
     }
   }
 }
