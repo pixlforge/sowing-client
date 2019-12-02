@@ -23,7 +23,7 @@
 
     <!-- Infotip -->
     <AppInfoTip icon="info">
-      {{ $t('products.management.create.base_product_translation_advice') }}
+      {{ $t('products.management.create.tips.name_and_description') }}
     </AppInfoTip>
 
     <!-- Form -->
