@@ -33,7 +33,11 @@ const _c6f278fa = () => interopDefault(import('../pages/shop/management/dashboar
 const _b659241e = () => interopDefault(import('../pages/shop/management/details.vue' /* webpackChunkName: "pages/shop/management/details" */))
 const _25845988 = () => interopDefault(import('../pages/shop/management/products/index.vue' /* webpackChunkName: "pages/shop/management/products/index" */))
 const _11c86fb8 = () => interopDefault(import('../pages/shop/management/theme.vue' /* webpackChunkName: "pages/shop/management/theme" */))
-const _9a89bb94 = () => interopDefault(import('../pages/shop/management/products/create.vue' /* webpackChunkName: "pages/shop/management/products/create" */))
+const _051647ce = () => interopDefault(import('../pages/shop/management/products/create/product/index.vue' /* webpackChunkName: "pages/shop/management/products/create/product/index" */))
+const _226da094 = () => interopDefault(import('../pages/shop/management/products/create/product/_slug/index.vue' /* webpackChunkName: "pages/shop/management/products/create/product/_slug/index" */))
+const _7c109a2c = () => interopDefault(import('../pages/shop/management/products/create/product/_slug/category.vue' /* webpackChunkName: "pages/shop/management/products/create/product/_slug/category" */))
+const _5849d4ea = () => interopDefault(import('../pages/shop/management/products/create/product/_slug/price.vue' /* webpackChunkName: "pages/shop/management/products/create/product/_slug/price" */))
+const _bace8124 = () => interopDefault(import('../pages/shop/management/products/create/product/_slug/variations.vue' /* webpackChunkName: "pages/shop/management/products/create/product/_slug/variations" */))
 const _5cff3740 = () => interopDefault(import('../pages/account/addresses/_id/details.vue' /* webpackChunkName: "pages/account/addresses/_id/details" */))
 const _29f0ce48 = () => interopDefault(import('../pages/account/addresses/_id/edit.vue' /* webpackChunkName: "pages/account/addresses/_id/edit" */))
 const _6af2bba9 = () => interopDefault(import('../pages/account/payment-methods/_id/details.vue' /* webpackChunkName: "pages/account/payment-methods/_id/details" */))
@@ -174,9 +178,25 @@ export const routerOptions = {
     component: _11c86fb8,
     name: "shop-management-theme"
   }, {
-    path: "/shop/management/products/create",
-    component: _9a89bb94,
-    name: "shop-management-products-create"
+    path: "/shop/management/products/create/product",
+    component: _051647ce,
+    name: "shop-management-products-create-product"
+  }, {
+    path: "/shop/management/products/create/product/:slug",
+    component: _226da094,
+    name: "shop-management-products-create-product-slug"
+  }, {
+    path: "/shop/management/products/create/product/:slug/category",
+    component: _7c109a2c,
+    name: "shop-management-products-create-product-slug-category"
+  }, {
+    path: "/shop/management/products/create/product/:slug/price",
+    component: _5849d4ea,
+    name: "shop-management-products-create-product-slug-price"
+  }, {
+    path: "/shop/management/products/create/product/:slug/variations",
+    component: _bace8124,
+    name: "shop-management-products-create-product-slug-variations"
   }, {
     path: "/account/addresses/:id/details",
     component: _5cff3740,

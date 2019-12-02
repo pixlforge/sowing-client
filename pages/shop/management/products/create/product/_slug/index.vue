@@ -1,6 +1,13 @@
 <template>
   <div>
-    <header class="flex items-center">
+
+    <!-- Step -->
+    <AppProductCreatorStep>
+      1/5
+    </AppProductCreatorStep>
+
+    <!-- Header -->
+    <header class="flex flex-wrap items-center my-30">
 
       <!-- Back -->
       <AppBackButton
@@ -9,16 +16,24 @@
       />
 
       <!-- Page title -->
-      <AppTitle
-        semantic="h1"
-        visual="h2"
-      >
-        {{ $t("products.management.create.title") }}
-      </AppTitle>
+      <h1 class="text-20 sm:text-24 md:text-30 font-extrabold leading-relaxed text-center md:text-left">
+        {{ $t('products.management.create.name_and_description_for') }}
+        <span :class="`text-${shopTheme}-500`">
+          {{ form.name[locale] || $t('products.management.create.unnamed') }}
+        </span>
+      </h1>
     </header>
 
+    <!-- Infotip -->
+    <AppInfoTip icon="info">
+      {{ $t('products.management.create.tips.name_and_description') }}
+    </AppInfoTip>
+
     <!-- Form -->
-    <form @submit.prevent="store">
+    <form
+      @submit.prevent="update"
+      class="flex flex-wrap -mx-10"
+    >
 
       <!-- French -->
       <AppFormSection>
@@ -208,100 +223,29 @@
         </AppFormFieldset>
       </AppFormSection>
 
-      <!-- Price -->
-      <AppFormSection>
-        <AppFormSectionTitle>
-          {{ $t('forms.labels.price') }}
-        </AppFormSectionTitle>
-        <AppFormFieldset>
-          <AppFormGroup>
-            <AppFormLabel name="price">
-              {{ $t('forms.labels.price') }}
-            </AppFormLabel>
-            <AppFormLabelDescription>
-              Fixez le prix de votre produit en francs suisses (CHF) en tenant compte des frais d'envoi ainsi que des frais perçus par la plateforme.
-            </AppFormLabelDescription>
-            <AppFormInput
-              ref="priceInput"
-              v-model="displayPrice"
-              :errors="errors"
-              name="price"
-            />
-            <AppFormValidation
-              :errors="errors"
-              name="price"
-            />
-          </AppFormGroup>
-        </AppFormFieldset>
-      </AppFormSection>
-
-      <!-- Category -->
-      <AppFormSection>
-        <AppFormSectionTitle>
-          {{ $t('forms.labels.category') }}
-        </AppFormSectionTitle>
-        <AppFormFieldset>
-          <AppFormGroup>
-            <AppFormLabel name="category_id">
-              {{ $t('forms.labels.category') }}
-            </AppFormLabel>
-            <AppFormLabelDescription>
-              Associez votre produit à une catégorie afin que nous puissions le répertorier dans le catalogue.
-            </AppFormLabelDescription>
-            <AppFormSelect
-              v-model.number="form.category_id"
-              :errors="errors"
-              name="category_id"
-            >
-              <optgroup
-                v-for="category in filteredCategories"
-                :key="category.id"
-                :label="category.name[locale]"
-              >
-                <option
-                  v-for="subcategory in category.children"
-                  :key="subcategory.id"
-                  :value="subcategory.id"
-                >
-                  {{ subcategory.name[locale] }}
-                  <template v-if="subcategory.parent">
-                    &mdash; {{ subcategory.parent.name[locale] }}
-                  </template>
-                </option>
-              </optgroup>
-            </AppFormSelect>
-            <AppFormValidation
-              :errors="errors"
-              name="category_id"
-            />
-          </AppFormGroup>
-        </AppFormFieldset>
-      </AppFormSection>
-
       <!-- Controls -->
-      <AppFormSection>
-        <AppFormFieldset>
-          <div class="flex">
+      <AppFormSection class="lg:w-full">
+        <div class="flex justify-center items-center">
 
-            <!-- Submit -->
-            <AppButtonPrimary
-              :color="shopTheme"
-              icon="check-circle"
-              type="submit"
-              class="mr-10"
-            >
-              {{ $t('buttons.add') }}
-            </AppButtonPrimary>
+          <!-- Submit -->
+          <AppButtonPrimary
+            :color="shopTheme"
+            icon="check-circle"
+            size="large"
+            type="submit"
+            class="mr-10"
+          >
+            {{ $t('buttons.next') }}
+          </AppButtonPrimary>
 
-            <!-- Cancel -->
-            <AppButtonLinkTertiary
-              :route="{ name: 'shop-management-products' }"
-              icon="times"
-            >
-              {{ $t('buttons.cancel') }}
-            </AppButtonLinkTertiary>
-          </div>
-        </AppFormFieldset>
+          <!-- Cancel -->
+          <AppButtonLinkTertiary
+            :route="{ name: 'shop-management-products' }"
+            icon="arrow-left"
+          >
+            {{ $t('buttons.back') }}
+          </AppButtonLinkTertiary>
+        </div>
       </AppFormSection>
     </form>
 
@@ -309,18 +253,15 @@
 </template>
 
 <script>
-import AutoNumeric from 'autonumeric'
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
-import shopManagement from '@/mixins/shop-management'
 
-import AppTitle from '@/components/AppTitle'
+import AppInfoTip from '@/components/globals/AppInfoTip'
 import AppFormGroup from '@/components/forms/AppFormGroup'
 import AppFormLabel from '@/components/forms/AppFormLabel'
 import AppFormInput from '@/components/forms/AppFormInput'
-import AppFormSelect from '@/components/forms/AppFormSelect'
-import AppFormSection from '@/components/forms/AppFormSection'
 import AppBackButton from '@/components/buttons/AppBackButton'
+import AppFormSection from '@/components/forms/AppFormSection'
 import AppFormFieldset from '@/components/forms/AppFormFieldset'
 import AppFormTextarea from '@/components/forms/AppFormTextarea'
 import AppFormValidation from '@/components/forms/AppFormValidation'
@@ -328,6 +269,7 @@ import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 import AppFormSectionTitle from '@/components/forms/AppFormSectionTitle'
 import AppButtonLinkTertiary from '@/components/buttons/AppButtonLinkTertiary'
 import AppFormLabelDescription from '@/components/forms/AppFormLabelDescription'
+import AppProductCreatorStep from '@/components/products/creator/AppProductCreatorStep'
 
 export default {
   head() {
@@ -347,31 +289,28 @@ export default {
       ]
     }
   },
-  layout: 'shop-management',
+  layout: 'create-product',
   middleware: [
     'authenticated',
     'hasShop'
   ],
   components: {
-    AppTitle,
+    AppInfoTip,
     AppFormGroup,
     AppFormLabel,
     AppFormInput,
-    AppFormSelect,
-    AppFormSection,
     AppBackButton,
+    AppFormSection,
     AppFormFieldset,
     AppFormTextarea,
     AppFormValidation,
     AppButtonPrimary,
     AppFormSectionTitle,
     AppButtonLinkTertiary,
-    AppFormLabelDescription
+    AppFormLabelDescription,
+    AppProductCreatorStep
   },
-  mixins: [
-    theming,
-    shopManagement
-  ],
+  mixins: [theming],
   data() {
     return {
       form: {
@@ -387,11 +326,8 @@ export default {
           de: '',
           it: ''
         },
-        price: null,
-        category_id: null
+        slug: null
       },
-      displayPrice: null,
-      autoNumeric: {},
       errors: {}
     }
   },
@@ -399,54 +335,40 @@ export default {
     ...mapGetters({
       categories: 'categories',
       locale: 'locale'
-    }),
-    filteredCategories() {
-      return this.categories.map((category) => {
-        const parentCategory = {
-          ...category,
-          children: category.children.map((subcategory) => {
-            if (subcategory.is_section) {
-              return subcategory.children
-            }
-            return subcategory
-          }).reduce((a, b) => a.concat(b), [])
-        }
-        return parentCategory
-      })
-    }
+    })
   },
-  watch: {
-    displayPrice() {
-      this.autoNumeric.reformat()
-      this.form.price = this.autoNumeric.rawValue * 100
+  async asyncData({ app, params }) {
+    const shop = await app.$axios.$get('/user/shop')
+    const product = await app.$axios.$get(`/products/${params.slug}`)
+
+    return {
+      shop: shop.data,
+      form: {
+        name: product.data.name,
+        description: product.data.description,
+        slug: product.data.slug
+      }
     }
   },
   mounted() {
-    this.initAutoNumeric()
+    this.setShop(this.shop)
   },
   methods: {
-    async store() {
+    ...mapActions({
+      setShop: 'shop/setShop'
+    }),
+    update() {
       try {
-        await this.$axios.$post('/products', this.form)
-        this.$toasted.success(this.$t('toasts.products.created'))
-        this.$router.push({ name: 'shop-management-products' })
+        this.errors = {}
+        this.$router.push({
+          name: 'shop-management-products-create-product-slug-category',
+          params: {
+            slug: this.form.slug
+          }
+        })
       } catch (e) {
         this.errors = e.response.data.errors
-        this.$toasted.error(this.$t('toasts.validation'))
       }
-    },
-    initAutoNumeric() {
-      this.autoNumeric = new AutoNumeric(this.$refs.priceInput.$el, {
-        digitGroupSeparator: "'",
-        decimalCharacter: '.',
-        decimalCharacterAlternative: ',',
-        currencySymbol: 'CHF ',
-        currencySymbolPlacement: AutoNumeric.options.currencySymbolPlacement.prefix,
-        roundingMethod: AutoNumeric.options.roundingMethod.toNearest05Alt,
-        minimumValue: '1',
-        selectNumberOnly: true,
-        modifyValueOnWheel: false
-      })
     }
   }
 }

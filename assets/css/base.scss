@@ -18,6 +18,7 @@ html {
 }
 
 body {
+  @apply antialiased text-gray-800;
   overscroll-behavior: none;
 }
 

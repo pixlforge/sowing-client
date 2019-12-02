@@ -4,7 +4,7 @@
     <!-- Alert -->
     <AppAlert/>
 
-    <div class="antialiased text-gray-800 overflow-hidden min-h-screen flex flex-col justify-center items-center">
+    <div class="min-h-screen flex flex-col justify-center items-center">
 
       <!-- Logo -->
       <nuxt-link

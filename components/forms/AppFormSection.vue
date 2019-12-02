@@ -1,5 +1,5 @@
 <template>
-  <section class="my-48">
+  <section class="w-full lg:w-1/2 px-10 my-20 lg:my-30">
     <slot/>
   </section>
 </template>

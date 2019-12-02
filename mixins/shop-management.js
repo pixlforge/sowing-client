@@ -10,8 +10,7 @@ export default {
     const shop = await app.$axios.$get('/user/shop')
 
     return {
-      shopData: shop.data,
-      title: app.head.title
+      shopData: shop.data
     }
   },
   mounted() {
