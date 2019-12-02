@@ -449,6 +449,7 @@ export default {
         base_product_translation_advice: 'Name and describe in detail the features and strengths of your product. Translating the name and description of your product is not mandatory but increases the likelihood that it will be noticed.',
         category_for: 'Category for',
         name_and_description_for: 'Name and description for',
+        price_for: 'Price for',
         title: 'Add a product',
         unnamed: 'New unnamed product'
       }

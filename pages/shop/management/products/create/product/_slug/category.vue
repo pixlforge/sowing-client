@@ -32,7 +32,7 @@
     <!-- Infotip -->
     <AppInfoTip icon="info">
       <!-- {{ $t('products.management.create.base_product_translation_advice') }} -->
-      Associez votre produit à la catégorie qui lui correspond.
+      Associer votre produit à la catégorie correspondante permet aux visiteurs du site de trouver plus efficacement votre produit.
     </AppInfoTip>
 
     <!-- Form -->
@@ -171,9 +171,7 @@ export default {
     AppFormLabelDescription,
     AppProductCreatorStep
   },
-  mixins: [
-    theming
-  ],
+  mixins: [theming],
   data() {
     return {
       form: {
@@ -223,6 +221,12 @@ export default {
     async update() {
       try {
         await this.$axios.$patch(`/products/${this.product.slug}`, this.form)
+        this.$router.push({
+          name: 'shop-management-products-create-product-slug-price',
+          params: {
+            slug: this.product.slug
+          }
+        })
       } catch (e) {
         this.errors = e.response.data.errors
       }
