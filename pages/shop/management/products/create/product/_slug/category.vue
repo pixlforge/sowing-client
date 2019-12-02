@@ -31,8 +31,7 @@
 
     <!-- Infotip -->
     <AppInfoTip icon="info">
-      <!-- {{ $t('products.management.create.base_product_translation_advice') }} -->
-      Associer votre produit à la catégorie correspondante permet aux visiteurs du site de trouver plus efficacement votre produit.
+      {{ $t('products.management.create.tips.category') }}
     </AppInfoTip>
 
     <!-- Form -->

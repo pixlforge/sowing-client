@@ -31,8 +31,7 @@
 
     <!-- Infotip -->
     <AppInfoTip icon="info">
-      <!-- {{ $t('products.management.create.base_product_translation_advice') }} -->
-      Vous êtes libre de définir un prix différent pour les variations de votre produit.
+      {{ $t('products.management.create.tips.price') }}
     </AppInfoTip>
 
     <!-- Form -->
