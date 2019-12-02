@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-gray-100">
+  <div class="min-h-screen bg-gray-100 flex justify-center items-center">
     <AppContentSection>
       <nuxt/>
     </AppContentSection>
