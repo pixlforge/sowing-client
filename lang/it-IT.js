@@ -445,9 +445,12 @@ export default {
         title: 'Prodotti'
       },
       create: {
+        add_category: 'Associare a una categoria',
+        base_product_translation_advice: 'Nominate e descrivete in dettaglio le caratteristiche e i punti di forza del tuo prodotto. La traduzione del nome e della descrizione del vostro prodotto non è obbligatoria, ma aumenta la probabilità che venga notato.',
+        category_for: 'Categoria per',
+        name_and_description_for: 'Nome e descrizione per',
         title: 'Aggiungete un prodotto',
-        unnamed: 'Nuovo prodotto senza nome',
-        base_product_translation_advice: 'Nominate e descrivete in dettaglio le caratteristiche e i punti di forza del tuo prodotto. La traduzione del nome e della descrizione del vostro prodotto non è obbligatoria, ma aumenta la probabilità che venga notato.'
+        unnamed: 'Nuovo prodotto senza nome'
       }
     },
     variations: {

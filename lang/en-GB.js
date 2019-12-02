@@ -445,9 +445,12 @@ export default {
         title: 'Products'
       },
       create: {
+        add_category: 'Associate with a category',
+        base_product_translation_advice: 'Name and describe in detail the features and strengths of your product. Translating the name and description of your product is not mandatory but increases the likelihood that it will be noticed.',
+        category_for: 'Category for',
+        name_and_description_for: 'Name and description for',
         title: 'Add a product',
-        unnamed: 'New unnamed product',
-        base_product_translation_advice: 'Name and describe in detail the features and strengths of your product. Translating the name and description of your product is not mandatory but increases the likelihood that it will be noticed.'
+        unnamed: 'New unnamed product'
       }
     },
     variations: {
