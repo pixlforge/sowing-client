@@ -446,16 +446,20 @@ export default {
       },
       create: {
         add_category: 'Associate with a category',
+        add_price: 'Set a price',
+        add_variations: 'Add variations',
         category_for: 'Category for',
         name_and_description_for: 'Name and description for',
         price_for: 'Price for',
         tips: {
           category: 'Linking your product to the corresponding category makes it easier for Sowing visitors to find your product.',
           name_and_description: 'Name and describe in detail the features and strengths of your product. Translating the name and description of your product is not mandatory but increases the likelihood that it will be noticed.',
-          price: 'You are free to set a different price for variations of your product.'
+          price: 'You are free to set a different price for variations of your product.',
+          variations: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab placeat maxime magnam quae facere quidem, asperiores quo, eum odit doloribus earum nobis natus, nesciunt fugit. Dolorum, quisquam. At, aliquid ipsa.'
         },
         title: 'Add a product',
-        unnamed: 'New unnamed product'
+        unnamed: 'New unnamed product',
+        variations_for: 'Variations for'
       }
     },
     variations: {

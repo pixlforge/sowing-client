@@ -120,7 +120,7 @@ import AppProductCreatorStep from '@/components/products/creator/AppProductCreat
 export default {
   head() {
     return {
-      title: `${this.$t('products.management.create.add_category')} | ${this.product.name[this.locale]}`,
+      title: `${this.$t('products.management.create.add_price')} | ${this.product.name[this.locale]}`,
       meta: [
         {
           hid: 'description',
@@ -198,6 +198,12 @@ export default {
     async update() {
       try {
         await this.$axios.$patch(`/products/${this.product.slug}`, this.form)
+        this.$router.push({
+          name: 'shop-management-products-create-product-slug-variations',
+          params: {
+            slug: this.product.slug
+          }
+        })
       } catch (e) {
         this.errors = e.response.data.errors
       }
