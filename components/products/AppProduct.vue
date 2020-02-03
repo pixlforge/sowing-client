@@ -31,7 +31,7 @@
 
           <!-- Base product description -->
           <p class="text-12 sm:text-14 leading-relaxed mt-16">
-            {{ product.description[locale] }}
+            {{ productDescription }}
           </p>
 
           <!-- Base product price and currency -->
@@ -81,6 +81,15 @@ export default {
     },
     productName() {
       return this.product.name[this.locale]
+    },
+    productDescription() {
+      const descriptionLength = this.product.description[this.locale].length
+      if (descriptionLength > 200) {
+        return this.product.description[this.locale]
+          .substr(0, 200)
+          .concat(' ...')
+      }
+      return this.product.description[this.locale]
     },
     productCurrency() {
       return this.product.price.detailed.currency
