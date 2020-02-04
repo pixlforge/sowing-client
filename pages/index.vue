@@ -8,7 +8,7 @@
       </h1>
 
       <div class="flex flex-wrap -mx-24">
-        <AppFeaturedCategory
+        <FeaturedCategory
           v-for="category in featuredCategories"
           :key="category.id"
           :category="category"
@@ -85,7 +85,7 @@
       </Heading>
 
       <div class="flex flex-wrap justify-center shadow-2xl -mx-20 mt-60 sm:mt-132">
-        <AppCategoryCard
+        <CategoryCard
           v-for="category in categories"
           :key="category.id"
           :category="category"
@@ -125,10 +125,10 @@ import Review from '@/components/Review'
 import Feature from '@/components/Feature'
 import ShopCard from '@/components/shops/ShopCard'
 import ContentSection from '@/components/ContentSection'
-import AppCategoryCard from '@/components/categories/AppCategoryCard'
+import CategoryCard from '@/components/categories/CategoryCard'
 import StreakRegister from '@/components/streaks/StreakRegister'
 import StreakNewsletter from '@/components/streaks/StreakNewsletter'
-import AppFeaturedCategory from '@/components/categories/AppFeaturedCategory'
+import FeaturedCategory from '@/components/categories/FeaturedCategory'
 
 export default {
   head() {
@@ -142,10 +142,10 @@ export default {
     Feature,
     ShopCard,
     ContentSection,
-    AppCategoryCard,
+    CategoryCard,
     StreakRegister,
     StreakNewsletter,
-    AppFeaturedCategory
+    FeaturedCategory
   },
   data() {
     return {

@@ -13,34 +13,34 @@
     </button>
 
     <DropdownTransition>
-      <AppDropdownContainer v-if="dropdownIsOpen">
+      <DropdownContainer v-if="dropdownIsOpen">
 
         <!-- Account -->
-        <AppDropdownItem
+        <DropdownItem
           :to="{ name: 'account-dashboard' }"
           icon="user"
         >
           {{ $t("pages.account.title") }}
-        </AppDropdownItem>
+        </DropdownItem>
 
         <!-- Orders -->
-        <AppDropdownItem
+        <DropdownItem
           :to="{ name: 'orders' }"
           icon="shipping-fast"
         >
           {{ $t("pages.orders.title") }}
-        </AppDropdownItem>
+        </DropdownItem>
 
         <!-- Shop -->
-        <AppDropdownItem
+        <DropdownItem
           :to="{ name: 'shop-management-dashboard' }"
           icon="store"
         >
           {{ $t("pages.shop.title") }}
-        </AppDropdownItem>
+        </DropdownItem>
 
         <template v-if="!userHasShop">
-          <AppDropdownDivider/>
+          <DropdownDivider/>
 
           <!-- Shop create -->
           <li class="my-16">
@@ -55,17 +55,17 @@
           </li>
         </template>
 
-        <AppDropdownDivider/>
+        <DropdownDivider/>
 
         <!-- Logout -->
-        <AppDropdownItem
+        <DropdownItem
           @click.native="logout"
           color="red"
           icon="sign-out"
         >
           {{ $t("navbar.user.logout") }}
-        </AppDropdownItem>
-      </AppDropdownContainer>
+        </DropdownItem>
+      </DropdownContainer>
     </DropdownTransition>
   </div>
 </template>
@@ -73,19 +73,19 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 
-import AppDropdownItem from '@/components/dropdowns/AppDropdownItem'
-import AppDropdownDivider from '@/components/dropdowns/AppDropdownDivider'
+import DropdownItem from '@/components/dropdowns/DropdownItem'
+import DropdownDivider from '@/components/dropdowns/DropdownDivider'
 import AppButtonLinkPrimary from '@/components/buttons/AppButtonLinkPrimary'
 import DropdownTransition from '@/components/transitions/DropdownTransition'
-import AppDropdownContainer from '@/components/dropdowns/AppDropdownContainer'
+import DropdownContainer from '@/components/dropdowns/DropdownContainer'
 
 export default {
   components: {
-    AppDropdownItem,
-    AppDropdownDivider,
+    DropdownItem,
+    DropdownDivider,
     AppButtonLinkPrimary,
     DropdownTransition,
-    AppDropdownContainer
+    DropdownContainer
   },
   data() {
     return {

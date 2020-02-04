@@ -28,7 +28,7 @@
           <div class="flex flex-wrap justify-center -mx-16 mb-96 md:mb-132 lg:mb-196">
 
             <!-- Subcategory -->
-            <AppSubCategory
+            <SubCategory
               v-for="subcategory in section.children"
               :key="subcategory.slug"
               :category="category"
@@ -43,7 +43,7 @@
         <div class="flex flex-wrap justify-center sm:-mx-36 mt-96">
 
           <!-- Subcategory -->
-          <AppSubCategory
+          <SubCategory
             v-for="subcategory in category.children"
             :key="subcategory.slug"
             :category="category"
@@ -62,7 +62,7 @@ import { mapGetters } from 'vuex'
 import Heading from '@/components/Heading'
 import Header from '@/components/headers/Header'
 import ContentSection from '@/components/ContentSection'
-import AppSubCategory from '@/components/categories/AppSubCategory'
+import SubCategory from '@/components/categories/SubCategory'
 
 export default {
   head() {
@@ -74,7 +74,7 @@ export default {
     Heading,
     Header,
     ContentSection,
-    AppSubCategory
+    SubCategory
   },
   data() {
     return {

@@ -4,8 +4,8 @@
       ref="dropdownMenu"
       :title="$t('aria.buttons.languages')"
       :aria-label="$t('aria.buttons.languages')"
-      class="outline-none focus:shadow-outline rounded-lg border border-gray-200 text-12 text-gray-500 font-bold text-center uppercase no-underline whitespace-no-wrap flex px-20 py-12"
       @click.prevent="toggleDropdown"
+      class="outline-none focus:shadow-outline rounded-lg border border-gray-200 text-12 text-gray-500 font-bold text-center uppercase no-underline whitespace-no-wrap flex px-20 py-12"
     >
       <div :class="textTheme">
         <font-awesome-icon
@@ -20,15 +20,15 @@
     </button>
 
     <DropdownTransition>
-      <AppDropdownContainer v-if="dropdownIsOpen">
-        <AppDropdownItem
+      <DropdownContainer v-if="dropdownIsOpen">
+        <DropdownItem
           v-for="locale in availableLocales"
           :key="locale.code"
           @click.native="setLocale(locale)"
         >
           {{ locale.name }}
-        </AppDropdownItem>
-      </AppDropdownContainer>
+        </DropdownItem>
+      </DropdownContainer>
     </DropdownTransition>
   </div>
 </template>
@@ -36,15 +36,15 @@
 <script>
 import theming from '@/mixins/theming'
 
-import AppDropdownItem from '@/components/dropdowns/AppDropdownItem'
+import DropdownItem from '@/components/dropdowns/DropdownItem'
 import DropdownTransition from '@/components/transitions/DropdownTransition'
-import AppDropdownContainer from '@/components/dropdowns/AppDropdownContainer'
+import DropdownContainer from '@/components/dropdowns/DropdownContainer'
 
 export default {
   components: {
-    AppDropdownItem,
+    DropdownItem,
     DropdownTransition,
-    AppDropdownContainer
+    DropdownContainer
   },
   mixins: [theming],
   data() {

@@ -8,7 +8,7 @@
     <Navbar/>
 
     <!-- Categories -->
-    <AppCategoryBar/>
+    <CategoryBar/>
 
     <!-- Page content -->
     <nuxt/>
@@ -28,7 +28,7 @@ import Navbar from '@/components/Navbar'
 import Alert from '@/components/globals/Alert'
 import Footer from '@/components/footer/Footer'
 import Disclaimer from '@/components/footer/Disclaimer'
-import AppCategoryBar from '@/components/categories/AppCategoryBar'
+import CategoryBar from '@/components/categories/CategoryBar'
 
 export default {
   components: {
@@ -36,7 +36,7 @@ export default {
     Alert,
     Footer,
     Disclaimer,
-    AppCategoryBar
+    CategoryBar
   },
   mixins: [theming]
 }

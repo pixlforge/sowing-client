@@ -8,7 +8,7 @@
     <Navbar/>
 
     <!-- Categories -->
-    <AppCategoryBar/>
+    <CategoryBar/>
 
     <!-- Shop cover image -->
     <ShopCover
@@ -46,7 +46,7 @@ import Footer from '@/components/footer/Footer'
 import Header from '@/components/headers/Header'
 import ShopCover from '@/components/shops/ShopCover'
 import Disclaimer from '@/components/footer/Disclaimer'
-import AppCategoryBar from '@/components/categories/AppCategoryBar'
+import CategoryBar from '@/components/categories/CategoryBar'
 import ShopNavigation from '@/components/shops/navigation/ShopNavigation'
 
 export default {
@@ -57,7 +57,7 @@ export default {
     Header,
     ShopCover,
     Disclaimer,
-    AppCategoryBar,
+    CategoryBar,
     ShopNavigation
   },
   mixins: [theming],
