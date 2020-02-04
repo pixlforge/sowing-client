@@ -13,13 +13,13 @@
       </Heading>
 
       <!-- Infos -->
-      <AppParagraph
+      <Paragraph
         v-if="!shopStripeUserId || !shopStripePublishableKey"
         class="max-w-800"
         center
       >
         {{ $t("shop_creator.steps.connect.paragraph") }}
-      </AppParagraph>
+      </Paragraph>
 
       <!-- Connect process -->
       <ShopFeatureContainer class="max-w-800">
@@ -81,7 +81,7 @@ import theming from '@/mixins/theming'
 import Heading from '@/components/Heading'
 import Splash from '@/components/Splash'
 import ContentSection from '@/components/ContentSection'
-import AppParagraph from '@/components/paragraphs/AppParagraph'
+import Paragraph from '@/components/paragraphs/Paragraph'
 import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 import AppButtonTertiary from '@/components/buttons/AppButtonTertiary'
 import ShopCreatorControls from '@/components/shops/ShopCreatorControls'
@@ -118,7 +118,7 @@ export default {
     Heading,
     Splash,
     ContentSection,
-    AppParagraph,
+    Paragraph,
     AppButtonPrimary,
     AppButtonTertiary,
     ShopCreatorControls,

@@ -19,9 +19,9 @@
     </header>
 
     <Card>
-      <AppParagraph class="text-center md:text-left">
+      <Paragraph class="text-center md:text-left">
         {{ $t("stripe.add_a_card") }}
-      </AppParagraph>
+      </Paragraph>
 
       <form
         @submit.prevent="store"
@@ -57,7 +57,7 @@ import { mapGetters } from 'vuex'
 import Card from '@/components/Card'
 import Heading from '@/components/Heading'
 import AppBackButton from '@/components/buttons/AppBackButton'
-import AppParagraph from '@/components/paragraphs/AppParagraph'
+import Paragraph from '@/components/paragraphs/Paragraph'
 import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 
 export default {
@@ -65,7 +65,7 @@ export default {
     Card,
     Heading,
     AppBackButton,
-    AppParagraph,
+    Paragraph,
     AppButtonPrimary
   },
   middleware: ['authenticated'],

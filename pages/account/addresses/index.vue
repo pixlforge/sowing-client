@@ -34,9 +34,9 @@
         v-else
         class="text-center"
       >
-        <AppParagraph class="text-center mb-60">
+        <Paragraph class="text-center mb-60">
           {{ $t('pages.account.addresses.no_address_found') }}
-        </AppParagraph>
+        </Paragraph>
         <AppButtonLinkPrimary
           :route="{ name: 'account-addresses-create' }"
           icon="plus-circle"
@@ -65,7 +65,7 @@ import { mapGetters, mapActions } from 'vuex'
 
 import Card from '@/components/Card'
 import Heading from '@/components/Heading'
-import AppParagraph from '@/components/paragraphs/AppParagraph'
+import Paragraph from '@/components/paragraphs/Paragraph'
 import AppAddressItem from '@/components/addresses/AppAddressItem'
 import AppAddButtonLink from '@/components/buttons/AppAddButtonLink'
 import ResourceList from '@/components/resources/ResourceList'
@@ -77,7 +77,7 @@ export default {
   components: {
     Card,
     Heading,
-    AppParagraph,
+    Paragraph,
     AppAddressItem,
     AppAddButtonLink,
     ResourceList,

@@ -34,9 +34,9 @@
         v-else
         class="text-center"
       >
-        <AppParagraph class="text-center mb-60">
+        <Paragraph class="text-center mb-60">
           {{ $t('pages.account.payment_methods.no_payment_method_found') }}
-        </AppParagraph>
+        </Paragraph>
         <AppButtonLinkPrimary
           :route="{ name: 'account-payment-methods-create' }"
           icon="plus-circle"
@@ -65,7 +65,7 @@ import { mapActions, mapGetters } from 'vuex'
 
 import Card from '@/components/Card'
 import Heading from '@/components/Heading'
-import AppParagraph from '@/components/paragraphs/AppParagraph'
+import Paragraph from '@/components/paragraphs/Paragraph'
 import AppAddButtonLink from '@/components/buttons/AppAddButtonLink'
 import ResourceList from '@/components/resources/ResourceList'
 import ResourceHeader from '@/components/resources/ResourceHeader'
@@ -77,7 +77,7 @@ export default {
   components: {
     Card,
     Heading,
-    AppParagraph,
+    Paragraph,
     AppAddButtonLink,
     ResourceList,
     ResourceHeader,

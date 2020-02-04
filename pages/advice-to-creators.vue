@@ -15,17 +15,17 @@
       >
         {{ $t('advice_to_creators.created_a_shop') }}
       </Heading>
-      <AppParagraph>
+      <Paragraph>
         {{ $t('advice_to_creators.list_of_advices') }}
-      </AppParagraph>
-      <AppList
+      </Paragraph>
+      <List
         :items="advices"
         icon="chevron-circle-right"
         icon-color="green"
       />
-      <AppParagraph class="font-bold">
+      <Paragraph class="font-bold">
         {{ $t('advice_to_creators.wish_you_succcess') }}
-      </AppParagraph>
+      </Paragraph>
 
       <!-- Illustration -->
       <div class="my-72 md:my-96">
@@ -41,10 +41,10 @@
 
 <script>
 import Heading from '@/components/Heading'
-import AppList from '@/components/paragraphs/AppList'
+import List from '@/components/paragraphs/List'
 import AppHeader from '@/components/headers/AppHeader'
 import ContentSection from '@/components/ContentSection'
-import AppParagraph from '@/components/paragraphs/AppParagraph'
+import Paragraph from '@/components/paragraphs/Paragraph'
 import StreakNewsletter from '@/components/streaks/StreakNewsletter'
 import IllustrationNewIdeas from '@/components/illustrations/IllustrationNewIdeas'
 
@@ -63,10 +63,10 @@ export default {
   },
   components: {
     Heading,
-    AppList,
+    List,
     AppHeader,
     ContentSection,
-    AppParagraph,
+    Paragraph,
     StreakNewsletter,
     IllustrationNewIdeas
   },

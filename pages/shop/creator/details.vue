@@ -13,12 +13,12 @@
       </Heading>
 
       <!-- Infos -->
-      <AppParagraph
+      <Paragraph
         class="max-w-800"
         center
       >
         {{ $t("shop_creator.steps.details.paragraph") }}
-      </AppParagraph>
+      </Paragraph>
 
       <!-- Shop details -->
       <ShopFeatureContainer class="max-w-800">
@@ -62,7 +62,7 @@ import theming from '@/mixins/theming'
 import Heading from '@/components/Heading'
 import ShopDetails from '@/components/shops/ShopDetails'
 import ContentSection from '@/components/ContentSection'
-import AppParagraph from '@/components/paragraphs/AppParagraph'
+import Paragraph from '@/components/paragraphs/Paragraph'
 import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 import AppButtonTertiary from '@/components/buttons/AppButtonTertiary'
 import ShopCreatorControls from '@/components/shops/ShopCreatorControls'
@@ -96,7 +96,7 @@ export default {
     Heading,
     ShopDetails,
     ContentSection,
-    AppParagraph,
+    Paragraph,
     AppButtonPrimary,
     AppButtonTertiary,
     ShopCreatorControls,

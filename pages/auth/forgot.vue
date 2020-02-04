@@ -14,9 +14,9 @@
       </Heading>
 
       <!-- Infos -->
-      <AppParagraph center>
+      <Paragraph center>
         {{ $t("pages.password_email.paragraphs.second") }}
-      </AppParagraph>
+      </Paragraph>
 
       <!-- Form -->
       <form
@@ -65,7 +65,7 @@ import AppFormGroup from '@/components/forms/AppFormGroup'
 import AppFormLabel from '@/components/forms/AppFormLabel'
 import AppFormInput from '@/components/forms/AppFormInput'
 import ContentSection from '@/components/ContentSection'
-import AppParagraph from '@/components/paragraphs/AppParagraph'
+import Paragraph from '@/components/paragraphs/Paragraph'
 import AppFormValidation from '@/components/forms/AppFormValidation'
 import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 
@@ -95,7 +95,7 @@ export default {
     AppFormLabel,
     AppFormInput,
     ContentSection,
-    AppParagraph,
+    Paragraph,
     AppFormValidation,
     AppButtonPrimary
   },

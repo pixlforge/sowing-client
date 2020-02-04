@@ -19,9 +19,9 @@
     </header>
 
     <Card>
-      <AppParagraph class="text-center mb-60">
+      <Paragraph class="text-center mb-60">
         {{ $t('pages.account.payment_methods.edit.paragraph') }}
-      </AppParagraph>
+      </Paragraph>
 
       <AppButtonPrimary
         @click.native="update"
@@ -39,7 +39,7 @@
 import Card from '@/components/Card'
 import Heading from '@/components/Heading'
 import AppBackButton from '@/components/buttons/AppBackButton'
-import AppParagraph from '@/components/paragraphs/AppParagraph'
+import Paragraph from '@/components/paragraphs/Paragraph'
 import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 
 export default {
@@ -47,7 +47,7 @@ export default {
     Card,
     Heading,
     AppBackButton,
-    AppParagraph,
+    Paragraph,
     AppButtonPrimary
   },
   middleware: ['authenticated'],
