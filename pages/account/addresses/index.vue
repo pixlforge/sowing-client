@@ -22,7 +22,7 @@
 
       <!-- Addresses -->
       <ResourceList v-if="addresses.length">
-        <AppAddressItem
+        <AddressItem
           v-for="address in addresses"
           :key="address.id"
           :address="address"
@@ -66,7 +66,7 @@ import { mapGetters, mapActions } from 'vuex'
 import Card from '@/components/Card'
 import Heading from '@/components/Heading'
 import Paragraph from '@/components/paragraphs/Paragraph'
-import AppAddressItem from '@/components/addresses/AppAddressItem'
+import AddressItem from '@/components/addresses/AddressItem'
 import AppAddButtonLink from '@/components/buttons/AppAddButtonLink'
 import ResourceList from '@/components/resources/ResourceList'
 import ResourceHeader from '@/components/resources/ResourceHeader'
@@ -78,7 +78,7 @@ export default {
     Card,
     Heading,
     Paragraph,
-    AppAddressItem,
+    AddressItem,
     AppAddButtonLink,
     ResourceList,
     ResourceHeader,

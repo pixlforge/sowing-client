@@ -23,7 +23,7 @@
     </header>
 
     <Card>
-      <AppAddressCard :address="address"/>
+      <AddressCard :address="address"/>
     </Card>
 
     <!-- Confirmation modal -->
@@ -47,7 +47,7 @@ import Card from '@/components/Card'
 import Heading from '@/components/Heading'
 import AppBackButton from '@/components/buttons/AppBackButton'
 import AppDeleteButton from '@/components/buttons/AppDeleteButton'
-import AppAddressCard from '@/components/addresses/AppAddressCard'
+import AddressCard from '@/components/addresses/AddressCard'
 import ConfirmationModal from '@/components/modals/ConfirmationModal'
 
 export default {
@@ -56,7 +56,7 @@ export default {
     Heading,
     AppBackButton,
     AppDeleteButton,
-    AppAddressCard,
+    AddressCard,
     ConfirmationModal
   },
   layout: 'account-management',

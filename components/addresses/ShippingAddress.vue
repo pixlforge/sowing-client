@@ -7,14 +7,14 @@
       {{ $t("pages.checkout.delivery_address") }}
     </Heading>
 
-    <AppShippingAddressSelector
+    <ShippingAddressSelector
       v-if="addressSelector"
       :addresses="currentAddresses"
       :selected-address="selectedAddress"
       @address:selected="switchAddress"
     />
 
-    <AppShippingAddressCreator
+    <ShippingAddressCreator
       v-if="addressCreator"
       @address:created="addAddress"
     />
@@ -70,15 +70,15 @@ import { mapGetters, mapActions } from 'vuex'
 
 import Heading from '@/components/Heading'
 import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
-import AppShippingAddressCreator from '@/components/addresses/AppShippingAddressCreator'
-import AppShippingAddressSelector from '@/components/addresses/AppShippingAddressSelector'
+import ShippingAddressCreator from '@/components/addresses/ShippingAddressCreator'
+import ShippingAddressSelector from '@/components/addresses/ShippingAddressSelector'
 
 export default {
   components: {
     Heading,
     AppButtonPrimary,
-    AppShippingAddressCreator,
-    AppShippingAddressSelector
+    ShippingAddressCreator,
+    ShippingAddressSelector
   },
   props: {
     addresses: {

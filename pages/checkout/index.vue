@@ -45,13 +45,13 @@
         <div class="w-1/4 bg-green-200 rounded-lg flex flex-col justify-start p-30 mt-48">
 
           <!-- Shipping address -->
-          <AppShippingAddress
+          <ShippingAddress
             v-model="form.address_id"
             :addresses="addresses"
           />
 
           <!-- Shipping methods dropdown -->
-          <AppShippingMethods
+          <ShippingMethods
             v-if="!addressManagersVisible"
             v-model="shippingMethodId"
             :methods="shippingMethods"
@@ -119,8 +119,8 @@ import Heading from '@/components/Heading'
 import Header from '@/components/headers/Header'
 import ContentSection from '@/components/ContentSection'
 import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
-import AppShippingMethods from '@/components/addresses/AppShippingMethods'
-import AppShippingAddress from '@/components/addresses/AppShippingAddress'
+import ShippingMethods from '@/components/addresses/ShippingMethods'
+import ShippingAddress from '@/components/addresses/ShippingAddress'
 import CartOverviewProduct from '@/components/cart/CartOverviewProduct'
 import PaymentMethods from '@/components/payment-methods/PaymentMethods'
 
@@ -148,8 +148,8 @@ export default {
     Header,
     ContentSection,
     AppButtonPrimary,
-    AppShippingMethods,
-    AppShippingAddress,
+    ShippingMethods,
+    ShippingAddress,
     CartOverviewProduct,
     PaymentMethods
   },
