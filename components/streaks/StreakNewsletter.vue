@@ -38,13 +38,13 @@
               required
             />
 
-            <AppButtonPrimary
+            <ButtonPrimary
               icon="paper-plane"
               type="submit"
               class="md:rounded-l-none shadow-2xl mt-20 md:mt-0"
             >
               {{ $t("buttons.subscribe") }}
-            </AppButtonPrimary>
+            </ButtonPrimary>
           </div>
 
           <p
@@ -62,13 +62,13 @@
 <script>
 import Heading from '@/components/Heading'
 import FormInput from '@/components/forms/FormInput'
-import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 
 export default {
   components: {
     Heading,
     FormInput,
-    AppButtonPrimary
+    ButtonPrimary
   },
   data() {
     return {

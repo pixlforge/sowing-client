@@ -3,7 +3,7 @@
     <header class="flex items-center">
 
       <!-- Back -->
-      <AppBackButton
+      <BackButton
         :route="{ name: 'account-payment-methods' }"
         class="sm:mr-20"
       />
@@ -23,13 +23,13 @@
         {{ $t('pages.account.payment_methods.edit.paragraph') }}
       </Paragraph>
 
-      <AppButtonPrimary
+      <ButtonPrimary
         @click.native="update"
         icon="star"
         class="mx-auto"
       >
         {{ $t('buttons.default') }}
-      </AppButtonPrimary>
+      </ButtonPrimary>
     </Card>
 
   </div>
@@ -38,17 +38,17 @@
 <script>
 import Card from '@/components/Card'
 import Heading from '@/components/Heading'
-import AppBackButton from '@/components/buttons/AppBackButton'
+import BackButton from '@/components/buttons/BackButton'
 import Paragraph from '@/components/paragraphs/Paragraph'
-import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 
 export default {
   components: {
     Card,
     Heading,
-    AppBackButton,
+    BackButton,
     Paragraph,
-    AppButtonPrimary
+    ButtonPrimary
   },
   middleware: ['authenticated'],
   layout: 'account-management',

@@ -37,22 +37,22 @@
       <div class="flex mt-20">
 
         <!-- Store -->
-        <AppButtonPrimary
+        <ButtonPrimary
           :disabled="storing"
           type="submit"
           icon="plus"
           class="mr-5"
         >
           {{ $t("buttons.add") }}
-        </AppButtonPrimary>
+        </ButtonPrimary>
 
         <!-- Cancel -->
-        <AppButtonTertiary
+        <ButtonTertiary
           :disabled="storing"
           @click.native.prevent="showing = false"
         >
           {{ $t("buttons.cancel") }}
-        </AppButtonTertiary>
+        </ButtonTertiary>
       </div>
     </form>
   </div>
@@ -61,13 +61,13 @@
 <script>
 import { mapGetters } from 'vuex'
 
-import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
-import AppButtonTertiary from '@/components/buttons/AppButtonTertiary'
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
+import ButtonTertiary from '@/components/buttons/ButtonTertiary'
 
 export default {
   components: {
-    AppButtonPrimary,
-    AppButtonTertiary
+    ButtonPrimary,
+    ButtonTertiary
   },
   data() {
     return {

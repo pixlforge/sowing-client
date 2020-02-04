@@ -11,7 +11,7 @@
       </Heading>
 
       <!-- Add an address -->
-      <AppAddButtonLink
+      <AddButtonLink
         :route="{ name: 'account-addresses-create' }"
         :label="$t('buttons.add_address')"
         class="mt-60 md:mt-0"
@@ -37,12 +37,12 @@
         <Paragraph class="text-center mb-60">
           {{ $t('pages.account.addresses.no_address_found') }}
         </Paragraph>
-        <AppButtonLinkPrimary
+        <ButtonLinkPrimary
           :route="{ name: 'account-addresses-create' }"
           icon="plus-circle"
         >
           {{ $t('buttons.add_address') }}
-        </AppButtonLinkPrimary>
+        </ButtonLinkPrimary>
       </div>
     </Card>
 
@@ -67,11 +67,11 @@ import Card from '@/components/Card'
 import Heading from '@/components/Heading'
 import Paragraph from '@/components/paragraphs/Paragraph'
 import AddressItem from '@/components/addresses/AddressItem'
-import AppAddButtonLink from '@/components/buttons/AppAddButtonLink'
+import AddButtonLink from '@/components/buttons/AddButtonLink'
 import ResourceList from '@/components/resources/ResourceList'
 import ResourceHeader from '@/components/resources/ResourceHeader'
 import ConfirmationModal from '@/components/modals/ConfirmationModal'
-import AppButtonLinkPrimary from '@/components/buttons/AppButtonLinkPrimary'
+import ButtonLinkPrimary from '@/components/buttons/ButtonLinkPrimary'
 
 export default {
   components: {
@@ -79,11 +79,11 @@ export default {
     Heading,
     Paragraph,
     AddressItem,
-    AppAddButtonLink,
+    AddButtonLink,
     ResourceList,
     ResourceHeader,
     ConfirmationModal,
-    AppButtonLinkPrimary
+    ButtonLinkPrimary
   },
   middleware: ['authenticated'],
   layout: 'account-management',

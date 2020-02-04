@@ -55,25 +55,25 @@
         <div class="flex flex-wrap justify-center my-36 md:my-60">
 
           <!-- Password forgotten -->
-          <AppButtonLinkTertiary :route="{ name: 'auth-forgot' }">
+          <ButtonLinkTertiary :route="{ name: 'auth-forgot' }">
             {{ $t("pages.login.links.password") }}
-          </AppButtonLinkTertiary>
+          </ButtonLinkTertiary>
 
           <!-- Register an account -->
-          <AppButtonLinkTertiary :route="{ name: 'auth-register' }">
+          <ButtonLinkTertiary :route="{ name: 'auth-register' }">
             {{ $t("pages.login.links.register") }}
-          </AppButtonLinkTertiary>
+          </ButtonLinkTertiary>
         </div>
 
         <!-- Submit -->
-        <AppButtonPrimary
+        <ButtonPrimary
           :disabled="missingCredentials"
           type="submit"
           icon="key"
           class="shadow-xl mx-auto my-36 md:my-60"
         >
           {{ $t("buttons.connection") }}
-        </AppButtonPrimary>
+        </ButtonPrimary>
       </form>
     </ContentSection>
 
@@ -88,9 +88,9 @@ import FormLabel from '@/components/forms/FormLabel'
 import FormInput from '@/components/forms/FormInput'
 import FormGroup from '@/components/forms/FormGroup'
 import ContentSection from '@/components/ContentSection'
-import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 import FormValidation from '@/components/forms/FormValidation'
-import AppButtonLinkTertiary from '@/components/buttons/AppButtonLinkTertiary'
+import ButtonLinkTertiary from '@/components/buttons/ButtonLinkTertiary'
 
 export default {
   layout: 'auth',
@@ -118,9 +118,9 @@ export default {
     FormInput,
     FormGroup,
     ContentSection,
-    AppButtonPrimary,
+    ButtonPrimary,
     FormValidation,
-    AppButtonLinkTertiary
+    ButtonLinkTertiary
   },
   data() {
     return {

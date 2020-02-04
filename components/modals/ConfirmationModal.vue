@@ -51,22 +51,22 @@
           <div class="flex justify-center md:justify-start items-center">
 
             <!-- Confirm -->
-            <AppButtonPrimary
+            <ButtonPrimary
               :color="color"
               :icon="buttonIcon"
               @click.native="$emit('confirm')"
               class="mr-10"
             >
               {{ buttonLabel }}
-            </AppButtonPrimary>
+            </ButtonPrimary>
 
             <!-- Cancel -->
-            <AppButtonTertiary
+            <ButtonTertiary
               @click.native="closeModal"
               icon="times"
             >
               {{ $t('buttons.cancel') }}
-            </AppButtonTertiary>
+            </ButtonTertiary>
           </div>
         </div>
       </div>
@@ -77,14 +77,14 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 
-import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
-import AppButtonTertiary from '@/components/buttons/AppButtonTertiary'
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
+import ButtonTertiary from '@/components/buttons/ButtonTertiary'
 import ModalTransition from '@/components/transitions/ModalTransition'
 
 export default {
   components: {
-    AppButtonPrimary,
-    AppButtonTertiary,
+    ButtonPrimary,
+    ButtonTertiary,
     ModalTransition
   },
   props: {

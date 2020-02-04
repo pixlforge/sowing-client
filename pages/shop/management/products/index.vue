@@ -11,7 +11,7 @@
       </Heading>
 
       <!-- Add a product -->
-      <AppAddButtonLink
+      <AddButtonLink
         :route="{ name: 'shop-management-products-create-product' }"
         :label="$t('buttons.add_product')"
         class="mt-60 md:mt-0"
@@ -30,7 +30,7 @@ import shopManagement from '@/mixins/shop-management'
 
 import Card from '@/components/Card'
 import Heading from '@/components/Heading'
-import AppAddButtonLink from '@/components/buttons/AppAddButtonLink'
+import AddButtonLink from '@/components/buttons/AddButtonLink'
 import ResourceHeader from '@/components/resources/ResourceHeader'
 
 export default {
@@ -56,7 +56,7 @@ export default {
   components: {
     Card,
     Heading,
-    AppAddButtonLink,
+    AddButtonLink,
     ResourceHeader
   },
   mixins: [shopManagement]

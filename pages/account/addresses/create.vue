@@ -3,7 +3,7 @@
     <div class="flex items-center">
 
       <!-- Back -->
-      <AppBackButton
+      <BackButton
         :route="{ name: 'account-addresses' }"
         class="mr-20"
       />
@@ -173,21 +173,21 @@
         <div class="flex">
 
           <!-- Submit -->
-          <AppButtonPrimary
+          <ButtonPrimary
             icon="check-circle"
             type="submit"
             class="mr-10"
           >
             {{ $t('buttons.add') }}
-          </AppButtonPrimary>
+          </ButtonPrimary>
 
           <!-- Cancel -->
-          <AppButtonLinkTertiary
+          <ButtonLinkTertiary
             :route="{ name: 'account-addresses' }"
             icon="times"
           >
             {{ $t('buttons.cancel') }}
-          </AppButtonLinkTertiary>
+          </ButtonLinkTertiary>
         </div>
       </form>
     </Card>
@@ -202,14 +202,14 @@ import FormRow from '@/components/forms/FormRow'
 import FormGroup from '@/components/forms/FormGroup'
 import FormLabel from '@/components/forms/FormLabel'
 import FormInput from '@/components/forms/FormInput'
-import AppBackButton from '@/components/buttons/AppBackButton'
+import BackButton from '@/components/buttons/BackButton'
 import FormRowGroup from '@/components/forms/FormRowGroup'
 import FormCheckbox from '@/components/forms/FormCheckbox'
 import FormValidation from '@/components/forms/FormValidation'
-import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 import CountryDropdown from '@/components/forms/CountryDropdown'
 import FormCheckboxLabel from '@/components/forms/FormCheckboxLabel'
-import AppButtonLinkTertiary from '@/components/buttons/AppButtonLinkTertiary'
+import ButtonLinkTertiary from '@/components/buttons/ButtonLinkTertiary'
 
 export default {
   components: {
@@ -218,14 +218,14 @@ export default {
     FormGroup,
     FormLabel,
     FormInput,
-    AppBackButton,
+    BackButton,
     FormRowGroup,
     FormCheckbox,
     FormRow,
     FormValidation,
-    AppButtonPrimary,
+    ButtonPrimary,
     CountryDropdown,
-    AppButtonLinkTertiary,
+    ButtonLinkTertiary,
     FormCheckboxLabel
   },
   layout: 'account-management',

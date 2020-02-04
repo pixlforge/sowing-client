@@ -35,24 +35,24 @@
     </ul>
 
     <!-- Address creator button -->
-    <AppButtonPrimary
+    <ButtonPrimary
       @click.native="openCreator"
       icon="plus"
       class="w-full mt-20"
     >
       {{ $t("pages.checkout.new_address") }}
-    </AppButtonPrimary>
+    </ButtonPrimary>
   </div>
 </template>
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
 
-import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 
 export default {
   components: {
-    AppButtonPrimary
+    ButtonPrimary
   },
   props: {
     addresses: {

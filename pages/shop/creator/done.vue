@@ -19,23 +19,23 @@
       <ShopCreatorControls>
 
         <!-- Previous -->
-        <AppButtonTertiary
+        <ButtonTertiary
           @click.native="prev"
           icon="chevron-circle-left"
           class="order-1 md:order-none mx-5"
         >
           {{ $t("buttons.back") }}
-        </AppButtonTertiary>
+        </ButtonTertiary>
 
         <!-- Next -->
-        <AppButtonPrimary
+        <ButtonPrimary
           :color="shopTheme"
           @click.native="next"
           icon="chevron-circle-right"
           class="order-none md_order-1 mx-5"
         >
           {{ $t("buttons.finish") }}
-        </AppButtonPrimary>
+        </ButtonPrimary>
       </ShopCreatorControls>
     </ContentSection>
   </main>
@@ -47,8 +47,8 @@ import theming from '@/mixins/theming'
 
 import Splash from '@/components/Splash'
 import ContentSection from '@/components/ContentSection'
-import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
-import AppButtonTertiary from '@/components/buttons/AppButtonTertiary'
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
+import ButtonTertiary from '@/components/buttons/ButtonTertiary'
 import ShopCreatorControls from '@/components/shops/ShopCreatorControls'
 import IllustrationSuccess from '@/components/illustrations/IllustrationSuccess'
 
@@ -79,8 +79,8 @@ export default {
   components: {
     Splash,
     ContentSection,
-    AppButtonPrimary,
-    AppButtonTertiary,
+    ButtonPrimary,
+    ButtonTertiary,
     ShopCreatorControls,
     IllustrationSuccess
   },

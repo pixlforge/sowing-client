@@ -44,24 +44,24 @@
     </ul>
 
     <!-- Change address -->
-    <AppButtonPrimary
+    <ButtonPrimary
       v-if="addresses.length && !addressManagersVisible"
       @click.native="openAddressSelector"
       icon="repeat-alt"
       class="w-full mt-20"
     >
       {{ $t("pages.checkout.change_address") }}
-    </AppButtonPrimary>
+    </ButtonPrimary>
 
     <!-- Add an address -->
-    <AppButtonPrimary
+    <ButtonPrimary
       v-if="!addresses.length && !addressManagersVisible"
       @click.native="openAddressCreator"
       icon="plus"
       class="w-full mt-20"
     >
       {{ $t("pages.checkout.add_address") }}
-    </AppButtonPrimary>
+    </ButtonPrimary>
   </div>
 </template>
 
@@ -69,14 +69,14 @@
 import { mapGetters, mapActions } from 'vuex'
 
 import Heading from '@/components/Heading'
-import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 import ShippingAddressCreator from '@/components/addresses/ShippingAddressCreator'
 import ShippingAddressSelector from '@/components/addresses/ShippingAddressSelector'
 
 export default {
   components: {
     Heading,
-    AppButtonPrimary,
+    ButtonPrimary,
     ShippingAddressCreator,
     ShippingAddressSelector
   },

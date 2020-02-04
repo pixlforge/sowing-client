@@ -18,13 +18,13 @@
       />
 
       <!-- Save changes -->
-      <AppButtonPrimary
+      <ButtonPrimary
         :color="shopTheme"
         @click.native="update"
         icon="check"
       >
         {{ $t("buttons.update") }}
-      </AppButtonPrimary>
+      </ButtonPrimary>
     </Card>
 
   </div>
@@ -38,7 +38,7 @@ import shopManagement from '@/mixins/shop-management'
 import Card from '@/components/Card'
 import Heading from '@/components/Heading'
 import ShopDetails from '@/components/shops/ShopDetails'
-import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 
 export default {
   middleware: ['authenticated'],
@@ -64,7 +64,7 @@ export default {
     Card,
     Heading,
     ShopDetails,
-    AppButtonPrimary
+    ButtonPrimary
   },
   mixins: [
     theming,

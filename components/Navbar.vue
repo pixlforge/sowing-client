@@ -11,29 +11,29 @@
       <div class="flex md:hidden">
 
         <!-- Search page link -->
-        <AppButtonSearch/>
+        <ButtonSearch/>
 
         <!-- Cart page link -->
-        <AppButtonCart class="ml-10"/>
+        <ButtonCart class="ml-10"/>
       </div>
     </div>
 
     <div class="w-full md:flex-1 flex justify-between md:justify-end mt-36 md:mt-0">
 
       <!-- Languages -->
-      <AppButtonLanguages/>
+      <ButtonLanguages/>
 
       <!-- Login -->
-      <AppButtonLinkSecondary
+      <ButtonLinkSecondary
         v-if="!loggedIn"
         :route="{ name: 'auth-login' }"
         class="ml-10 lg:ml-20"
       >
         {{ $t("buttons.login") }}
-      </AppButtonLinkSecondary>
+      </ButtonLinkSecondary>
 
       <!-- Register -->
-      <AppButtonLinkPrimary
+      <ButtonLinkPrimary
         v-if="!loggedIn"
         :route="{ name: 'auth-register' }"
         icon="rocket"
@@ -41,7 +41,7 @@
         class="hidden md:block ml-10 lg:ml-20"
       >
         {{ $t("buttons.register") }}
-      </AppButtonLinkPrimary>
+      </ButtonLinkPrimary>
 
       <!-- Menu -->
       <Menu
@@ -52,10 +52,10 @@
       <div class="hidden md:flex">
 
         <!-- Search page link -->
-        <AppButtonSearch class="ml-10 lg:ml-20"/>
+        <ButtonSearch class="ml-10 lg:ml-20"/>
 
         <!-- Cart page link -->
-        <AppButtonCart class="ml-10 lg:ml-20"/>
+        <ButtonCart class="ml-10 lg:ml-20"/>
       </div>
     </div>
 
@@ -65,21 +65,21 @@
 <script>
 import Logo from '@/components/Logo'
 import Menu from '@/components/menus/Menu'
-import AppButtonCart from '@/components/buttons/AppButtonCart'
-import AppButtonSearch from '@/components/buttons/AppButtonSearch'
-import AppButtonLanguages from '@/components/buttons/AppButtonLanguages'
-import AppButtonLinkPrimary from '@/components/buttons/AppButtonLinkPrimary'
-import AppButtonLinkSecondary from '@/components/buttons/AppButtonLinkSecondary'
+import ButtonCart from '@/components/buttons/ButtonCart'
+import ButtonSearch from '@/components/buttons/ButtonSearch'
+import ButtonLanguages from '@/components/buttons/ButtonLanguages'
+import ButtonLinkPrimary from '@/components/buttons/ButtonLinkPrimary'
+import ButtonLinkSecondary from '@/components/buttons/ButtonLinkSecondary'
 
 export default {
   components: {
     Logo,
     Menu,
-    AppButtonCart,
-    AppButtonSearch,
-    AppButtonLanguages,
-    AppButtonLinkPrimary,
-    AppButtonLinkSecondary
+    ButtonCart,
+    ButtonSearch,
+    ButtonLanguages,
+    ButtonLinkPrimary,
+    ButtonLinkSecondary
   },
   computed: {
     loggedIn() {

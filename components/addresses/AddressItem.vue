@@ -10,7 +10,7 @@
       <template v-if="controlsOpen">
 
         <!-- View -->
-        <AppViewButton
+        <ViewButton
           :route="{
             name: 'account-addresses-id-details',
             params: {
@@ -20,7 +20,7 @@
         />
 
         <!-- Edit -->
-        <AppEditButton
+        <EditButton
           :route="{
             name: 'account-addresses-id-edit',
             params: {
@@ -30,7 +30,7 @@
         />
 
         <!-- Delete -->
-        <AppDeleteButton @click.native="confirmDelete"/>
+        <DeleteButton @click.native="confirmDelete"/>
       </template>
     </div>
 
@@ -74,7 +74,7 @@
 
       <!-- Controls button -->
       <div class="w-1/6 md:w-1/12 flex justify-end">
-        <AppResourceControlsButton @click.native="controlsOpen = !controlsOpen"/>
+        <ResourceControlsButton @click.native="controlsOpen = !controlsOpen"/>
       </div>
     </div>
 
@@ -84,17 +84,17 @@
 <script>
 import { mapActions } from 'vuex'
 
-import AppViewButton from '@/components/buttons/AppViewButton'
-import AppEditButton from '@/components/buttons/AppEditButton'
-import AppDeleteButton from '@/components/buttons/AppDeleteButton'
-import AppResourceControlsButton from '@/components/buttons/AppResourceControlsButton'
+import ViewButton from '@/components/buttons/ViewButton'
+import EditButton from '@/components/buttons/EditButton'
+import DeleteButton from '@/components/buttons/DeleteButton'
+import ResourceControlsButton from '@/components/buttons/ResourceControlsButton'
 
 export default {
   components: {
-    AppViewButton,
-    AppEditButton,
-    AppDeleteButton,
-    AppResourceControlsButton
+    ViewButton,
+    EditButton,
+    DeleteButton,
+    ResourceControlsButton
   },
   props: {
     address: {

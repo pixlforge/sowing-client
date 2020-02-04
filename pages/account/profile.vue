@@ -46,12 +46,12 @@
         </FormGroup>
 
         <!-- Save changes -->
-        <AppButtonPrimary
+        <ButtonPrimary
           icon="check"
           type="submit"
         >
           {{ $t("buttons.update") }}
-        </AppButtonPrimary>
+        </ButtonPrimary>
       </form>
     </Card>
 
@@ -67,7 +67,7 @@ import FormGroup from '@/components/forms/FormGroup'
 import FormInput from '@/components/forms/FormInput'
 import FormLabel from '@/components/forms/FormLabel'
 import FormValidation from '@/components/forms/FormValidation'
-import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 
 export default {
   components: {
@@ -77,7 +77,7 @@ export default {
     FormInput,
     FormLabel,
     FormValidation,
-    AppButtonPrimary
+    ButtonPrimary
   },
   middleware: ['authenticated'],
   layout: 'account-management',

@@ -31,7 +31,7 @@
         </p>
 
         <!-- Link -->
-        <AppButtonLinkPrimary
+        <ButtonLinkPrimary
           :route="{
             name: 'categories-category-subcategory-slug',
             params: {
@@ -42,7 +42,7 @@
           class="shadow-xl"
         >
           {{ $t("categories.link.see_all") }}
-        </AppButtonLinkPrimary>
+        </ButtonLinkPrimary>
       </div>
 
       <!-- Mask -->
@@ -56,12 +56,12 @@
 import { mapGetters } from 'vuex'
 
 import Heading from '@/components/Heading'
-import AppButtonLinkPrimary from '@/components/buttons/AppButtonLinkPrimary'
+import ButtonLinkPrimary from '@/components/buttons/ButtonLinkPrimary'
 
 export default {
   components: {
     Heading,
-    AppButtonLinkPrimary
+    ButtonLinkPrimary
   },
   props: {
     category: {

@@ -70,13 +70,13 @@
         </FormGroup>
 
         <!-- Submit -->
-        <AppButtonPrimary
+        <ButtonPrimary
           type="submit"
           icon="redo-alt"
           class="mx-auto my-72"
         >
           {{ $t("buttons.password_reset") }}
-        </AppButtonPrimary>
+        </ButtonPrimary>
       </form>
     </ContentSection>
   </main>
@@ -91,7 +91,7 @@ import FormLabel from '@/components/forms/FormLabel'
 import FormInput from '@/components/forms/FormInput'
 import ContentSection from '@/components/ContentSection'
 import FormValidation from '@/components/forms/FormValidation'
-import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 
 export default {
   layout: 'auth',
@@ -120,7 +120,7 @@ export default {
     FormInput,
     ContentSection,
     FormValidation,
-    AppButtonPrimary
+    ButtonPrimary
   },
   data() {
     return {

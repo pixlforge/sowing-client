@@ -44,14 +44,14 @@
 
           <!-- Shop create -->
           <li class="my-16">
-            <AppButtonLinkPrimary
+            <ButtonLinkPrimary
               :route="{ name: 'shop-creator-terms' }"
               icon="store"
               color="pink-dark"
               class="shadow-md"
             >
               {{ $t("buttons.create_my_shop") }}
-            </AppButtonLinkPrimary>
+            </ButtonLinkPrimary>
           </li>
         </template>
 
@@ -75,7 +75,7 @@ import { mapGetters, mapActions } from 'vuex'
 
 import DropdownItem from '@/components/dropdowns/DropdownItem'
 import DropdownDivider from '@/components/dropdowns/DropdownDivider'
-import AppButtonLinkPrimary from '@/components/buttons/AppButtonLinkPrimary'
+import ButtonLinkPrimary from '@/components/buttons/ButtonLinkPrimary'
 import DropdownTransition from '@/components/transitions/DropdownTransition'
 import DropdownContainer from '@/components/dropdowns/DropdownContainer'
 
@@ -83,7 +83,7 @@ export default {
   components: {
     DropdownItem,
     DropdownDivider,
-    AppButtonLinkPrimary,
+    ButtonLinkPrimary,
     DropdownTransition,
     DropdownContainer
   },

@@ -32,23 +32,23 @@
       <ShopCreatorControls>
 
         <!-- Previous -->
-        <AppButtonTertiary
+        <ButtonTertiary
           @click.native="prev"
           icon="chevron-circle-left"
           class="order-1 md:order-none mx-5"
         >
           {{ $t("buttons.back") }}
-        </AppButtonTertiary>
+        </ButtonTertiary>
 
         <!-- Next -->
-        <AppButtonPrimary
+        <ButtonPrimary
           :color="shopTheme"
           @click.native="next"
           icon="chevron-circle-right"
           class="order-none md_order-1 mx-5"
         >
           {{ $t("buttons.next") }}
-        </AppButtonPrimary>
+        </ButtonPrimary>
       </ShopCreatorControls>
     </ContentSection>
   </main>
@@ -61,8 +61,8 @@ import theming from '@/mixins/theming'
 import Heading from '@/components/Heading'
 import ContentSection from '@/components/ContentSection'
 import Paragraph from '@/components/paragraphs/Paragraph'
-import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
-import AppButtonTertiary from '@/components/buttons/AppButtonTertiary'
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
+import ButtonTertiary from '@/components/buttons/ButtonTertiary'
 import ShopCustomization from '@/components/shops/ShopCustomization'
 import ShopCreatorControls from '@/components/shops/ShopCreatorControls'
 import ShopFeatureContainer from '@/components/shops/ShopFeatureContainer'
@@ -95,8 +95,8 @@ export default {
     Heading,
     ContentSection,
     Paragraph,
-    AppButtonPrimary,
-    AppButtonTertiary,
+    ButtonPrimary,
+    ButtonTertiary,
     ShopCustomization,
     ShopCreatorControls,
     ShopFeatureContainer

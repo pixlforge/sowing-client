@@ -69,7 +69,7 @@
       </Heading>
 
       <div class="flex justify-center mt-72">
-        <AppButtonLinkPrimary
+        <ButtonLinkPrimary
           :route="{ name: 'index' }"
           :color="shopTheme"
           icon="search"
@@ -77,7 +77,7 @@
           class="shadow-2xl"
         >
           {{ $t("buttons.see_all_articles") }}
-        </AppButtonLinkPrimary>
+        </ButtonLinkPrimary>
       </div>
     </ContentSection>
 
@@ -97,7 +97,7 @@ import ShopCover from '@/components/shops/ShopCover'
 import ContentSection from '@/components/ContentSection'
 import HeaderList from '@/components/headers/HeaderList'
 import StreakRegister from '@/components/streaks/StreakRegister'
-import AppButtonLinkPrimary from '@/components/buttons/AppButtonLinkPrimary'
+import ButtonLinkPrimary from '@/components/buttons/ButtonLinkPrimary'
 
 export default {
   head() {
@@ -112,7 +112,7 @@ export default {
     ContentSection,
     HeaderList,
     StreakRegister,
-    AppButtonLinkPrimary
+    ButtonLinkPrimary
   },
   mixins: [theming],
   data() {

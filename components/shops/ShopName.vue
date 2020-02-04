@@ -8,14 +8,14 @@
       class="sm:rounded-r-none"
     />
 
-    <AppButtonPrimary
+    <ButtonPrimary
       :disabled="(shopExists || !shopName) && !editable"
       @click.native="check"
       icon="rocket"
       class="w-full h-46 sm:w-auto sm:rounded-l-none"
     >
       {{ $t("buttons.check_availability") }}
-    </AppButtonPrimary>
+    </ButtonPrimary>
   </section>
 </template>
 
@@ -24,12 +24,12 @@ import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
 import FormInput from '@/components/forms/FormInput'
-import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 
 export default {
   components: {
     FormInput,
-    AppButtonPrimary
+    ButtonPrimary
   },
   mixins: [theming],
   props: {

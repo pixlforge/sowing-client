@@ -95,7 +95,7 @@
           </div>
 
           <!-- Checkout button -->
-          <AppButtonPrimary
+          <ButtonPrimary
             v-if="products.length && !addressManagersVisible"
             :disabled="is_empty || submitting"
             :title="$t('pages.checkout.order')"
@@ -104,7 +104,7 @@
             class="shadow-xl mt-72"
           >
             {{ $t("pages.checkout.order") }}
-          </AppButtonPrimary>
+          </ButtonPrimary>
         </div>
       </div>
     </ContentSection>
@@ -118,7 +118,7 @@ import { mapGetters, mapActions } from 'vuex'
 import Heading from '@/components/Heading'
 import Header from '@/components/headers/Header'
 import ContentSection from '@/components/ContentSection'
-import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 import ShippingMethods from '@/components/addresses/ShippingMethods'
 import ShippingAddress from '@/components/addresses/ShippingAddress'
 import CartOverviewProduct from '@/components/cart/CartOverviewProduct'
@@ -147,7 +147,7 @@ export default {
     Heading,
     Header,
     ContentSection,
-    AppButtonPrimary,
+    ButtonPrimary,
     ShippingMethods,
     ShippingAddress,
     CartOverviewProduct,

@@ -45,13 +45,13 @@
         </FormGroup>
 
         <!-- Submit -->
-        <AppButtonPrimary
+        <ButtonPrimary
           type="submit"
           icon="redo-alt"
           class="mx-auto my-72"
         >
           {{ $t("buttons.password_email") }}
-        </AppButtonPrimary>
+        </ButtonPrimary>
       </form>
     </ContentSection>
   </main>
@@ -67,7 +67,7 @@ import FormInput from '@/components/forms/FormInput'
 import ContentSection from '@/components/ContentSection'
 import Paragraph from '@/components/paragraphs/Paragraph'
 import FormValidation from '@/components/forms/FormValidation'
-import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 
 export default {
   layout: 'auth',
@@ -97,7 +97,7 @@ export default {
     ContentSection,
     Paragraph,
     FormValidation,
-    AppButtonPrimary
+    ButtonPrimary
   },
   data() {
     return {

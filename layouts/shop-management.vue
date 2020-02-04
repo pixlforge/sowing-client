@@ -110,14 +110,14 @@
           </Splash>
 
           <!-- Shop creation link -->
-          <AppButtonLinkPrimary
+          <ButtonLinkPrimary
             :route="{ name: 'shop-creator-terms' }"
             icon="rocket"
             size="large"
             class="w-full"
           >
             {{ $t("buttons.create_my_shop") }}
-          </AppButtonLinkPrimary>
+          </ButtonLinkPrimary>
         </ContentSection>
       </template>
     </main>
@@ -147,7 +147,7 @@ import HeaderList from '@/components/headers/HeaderList'
 import SideMenuList from '@/components/menus/SideMenuList'
 import SideMenuItem from '@/components/menus/SideMenuItem'
 import SideMenuTitle from '@/components/menus/SideMenuTitle'
-import AppButtonLinkPrimary from '@/components/buttons/AppButtonLinkPrimary'
+import ButtonLinkPrimary from '@/components/buttons/ButtonLinkPrimary'
 
 export default {
   components: {
@@ -164,7 +164,7 @@ export default {
     SideMenuList,
     SideMenuItem,
     SideMenuTitle,
-    AppButtonLinkPrimary
+    ButtonLinkPrimary
   },
   mixins: [theming],
   computed: {

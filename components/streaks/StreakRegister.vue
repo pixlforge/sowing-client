@@ -24,13 +24,13 @@
         </p>
 
         <div class="flex flex-col md:flex-row justify-center lg:justify-start mt-48">
-          <AppButtonLinkPrimary
+          <ButtonLinkPrimary
             :route="{ name: 'auth-register' }"
             icon="store"
             color="pink-dark"
           >
             {{ $t("buttons.create_my_shop") }}
-          </AppButtonLinkPrimary>
+          </ButtonLinkPrimary>
         </div>
       </div>
     </div>
@@ -39,12 +39,12 @@
 
 <script>
 import Heading from '@/components/Heading'
-import AppButtonLinkPrimary from '@/components/buttons/AppButtonLinkPrimary'
+import ButtonLinkPrimary from '@/components/buttons/ButtonLinkPrimary'
 
 export default {
   components: {
     Heading,
-    AppButtonLinkPrimary
+    ButtonLinkPrimary
   }
 }
 </script>

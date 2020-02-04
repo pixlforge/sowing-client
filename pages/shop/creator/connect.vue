@@ -51,16 +51,16 @@
       <ShopCreatorControls>
 
         <!-- Previous -->
-        <AppButtonTertiary
+        <ButtonTertiary
           @click.native="prev"
           icon="chevron-circle-left"
           class="order-1 md:order-none mx-5"
         >
           {{ $t("buttons.back") }}
-        </AppButtonTertiary>
+        </ButtonTertiary>
 
         <!-- Next -->
-        <AppButtonPrimary
+        <ButtonPrimary
           :disabled="!stripeInfos"
           :color="stripeInfos ? shopTheme : ''"
           @click.native="next"
@@ -68,7 +68,7 @@
           class="order-none md_order-1 mx-5"
         >
           {{ $t("buttons.finalize_shop_creation") }}
-        </AppButtonPrimary>
+        </ButtonPrimary>
       </ShopCreatorControls>
     </ContentSection>
   </main>
@@ -82,8 +82,8 @@ import Heading from '@/components/Heading'
 import Splash from '@/components/Splash'
 import ContentSection from '@/components/ContentSection'
 import Paragraph from '@/components/paragraphs/Paragraph'
-import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
-import AppButtonTertiary from '@/components/buttons/AppButtonTertiary'
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
+import ButtonTertiary from '@/components/buttons/ButtonTertiary'
 import ShopCreatorControls from '@/components/shops/ShopCreatorControls'
 import ShopFeatureContainer from '@/components/shops/ShopFeatureContainer'
 
@@ -119,8 +119,8 @@ export default {
     Splash,
     ContentSection,
     Paragraph,
-    AppButtonPrimary,
-    AppButtonTertiary,
+    ButtonPrimary,
+    ButtonTertiary,
     ShopCreatorControls,
     ShopFeatureContainer
   },

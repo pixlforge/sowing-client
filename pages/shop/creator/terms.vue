@@ -28,13 +28,13 @@
         </div>
 
         <!-- Next -->
-        <AppButtonPrimary
+        <ButtonPrimary
           :disabled="!userAgreesToTerms"
           @click.native="next"
           icon="chevron-circle-right"
         >
           {{ $t("buttons.begin_shop_creation") }}
-        </AppButtonPrimary>
+        </ButtonPrimary>
 
       </div>
     </ContentSection>
@@ -48,7 +48,7 @@ import Terms from '@/components/terms/Terms'
 import Header from '@/components/headers/Header'
 import ContentSection from '@/components/ContentSection'
 import FormCheckbox from '@/components/forms/FormCheckbox'
-import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 
 export default {
   middleware: ['authenticated'],
@@ -74,7 +74,7 @@ export default {
     Header,
     ContentSection,
     FormCheckbox,
-    AppButtonPrimary
+    ButtonPrimary
   },
   computed: {
     ...mapGetters({

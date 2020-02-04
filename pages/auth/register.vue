@@ -107,14 +107,14 @@
         </FormGroup>
 
         <!-- Submit -->
-        <AppButtonPrimary
+        <ButtonPrimary
           :disabled="missingCredentials"
           type="submit"
           icon="user"
           class="shadow-xl mx-auto my-72"
         >
           {{ $t("buttons.create_account") }}
-        </AppButtonPrimary>
+        </ButtonPrimary>
       </form>
     </ContentSection>
   </main>
@@ -129,7 +129,7 @@ import FormLabel from '@/components/forms/FormLabel'
 import FormInput from '@/components/forms/FormInput'
 import ContentSection from '@/components/ContentSection'
 import FormCheckbox from '@/components/forms/FormCheckbox'
-import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 import FormValidation from '@/components/forms/FormValidation'
 
 export default {
@@ -159,7 +159,7 @@ export default {
     FormInput,
     ContentSection,
     FormCheckbox,
-    AppButtonPrimary,
+    ButtonPrimary,
     FormValidation
   },
   data() {

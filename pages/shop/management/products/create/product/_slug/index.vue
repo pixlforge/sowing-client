@@ -10,7 +10,7 @@
     <header class="flex flex-wrap items-center my-30">
 
       <!-- Back -->
-      <AppBackButton
+      <BackButton
         :route="{ name: 'shop-management-products' }"
         class="mr-20"
       />
@@ -228,7 +228,7 @@
         <div class="flex justify-center items-center">
 
           <!-- Submit -->
-          <AppButtonPrimary
+          <ButtonPrimary
             :color="shopTheme"
             icon="check-circle"
             size="large"
@@ -236,15 +236,15 @@
             class="mr-10"
           >
             {{ $t('buttons.next') }}
-          </AppButtonPrimary>
+          </ButtonPrimary>
 
           <!-- Cancel -->
-          <AppButtonLinkTertiary
+          <ButtonLinkTertiary
             :route="{ name: 'shop-management-products' }"
             icon="arrow-left"
           >
             {{ $t('buttons.back') }}
-          </AppButtonLinkTertiary>
+          </ButtonLinkTertiary>
         </div>
       </FormSection>
     </form>
@@ -260,14 +260,14 @@ import InfoTip from '@/components/globals/InfoTip'
 import FormGroup from '@/components/forms/FormGroup'
 import FormLabel from '@/components/forms/FormLabel'
 import FormInput from '@/components/forms/FormInput'
-import AppBackButton from '@/components/buttons/AppBackButton'
+import BackButton from '@/components/buttons/BackButton'
 import FormSection from '@/components/forms/FormSection'
 import FormFieldset from '@/components/forms/FormFieldset'
 import FormTextarea from '@/components/forms/FormTextarea'
 import FormValidation from '@/components/forms/FormValidation'
-import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 import FormSectionTitle from '@/components/forms/FormSectionTitle'
-import AppButtonLinkTertiary from '@/components/buttons/AppButtonLinkTertiary'
+import ButtonLinkTertiary from '@/components/buttons/ButtonLinkTertiary'
 import FormLabelDescription from '@/components/forms/FormLabelDescription'
 import ProductCreatorStep from '@/components/products/creator/ProductCreatorStep'
 
@@ -299,14 +299,14 @@ export default {
     FormGroup,
     FormLabel,
     FormInput,
-    AppBackButton,
+    BackButton,
     FormSection,
     FormFieldset,
     FormTextarea,
     FormValidation,
-    AppButtonPrimary,
+    ButtonPrimary,
     FormSectionTitle,
-    AppButtonLinkTertiary,
+    ButtonLinkTertiary,
     FormLabelDescription,
     ProductCreatorStep
   },

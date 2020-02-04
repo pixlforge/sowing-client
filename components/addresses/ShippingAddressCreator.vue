@@ -133,21 +133,21 @@
       <FormGroup>
 
         <!-- Submit -->
-        <AppButtonPrimary
+        <ButtonPrimary
           icon="check"
           type="submit"
           class="w-full mt-20"
         >
           {{ $t("buttons.create") }}
-        </AppButtonPrimary>
+        </ButtonPrimary>
 
         <!-- Close -->
-        <AppButtonTertiary
-          class="w-full"
+        <ButtonTertiary
           @click.native="closeAddressCreator"
+          class="w-full"
         >
           {{ $t("buttons.cancel") }}
-        </AppButtonTertiary>
+        </ButtonTertiary>
       </FormGroup>
     </form>
   </div>
@@ -160,8 +160,8 @@ import FormGroup from '@/components/forms/FormGroup'
 import FormLabel from '@/components/forms/FormLabel'
 import FormInput from '@/components/forms/FormInput'
 import FormValidation from '@/components/forms/FormValidation'
-import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
-import AppButtonTertiary from '@/components/buttons/AppButtonTertiary'
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
+import ButtonTertiary from '@/components/buttons/ButtonTertiary'
 import CountryDropdown from '@/components/forms/CountryDropdown'
 
 export default {
@@ -170,8 +170,8 @@ export default {
     FormLabel,
     FormInput,
     FormValidation,
-    AppButtonPrimary,
-    AppButtonTertiary,
+    ButtonPrimary,
+    ButtonTertiary,
     CountryDropdown
   },
   data() {

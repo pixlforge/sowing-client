@@ -8,7 +8,7 @@
       :class="bgTheme"
     >
       <template>
-        <AppHeaderButtonLink
+        <HeaderButtonLink
           :route="{
             name: 'shop-slug-details',
             params: {
@@ -19,7 +19,7 @@
           class="mt-16 shadow-2xl"
         >
           {{ $t("pages.shop.visit") }}
-        </AppHeaderButtonLink>
+        </HeaderButtonLink>
       </template>
     </Header>
 
@@ -42,7 +42,7 @@ import Header from '@/components/headers/Header'
 import ContentSection from '@/components/ContentSection'
 import ProductDetails from '@/components/products/ProductDetails'
 import StreakNewsletter from '@/components/streaks/StreakNewsletter'
-import AppHeaderButtonLink from '@/components/buttons/AppHeaderButtonLink'
+import HeaderButtonLink from '@/components/buttons/HeaderButtonLink'
 
 export default {
   head() {
@@ -62,7 +62,7 @@ export default {
     ContentSection,
     ProductDetails,
     StreakNewsletter,
-    AppHeaderButtonLink
+    HeaderButtonLink
   },
   mixins: [theming],
   data() {

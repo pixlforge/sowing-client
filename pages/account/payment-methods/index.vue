@@ -11,7 +11,7 @@
       </Heading>
 
       <!-- Add a payment method -->
-      <AppAddButtonLink
+      <AddButtonLink
         :route="{ name: 'account-payment-methods-create' }"
         :label="$t('buttons.add_payment_method')"
         class="mt-60 md:mt-0"
@@ -37,12 +37,12 @@
         <Paragraph class="text-center mb-60">
           {{ $t('pages.account.payment_methods.no_payment_method_found') }}
         </Paragraph>
-        <AppButtonLinkPrimary
+        <ButtonLinkPrimary
           :route="{ name: 'account-payment-methods-create' }"
           icon="plus-circle"
         >
           {{ $t('buttons.add_payment_method') }}
-        </AppButtonLinkPrimary>
+        </ButtonLinkPrimary>
       </div>
     </Card>
 
@@ -66,11 +66,11 @@ import { mapActions, mapGetters } from 'vuex'
 import Card from '@/components/Card'
 import Heading from '@/components/Heading'
 import Paragraph from '@/components/paragraphs/Paragraph'
-import AppAddButtonLink from '@/components/buttons/AppAddButtonLink'
+import AddButtonLink from '@/components/buttons/AddButtonLink'
 import ResourceList from '@/components/resources/ResourceList'
 import ResourceHeader from '@/components/resources/ResourceHeader'
 import ConfirmationModal from '@/components/modals/ConfirmationModal'
-import AppButtonLinkPrimary from '@/components/buttons/AppButtonLinkPrimary'
+import ButtonLinkPrimary from '@/components/buttons/ButtonLinkPrimary'
 import PaymentMethodItem from '@/components/payment-methods/PaymentMethodItem'
 
 export default {
@@ -78,11 +78,11 @@ export default {
     Card,
     Heading,
     Paragraph,
-    AppAddButtonLink,
+    AddButtonLink,
     ResourceList,
     ResourceHeader,
     ConfirmationModal,
-    AppButtonLinkPrimary,
+    ButtonLinkPrimary,
     PaymentMethodItem
   },
   middleware: ['authenticated'],

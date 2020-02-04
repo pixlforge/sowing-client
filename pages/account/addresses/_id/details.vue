@@ -4,7 +4,7 @@
       <div class="flex items-center">
 
         <!-- Back -->
-        <AppBackButton
+        <BackButton
           :route="{ name: 'account-addresses' }"
           class="mr-20"
         />
@@ -19,7 +19,7 @@
       </div>
 
       <!-- Delete -->
-      <AppDeleteButton @click.native="openModal"/>
+      <DeleteButton @click.native="openModal"/>
     </header>
 
     <Card>
@@ -45,8 +45,8 @@ import { mapActions } from 'vuex'
 
 import Card from '@/components/Card'
 import Heading from '@/components/Heading'
-import AppBackButton from '@/components/buttons/AppBackButton'
-import AppDeleteButton from '@/components/buttons/AppDeleteButton'
+import BackButton from '@/components/buttons/BackButton'
+import DeleteButton from '@/components/buttons/DeleteButton'
 import AddressCard from '@/components/addresses/AddressCard'
 import ConfirmationModal from '@/components/modals/ConfirmationModal'
 
@@ -54,8 +54,8 @@ export default {
   components: {
     Card,
     Heading,
-    AppBackButton,
-    AppDeleteButton,
+    BackButton,
+    DeleteButton,
     AddressCard,
     ConfirmationModal
   },

@@ -14,13 +14,13 @@
         </Heading>
 
         <!-- Delete avatar -->
-        <AppButtonPrimary
+        <ButtonPrimary
           @click.native="deleteAvatar"
           size="mini"
           color="pink-dark"
         >
           {{ $t("buttons.delete") }}
-        </AppButtonPrimary>
+        </ButtonPrimary>
       </div>
 
       <!-- Avatar dropzone -->
@@ -47,13 +47,13 @@
         </Heading>
 
         <!-- Delete cover -->
-        <AppButtonPrimary
+        <ButtonPrimary
           @click.native="deleteCover"
           size="mini"
           color="pink-dark"
         >
           {{ $t("buttons.delete") }}
-        </AppButtonPrimary>
+        </ButtonPrimary>
       </div>
 
       <!-- Cover dropzone -->
@@ -100,14 +100,14 @@ import 'vue2-dropzone/dist/vue2Dropzone.css'
 import Dropzone from 'nuxt-dropzone'
 import Heading from '@/components/Heading'
 import Tile from '@/components/themes/Tile'
-import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 
 export default {
   components: {
     Dropzone,
     Heading,
     Tile,
-    AppButtonPrimary
+    ButtonPrimary
   },
   data() {
     return {

@@ -54,7 +54,7 @@
       </div>
 
       <!-- Checkout button -->
-      <AppButtonLinkPrimary
+      <ButtonLinkPrimary
         v-if="products.length"
         :route="{ name: 'checkout' }"
         :disabled="is_empty"
@@ -64,7 +64,7 @@
         class="w-full shadow-2xl my-72 md:my-96"
       >
         {{ $t("pages.cart.checkout") }}
-      </AppButtonLinkPrimary>
+      </ButtonLinkPrimary>
     </ContentSection>
 
   </main>
@@ -76,7 +76,7 @@ import { mapGetters, mapActions } from 'vuex'
 import Splash from '@/components/Splash'
 import Header from '@/components/headers/Header'
 import ContentSection from '@/components/ContentSection'
-import AppButtonLinkPrimary from '@/components/buttons/AppButtonLinkPrimary'
+import ButtonLinkPrimary from '@/components/buttons/ButtonLinkPrimary'
 import CartOverviewProduct from '@/components/cart/CartOverviewProduct'
 
 export default {
@@ -102,7 +102,7 @@ export default {
     Splash,
     Header,
     ContentSection,
-    AppButtonLinkPrimary,
+    ButtonLinkPrimary,
     CartOverviewProduct
   },
   computed: {

@@ -113,7 +113,7 @@
           </FormSelect>
 
           <!-- Submit -->
-          <AppButtonPrimary
+          <ButtonPrimary
             :disabled="!form.variation.id"
             :color="shopTheme"
             type="submit"
@@ -122,7 +122,7 @@
             class="shadow-2xl mt-36"
           >
             {{ $t("buttons.add_to_cart") }}
-          </AppButtonPrimary>
+          </ButtonPrimary>
 
         </form>
       </div>
@@ -155,7 +155,7 @@ import FormLabel from '@/components/forms/FormLabel'
 import FormSelect from '@/components/forms/FormSelect'
 import ProductVariation from '@/components/products/ProductVariation'
 import FormDivider from '@/components/forms/FormDivider'
-import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 
 export default {
   components: {
@@ -164,7 +164,7 @@ export default {
     FormSelect,
     ProductVariation,
     FormDivider,
-    AppButtonPrimary
+    ButtonPrimary
   },
   mixins: [theming],
   props: {
