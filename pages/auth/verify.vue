@@ -9,7 +9,7 @@
 
     <!-- Verification successful -->
     <template v-if="verificationSuccessful">
-      <AppSplash
+      <Splash
         :title="$t('pages.verify.success')"
         :subtitle="$t('toasts.account_confirmed')"
         type="success"
@@ -21,12 +21,12 @@
             src="~assets/img/success2.svg"
           >
         </template>
-      </AppSplash>
+      </Splash>
     </template>
 
     <!-- Verification failed -->
     <template v-if="verificationFailed">
-      <AppSplash
+      <Splash
         :title="$t('pages.verify.fail')"
         :subtitle="error"
         type="error"
@@ -38,7 +38,7 @@
             src="~assets/img/warning.svg"
           >
         </template>
-      </AppSplash>
+      </Splash>
     </template>
 
   </main>
@@ -46,7 +46,7 @@
 
 <script>
 import AppHeader from '@/components/headers/AppHeader'
-import AppSplash from '@/components/AppSplash'
+import Splash from '@/components/Splash'
 
 export default {
   middleware: ['authenticated'],
@@ -69,7 +69,7 @@ export default {
   },
   components: {
     AppHeader,
-    AppSplash
+    Splash
   },
   data() {
     return {

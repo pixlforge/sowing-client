@@ -10,7 +10,7 @@
     </Heading>
 
     <!-- Shop details -->
-    <AppCard>
+    <Card>
       <AppShopDetails
         :countries="countries"
         :errors="errors"
@@ -25,7 +25,7 @@
       >
         {{ $t("buttons.update") }}
       </AppButtonPrimary>
-    </AppCard>
+    </Card>
 
   </div>
 </template>
@@ -35,7 +35,7 @@ import { mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 import shopManagement from '@/mixins/shop-management'
 
-import AppCard from '@/components/AppCard'
+import Card from '@/components/Card'
 import Heading from '@/components/Heading'
 import AppShopDetails from '@/components/shops/AppShopDetails'
 import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
@@ -61,7 +61,7 @@ export default {
   },
   layout: 'shop-management',
   components: {
-    AppCard,
+    Card,
     Heading,
     AppShopDetails,
     AppButtonPrimary

@@ -2,9 +2,9 @@
   <main>
 
     <!-- Page contents -->
-    <AppContentSection>
+    <ContentSection>
 
-      <AppSplash
+      <Splash
         :title="$t('shop_creator.steps.done.title')"
         :subtitle="$t('shop_creator.steps.done.paragraph')"
         type="success"
@@ -13,7 +13,7 @@
         <template slot="illustration">
           <IllustrationSuccess/>
         </template>
-      </AppSplash>
+      </Splash>
 
       <!-- Controls -->
       <AppShopCreatorControls>
@@ -37,7 +37,7 @@
           {{ $t("buttons.finish") }}
         </AppButtonPrimary>
       </AppShopCreatorControls>
-    </AppContentSection>
+    </ContentSection>
   </main>
 </template>
 
@@ -45,8 +45,8 @@
 import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
-import AppSplash from '@/components/AppSplash'
-import AppContentSection from '@/components/AppContentSection'
+import Splash from '@/components/Splash'
+import ContentSection from '@/components/ContentSection'
 import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 import AppButtonTertiary from '@/components/buttons/AppButtonTertiary'
 import AppShopCreatorControls from '@/components/shops/AppShopCreatorControls'
@@ -77,8 +77,8 @@ export default {
     mode: 'out-in'
   },
   components: {
-    AppSplash,
-    AppContentSection,
+    Splash,
+    ContentSection,
     AppButtonPrimary,
     AppButtonTertiary,
     AppShopCreatorControls,

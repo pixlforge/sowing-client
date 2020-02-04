@@ -18,9 +18,9 @@
       />
     </AppResourceHeader>
 
-    <AppCard>
+    <Card>
       List of all products
-    </AppCard>
+    </Card>
 
   </div>
 </template>
@@ -28,7 +28,7 @@
 <script>
 import shopManagement from '@/mixins/shop-management'
 
-import AppCard from '@/components/AppCard'
+import Card from '@/components/Card'
 import Heading from '@/components/Heading'
 import AppAddButtonLink from '@/components/buttons/AppAddButtonLink'
 import AppResourceHeader from '@/components/resources/AppResourceHeader'
@@ -54,7 +54,7 @@ export default {
   layout: 'shop-management',
   middleware: ['authenticated', 'hasShop'],
   components: {
-    AppCard,
+    Card,
     Heading,
     AppAddButtonLink,
     AppResourceHeader

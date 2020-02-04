@@ -9,7 +9,7 @@
       {{ $t("pages.account.password.title") }}
     </Heading>
 
-    <AppCard>
+    <Card>
       <form @submit.prevent="update">
 
         <!-- Password -->
@@ -50,14 +50,14 @@
           {{ $t("buttons.update") }}
         </AppButtonPrimary>
       </form>
-    </AppCard>
-  </div>
+    </Card>
+    </card></div>
 </template>
 
 <script>
 import { mapActions } from 'vuex'
 
-import AppCard from '@/components/AppCard'
+import Card from '@/components/Card'
 import Heading from '@/components/Heading'
 import AppFormGroup from '@/components/forms/AppFormGroup'
 import AppFormInput from '@/components/forms/AppFormInput'
@@ -67,7 +67,7 @@ import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 
 export default {
   components: {
-    AppCard,
+    Card,
     Heading,
     AppFormGroup,
     AppFormInput,

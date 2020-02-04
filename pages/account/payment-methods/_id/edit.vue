@@ -18,7 +18,7 @@
       </Heading>
     </header>
 
-    <AppCard>
+    <Card>
       <AppParagraph class="text-center mb-60">
         {{ $t('pages.account.payment_methods.edit.paragraph') }}
       </AppParagraph>
@@ -30,13 +30,13 @@
       >
         {{ $t('buttons.default') }}
       </AppButtonPrimary>
-    </AppCard>
+    </Card>
 
   </div>
 </template>
 
 <script>
-import AppCard from '@/components/AppCard'
+import Card from '@/components/Card'
 import Heading from '@/components/Heading'
 import AppBackButton from '@/components/buttons/AppBackButton'
 import AppParagraph from '@/components/paragraphs/AppParagraph'
@@ -44,7 +44,7 @@ import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 
 export default {
   components: {
-    AppCard,
+    Card,
     Heading,
     AppBackButton,
     AppParagraph,

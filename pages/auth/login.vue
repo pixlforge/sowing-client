@@ -2,7 +2,7 @@
   <main>
 
     <!-- Page contents -->
-    <AppContentSection class="max-w-600">
+    <ContentSection class="max-w-600">
 
       <!-- Page title -->
       <Heading
@@ -75,7 +75,7 @@
           {{ $t("buttons.connection") }}
         </AppButtonPrimary>
       </form>
-    </AppContentSection>
+    </ContentSection>
 
   </main>
 </template>
@@ -87,7 +87,7 @@ import Heading from '@/components/Heading'
 import AppFormLabel from '@/components/forms/AppFormLabel'
 import AppFormInput from '@/components/forms/AppFormInput'
 import AppFormGroup from '@/components/forms/AppFormGroup'
-import AppContentSection from '@/components/AppContentSection'
+import ContentSection from '@/components/ContentSection'
 import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 import AppFormValidation from '@/components/forms/AppFormValidation'
 import AppButtonLinkTertiary from '@/components/buttons/AppButtonLinkTertiary'
@@ -117,7 +117,7 @@ export default {
     AppFormLabel,
     AppFormInput,
     AppFormGroup,
-    AppContentSection,
+    ContentSection,
     AppButtonPrimary,
     AppFormValidation,
     AppButtonLinkTertiary

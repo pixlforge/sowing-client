@@ -35,7 +35,7 @@
       </div>
     </header>
 
-    <AppCard>
+    <Card>
       <div class="rounded-lg border-2 border-gray-100 px-20 py-20 md:py-30">
         <div class="flex flex-col md:flex-row">
 
@@ -82,7 +82,7 @@
           </div>
         </div>
       </div>
-    </AppCard>
+    </Card>
 
     <!-- Confirmation modal -->
     <AppConfirmationModal
@@ -101,7 +101,7 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 
-import AppCard from '@/components/AppCard'
+import Card from '@/components/Card'
 import Heading from '@/components/Heading'
 import AppBackButton from '@/components/buttons/AppBackButton'
 import AppEditButton from '@/components/buttons/AppEditButton'
@@ -110,7 +110,7 @@ import AppConfirmationModal from '@/components/modals/AppConfirmationModal'
 
 export default {
   components: {
-    AppCard,
+    Card,
     Heading,
     AppBackButton,
     AppEditButton,

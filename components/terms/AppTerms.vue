@@ -7,7 +7,7 @@
       {{ $t("pages.terms.title") }}
     </Heading>
 
-    <AppContentSection class="max-w-800">
+    <ContentSection class="max-w-800">
       <AppParagraphGroup>
         <Heading
           tag="h2"
@@ -75,21 +75,21 @@
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet incidunt eum, eligendi culpa quod rem consequatur? Minus modi ducimus molestias perspiciatis molestiae commodi, earum maxime exercitationem corrupti, magnam possimus omnis?
         </AppParagraph>
       </AppParagraphGroup>
-    </AppContentSection>
+    </ContentSection>
 
   </div>
 </template>
 
 <script>
 import Heading from '@/components/Heading'
-import AppContentSection from '@/components/AppContentSection'
+import ContentSection from '@/components/ContentSection'
 import AppParagraph from '@/components/paragraphs/AppParagraph'
 import AppParagraphGroup from '@/components/paragraphs/AppParagraphGroup'
 
 export default {
   components: {
     Heading,
-    AppContentSection,
+    ContentSection,
     AppParagraph,
     AppParagraphGroup
   }

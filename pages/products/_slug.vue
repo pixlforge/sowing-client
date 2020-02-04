@@ -24,9 +24,9 @@
     </AppHeader>
 
     <!-- Product details -->
-    <AppContentSection>
+    <ContentSection>
       <AppProductDetails :product="product"/>
-    </AppContentSection>
+    </ContentSection>
 
     <!-- Streak newsletter -->
     <AppStreakNewsletter/>
@@ -39,7 +39,7 @@ import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
 import AppHeader from '@/components/headers/AppHeader'
-import AppContentSection from '@/components/AppContentSection'
+import ContentSection from '@/components/ContentSection'
 import AppProductDetails from '@/components/products/AppProductDetails'
 import AppStreakNewsletter from '@/components/streaks/AppStreakNewsletter'
 import AppHeaderButtonLink from '@/components/buttons/AppHeaderButtonLink'
@@ -59,7 +59,7 @@ export default {
   },
   components: {
     AppHeader,
-    AppContentSection,
+    ContentSection,
     AppProductDetails,
     AppStreakNewsletter,
     AppHeaderButtonLink

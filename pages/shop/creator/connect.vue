@@ -2,7 +2,7 @@
   <main>
 
     <!-- Page contents -->
-    <AppContentSection>
+    <ContentSection>
 
       <!-- Title -->
       <Heading
@@ -39,7 +39,7 @@
         </template>
 
         <template v-if="stripeInfosReceived">
-          <AppSplash
+          <Splash
             type="success"
             title="Félicitations!"
             subtitle="Votre compte Stripe a bien été associé à votre boutique!"
@@ -70,7 +70,7 @@
           {{ $t("buttons.finalize_shop_creation") }}
         </AppButtonPrimary>
       </AppShopCreatorControls>
-    </AppContentSection>
+    </ContentSection>
   </main>
 </template>
 
@@ -79,8 +79,8 @@ import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
 import Heading from '@/components/Heading'
-import AppSplash from '@/components/AppSplash'
-import AppContentSection from '@/components/AppContentSection'
+import Splash from '@/components/Splash'
+import ContentSection from '@/components/ContentSection'
 import AppParagraph from '@/components/paragraphs/AppParagraph'
 import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 import AppButtonTertiary from '@/components/buttons/AppButtonTertiary'
@@ -116,8 +116,8 @@ export default {
   },
   components: {
     Heading,
-    AppSplash,
-    AppContentSection,
+    Splash,
+    ContentSection,
     AppParagraph,
     AppButtonPrimary,
     AppButtonTertiary,

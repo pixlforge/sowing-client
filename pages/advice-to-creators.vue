@@ -8,7 +8,7 @@
     />
 
     <!-- Content -->
-    <AppContentSection class="max-w-800">
+    <ContentSection class="max-w-800">
       <Heading
         tag="h1"
         visual="h4"
@@ -31,7 +31,7 @@
       <div class="my-72 md:my-96">
         <IllustrationNewIdeas class="max-w-400 mx-auto"/>
       </div>
-    </AppContentSection>
+    </ContentSection>
 
     <!-- Streak newsletter -->
     <AppStreakNewsletter/>
@@ -43,7 +43,7 @@
 import Heading from '@/components/Heading'
 import AppList from '@/components/paragraphs/AppList'
 import AppHeader from '@/components/headers/AppHeader'
-import AppContentSection from '@/components/AppContentSection'
+import ContentSection from '@/components/ContentSection'
 import AppParagraph from '@/components/paragraphs/AppParagraph'
 import AppStreakNewsletter from '@/components/streaks/AppStreakNewsletter'
 import IllustrationNewIdeas from '@/components/illustrations/IllustrationNewIdeas'
@@ -65,7 +65,7 @@ export default {
     Heading,
     AppList,
     AppHeader,
-    AppContentSection,
+    ContentSection,
     AppParagraph,
     AppStreakNewsletter,
     IllustrationNewIdeas

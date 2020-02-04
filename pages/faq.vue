@@ -8,7 +8,7 @@
     />
 
     <!-- Content -->
-    <AppContentSection class="max-w-800">
+    <ContentSection class="max-w-800">
       <AppParagraphGroup>
         <Heading
           tag="h2"
@@ -53,7 +53,7 @@
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet incidunt eum, eligendi culpa quod rem consequatur? Minus modi ducimus molestias perspiciatis molestiae commodi, earum maxime exercitationem corrupti, magnam possimus omnis?
         </AppParagraph>
       </AppParagraphGroup>
-    </AppContentSection>
+    </ContentSection>
 
     <!-- Streak newsletter -->
     <AppStreakNewsletter/>
@@ -64,7 +64,7 @@
 <script>
 import Heading from '@/components/Heading'
 import AppHeader from '@/components/headers/AppHeader'
-import AppContentSection from '@/components/AppContentSection'
+import ContentSection from '@/components/ContentSection'
 import AppParagraph from '@/components/paragraphs/AppParagraph'
 import AppParagraphGroup from '@/components/paragraphs/AppParagraphGroup'
 import AppStreakNewsletter from '@/components/streaks/AppStreakNewsletter'
@@ -85,7 +85,7 @@ export default {
   components: {
     Heading,
     AppHeader,
-    AppContentSection,
+    ContentSection,
     AppParagraph,
     AppParagraphGroup,
     AppStreakNewsletter

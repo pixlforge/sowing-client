@@ -11,7 +11,7 @@
         :to="{ name: 'index' }"
         class="w-full max-w-200 sm:max-w-300 lg:max-w-400 my-36 px-20"
       >
-        <AppLogo/>
+        <Logo/>
       </nuxt-link>
 
       <nuxt/>
@@ -20,12 +20,12 @@
 </template>
 
 <script>
-import AppLogo from '@/components/AppLogo'
+import Logo from '@/components/Logo'
 import AppAlert from '@/components/globals/AppAlert'
 
 export default {
   components: {
-    AppLogo,
+    Logo,
     AppAlert
   }
 }

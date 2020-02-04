@@ -8,7 +8,7 @@
     />
 
     <!-- Page contents -->
-    <AppContentSection>
+    <ContentSection>
       <div
         v-if="orders.length"
         class="mt-96"
@@ -25,7 +25,7 @@
       >
         <p>No orders yet</p>
       </div>
-    </AppContentSection>
+    </ContentSection>
 
   </main>
 </template>
@@ -33,7 +33,7 @@
 <script>
 import AppOrder from '@/components/orders/AppOrder'
 import AppHeader from '@/components/headers/AppHeader'
-import AppContentSection from '@/components/AppContentSection'
+import ContentSection from '@/components/ContentSection'
 
 export default {
   middleware: ['authenticated'],
@@ -57,7 +57,7 @@ export default {
   components: {
     AppOrder,
     AppHeader,
-    AppContentSection
+    ContentSection
   },
   data() {
     return {

@@ -2,7 +2,7 @@
   <main>
 
     <!-- Page contents -->
-    <AppContentSection>
+    <ContentSection>
 
       <!-- Title -->
       <Heading
@@ -50,7 +50,7 @@
           {{ $t("buttons.next") }}
         </AppButtonPrimary>
       </AppShopCreatorControls>
-    </AppContentSection>
+    </ContentSection>
   </main>
 </template>
 
@@ -59,7 +59,7 @@ import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
 import Heading from '@/components/Heading'
-import AppContentSection from '@/components/AppContentSection'
+import ContentSection from '@/components/ContentSection'
 import AppParagraph from '@/components/paragraphs/AppParagraph'
 import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 import AppButtonTertiary from '@/components/buttons/AppButtonTertiary'
@@ -93,7 +93,7 @@ export default {
   },
   components: {
     Heading,
-    AppContentSection,
+    ContentSection,
     AppParagraph,
     AppButtonPrimary,
     AppButtonTertiary,

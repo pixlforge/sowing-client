@@ -8,7 +8,7 @@
     />
 
     <!-- Content -->
-    <AppContentSection>
+    <ContentSection>
 
       <!-- Subcategories with sections -->
       <template v-if="categoryHasSections">
@@ -51,7 +51,7 @@
           />
         </div>
       </template>
-    </AppContentSection>
+    </ContentSection>
 
   </main>
 </template>
@@ -61,7 +61,7 @@ import { mapGetters } from 'vuex'
 
 import Heading from '@/components/Heading'
 import AppHeader from '@/components/headers/AppHeader'
-import AppContentSection from '@/components/AppContentSection'
+import ContentSection from '@/components/ContentSection'
 import AppSubCategory from '@/components/categories/AppSubCategory'
 
 export default {
@@ -73,7 +73,7 @@ export default {
   components: {
     Heading,
     AppHeader,
-    AppContentSection,
+    ContentSection,
     AppSubCategory
   },
   data() {

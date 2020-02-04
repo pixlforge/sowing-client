@@ -17,7 +17,7 @@
       </Heading>
     </div>
 
-    <AppCard>
+    <Card>
       <form @submit.prevent="store">
 
         <!-- First row -->
@@ -190,13 +190,13 @@
           </AppButtonLinkTertiary>
         </div>
       </form>
-    </AppCard>
+    </Card>
 
-  </div>
+    </card></div>
 </template>
 
 <script>
-import AppCard from '@/components/AppCard'
+import Card from '@/components/Card'
 import Heading from '@/components/Heading'
 import AppFormRow from '@/components/forms/AppFormRow'
 import AppFormGroup from '@/components/forms/AppFormGroup'
@@ -213,7 +213,7 @@ import AppButtonLinkTertiary from '@/components/buttons/AppButtonLinkTertiary'
 
 export default {
   components: {
-    AppCard,
+    Card,
     Heading,
     AppFormGroup,
     AppFormLabel,

@@ -5,7 +5,7 @@
     <AppAlert/>
 
     <!-- Navbar -->
-    <AppNavbar/>
+    <Navbar/>
 
     <!-- Categories -->
     <AppCategoryBar/>
@@ -40,7 +40,7 @@
 import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
-import AppNavbar from '@/components/AppNavbar'
+import Navbar from '@/components/Navbar'
 import AppAlert from '@/components/globals/AppAlert'
 import AppFooter from '@/components/footer/AppFooter'
 import AppHeader from '@/components/headers/AppHeader'
@@ -51,7 +51,7 @@ import AppShopNavigation from '@/components/shops/navigation/AppShopNavigation'
 
 export default {
   components: {
-    AppNavbar,
+    Navbar,
     AppAlert,
     AppFooter,
     AppHeader,

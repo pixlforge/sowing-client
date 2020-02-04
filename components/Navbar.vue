@@ -5,7 +5,7 @@
 
       <!-- Logo -->
       <nuxt-link :to="{ name: 'index' }">
-        <AppLogo class="w-48"/>
+        <Logo class="w-48"/>
       </nuxt-link>
 
       <div class="flex md:hidden">
@@ -63,7 +63,7 @@
 </template>
 
 <script>
-import AppLogo from '@/components/AppLogo'
+import Logo from '@/components/Logo'
 import AppMenu from '@/components/menus/AppMenu'
 import AppButtonCart from '@/components/buttons/AppButtonCart'
 import AppButtonSearch from '@/components/buttons/AppButtonSearch'
@@ -73,7 +73,7 @@ import AppButtonLinkSecondary from '@/components/buttons/AppButtonLinkSecondary'
 
 export default {
   components: {
-    AppLogo,
+    Logo,
     AppMenu,
     AppButtonCart,
     AppButtonSearch,

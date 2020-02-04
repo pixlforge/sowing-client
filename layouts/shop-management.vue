@@ -5,7 +5,7 @@
     <AppAlert/>
 
     <!-- Navbar -->
-    <AppNavbar/>
+    <Navbar/>
 
     <!-- Shop cover image -->
     <AppShopCover
@@ -42,7 +42,7 @@
 
       <!-- User owns a shop -->
       <template v-if="userHasShop">
-        <AppContentSection>
+        <ContentSection>
 
           <!-- Content -->
           <div class="w-full flex">
@@ -88,13 +88,13 @@
               <nuxt/>
             </section>
           </div>
-        </AppContentSection>
+        </ContentSection>
       </template>
 
       <!-- User does not own a shop -->
       <template v-else>
-        <AppContentSection class="max-w-800">
-          <AppSplash
+        <ContentSection class="max-w-800">
+          <Splash
             :title="$t('pages.shop.not_created_yet')"
             class="max-w-800"
           >
@@ -107,7 +107,7 @@
                 alt="Illustration of a building under construction"
               >
             </template>
-          </AppSplash>
+          </Splash>
 
           <!-- Shop creation link -->
           <AppButtonLinkPrimary
@@ -118,7 +118,7 @@
           >
             {{ $t("buttons.create_my_shop") }}
           </AppButtonLinkPrimary>
-        </AppContentSection>
+        </ContentSection>
       </template>
     </main>
 
@@ -134,15 +134,15 @@
 import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
-import AppSplash from '@/components/AppSplash'
-import AppNavbar from '@/components/AppNavbar'
+import Splash from '@/components/Splash'
+import Navbar from '@/components/Navbar'
 import AppAlert from '@/components/globals/AppAlert'
 import AppFooter from '@/components/footer/AppFooter'
 import AppHeader from '@/components/headers/AppHeader'
 import AppSideMenu from '@/components/menus/AppSideMenu'
 import AppShopCover from '@/components/shops/AppShopCover'
 import AppDisclaimer from '@/components/footer/AppDisclaimer'
-import AppContentSection from '@/components/AppContentSection'
+import ContentSection from '@/components/ContentSection'
 import AppHeaderList from '@/components/headers/AppHeaderList'
 import AppSideMenuList from '@/components/menus/AppSideMenuList'
 import AppSideMenuItem from '@/components/menus/AppSideMenuItem'
@@ -151,15 +151,15 @@ import AppButtonLinkPrimary from '@/components/buttons/AppButtonLinkPrimary'
 
 export default {
   components: {
-    AppSplash,
-    AppNavbar,
+    Splash,
+    Navbar,
     AppAlert,
     AppFooter,
     AppHeader,
     AppSideMenu,
     AppShopCover,
     AppDisclaimer,
-    AppContentSection,
+    ContentSection,
     AppHeaderList,
     AppSideMenuList,
     AppSideMenuItem,

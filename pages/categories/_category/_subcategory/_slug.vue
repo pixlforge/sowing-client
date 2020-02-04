@@ -7,7 +7,7 @@
       :description="subcategory.description[locale]"
     />
 
-    <AppContentSection>
+    <ContentSection>
       <div class="flex flex-wrap justify-center -mx-16">
 
         <!-- Products -->
@@ -17,7 +17,7 @@
           :product="product"
         />
       </div>
-    </AppContentSection>
+    </ContentSection>
 
   </main>
 </template>
@@ -27,7 +27,7 @@ import { mapGetters } from 'vuex'
 
 import AppHeader from '@/components/headers/AppHeader'
 import AppProduct from '@/components/products/AppProduct'
-import AppContentSection from '@/components/AppContentSection'
+import ContentSection from '@/components/ContentSection'
 
 export default {
   head() {
@@ -38,7 +38,7 @@ export default {
   components: {
     AppHeader,
     AppProduct,
-    AppContentSection
+    ContentSection
   },
   data() {
     return {

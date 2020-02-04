@@ -1,5 +1,5 @@
 <template>
-  <AppContentSection>
+  <ContentSection>
 
     <!-- Icon -->
     <div class="text-center mb-60">
@@ -43,17 +43,17 @@
     <div class="flex justify-center px-20">
       <slot name="illustration"/>
     </div>
-  </AppContentSection>
+  </ContentSection>
 </template>
 
 <script>
 import Heading from '@/components/Heading'
-import AppContentSection from '@/components/AppContentSection'
+import ContentSection from '@/components/ContentSection'
 
 export default {
   components: {
     Heading,
-    AppContentSection
+    ContentSection
   },
   props: {
     type: {

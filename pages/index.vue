@@ -17,7 +17,7 @@
     </section>
 
     <!-- Features -->
-    <AppContentSection class="max-w-1000">
+    <ContentSection class="max-w-1000">
       <Heading
         tag="h1"
         visual="main"
@@ -27,37 +27,37 @@
       </Heading>
 
       <div class="flex flex-wrap justify-between -mx-20">
-        <AppFeature
+        <Feature
           :title="$t('home.features.first.title')"
           :body="$t('home.features.first.body')"
           icon="lightbulb"
         />
 
-        <AppFeature
+        <Feature
           :title="$t('home.features.second.title')"
           :body="$t('home.features.second.body')"
           icon="eye"
         />
 
-        <AppFeature
+        <Feature
           :title="$t('home.features.third.title')"
           :body="$t('home.features.third.body')"
           icon="rocket"
         />
 
-        <AppFeature
+        <Feature
           :title="$t('home.features.fourth.title')"
           :body="$t('home.features.fourth.body')"
           icon="shield-check"
         />
       </div>
-    </AppContentSection>
+    </ContentSection>
 
     <!-- Streak register -->
     <AppStreakRegister/>
 
     <!-- Shops -->
-    <AppContentSection>
+    <ContentSection>
       <Heading
         tag="h1"
         visual="main"
@@ -73,10 +73,10 @@
           class="w-full lg:w-1/2"
         />
       </div>
-    </AppContentSection>
+    </ContentSection>
 
     <!-- Categories -->
-    <AppContentSection>
+    <ContentSection>
       <Heading
         tag="h1"
         visual="main"
@@ -91,10 +91,10 @@
           :category="category"
         />
       </div>
-    </AppContentSection>
+    </ContentSection>
 
     <!-- Reviews -->
-    <AppContentSection class="max-w-1000">
+    <ContentSection class="max-w-1000">
       <Heading
         tag="h1"
         visual="main"
@@ -103,13 +103,13 @@
       </Heading>
 
       <div class="mt-60 sm:mt-132">
-        <AppReview
+        <Review
           v-for="review in reviews"
           :key="review.id"
           :review="review"
         />
       </div>
-    </AppContentSection>
+    </ContentSection>
 
     <!-- Streak newsletter -->
     <AppStreakNewsletter/>
@@ -121,10 +121,10 @@
 import { mapGetters } from 'vuex'
 
 import Heading from '@/components/Heading'
-import AppReview from '@/components/AppReview'
-import AppFeature from '@/components/AppFeature'
+import Review from '@/components/Review'
+import Feature from '@/components/Feature'
 import AppShopCard from '@/components/shops/AppShopCard'
-import AppContentSection from '@/components/AppContentSection'
+import ContentSection from '@/components/ContentSection'
 import AppCategoryCard from '@/components/categories/AppCategoryCard'
 import AppStreakRegister from '@/components/streaks/AppStreakRegister'
 import AppStreakNewsletter from '@/components/streaks/AppStreakNewsletter'
@@ -138,10 +138,10 @@ export default {
   },
   components: {
     Heading,
-    AppReview,
-    AppFeature,
+    Review,
+    Feature,
     AppShopCard,
-    AppContentSection,
+    ContentSection,
     AppCategoryCard,
     AppStreakRegister,
     AppStreakNewsletter,

@@ -8,7 +8,7 @@
     />
 
     <!-- Splash -->
-    <AppSplash
+    <Splash
       :title="$t('pages.register_success.congratulations')"
       :subtitle="$t('pages.register_success.account_created')"
       type="success"
@@ -20,12 +20,12 @@
           src="~assets/img/success_smiley.svg"
         >
       </template>
-    </AppSplash>
+    </Splash>
   </main>
 </template>
 
 <script>
-import AppSplash from '@/components/AppSplash'
+import Splash from '@/components/Splash'
 import AppHeader from '@/components/headers/AppHeader'
 
 export default {
@@ -36,7 +36,7 @@ export default {
     }
   },
   components: {
-    AppSplash,
+    Splash,
     AppHeader
   }
 }

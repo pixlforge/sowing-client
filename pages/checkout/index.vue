@@ -7,7 +7,7 @@
       icon="cash-register"
     />
 
-    <AppContentSection>
+    <ContentSection>
       <div class="flex">
         <div class="w-3/4 mr-48">
 
@@ -107,7 +107,7 @@
           </AppButtonPrimary>
         </div>
       </div>
-    </AppContentSection>
+    </ContentSection>
 
   </main>
 </template>
@@ -117,7 +117,7 @@ import { mapGetters, mapActions } from 'vuex'
 
 import Heading from '@/components/Heading'
 import AppHeader from '@/components/headers/AppHeader'
-import AppContentSection from '@/components/AppContentSection'
+import ContentSection from '@/components/ContentSection'
 import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 import AppShippingMethods from '@/components/addresses/AppShippingMethods'
 import AppShippingAddress from '@/components/addresses/AppShippingAddress'
@@ -146,7 +146,7 @@ export default {
   components: {
     Heading,
     AppHeader,
-    AppContentSection,
+    ContentSection,
     AppButtonPrimary,
     AppShippingMethods,
     AppShippingAddress,

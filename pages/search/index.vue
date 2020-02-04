@@ -8,7 +8,7 @@
       icon="search"
     />
 
-    <AppContentSection class="min-h-half-screen">
+    <ContentSection class="min-h-half-screen">
 
       <!-- Search field -->
       <div class="search__input-group">
@@ -37,7 +37,7 @@
         />
 
       </div>
-    </AppContentSection>
+    </ContentSection>
   </main>
 </template>
 
@@ -46,7 +46,7 @@ import { mapGetters } from 'vuex'
 
 import AppHeader from '@/components/headers/AppHeader'
 import AppFormInput from '@/components/forms/AppFormInput'
-import AppContentSection from '@/components/AppContentSection'
+import ContentSection from '@/components/ContentSection'
 import AppSearchResult from '@/components/search/AppSearchResult'
 
 export default {
@@ -65,7 +65,7 @@ export default {
   components: {
     AppHeader,
     AppFormInput,
-    AppContentSection,
+    ContentSection,
     AppSearchResult
   },
   data() {

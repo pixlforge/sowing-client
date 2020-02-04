@@ -8,7 +8,7 @@
     />
 
     <!-- Page contents -->
-    <AppContentSection>
+    <ContentSection>
 
       <!-- Terms -->
       <AppTerms/>
@@ -37,7 +37,7 @@
         </AppButtonPrimary>
 
       </div>
-    </AppContentSection>
+    </ContentSection>
   </main>
 </template>
 
@@ -46,7 +46,7 @@ import { mapGetters, mapActions } from 'vuex'
 
 import AppTerms from '@/components/terms/AppTerms'
 import AppHeader from '@/components/headers/AppHeader'
-import AppContentSection from '@/components/AppContentSection'
+import ContentSection from '@/components/ContentSection'
 import AppFormCheckbox from '@/components/forms/AppFormCheckbox'
 import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 
@@ -72,7 +72,7 @@ export default {
   components: {
     AppTerms,
     AppHeader,
-    AppContentSection,
+    ContentSection,
     AppFormCheckbox,
     AppButtonPrimary
   },

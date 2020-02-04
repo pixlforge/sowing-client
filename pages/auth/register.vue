@@ -2,7 +2,7 @@
   <main>
 
     <!-- Form -->
-    <AppContentSection class="max-w-600">
+    <ContentSection class="max-w-600">
 
       <!-- Page title -->
       <Heading
@@ -116,7 +116,7 @@
           {{ $t("buttons.create_account") }}
         </AppButtonPrimary>
       </form>
-    </AppContentSection>
+    </ContentSection>
   </main>
 </template>
 
@@ -127,7 +127,7 @@ import Heading from '@/components/Heading'
 import AppFormGroup from '@/components/forms/AppFormGroup'
 import AppFormLabel from '@/components/forms/AppFormLabel'
 import AppFormInput from '@/components/forms/AppFormInput'
-import AppContentSection from '@/components/AppContentSection'
+import ContentSection from '@/components/ContentSection'
 import AppFormCheckbox from '@/components/forms/AppFormCheckbox'
 import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 import AppFormValidation from '@/components/forms/AppFormValidation'
@@ -157,7 +157,7 @@ export default {
     AppFormGroup,
     AppFormLabel,
     AppFormInput,
-    AppContentSection,
+    ContentSection,
     AppFormCheckbox,
     AppButtonPrimary,
     AppFormValidation

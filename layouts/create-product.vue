@@ -1,17 +1,17 @@
 <template>
   <div class="min-h-screen bg-gray-100 flex justify-center items-center">
-    <AppContentSection>
+    <ContentSection>
       <nuxt/>
-    </AppContentSection>
+    </ContentSection>
   </div>
 </template>
 
 <script>
-import AppContentSection from '@/components/AppContentSection'
+import ContentSection from '@/components/ContentSection'
 
 export default {
   components: {
-    AppContentSection
+    ContentSection
   }
 }
 </script>

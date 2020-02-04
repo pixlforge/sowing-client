@@ -18,7 +18,7 @@
       />
     </AppResourceHeader>
 
-    <AppCard>
+    <Card>
 
       <!-- Addresses -->
       <AppResourceList v-if="addresses.length">
@@ -44,7 +44,7 @@
           {{ $t('buttons.add_address') }}
         </AppButtonLinkPrimary>
       </div>
-    </AppCard>
+    </Card>
 
     <!-- Confirmation modal -->
     <AppConfirmationModal
@@ -57,13 +57,13 @@
       color="red"
     />
 
-  </div>
+    </card></div>
 </template>
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
 
-import AppCard from '@/components/AppCard'
+import Card from '@/components/Card'
 import Heading from '@/components/Heading'
 import AppParagraph from '@/components/paragraphs/AppParagraph'
 import AppAddressItem from '@/components/addresses/AppAddressItem'
@@ -75,7 +75,7 @@ import AppButtonLinkPrimary from '@/components/buttons/AppButtonLinkPrimary'
 
 export default {
   components: {
-    AppCard,
+    Card,
     Heading,
     AppParagraph,
     AppAddressItem,

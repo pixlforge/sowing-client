@@ -18,7 +18,7 @@
       />
     </AppResourceHeader>
 
-    <AppCard>
+    <Card>
 
       <!-- Payment methods -->
       <AppResourceList v-if="paymentMethods.length">
@@ -44,7 +44,7 @@
           {{ $t('buttons.add_payment_method') }}
         </AppButtonLinkPrimary>
       </div>
-    </AppCard>
+    </Card>
 
     <!-- Confirmation modal -->
     <AppConfirmationModal
@@ -63,7 +63,7 @@
 <script>
 import { mapActions, mapGetters } from 'vuex'
 
-import AppCard from '@/components/AppCard'
+import Card from '@/components/Card'
 import Heading from '@/components/Heading'
 import AppParagraph from '@/components/paragraphs/AppParagraph'
 import AppAddButtonLink from '@/components/buttons/AppAddButtonLink'
@@ -75,7 +75,7 @@ import AppPaymentMethodItem from '@/components/payment-methods/AppPaymentMethodI
 
 export default {
   components: {
-    AppCard,
+    Card,
     Heading,
     AppParagraph,
     AppAddButtonLink,

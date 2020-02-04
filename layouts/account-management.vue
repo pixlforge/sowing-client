@@ -5,7 +5,7 @@
     <AppAlert/>
 
     <!-- Navbar -->
-    <AppNavbar/>
+    <Navbar/>
 
     <!-- Header -->
     <AppHeader
@@ -15,7 +15,7 @@
 
     <!-- Main -->
     <main class="bg-gray-100">
-      <AppContentSection>
+      <ContentSection>
 
         <!-- Content -->
         <div class="w-full flex flex-wrap">
@@ -56,7 +56,7 @@
             <nuxt/>
           </section>
         </div>
-      </AppContentSection>
+      </ContentSection>
     </main>
 
     <!-- Footer -->
@@ -68,25 +68,25 @@
 </template>
 
 <script>
-import AppNavbar from '@/components/AppNavbar'
+import Navbar from '@/components/Navbar'
 import AppAlert from '@/components/globals/AppAlert'
 import AppFooter from '@/components/footer/AppFooter'
 import AppHeader from '@/components/headers/AppHeader'
 import AppSideMenu from '@/components/menus/AppSideMenu'
 import AppDisclaimer from '@/components/footer/AppDisclaimer'
-import AppContentSection from '@/components/AppContentSection'
+import ContentSection from '@/components/ContentSection'
 import AppSideMenuList from '@/components/menus/AppSideMenuList'
 import AppSideMenuItem from '@/components/menus/AppSideMenuItem'
 
 export default {
   components: {
-    AppNavbar,
+    Navbar,
     AppAlert,
     AppFooter,
     AppHeader,
     AppSideMenu,
     AppDisclaimer,
-    AppContentSection,
+    ContentSection,
     AppSideMenuList,
     AppSideMenuItem
   }

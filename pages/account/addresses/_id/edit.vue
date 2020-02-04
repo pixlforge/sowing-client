@@ -19,7 +19,7 @@
     </header>
 
     <!-- Edition -->
-    <AppCard>
+    <Card>
       <form @submit.prevent="update">
 
         <!-- First row -->
@@ -193,7 +193,7 @@
           </AppButtonTertiary>
         </div>
       </form>
-    </AppCard>
+    </Card>
 
   </div>
 </template>
@@ -201,7 +201,7 @@
 <script>
 import { mapActions } from 'vuex'
 
-import AppCard from '@/components/AppCard'
+import Card from '@/components/Card'
 import Heading from '@/components/Heading'
 import AppFormRow from '@/components/forms/AppFormRow'
 import AppFormGroup from '@/components/forms/AppFormGroup'
@@ -218,7 +218,7 @@ import AppFormCheckboxLabel from '@/components/forms/AppFormCheckboxLabel'
 
 export default {
   components: {
-    AppCard,
+    Card,
     Heading,
     AppFormGroup,
     AppFormLabel,

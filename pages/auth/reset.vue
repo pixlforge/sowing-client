@@ -2,7 +2,7 @@
   <main>
 
     <!-- Content -->
-    <AppContentSection class="max-w-600">
+    <ContentSection class="max-w-600">
 
       <!-- Page title -->
       <Heading
@@ -78,7 +78,7 @@
           {{ $t("buttons.password_reset") }}
         </AppButtonPrimary>
       </form>
-    </AppContentSection>
+    </ContentSection>
   </main>
 </template>
 
@@ -89,7 +89,7 @@ import Heading from '@/components/Heading'
 import AppFormGroup from '@/components/forms/AppFormGroup'
 import AppFormLabel from '@/components/forms/AppFormLabel'
 import AppFormInput from '@/components/forms/AppFormInput'
-import AppContentSection from '@/components/AppContentSection'
+import ContentSection from '@/components/ContentSection'
 import AppFormValidation from '@/components/forms/AppFormValidation'
 import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 
@@ -118,7 +118,7 @@ export default {
     AppFormGroup,
     AppFormLabel,
     AppFormInput,
-    AppContentSection,
+    ContentSection,
     AppFormValidation,
     AppButtonPrimary
   },

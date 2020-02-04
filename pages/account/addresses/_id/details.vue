@@ -22,9 +22,9 @@
       <AppDeleteButton @click.native="openModal"/>
     </header>
 
-    <AppCard>
+    <Card>
       <AppAddressCard :address="address"/>
-    </AppCard>
+    </Card>
 
     <!-- Confirmation modal -->
     <AppConfirmationModal
@@ -43,7 +43,7 @@
 <script>
 import { mapActions } from 'vuex'
 
-import AppCard from '@/components/AppCard'
+import Card from '@/components/Card'
 import Heading from '@/components/Heading'
 import AppBackButton from '@/components/buttons/AppBackButton'
 import AppDeleteButton from '@/components/buttons/AppDeleteButton'
@@ -52,7 +52,7 @@ import AppConfirmationModal from '@/components/modals/AppConfirmationModal'
 
 export default {
   components: {
-    AppCard,
+    Card,
     Heading,
     AppBackButton,
     AppDeleteButton,

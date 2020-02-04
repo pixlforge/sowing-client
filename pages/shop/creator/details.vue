@@ -2,7 +2,7 @@
   <main>
 
     <!-- Page contents -->
-    <AppContentSection>
+    <ContentSection>
 
       <!-- Title -->
       <Heading
@@ -51,7 +51,7 @@
           {{ $t("buttons.next") }}
         </AppButtonPrimary>
       </AppShopCreatorControls>
-    </AppContentSection>
+    </ContentSection>
   </main>
 </template>
 
@@ -61,7 +61,7 @@ import theming from '@/mixins/theming'
 
 import Heading from '@/components/Heading'
 import AppShopDetails from '@/components/shops/AppShopDetails'
-import AppContentSection from '@/components/AppContentSection'
+import ContentSection from '@/components/ContentSection'
 import AppParagraph from '@/components/paragraphs/AppParagraph'
 import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 import AppButtonTertiary from '@/components/buttons/AppButtonTertiary'
@@ -95,7 +95,7 @@ export default {
   components: {
     Heading,
     AppShopDetails,
-    AppContentSection,
+    ContentSection,
     AppParagraph,
     AppButtonPrimary,
     AppButtonTertiary,

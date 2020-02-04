@@ -10,9 +10,9 @@
     </Heading>
 
     <!-- Shop customization -->
-    <AppCard>
+    <Card>
       <AppShopCustomization/>
-    </AppCard>
+    </Card>
 
   </div>
 </template>
@@ -21,7 +21,7 @@
 import theming from '@/mixins/theming'
 import shopManagement from '@/mixins/shop-management'
 
-import AppCard from '@/components/AppCard'
+import Card from '@/components/Card'
 import Heading from '@/components/Heading'
 import AppShopCustomization from '@/components/shops/AppShopCustomization'
 
@@ -46,7 +46,7 @@ export default {
   },
   layout: 'shop-management',
   components: {
-    AppCard,
+    Card,
     Heading,
     AppShopCustomization
   },

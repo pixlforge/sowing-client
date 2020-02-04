@@ -9,9 +9,9 @@
       Dashboard
     </Heading>
 
-    <AppCard>
+    <Card>
       this is the dashboard of the shop management section
-    </AppCard>
+    </Card>
 
   </div>
 </template>
@@ -19,7 +19,7 @@
 <script>
 import shopManagement from '@/mixins/shop-management'
 
-import AppCard from '@/components/AppCard'
+import Card from '@/components/Card'
 import Heading from '@/components/Heading'
 
 export default {
@@ -41,7 +41,7 @@ export default {
     }
   },
   components: {
-    AppCard,
+    Card,
     Heading
   },
   middleware: ['authenticated'],

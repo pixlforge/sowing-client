@@ -8,7 +8,7 @@
     />
 
     <!-- Page contents -->
-    <AppContentSection>
+    <ContentSection>
 
       <!-- Cart Overview -->
       <div>
@@ -21,7 +21,7 @@
         </template>
         <div v-else>
 
-          <AppSplash
+          <Splash
             :title="$t('pages.cart.cart_is_empty')"
             :subtitle="$t('pages.cart.add_something')"
             class="max-w-800"
@@ -32,7 +32,7 @@
                 alt="Illustration of an empty box"
               >
             </template>
-          </AppSplash>
+          </Splash>
 
         </div>
       </div>
@@ -65,7 +65,7 @@
       >
         {{ $t("pages.cart.checkout") }}
       </AppButtonLinkPrimary>
-    </AppContentSection>
+    </ContentSection>
 
   </main>
 </template>
@@ -73,9 +73,9 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 
-import AppSplash from '@/components/AppSplash'
+import Splash from '@/components/Splash'
 import AppHeader from '@/components/headers/AppHeader'
-import AppContentSection from '@/components/AppContentSection'
+import ContentSection from '@/components/ContentSection'
 import AppButtonLinkPrimary from '@/components/buttons/AppButtonLinkPrimary'
 import AppCartOverviewProduct from '@/components/cart/AppCartOverviewProduct'
 
@@ -99,9 +99,9 @@ export default {
     }
   },
   components: {
-    AppSplash,
+    Splash,
     AppHeader,
-    AppContentSection,
+    ContentSection,
     AppButtonLinkPrimary,
     AppCartOverviewProduct
   },

@@ -5,7 +5,7 @@
     <AppAlert/>
 
     <!-- Navbar -->
-    <AppNavbar/>
+    <Navbar/>
 
     <!-- Categories -->
     <AppCategoryBar/>
@@ -24,7 +24,7 @@
 <script>
 import theming from '@/mixins/theming'
 
-import AppNavbar from '@/components/AppNavbar'
+import Navbar from '@/components/Navbar'
 import AppAlert from '@/components/globals/AppAlert'
 import AppFooter from '@/components/footer/AppFooter'
 import AppDisclaimer from '@/components/footer/AppDisclaimer'
@@ -32,7 +32,7 @@ import AppCategoryBar from '@/components/categories/AppCategoryBar'
 
 export default {
   components: {
-    AppNavbar,
+    Navbar,
     AppAlert,
     AppFooter,
     AppDisclaimer,
