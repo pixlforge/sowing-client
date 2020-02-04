@@ -23,14 +23,14 @@
       <div class="search__results-wrapper">
 
         <!-- Product search results -->
-        <AppSearchResult
+        <SearchResult
           :query="query"
           index-name="products"
           class="search__results-component search__results-component--left"
         />
 
         <!-- Shop search results -->
-        <AppSearchResult
+        <SearchResult
           :query="query"
           index-name="shops"
           class="search__results-component search__results-component--right"
@@ -47,7 +47,7 @@ import { mapGetters } from 'vuex'
 import AppHeader from '@/components/headers/AppHeader'
 import AppFormInput from '@/components/forms/AppFormInput'
 import ContentSection from '@/components/ContentSection'
-import AppSearchResult from '@/components/search/AppSearchResult'
+import SearchResult from '@/components/search/SearchResult'
 
 export default {
   head() {
@@ -66,7 +66,7 @@ export default {
     AppHeader,
     AppFormInput,
     ContentSection,
-    AppSearchResult
+    SearchResult
   },
   data() {
     return {
