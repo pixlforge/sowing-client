@@ -2,7 +2,7 @@
   <div>
 
     <!-- Alert -->
-    <AppAlert/>
+    <Alert/>
 
     <!-- Navbar -->
     <Navbar/>
@@ -136,7 +136,7 @@ import theming from '@/mixins/theming'
 
 import Splash from '@/components/Splash'
 import Navbar from '@/components/Navbar'
-import AppAlert from '@/components/globals/AppAlert'
+import Alert from '@/components/globals/Alert'
 import AppFooter from '@/components/footer/AppFooter'
 import Header from '@/components/headers/Header'
 import SideMenu from '@/components/menus/SideMenu'
@@ -153,7 +153,7 @@ export default {
   components: {
     Splash,
     Navbar,
-    AppAlert,
+    Alert,
     AppFooter,
     Header,
     SideMenu,

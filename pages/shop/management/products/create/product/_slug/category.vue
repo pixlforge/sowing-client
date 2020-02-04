@@ -30,9 +30,9 @@
     </header>
 
     <!-- Infotip -->
-    <AppInfoTip icon="info">
+    <InfoTip icon="info">
       {{ $t('products.management.create.tips.category') }}
-    </AppInfoTip>
+    </InfoTip>
 
     <!-- Form -->
     <form
@@ -118,7 +118,7 @@
 import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
-import AppInfoTip from '@/components/globals/AppInfoTip'
+import InfoTip from '@/components/globals/InfoTip'
 import AppFormGroup from '@/components/forms/AppFormGroup'
 import AppFormLabel from '@/components/forms/AppFormLabel'
 import AppFormSelect from '@/components/forms/AppFormSelect'
@@ -156,7 +156,7 @@ export default {
     'hasShop'
   ],
   components: {
-    AppInfoTip,
+    InfoTip,
     AppFormGroup,
     AppFormLabel,
     AppFormSelect,

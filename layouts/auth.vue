@@ -2,7 +2,7 @@
   <div>
 
     <!-- Alert -->
-    <AppAlert/>
+    <Alert/>
 
     <div class="min-h-screen flex flex-col justify-center items-center">
 
@@ -21,12 +21,12 @@
 
 <script>
 import Logo from '@/components/Logo'
-import AppAlert from '@/components/globals/AppAlert'
+import Alert from '@/components/globals/Alert'
 
 export default {
   components: {
     Logo,
-    AppAlert
+    Alert
   }
 }
 </script>

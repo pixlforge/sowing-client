@@ -2,7 +2,7 @@
   <div>
 
     <!-- Alert -->
-    <AppAlert/>
+    <Alert/>
 
     <!-- Navbar -->
     <Navbar/>
@@ -69,7 +69,7 @@
 
 <script>
 import Navbar from '@/components/Navbar'
-import AppAlert from '@/components/globals/AppAlert'
+import Alert from '@/components/globals/Alert'
 import AppFooter from '@/components/footer/AppFooter'
 import Header from '@/components/headers/Header'
 import SideMenu from '@/components/menus/SideMenu'
@@ -81,7 +81,7 @@ import SideMenuItem from '@/components/menus/SideMenuItem'
 export default {
   components: {
     Navbar,
-    AppAlert,
+    Alert,
     AppFooter,
     Header,
     SideMenu,

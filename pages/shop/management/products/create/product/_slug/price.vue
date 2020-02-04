@@ -30,9 +30,9 @@
     </header>
 
     <!-- Infotip -->
-    <AppInfoTip icon="info">
+    <InfoTip icon="info">
       {{ $t('products.management.create.tips.price') }}
-    </AppInfoTip>
+    </InfoTip>
 
     <!-- Form -->
     <form
@@ -103,7 +103,7 @@ import AutoNumeric from 'autonumeric'
 import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
-import AppInfoTip from '@/components/globals/AppInfoTip'
+import InfoTip from '@/components/globals/InfoTip'
 import AppFormGroup from '@/components/forms/AppFormGroup'
 import AppFormInput from '@/components/forms/AppFormInput'
 import AppFormLabel from '@/components/forms/AppFormLabel'
@@ -141,7 +141,7 @@ export default {
     'hasShop'
   ],
   components: {
-    AppInfoTip,
+    InfoTip,
     AppFormGroup,
     AppFormInput,
     AppFormLabel,

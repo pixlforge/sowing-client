@@ -25,9 +25,9 @@
     </header>
 
     <!-- Infotip -->
-    <AppInfoTip icon="info">
+    <InfoTip icon="info">
       {{ $t('products.management.create.tips.name_and_description') }}
-    </AppInfoTip>
+    </InfoTip>
 
     <!-- Form -->
     <form
@@ -256,7 +256,7 @@
 import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
-import AppInfoTip from '@/components/globals/AppInfoTip'
+import InfoTip from '@/components/globals/InfoTip'
 import AppFormGroup from '@/components/forms/AppFormGroup'
 import AppFormLabel from '@/components/forms/AppFormLabel'
 import AppFormInput from '@/components/forms/AppFormInput'
@@ -295,7 +295,7 @@ export default {
     'hasShop'
   ],
   components: {
-    AppInfoTip,
+    InfoTip,
     AppFormGroup,
     AppFormLabel,
     AppFormInput,

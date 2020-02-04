@@ -10,15 +10,15 @@
     class="py-48"
   >
     <div class="container relative flex justify-center items-center">
-      <!-- eslint-disable vue/no-v-html -->
+      <!-- eslint-disable -->
       <p
-        class="text-18 font-semibold text-white text-center"
         v-html="alert"
+        class="text-18 font-semibold text-white text-center"
       />
       <!-- eslint-enable -->
       <button
-        class="absolute right-0 text-24 text-white hover:text-gray-200 p-10"
         @click.prevent="close"
+        class="absolute right-0 text-24 text-white hover:text-gray-200 p-10"
       >
         <font-awesome-icon
           :icon="['fas', 'times']"

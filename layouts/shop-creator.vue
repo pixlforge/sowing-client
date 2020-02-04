@@ -2,7 +2,7 @@
   <div>
 
     <!-- Alert -->
-    <AppAlert/>
+    <Alert/>
 
     <!-- Navbar -->
     <Navbar/>
@@ -41,7 +41,7 @@ import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
 import Navbar from '@/components/Navbar'
-import AppAlert from '@/components/globals/AppAlert'
+import Alert from '@/components/globals/Alert'
 import AppFooter from '@/components/footer/AppFooter'
 import Header from '@/components/headers/Header'
 import ShopCover from '@/components/shops/ShopCover'
@@ -52,7 +52,7 @@ import ShopNavigation from '@/components/shops/navigation/ShopNavigation'
 export default {
   components: {
     Navbar,
-    AppAlert,
+    Alert,
     AppFooter,
     Header,
     ShopCover,
