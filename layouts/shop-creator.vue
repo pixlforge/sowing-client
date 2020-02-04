@@ -11,7 +11,7 @@
     <AppCategoryBar/>
 
     <!-- Shop cover image -->
-    <AppShopCover
+    <ShopCover
       v-if="shopCover"
       :shop-cover="shopCover"
     />
@@ -23,7 +23,7 @@
     />
 
     <!-- Navigation -->
-    <AppShopNavigation/>
+    <ShopNavigation/>
 
     <!-- Page content -->
     <nuxt/>
@@ -44,10 +44,10 @@ import Navbar from '@/components/Navbar'
 import AppAlert from '@/components/globals/AppAlert'
 import AppFooter from '@/components/footer/AppFooter'
 import AppHeader from '@/components/headers/AppHeader'
-import AppShopCover from '@/components/shops/AppShopCover'
+import ShopCover from '@/components/shops/ShopCover'
 import AppDisclaimer from '@/components/footer/AppDisclaimer'
 import AppCategoryBar from '@/components/categories/AppCategoryBar'
-import AppShopNavigation from '@/components/shops/navigation/AppShopNavigation'
+import ShopNavigation from '@/components/shops/navigation/ShopNavigation'
 
 export default {
   components: {
@@ -55,10 +55,10 @@ export default {
     AppAlert,
     AppFooter,
     AppHeader,
-    AppShopCover,
+    ShopCover,
     AppDisclaimer,
     AppCategoryBar,
-    AppShopNavigation
+    ShopNavigation
   },
   mixins: [theming],
   computed: {

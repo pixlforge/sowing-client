@@ -2,7 +2,7 @@
   <main>
 
     <!-- Cover -->
-    <AppShopCover
+    <ShopCover
       v-if="shopCover"
       :shop-cover="shopCover"
     />
@@ -93,7 +93,7 @@ import theming from '@/mixins/theming'
 
 import Heading from '@/components/Heading'
 import AppHeader from '@/components/headers/AppHeader'
-import AppShopCover from '@/components/shops/AppShopCover'
+import ShopCover from '@/components/shops/ShopCover'
 import ContentSection from '@/components/ContentSection'
 import AppHeaderList from '@/components/headers/AppHeaderList'
 import StreakRegister from '@/components/streaks/StreakRegister'
@@ -108,7 +108,7 @@ export default {
   components: {
     Heading,
     AppHeader,
-    AppShopCover,
+    ShopCover,
     ContentSection,
     AppHeaderList,
     StreakRegister,

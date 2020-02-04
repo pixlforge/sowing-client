@@ -8,7 +8,7 @@
     <Navbar/>
 
     <!-- Shop cover image -->
-    <AppShopCover
+    <ShopCover
       v-if="shopCover"
       :shop-cover="shopCover"
     />
@@ -140,7 +140,7 @@ import AppAlert from '@/components/globals/AppAlert'
 import AppFooter from '@/components/footer/AppFooter'
 import AppHeader from '@/components/headers/AppHeader'
 import AppSideMenu from '@/components/menus/AppSideMenu'
-import AppShopCover from '@/components/shops/AppShopCover'
+import ShopCover from '@/components/shops/ShopCover'
 import AppDisclaimer from '@/components/footer/AppDisclaimer'
 import ContentSection from '@/components/ContentSection'
 import AppHeaderList from '@/components/headers/AppHeaderList'
@@ -157,7 +157,7 @@ export default {
     AppFooter,
     AppHeader,
     AppSideMenu,
-    AppShopCover,
+    ShopCover,
     AppDisclaimer,
     ContentSection,
     AppHeaderList,

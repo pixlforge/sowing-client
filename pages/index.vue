@@ -66,7 +66,7 @@
       </Heading>
 
       <div class="flex flex-wrap -mx-20 mt-60 sm:mt-132">
-        <AppShopCard
+        <ShopCard
           v-for="shop in shops"
           :key="shop.id"
           :shop="shop"
@@ -123,7 +123,7 @@ import { mapGetters } from 'vuex'
 import Heading from '@/components/Heading'
 import Review from '@/components/Review'
 import Feature from '@/components/Feature'
-import AppShopCard from '@/components/shops/AppShopCard'
+import ShopCard from '@/components/shops/ShopCard'
 import ContentSection from '@/components/ContentSection'
 import AppCategoryCard from '@/components/categories/AppCategoryCard'
 import StreakRegister from '@/components/streaks/StreakRegister'
@@ -140,7 +140,7 @@ export default {
     Heading,
     Review,
     Feature,
-    AppShopCard,
+    ShopCard,
     ContentSection,
     AppCategoryCard,
     StreakRegister,

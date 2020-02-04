@@ -22,7 +22,7 @@
       </AppParagraph>
 
       <!-- Connect process -->
-      <AppShopFeatureContainer class="max-w-800">
+      <ShopFeatureContainer class="max-w-800">
         <template v-if="!stripeInfos">
           <div class="text-center">
             <a
@@ -45,10 +45,10 @@
             subtitle="Votre compte Stripe a bien été associé à votre boutique!"
           />
         </template>
-      </AppShopFeatureContainer>
+      </ShopFeatureContainer>
 
       <!-- Controls -->
-      <AppShopCreatorControls>
+      <ShopCreatorControls>
 
         <!-- Previous -->
         <AppButtonTertiary
@@ -69,7 +69,7 @@
         >
           {{ $t("buttons.finalize_shop_creation") }}
         </AppButtonPrimary>
-      </AppShopCreatorControls>
+      </ShopCreatorControls>
     </ContentSection>
   </main>
 </template>
@@ -84,8 +84,8 @@ import ContentSection from '@/components/ContentSection'
 import AppParagraph from '@/components/paragraphs/AppParagraph'
 import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 import AppButtonTertiary from '@/components/buttons/AppButtonTertiary'
-import AppShopCreatorControls from '@/components/shops/AppShopCreatorControls'
-import AppShopFeatureContainer from '@/components/shops/AppShopFeatureContainer'
+import ShopCreatorControls from '@/components/shops/ShopCreatorControls'
+import ShopFeatureContainer from '@/components/shops/ShopFeatureContainer'
 
 export default {
   middleware: [
@@ -121,8 +121,8 @@ export default {
     AppParagraph,
     AppButtonPrimary,
     AppButtonTertiary,
-    AppShopCreatorControls,
-    AppShopFeatureContainer
+    ShopCreatorControls,
+    ShopFeatureContainer
   },
   mixins: [theming],
   data() {

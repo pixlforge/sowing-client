@@ -16,7 +16,7 @@
       </Splash>
 
       <!-- Controls -->
-      <AppShopCreatorControls>
+      <ShopCreatorControls>
 
         <!-- Previous -->
         <AppButtonTertiary
@@ -36,7 +36,7 @@
         >
           {{ $t("buttons.finish") }}
         </AppButtonPrimary>
-      </AppShopCreatorControls>
+      </ShopCreatorControls>
     </ContentSection>
   </main>
 </template>
@@ -49,7 +49,7 @@ import Splash from '@/components/Splash'
 import ContentSection from '@/components/ContentSection'
 import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 import AppButtonTertiary from '@/components/buttons/AppButtonTertiary'
-import AppShopCreatorControls from '@/components/shops/AppShopCreatorControls'
+import ShopCreatorControls from '@/components/shops/ShopCreatorControls'
 import IllustrationSuccess from '@/components/illustrations/IllustrationSuccess'
 
 export default {
@@ -81,7 +81,7 @@ export default {
     ContentSection,
     AppButtonPrimary,
     AppButtonTertiary,
-    AppShopCreatorControls,
+    ShopCreatorControls,
     IllustrationSuccess
   },
   mixins: [theming],

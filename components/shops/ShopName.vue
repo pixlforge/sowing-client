@@ -10,9 +10,9 @@
 
     <AppButtonPrimary
       :disabled="(shopExists || !shopName) && !editable"
+      @click.native="check"
       icon="rocket"
       class="w-full h-46 sm:w-auto sm:rounded-l-none"
-      @click.native="check"
     >
       {{ $t("buttons.check_availability") }}
     </AppButtonPrimary>

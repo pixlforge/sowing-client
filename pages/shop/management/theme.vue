@@ -11,7 +11,7 @@
 
     <!-- Shop customization -->
     <Card>
-      <AppShopCustomization/>
+      <ShopCustomization/>
     </Card>
 
   </div>
@@ -23,7 +23,7 @@ import shopManagement from '@/mixins/shop-management'
 
 import Card from '@/components/Card'
 import Heading from '@/components/Heading'
-import AppShopCustomization from '@/components/shops/AppShopCustomization'
+import ShopCustomization from '@/components/shops/ShopCustomization'
 
 export default {
   middleware: ['authenticated'],
@@ -48,7 +48,7 @@ export default {
   components: {
     Card,
     Heading,
-    AppShopCustomization
+    ShopCustomization
   },
   mixins: [
     theming,

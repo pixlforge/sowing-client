@@ -21,12 +21,12 @@
       </AppParagraph>
 
       <!-- Shop name -->
-      <AppShopFeatureContainer class="max-w-600">
-        <AppShopName/>
-      </AppShopFeatureContainer>
+      <ShopFeatureContainer class="max-w-600">
+        <ShopName/>
+      </ShopFeatureContainer>
 
       <!-- Controls -->
-      <AppShopCreatorControls>
+      <ShopCreatorControls>
 
         <!-- Previous -->
         <AppButtonTertiary
@@ -47,7 +47,7 @@
         >
           {{ $t("buttons.next") }}
         </AppButtonPrimary>
-      </AppShopCreatorControls>
+      </ShopCreatorControls>
     </ContentSection>
   </main>
 </template>
@@ -57,13 +57,13 @@ import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
 import Heading from '@/components/Heading'
-import AppShopName from '@/components/shops/AppShopName'
+import ShopName from '@/components/shops/ShopName'
 import ContentSection from '@/components/ContentSection'
 import AppParagraph from '@/components/paragraphs/AppParagraph'
 import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 import AppButtonTertiary from '@/components/buttons/AppButtonTertiary'
-import AppShopCreatorControls from '@/components/shops/AppShopCreatorControls'
-import AppShopFeatureContainer from '@/components/shops/AppShopFeatureContainer'
+import ShopCreatorControls from '@/components/shops/ShopCreatorControls'
+import ShopFeatureContainer from '@/components/shops/ShopFeatureContainer'
 
 export default {
   middleware: ['authenticated'],
@@ -91,13 +91,13 @@ export default {
   },
   components: {
     Heading,
-    AppShopName,
+    ShopName,
     ContentSection,
     AppParagraph,
     AppButtonPrimary,
     AppButtonTertiary,
-    AppShopCreatorControls,
-    AppShopFeatureContainer
+    ShopCreatorControls,
+    ShopFeatureContainer
   },
   mixins: [theming],
   computed: {

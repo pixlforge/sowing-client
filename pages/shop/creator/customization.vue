@@ -21,15 +21,15 @@
       </AppParagraph>
 
       <!-- Shop customization -->
-      <AppShopFeatureContainer
+      <ShopFeatureContainer
         v-if="shop.id"
         class="max-w-800"
       >
-        <AppShopCustomization/>
-      </AppShopFeatureContainer>
+        <ShopCustomization/>
+      </ShopFeatureContainer>
 
       <!-- Controls -->
-      <AppShopCreatorControls>
+      <ShopCreatorControls>
 
         <!-- Previous -->
         <AppButtonTertiary
@@ -49,7 +49,7 @@
         >
           {{ $t("buttons.next") }}
         </AppButtonPrimary>
-      </AppShopCreatorControls>
+      </ShopCreatorControls>
     </ContentSection>
   </main>
 </template>
@@ -63,9 +63,9 @@ import ContentSection from '@/components/ContentSection'
 import AppParagraph from '@/components/paragraphs/AppParagraph'
 import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 import AppButtonTertiary from '@/components/buttons/AppButtonTertiary'
-import AppShopCustomization from '@/components/shops/AppShopCustomization'
-import AppShopCreatorControls from '@/components/shops/AppShopCreatorControls'
-import AppShopFeatureContainer from '@/components/shops/AppShopFeatureContainer'
+import ShopCustomization from '@/components/shops/ShopCustomization'
+import ShopCreatorControls from '@/components/shops/ShopCreatorControls'
+import ShopFeatureContainer from '@/components/shops/ShopFeatureContainer'
 
 export default {
   middleware: ['authenticated', 'hasShop'],
@@ -97,9 +97,9 @@ export default {
     AppParagraph,
     AppButtonPrimary,
     AppButtonTertiary,
-    AppShopCustomization,
-    AppShopCreatorControls,
-    AppShopFeatureContainer
+    ShopCustomization,
+    ShopCreatorControls,
+    ShopFeatureContainer
   },
   mixins: [theming],
   computed: {

@@ -11,7 +11,7 @@
 
     <!-- Shop details -->
     <Card>
-      <AppShopDetails
+      <ShopDetails
         :countries="countries"
         :errors="errors"
         editable
@@ -37,7 +37,7 @@ import shopManagement from '@/mixins/shop-management'
 
 import Card from '@/components/Card'
 import Heading from '@/components/Heading'
-import AppShopDetails from '@/components/shops/AppShopDetails'
+import ShopDetails from '@/components/shops/ShopDetails'
 import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 
 export default {
@@ -63,7 +63,7 @@ export default {
   components: {
     Card,
     Heading,
-    AppShopDetails,
+    ShopDetails,
     AppButtonPrimary
   },
   mixins: [

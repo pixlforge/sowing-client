@@ -2,7 +2,7 @@
   <section class="w-full">
 
     <!-- Postal code -->
-    <AppShopDetailsGroupInline
+    <ShopDetailsGroupInline
       :title="$t('forms.labels.postal_code')"
     >
       <AppFormInput
@@ -15,10 +15,10 @@
         :errors="errors"
         name="postal_code"
       />
-    </AppShopDetailsGroupInline>
+    </ShopDetailsGroupInline>
 
     <!-- City -->
-    <AppShopDetailsGroupInline
+    <ShopDetailsGroupInline
       :title="$t('forms.labels.city')"
     >
       <AppFormInput
@@ -31,10 +31,10 @@
         :errors="errors"
         name="city"
       />
-    </AppShopDetailsGroupInline>
+    </ShopDetailsGroupInline>
 
     <!-- Country -->
-    <AppShopDetailsGroupInline
+    <ShopDetailsGroupInline
       :title="$t('forms.labels.country')"
     >
       <AppFormSelect
@@ -55,12 +55,12 @@
         :errors="errors"
         name="country_id"
       />
-    </AppShopDetailsGroupInline>
+    </ShopDetailsGroupInline>
 
     <AppFormDivider large/>
 
     <!-- Short description FR -->
-    <AppShopDetailsGroup
+    <ShopDetailsGroup
       :title="$t('forms.labels.description_short')"
       :language="$t('languages.french')"
       :description="$t('shop_creator.steps.details.description_short_description')"
@@ -72,10 +72,10 @@
         :errors="errors"
         name="description_short"
       />
-    </AppShopDetailsGroup>
+    </ShopDetailsGroup>
 
     <!-- Long description FR -->
-    <AppShopDetailsGroup
+    <ShopDetailsGroup
       :title="$t('forms.labels.description_long')"
       :language="$t('languages.french')"
       :description="$t('shop_creator.steps.details.description_long_description')"
@@ -87,12 +87,12 @@
         :errors="errors"
         name="description_long"
       />
-    </AppShopDetailsGroup>
+    </ShopDetailsGroup>
 
     <AppFormDivider large/>
 
     <!-- Short description EN -->
-    <AppShopDetailsGroup
+    <ShopDetailsGroup
       :title="$t('forms.labels.description_short')"
       :language="$t('languages.english')"
       :description="$t('shop_creator.steps.details.description_short_description')"
@@ -104,10 +104,10 @@
         :errors="errors"
         name="description_short"
       />
-    </AppShopDetailsGroup>
+    </ShopDetailsGroup>
 
     <!-- Long description EN -->
-    <AppShopDetailsGroup
+    <ShopDetailsGroup
       :title="$t('forms.labels.description_long')"
       :language="$t('languages.english')"
       :description="$t('shop_creator.steps.details.description_long_description')"
@@ -119,12 +119,12 @@
         :errors="errors"
         name="description_long"
       />
-    </AppShopDetailsGroup>
+    </ShopDetailsGroup>
 
     <AppFormDivider large/>
 
     <!-- Short description DE -->
-    <AppShopDetailsGroup
+    <ShopDetailsGroup
       :title="$t('forms.labels.description_short')"
       :language="$t('languages.german')"
       :description="$t('shop_creator.steps.details.description_short_description')"
@@ -136,10 +136,10 @@
         :errors="errors"
         name="description_short"
       />
-    </AppShopDetailsGroup>
+    </ShopDetailsGroup>
 
     <!-- Long description DE -->
-    <AppShopDetailsGroup
+    <ShopDetailsGroup
       :title="$t('forms.labels.description_long')"
       :language="$t('languages.german')"
       :description="$t('shop_creator.steps.details.description_long_description')"
@@ -151,12 +151,12 @@
         :errors="errors"
         name="description_long"
       />
-    </AppShopDetailsGroup>
+    </ShopDetailsGroup>
 
     <AppFormDivider large/>
 
     <!-- Short description IT -->
-    <AppShopDetailsGroup
+    <ShopDetailsGroup
       :title="$t('forms.labels.description_short')"
       :language="$t('languages.italian')"
       :description="$t('shop_creator.steps.details.description_short_description')"
@@ -168,10 +168,10 @@
         :errors="errors"
         name="description_short"
       />
-    </AppShopDetailsGroup>
+    </ShopDetailsGroup>
 
     <!-- Long description IT -->
-    <AppShopDetailsGroup
+    <ShopDetailsGroup
       :title="$t('forms.labels.description_long')"
       :language="$t('languages.italian')"
       :description="$t('shop_creator.steps.details.description_long_description')"
@@ -183,7 +183,7 @@
         :errors="errors"
         name="description_long"
       />
-    </AppShopDetailsGroup>
+    </ShopDetailsGroup>
 
   </section>
 </template>
@@ -196,8 +196,8 @@ import AppFormSelect from '@/components/forms/AppFormSelect'
 import AppFormDivider from '@/components/forms/AppFormDivider'
 import AppFormTextarea from '@/components/forms/AppFormTextarea'
 import AppFormValidation from '@/components/forms/AppFormValidation'
-import AppShopDetailsGroup from '@/components/shops/AppShopDetailsGroup'
-import AppShopDetailsGroupInline from '@/components/shops/AppShopDetailsGroupInline'
+import ShopDetailsGroup from '@/components/shops/ShopDetailsGroup'
+import ShopDetailsGroupInline from '@/components/shops/ShopDetailsGroupInline'
 
 export default {
   components: {
@@ -206,8 +206,8 @@ export default {
     AppFormDivider,
     AppFormTextarea,
     AppFormValidation,
-    AppShopDetailsGroup,
-    AppShopDetailsGroupInline
+    ShopDetailsGroup,
+    ShopDetailsGroupInline
   },
   props: {
     countries: {

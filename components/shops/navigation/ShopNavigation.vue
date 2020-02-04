@@ -6,9 +6,9 @@
       <NavGroup>
         <NavOval
           :class="bgTheme"
+          @click.native="toShopCreatorName"
           class="text-white"
           label="1"
-          @click.native="toShopCreatorName"
         />
         <NavLine :class="stepName ? bgTheme : 'bg-white'"/>
         <NavLabel
@@ -22,8 +22,8 @@
       <NavGroup>
         <NavOval
           :class="stepName ? `${bgTheme} text-white` : 'bg-white text-gray-200'"
-          label="2"
           @click.native="toShopCreatorDetails"
+          label="2"
         />
         <NavLine :class="stepDetails ? bgTheme : 'bg-white'"/>
         <NavLabel
@@ -37,8 +37,8 @@
       <NavGroup>
         <NavOval
           :class="stepDetails ? `${bgTheme} text-white` : 'bg-white text-gray-200'"
-          label="3"
           @click.native="toShopCreatorCustomization"
+          label="3"
         />
         <NavLine :class="stepCustomization ? bgTheme : 'bg-white'"/>
         <NavLabel
@@ -52,8 +52,8 @@
       <NavGroup>
         <NavOval
           :class="stepCustomization ? `${bgTheme} text-white` : 'bg-white text-gray-200'"
-          label="4"
           @click.native="toShopCreatorConnect"
+          label="4"
         />
         <NavLine :class="stepConnect ? bgTheme : 'bg-white'"/>
         <NavLabel
@@ -67,8 +67,8 @@
       <NavGroup last>
         <NavOval
           :class="stepConnect ? `${bgTheme} text-white` : 'bg-white text-gray-200'"
-          label="5"
           @click.native="toShopCreatorDone"
+          label="5"
         />
         <NavLabel
           :label="$t('shop_creator.navigation.done')"
@@ -85,10 +85,10 @@
 import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
-import NavOval from '@/components/shops/navigation/AppShopNavigationOval'
-import NavLine from '@/components/shops/navigation/AppShopNavigationLine'
-import NavLabel from '@/components/shops/navigation/AppShopNavigationLabel'
-import NavGroup from '@/components/shops/navigation/AppShopNavigationGroup'
+import NavOval from '@/components/shops/navigation/ShopNavigationOval'
+import NavLine from '@/components/shops/navigation/ShopNavigationLine'
+import NavLabel from '@/components/shops/navigation/ShopNavigationLabel'
+import NavGroup from '@/components/shops/navigation/ShopNavigationGroup'
 
 export default {
   components: {
