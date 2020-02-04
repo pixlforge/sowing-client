@@ -10,7 +10,7 @@
     </Heading>
 
     <Card>
-      <AppAccountCard :user="user"/>
+      <AccountCard :user="user"/>
     </Card>
 
   </div>
@@ -19,13 +19,13 @@
 <script>
 import Card from '@/components/Card'
 import Heading from '@/components/Heading'
-import AppAccountCard from '@/components/account/AppAccountCard'
+import AccountCard from '@/components/account/AccountCard'
 
 export default {
   components: {
     Card,
     Heading,
-    AppAccountCard
+    AccountCard
   },
   middleware: ['authenticated'],
   layout: 'account-management',
