@@ -8,10 +8,10 @@
       :name="name"
       :checked="value"
       :disabled="disabled"
-      type="checkbox"
       :class="`text-${color}-500`"
-      class="form-checkbox rounded-lg text-24 disabled:text-gray-100 focus:shadow-outline focus:border-transparent disabled:cursor-not-allowed mr-10"
       @input="$emit('input', !value)"
+      type="checkbox"
+      class="form-checkbox rounded-lg text-24 disabled:text-gray-100 focus:shadow-outline focus:border-transparent disabled:cursor-not-allowed mr-10"
     >
     <slot/>
   </label>

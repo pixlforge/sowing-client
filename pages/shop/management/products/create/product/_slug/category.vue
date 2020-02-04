@@ -39,19 +39,19 @@
       @submit.prevent="update"
       class="flex flex-wrap -mx-10"
     >
-      <AppFormSection class="lg:w-full">
-        <AppFormSectionTitle>
+      <FormSection class="lg:w-full">
+        <FormSectionTitle>
           {{ $t('forms.labels.category') }}
-        </AppFormSectionTitle>
-        <AppFormFieldset>
-          <AppFormGroup>
-            <AppFormLabel name="category_id">
+        </FormSectionTitle>
+        <FormFieldset>
+          <FormGroup>
+            <FormLabel name="category_id">
               {{ $t('forms.labels.category') }}
-            </AppFormLabel>
-            <AppFormLabelDescription>
+            </FormLabel>
+            <FormLabelDescription>
               Associez votre produit à une catégorie afin que nous puissions le répertorier dans le catalogue.
-            </AppFormLabelDescription>
-            <AppFormSelect
+            </FormLabelDescription>
+            <FormSelect
               v-model.number="form.category_id"
               :errors="errors"
               name="category_id"
@@ -72,17 +72,17 @@
                   </template>
                 </option>
               </optgroup>
-            </AppFormSelect>
-            <AppFormValidation
+            </FormSelect>
+            <FormValidation
               :errors="errors"
               name="category_id"
             />
-          </AppFormGroup>
-        </AppFormFieldset>
-      </AppFormSection>
+          </FormGroup>
+        </FormFieldset>
+      </FormSection>
 
       <!-- Controls -->
-      <AppFormSection class="lg:w-full">
+      <FormSection class="lg:w-full">
         <div class="flex justify-center items-center">
 
           <!-- Submit -->
@@ -109,7 +109,7 @@
             {{ $t('buttons.back') }}
           </AppButtonLinkTertiary>
         </div>
-      </AppFormSection>
+      </FormSection>
     </form>
   </div>
 </template>
@@ -119,17 +119,17 @@ import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
 import InfoTip from '@/components/globals/InfoTip'
-import AppFormGroup from '@/components/forms/AppFormGroup'
-import AppFormLabel from '@/components/forms/AppFormLabel'
-import AppFormSelect from '@/components/forms/AppFormSelect'
+import FormGroup from '@/components/forms/FormGroup'
+import FormLabel from '@/components/forms/FormLabel'
+import FormSelect from '@/components/forms/FormSelect'
 import AppBackButton from '@/components/buttons/AppBackButton'
-import AppFormSection from '@/components/forms/AppFormSection'
-import AppFormFieldset from '@/components/forms/AppFormFieldset'
-import AppFormValidation from '@/components/forms/AppFormValidation'
+import FormSection from '@/components/forms/FormSection'
+import FormFieldset from '@/components/forms/FormFieldset'
+import FormValidation from '@/components/forms/FormValidation'
 import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
-import AppFormSectionTitle from '@/components/forms/AppFormSectionTitle'
+import FormSectionTitle from '@/components/forms/FormSectionTitle'
 import AppButtonLinkTertiary from '@/components/buttons/AppButtonLinkTertiary'
-import AppFormLabelDescription from '@/components/forms/AppFormLabelDescription'
+import FormLabelDescription from '@/components/forms/FormLabelDescription'
 import ProductCreatorStep from '@/components/products/creator/ProductCreatorStep'
 
 export default {
@@ -157,17 +157,17 @@ export default {
   ],
   components: {
     InfoTip,
-    AppFormGroup,
-    AppFormLabel,
-    AppFormSelect,
+    FormGroup,
+    FormLabel,
+    FormSelect,
     AppBackButton,
-    AppFormSection,
-    AppFormFieldset,
-    AppFormValidation,
+    FormSection,
+    FormFieldset,
+    FormValidation,
     AppButtonPrimary,
-    AppFormSectionTitle,
+    FormSectionTitle,
     AppButtonLinkTertiary,
-    AppFormLabelDescription,
+    FormLabelDescription,
     ProductCreatorStep
   },
   mixins: [theming],

@@ -10,7 +10,7 @@
     </Heading>
 
     <!-- Select -->
-    <AppFormSelect
+    <FormSelect
       @change.native="$emit('input', $event.target.value)"
       name="method"
       theme="light"
@@ -23,8 +23,8 @@
       >
         {{ method.name }}
       </option>
-    </AppFormSelect>
-    <AppFormValidation
+    </FormSelect>
+    <FormValidation
       :errors="errors"
       name="method"
     />
@@ -33,14 +33,14 @@
 
 <script>
 import Heading from '@/components/Heading'
-import AppFormSelect from '@/components/forms/AppFormSelect'
-import AppFormValidation from '@/components/forms/AppFormValidation'
+import FormSelect from '@/components/forms/FormSelect'
+import FormValidation from '@/components/forms/FormValidation'
 
 export default {
   components: {
     Heading,
-    AppFormSelect,
-    AppFormValidation
+    FormSelect,
+    FormValidation
   },
   props: {
     methods: {

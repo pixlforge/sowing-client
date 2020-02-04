@@ -49,7 +49,7 @@
         {{ labelQuantity }}
       </Heading>
 
-      <AppFormSelect
+      <FormSelect
         v-model="quantity"
         name="quantity"
         class="mt-16"
@@ -69,7 +69,7 @@
         >
           {{ n }}
         </option>
-      </AppFormSelect>
+      </FormSelect>
     </div>
 
     <!-- Remove control -->
@@ -91,12 +91,12 @@
 import { mapGetters, mapActions } from 'vuex'
 
 import Heading from '@/components/Heading'
-import AppFormSelect from '@/components/forms/AppFormSelect'
+import FormSelect from '@/components/forms/FormSelect'
 
 export default {
   components: {
     Heading,
-    AppFormSelect
+    FormSelect
   },
   props: {
     product: {

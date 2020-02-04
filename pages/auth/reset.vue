@@ -19,11 +19,11 @@
       >
 
         <!-- Email -->
-        <AppFormGroup>
-          <AppFormLabel name="user">
+        <FormGroup>
+          <FormLabel name="user">
             {{ $t("forms.labels.email") }}
-          </AppFormLabel>
-          <AppFormInput
+          </FormLabel>
+          <FormInput
             ref="autofocus"
             v-model="form.email"
             :errors="errors"
@@ -31,43 +31,43 @@
             type="email"
             required
           />
-          <AppFormValidation
+          <FormValidation
             :errors="errors"
             name="user"
           />
-        </AppFormGroup>
+        </FormGroup>
 
         <!-- Password -->
-        <AppFormGroup>
-          <AppFormLabel name="password">
+        <FormGroup>
+          <FormLabel name="password">
             {{ $t("forms.labels.password") }}
-          </AppFormLabel>
-          <AppFormInput
+          </FormLabel>
+          <FormInput
             v-model="form.password"
             :errors="errors"
             name="password"
             type="password"
             required
           />
-          <AppFormValidation
+          <FormValidation
             :errors="errors"
             name="password"
           />
-        </AppFormGroup>
+        </FormGroup>
 
         <!-- Password confirmation -->
-        <AppFormGroup>
-          <AppFormLabel name="password_confirmation">
+        <FormGroup>
+          <FormLabel name="password_confirmation">
             {{ $t("forms.labels.password_confirmation") }}
-          </AppFormLabel>
-          <AppFormInput
+          </FormLabel>
+          <FormInput
             v-model="form.password_confirmation"
             :errors="errors"
             name="password_confirmation"
             type="password"
             required
           />
-        </AppFormGroup>
+        </FormGroup>
 
         <!-- Submit -->
         <AppButtonPrimary
@@ -86,11 +86,11 @@
 import { mapActions } from 'vuex'
 
 import Heading from '@/components/Heading'
-import AppFormGroup from '@/components/forms/AppFormGroup'
-import AppFormLabel from '@/components/forms/AppFormLabel'
-import AppFormInput from '@/components/forms/AppFormInput'
+import FormGroup from '@/components/forms/FormGroup'
+import FormLabel from '@/components/forms/FormLabel'
+import FormInput from '@/components/forms/FormInput'
 import ContentSection from '@/components/ContentSection'
-import AppFormValidation from '@/components/forms/AppFormValidation'
+import FormValidation from '@/components/forms/FormValidation'
 import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 
 export default {
@@ -115,11 +115,11 @@ export default {
   },
   components: {
     Heading,
-    AppFormGroup,
-    AppFormLabel,
-    AppFormInput,
+    FormGroup,
+    FormLabel,
+    FormInput,
     ContentSection,
-    AppFormValidation,
+    FormValidation,
     AppButtonPrimary
   },
   data() {

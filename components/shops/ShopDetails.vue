@@ -5,13 +5,13 @@
     <ShopDetailsGroupInline
       :title="$t('forms.labels.postal_code')"
     >
-      <AppFormInput
+      <FormInput
         v-model="localPostalCode"
         :disabled="shopExistsAndNotEditable"
         :errors="errors"
         name="postal_code"
       />
-      <AppFormValidation
+      <FormValidation
         :errors="errors"
         name="postal_code"
       />
@@ -21,13 +21,13 @@
     <ShopDetailsGroupInline
       :title="$t('forms.labels.city')"
     >
-      <AppFormInput
+      <FormInput
         v-model="localCity"
         :disabled="shopExistsAndNotEditable"
         :errors="errors"
         name="city"
       />
-      <AppFormValidation
+      <FormValidation
         :errors="errors"
         name="city"
       />
@@ -37,7 +37,7 @@
     <ShopDetailsGroupInline
       :title="$t('forms.labels.country')"
     >
-      <AppFormSelect
+      <FormSelect
         v-model="localCountry"
         :disabled="shopExistsAndNotEditable"
         :errors="errors"
@@ -50,14 +50,14 @@
         >
           {{ country.name[locale] }}
         </option>
-      </AppFormSelect>
-      <AppFormValidation
+      </FormSelect>
+      <FormValidation
         :errors="errors"
         name="country_id"
       />
     </ShopDetailsGroupInline>
 
-    <AppFormDivider large/>
+    <FormDivider large/>
 
     <!-- Short description FR -->
     <ShopDetailsGroup
@@ -66,7 +66,7 @@
       :description="$t('shop_creator.steps.details.description_short_description')"
       class="my-72"
     >
-      <AppFormInput
+      <FormInput
         v-model="localShortDescriptionFr"
         :disabled="shopExistsAndNotEditable"
         :errors="errors"
@@ -81,7 +81,7 @@
       :description="$t('shop_creator.steps.details.description_long_description')"
       class="my-72"
     >
-      <AppFormTextarea
+      <FormTextarea
         v-model="localLongDescriptionFr"
         :disabled="shopExistsAndNotEditable"
         :errors="errors"
@@ -89,7 +89,7 @@
       />
     </ShopDetailsGroup>
 
-    <AppFormDivider large/>
+    <FormDivider large/>
 
     <!-- Short description EN -->
     <ShopDetailsGroup
@@ -98,7 +98,7 @@
       :description="$t('shop_creator.steps.details.description_short_description')"
       class="my-72"
     >
-      <AppFormInput
+      <FormInput
         v-model="localShortDescriptionEn"
         :disabled="shopExistsAndNotEditable"
         :errors="errors"
@@ -113,7 +113,7 @@
       :description="$t('shop_creator.steps.details.description_long_description')"
       class="my-72"
     >
-      <AppFormTextarea
+      <FormTextarea
         v-model="localLongDescriptionEn"
         :disabled="shopExistsAndNotEditable"
         :errors="errors"
@@ -121,7 +121,7 @@
       />
     </ShopDetailsGroup>
 
-    <AppFormDivider large/>
+    <FormDivider large/>
 
     <!-- Short description DE -->
     <ShopDetailsGroup
@@ -130,7 +130,7 @@
       :description="$t('shop_creator.steps.details.description_short_description')"
       class="my-72"
     >
-      <AppFormInput
+      <FormInput
         v-model="localShortDescriptionDe"
         :disabled="shopExistsAndNotEditable"
         :errors="errors"
@@ -145,7 +145,7 @@
       :description="$t('shop_creator.steps.details.description_long_description')"
       class="my-72"
     >
-      <AppFormTextarea
+      <FormTextarea
         v-model="localLongDescriptionDe"
         :disabled="shopExistsAndNotEditable"
         :errors="errors"
@@ -153,7 +153,7 @@
       />
     </ShopDetailsGroup>
 
-    <AppFormDivider large/>
+    <FormDivider large/>
 
     <!-- Short description IT -->
     <ShopDetailsGroup
@@ -162,7 +162,7 @@
       :description="$t('shop_creator.steps.details.description_short_description')"
       class="my-72"
     >
-      <AppFormInput
+      <FormInput
         v-model="localShortDescriptionIt"
         :disabled="shopExistsAndNotEditable"
         :errors="errors"
@@ -177,7 +177,7 @@
       :description="$t('shop_creator.steps.details.description_long_description')"
       class="my-72"
     >
-      <AppFormTextarea
+      <FormTextarea
         v-model="localLongDescriptionIt"
         :disabled="shopExistsAndNotEditable"
         :errors="errors"
@@ -191,21 +191,21 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 
-import AppFormInput from '@/components/forms/AppFormInput'
-import AppFormSelect from '@/components/forms/AppFormSelect'
-import AppFormDivider from '@/components/forms/AppFormDivider'
-import AppFormTextarea from '@/components/forms/AppFormTextarea'
-import AppFormValidation from '@/components/forms/AppFormValidation'
+import FormInput from '@/components/forms/FormInput'
+import FormSelect from '@/components/forms/FormSelect'
+import FormDivider from '@/components/forms/FormDivider'
+import FormTextarea from '@/components/forms/FormTextarea'
+import FormValidation from '@/components/forms/FormValidation'
 import ShopDetailsGroup from '@/components/shops/ShopDetailsGroup'
 import ShopDetailsGroupInline from '@/components/shops/ShopDetailsGroupInline'
 
 export default {
   components: {
-    AppFormInput,
-    AppFormSelect,
-    AppFormDivider,
-    AppFormTextarea,
-    AppFormValidation,
+    FormInput,
+    FormSelect,
+    FormDivider,
+    FormTextarea,
+    FormValidation,
     ShopDetailsGroup,
     ShopDetailsGroupInline
   },

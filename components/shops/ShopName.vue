@@ -1,6 +1,6 @@
 <template>
   <section class="flex flex-col sm:flex-row justify-center items-center">
-    <AppFormInput
+    <FormInput
       v-model="localShopName"
       :disabled="shopExists && !editable"
       :placeholder="$t('shop_creator.steps.name.placeholder')"
@@ -23,12 +23,12 @@
 import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
-import AppFormInput from '@/components/forms/AppFormInput'
+import FormInput from '@/components/forms/FormInput'
 import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 
 export default {
   components: {
-    AppFormInput,
+    FormInput,
     AppButtonPrimary
   },
   mixins: [theming],

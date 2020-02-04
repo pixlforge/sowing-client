@@ -39,34 +39,34 @@
       @submit.prevent="update"
       class="flex flex-wrap -mx-10"
     >
-      <AppFormSection class="lg:w-full">
-        <AppFormSectionTitle>
+      <FormSection class="lg:w-full">
+        <FormSectionTitle>
           {{ $t('forms.labels.price') }}
-        </AppFormSectionTitle>
-        <AppFormFieldset>
-          <AppFormGroup>
-            <AppFormLabel name="price">
+        </FormSectionTitle>
+        <FormFieldset>
+          <FormGroup>
+            <FormLabel name="price">
               {{ $t('forms.labels.price') }}
-            </AppFormLabel>
-            <AppFormLabelDescription>
+            </FormLabel>
+            <FormLabelDescription>
               Fixez le prix de votre produit en francs suisses (CHF) en tenant compte des frais d'envoi ainsi que des frais perçus par la plateforme.
-            </AppFormLabelDescription>
-            <AppFormInput
+            </FormLabelDescription>
+            <FormInput
               ref="priceInput"
               v-model="displayPrice"
               :errors="errors"
               name="price"
             />
-            <AppFormValidation
+            <FormValidation
               :errors="errors"
               name="price"
             />
-          </AppFormGroup>
-        </AppFormFieldset>
-      </AppFormSection>
+          </FormGroup>
+        </FormFieldset>
+      </FormSection>
 
       <!-- Controls -->
-      <AppFormSection class="lg:w-full">
+      <FormSection class="lg:w-full">
         <div class="flex justify-center items-center">
 
           <!-- Submit -->
@@ -93,7 +93,7 @@
             {{ $t('buttons.back') }}
           </AppButtonLinkTertiary>
         </div>
-      </AppFormSection>
+      </FormSection>
     </form>
   </div>
 </template>
@@ -104,17 +104,17 @@ import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
 import InfoTip from '@/components/globals/InfoTip'
-import AppFormGroup from '@/components/forms/AppFormGroup'
-import AppFormInput from '@/components/forms/AppFormInput'
-import AppFormLabel from '@/components/forms/AppFormLabel'
+import FormGroup from '@/components/forms/FormGroup'
+import FormInput from '@/components/forms/FormInput'
+import FormLabel from '@/components/forms/FormLabel'
 import AppBackButton from '@/components/buttons/AppBackButton'
-import AppFormSection from '@/components/forms/AppFormSection'
-import AppFormFieldset from '@/components/forms/AppFormFieldset'
-import AppFormValidation from '@/components/forms/AppFormValidation'
+import FormSection from '@/components/forms/FormSection'
+import FormFieldset from '@/components/forms/FormFieldset'
+import FormValidation from '@/components/forms/FormValidation'
 import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
-import AppFormSectionTitle from '@/components/forms/AppFormSectionTitle'
+import FormSectionTitle from '@/components/forms/FormSectionTitle'
 import AppButtonLinkTertiary from '@/components/buttons/AppButtonLinkTertiary'
-import AppFormLabelDescription from '@/components/forms/AppFormLabelDescription'
+import FormLabelDescription from '@/components/forms/FormLabelDescription'
 import ProductCreatorStep from '@/components/products/creator/ProductCreatorStep'
 
 export default {
@@ -142,17 +142,17 @@ export default {
   ],
   components: {
     InfoTip,
-    AppFormGroup,
-    AppFormInput,
-    AppFormLabel,
+    FormGroup,
+    FormInput,
+    FormLabel,
     AppBackButton,
-    AppFormSection,
-    AppFormFieldset,
-    AppFormValidation,
+    FormSection,
+    FormFieldset,
+    FormValidation,
     AppButtonPrimary,
-    AppFormSectionTitle,
+    FormSectionTitle,
     AppButtonLinkTertiary,
-    AppFormLabelDescription,
+    FormLabelDescription,
     ProductCreatorStep
   },
   mixins: [theming],

@@ -25,11 +25,11 @@
       >
 
         <!-- Email -->
-        <AppFormGroup>
-          <AppFormLabel name="email">
+        <FormGroup>
+          <FormLabel name="email">
             {{ $t("forms.labels.email") }}
-          </AppFormLabel>
-          <AppFormInput
+          </FormLabel>
+          <FormInput
             ref="autofocus"
             v-model="email"
             :errors="errors"
@@ -38,11 +38,11 @@
             placeholder="elon@musk.ch"
             required
           />
-          <AppFormValidation
+          <FormValidation
             :errors="errors"
             name="email"
           />
-        </AppFormGroup>
+        </FormGroup>
 
         <!-- Submit -->
         <AppButtonPrimary
@@ -61,12 +61,12 @@
 import { mapActions } from 'vuex'
 
 import Heading from '@/components/Heading'
-import AppFormGroup from '@/components/forms/AppFormGroup'
-import AppFormLabel from '@/components/forms/AppFormLabel'
-import AppFormInput from '@/components/forms/AppFormInput'
+import FormGroup from '@/components/forms/FormGroup'
+import FormLabel from '@/components/forms/FormLabel'
+import FormInput from '@/components/forms/FormInput'
 import ContentSection from '@/components/ContentSection'
 import Paragraph from '@/components/paragraphs/Paragraph'
-import AppFormValidation from '@/components/forms/AppFormValidation'
+import FormValidation from '@/components/forms/FormValidation'
 import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 
 export default {
@@ -91,12 +91,12 @@ export default {
   },
   components: {
     Heading,
-    AppFormGroup,
-    AppFormLabel,
-    AppFormInput,
+    FormGroup,
+    FormLabel,
+    FormInput,
     ContentSection,
     Paragraph,
-    AppFormValidation,
+    FormValidation,
     AppButtonPrimary
   },
   data() {

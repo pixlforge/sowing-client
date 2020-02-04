@@ -13,37 +13,37 @@
       <form @submit.prevent="update">
 
         <!-- Name -->
-        <AppFormGroup>
-          <AppFormLabel name="name">
+        <FormGroup>
+          <FormLabel name="name">
             {{ $t("forms.labels.name") }}
-          </AppFormLabel>
-          <AppFormInput
+          </FormLabel>
+          <FormInput
             v-model="form.name"
             :errors="errors"
             name="name"
           />
-          <AppFormValidation
+          <FormValidation
             :errors="errors"
             name="name"
           />
-        </AppFormGroup>
+        </FormGroup>
 
         <!-- Email -->
-        <AppFormGroup>
-          <AppFormLabel name="email">
+        <FormGroup>
+          <FormLabel name="email">
             {{ $t("forms.labels.email") }}
-          </AppFormLabel>
-          <AppFormInput
+          </FormLabel>
+          <FormInput
             v-model="form.email"
             :errors="errors"
             name="email"
             type="email"
           />
-          <AppFormValidation
+          <FormValidation
             :errors="errors"
             name="email"
           />
-        </AppFormGroup>
+        </FormGroup>
 
         <!-- Save changes -->
         <AppButtonPrimary
@@ -63,20 +63,20 @@ import { mapActions } from 'vuex'
 
 import Card from '@/components/Card'
 import Heading from '@/components/Heading'
-import AppFormGroup from '@/components/forms/AppFormGroup'
-import AppFormInput from '@/components/forms/AppFormInput'
-import AppFormLabel from '@/components/forms/AppFormLabel'
-import AppFormValidation from '@/components/forms/AppFormValidation'
+import FormGroup from '@/components/forms/FormGroup'
+import FormInput from '@/components/forms/FormInput'
+import FormLabel from '@/components/forms/FormLabel'
+import FormValidation from '@/components/forms/FormValidation'
 import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 
 export default {
   components: {
     Card,
     Heading,
-    AppFormGroup,
-    AppFormInput,
-    AppFormLabel,
-    AppFormValidation,
+    FormGroup,
+    FormInput,
+    FormLabel,
+    FormValidation,
     AppButtonPrimary
   },
   middleware: ['authenticated'],

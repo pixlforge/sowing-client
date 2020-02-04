@@ -80,7 +80,7 @@
           class="w-full"
         >
 
-          <AppFormDivider/>
+          <FormDivider/>
 
           <!-- Variations -->
           <ProductVariation
@@ -93,12 +93,12 @@
           />
 
           <!-- Quantity -->
-          <AppFormDivider/>
+          <FormDivider/>
 
-          <AppFormLabel name="quantity">
+          <FormLabel name="quantity">
             {{ quantityLabel }}
-          </AppFormLabel>
-          <AppFormSelect
+          </FormLabel>
+          <FormSelect
             v-model.number="form.quantity"
             :disabled="!form.quantity"
             name="quantity"
@@ -110,7 +110,7 @@
             >
               {{ n }}
             </option>
-          </AppFormSelect>
+          </FormSelect>
 
           <!-- Submit -->
           <AppButtonPrimary
@@ -151,19 +151,19 @@ import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
 import Heading from '@/components/Heading'
-import AppFormLabel from '@/components/forms/AppFormLabel'
-import AppFormSelect from '@/components/forms/AppFormSelect'
+import FormLabel from '@/components/forms/FormLabel'
+import FormSelect from '@/components/forms/FormSelect'
 import ProductVariation from '@/components/products/ProductVariation'
-import AppFormDivider from '@/components/forms/AppFormDivider'
+import FormDivider from '@/components/forms/FormDivider'
 import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 
 export default {
   components: {
     Heading,
-    AppFormLabel,
-    AppFormSelect,
+    FormLabel,
+    FormSelect,
     ProductVariation,
-    AppFormDivider,
+    FormDivider,
     AppButtonPrimary
   },
   mixins: [theming],

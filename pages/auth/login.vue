@@ -19,11 +19,11 @@
       >
 
         <!-- Email -->
-        <AppFormGroup>
-          <AppFormLabel name="email">
+        <FormGroup>
+          <FormLabel name="email">
             {{ $t("forms.labels.email") }}
-          </AppFormLabel>
-          <AppFormInput
+          </FormLabel>
+          <FormInput
             ref="autofocus"
             v-model="form.email"
             :errors="errors"
@@ -32,25 +32,25 @@
             placeholder="elon@musk.ch"
             required
           />
-          <AppFormValidation
+          <FormValidation
             :errors="errors"
             name="email"
           />
-        </AppFormGroup>
+        </FormGroup>
 
         <!-- Password -->
-        <AppFormGroup>
-          <AppFormLabel name="password">
+        <FormGroup>
+          <FormLabel name="password">
             {{ $t("forms.labels.password") }}
-          </AppFormLabel>
-          <AppFormInput
+          </FormLabel>
+          <FormInput
             v-model="form.password"
             name="password"
             type="password"
             placeholder="••••••••"
             required
           />
-        </AppFormGroup>
+        </FormGroup>
 
         <div class="flex flex-wrap justify-center my-36 md:my-60">
 
@@ -84,12 +84,12 @@
 import { mapActions } from 'vuex'
 
 import Heading from '@/components/Heading'
-import AppFormLabel from '@/components/forms/AppFormLabel'
-import AppFormInput from '@/components/forms/AppFormInput'
-import AppFormGroup from '@/components/forms/AppFormGroup'
+import FormLabel from '@/components/forms/FormLabel'
+import FormInput from '@/components/forms/FormInput'
+import FormGroup from '@/components/forms/FormGroup'
 import ContentSection from '@/components/ContentSection'
 import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
-import AppFormValidation from '@/components/forms/AppFormValidation'
+import FormValidation from '@/components/forms/FormValidation'
 import AppButtonLinkTertiary from '@/components/buttons/AppButtonLinkTertiary'
 
 export default {
@@ -114,12 +114,12 @@ export default {
   },
   components: {
     Heading,
-    AppFormLabel,
-    AppFormInput,
-    AppFormGroup,
+    FormLabel,
+    FormInput,
+    FormGroup,
     ContentSection,
     AppButtonPrimary,
-    AppFormValidation,
+    FormValidation,
     AppButtonLinkTertiary
   },
   data() {

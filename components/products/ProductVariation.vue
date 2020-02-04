@@ -2,12 +2,12 @@
   <div>
 
     <!-- Variation label -->
-    <AppFormLabel name="variation">
+    <FormLabel name="variation">
       {{ variationType }}
-    </AppFormLabel>
+    </FormLabel>
 
     <!-- Variation select -->
-    <AppFormSelect
+    <FormSelect
       :value="selectedVariationId"
       @change.native="changed"
       name="variation"
@@ -32,7 +32,7 @@
         </template>
 
       </option>
-    </AppFormSelect>
+    </FormSelect>
 
   </div>
 </template>
@@ -40,13 +40,13 @@
 <script>
 import { mapGetters } from 'vuex'
 
-import AppFormLabel from '@/components/forms/AppFormLabel'
-import AppFormSelect from '@/components/forms/AppFormSelect'
+import FormLabel from '@/components/forms/FormLabel'
+import FormSelect from '@/components/forms/FormSelect'
 
 export default {
   components: {
-    AppFormLabel,
-    AppFormSelect
+    FormLabel,
+    FormSelect
   },
   props: {
     type: {

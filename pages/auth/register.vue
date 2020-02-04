@@ -19,76 +19,76 @@
       >
 
         <!-- Name -->
-        <AppFormGroup>
-          <AppFormLabel name="name">
+        <FormGroup>
+          <FormLabel name="name">
             {{ $t("forms.labels.name") }}
-          </AppFormLabel>
-          <AppFormInput
+          </FormLabel>
+          <FormInput
             ref="autofocus"
             v-model="form.name"
             :errors="errors"
             name="name"
             required
           />
-          <AppFormValidation
+          <FormValidation
             :errors="errors"
             name="name"
           />
-        </AppFormGroup>
+        </FormGroup>
 
         <!-- Email -->
-        <AppFormGroup>
-          <AppFormLabel name="email">
+        <FormGroup>
+          <FormLabel name="email">
             {{ $t("forms.labels.email") }}
-          </AppFormLabel>
-          <AppFormInput
+          </FormLabel>
+          <FormInput
             v-model="form.email"
             :errors="errors"
             name="email"
             type="email"
             required
           />
-          <AppFormValidation
+          <FormValidation
             :errors="errors"
             name="email"
           />
-        </AppFormGroup>
+        </FormGroup>
 
         <!-- Password -->
-        <AppFormGroup>
-          <AppFormLabel name="password">
+        <FormGroup>
+          <FormLabel name="password">
             {{ $t("forms.labels.password") }}
-          </AppFormLabel>
-          <AppFormInput
+          </FormLabel>
+          <FormInput
             v-model="form.password"
             :errors="errors"
             name="password"
             type="password"
             required
           />
-          <AppFormValidation
+          <FormValidation
             :errors="errors"
             name="password"
           />
-        </AppFormGroup>
+        </FormGroup>
 
         <!-- Password confirmation -->
-        <AppFormGroup>
-          <AppFormLabel name="password_confirmation">
+        <FormGroup>
+          <FormLabel name="password_confirmation">
             {{ $t("forms.labels.password_confirmation") }}
-          </AppFormLabel>
-          <AppFormInput
+          </FormLabel>
+          <FormInput
             v-model="form.password_confirmation"
             :errors="errors"
             name="password_confirmation"
             type="password"
             required
           />
-        </AppFormGroup>
+        </FormGroup>
 
         <!-- Terms -->
-        <AppFormGroup>
-          <AppFormCheckbox
+        <FormGroup>
+          <FormCheckbox
             v-model="terms"
             name="terms"
           >
@@ -103,8 +103,8 @@
                 {{ $t("pages.register.links.terms") }}
               </nuxt-link>
             </div>
-          </AppFormCheckbox>
-        </AppFormGroup>
+          </FormCheckbox>
+        </FormGroup>
 
         <!-- Submit -->
         <AppButtonPrimary
@@ -124,13 +124,13 @@
 import { mapActions } from 'vuex'
 
 import Heading from '@/components/Heading'
-import AppFormGroup from '@/components/forms/AppFormGroup'
-import AppFormLabel from '@/components/forms/AppFormLabel'
-import AppFormInput from '@/components/forms/AppFormInput'
+import FormGroup from '@/components/forms/FormGroup'
+import FormLabel from '@/components/forms/FormLabel'
+import FormInput from '@/components/forms/FormInput'
 import ContentSection from '@/components/ContentSection'
-import AppFormCheckbox from '@/components/forms/AppFormCheckbox'
+import FormCheckbox from '@/components/forms/FormCheckbox'
 import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
-import AppFormValidation from '@/components/forms/AppFormValidation'
+import FormValidation from '@/components/forms/FormValidation'
 
 export default {
   layout: 'auth',
@@ -154,13 +154,13 @@ export default {
   },
   components: {
     Heading,
-    AppFormGroup,
-    AppFormLabel,
-    AppFormInput,
+    FormGroup,
+    FormLabel,
+    FormInput,
     ContentSection,
-    AppFormCheckbox,
+    FormCheckbox,
     AppButtonPrimary,
-    AppFormValidation
+    FormValidation
   },
   data() {
     return {

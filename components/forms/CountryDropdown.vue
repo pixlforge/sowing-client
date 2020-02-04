@@ -1,13 +1,13 @@
 <template>
   <div>
-    <AppFormLabel name="country_id">
+    <FormLabel name="country_id">
       {{ $t("forms.labels.country") }}
-    </AppFormLabel>
-    <AppFormSelect
+    </FormLabel>
+    <FormSelect
       :errors="errors"
-      name="country_id"
       :required="required"
       @change.native="$emit('input', $event.target.value)"
+      name="country_id"
     >
       <option
         v-for="country in countries"
@@ -17,8 +17,8 @@
       >
         {{ country.name[locale] }}
       </option>
-    </AppFormSelect>
-    <AppFormValidation
+    </FormSelect>
+    <FormValidation
       :errors="errors"
       name="country_id"
     />
@@ -28,15 +28,15 @@
 <script>
 import { mapGetters } from 'vuex'
 
-import AppFormLabel from '@/components/forms/AppFormLabel'
-import AppFormSelect from '@/components/forms/AppFormSelect'
-import AppFormValidation from '@/components/forms/AppFormValidation'
+import FormLabel from '@/components/forms/FormLabel'
+import FormSelect from '@/components/forms/FormSelect'
+import FormValidation from '@/components/forms/FormValidation'
 
 export default {
   components: {
-    AppFormLabel,
-    AppFormSelect,
-    AppFormValidation
+    FormLabel,
+    FormSelect,
+    FormValidation
   },
   props: {
     value: {

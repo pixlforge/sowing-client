@@ -28,7 +28,7 @@
           class="relative"
         >
           <div class="flex flex-col md:flex-row justify-center lg:justify-start mt-48">
-            <AppFormInput
+            <FormInput
               v-model="email"
               :placeholder="placeholder"
               :aria-label="$t('aria.inputs.email')"
@@ -61,13 +61,13 @@
 
 <script>
 import Heading from '@/components/Heading'
-import AppFormInput from '@/components/forms/AppFormInput'
+import FormInput from '@/components/forms/FormInput'
 import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 
 export default {
   components: {
     Heading,
-    AppFormInput,
+    FormInput,
     AppButtonPrimary
   },
   data() {
