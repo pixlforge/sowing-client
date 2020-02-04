@@ -41,17 +41,17 @@
 <script>
 import { mapGetters } from 'vuex'
 
-import AppStatusPending from '@/components/orders/statuses/AppStatusPending'
-import AppStatusCompleted from '@/components/orders/statuses/AppStatusCompleted'
-import AppStatusProcessing from '@/components/orders/statuses/AppStatusProcessing'
-import AppStatusPaymentFailed from '@/components/orders/statuses/AppStatusPaymentFailed'
+import StatusPending from '@/components/orders/statuses/StatusPending'
+import StatusCompleted from '@/components/orders/statuses/StatusCompleted'
+import StatusProcessing from '@/components/orders/statuses/StatusProcessing'
+import StatusPaymentFailed from '@/components/orders/statuses/StatusPaymentFailed'
 
 export default {
   components: {
-    pending: AppStatusPending,
-    completed: AppStatusCompleted,
-    processing: AppStatusProcessing,
-    payment_failed: AppStatusPaymentFailed
+    pending: StatusPending,
+    completed: StatusCompleted,
+    processing: StatusProcessing,
+    payment_failed: StatusPaymentFailed
   },
   props: {
     order: {

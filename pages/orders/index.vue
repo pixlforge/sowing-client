@@ -13,7 +13,7 @@
         v-if="orders.length"
         class="mt-96"
       >
-        <AppOrder
+        <Order
           v-for="order in orders"
           :key="order.id"
           :order="order"
@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import AppOrder from '@/components/orders/AppOrder'
+import Order from '@/components/orders/Order'
 import AppHeader from '@/components/headers/AppHeader'
 import ContentSection from '@/components/ContentSection'
 
@@ -55,7 +55,7 @@ export default {
     }
   },
   components: {
-    AppOrder,
+    Order,
     AppHeader,
     ContentSection
   },
