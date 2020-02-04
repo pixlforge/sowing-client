@@ -76,8 +76,8 @@
         </div>
 
         <form
-          class="w-full"
           @submit.prevent="add"
+          class="w-full"
         >
 
           <AppFormDivider/>

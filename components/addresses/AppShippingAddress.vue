@@ -46,9 +46,9 @@
     <!-- Change address -->
     <AppButtonPrimary
       v-if="addresses.length && !addressManagersVisible"
+      @click.native="openAddressSelector"
       icon="repeat-alt"
       class="w-full mt-20"
-      @click.native="openAddressSelector"
     >
       {{ $t("pages.checkout.change_address") }}
     </AppButtonPrimary>
@@ -56,9 +56,9 @@
     <!-- Add an address -->
     <AppButtonPrimary
       v-if="!addresses.length && !addressManagersVisible"
+      @click.native="openAddressCreator"
       icon="plus"
       class="w-full mt-20"
-      @click.native="openAddressCreator"
     >
       {{ $t("pages.checkout.add_address") }}
     </AppButtonPrimary>

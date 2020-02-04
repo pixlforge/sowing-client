@@ -74,10 +74,10 @@
 
     <!-- Remove control -->
     <button
+      @click="remove(product.id)"
       role="button"
       title="Remove"
       class="absolute top-0 right-0 mt-20 mr-20"
-      @click="remove(product.id)"
     >
       <font-awesome-icon
         :icon="['far', 'times']"

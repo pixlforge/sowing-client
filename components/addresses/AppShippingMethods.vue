@@ -11,10 +11,10 @@
 
     <!-- Select -->
     <AppFormSelect
+      @change.native="$emit('input', $event.target.value)"
       name="method"
       theme="light"
       class="mt-20"
-      @change.native="$emit('input', $event.target.value)"
     >
       <option
         v-for="method in methods"

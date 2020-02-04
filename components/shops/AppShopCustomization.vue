@@ -15,9 +15,9 @@
 
         <!-- Delete avatar -->
         <AppButtonPrimary
+          @click.native="deleteAvatar"
           size="mini"
           color="pink-dark"
-          @click.native="deleteAvatar"
         >
           {{ $t("buttons.delete") }}
         </AppButtonPrimary>
@@ -48,9 +48,9 @@
 
         <!-- Delete cover -->
         <AppButtonPrimary
+          @click.native="deleteCover"
           size="mini"
           color="pink-dark"
-          @click.native="deleteCover"
         >
           {{ $t("buttons.delete") }}
         </AppButtonPrimary>
