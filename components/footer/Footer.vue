@@ -3,8 +3,8 @@
     <div class="container flex flex-wrap pb-96">
 
       <!-- Categories -->
-      <AppFooterColumn :title="$t('footer.titles.categories')">
-        <AppFooterItem
+      <FooterColumn :title="$t('footer.titles.categories')">
+        <FooterItem
           v-for="category in categories"
           :key="category.slug"
           :to="{
@@ -15,71 +15,71 @@
           }"
           :label="category.name[locale]"
         />
-      </AppFooterColumn>
+      </FooterColumn>
 
       <!-- Selling -->
-      <AppFooterColumn :title="$t('footer.titles.sell_on_sowing')">
-        <AppFooterItem
+      <FooterColumn :title="$t('footer.titles.sell_on_sowing')">
+        <FooterItem
           :to="{ name: 'auth-login' }"
           :label="$t('footer.links.login')"
         />
-        <AppFooterItem
+        <FooterItem
           :to="{ name: 'auth-register' }"
           :label="$t('footer.links.your_own_store')"
         />
-        <AppFooterItem
+        <FooterItem
           :to="{ name: 'advice-to-creators' }"
           :label="$t('footer.links.advice_to_creators')"
         />
-        <AppFooterItem
+        <FooterItem
           :to="{ name: 'index' }"
           :label="$t('footer.links.new_vendors')"
         />
-      </AppFooterColumn>
+      </FooterColumn>
 
       <!-- About -->
-      <AppFooterColumn :title="$t('footer.titles.about')">
-        <AppFooterItem
+      <FooterColumn :title="$t('footer.titles.about')">
+        <FooterItem
           :to="{ name: 'index' }"
           :label="$t('footer.links.terms')"
         />
-        <AppFooterItem
+        <FooterItem
           :to="{ name: 'index' }"
           :label="$t('footer.links.payments')"
         />
-        <AppFooterItem
+        <FooterItem
           :to="{ name: 'index' }"
           :label="$t('footer.links.shipments')"
         />
-        <AppFooterItem
+        <FooterItem
           :to="{ name: 'faq' }"
           :label="$t('footer.links.faq')"
         />
-      </AppFooterColumn>
+      </FooterColumn>
 
       <!-- Languages -->
-      <AppFooterColumn :title="$t('footer.titles.language')">
-        <AppFooterItem
+      <FooterColumn :title="$t('footer.titles.language')">
+        <FooterItem
           v-for="locale in availableLocales"
           :key="locale.code"
           :label="locale.name"
           @click.native="setLocale(locale)"
         />
-      </AppFooterColumn>
+      </FooterColumn>
 
       <!-- Social Networks -->
-      <AppFooterColumn :title="$t('footer.titles.social_networks')">
-        <AppFooterItemSocial
+      <FooterColumn :title="$t('footer.titles.social_networks')">
+        <FooterItemSocial
           url="https://www.facebook.com/Sowingch-1065130827008521/"
           icon="facebook"
           label="Facebook"
         />
-        <AppFooterItemSocial
+        <FooterItemSocial
           url="https://www.instagram.com/sowing.ch/"
           icon="instagram"
           label="Instagram"
         />
-      </AppFooterColumn>
+      </FooterColumn>
 
     </div>
   </footer>
@@ -89,15 +89,15 @@
 import { mapGetters } from 'vuex'
 import theming from '@/mixins/theming'
 
-import AppFooterItem from '@/components/footer/AppFooterItem'
-import AppFooterColumn from '@/components/footer/AppFooterColumn'
-import AppFooterItemSocial from '@/components/footer/AppFooterItemSocial'
+import FooterItem from '@/components/footer/FooterItem'
+import FooterColumn from '@/components/footer/FooterColumn'
+import FooterItemSocial from '@/components/footer/FooterItemSocial'
 
 export default {
   components: {
-    AppFooterItem,
-    AppFooterColumn,
-    AppFooterItemSocial
+    FooterItem,
+    FooterColumn,
+    FooterItemSocial
   },
   mixins: [theming],
   computed: {

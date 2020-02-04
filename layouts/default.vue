@@ -14,10 +14,10 @@
     <nuxt/>
 
     <!-- Footer -->
-    <AppFooter/>
+    <Footer/>
 
     <!-- Disclaimer -->
-    <AppDisclaimer :class="bgTheme"/>
+    <Disclaimer :class="bgTheme"/>
   </div>
 </template>
 
@@ -26,16 +26,16 @@ import theming from '@/mixins/theming'
 
 import Navbar from '@/components/Navbar'
 import Alert from '@/components/globals/Alert'
-import AppFooter from '@/components/footer/AppFooter'
-import AppDisclaimer from '@/components/footer/AppDisclaimer'
+import Footer from '@/components/footer/Footer'
+import Disclaimer from '@/components/footer/Disclaimer'
 import AppCategoryBar from '@/components/categories/AppCategoryBar'
 
 export default {
   components: {
     Navbar,
     Alert,
-    AppFooter,
-    AppDisclaimer,
+    Footer,
+    Disclaimer,
     AppCategoryBar
   },
   mixins: [theming]

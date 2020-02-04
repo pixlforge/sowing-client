@@ -123,10 +123,10 @@
     </main>
 
     <!-- Footer -->
-    <AppFooter/>
+    <Footer/>
 
     <!-- Disclaimer -->
-    <AppDisclaimer :class="bgTheme"/>
+    <Disclaimer :class="bgTheme"/>
   </div>
 </template>
 
@@ -137,11 +137,11 @@ import theming from '@/mixins/theming'
 import Splash from '@/components/Splash'
 import Navbar from '@/components/Navbar'
 import Alert from '@/components/globals/Alert'
-import AppFooter from '@/components/footer/AppFooter'
+import Footer from '@/components/footer/Footer'
 import Header from '@/components/headers/Header'
 import SideMenu from '@/components/menus/SideMenu'
 import ShopCover from '@/components/shops/ShopCover'
-import AppDisclaimer from '@/components/footer/AppDisclaimer'
+import Disclaimer from '@/components/footer/Disclaimer'
 import ContentSection from '@/components/ContentSection'
 import HeaderList from '@/components/headers/HeaderList'
 import SideMenuList from '@/components/menus/SideMenuList'
@@ -154,11 +154,11 @@ export default {
     Splash,
     Navbar,
     Alert,
-    AppFooter,
+    Footer,
     Header,
     SideMenu,
     ShopCover,
-    AppDisclaimer,
+    Disclaimer,
     ContentSection,
     HeaderList,
     SideMenuList,

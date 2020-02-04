@@ -29,10 +29,10 @@
     <nuxt/>
 
     <!-- Footer -->
-    <AppFooter/>
+    <Footer/>
 
     <!-- Disclaimer -->
-    <AppDisclaimer :class="bgTheme"/>
+    <Disclaimer :class="bgTheme"/>
   </div>
 </template>
 
@@ -42,10 +42,10 @@ import theming from '@/mixins/theming'
 
 import Navbar from '@/components/Navbar'
 import Alert from '@/components/globals/Alert'
-import AppFooter from '@/components/footer/AppFooter'
+import Footer from '@/components/footer/Footer'
 import Header from '@/components/headers/Header'
 import ShopCover from '@/components/shops/ShopCover'
-import AppDisclaimer from '@/components/footer/AppDisclaimer'
+import Disclaimer from '@/components/footer/Disclaimer'
 import AppCategoryBar from '@/components/categories/AppCategoryBar'
 import ShopNavigation from '@/components/shops/navigation/ShopNavigation'
 
@@ -53,10 +53,10 @@ export default {
   components: {
     Navbar,
     Alert,
-    AppFooter,
+    Footer,
     Header,
     ShopCover,
-    AppDisclaimer,
+    Disclaimer,
     AppCategoryBar,
     ShopNavigation
   },

@@ -60,20 +60,20 @@
     </main>
 
     <!-- Footer -->
-    <AppFooter/>
+    <Footer/>
 
     <!-- Disclaimer -->
-    <AppDisclaimer/>
+    <Disclaimer/>
   </div>
 </template>
 
 <script>
 import Navbar from '@/components/Navbar'
 import Alert from '@/components/globals/Alert'
-import AppFooter from '@/components/footer/AppFooter'
+import Footer from '@/components/footer/Footer'
 import Header from '@/components/headers/Header'
 import SideMenu from '@/components/menus/SideMenu'
-import AppDisclaimer from '@/components/footer/AppDisclaimer'
+import Disclaimer from '@/components/footer/Disclaimer'
 import ContentSection from '@/components/ContentSection'
 import SideMenuList from '@/components/menus/SideMenuList'
 import SideMenuItem from '@/components/menus/SideMenuItem'
@@ -82,10 +82,10 @@ export default {
   components: {
     Navbar,
     Alert,
-    AppFooter,
+    Footer,
     Header,
     SideMenu,
-    AppDisclaimer,
+    Disclaimer,
     ContentSection,
     SideMenuList,
     SideMenuItem
