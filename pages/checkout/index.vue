@@ -34,7 +34,7 @@
             {{ $t("pages.cart.title") }}
           </Heading>
 
-          <AppCartOverviewProduct
+          <CartOverviewProduct
             v-for="product in products"
             :key="product.id"
             :product="product"
@@ -121,7 +121,7 @@ import ContentSection from '@/components/ContentSection'
 import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 import AppShippingMethods from '@/components/addresses/AppShippingMethods'
 import AppShippingAddress from '@/components/addresses/AppShippingAddress'
-import AppCartOverviewProduct from '@/components/cart/AppCartOverviewProduct'
+import CartOverviewProduct from '@/components/cart/CartOverviewProduct'
 import PaymentMethods from '@/components/payment-methods/PaymentMethods'
 
 export default {
@@ -150,7 +150,7 @@ export default {
     AppButtonPrimary,
     AppShippingMethods,
     AppShippingAddress,
-    AppCartOverviewProduct,
+    CartOverviewProduct,
     PaymentMethods
   },
   data() {

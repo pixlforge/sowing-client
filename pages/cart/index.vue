@@ -13,7 +13,7 @@
       <!-- Cart Overview -->
       <div>
         <template v-if="products.length">
-          <AppCartOverviewProduct
+          <CartOverviewProduct
             v-for="product in products"
             :key="product.id"
             :product="product"
@@ -77,7 +77,7 @@ import Splash from '@/components/Splash'
 import Header from '@/components/headers/Header'
 import ContentSection from '@/components/ContentSection'
 import AppButtonLinkPrimary from '@/components/buttons/AppButtonLinkPrimary'
-import AppCartOverviewProduct from '@/components/cart/AppCartOverviewProduct'
+import CartOverviewProduct from '@/components/cart/CartOverviewProduct'
 
 export default {
   middleware: ['authenticated'],
@@ -103,7 +103,7 @@ export default {
     Header,
     ContentSection,
     AppButtonLinkPrimary,
-    AppCartOverviewProduct
+    CartOverviewProduct
   },
   computed: {
     ...mapGetters({
