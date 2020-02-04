@@ -2,7 +2,7 @@
   <main>
 
     <!-- Header -->
-    <AppHeader
+    <Header
       :title="subcategory.name[locale]"
       :description="subcategory.description[locale]"
     />
@@ -25,7 +25,7 @@
 <script>
 import { mapGetters } from 'vuex'
 
-import AppHeader from '@/components/headers/AppHeader'
+import Header from '@/components/headers/Header'
 import Product from '@/components/products/Product'
 import ContentSection from '@/components/ContentSection'
 
@@ -36,7 +36,7 @@ export default {
     }
   },
   components: {
-    AppHeader,
+    Header,
     Product,
     ContentSection
   },

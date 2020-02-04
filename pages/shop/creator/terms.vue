@@ -2,7 +2,7 @@
   <main>
 
     <!-- Header -->
-    <AppHeader
+    <Header
       :title="$t('pages.shop.creation')"
       icon="file-contract"
     />
@@ -45,7 +45,7 @@
 import { mapGetters, mapActions } from 'vuex'
 
 import Terms from '@/components/terms/Terms'
-import AppHeader from '@/components/headers/AppHeader'
+import Header from '@/components/headers/Header'
 import ContentSection from '@/components/ContentSection'
 import AppFormCheckbox from '@/components/forms/AppFormCheckbox'
 import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
@@ -71,7 +71,7 @@ export default {
   },
   components: {
     Terms,
-    AppHeader,
+    Header,
     ContentSection,
     AppFormCheckbox,
     AppButtonPrimary

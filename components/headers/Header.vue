@@ -5,7 +5,7 @@
       <!-- Icon -->
       <div class="w-50 sm:w-80 h-50 sm:h-80 rounded-full bg-white flex flex-shrink-0 justify-center items-center text-20 sm:text-36 text-green-500">
         <slot name="icon">
-          <AppHeaderIcon :icon="icon"/>
+          <HeaderIcon :icon="icon"/>
         </slot>
       </div>
 
@@ -23,9 +23,9 @@
 
         <!-- Description -->
         <slot name="description">
-          <AppHeaderDescription class="hidden sm:block">
+          <HeaderDescription class="hidden sm:block">
             {{ description }}
-          </AppHeaderDescription>
+          </HeaderDescription>
         </slot>
 
         <!-- Extra markup -->
@@ -38,14 +38,14 @@
 
 <script>
 import Heading from '@/components/Heading'
-import AppHeaderIcon from '@/components/headers/AppHeaderIcon'
-import AppHeaderDescription from '@/components/headers/AppHeaderDescription'
+import HeaderIcon from '@/components/headers/HeaderIcon'
+import HeaderDescription from '@/components/headers/HeaderDescription'
 
 export default {
   components: {
     Heading,
-    AppHeaderIcon,
-    AppHeaderDescription
+    HeaderIcon,
+    HeaderDescription
   },
   props: {
     title: {

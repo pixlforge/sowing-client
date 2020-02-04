@@ -2,7 +2,7 @@
   <main>
 
     <!-- Header -->
-    <AppHeader
+    <Header
       :title="product.shop.name"
       :description="product.shop.description_short[locale]"
       :class="bgTheme"
@@ -21,7 +21,7 @@
           {{ $t("pages.shop.visit") }}
         </AppHeaderButtonLink>
       </template>
-    </AppHeader>
+    </Header>
 
     <!-- Product details -->
     <ContentSection>
@@ -38,7 +38,7 @@
 import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
-import AppHeader from '@/components/headers/AppHeader'
+import Header from '@/components/headers/Header'
 import ContentSection from '@/components/ContentSection'
 import ProductDetails from '@/components/products/ProductDetails'
 import StreakNewsletter from '@/components/streaks/StreakNewsletter'
@@ -58,7 +58,7 @@ export default {
     }
   },
   components: {
-    AppHeader,
+    Header,
     ContentSection,
     ProductDetails,
     StreakNewsletter,

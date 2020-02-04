@@ -2,7 +2,7 @@
   <main>
 
     <!-- Header -->
-    <AppHeader
+    <Header
       :title="$t('pages.verify.title')"
       icon="shield-check"
     />
@@ -45,7 +45,7 @@
 </template>
 
 <script>
-import AppHeader from '@/components/headers/AppHeader'
+import Header from '@/components/headers/Header'
 import Splash from '@/components/Splash'
 
 export default {
@@ -68,7 +68,7 @@ export default {
     }
   },
   components: {
-    AppHeader,
+    Header,
     Splash
   },
   data() {

@@ -14,13 +14,13 @@
     />
 
     <!-- Header -->
-    <AppHeader
+    <Header
       v-if="shopExists"
       :class="bgTheme"
       :title="shopName"
       :description="shop.description_short[locale]"
     >
-      <AppHeaderList>
+      <HeaderList>
         <li>
           <font-awesome-icon
             :icon="['far', 'map-marker-alt']"
@@ -34,8 +34,8 @@
         >
           {{ shop.country.name[locale] }}
         </li>
-      </AppHeaderList>
-    </AppHeader>
+      </HeaderList>
+    </Header>
 
     <!-- Main -->
     <main class="bg-gray-100">
@@ -138,12 +138,12 @@ import Splash from '@/components/Splash'
 import Navbar from '@/components/Navbar'
 import AppAlert from '@/components/globals/AppAlert'
 import AppFooter from '@/components/footer/AppFooter'
-import AppHeader from '@/components/headers/AppHeader'
+import Header from '@/components/headers/Header'
 import SideMenu from '@/components/menus/SideMenu'
 import ShopCover from '@/components/shops/ShopCover'
 import AppDisclaimer from '@/components/footer/AppDisclaimer'
 import ContentSection from '@/components/ContentSection'
-import AppHeaderList from '@/components/headers/AppHeaderList'
+import HeaderList from '@/components/headers/HeaderList'
 import SideMenuList from '@/components/menus/SideMenuList'
 import SideMenuItem from '@/components/menus/SideMenuItem'
 import SideMenuTitle from '@/components/menus/SideMenuTitle'
@@ -155,12 +155,12 @@ export default {
     Navbar,
     AppAlert,
     AppFooter,
-    AppHeader,
+    Header,
     SideMenu,
     ShopCover,
     AppDisclaimer,
     ContentSection,
-    AppHeaderList,
+    HeaderList,
     SideMenuList,
     SideMenuItem,
     SideMenuTitle,

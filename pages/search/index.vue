@@ -2,7 +2,7 @@
   <main>
 
     <!-- Header -->
-    <AppHeader
+    <Header
       :title="$t('pages.search.title')"
       :description="$t('pages.search.description')"
       icon="search"
@@ -44,7 +44,7 @@
 <script>
 import { mapGetters } from 'vuex'
 
-import AppHeader from '@/components/headers/AppHeader'
+import Header from '@/components/headers/Header'
 import AppFormInput from '@/components/forms/AppFormInput'
 import ContentSection from '@/components/ContentSection'
 import SearchResult from '@/components/search/SearchResult'
@@ -63,7 +63,7 @@ export default {
     }
   },
   components: {
-    AppHeader,
+    Header,
     AppFormInput,
     ContentSection,
     SearchResult

@@ -8,7 +8,7 @@
     <Navbar/>
 
     <!-- Header -->
-    <AppHeader
+    <Header
       :title="$t('pages.account.title')"
       :description="$t('pages.account.description')"
     />
@@ -71,7 +71,7 @@
 import Navbar from '@/components/Navbar'
 import AppAlert from '@/components/globals/AppAlert'
 import AppFooter from '@/components/footer/AppFooter'
-import AppHeader from '@/components/headers/AppHeader'
+import Header from '@/components/headers/Header'
 import SideMenu from '@/components/menus/SideMenu'
 import AppDisclaimer from '@/components/footer/AppDisclaimer'
 import ContentSection from '@/components/ContentSection'
@@ -83,7 +83,7 @@ export default {
     Navbar,
     AppAlert,
     AppFooter,
-    AppHeader,
+    Header,
     SideMenu,
     AppDisclaimer,
     ContentSection,

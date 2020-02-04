@@ -2,7 +2,7 @@
   <main>
 
     <!-- Header -->
-    <AppHeader
+    <Header
       :title="$t('pages.register.title')"
       icon="user-plus"
     />
@@ -26,7 +26,7 @@
 
 <script>
 import Splash from '@/components/Splash'
-import AppHeader from '@/components/headers/AppHeader'
+import Header from '@/components/headers/Header'
 
 export default {
   middleware: ['authenticated'],
@@ -37,7 +37,7 @@ export default {
   },
   components: {
     Splash,
-    AppHeader
+    Header
   }
 }
 </script>

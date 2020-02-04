@@ -2,7 +2,7 @@
   <main>
 
     <!-- Header -->
-    <AppHeader
+    <Header
       :title="$t('pages.orders.title')"
       icon="shipping-fast"
     />
@@ -32,7 +32,7 @@
 
 <script>
 import Order from '@/components/orders/Order'
-import AppHeader from '@/components/headers/AppHeader'
+import Header from '@/components/headers/Header'
 import ContentSection from '@/components/ContentSection'
 
 export default {
@@ -56,7 +56,7 @@ export default {
   },
   components: {
     Order,
-    AppHeader,
+    Header,
     ContentSection
   },
   data() {

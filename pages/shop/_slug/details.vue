@@ -8,12 +8,12 @@
     />
 
     <!-- Header -->
-    <AppHeader
+    <Header
       :class="bgTheme"
       :title="shopName"
       :description="shop.description_short[locale]"
     >
-      <AppHeaderList>
+      <HeaderList>
         <li>
           <font-awesome-icon
             :icon="['far', 'map-marker-alt']"
@@ -24,8 +24,8 @@
         <li class="ml-20">
           {{ shop.country.name[locale] }}
         </li>
-      </AppHeaderList>
-    </AppHeader>
+      </HeaderList>
+    </Header>
 
     <!-- About -->
     <ContentSection>
@@ -92,10 +92,10 @@ import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
 import Heading from '@/components/Heading'
-import AppHeader from '@/components/headers/AppHeader'
+import Header from '@/components/headers/Header'
 import ShopCover from '@/components/shops/ShopCover'
 import ContentSection from '@/components/ContentSection'
-import AppHeaderList from '@/components/headers/AppHeaderList'
+import HeaderList from '@/components/headers/HeaderList'
 import StreakRegister from '@/components/streaks/StreakRegister'
 import AppButtonLinkPrimary from '@/components/buttons/AppButtonLinkPrimary'
 
@@ -107,10 +107,10 @@ export default {
   },
   components: {
     Heading,
-    AppHeader,
+    Header,
     ShopCover,
     ContentSection,
-    AppHeaderList,
+    HeaderList,
     StreakRegister,
     AppButtonLinkPrimary
   },

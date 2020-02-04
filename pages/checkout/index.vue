@@ -2,7 +2,7 @@
   <main>
 
     <!-- Header -->
-    <AppHeader
+    <Header
       :title="pageTitle"
       icon="cash-register"
     />
@@ -116,7 +116,7 @@
 import { mapGetters, mapActions } from 'vuex'
 
 import Heading from '@/components/Heading'
-import AppHeader from '@/components/headers/AppHeader'
+import Header from '@/components/headers/Header'
 import ContentSection from '@/components/ContentSection'
 import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 import AppShippingMethods from '@/components/addresses/AppShippingMethods'
@@ -145,7 +145,7 @@ export default {
   },
   components: {
     Heading,
-    AppHeader,
+    Header,
     ContentSection,
     AppButtonPrimary,
     AppShippingMethods,

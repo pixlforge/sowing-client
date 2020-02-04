@@ -2,7 +2,7 @@
   <main>
 
     <!-- Header -->
-    <AppHeader
+    <Header
       :title="$t('pages.faq.title')"
       icon="question"
     />
@@ -63,7 +63,7 @@
 
 <script>
 import Heading from '@/components/Heading'
-import AppHeader from '@/components/headers/AppHeader'
+import Header from '@/components/headers/Header'
 import ContentSection from '@/components/ContentSection'
 import Paragraph from '@/components/paragraphs/Paragraph'
 import ParagraphGroup from '@/components/paragraphs/ParagraphGroup'
@@ -84,7 +84,7 @@ export default {
   },
   components: {
     Heading,
-    AppHeader,
+    Header,
     ContentSection,
     Paragraph,
     ParagraphGroup,

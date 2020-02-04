@@ -17,7 +17,7 @@
     />
 
     <!-- Header -->
-    <AppHeader
+    <Header
       :class="bgTheme"
       :title="shopName ? shopName : $t('pages.shop.creation')"
     />
@@ -43,7 +43,7 @@ import theming from '@/mixins/theming'
 import Navbar from '@/components/Navbar'
 import AppAlert from '@/components/globals/AppAlert'
 import AppFooter from '@/components/footer/AppFooter'
-import AppHeader from '@/components/headers/AppHeader'
+import Header from '@/components/headers/Header'
 import ShopCover from '@/components/shops/ShopCover'
 import AppDisclaimer from '@/components/footer/AppDisclaimer'
 import AppCategoryBar from '@/components/categories/AppCategoryBar'
@@ -54,7 +54,7 @@ export default {
     Navbar,
     AppAlert,
     AppFooter,
-    AppHeader,
+    Header,
     ShopCover,
     AppDisclaimer,
     AppCategoryBar,

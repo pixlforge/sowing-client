@@ -2,7 +2,7 @@
   <main>
 
     <!-- Header -->
-    <AppHeader
+    <Header
       :title="$t('advice_to_creators.title')"
       icon="comment-dots"
     />
@@ -42,7 +42,7 @@
 <script>
 import Heading from '@/components/Heading'
 import List from '@/components/paragraphs/List'
-import AppHeader from '@/components/headers/AppHeader'
+import Header from '@/components/headers/Header'
 import ContentSection from '@/components/ContentSection'
 import Paragraph from '@/components/paragraphs/Paragraph'
 import StreakNewsletter from '@/components/streaks/StreakNewsletter'
@@ -64,7 +64,7 @@ export default {
   components: {
     Heading,
     List,
-    AppHeader,
+    Header,
     ContentSection,
     Paragraph,
     StreakNewsletter,

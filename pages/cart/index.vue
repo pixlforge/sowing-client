@@ -2,7 +2,7 @@
   <main>
 
     <!-- Header -->
-    <AppHeader
+    <Header
       :title="pageTitle"
       icon="shopping-cart"
     />
@@ -74,7 +74,7 @@
 import { mapGetters, mapActions } from 'vuex'
 
 import Splash from '@/components/Splash'
-import AppHeader from '@/components/headers/AppHeader'
+import Header from '@/components/headers/Header'
 import ContentSection from '@/components/ContentSection'
 import AppButtonLinkPrimary from '@/components/buttons/AppButtonLinkPrimary'
 import AppCartOverviewProduct from '@/components/cart/AppCartOverviewProduct'
@@ -100,7 +100,7 @@ export default {
   },
   components: {
     Splash,
-    AppHeader,
+    Header,
     ContentSection,
     AppButtonLinkPrimary,
     AppCartOverviewProduct
