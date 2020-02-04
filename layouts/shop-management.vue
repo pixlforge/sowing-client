@@ -48,40 +48,40 @@
           <div class="w-full flex">
 
             <!-- Side menu -->
-            <AppSideMenu>
-              <AppSideMenuList>
-                <AppSideMenuItem
+            <SideMenu>
+              <SideMenuList>
+                <SideMenuItem
                   :label="$t('pages.shop.management.dashboard.title')"
                   route="shop-management-dashboard"
                   icon="home"
                 />
-              </AppSideMenuList>
-              <AppSideMenuTitle>
+              </SideMenuList>
+              <SideMenuTitle>
                 {{ $t('side_menu.shop') }}
-              </AppSideMenuTitle>
-              <AppSideMenuList>
-                <AppSideMenuItem
+              </SideMenuTitle>
+              <SideMenuList>
+                <SideMenuItem
                   :label="$t('pages.shop.management.details.title')"
                   route="shop-management-details"
                   icon="cog"
                 />
-                <AppSideMenuItem
+                <SideMenuItem
                   :label="$t('pages.shop.management.theme.title')"
                   route="shop-management-theme"
                   icon="palette"
                 />
-              </AppSideMenuList>
-              <AppSideMenuTitle>
+              </SideMenuList>
+              <SideMenuTitle>
                 {{ $t('side_menu.products') }}
-              </AppSideMenuTitle>
-              <AppSideMenuList>
-                <AppSideMenuItem
+              </SideMenuTitle>
+              <SideMenuList>
+                <SideMenuItem
                   :label="$t('products.management.index.title')"
                   route="shop-management-products"
                   icon="box-full"
                 />
-              </AppSideMenuList>
-            </AppSideMenu>
+              </SideMenuList>
+            </SideMenu>
 
             <!-- Page content -->
             <section class="w-full lg:w-3/4 mt-72 lg:mt-0">
@@ -139,14 +139,14 @@ import Navbar from '@/components/Navbar'
 import AppAlert from '@/components/globals/AppAlert'
 import AppFooter from '@/components/footer/AppFooter'
 import AppHeader from '@/components/headers/AppHeader'
-import AppSideMenu from '@/components/menus/AppSideMenu'
+import SideMenu from '@/components/menus/SideMenu'
 import ShopCover from '@/components/shops/ShopCover'
 import AppDisclaimer from '@/components/footer/AppDisclaimer'
 import ContentSection from '@/components/ContentSection'
 import AppHeaderList from '@/components/headers/AppHeaderList'
-import AppSideMenuList from '@/components/menus/AppSideMenuList'
-import AppSideMenuItem from '@/components/menus/AppSideMenuItem'
-import AppSideMenuTitle from '@/components/menus/AppSideMenuTitle'
+import SideMenuList from '@/components/menus/SideMenuList'
+import SideMenuItem from '@/components/menus/SideMenuItem'
+import SideMenuTitle from '@/components/menus/SideMenuTitle'
 import AppButtonLinkPrimary from '@/components/buttons/AppButtonLinkPrimary'
 
 export default {
@@ -156,14 +156,14 @@ export default {
     AppAlert,
     AppFooter,
     AppHeader,
-    AppSideMenu,
+    SideMenu,
     ShopCover,
     AppDisclaimer,
     ContentSection,
     AppHeaderList,
-    AppSideMenuList,
-    AppSideMenuItem,
-    AppSideMenuTitle,
+    SideMenuList,
+    SideMenuItem,
+    SideMenuTitle,
     AppButtonLinkPrimary
   },
   mixins: [theming],

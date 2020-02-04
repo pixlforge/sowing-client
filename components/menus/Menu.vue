@@ -2,8 +2,8 @@
   <div class="md:relative">
     <button
       ref="dropdownMenu"
-      class="outline-none focus:shadow-outline rounded-lg border border-gray-200 text-12 text-gray-500 font-extrabold text-center uppercase no-underline whitespace-no-wrap flex px-30 py-12"
       @click.prevent="toggleDropdown"
+      class="outline-none focus:shadow-outline rounded-lg border border-gray-200 text-12 text-gray-500 font-extrabold text-center uppercase no-underline whitespace-no-wrap flex px-30 py-12"
     >
       {{ username }}
       <font-awesome-icon
@@ -59,9 +59,9 @@
 
         <!-- Logout -->
         <AppDropdownItem
+          @click.native="logout"
           color="red"
           icon="sign-out"
-          @click.native="logout"
         >
           {{ $t("navbar.user.logout") }}
         </AppDropdownItem>

@@ -21,35 +21,35 @@
         <div class="w-full flex flex-wrap">
 
           <!-- Side menu -->
-          <AppSideMenu>
-            <AppSideMenuList>
-              <AppSideMenuItem
+          <SideMenu>
+            <SideMenuList>
+              <SideMenuItem
                 :label="$t('pages.account.dashboard.title')"
                 route="account-dashboard"
                 icon="home"
               />
-              <AppSideMenuItem
+              <SideMenuItem
                 :label="$t('pages.account.profile.title')"
                 route="account-profile"
                 icon="user"
               />
-              <AppSideMenuItem
+              <SideMenuItem
                 :label="$t('pages.account.password.title')"
                 route="account-password"
                 icon="shield-alt"
               />
-              <AppSideMenuItem
+              <SideMenuItem
                 :label="$t('pages.account.addresses.titles.index')"
                 route="account-addresses"
                 icon="address-book"
               />
-              <AppSideMenuItem
+              <SideMenuItem
                 :label="$t('pages.account.payment_methods.titles.index')"
                 route="account-payment-methods"
                 icon="credit-card"
               />
-            </AppSideMenuList>
-          </AppSideMenu>
+            </SideMenuList>
+          </SideMenu>
 
           <!-- Page content -->
           <section class="w-full lg:w-3/4 xl:w-4/5 mt-72 lg:mt-0">
@@ -72,11 +72,11 @@ import Navbar from '@/components/Navbar'
 import AppAlert from '@/components/globals/AppAlert'
 import AppFooter from '@/components/footer/AppFooter'
 import AppHeader from '@/components/headers/AppHeader'
-import AppSideMenu from '@/components/menus/AppSideMenu'
+import SideMenu from '@/components/menus/SideMenu'
 import AppDisclaimer from '@/components/footer/AppDisclaimer'
 import ContentSection from '@/components/ContentSection'
-import AppSideMenuList from '@/components/menus/AppSideMenuList'
-import AppSideMenuItem from '@/components/menus/AppSideMenuItem'
+import SideMenuList from '@/components/menus/SideMenuList'
+import SideMenuItem from '@/components/menus/SideMenuItem'
 
 export default {
   components: {
@@ -84,11 +84,11 @@ export default {
     AppAlert,
     AppFooter,
     AppHeader,
-    AppSideMenu,
+    SideMenu,
     AppDisclaimer,
     ContentSection,
-    AppSideMenuList,
-    AppSideMenuItem
+    SideMenuList,
+    SideMenuItem
   }
 }
 </script>
