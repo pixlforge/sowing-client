@@ -11,13 +11,13 @@
       </div>
 
       <div class="w-full lg:w-1/2 xl:w-2/3 py-132">
-        <AppTitle
-          semantic="h1"
+        <Heading
+          tag="h1"
           visual="main"
           utilities="text-white lg:text-left"
         >
           {{ $t("streaks.newsletter.title") }}
-        </AppTitle>
+        </Heading>
 
         <p class="text-20 xl:text-24 text-white text-center lg:text-left mt-30">
           {{ $t("streaks.newsletter.body") }}
@@ -61,13 +61,13 @@
 </template>
 
 <script>
-import AppTitle from '@/components/AppTitle'
+import Heading from '@/components/Heading'
 import AppFormInput from '@/components/forms/AppFormInput'
 import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 
 export default {
   components: {
-    AppTitle,
+    Heading,
     AppFormInput,
     AppButtonPrimary
   },

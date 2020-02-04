@@ -29,12 +29,12 @@
 
     <!-- About -->
     <AppContentSection>
-      <AppTitle
-        semantic="h1"
+      <Heading
+        tag="h1"
         visual="main"
       >
         {{ $t("pages.shop_details.welcome") }}
-      </AppTitle>
+      </Heading>
 
       <p
         class="max-w-600 text-16 leading-loose text-center mx-auto my-36 md:my-72 mt-72 sm:mt-132"
@@ -61,12 +61,12 @@
 
     <!-- Shop articles -->
     <AppContentSection>
-      <AppTitle
-        semantic="h2"
+      <Heading
+        tag="h2"
         visual="main"
       >
         {{ $t("pages.shop_details.interested") }}
-      </AppTitle>
+      </Heading>
 
       <div class="flex justify-center mt-72">
         <AppButtonLinkPrimary
@@ -91,7 +91,7 @@
 import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
-import AppTitle from '@/components/AppTitle'
+import Heading from '@/components/Heading'
 import AppHeader from '@/components/headers/AppHeader'
 import AppShopCover from '@/components/shops/AppShopCover'
 import AppContentSection from '@/components/AppContentSection'
@@ -107,7 +107,7 @@ export default {
     }
   },
   components: {
-    AppTitle,
+    Heading,
     AppHeader,
     AppShopCover,
     AppContentSection,

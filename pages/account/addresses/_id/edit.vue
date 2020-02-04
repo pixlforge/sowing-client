@@ -9,13 +9,13 @@
       />
 
       <!-- Page title -->
-      <AppTitle
-        semantic="h1"
+      <Heading
+        tag="h1"
         visual="h1"
         utilities="mx-auto sm:mx-0"
       >
         {{ $t('pages.account.addresses.titles.edit') }}
-      </AppTitle>
+      </Heading>
     </header>
 
     <!-- Edition -->
@@ -202,7 +202,7 @@
 import { mapActions } from 'vuex'
 
 import AppCard from '@/components/AppCard'
-import AppTitle from '@/components/AppTitle'
+import Heading from '@/components/Heading'
 import AppFormRow from '@/components/forms/AppFormRow'
 import AppFormGroup from '@/components/forms/AppFormGroup'
 import AppFormLabel from '@/components/forms/AppFormLabel'
@@ -219,7 +219,7 @@ import AppFormCheckboxLabel from '@/components/forms/AppFormCheckboxLabel'
 export default {
   components: {
     AppCard,
-    AppTitle,
+    Heading,
     AppFormGroup,
     AppFormLabel,
     AppFormInput,

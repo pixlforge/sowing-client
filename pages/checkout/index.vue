@@ -12,12 +12,12 @@
         <div class="w-3/4 mr-48">
 
           <!-- Payment methods -->
-          <AppTitle
-            semantic="h2"
+          <Heading
+            tag="h2"
             visual="h3"
           >
             {{ $t("pages.checkout.payment") }}
-          </AppTitle>
+          </Heading>
 
           <AppPaymentMethods
             v-model="form.payment_method_id"
@@ -27,12 +27,12 @@
           />
 
           <!-- Cart Overview -->
-          <AppTitle
-            semantic="h2"
+          <Heading
+            tag="h2"
             visual="h3"
           >
             {{ $t("pages.cart.title") }}
-          </AppTitle>
+          </Heading>
 
           <AppCartOverviewProduct
             v-for="product in products"
@@ -115,7 +115,7 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 
-import AppTitle from '@/components/AppTitle'
+import Heading from '@/components/Heading'
 import AppHeader from '@/components/headers/AppHeader'
 import AppContentSection from '@/components/AppContentSection'
 import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
@@ -144,7 +144,7 @@ export default {
     }
   },
   components: {
-    AppTitle,
+    Heading,
     AppHeader,
     AppContentSection,
     AppButtonPrimary,

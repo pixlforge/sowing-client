@@ -12,13 +12,13 @@
     >
 
       <!-- Name -->
-      <AppTitle
-        semantic="h2"
+      <Heading
+        tag="h2"
         visual="h3"
         utilities="text-white text-center z-10"
       >
         {{ category.name[locale] }}
-      </AppTitle>
+      </Heading>
 
       <!-- Mask -->
       <div class="absolute w-full h-full bg-black opacity-25"/>
@@ -30,11 +30,11 @@
 <script>
 import { mapGetters } from 'vuex'
 
-import AppTitle from '@/components/AppTitle'
+import Heading from '@/components/Heading'
 
 export default {
   components: {
-    AppTitle
+    Heading
   },
   props: {
     category: {

@@ -2,12 +2,12 @@
   <div>
 
     <!-- Title -->
-    <AppTitle
-      semantic="h1"
+    <Heading
+      tag="h1"
       visual="h1"
     >
       Thème
-    </AppTitle>
+    </Heading>
 
     <!-- Shop customization -->
     <AppCard>
@@ -22,7 +22,7 @@ import theming from '@/mixins/theming'
 import shopManagement from '@/mixins/shop-management'
 
 import AppCard from '@/components/AppCard'
-import AppTitle from '@/components/AppTitle'
+import Heading from '@/components/Heading'
 import AppShopCustomization from '@/components/shops/AppShopCustomization'
 
 export default {
@@ -47,7 +47,7 @@ export default {
   layout: 'shop-management',
   components: {
     AppCard,
-    AppTitle,
+    Heading,
     AppShopCustomization
   },
   mixins: [

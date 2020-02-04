@@ -8,13 +8,13 @@
       <div class="flex flex-col items-start px-48 pb-48 z-10">
 
         <!-- Title -->
-        <AppTitle
-          semantic="h2"
+        <Heading
+          tag="h2"
           visual="h1"
           utilities="text-white"
         >
           {{ category.name[locale] }}
-        </AppTitle>
+        </Heading>
 
         <div class="text-white leading-none">
           <span class="text-16">
@@ -55,12 +55,12 @@
 <script>
 import { mapGetters } from 'vuex'
 
-import AppTitle from '@/components/AppTitle'
+import Heading from '@/components/Heading'
 import AppButtonLinkPrimary from '@/components/buttons/AppButtonLinkPrimary'
 
 export default {
   components: {
-    AppTitle,
+    Heading,
     AppButtonLinkPrimary
   },
   props: {

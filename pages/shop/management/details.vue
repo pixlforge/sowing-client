@@ -2,12 +2,12 @@
   <div>
 
     <!-- Title -->
-    <AppTitle
-      semantic="h1"
+    <Heading
+      tag="h1"
       visual="h1"
     >
       Détails
-    </AppTitle>
+    </Heading>
 
     <!-- Shop details -->
     <AppCard>
@@ -36,7 +36,7 @@ import theming from '@/mixins/theming'
 import shopManagement from '@/mixins/shop-management'
 
 import AppCard from '@/components/AppCard'
-import AppTitle from '@/components/AppTitle'
+import Heading from '@/components/Heading'
 import AppShopDetails from '@/components/shops/AppShopDetails'
 import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 
@@ -62,7 +62,7 @@ export default {
   layout: 'shop-management',
   components: {
     AppCard,
-    AppTitle,
+    Heading,
     AppShopDetails,
     AppButtonPrimary
   },

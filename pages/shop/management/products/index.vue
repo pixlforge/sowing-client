@@ -3,12 +3,12 @@
     <AppResourceHeader>
 
       <!-- Page title -->
-      <AppTitle
-        semantic="h1"
+      <Heading
+        tag="h1"
         visual="h1"
       >
         {{ $t("products.management.index.title") }}
-      </AppTitle>
+      </Heading>
 
       <!-- Add a product -->
       <AppAddButtonLink
@@ -29,7 +29,7 @@
 import shopManagement from '@/mixins/shop-management'
 
 import AppCard from '@/components/AppCard'
-import AppTitle from '@/components/AppTitle'
+import Heading from '@/components/Heading'
 import AppAddButtonLink from '@/components/buttons/AppAddButtonLink'
 import AppResourceHeader from '@/components/resources/AppResourceHeader'
 
@@ -55,7 +55,7 @@ export default {
   middleware: ['authenticated', 'hasShop'],
   components: {
     AppCard,
-    AppTitle,
+    Heading,
     AppAddButtonLink,
     AppResourceHeader
   },

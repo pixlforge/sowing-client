@@ -10,8 +10,8 @@
       <template slot-scope="{ totalResults }">
 
         <!-- Index titles -->
-        <AppTitle
-          semantic="h3"
+        <Heading
+          tag="h3"
           visual="h3"
         >
           <template v-if="indexName === 'products'">
@@ -20,7 +20,7 @@
           <template v-else>
             {{ $t("pages.search.shops") }}
           </template>
-        </AppTitle>
+        </Heading>
 
         <!-- Total results -->
         <small class="search__results">
@@ -49,11 +49,13 @@
       :results-per-page="5"
       class="search__ais-results"
     >
+      <!-- eslint-disable -->
       <component
         :is="indexName"
         slot-scope="{ result }"
         :result="result"
       />
+      <!-- eslint-enable -->
     </ais-results>
 
     <!-- Pagination -->
@@ -74,8 +76,10 @@ import AppSearchResultProduct from '@/components/search/AppSearchResultProduct'
 
 export default {
   components: {
+    /* eslint-disable */
     'shops': AppSearchResultShop,
     'products': AppSearchResultProduct
+    /* eslint-enable */
   },
   props: {
     query: {

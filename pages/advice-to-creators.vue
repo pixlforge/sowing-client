@@ -9,12 +9,12 @@
 
     <!-- Content -->
     <AppContentSection class="max-w-800">
-      <AppTitle
-        semantic="h1"
+      <Heading
+        tag="h1"
         visual="h4"
       >
         {{ $t('advice_to_creators.created_a_shop') }}
-      </AppTitle>
+      </Heading>
       <AppParagraph>
         {{ $t('advice_to_creators.list_of_advices') }}
       </AppParagraph>
@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import AppTitle from '@/components/AppTitle'
+import Heading from '@/components/Heading'
 import AppList from '@/components/paragraphs/AppList'
 import AppHeader from '@/components/headers/AppHeader'
 import AppContentSection from '@/components/AppContentSection'
@@ -62,7 +62,7 @@ export default {
     }
   },
   components: {
-    AppTitle,
+    Heading,
     AppList,
     AppHeader,
     AppContentSection,

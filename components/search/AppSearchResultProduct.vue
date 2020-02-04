@@ -16,12 +16,12 @@
       <div>
 
         <!-- Name -->
-        <AppTitle
-          semantic="h5"
+        <Heading
+          tag="h5"
           visual="h4"
         >
           {{ result.name[locale] }}
-        </AppTitle>
+        </Heading>
 
         <!-- Description -->
         <p class="search__result-description search__result-description--product">
@@ -35,11 +35,11 @@
 <script>
 import { mapGetters } from 'vuex'
 
-import AppTitle from '@/components/AppTitle'
+import Heading from '@/components/Heading'
 
 export default {
   components: {
-    AppTitle
+    Heading
   },
   props: {
     result: {

@@ -18,12 +18,12 @@
         >
 
           <!-- Section name -->
-          <AppTitle
-            semantic="h1"
+          <Heading
+            tag="h1"
             visual="main"
           >
             {{ section.name[locale] }}
-          </AppTitle>
+          </Heading>
 
           <div class="flex flex-wrap justify-center -mx-16 mb-96 md:mb-132 lg:mb-196">
 
@@ -59,7 +59,7 @@
 <script>
 import { mapGetters } from 'vuex'
 
-import AppTitle from '@/components/AppTitle'
+import Heading from '@/components/Heading'
 import AppHeader from '@/components/headers/AppHeader'
 import AppContentSection from '@/components/AppContentSection'
 import AppSubCategory from '@/components/categories/AppSubCategory'
@@ -71,7 +71,7 @@ export default {
     }
   },
   components: {
-    AppTitle,
+    Heading,
     AppHeader,
     AppContentSection,
     AppSubCategory

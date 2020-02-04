@@ -10,12 +10,12 @@
         />
 
         <!-- Page title -->
-        <AppTitle
-          semantic="h1"
+        <Heading
+          tag="h1"
           visual="h2"
         >
           {{ $t('pages.account.addresses.titles.show') }}
-        </AppTitle>
+        </Heading>
       </div>
 
       <!-- Delete -->
@@ -44,7 +44,7 @@
 import { mapActions } from 'vuex'
 
 import AppCard from '@/components/AppCard'
-import AppTitle from '@/components/AppTitle'
+import Heading from '@/components/Heading'
 import AppBackButton from '@/components/buttons/AppBackButton'
 import AppDeleteButton from '@/components/buttons/AppDeleteButton'
 import AppAddressCard from '@/components/addresses/AppAddressCard'
@@ -53,7 +53,7 @@ import AppConfirmationModal from '@/components/modals/AppConfirmationModal'
 export default {
   components: {
     AppCard,
-    AppTitle,
+    Heading,
     AppBackButton,
     AppDeleteButton,
     AppAddressCard,

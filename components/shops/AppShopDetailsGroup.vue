@@ -1,12 +1,12 @@
 <template>
   <div>
     <div class="">
-      <AppTitle
-        semantic="h5"
+      <Heading
+        tag="h5"
         visual="h3"
       >
         {{ title }}
-      </AppTitle>
+      </Heading>
       <p class="text-16 leading-relaxed capitalize my-10">
         {{ language }}
       </p>
@@ -21,11 +21,11 @@
 </template>
 
 <script>
-import AppTitle from '@/components/AppTitle'
+import Heading from '@/components/Heading'
 
 export default {
   components: {
-    AppTitle
+    Heading
   },
   props: {
     title: {

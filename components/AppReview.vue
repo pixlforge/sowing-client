@@ -18,12 +18,12 @@
       </div>
     </div>
     <div class="text-center md:text-left px-20 sm:px-48 mt-48 md:mt-0">
-      <AppTitle
-        semantic="h5"
+      <Heading
+        tag="h5"
         visual="h4"
       >
         {{ review.name }}
-      </AppTitle>
+      </Heading>
       <p class="text-16 leading-loose mt-20">
         {{ review.comment }}
       </p>
@@ -32,11 +32,11 @@
 </template>
 
 <script>
-import AppTitle from '@/components/AppTitle'
+import Heading from '@/components/Heading'
 
 export default {
   components: {
-    AppTitle
+    Heading
   },
   props: {
     review: {

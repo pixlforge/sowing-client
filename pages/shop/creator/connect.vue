@@ -5,12 +5,12 @@
     <AppContentSection>
 
       <!-- Title -->
-      <AppTitle
-        semantic="h1"
+      <Heading
+        tag="h1"
         visual="main"
       >
         {{ $t("shop_creator.steps.connect.title") }}
-      </AppTitle>
+      </Heading>
 
       <!-- Infos -->
       <AppParagraph
@@ -78,7 +78,7 @@
 import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
-import AppTitle from '@/components/AppTitle'
+import Heading from '@/components/Heading'
 import AppSplash from '@/components/AppSplash'
 import AppContentSection from '@/components/AppContentSection'
 import AppParagraph from '@/components/paragraphs/AppParagraph'
@@ -115,7 +115,7 @@ export default {
     mode: 'out-in'
   },
   components: {
-    AppTitle,
+    Heading,
     AppSplash,
     AppContentSection,
     AppParagraph,

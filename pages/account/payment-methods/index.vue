@@ -3,12 +3,12 @@
     <AppResourceHeader>
 
       <!-- Page title -->
-      <AppTitle
-        semantic="h1"
+      <Heading
+        tag="h1"
         visual="h1"
       >
         {{ $t("pages.account.payment_methods.titles.index") }}
-      </AppTitle>
+      </Heading>
 
       <!-- Add a payment method -->
       <AppAddButtonLink
@@ -64,7 +64,7 @@
 import { mapActions, mapGetters } from 'vuex'
 
 import AppCard from '@/components/AppCard'
-import AppTitle from '@/components/AppTitle'
+import Heading from '@/components/Heading'
 import AppParagraph from '@/components/paragraphs/AppParagraph'
 import AppAddButtonLink from '@/components/buttons/AppAddButtonLink'
 import AppResourceList from '@/components/resources/AppResourceList'
@@ -76,7 +76,7 @@ import AppPaymentMethodItem from '@/components/payment-methods/AppPaymentMethodI
 export default {
   components: {
     AppCard,
-    AppTitle,
+    Heading,
     AppParagraph,
     AppAddButtonLink,
     AppResourceList,

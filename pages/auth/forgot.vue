@@ -5,13 +5,13 @@
     <AppContentSection class="max-w-600">
 
       <!-- Page title -->
-      <AppTitle
-        semantic="h1"
+      <Heading
+        tag="h1"
         visual="h1"
         utilities="md:text-center"
       >
         {{ $t("pages.password_email.paragraphs.first") }}
-      </AppTitle>
+      </Heading>
 
       <!-- Infos -->
       <AppParagraph center>
@@ -60,7 +60,7 @@
 <script>
 import { mapActions } from 'vuex'
 
-import AppTitle from '@/components/AppTitle'
+import Heading from '@/components/Heading'
 import AppFormGroup from '@/components/forms/AppFormGroup'
 import AppFormLabel from '@/components/forms/AppFormLabel'
 import AppFormInput from '@/components/forms/AppFormInput'
@@ -90,7 +90,7 @@ export default {
     }
   },
   components: {
-    AppTitle,
+    Heading,
     AppFormGroup,
     AppFormLabel,
     AppFormInput,

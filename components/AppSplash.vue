@@ -24,14 +24,14 @@
     </div>
 
     <!-- Title -->
-    <AppTitle
-      semantic="h2"
+    <Heading
+      tag="h2"
       visual="main"
     >
       <slot name="title">
         {{ title }}
       </slot>
-    </AppTitle>
+    </Heading>
 
     <p class="text-18 md:text-20 lg:text-30 font-bold text-center mb-72 md:mb-96 lg:mb-132">
       <slot name="subtitle">
@@ -47,12 +47,12 @@
 </template>
 
 <script>
-import AppTitle from '@/components/AppTitle'
+import Heading from '@/components/Heading'
 import AppContentSection from '@/components/AppContentSection'
 
 export default {
   components: {
-    AppTitle,
+    Heading,
     AppContentSection
   },
   props: {

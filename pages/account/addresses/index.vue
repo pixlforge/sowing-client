@@ -3,12 +3,12 @@
     <AppResourceHeader>
 
       <!-- Page title -->
-      <AppTitle
-        semantic="h1"
+      <Heading
+        tag="h1"
         visual="h1"
       >
         {{ $t("pages.account.addresses.titles.index") }}
-      </AppTitle>
+      </Heading>
 
       <!-- Add an address -->
       <AppAddButtonLink
@@ -64,7 +64,7 @@
 import { mapGetters, mapActions } from 'vuex'
 
 import AppCard from '@/components/AppCard'
-import AppTitle from '@/components/AppTitle'
+import Heading from '@/components/Heading'
 import AppParagraph from '@/components/paragraphs/AppParagraph'
 import AppAddressItem from '@/components/addresses/AppAddressItem'
 import AppAddButtonLink from '@/components/buttons/AppAddButtonLink'
@@ -76,7 +76,7 @@ import AppButtonLinkPrimary from '@/components/buttons/AppButtonLinkPrimary'
 export default {
   components: {
     AppCard,
-    AppTitle,
+    Heading,
     AppParagraph,
     AppAddressItem,
     AppAddButtonLink,

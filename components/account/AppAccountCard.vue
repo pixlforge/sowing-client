@@ -41,12 +41,12 @@
         </div>
 
         <!-- Name -->
-        <AppTitle
-          semantic="h3"
+        <Heading
+          tag="h3"
           visual="h3"
         >
           {{ user.name }}
-        </AppTitle>
+        </Heading>
       </div>
 
       <div class="ml-36">
@@ -77,11 +77,11 @@
 <script>
 import { mapGetters } from 'vuex'
 
-import AppTitle from '@/components/AppTitle'
+import Heading from '@/components/Heading'
 
 export default {
   components: {
-    AppTitle
+    Heading
   },
   props: {
     user: {

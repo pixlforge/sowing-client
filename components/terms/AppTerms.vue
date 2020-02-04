@@ -1,20 +1,20 @@
 <template>
   <div class="terms__wrapper">
-    <AppTitle
-      semantic="h2"
+    <Heading
+      tag="h2"
       visual="main"
     >
       {{ $t("pages.terms.title") }}
-    </AppTitle>
+    </Heading>
 
     <AppContentSection class="max-w-800">
       <AppParagraphGroup>
-        <AppTitle
-          semantic="h2"
+        <Heading
+          tag="h2"
           visual="h2"
         >
           Titre des conditions
-        </AppTitle>
+        </Heading>
 
         <AppParagraph>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim facere perspiciatis suscipit quod doloribus cumque, eum repellendus non consequuntur dolore quae dolorem perferendis explicabo minus, expedita tempore aperiam amet atque? Explicabo nobis id pariatur tempora accusamus totam voluptatibus facere nesciunt cum inventore, quibusdam sapiente! Error nisi earum perferendis et quod itaque tempora consequatur tempore, saepe veritatis laboriosam. Deleniti quibusdam beatae impedit tenetur aspernatur provident soluta itaque nulla inventore? Natus odio deleniti sunt omnis eveniet, porro iste debitis veritatis sint quis unde illum explicabo iusto aperiam corrupti eaque fugit facilis laboriosam nulla eligendi blanditiis? Vero fuga reiciendis officia deserunt obcaecati sapiente?
@@ -26,12 +26,12 @@
       </AppParagraphGroup>
 
       <AppParagraphGroup>
-        <AppTitle
-          semantic="h2"
+        <Heading
+          tag="h2"
           visual="h2"
         >
           Titre des conditions
-        </AppTitle>
+        </Heading>
 
         <AppParagraph>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim facere perspiciatis suscipit quod doloribus cumque, eum repellendus non consequuntur dolore quae dolorem perferendis explicabo minus, expedita tempore aperiam amet atque? Explicabo nobis id pariatur tempora accusamus totam voluptatibus facere nesciunt cum inventore, quibusdam sapiente! Error nisi earum perferendis et quod itaque tempora consequatur tempore, saepe veritatis laboriosam. Deleniti quibusdam beatae impedit tenetur aspernatur provident soluta itaque nulla inventore? Natus odio deleniti sunt omnis eveniet, porro iste debitis veritatis sint quis unde illum explicabo iusto aperiam corrupti eaque fugit facilis laboriosam nulla eligendi blanditiis? Vero fuga reiciendis officia deserunt obcaecati sapiente?
@@ -43,12 +43,12 @@
       </AppParagraphGroup>
 
       <AppParagraphGroup>
-        <AppTitle
-          semantic="h2"
+        <Heading
+          tag="h2"
           visual="h2"
         >
           Titre des conditions
-        </AppTitle>
+        </Heading>
 
         <AppParagraph>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim facere perspiciatis suscipit quod doloribus cumque, eum repellendus non consequuntur dolore quae dolorem perferendis explicabo minus, expedita tempore aperiam amet atque? Explicabo nobis id pariatur tempora accusamus totam voluptatibus facere nesciunt cum inventore, quibusdam sapiente! Error nisi earum perferendis et quod itaque tempora consequatur tempore, saepe veritatis laboriosam. Deleniti quibusdam beatae impedit tenetur aspernatur provident soluta itaque nulla inventore? Natus odio deleniti sunt omnis eveniet, porro iste debitis veritatis sint quis unde illum explicabo iusto aperiam corrupti eaque fugit facilis laboriosam nulla eligendi blanditiis? Vero fuga reiciendis officia deserunt obcaecati sapiente?
@@ -60,12 +60,12 @@
       </AppParagraphGroup>
 
       <AppParagraphGroup>
-        <AppTitle
-          semantic="h2"
+        <Heading
+          tag="h2"
           visual="h2"
         >
           Titre des conditions
-        </AppTitle>
+        </Heading>
 
         <AppParagraph>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim facere perspiciatis suscipit quod doloribus cumque, eum repellendus non consequuntur dolore quae dolorem perferendis explicabo minus, expedita tempore aperiam amet atque? Explicabo nobis id pariatur tempora accusamus totam voluptatibus facere nesciunt cum inventore, quibusdam sapiente! Error nisi earum perferendis et quod itaque tempora consequatur tempore, saepe veritatis laboriosam. Deleniti quibusdam beatae impedit tenetur aspernatur provident soluta itaque nulla inventore? Natus odio deleniti sunt omnis eveniet, porro iste debitis veritatis sint quis unde illum explicabo iusto aperiam corrupti eaque fugit facilis laboriosam nulla eligendi blanditiis? Vero fuga reiciendis officia deserunt obcaecati sapiente?
@@ -81,14 +81,14 @@
 </template>
 
 <script>
-import AppTitle from '@/components/AppTitle'
+import Heading from '@/components/Heading'
 import AppContentSection from '@/components/AppContentSection'
 import AppParagraph from '@/components/paragraphs/AppParagraph'
 import AppParagraphGroup from '@/components/paragraphs/AppParagraphGroup'
 
 export default {
   components: {
-    AppTitle,
+    Heading,
     AppContentSection,
     AppParagraph,
     AppParagraphGroup

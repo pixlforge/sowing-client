@@ -9,12 +9,12 @@
       />
 
       <!-- Page title -->
-      <AppTitle
-        semantic="h1"
+      <Heading
+        tag="h1"
         visual="h2"
       >
         {{ $t('pages.account.addresses.titles.create') }}
-      </AppTitle>
+      </Heading>
     </div>
 
     <AppCard>
@@ -197,7 +197,7 @@
 
 <script>
 import AppCard from '@/components/AppCard'
-import AppTitle from '@/components/AppTitle'
+import Heading from '@/components/Heading'
 import AppFormRow from '@/components/forms/AppFormRow'
 import AppFormGroup from '@/components/forms/AppFormGroup'
 import AppFormLabel from '@/components/forms/AppFormLabel'
@@ -214,7 +214,7 @@ import AppButtonLinkTertiary from '@/components/buttons/AppButtonLinkTertiary'
 export default {
   components: {
     AppCard,
-    AppTitle,
+    Heading,
     AppFormGroup,
     AppFormLabel,
     AppFormInput,

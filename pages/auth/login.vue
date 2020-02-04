@@ -5,13 +5,13 @@
     <AppContentSection class="max-w-600">
 
       <!-- Page title -->
-      <AppTitle
-        semantic="h1"
+      <Heading
+        tag="h1"
         visual="h1"
         utilities="md:text-center"
       >
         {{ $t('pages.login.title') }}
-      </AppTitle>
+      </Heading>
 
       <form
         @submit.prevent="login"
@@ -83,7 +83,7 @@
 <script>
 import { mapActions } from 'vuex'
 
-import AppTitle from '@/components/AppTitle'
+import Heading from '@/components/Heading'
 import AppFormLabel from '@/components/forms/AppFormLabel'
 import AppFormInput from '@/components/forms/AppFormInput'
 import AppFormGroup from '@/components/forms/AppFormGroup'
@@ -113,7 +113,7 @@ export default {
     }
   },
   components: {
-    AppTitle,
+    Heading,
     AppFormLabel,
     AppFormInput,
     AppFormGroup,

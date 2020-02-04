@@ -19,12 +19,12 @@
       <div>
 
         <!-- Name -->
-        <AppTitle
-          semantic="h5"
+        <Heading
+          tag="h5"
           visual="h4"
         >
           {{ result.name }}
-        </AppTitle>
+        </Heading>
 
         <!-- Description -->
         <!-- eslint-disable -->
@@ -41,11 +41,11 @@
 <script>
 import { mapGetters } from 'vuex'
 
-import AppTitle from '@/components/AppTitle'
+import Heading from '@/components/Heading'
 
 export default {
   components: {
-    AppTitle
+    Heading
   },
   props: {
     result: {

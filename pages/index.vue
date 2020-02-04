@@ -18,13 +18,13 @@
 
     <!-- Features -->
     <AppContentSection class="max-w-1000">
-      <AppTitle
-        semantic="h1"
+      <Heading
+        tag="h1"
         visual="main"
         utilities="mb-30 sm:mb-72 md:mb-60"
       >
         {{ $t("home.titles.features") }}
-      </AppTitle>
+      </Heading>
 
       <div class="flex flex-wrap justify-between -mx-20">
         <AppFeature
@@ -58,12 +58,12 @@
 
     <!-- Shops -->
     <AppContentSection>
-      <AppTitle
-        semantic="h1"
+      <Heading
+        tag="h1"
         visual="main"
       >
         {{ $t("home.titles.shops") }}
-      </AppTitle>
+      </Heading>
 
       <div class="flex flex-wrap -mx-20 mt-60 sm:mt-132">
         <AppShopCard
@@ -77,12 +77,12 @@
 
     <!-- Categories -->
     <AppContentSection>
-      <AppTitle
-        semantic="h1"
+      <Heading
+        tag="h1"
         visual="main"
       >
         {{ $t("home.titles.categories") }}
-      </AppTitle>
+      </Heading>
 
       <div class="flex flex-wrap justify-center shadow-2xl -mx-20 mt-60 sm:mt-132">
         <AppCategoryCard
@@ -95,12 +95,12 @@
 
     <!-- Reviews -->
     <AppContentSection class="max-w-1000">
-      <AppTitle
-        semantic="h1"
+      <Heading
+        tag="h1"
         visual="main"
       >
         {{ $t("home.titles.reviews") }}
-      </AppTitle>
+      </Heading>
 
       <div class="mt-60 sm:mt-132">
         <AppReview
@@ -120,7 +120,7 @@
 <script>
 import { mapGetters } from 'vuex'
 
-import AppTitle from '@/components/AppTitle'
+import Heading from '@/components/Heading'
 import AppReview from '@/components/AppReview'
 import AppFeature from '@/components/AppFeature'
 import AppShopCard from '@/components/shops/AppShopCard'
@@ -137,7 +137,7 @@ export default {
     }
   },
   components: {
-    AppTitle,
+    Heading,
     AppReview,
     AppFeature,
     AppShopCard,

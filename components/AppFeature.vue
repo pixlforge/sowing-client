@@ -6,13 +6,13 @@
         class="text-48 text-pink-600"
       />
     </div>
-    <AppTitle
-      semantic="h2"
+    <Heading
+      tag="h2"
       visual="h4"
       utilities="text-center my-30"
     >
       {{ title }}
-    </AppTitle>
+    </Heading>
     <p class="text-14 lg:text-16 text-center leading-loose">
       {{ body }}
     </p>
@@ -20,11 +20,11 @@
 </template>
 
 <script>
-import AppTitle from '@/components/AppTitle'
+import Heading from '@/components/Heading'
 
 export default {
   components: {
-    AppTitle
+    Heading
   },
   props: {
     title: {

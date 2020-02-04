@@ -2,12 +2,12 @@
   <div>
 
     <!-- Title -->
-    <AppTitle
-      semantic="h1"
+    <Heading
+      tag="h1"
       visual="h1"
     >
       Dashboard
-    </AppTitle>
+    </Heading>
 
     <AppCard>
       this is the dashboard of the shop management section
@@ -20,7 +20,7 @@
 import shopManagement from '@/mixins/shop-management'
 
 import AppCard from '@/components/AppCard'
-import AppTitle from '@/components/AppTitle'
+import Heading from '@/components/Heading'
 
 export default {
   head() {
@@ -42,7 +42,7 @@ export default {
   },
   components: {
     AppCard,
-    AppTitle
+    Heading
   },
   middleware: ['authenticated'],
   layout: 'shop-management',

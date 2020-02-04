@@ -2,12 +2,12 @@
   <div>
 
     <!-- Page title -->
-    <AppTitle
-      semantic="h1"
+    <Heading
+      tag="h1"
       visual="h1"
     >
       {{ $t("pages.account.dashboard.title") }}
-    </AppTitle>
+    </Heading>
 
     <AppCard>
       <AppAccountCard :user="user"/>
@@ -18,13 +18,13 @@
 
 <script>
 import AppCard from '@/components/AppCard'
-import AppTitle from '@/components/AppTitle'
+import Heading from '@/components/Heading'
 import AppAccountCard from '@/components/account/AppAccountCard'
 
 export default {
   components: {
     AppCard,
-    AppTitle,
+    Heading,
     AppAccountCard
   },
   middleware: ['authenticated'],

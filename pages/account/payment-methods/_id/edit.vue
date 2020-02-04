@@ -9,13 +9,13 @@
       />
 
       <!-- Page title -->
-      <AppTitle
-        semantic="h1"
+      <Heading
+        tag="h1"
         visual="h1"
         utilities="mx-auto sm:mx-0"
       >
         {{ $t('pages.account.payment_methods.titles.edit') }}
-      </AppTitle>
+      </Heading>
     </header>
 
     <AppCard>
@@ -37,7 +37,7 @@
 
 <script>
 import AppCard from '@/components/AppCard'
-import AppTitle from '@/components/AppTitle'
+import Heading from '@/components/Heading'
 import AppBackButton from '@/components/buttons/AppBackButton'
 import AppParagraph from '@/components/paragraphs/AppParagraph'
 import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
@@ -45,7 +45,7 @@ import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 export default {
   components: {
     AppCard,
-    AppTitle,
+    Heading,
     AppBackButton,
     AppParagraph,
     AppButtonPrimary

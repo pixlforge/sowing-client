@@ -1,11 +1,11 @@
 <template>
   <section class="w-1/3 lg:w-1/5 mx-auto mt-48 lg:mt-96">
-    <AppTitle
-      semantic="h5"
+    <Heading
+      tag="h5"
       visual="h5"
     >
       {{ title }}
-    </AppTitle>
+    </Heading>
     <ul class="leading-loose mt-16">
       <slot/>
     </ul>
@@ -13,11 +13,11 @@
 </template>
 
 <script>
-import AppTitle from '@/components/AppTitle'
+import Heading from '@/components/Heading'
 
 export default {
   components: {
-    AppTitle
+    Heading
   },
   props: {
     title: {

@@ -22,12 +22,12 @@
         <div class="flex flex-col justify-between px-20 sm:px-24 py-36">
 
           <!-- Base product name -->
-          <AppTitle
-            semantic="h3"
+          <Heading
+            tag="h3"
             visual="h4"
           >
             {{ productName }}
-          </AppTitle>
+          </Heading>
 
           <!-- Base product description -->
           <p class="text-12 sm:text-14 leading-relaxed mt-16">
@@ -53,11 +53,11 @@
 <script>
 import { mapGetters } from 'vuex'
 
-import AppTitle from '@/components/AppTitle'
+import Heading from '@/components/Heading'
 
 export default {
   components: {
-    AppTitle
+    Heading
   },
   props: {
     product: {

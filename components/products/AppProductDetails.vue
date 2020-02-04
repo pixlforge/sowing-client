@@ -15,12 +15,12 @@
       <div class="w-full lg:w-1/2 flex flex-col items-center lg:items-start p-30">
 
         <!-- Base product name -->
-        <AppTitle
-          semantic="h1"
+        <Heading
+          tag="h1"
           visual="main"
         >
           {{ productName }}
-        </AppTitle>
+        </Heading>
 
         <!-- Base product description -->
         <p class="text-18 leading-relaxed my-48">
@@ -150,7 +150,7 @@
 import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
-import AppTitle from '@/components/AppTitle'
+import Heading from '@/components/Heading'
 import AppFormLabel from '@/components/forms/AppFormLabel'
 import AppFormSelect from '@/components/forms/AppFormSelect'
 import AppVariation from '@/components/products/AppVariation'
@@ -159,7 +159,7 @@ import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 
 export default {
   components: {
-    AppTitle,
+    Heading,
     AppFormLabel,
     AppFormSelect,
     AppVariation,

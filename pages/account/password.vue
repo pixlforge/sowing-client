@@ -2,12 +2,12 @@
   <div>
 
     <!-- Page title -->
-    <AppTitle
-      semantic="h1"
+    <Heading
+      tag="h1"
       visual="h1"
     >
       {{ $t("pages.account.password.title") }}
-    </AppTitle>
+    </Heading>
 
     <AppCard>
       <form @submit.prevent="update">
@@ -58,7 +58,7 @@
 import { mapActions } from 'vuex'
 
 import AppCard from '@/components/AppCard'
-import AppTitle from '@/components/AppTitle'
+import Heading from '@/components/Heading'
 import AppFormGroup from '@/components/forms/AppFormGroup'
 import AppFormInput from '@/components/forms/AppFormInput'
 import AppFormLabel from '@/components/forms/AppFormLabel'
@@ -68,7 +68,7 @@ import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 export default {
   components: {
     AppCard,
-    AppTitle,
+    Heading,
     AppFormGroup,
     AppFormInput,
     AppFormLabel,

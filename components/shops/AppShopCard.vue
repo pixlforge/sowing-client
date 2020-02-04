@@ -20,12 +20,12 @@
       <div class="w-full md:w-3/4 p-30">
 
         <!-- Title -->
-        <AppTitle
-          semantic="h5"
+        <Heading
+          tag="h5"
           visual="h4"
         >
           {{ shop.name }}
-        </AppTitle>
+        </Heading>
 
         <!-- Description -->
         <p class="text-14 leading-relaxed text-center md:text-left my-30">
@@ -48,11 +48,11 @@
 </template>
 
 <script>
-import AppTitle from '@/components/AppTitle'
+import Heading from '@/components/Heading'
 
 export default {
   components: {
-    AppTitle
+    Heading
   },
   props: {
     shop: {

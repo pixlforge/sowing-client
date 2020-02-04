@@ -1,7 +1,7 @@
 <script>
 export default {
   props: {
-    semantic: {
+    tag: {
       type: String,
       required: false,
       default: 'h1'
@@ -43,7 +43,7 @@ export default {
   },
   render(createElement) {
     return createElement(
-      this.semantic,
+      this.tag,
       { attrs: { class: this.classes } },
       this.$slots.default
     )

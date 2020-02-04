@@ -23,13 +23,13 @@
       <div class="bg-white outline-none focus:shadow-outline rounded-lg shadow-lg group-hover:shadow-xl transition-shadow transition-faster overflow-hidden px-20 sm:px-24 py-36">
 
         <!-- Title -->
-        <AppTitle
-          semantic="h2"
+        <Heading
+          tag="h2"
           visual="h4"
           utilities="text-center"
         >
           {{ subcategory.name[locale] }}
-        </AppTitle>
+        </Heading>
 
       </div>
     </div>
@@ -39,11 +39,11 @@
 <script>
 import { mapGetters } from 'vuex'
 
-import AppTitle from '@/components/AppTitle'
+import Heading from '@/components/Heading'
 
 export default {
   components: {
-    AppTitle
+    Heading
   },
   props: {
     category: {

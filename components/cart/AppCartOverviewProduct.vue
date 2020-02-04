@@ -12,12 +12,12 @@
 
     <!-- Name & description -->
     <div class="w-2/5 pl-30">
-      <AppTitle
-        semantic="h3"
+      <Heading
+        tag="h3"
         visual="h4"
       >
         {{ baseProductName }} &ndash; {{ variationType }} &ndash; {{ variationName }}
-      </AppTitle>
+      </Heading>
 
       <p class="text-14 leading-relaxed mt-20">
         {{ baseProductDescription }}
@@ -26,13 +26,13 @@
 
     <!-- Price -->
     <div class="w-1/5 text-center px-20">
-      <AppTitle
-        semantic="h5"
+      <Heading
+        tag="h5"
         visual="h5"
         utilities="text-12 text-gray-200"
       >
         {{ labelPrice }}
-      </AppTitle>
+      </Heading>
 
       <div class="h-42 text-18 font-extrabold mt-20 flex justify-center items-center">
         {{ product.total.formatted }}
@@ -41,13 +41,13 @@
 
     <!-- Quantity -->
     <div class="w-1/5 text-center px-20">
-      <AppTitle
-        semantic="h5"
+      <Heading
+        tag="h5"
         visual="h5"
         utilities="text-12 text-gray-200"
       >
         {{ labelQuantity }}
-      </AppTitle>
+      </Heading>
 
       <AppFormSelect
         v-model="quantity"
@@ -90,12 +90,12 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 
-import AppTitle from '@/components/AppTitle'
+import Heading from '@/components/Heading'
 import AppFormSelect from '@/components/forms/AppFormSelect'
 
 export default {
   components: {
-    AppTitle,
+    Heading,
     AppFormSelect
   },
   props: {

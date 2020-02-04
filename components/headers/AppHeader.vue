@@ -13,12 +13,12 @@
 
         <!-- Title -->
         <slot name="title">
-          <AppTitle
-            semantic="h1"
+          <Heading
+            tag="h1"
             visual="header"
           >
             {{ title }}
-          </AppTitle>
+          </Heading>
         </slot>
 
         <!-- Description -->
@@ -37,13 +37,13 @@
 </template>
 
 <script>
-import AppTitle from '@/components/AppTitle'
+import Heading from '@/components/Heading'
 import AppHeaderIcon from '@/components/headers/AppHeaderIcon'
 import AppHeaderDescription from '@/components/headers/AppHeaderDescription'
 
 export default {
   components: {
-    AppTitle,
+    Heading,
     AppHeaderIcon,
     AppHeaderDescription
   },

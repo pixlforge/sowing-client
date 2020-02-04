@@ -6,12 +6,12 @@
       <div class="flex justify-between items-center">
 
         <!-- Title -->
-        <AppTitle
-          semantic="h1"
+        <Heading
+          tag="h1"
           visual="h3"
         >
           {{ $t("forms.labels.avatar") }}
-        </AppTitle>
+        </Heading>
 
         <!-- Delete avatar -->
         <AppButtonPrimary
@@ -39,12 +39,12 @@
       <div class="flex justify-between items-center">
 
         <!-- Title -->
-        <AppTitle
-          semantic="h1"
+        <Heading
+          tag="h1"
           visual="h3"
         >
           {{ $t("forms.labels.cover_image") }}
-        </AppTitle>
+        </Heading>
 
         <!-- Delete cover -->
         <AppButtonPrimary
@@ -71,12 +71,12 @@
     <section>
 
       <!-- Title -->
-      <AppTitle
-        semantic="h1"
+      <Heading
+        tag="h1"
         visual="h3"
       >
         {{ $t("forms.labels.theme_selection") }}
-      </AppTitle>
+      </Heading>
 
       <!-- Tiles list -->
       <ul class="w-full flex flex-wrap justify-start -mx-10 mt-30">
@@ -98,14 +98,14 @@ import { mapGetters, mapActions } from 'vuex'
 
 import 'vue2-dropzone/dist/vue2Dropzone.css'
 import Dropzone from 'nuxt-dropzone'
-import AppTitle from '@/components/AppTitle'
+import Heading from '@/components/Heading'
 import AppTile from '@/components/themes/AppTile'
 import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 
 export default {
   components: {
     Dropzone,
-    AppTitle,
+    Heading,
     AppTile,
     AppButtonPrimary
   },

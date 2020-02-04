@@ -2,12 +2,12 @@
   <div>
 
     <!-- Title -->
-    <AppTitle
-      semantic="h5"
+    <Heading
+      tag="h5"
       visual="h5"
     >
       {{ $t("pages.checkout.delivery_method") }}
-    </AppTitle>
+    </Heading>
 
     <!-- Select -->
     <AppFormSelect
@@ -32,13 +32,13 @@
 </template>
 
 <script>
-import AppTitle from '@/components/AppTitle'
+import Heading from '@/components/Heading'
 import AppFormSelect from '@/components/forms/AppFormSelect'
 import AppFormValidation from '@/components/forms/AppFormValidation'
 
 export default {
   components: {
-    AppTitle,
+    Heading,
     AppFormSelect,
     AppFormValidation
   },
