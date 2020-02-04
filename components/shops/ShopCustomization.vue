@@ -98,7 +98,7 @@ import { mapGetters, mapActions } from 'vuex'
 
 import 'vue2-dropzone/dist/vue2Dropzone.css'
 import Dropzone from 'nuxt-dropzone'
-import Heading from '@/components/Heading'
+import Heading from '@/components/globals/Heading'
 import Tile from '@/components/themes/Tile'
 import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 

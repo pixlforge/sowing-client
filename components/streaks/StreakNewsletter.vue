@@ -60,7 +60,7 @@
 </template>
 
 <script>
-import Heading from '@/components/Heading'
+import Heading from '@/components/globals/Heading'
 import FormInput from '@/components/forms/FormInput'
 import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 

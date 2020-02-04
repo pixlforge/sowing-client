@@ -46,7 +46,7 @@ import { mapGetters } from 'vuex'
 
 import Header from '@/components/headers/Header'
 import FormInput from '@/components/forms/FormInput'
-import ContentSection from '@/components/ContentSection'
+import ContentSection from '@/components/globals/ContentSection'
 import SearchResult from '@/components/search/SearchResult'
 
 export default {

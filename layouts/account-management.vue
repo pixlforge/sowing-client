@@ -68,13 +68,13 @@
 </template>
 
 <script>
-import Navbar from '@/components/Navbar'
+import Navbar from '@/components/globals/Navbar'
 import Alert from '@/components/globals/Alert'
 import Footer from '@/components/footer/Footer'
 import Header from '@/components/headers/Header'
 import SideMenu from '@/components/menus/SideMenu'
 import Disclaimer from '@/components/footer/Disclaimer'
-import ContentSection from '@/components/ContentSection'
+import ContentSection from '@/components/globals/ContentSection'
 import SideMenuList from '@/components/menus/SideMenuList'
 import SideMenuItem from '@/components/menus/SideMenuItem'
 

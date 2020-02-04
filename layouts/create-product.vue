@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import ContentSection from '@/components/ContentSection'
+import ContentSection from '@/components/globals/ContentSection'
 
 export default {
   components: {

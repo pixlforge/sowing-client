@@ -59,9 +59,9 @@
 <script>
 import { mapGetters } from 'vuex'
 
-import Heading from '@/components/Heading'
+import Heading from '@/components/globals/Heading'
 import Header from '@/components/headers/Header'
-import ContentSection from '@/components/ContentSection'
+import ContentSection from '@/components/globals/ContentSection'
 import SubCategory from '@/components/categories/SubCategory'
 
 export default {

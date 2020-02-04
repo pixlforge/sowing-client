@@ -150,7 +150,7 @@
 import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
-import Heading from '@/components/Heading'
+import Heading from '@/components/globals/Heading'
 import FormLabel from '@/components/forms/FormLabel'
 import FormSelect from '@/components/forms/FormSelect'
 import ProductVariation from '@/components/products/ProductVariation'

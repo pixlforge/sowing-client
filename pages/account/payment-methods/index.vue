@@ -63,8 +63,8 @@
 <script>
 import { mapActions, mapGetters } from 'vuex'
 
-import Card from '@/components/Card'
-import Heading from '@/components/Heading'
+import Card from '@/components/globals/Card'
+import Heading from '@/components/globals/Heading'
 import Paragraph from '@/components/paragraphs/Paragraph'
 import AddButtonLink from '@/components/buttons/AddButtonLink'
 import ResourceList from '@/components/resources/ResourceList'

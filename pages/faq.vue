@@ -62,9 +62,9 @@
 </template>
 
 <script>
-import Heading from '@/components/Heading'
+import Heading from '@/components/globals/Heading'
 import Header from '@/components/headers/Header'
-import ContentSection from '@/components/ContentSection'
+import ContentSection from '@/components/globals/ContentSection'
 import Paragraph from '@/components/paragraphs/Paragraph'
 import ParagraphGroup from '@/components/paragraphs/ParagraphGroup'
 import StreakNewsletter from '@/components/streaks/StreakNewsletter'

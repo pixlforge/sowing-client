@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import Heading from '@/components/Heading'
+import Heading from '@/components/globals/Heading'
 import HeaderIcon from '@/components/headers/HeaderIcon'
 import HeaderDescription from '@/components/headers/HeaderDescription'
 

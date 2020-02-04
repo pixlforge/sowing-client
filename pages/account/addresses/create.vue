@@ -196,8 +196,8 @@
 </template>
 
 <script>
-import Card from '@/components/Card'
-import Heading from '@/components/Heading'
+import Card from '@/components/globals/Card'
+import Heading from '@/components/globals/Heading'
 import FormRow from '@/components/forms/FormRow'
 import FormGroup from '@/components/forms/FormGroup'
 import FormLabel from '@/components/forms/FormLabel'

@@ -47,8 +47,8 @@
 </template>
 
 <script>
-import Heading from '@/components/Heading'
-import ContentSection from '@/components/ContentSection'
+import Heading from '@/components/globals/Heading'
+import ContentSection from '@/components/globals/ContentSection'
 
 export default {
   components: {

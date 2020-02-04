@@ -83,11 +83,11 @@
 <script>
 import { mapActions } from 'vuex'
 
-import Heading from '@/components/Heading'
+import Heading from '@/components/globals/Heading'
 import FormLabel from '@/components/forms/FormLabel'
 import FormInput from '@/components/forms/FormInput'
 import FormGroup from '@/components/forms/FormGroup'
-import ContentSection from '@/components/ContentSection'
+import ContentSection from '@/components/globals/ContentSection'
 import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 import FormValidation from '@/components/forms/FormValidation'
 import ButtonLinkTertiary from '@/components/buttons/ButtonLinkTertiary'

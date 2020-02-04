@@ -90,7 +90,7 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 
-import Heading from '@/components/Heading'
+import Heading from '@/components/globals/Heading'
 import FormSelect from '@/components/forms/FormSelect'
 
 export default {

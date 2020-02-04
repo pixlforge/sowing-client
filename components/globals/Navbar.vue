@@ -63,7 +63,7 @@
 </template>
 
 <script>
-import Logo from '@/components/Logo'
+import Logo from '@/components/globals/Logo'
 import Menu from '@/components/menus/Menu'
 import ButtonCart from '@/components/buttons/ButtonCart'
 import ButtonSearch from '@/components/buttons/ButtonSearch'

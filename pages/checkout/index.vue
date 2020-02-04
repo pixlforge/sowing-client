@@ -115,9 +115,9 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 
-import Heading from '@/components/Heading'
+import Heading from '@/components/globals/Heading'
 import Header from '@/components/headers/Header'
-import ContentSection from '@/components/ContentSection'
+import ContentSection from '@/components/globals/ContentSection'
 import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 import ShippingMethods from '@/components/addresses/ShippingMethods'
 import ShippingAddress from '@/components/addresses/ShippingAddress'

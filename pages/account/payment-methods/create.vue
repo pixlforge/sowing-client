@@ -54,8 +54,8 @@
 <script>
 import { mapGetters } from 'vuex'
 
-import Card from '@/components/Card'
-import Heading from '@/components/Heading'
+import Card from '@/components/globals/Card'
+import Heading from '@/components/globals/Heading'
 import BackButton from '@/components/buttons/BackButton'
 import Paragraph from '@/components/paragraphs/Paragraph'
 import ButtonPrimary from '@/components/buttons/ButtonPrimary'

@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import Logo from '@/components/Logo'
+import Logo from '@/components/globals/Logo'
 import Alert from '@/components/globals/Alert'
 
 export default {

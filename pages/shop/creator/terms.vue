@@ -46,7 +46,7 @@ import { mapGetters, mapActions } from 'vuex'
 
 import Terms from '@/components/terms/Terms'
 import Header from '@/components/headers/Header'
-import ContentSection from '@/components/ContentSection'
+import ContentSection from '@/components/globals/ContentSection'
 import FormCheckbox from '@/components/forms/FormCheckbox'
 import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 

@@ -223,7 +223,7 @@
 </template>
 
 <script>
-import Logo from '@/components/Logo'
+import Logo from '@/components/globals/Logo'
 import IllustrationEcommerce from '@/components/illustrations/IllustrationEcommerce'
 
 export default {

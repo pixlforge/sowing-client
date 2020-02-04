@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import Splash from '@/components/Splash'
+import Splash from '@/components/globals/Splash'
 import Header from '@/components/headers/Header'
 
 export default {

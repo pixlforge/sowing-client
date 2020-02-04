@@ -68,7 +68,7 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 
-import Heading from '@/components/Heading'
+import Heading from '@/components/globals/Heading'
 import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 import ShippingAddressCreator from '@/components/addresses/ShippingAddressCreator'
 import ShippingAddressSelector from '@/components/addresses/ShippingAddressSelector'

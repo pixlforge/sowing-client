@@ -120,11 +120,11 @@
 <script>
 import { mapGetters } from 'vuex'
 
-import Heading from '@/components/Heading'
-import Review from '@/components/Review'
-import Feature from '@/components/Feature'
+import Review from '@/components/globals/Review'
+import Heading from '@/components/globals/Heading'
+import Feature from '@/components/globals/Feature'
 import ShopCard from '@/components/shops/ShopCard'
-import ContentSection from '@/components/ContentSection'
+import ContentSection from '@/components/globals/ContentSection'
 import CategoryCard from '@/components/categories/CategoryCard'
 import StreakRegister from '@/components/streaks/StreakRegister'
 import StreakNewsletter from '@/components/streaks/StreakNewsletter'
@@ -137,8 +137,8 @@ export default {
     }
   },
   components: {
-    Heading,
     Review,
+    Heading,
     Feature,
     ShopCard,
     ContentSection,
