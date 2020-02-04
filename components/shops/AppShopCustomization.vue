@@ -85,7 +85,7 @@
           :key="index"
           class="mx-10 mt-20 lg:mt-0"
         >
-          <AppTile :theme="theme"/>
+          <Tile :theme="theme"/>
         </li>
       </ul>
     </section>
@@ -99,14 +99,14 @@ import { mapGetters, mapActions } from 'vuex'
 import 'vue2-dropzone/dist/vue2Dropzone.css'
 import Dropzone from 'nuxt-dropzone'
 import Heading from '@/components/Heading'
-import AppTile from '@/components/themes/AppTile'
+import Tile from '@/components/themes/Tile'
 import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 
 export default {
   components: {
     Dropzone,
     Heading,
-    AppTile,
+    Tile,
     AppButtonPrimary
   },
   data() {

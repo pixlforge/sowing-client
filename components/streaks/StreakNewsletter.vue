@@ -27,7 +27,6 @@
           @submit.prevent="subscribe"
           class="relative"
         >
-
           <div class="flex flex-col md:flex-row justify-center lg:justify-start mt-48">
             <AppFormInput
               v-model="email"

@@ -29,7 +29,7 @@
     </ContentSection>
 
     <!-- Streak newsletter -->
-    <AppStreakNewsletter/>
+    <StreakNewsletter/>
 
   </main>
 </template>
@@ -41,7 +41,7 @@ import theming from '@/mixins/theming'
 import AppHeader from '@/components/headers/AppHeader'
 import ContentSection from '@/components/ContentSection'
 import AppProductDetails from '@/components/products/AppProductDetails'
-import AppStreakNewsletter from '@/components/streaks/AppStreakNewsletter'
+import StreakNewsletter from '@/components/streaks/StreakNewsletter'
 import AppHeaderButtonLink from '@/components/buttons/AppHeaderButtonLink'
 
 export default {
@@ -61,7 +61,7 @@ export default {
     AppHeader,
     ContentSection,
     AppProductDetails,
-    AppStreakNewsletter,
+    StreakNewsletter,
     AppHeaderButtonLink
   },
   mixins: [theming],

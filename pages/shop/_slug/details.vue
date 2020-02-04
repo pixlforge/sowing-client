@@ -82,7 +82,7 @@
     </ContentSection>
 
     <!-- Register CTA -->
-    <AppStreakRegister/>
+    <StreakRegister/>
 
   </main>
 </template>
@@ -96,7 +96,7 @@ import AppHeader from '@/components/headers/AppHeader'
 import AppShopCover from '@/components/shops/AppShopCover'
 import ContentSection from '@/components/ContentSection'
 import AppHeaderList from '@/components/headers/AppHeaderList'
-import AppStreakRegister from '@/components/streaks/AppStreakRegister'
+import StreakRegister from '@/components/streaks/StreakRegister'
 import AppButtonLinkPrimary from '@/components/buttons/AppButtonLinkPrimary'
 
 export default {
@@ -111,7 +111,7 @@ export default {
     AppShopCover,
     ContentSection,
     AppHeaderList,
-    AppStreakRegister,
+    StreakRegister,
     AppButtonLinkPrimary
   },
   mixins: [theming],

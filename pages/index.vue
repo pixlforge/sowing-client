@@ -54,7 +54,7 @@
     </ContentSection>
 
     <!-- Streak register -->
-    <AppStreakRegister/>
+    <StreakRegister/>
 
     <!-- Shops -->
     <ContentSection>
@@ -112,7 +112,7 @@
     </ContentSection>
 
     <!-- Streak newsletter -->
-    <AppStreakNewsletter/>
+    <StreakNewsletter/>
 
   </main>
 </template>
@@ -126,8 +126,8 @@ import Feature from '@/components/Feature'
 import AppShopCard from '@/components/shops/AppShopCard'
 import ContentSection from '@/components/ContentSection'
 import AppCategoryCard from '@/components/categories/AppCategoryCard'
-import AppStreakRegister from '@/components/streaks/AppStreakRegister'
-import AppStreakNewsletter from '@/components/streaks/AppStreakNewsletter'
+import StreakRegister from '@/components/streaks/StreakRegister'
+import StreakNewsletter from '@/components/streaks/StreakNewsletter'
 import AppFeaturedCategory from '@/components/categories/AppFeaturedCategory'
 
 export default {
@@ -143,8 +143,8 @@ export default {
     AppShopCard,
     ContentSection,
     AppCategoryCard,
-    AppStreakRegister,
-    AppStreakNewsletter,
+    StreakRegister,
+    StreakNewsletter,
     AppFeaturedCategory
   },
   data() {

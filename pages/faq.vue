@@ -56,7 +56,7 @@
     </ContentSection>
 
     <!-- Streak newsletter -->
-    <AppStreakNewsletter/>
+    <StreakNewsletter/>
 
   </main>
 </template>
@@ -67,7 +67,7 @@ import AppHeader from '@/components/headers/AppHeader'
 import ContentSection from '@/components/ContentSection'
 import AppParagraph from '@/components/paragraphs/AppParagraph'
 import AppParagraphGroup from '@/components/paragraphs/AppParagraphGroup'
-import AppStreakNewsletter from '@/components/streaks/AppStreakNewsletter'
+import StreakNewsletter from '@/components/streaks/StreakNewsletter'
 
 export default {
   head() {
@@ -88,7 +88,7 @@ export default {
     ContentSection,
     AppParagraph,
     AppParagraphGroup,
-    AppStreakNewsletter
+    StreakNewsletter
   },
   asyncData({ app }) {
     return {

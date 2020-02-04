@@ -11,7 +11,7 @@
     <ContentSection>
 
       <!-- Terms -->
-      <AppTerms/>
+      <Terms/>
 
       <!-- Controls -->
       <div class="flex flex-col items-center">
@@ -44,7 +44,7 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 
-import AppTerms from '@/components/terms/AppTerms'
+import Terms from '@/components/terms/Terms'
 import AppHeader from '@/components/headers/AppHeader'
 import ContentSection from '@/components/ContentSection'
 import AppFormCheckbox from '@/components/forms/AppFormCheckbox'
@@ -70,7 +70,7 @@ export default {
     }
   },
   components: {
-    AppTerms,
+    Terms,
     AppHeader,
     ContentSection,
     AppFormCheckbox,

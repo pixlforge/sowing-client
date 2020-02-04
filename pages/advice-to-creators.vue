@@ -34,7 +34,7 @@
     </ContentSection>
 
     <!-- Streak newsletter -->
-    <AppStreakNewsletter/>
+    <StreakNewsletter/>
 
   </main>
 </template>
@@ -45,7 +45,7 @@ import AppList from '@/components/paragraphs/AppList'
 import AppHeader from '@/components/headers/AppHeader'
 import ContentSection from '@/components/ContentSection'
 import AppParagraph from '@/components/paragraphs/AppParagraph'
-import AppStreakNewsletter from '@/components/streaks/AppStreakNewsletter'
+import StreakNewsletter from '@/components/streaks/StreakNewsletter'
 import IllustrationNewIdeas from '@/components/illustrations/IllustrationNewIdeas'
 
 export default {
@@ -67,7 +67,7 @@ export default {
     AppHeader,
     ContentSection,
     AppParagraph,
-    AppStreakNewsletter,
+    StreakNewsletter,
     IllustrationNewIdeas
   },
   computed: {

@@ -1,5 +1,5 @@
 <template>
-  <div class="terms__wrapper">
+  <div>
     <Heading
       tag="h2"
       visual="main"
