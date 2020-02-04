@@ -47,7 +47,7 @@
     </Card>
 
     <!-- Confirmation modal -->
-    <AppConfirmationModal
+    <ConfirmationModal
       :title="$t('modals.payment_methods.delete.title')"
       :body="$t('modals.payment_methods.delete.body')"
       :button-label="$t('buttons.delete')"
@@ -69,7 +69,7 @@ import Paragraph from '@/components/paragraphs/Paragraph'
 import AppAddButtonLink from '@/components/buttons/AppAddButtonLink'
 import ResourceList from '@/components/resources/ResourceList'
 import ResourceHeader from '@/components/resources/ResourceHeader'
-import AppConfirmationModal from '@/components/modals/AppConfirmationModal'
+import ConfirmationModal from '@/components/modals/ConfirmationModal'
 import AppButtonLinkPrimary from '@/components/buttons/AppButtonLinkPrimary'
 import PaymentMethodItem from '@/components/payment-methods/PaymentMethodItem'
 
@@ -81,7 +81,7 @@ export default {
     AppAddButtonLink,
     ResourceList,
     ResourceHeader,
-    AppConfirmationModal,
+    ConfirmationModal,
     AppButtonLinkPrimary,
     PaymentMethodItem
   },

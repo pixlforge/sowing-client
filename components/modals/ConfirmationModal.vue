@@ -3,8 +3,8 @@
 
     <!-- Backdrop -->
     <div
-      v-if="showModal"
       ref="confirmationModalBackdrop"
+      v-if="showModal"
       class="fixed inset-x-0 inset-y-0 bg-backdrop flex justify-center items-center z-10"
     >
 
@@ -54,16 +54,16 @@
             <AppButtonPrimary
               :color="color"
               :icon="buttonIcon"
-              class="mr-10"
               @click.native="$emit('confirm')"
+              class="mr-10"
             >
               {{ buttonLabel }}
             </AppButtonPrimary>
 
             <!-- Cancel -->
             <AppButtonTertiary
-              icon="times"
               @click.native="closeModal"
+              icon="times"
             >
               {{ $t('buttons.cancel') }}
             </AppButtonTertiary>

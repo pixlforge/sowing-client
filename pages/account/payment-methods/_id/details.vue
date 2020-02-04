@@ -85,7 +85,7 @@
     </Card>
 
     <!-- Confirmation modal -->
-    <AppConfirmationModal
+    <ConfirmationModal
       :title="$t('modals.payment_methods.delete.title')"
       :body="$t('modals.payment_methods.delete.body')"
       :button-label="$t('buttons.delete')"
@@ -106,7 +106,7 @@ import Heading from '@/components/Heading'
 import AppBackButton from '@/components/buttons/AppBackButton'
 import AppEditButton from '@/components/buttons/AppEditButton'
 import AppDeleteButton from '@/components/buttons/AppDeleteButton'
-import AppConfirmationModal from '@/components/modals/AppConfirmationModal'
+import ConfirmationModal from '@/components/modals/ConfirmationModal'
 
 export default {
   components: {
@@ -115,7 +115,7 @@ export default {
     AppBackButton,
     AppEditButton,
     AppDeleteButton,
-    AppConfirmationModal
+    ConfirmationModal
   },
   middleware: ['authenticated'],
   layout: 'account-management',

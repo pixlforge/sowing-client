@@ -33,7 +33,9 @@
       {{ order.subtotal.currency }} {{ order.subtotal.amount }}
     </div>
     <div class="w-1/5 flex justify-center items-start">
+      <!-- eslint-disable -->
       <component :is="order.status"/>
+      <!-- eslint-enable -->
     </div>
   </div>
 </template>
@@ -48,10 +50,12 @@ import StatusPaymentFailed from '@/components/orders/statuses/StatusPaymentFaile
 
 export default {
   components: {
+    /* eslint-disable */
     pending: StatusPending,
     completed: StatusCompleted,
     processing: StatusProcessing,
     payment_failed: StatusPaymentFailed
+    /* eslint-enable */
   },
   props: {
     order: {

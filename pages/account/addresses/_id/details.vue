@@ -27,7 +27,7 @@
     </Card>
 
     <!-- Confirmation modal -->
-    <AppConfirmationModal
+    <ConfirmationModal
       :title="$t('modals.addresses.delete.title')"
       :body="$t('modals.addresses.delete.body')"
       :button-label="$t('buttons.delete')"
@@ -48,7 +48,7 @@ import Heading from '@/components/Heading'
 import AppBackButton from '@/components/buttons/AppBackButton'
 import AppDeleteButton from '@/components/buttons/AppDeleteButton'
 import AppAddressCard from '@/components/addresses/AppAddressCard'
-import AppConfirmationModal from '@/components/modals/AppConfirmationModal'
+import ConfirmationModal from '@/components/modals/ConfirmationModal'
 
 export default {
   components: {
@@ -57,7 +57,7 @@ export default {
     AppBackButton,
     AppDeleteButton,
     AppAddressCard,
-    AppConfirmationModal
+    ConfirmationModal
   },
   layout: 'account-management',
   middleware: ['authenticated'],
