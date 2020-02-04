@@ -9,8 +9,8 @@
     <!-- Variation select -->
     <AppFormSelect
       :value="selectedVariationId"
-      name="variation"
       @change.native="changed"
+      name="variation"
     >
       <option
         v-for="variation in variations"

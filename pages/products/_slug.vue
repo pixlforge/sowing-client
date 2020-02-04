@@ -25,7 +25,7 @@
 
     <!-- Product details -->
     <ContentSection>
-      <AppProductDetails :product="product"/>
+      <ProductDetails :product="product"/>
     </ContentSection>
 
     <!-- Streak newsletter -->
@@ -40,7 +40,7 @@ import theming from '@/mixins/theming'
 
 import AppHeader from '@/components/headers/AppHeader'
 import ContentSection from '@/components/ContentSection'
-import AppProductDetails from '@/components/products/AppProductDetails'
+import ProductDetails from '@/components/products/ProductDetails'
 import StreakNewsletter from '@/components/streaks/StreakNewsletter'
 import AppHeaderButtonLink from '@/components/buttons/AppHeaderButtonLink'
 
@@ -60,7 +60,7 @@ export default {
   components: {
     AppHeader,
     ContentSection,
-    AppProductDetails,
+    ProductDetails,
     StreakNewsletter,
     AppHeaderButtonLink
   },

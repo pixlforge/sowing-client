@@ -2,9 +2,9 @@
   <div>
 
     <!-- Step -->
-    <AppProductCreatorStep>
+    <ProductCreatorStep>
       2/5
-    </AppProductCreatorStep>
+    </ProductCreatorStep>
 
     <!-- Header -->
     <header class="flex flex-wrap items-center my-30">
@@ -130,7 +130,7 @@ import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 import AppFormSectionTitle from '@/components/forms/AppFormSectionTitle'
 import AppButtonLinkTertiary from '@/components/buttons/AppButtonLinkTertiary'
 import AppFormLabelDescription from '@/components/forms/AppFormLabelDescription'
-import AppProductCreatorStep from '@/components/products/creator/AppProductCreatorStep'
+import ProductCreatorStep from '@/components/products/creator/ProductCreatorStep'
 
 export default {
   head() {
@@ -168,7 +168,7 @@ export default {
     AppFormSectionTitle,
     AppButtonLinkTertiary,
     AppFormLabelDescription,
-    AppProductCreatorStep
+    ProductCreatorStep
   },
   mixins: [theming],
   data() {

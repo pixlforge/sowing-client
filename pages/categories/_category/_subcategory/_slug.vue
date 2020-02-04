@@ -11,7 +11,7 @@
       <div class="flex flex-wrap justify-center -mx-16">
 
         <!-- Products -->
-        <AppProduct
+        <Product
           v-for="product in products"
           :key="product.id"
           :product="product"
@@ -26,7 +26,7 @@
 import { mapGetters } from 'vuex'
 
 import AppHeader from '@/components/headers/AppHeader'
-import AppProduct from '@/components/products/AppProduct'
+import Product from '@/components/products/Product'
 import ContentSection from '@/components/ContentSection'
 
 export default {
@@ -37,7 +37,7 @@ export default {
   },
   components: {
     AppHeader,
-    AppProduct,
+    Product,
     ContentSection
   },
   data() {

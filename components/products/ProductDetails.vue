@@ -83,7 +83,7 @@
           <AppFormDivider/>
 
           <!-- Variations -->
-          <AppVariation
+          <ProductVariation
             v-for="(variations, type) in product.variations"
             :key="type"
             v-model="form.variation"
@@ -153,7 +153,7 @@ import theming from '@/mixins/theming'
 import Heading from '@/components/Heading'
 import AppFormLabel from '@/components/forms/AppFormLabel'
 import AppFormSelect from '@/components/forms/AppFormSelect'
-import AppVariation from '@/components/products/AppVariation'
+import ProductVariation from '@/components/products/ProductVariation'
 import AppFormDivider from '@/components/forms/AppFormDivider'
 import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 
@@ -162,7 +162,7 @@ export default {
     Heading,
     AppFormLabel,
     AppFormSelect,
-    AppVariation,
+    ProductVariation,
     AppFormDivider,
     AppButtonPrimary
   },
