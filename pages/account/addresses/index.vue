@@ -1,6 +1,6 @@
 <template>
   <div>
-    <AppResourceHeader>
+    <ResourceHeader>
 
       <!-- Page title -->
       <Heading
@@ -16,18 +16,18 @@
         :label="$t('buttons.add_address')"
         class="mt-60 md:mt-0"
       />
-    </AppResourceHeader>
+    </ResourceHeader>
 
     <Card>
 
       <!-- Addresses -->
-      <AppResourceList v-if="addresses.length">
+      <ResourceList v-if="addresses.length">
         <AppAddressItem
           v-for="address in addresses"
           :key="address.id"
           :address="address"
         />
-      </AppResourceList>
+      </ResourceList>
 
       <!-- No address found -->
       <div
@@ -68,8 +68,8 @@ import Heading from '@/components/Heading'
 import AppParagraph from '@/components/paragraphs/AppParagraph'
 import AppAddressItem from '@/components/addresses/AppAddressItem'
 import AppAddButtonLink from '@/components/buttons/AppAddButtonLink'
-import AppResourceList from '@/components/resources/AppResourceList'
-import AppResourceHeader from '@/components/resources/AppResourceHeader'
+import ResourceList from '@/components/resources/ResourceList'
+import ResourceHeader from '@/components/resources/ResourceHeader'
 import AppConfirmationModal from '@/components/modals/AppConfirmationModal'
 import AppButtonLinkPrimary from '@/components/buttons/AppButtonLinkPrimary'
 
@@ -80,8 +80,8 @@ export default {
     AppParagraph,
     AppAddressItem,
     AppAddButtonLink,
-    AppResourceList,
-    AppResourceHeader,
+    ResourceList,
+    ResourceHeader,
     AppConfirmationModal,
     AppButtonLinkPrimary
   },

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <AppResourceHeader>
+    <ResourceHeader>
 
       <!-- Page title -->
       <Heading
@@ -16,18 +16,18 @@
         :label="$t('buttons.add_payment_method')"
         class="mt-60 md:mt-0"
       />
-    </AppResourceHeader>
+    </ResourceHeader>
 
     <Card>
 
       <!-- Payment methods -->
-      <AppResourceList v-if="paymentMethods.length">
+      <ResourceList v-if="paymentMethods.length">
         <AppPaymentMethodItem
           v-for="paymentMethod in paymentMethods"
           :key="paymentMethod.id"
           :payment-method="paymentMethod"
         />
-      </AppResourceList>
+      </ResourceList>
 
       <!-- No payment method found -->
       <div
@@ -67,8 +67,8 @@ import Card from '@/components/Card'
 import Heading from '@/components/Heading'
 import AppParagraph from '@/components/paragraphs/AppParagraph'
 import AppAddButtonLink from '@/components/buttons/AppAddButtonLink'
-import AppResourceList from '@/components/resources/AppResourceList'
-import AppResourceHeader from '@/components/resources/AppResourceHeader'
+import ResourceList from '@/components/resources/ResourceList'
+import ResourceHeader from '@/components/resources/ResourceHeader'
 import AppConfirmationModal from '@/components/modals/AppConfirmationModal'
 import AppButtonLinkPrimary from '@/components/buttons/AppButtonLinkPrimary'
 import AppPaymentMethodItem from '@/components/payment-methods/AppPaymentMethodItem'
@@ -79,8 +79,8 @@ export default {
     Heading,
     AppParagraph,
     AppAddButtonLink,
-    AppResourceList,
-    AppResourceHeader,
+    ResourceList,
+    ResourceHeader,
     AppConfirmationModal,
     AppButtonLinkPrimary,
     AppPaymentMethodItem

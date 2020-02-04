@@ -1,6 +1,6 @@
 <template>
   <div>
-    <AppResourceHeader>
+    <ResourceHeader>
 
       <!-- Page title -->
       <Heading
@@ -16,7 +16,7 @@
         :label="$t('buttons.add_product')"
         class="mt-60 md:mt-0"
       />
-    </AppResourceHeader>
+    </ResourceHeader>
 
     <Card>
       List of all products
@@ -31,7 +31,7 @@ import shopManagement from '@/mixins/shop-management'
 import Card from '@/components/Card'
 import Heading from '@/components/Heading'
 import AppAddButtonLink from '@/components/buttons/AppAddButtonLink'
-import AppResourceHeader from '@/components/resources/AppResourceHeader'
+import ResourceHeader from '@/components/resources/ResourceHeader'
 
 export default {
   head() {
@@ -57,7 +57,7 @@ export default {
     Card,
     Heading,
     AppAddButtonLink,
-    AppResourceHeader
+    ResourceHeader
   },
   mixins: [shopManagement]
 }
