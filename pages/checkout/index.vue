@@ -19,7 +19,7 @@
             {{ $t("pages.checkout.payment") }}
           </Heading>
 
-          <AppPaymentMethods
+          <PaymentMethods
             v-model="form.payment_method_id"
             :payment-methods="paymentMethods"
             @payment-method:added="addPaymentMethod"
@@ -122,7 +122,7 @@ import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
 import AppShippingMethods from '@/components/addresses/AppShippingMethods'
 import AppShippingAddress from '@/components/addresses/AppShippingAddress'
 import AppCartOverviewProduct from '@/components/cart/AppCartOverviewProduct'
-import AppPaymentMethods from '@/components/payment-methods/AppPaymentMethods'
+import PaymentMethods from '@/components/payment-methods/PaymentMethods'
 
 export default {
   middleware: ['authenticated'],
@@ -151,7 +151,7 @@ export default {
     AppShippingMethods,
     AppShippingAddress,
     AppCartOverviewProduct,
-    AppPaymentMethods
+    PaymentMethods
   },
   data() {
     return {

@@ -4,8 +4,8 @@
     <!-- Button -->
     <button
       v-if="!showing"
-      class="bg-gray-200 hover:bg-green-500 transition-color transition-faster text-white w-80 h-80 rounded-full p-0"
       @click.prevent="showing = true"
+      class="bg-gray-200 hover:bg-green-500 transition-color transition-faster text-white w-80 h-80 rounded-full p-0"
     >
       <font-awesome-icon
         :icon="['far', 'plus']"
@@ -15,8 +15,8 @@
 
     <form
       v-show="showing"
-      class="w-full h-full flex flex-col items-center"
       @submit.prevent="store"
+      class="w-full h-full flex flex-col items-center"
     >
 
       <!-- Body -->

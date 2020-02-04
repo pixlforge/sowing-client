@@ -22,7 +22,7 @@
 
       <!-- Payment methods -->
       <ResourceList v-if="paymentMethods.length">
-        <AppPaymentMethodItem
+        <PaymentMethodItem
           v-for="paymentMethod in paymentMethods"
           :key="paymentMethod.id"
           :payment-method="paymentMethod"
@@ -71,7 +71,7 @@ import ResourceList from '@/components/resources/ResourceList'
 import ResourceHeader from '@/components/resources/ResourceHeader'
 import AppConfirmationModal from '@/components/modals/AppConfirmationModal'
 import AppButtonLinkPrimary from '@/components/buttons/AppButtonLinkPrimary'
-import AppPaymentMethodItem from '@/components/payment-methods/AppPaymentMethodItem'
+import PaymentMethodItem from '@/components/payment-methods/PaymentMethodItem'
 
 export default {
   components: {
@@ -83,7 +83,7 @@ export default {
     ResourceHeader,
     AppConfirmationModal,
     AppButtonLinkPrimary,
-    AppPaymentMethodItem
+    PaymentMethodItem
   },
   middleware: ['authenticated'],
   layout: 'account-management',

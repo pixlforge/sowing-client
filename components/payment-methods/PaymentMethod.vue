@@ -1,24 +1,28 @@
 <template>
   <div>
+    <!-- eslint-disable -->
     <component
       :is="paymentMethod.card_type_slug"
       :payment-method="paymentMethod"
       :selected-payment-method="selectedPaymentMethod.id === method.id"
       @click.native="switchPaymentMethod(method)"
     />
+    <!-- eslint-enable -->
   </div>
 </template>
 
 <script>
-import AppCardVisa from '@/components/payment-methods/cards/AppCardVisa'
-import AppCardAmex from '@/components/payment-methods/cards/AppCardAmex'
-import AppCardMasterCard from '@/components/payment-methods/cards/AppCardMasterCard'
+import CardVisa from '@/components/payment-methods/cards/CardVisa'
+import CardAmex from '@/components/payment-methods/cards/CardAmex'
+import CardMasterCard from '@/components/payment-methods/cards/CardMasterCard'
 
 export default {
   components: {
-    visa: AppCardVisa,
-    'american-express': AppCardAmex,
-    mastercard: AppCardMasterCard
+    /* eslint-disable */
+    visa: CardVisa,
+    'american-express': CardAmex,
+    mastercard: CardMasterCard
+    /* eslint-enable */
   },
   props: {
     paymentMethod: {
