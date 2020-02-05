@@ -7,11 +7,17 @@ import aria from '~/lang/fr-CH/components/aria'
 import buttons from '~/lang/fr-CH/components/buttons'
 import cart from '~/lang/fr-CH/components/cart'
 import categories from '~/lang/fr-CH/components/categories'
+import creditCards from '~/lang/fr-CH/components/creditCards'
+import dropzone from '~/lang/fr-CH/components/dropzone'
+import footer from '~/lang/fr-CH/components/footer'
+import forms from '~/lang/fr-CH/components/forms'
+import languages from '~/lang/fr-CH/components/languages'
 /**
  * Pages
  */
 import adviceToCreators from '~/lang/fr-CH/pages/adviceToCreators'
 import comingSoon from '~/lang/fr-CH/pages/comingSoon'
+import home from '~/lang/fr-CH/pages/home'
 
 export default {
   /**
@@ -23,130 +29,17 @@ export default {
   ...buttons,
   ...cart,
   ...categories,
+  ...creditCards,
+  ...dropzone,
+  ...footer,
+  ...forms,
+  ...languages,
   /**
    * Pages
    */
   ...adviceToCreators,
   ...comingSoon,
-
-  /**
-   * Credit Cards
-   */
-  credit_cards: {
-    ending_in: 'Se terminant par',
-    card_added_on: 'Carte ajoutée le'
-  },
-
-  /**
-   * Dropzone
-   */
-  dropzone: {
-    dict_remove_file: 'Supprimer',
-    dict_cancel_upload: 'Annuler',
-    dict_cancel_upload_confirmation: 'Êtes-vous certain de vouloir annuler le téléchargement?',
-    dict_default_message: 'Glissez-déposez une image ici pour la télécharger ou cliquez pour choisir votre image.',
-    dict_fallback_message: 'Votre navigateur est trop ancien ou incompatible.',
-    dict_file_too_big: 'Ce fichier est trop volumineux.'
-  },
-
-  /**
-   * Footer
-   */
-  footer: {
-    titles: {
-      categories: 'Catégories',
-      language: 'Langue',
-      sell_on_sowing: 'Vendre sur Sowing',
-      about: 'À propos',
-      social_networks: 'Réseaux sociaux'
-    },
-    links: {
-      login: 'Connexion',
-      your_own_store: 'Votre propre boutique',
-      advice_to_creators: 'Conseils aux créateurs',
-      new_vendors: 'Nouveaux vendeurs',
-      terms: "Conditions d'utilisation",
-      payments: 'Modes de paiement',
-      shipments: 'Livraisons',
-      faq: 'FAQ'
-    },
-    disclaimer: {
-      rights: 'Tous droits réservés',
-      made_with: 'Réalisé avec',
-      by: 'par'
-    }
-  },
-
-  /**
-   * Forms
-   */
-  forms: {
-    labels: {
-      address_line_1: 'Adresse ligne 1',
-      address_line_2: 'Adresse ligne 2',
-      avatar: 'Avatar',
-      category: 'Catégorie',
-      city: 'Ville',
-      company_name: 'Société',
-      country: 'Pays',
-      cover_image: 'Image de couverture',
-      default_address: 'Cette adresse est mon adresse par défaut',
-      description: 'Description',
-      description_short: 'Description courte',
-      description_long: 'Description détaillée',
-      email: 'Adresse e-mail',
-      first_name: 'Prénom',
-      last_name: 'Nom',
-      name: 'Nom',
-      password: 'Mot de passe',
-      password_confirmation: 'Confirmer le mot de passe',
-      postal_code: 'Code postal',
-      price: 'Prix',
-      theme_selection: 'Sélection du thème'
-    },
-    select: 'Sélectionner'
-  },
-
-  /**
-   * Home page
-   */
-  home: {
-    title: 'Accueil',
-    titles: {
-      features: 'Tous les avantages Sowing pour vous',
-      shops: 'Découvrez nos nouvelles boutiques',
-      categories: 'Découvrez nos produits par catégorie',
-      reviews: 'Ils ont donné leur avis'
-    },
-    features: {
-      first: {
-        title: 'Sowing est unique en Suisse',
-        body: 'Cette plateforme dédiée au fait main et à l’artisanat est disponible en 4 langues. Chaque créateur peut créer sa propre boutique gratuitement et la personnaliser pour la rendre unique.'
-      },
-      second: {
-        title: 'Une visibilité inédite pour vous',
-        body: 'Prendre part à la communauté Sowing c’est mutiplier ses chances d’être visible sur la toile. Aux côtés d’autres créateurs vous bénéficiez d’un tremplin pour faire connaître vos créations partout en Suisse et ailleurs.'
-      },
-      third: {
-        title: 'Sowing est indépendant',
-        body: 'Et vous l’êtes aussi! Vous êtes libres de proposer les articles que vous souhaitez, vous pouvez mettre votre boutique en pause, vous vous assurez un complément de revenu selon vos envies en toute liberté.'
-      },
-      fourth: {
-        title: 'Votre sécurité, notre mission',
-        body: 'Nous mettons tout en œuvre pour vous assurer la plus grande sécurité concernant vos informations personnelles et vos transactions. Tout est mis en œuvre pour vous garantir un confort maximal.'
-      }
-    }
-  },
-
-  /**
-   * Languages
-   */
-  languages: {
-    french: 'français',
-    english: 'anglais',
-    german: 'allemand',
-    italian: 'italien'
-  },
+  ...home,
 
   /**
    * Modals

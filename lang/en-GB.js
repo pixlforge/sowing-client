@@ -7,11 +7,17 @@ import aria from '~/lang/en-GB/components/aria'
 import buttons from '~/lang/en-GB/components/buttons'
 import cart from '~/lang/en-GB/components/cart'
 import categories from '~/lang/en-GB/components/categories'
+import creditCards from '~/lang/en-GB/components/creditCards'
+import dropzone from '~/lang/en-GB/components/dropzone'
+import footer from '~/lang/en-GB/components/footer'
+import forms from '~/lang/en-GB/components/forms'
+import languages from '~/lang/en-GB/components/languages'
 /**
  * Pages
  */
 import adviceToCreators from '~/lang/en-GB/pages/adviceToCreators'
 import comingSoon from '~/lang/en-GB/pages/comingSoon'
+import home from '~/lang/en-GB/pages/home'
 
 export default {
   /**
@@ -23,130 +29,17 @@ export default {
   ...buttons,
   ...cart,
   ...categories,
+  ...creditCards,
+  ...dropzone,
+  ...footer,
+  ...forms,
+  ...languages,
   /**
    * Pages
    */
   ...adviceToCreators,
   ...comingSoon,
-
-  /**
-   * Credit Cards
-   */
-  credit_cards: {
-    ending_in: 'Ending in',
-    card_added_on: 'Card added on'
-  },
-
-  /**
-   * Dropzone
-   */
-  dropzone: {
-    dict_remove_file: 'Remove',
-    dict_cancel_upload: 'Cancel',
-    dict_cancel_upload_confirmation: 'Are you sure you want to cancel the upload?',
-    dict_default_message: 'Drag and drop an image here to download or click to choose your image.',
-    dict_fallback_message: 'Your browser is too old or incompatible.',
-    dict_file_too_big: 'This file is too large.'
-  },
-
-  /**
-   * Footer
-   */
-  footer: {
-    titles: {
-      categories: 'Categories',
-      language: 'Language',
-      sell_on_sowing: 'Sell on Sowing',
-      about: 'About',
-      social_networks: 'Social Networks'
-    },
-    links: {
-      login: 'Log in',
-      your_own_store: 'Your own store',
-      advice_to_creators: 'Advice to creators',
-      new_vendors: 'Newest vendors',
-      terms: 'Terms of use',
-      payments: 'Payment methods',
-      shipments: 'Shipments',
-      faq: 'FAQ'
-    },
-    disclaimer: {
-      rights: 'All rights reserved',
-      made_with: 'Made with',
-      by: 'by'
-    }
-  },
-
-  /**
-   * Forms
-   */
-  forms: {
-    labels: {
-      address_line_1: 'Address line 1',
-      address_line_2: 'Address line 2',
-      avatar: 'Avatar',
-      category: 'Category',
-      city: 'City',
-      company_name: 'Company',
-      country: 'Country',
-      cover_image: 'Cover image',
-      default_address: 'This address is my default address',
-      description: 'Description',
-      description_short: 'Short description',
-      description_long: 'Detailed description',
-      email: 'Email address',
-      first_name: 'First name',
-      last_name: 'Last name',
-      name: 'Name',
-      password: 'Password',
-      password_confirmation: 'Confirm password',
-      postal_code: 'Postal code',
-      price: 'Price',
-      theme_selection: 'Theme selection'
-    },
-    select: 'Select'
-  },
-
-  /**
-   * Home page
-   */
-  home: {
-    title: 'Home',
-    titles: {
-      features: 'All the Sowing advantages for you',
-      shops: 'Discover our new shops',
-      categories: 'Discover our products by category',
-      reviews: 'They gave their opinion'
-    },
-    features: {
-      first: {
-        title: 'Sowing is unique in Switzerland',
-        body: 'This platform dedicated to handmade and craft is available in 4 languages. Each creator can create his own shop for free and customize it to make it unique.'
-      },
-      second: {
-        title: 'An unprecedented visibility for you',
-        body: 'Taking part in the Sowing community is multiplying your chances of being visible on the web. Alongside other creators, you have a springboard to promote your creations throughout Switzerland and elsewhere.'
-      },
-      third: {
-        title: 'Sowing is independent',
-        body: 'And you are too! You are free to propose the articles you want, you can put your shop in pause, you make a supplement of income according to your desires in all freedom.'
-      },
-      fourth: {
-        title: 'Your security, our mission',
-        body: 'We make every effort to ensure the utmost security regarding your personal information and your transactions. Everything is done to ensure maximum comfort.'
-      }
-    }
-  },
-
-  /**
-   * Languages
-   */
-  languages: {
-    french: 'french',
-    english: 'english',
-    german: 'german',
-    italian: 'italian'
-  },
+  ...home,
 
   /**
    * Navbar
