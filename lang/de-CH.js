@@ -12,9 +12,12 @@ import dropzone from '~/lang/de-CH/components/dropzone'
 import footer from '~/lang/de-CH/components/footer'
 import forms from '~/lang/de-CH/components/forms'
 import languages from '~/lang/de-CH/components/languages'
+import modals from '~/lang/de-CH/components/modals'
+import navbar from '~/lang/de-CH/components/navbar'
 /**
  * Pages
  */
+import account from '~/lang/de-CH/pages/account'
 import adviceToCreators from '~/lang/de-CH/pages/adviceToCreators'
 import comingSoon from '~/lang/de-CH/pages/comingSoon'
 import home from '~/lang/de-CH/pages/home'
@@ -34,81 +37,21 @@ export default {
   ...footer,
   ...forms,
   ...languages,
+  ...modals,
+  ...navbar,
   /**
    * Pages
    */
+  ...account,
   ...adviceToCreators,
   ...comingSoon,
   ...home,
 
   /**
-   * Navbar
-   */
-  navbar: {
-    user: {
-      logout: 'Ausloggen'
-    }
-  },
-
-  /**
-   * Modals
-   */
-  modals: {
-    addresses: {
-      delete: {
-        title: 'Adresslöschung',
-        body: 'Möchten Sie diese Adresse wirklich löschen?'
-      }
-    },
-    payment_methods: {
-      delete: {
-        title: 'Zahlungsmethodelöschung',
-        body: 'Möchten Sie diese Zahlungsmethode wirklich löschen?'
-      }
-    }
-  },
-
-  /**
    * Pages
    */
   pages: {
-    account: {
-      title: 'Mein Konto',
-      description: 'Richten Sie Ihr Sowing-Konto nach Belieben ein.',
-      dashboard: {
-        title: 'Instrumententafel'
-      },
-      profile: {
-        title: 'Profil',
-        updated: 'Ihr Profil wurde erfolgreich aktualisiert'
-      },
-      password: {
-        title: 'Passwort'
-      },
-      addresses: {
-        titles: {
-          index: 'Adressen',
-          show: 'Meine Adresse',
-          create: 'Neue Adresse',
-          edit: 'Aktualisiere meine Adresse'
-        },
-        is_default: 'Dies ist Ihre Standardadresse.',
-        no_address_found: 'Sie haben noch keine Adresse.'
-      },
-      payment_methods: {
-        edit: {
-          paragraph: 'Legen Sie diese Karte als Ihre neue Standardzahlungsmethode fest.'
-        },
-        titles: {
-          index: 'Zahlungsarten',
-          create: 'Zahlungsmethode hinzufügen',
-          show: 'Meine Karte im Detail',
-          edit: 'Aktualisiere meine Karte'
-        },
-        is_default: 'Dies ist Ihre Standardzahlungsmethode.',
-        no_payment_method_found: 'Sie haben noch keine Zahlungsmethode gespeichert.'
-      }
-    },
+
     cart: {
       title: 'Mein Warenkorb',
       checkout: 'Zur Kasse',
@@ -302,21 +245,6 @@ export default {
   side_menu: {
     products: 'Produkte',
     shop: 'Geschäft'
-  },
-
-  /**
-   * Streaks
-   */
-  streaks: {
-    register: {
-      title: 'Verkaufen Sie heute',
-      body: 'Starten Sie jetzt mit wenigen Klicks Ihren persönlichen Shop.'
-    },
-    newsletter: {
-      title: 'Melden Sie sich für unseren Newsletter an',
-      body: 'Schnelle und einfache Registrierung, kein Spam und jederzeit abbestellen.',
-      placeholder: 'ihre.email@adresse.ch'
-    }
   },
 
   /**

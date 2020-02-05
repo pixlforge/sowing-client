@@ -12,9 +12,13 @@ import dropzone from '~/lang/fr-CH/components/dropzone'
 import footer from '~/lang/fr-CH/components/footer'
 import forms from '~/lang/fr-CH/components/forms'
 import languages from '~/lang/fr-CH/components/languages'
+import modals from '~/lang/fr-CH/components/modals'
+import navbar from '~/lang/fr-CH/components/navbar'
+import streaks from '~/lang/fr-CH/components/streaks'
 /**
  * Pages
  */
+import account from '~/lang/fr-CH/pages/account'
 import adviceToCreators from '~/lang/fr-CH/pages/adviceToCreators'
 import comingSoon from '~/lang/fr-CH/pages/comingSoon'
 import home from '~/lang/fr-CH/pages/home'
@@ -34,81 +38,22 @@ export default {
   ...footer,
   ...forms,
   ...languages,
+  ...modals,
+  ...navbar,
+  ...streaks,
   /**
    * Pages
    */
+  ...account,
   ...adviceToCreators,
   ...comingSoon,
   ...home,
 
   /**
-   * Modals
-   */
-  modals: {
-    addresses: {
-      delete: {
-        title: 'Supprimer une adresse',
-        body: 'Êtes-vous certain de vouloir supprimer cette adresse?'
-      }
-    },
-    payment_methods: {
-      delete: {
-        title: 'Supprimer un moyen de paiement',
-        body: 'Êtes-vous certain de vouloir supprimer ce moyen de paiement?'
-      }
-    }
-  },
-
-  /**
-   * Navbar
-   */
-  navbar: {
-    user: {
-      logout: 'Déconnexion'
-    }
-  },
-
-  /**
    * Pages
    */
   pages: {
-    account: {
-      title: 'Mon compte',
-      description: 'Configurez votre compte Sowing comme bon vous semble.',
-      dashboard: {
-        title: 'Tableau de bord'
-      },
-      profile: {
-        title: 'Profil',
-        updated: 'Votre profil a été mis à jour avec succès!'
-      },
-      password: {
-        title: 'Mot de passe'
-      },
-      addresses: {
-        titles: {
-          index: 'Adresses',
-          show: 'Mon adresse',
-          create: 'Nouvelle adresse',
-          edit: 'Mettre à jour mon adresse'
-        },
-        is_default: "Il s'agit de votre adresse par défaut.",
-        no_address_found: "Vous ne disposez d'aucune adresse pour le moment."
-      },
-      payment_methods: {
-        edit: {
-          paragraph: 'Définissez cette carte comme votre nouvelle méthode de paiement par défaut.'
-        },
-        titles: {
-          index: 'Moyens de paiement',
-          create: 'Ajouter un moyen de paiement',
-          show: 'Ma carte en détails',
-          edit: 'Mettre à jour ma carte'
-        },
-        is_default: "Il s'agit de votre moyen de paiement par défaut.",
-        no_payment_method_found: "Vous ne disposez d'aucun moyen de paiement pour le moment."
-      }
-    },
+
     cart: {
       title: 'Mon panier',
       checkout: 'Passer à la caisse',
@@ -302,21 +247,6 @@ export default {
   side_menu: {
     products: 'Produits',
     shop: 'Boutique'
-  },
-
-  /**
-   * Streaks
-   */
-  streaks: {
-    register: {
-      title: "Vendez dès aujourd'hui",
-      body: 'Lancez votre boutique personnelle facilement en quelques clics dès maintenant.'
-    },
-    newsletter: {
-      title: 'Inscrivez-vous à notre newsletter',
-      body: 'Inscription rapide, facile, garantie sans spam et désabonnez-vous quand vous le voulez.',
-      placeholder: 'votre.adresse@email.ch'
-    }
   },
 
   /**

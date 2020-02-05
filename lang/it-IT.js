@@ -12,9 +12,13 @@ import dropzone from '~/lang/it-IT/components/dropzone'
 import footer from '~/lang/it-IT/components/footer'
 import forms from '~/lang/it-IT/components/forms'
 import languages from '~/lang/it-IT/components/languages'
+import modals from '~/lang/it-IT/components/modals'
+import navbar from '~/lang/it-IT/components/navbar'
+import streaks from '~/lang/it-IT/components/streaks'
 /**
  * Pages
  */
+import account from '~/lang/it-IT/pages/account'
 import adviceToCreators from '~/lang/it-IT/pages/adviceToCreators'
 import comingSoon from '~/lang/it-IT/pages/comingSoon'
 import home from '~/lang/it-IT/pages/home'
@@ -34,81 +38,22 @@ export default {
   ...footer,
   ...forms,
   ...languages,
+  ...modals,
+  ...navbar,
+  ...streaks,
   /**
    * Pages
    */
+  ...account,
   ...adviceToCreators,
   ...comingSoon,
   ...home,
 
   /**
-   * Navbar
-   */
-  navbar: {
-    user: {
-      logout: 'Disconnettersi'
-    }
-  },
-
-  /**
-   * Modals
-   */
-  modals: {
-    addresses: {
-      delete: {
-        title: "Cancellazione dell'indirizzo",
-        body: 'Siete sicuri di voler eliminare questo indirizzo?'
-      }
-    },
-    payment_methods: {
-      delete: {
-        title: 'Cancellazione del metodo di pagamento',
-        body: 'Siete sicuri di voler eliminare questo metodo di pagamento?'
-      }
-    }
-  },
-
-  /**
    * Pages
    */
   pages: {
-    account: {
-      title: 'Il mio account',
-      description: 'Configura il vostro account Sowing come meglio credi.',
-      dashboard: {
-        title: 'Cruscotto'
-      },
-      profile: {
-        title: 'Profilo',
-        updated: 'Il vostro profilo è stato aggiornato con successo'
-      },
-      password: {
-        title: 'Password'
-      },
-      addresses: {
-        titles: {
-          index: 'Indirizzi',
-          show: 'Il mio indirizzo',
-          create: 'Nuovo indirizzo',
-          edit: 'Aggiorna il mio indirizzo'
-        },
-        is_default: 'Questo è il vostro indirizzo predefinito.',
-        no_address_found: 'Non avete ancora un indirizzo.'
-      },
-      payment_methods: {
-        edit: {
-          paragraph: 'Impostate questa carta come nuovo metodo di pagamento predefinito.'
-        },
-        titles: {
-          index: 'Modalità di pagamento',
-          create: 'Aggiungete un metodo di pagamento',
-          show: 'La mia carta in dettaglio',
-          edit: 'Aggiorna la mia carta'
-        },
-        is_default: 'Questo è il vostro metodo di pagamento predefinito.',
-        no_payment_method_found: 'Non avete ancora alcun metodo di pagamento salvato.'
-      }
-    },
+
     cart: {
       title: 'Il mio carrello',
       checkout: 'Procedere al checkout',
@@ -302,21 +247,6 @@ export default {
   side_menu: {
     products: 'Prodotti',
     shop: 'Negozio'
-  },
-
-  /**
-   * Streaks
-   */
-  streaks: {
-    register: {
-      title: 'Vendi oggi',
-      body: 'Avvia facilmente il vostro negozio personale in pochi clic.'
-    },
-    newsletter: {
-      title: 'Iscrivitevi alla nostra newsletter',
-      body: "Registrazione rapida, semplice, senza spam e annullamento dell'iscrizione quando vuoi.",
-      placeholder: 'vostro.email@indirizzo.ch'
-    }
   },
 
   /**

@@ -12,9 +12,13 @@ import dropzone from '~/lang/en-GB/components/dropzone'
 import footer from '~/lang/en-GB/components/footer'
 import forms from '~/lang/en-GB/components/forms'
 import languages from '~/lang/en-GB/components/languages'
+import modals from '~/lang/en-GB/components/modals'
+import navbar from '~/lang/en-GB/components/navbar'
+import streaks from '~/lang/en-GB/components/streaks'
 /**
  * Pages
  */
+import account from '~/lang/en-GB/pages/account'
 import adviceToCreators from '~/lang/en-GB/pages/adviceToCreators'
 import comingSoon from '~/lang/en-GB/pages/comingSoon'
 import home from '~/lang/en-GB/pages/home'
@@ -34,81 +38,22 @@ export default {
   ...footer,
   ...forms,
   ...languages,
+  ...modals,
+  ...navbar,
+  ...streaks,
   /**
    * Pages
    */
+  ...account,
   ...adviceToCreators,
   ...comingSoon,
   ...home,
 
   /**
-   * Navbar
-   */
-  navbar: {
-    user: {
-      logout: 'Log out'
-    }
-  },
-
-  /**
-   * Modals
-   */
-  modals: {
-    addresses: {
-      delete: {
-        title: 'Delete an address',
-        body: 'Are you sure you want to delete this address?'
-      }
-    },
-    payment_methods: {
-      delete: {
-        title: 'Delete a payment method',
-        body: 'Are you sure you want to delete this payment method?'
-      }
-    }
-  },
-
-  /**
    * Pages
    */
   pages: {
-    account: {
-      title: 'My account',
-      description: 'Set up your Sowing account as you see fit.',
-      dashboard: {
-        title: 'Dashboard'
-      },
-      profile: {
-        title: 'Profile',
-        updated: 'Your profile was updated successfully!'
-      },
-      password: {
-        title: 'Password'
-      },
-      addresses: {
-        titles: {
-          index: 'Addresses',
-          show: 'My address',
-          create: 'New address',
-          edit: 'Update my address'
-        },
-        is_default: 'This is your default address.',
-        no_address_found: 'You have no address yet.'
-      },
-      payment_methods: {
-        edit: {
-          paragraph: 'Set this card as your new default payment method.'
-        },
-        titles: {
-          index: 'Payment methods',
-          create: 'Add a payment method',
-          show: 'My card in details',
-          edit: 'Update my card'
-        },
-        is_default: 'This is your default payment method.',
-        no_payment_method_found: "You don't have any payment method saved, yet."
-      }
-    },
+
     cart: {
       title: 'My cart',
       checkout: 'Proceed to checkout',
@@ -302,21 +247,6 @@ export default {
   side_menu: {
     products: 'Products',
     shop: 'Shop'
-  },
-
-  /**
-   * Streaks
-   */
-  streaks: {
-    register: {
-      title: 'Sell today',
-      body: 'Launch your own store easily in a few clicks now.'
-    },
-    newsletter: {
-      title: 'Subscribe to our newsletter',
-      body: 'Quick, easy registration, no spam, and unsubscribe whenever you want.',
-      placeholder: 'your.email@address.ch'
-    }
   },
 
   /**
