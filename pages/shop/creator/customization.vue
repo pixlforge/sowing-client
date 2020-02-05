@@ -58,8 +58,8 @@
 import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
-import Heading from '@/components/Heading'
-import ContentSection from '@/components/ContentSection'
+import Heading from '@/components/globals/Heading'
+import ContentSection from '@/components/globals/ContentSection'
 import Paragraph from '@/components/paragraphs/Paragraph'
 import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 import ButtonTertiary from '@/components/buttons/ButtonTertiary'

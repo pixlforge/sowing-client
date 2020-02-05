@@ -28,8 +28,8 @@
 <script>
 import shopManagement from '@/mixins/shop-management'
 
-import Card from '@/components/Card'
-import Heading from '@/components/Heading'
+import Card from '@/components/globals/Card'
+import Heading from '@/components/globals/Heading'
 import AddButtonLink from '@/components/buttons/AddButtonLink'
 import ResourceHeader from '@/components/resources/ResourceHeader'
 

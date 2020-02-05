@@ -45,8 +45,8 @@
 import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
-import Splash from '@/components/Splash'
-import ContentSection from '@/components/ContentSection'
+import Splash from '@/components/globals/Splash'
+import ContentSection from '@/components/globals/ContentSection'
 import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 import ButtonTertiary from '@/components/buttons/ButtonTertiary'
 import ShopCreatorControls from '@/components/shops/ShopCreatorControls'

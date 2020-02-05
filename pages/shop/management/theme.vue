@@ -21,8 +21,8 @@
 import theming from '@/mixins/theming'
 import shopManagement from '@/mixins/shop-management'
 
-import Card from '@/components/Card'
-import Heading from '@/components/Heading'
+import Card from '@/components/globals/Card'
+import Heading from '@/components/globals/Heading'
 import ShopCustomization from '@/components/shops/ShopCustomization'
 
 export default {

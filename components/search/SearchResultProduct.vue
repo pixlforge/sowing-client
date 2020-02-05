@@ -35,7 +35,7 @@
 <script>
 import { mapGetters } from 'vuex'
 
-import Heading from '@/components/Heading'
+import Heading from '@/components/globals/Heading'
 
 export default {
   components: {

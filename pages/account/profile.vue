@@ -61,8 +61,8 @@
 <script>
 import { mapActions } from 'vuex'
 
-import Card from '@/components/Card'
-import Heading from '@/components/Heading'
+import Heading from '@/components/globals/Heading'
+import Card from '@/components/globals/Card'
 import FormGroup from '@/components/forms/FormGroup'
 import FormInput from '@/components/forms/FormInput'
 import FormLabel from '@/components/forms/FormLabel'
@@ -71,8 +71,8 @@ import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 
 export default {
   components: {
-    Card,
     Heading,
+    Card,
     FormGroup,
     FormInput,
     FormLabel,

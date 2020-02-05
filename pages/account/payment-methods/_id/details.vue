@@ -101,8 +101,8 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 
-import Card from '@/components/Card'
-import Heading from '@/components/Heading'
+import Card from '@/components/globals/Card'
+import Heading from '@/components/globals/Heading'
 import BackButton from '@/components/buttons/BackButton'
 import EditButton from '@/components/buttons/EditButton'
 import DeleteButton from '@/components/buttons/DeleteButton'

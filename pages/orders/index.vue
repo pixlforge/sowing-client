@@ -33,7 +33,7 @@
 <script>
 import Order from '@/components/orders/Order'
 import Header from '@/components/headers/Header'
-import ContentSection from '@/components/ContentSection'
+import ContentSection from '@/components/globals/ContentSection'
 
 export default {
   middleware: ['authenticated'],

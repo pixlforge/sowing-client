@@ -24,7 +24,7 @@
 <script>
 import theming from '@/mixins/theming'
 
-import Navbar from '@/components/Navbar'
+import Navbar from '@/components/globals/Navbar'
 import Alert from '@/components/globals/Alert'
 import Footer from '@/components/footer/Footer'
 import Disclaimer from '@/components/footer/Disclaimer'

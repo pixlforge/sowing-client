@@ -46,7 +46,7 @@
 
 <script>
 import Header from '@/components/headers/Header'
-import Splash from '@/components/Splash'
+import Splash from '@/components/globals/Splash'
 
 export default {
   middleware: ['authenticated'],

@@ -73,9 +73,9 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 
-import Splash from '@/components/Splash'
+import Splash from '@/components/globals/Splash'
 import Header from '@/components/headers/Header'
-import ContentSection from '@/components/ContentSection'
+import ContentSection from '@/components/globals/ContentSection'
 import ButtonLinkPrimary from '@/components/buttons/ButtonLinkPrimary'
 import CartOverviewProduct from '@/components/cart/CartOverviewProduct'
 

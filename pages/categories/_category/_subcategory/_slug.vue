@@ -27,7 +27,7 @@ import { mapGetters } from 'vuex'
 
 import Header from '@/components/headers/Header'
 import Product from '@/components/products/Product'
-import ContentSection from '@/components/ContentSection'
+import ContentSection from '@/components/globals/ContentSection'
 
 export default {
   head() {

@@ -17,14 +17,14 @@
 </template>
 
 <script>
-import Card from '@/components/Card'
-import Heading from '@/components/Heading'
+import Heading from '@/components/globals/Heading'
+import Card from '@/components/globals/Card'
 import AccountCard from '@/components/account/AccountCard'
 
 export default {
   components: {
-    Card,
     Heading,
+    Card,
     AccountCard
   },
   middleware: ['authenticated'],

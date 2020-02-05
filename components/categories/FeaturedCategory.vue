@@ -55,7 +55,7 @@
 <script>
 import { mapGetters } from 'vuex'
 
-import Heading from '@/components/Heading'
+import Heading from '@/components/globals/Heading'
 import ButtonLinkPrimary from '@/components/buttons/ButtonLinkPrimary'
 
 export default {
