@@ -3,10 +3,15 @@
  */
 import accountCard from '~/lang/en-GB/components/accountCard'
 import alerts from '~/lang/en-GB/components/alerts'
+import aria from '~/lang/en-GB/components/aria'
+import buttons from '~/lang/en-GB/components/buttons'
+import cart from '~/lang/en-GB/components/cart'
+import categories from '~/lang/en-GB/components/categories'
 /**
  * Pages
  */
 import adviceToCreators from '~/lang/en-GB/pages/adviceToCreators'
+import comingSoon from '~/lang/en-GB/pages/comingSoon'
 
 export default {
   /**
@@ -14,112 +19,15 @@ export default {
    */
   ...accountCard,
   ...alerts,
+  ...aria,
+  ...buttons,
+  ...cart,
+  ...categories,
   /**
    * Pages
    */
   ...adviceToCreators,
-
-  /**
-   * To Refactor
-   */
-
-  /**
-   * ARIA
-   */
-  aria: {
-    buttons: {
-      languages: 'Languages'
-    },
-    inputs: {
-      email: 'E-mail address'
-    },
-    links: {
-      cart: 'Cart',
-      search: 'Search'
-    }
-  },
-
-  /**
-   * Buttons
-   */
-  buttons: {
-    add: 'Add',
-    add_address: 'Add an address',
-    add_payment_method: 'Add a payment method',
-    add_product: 'Add a product',
-    add_to_cart: 'Add to cart',
-    back: 'Back',
-    begin_shop_creation: 'Start the creation of my shop',
-    cancel: 'Cancel',
-    check_availability: 'Check availability',
-    connection: 'Log in',
-    connect_with_stripe: 'Connect my shop to Stripe',
-    create: 'Create',
-    create_account: 'Create account',
-    create_my_shop: 'Create my shop',
-    customize_my_shop: 'Customize my shop',
-    default: 'Set as default',
-    delete: 'Delete',
-    edit: 'Edit',
-    finalize_shop_creation: 'Finalize the creation of my shop',
-    finish: 'Finish',
-    login: 'Log in',
-    next: 'Next',
-    password_email: 'Send me a link',
-    password_reset: 'Reset password',
-    register: 'Create an account',
-    see_all_articles: 'See all articles',
-    subscribe: 'Subscribe',
-    to_my_shop_details: 'To my shop details',
-    update: 'Update',
-    view: 'View'
-  },
-
-  /**
-   * Cart
-   */
-  cart: {
-    labels: {
-      price: 'Price',
-      quantity: 'Quantity'
-    }
-  },
-
-  /**
-   * Categories
-   */
-  categories: {
-    featured_categories: 'Featured categories',
-    in: 'in',
-    img: {
-      alt: 'Category image'
-    },
-    link: {
-      see_all: 'Show all products'
-    }
-  },
-
-  /**
-   * Coming soon page
-   */
-  coming_soon: {
-    soon: 'Coming soon',
-    title: 'E-commerce Marketplace',
-    subtitle: 'Crafts & Handmade',
-    subscribe: 'Enter your email address to be kept informed of the official opening of Sowing and if you wish to create your shop before the platform launches.',
-    description_first_line: 'Market place dedicated to crafts and handmade.',
-    description_second_line: 'Create the shop that suits you and sell your creations.',
-    button: 'Keep me updated',
-    features: {
-      first: 'Create your own customizable store',
-      second: 'Sell your original creations',
-      third: 'Discover the superb creations of our artisans',
-      fourth: 'Available in 4 languages: French, English, German and Italian',
-      fifth: 'Unique in Switzerland'
-    },
-    social_networks: 'Social networks',
-    follow_us: 'Follow us also on social networks'
-  },
+  ...comingSoon,
 
   /**
    * Credit Cards

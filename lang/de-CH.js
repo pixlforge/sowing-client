@@ -3,10 +3,15 @@
  */
 import accountCard from '~/lang/de-CH/components/accountCard'
 import alerts from '~/lang/de-CH/components/alerts'
+import aria from '~/lang/de-CH/components/aria'
+import buttons from '~/lang/de-CH/components/buttons'
+import cart from '~/lang/de-CH/components/cart'
+import categories from '~/lang/de-CH/components/categories'
 /**
  * Pages
  */
 import adviceToCreators from '~/lang/de-CH/pages/adviceToCreators'
+import comingSoon from '~/lang/de-CH/pages/comingSoon'
 
 export default {
   /**
@@ -14,112 +19,15 @@ export default {
    */
   ...accountCard,
   ...alerts,
+  ...aria,
+  ...buttons,
+  ...cart,
+  ...categories,
   /**
    * Pages
    */
   ...adviceToCreators,
-
-  /**
-   * To Refactor
-   */
-
-  /**
-   * ARIA
-   */
-  aria: {
-    buttons: {
-      languages: 'Sprachen'
-    },
-    inputs: {
-      email: 'E-Mail-Adresse'
-    },
-    links: {
-      cart: 'Warenkorb',
-      search: 'Suche'
-    }
-  },
-
-  /**
-   * Cart
-   */
-  cart: {
-    labels: {
-      price: 'Preis',
-      quantity: 'Menge'
-    }
-  },
-
-  /**
-   * Buttons
-   */
-  buttons: {
-    add: 'Hinzufügen',
-    add_address: 'Adresse hinzufügen',
-    add_payment_method: 'Fügen Sie eine Zahlungsmethode hinzu',
-    add_product: 'Produkt hinzufügen',
-    add_to_cart: 'Zum Warenkorb hinzufügen',
-    back: 'Zurück',
-    begin_shop_creation: 'Beginnen Sie mit der Erstellung meines Shops',
-    cancel: 'Stornieren',
-    check_availability: 'Verfügbarkeit prüfen',
-    connection: 'Einloggen',
-    connect_with_stripe: 'Verbinden Sie meinen Shop mit Stripe',
-    create: 'Erstellen',
-    create_account: 'Konto erstellen',
-    create_my_shop: 'Schaffe meinen Shop',
-    customize_my_shop: 'Passen Sie meinen Shop an',
-    default: 'Als Standard festlegen',
-    delete: 'Entfernen',
-    edit: 'Bearbeiten',
-    finalize_shop_creation: 'Beenden Sie die Erstellung meines Shops',
-    finish: 'Fertig',
-    login: 'Einloggen',
-    next: 'Nächste',
-    password_email: 'Schicken Sie mir einen Link',
-    password_reset: 'Passwort zurücksetzen',
-    register: 'Konto erstellen',
-    see_all_articles: 'Alle Artikel anzeigen',
-    subscribe: 'Anmeldung',
-    to_my_shop_details: 'Zu meinen Shopdetails',
-    update: 'Aktualisieren',
-    view: 'Ansicht'
-  },
-
-  /**
-   * Categories
-   */
-  categories: {
-    featured_categories: 'Beliebte Kategorien',
-    in: 'in',
-    img: {
-      alt: 'Kategorie Bild'
-    },
-    link: {
-      see_all: 'Siehe all Produkte'
-    }
-  },
-
-  /**
-   * Coming soon page
-   */
-  coming_soon: {
-    soon: 'Verfügbar in Kürze',
-    title: 'E-Commerce-Marktplatz',
-    subtitle: 'Kunsthandwerk & Handarbeit',
-    subscribe: 'Geben Sie Ihre E-Mail-Adresse ein, um über die offizielle Eröffnung von Sowing informiert zu werden und um Ihren Shop zu erstellen, bevor die Plattform gestartet wird.',
-    description_first_line: 'Marktplatz für Kunsthandwerk und Handarbeit.',
-    description_second_line: 'Erstelle den Shop, der zu dir passt und verkaufe deine Kreationen.',
-    button: 'Halte mich auf dem Laufenden',
-    features: {
-      first: 'Erstellen Sie Ihren eigenen anpassbaren Shop',
-      second: 'Verkaufen Sie Ihre originellen Kreationen',
-      third: 'Entdecken Sie die großartigen Kreationen unserer Handwerker',
-      fourth: 'Verfügbar in 4 Sprachen: Französisch, Englisch, Deutsch und Italienisch',
-      fifth: 'Einzigartig in der Schweiz'
-    },
-    social_networks: 'Soziale Netzwerke',
-    follow_us: 'Folgen Sie uns auch in sozialen Netzwerken'
-  },
+  ...comingSoon,
 
   /**
    * Credit Cards

@@ -3,10 +3,15 @@
  */
 import accountCard from '~/lang/fr-CH/components/accountCard'
 import alerts from '~/lang/fr-CH/components/alerts'
+import aria from '~/lang/fr-CH/components/aria'
+import buttons from '~/lang/fr-CH/components/buttons'
+import cart from '~/lang/fr-CH/components/cart'
+import categories from '~/lang/fr-CH/components/categories'
 /**
  * Pages
  */
 import adviceToCreators from '~/lang/fr-CH/pages/adviceToCreators'
+import comingSoon from '~/lang/fr-CH/pages/comingSoon'
 
 export default {
   /**
@@ -14,112 +19,15 @@ export default {
    */
   ...accountCard,
   ...alerts,
+  ...aria,
+  ...buttons,
+  ...cart,
+  ...categories,
   /**
    * Pages
    */
   ...adviceToCreators,
-
-  /**
-   * To Refactor
-   */
-
-  /**
-   * ARIA
-   */
-  aria: {
-    buttons: {
-      languages: 'Langues'
-    },
-    inputs: {
-      email: 'Adresse e-mail'
-    },
-    links: {
-      cart: 'Panier',
-      search: 'Recherche'
-    }
-  },
-
-  /**
-   * Buttons
-   */
-  buttons: {
-    add: 'Ajouter',
-    add_address: 'Ajouter une adresse',
-    add_payment_method: 'Ajouter un moyen de paiement',
-    add_product: 'Ajouter un produit',
-    add_to_cart: 'Ajouter au panier',
-    back: 'Retour',
-    begin_shop_creation: 'Commencer la création de ma boutique',
-    cancel: 'Annuler',
-    check_availability: 'Vérifier la disponibilité',
-    connection: 'Connexion',
-    connect_with_stripe: 'Connecter ma boutique avec Stripe',
-    create: 'Créer',
-    create_account: 'Créer le compte',
-    create_my_shop: 'Créer ma boutique',
-    customize_my_shop: 'Personnaliser ma boutique',
-    default: 'Définir par défaut',
-    delete: 'Supprimer',
-    edit: 'Modifier',
-    finalize_shop_creation: 'Finaliser la création de ma boutique',
-    finish: 'Terminer',
-    login: 'Connexion',
-    next: 'Suivant',
-    password_email: 'Envoyez-moi un lien',
-    password_reset: 'Réinitialiser le mot de passe',
-    register: 'Créer un compte',
-    see_all_articles: 'Voir tous les articles',
-    subscribe: 'Inscription',
-    to_my_shop_details: 'Vers les détails de ma boutique',
-    update: 'Mettre à jour',
-    view: 'Voir'
-  },
-
-  /**
-   * Cart
-   */
-  cart: {
-    labels: {
-      price: 'Prix',
-      quantity: 'Quantité'
-    }
-  },
-
-  /**
-   * Categories
-   */
-  categories: {
-    featured_categories: 'Catégories vedettes',
-    in: 'dans',
-    img: {
-      alt: 'Image de la catégorie'
-    },
-    link: {
-      see_all: 'Voir tous les produits'
-    }
-  },
-
-  /**
-   * Coming soon page
-   */
-  coming_soon: {
-    soon: 'Bientôt disponible',
-    title: 'Place de marché e-commerce',
-    subtitle: 'Artisanat & Fait main',
-    subscribe: "Inscrivez votre adresse email afin d'être tenu au courant de l'ouverture officielle de Sowing et si vous souhaitez créer votre boutique avant le lancement de la plateforme.",
-    description_first_line: 'Place de marché dédiée à l’artisanat et au fait main.',
-    description_second_line: 'Créez la boutique qui vous ressemble et vendez vos créations.',
-    button: 'Tenez-moi informé',
-    features: {
-      first: 'Créez votre propre boutique personnalisable',
-      second: 'Vendez vos créations originales',
-      third: 'Découvrez les superbes créations de nos artisans',
-      fourth: 'Disponible en 4 langues: français, anglais, allemand et italien',
-      fifth: 'Unique en Suisse'
-    },
-    social_networks: 'Réseaux sociaux',
-    follow_us: 'Suivez-nous également sur les réseaux sociaux'
-  },
+  ...comingSoon,
 
   /**
    * Credit Cards
