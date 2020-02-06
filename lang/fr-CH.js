@@ -1,68 +1,47 @@
-/**
- * Components
- */
-import accountCard from '~/lang/fr-CH/components/accountCard'
-import alerts from '~/lang/fr-CH/components/alerts'
-import aria from '~/lang/fr-CH/components/aria'
-import buttons from '~/lang/fr-CH/components/buttons'
-import cart from '~/lang/fr-CH/components/cart'
-import categories from '~/lang/fr-CH/components/categories'
-import creditCards from '~/lang/fr-CH/components/creditCards'
-import dropzone from '~/lang/fr-CH/components/dropzone'
-import footer from '~/lang/fr-CH/components/footer'
-import forms from '~/lang/fr-CH/components/forms'
-import languages from '~/lang/fr-CH/components/languages'
-import modals from '~/lang/fr-CH/components/modals'
-import navbar from '~/lang/fr-CH/components/navbar'
-import streaks from '~/lang/fr-CH/components/streaks'
-/**
- * Pages
- */
-import account from '~/lang/fr-CH/pages/account'
-import adviceToCreators from '~/lang/fr-CH/pages/adviceToCreators'
-import comingSoon from '~/lang/fr-CH/pages/comingSoon'
-import home from '~/lang/fr-CH/pages/home'
+import account from '~/lang/fr-CH/account'
+import accountCard from '~/lang/fr-CH/accountCard'
+import adviceToCreators from '~/lang/fr-CH/adviceToCreators'
+import alerts from '~/lang/fr-CH/alerts'
+import aria from '~/lang/fr-CH/aria'
+import buttons from '~/lang/fr-CH/buttons'
+import cart from '~/lang/fr-CH/cart'
+import categories from '~/lang/fr-CH/categories'
+import comingSoon from '~/lang/fr-CH/comingSoon'
+import creditCards from '~/lang/fr-CH/creditCards'
+import dropzone from '~/lang/fr-CH/dropzone'
+import footer from '~/lang/fr-CH/footer'
+import forms from '~/lang/fr-CH/forms'
+import home from '~/lang/fr-CH/home'
+import languages from '~/lang/fr-CH/languages'
+import modals from '~/lang/fr-CH/modals'
+import navbar from '~/lang/fr-CH/navbar'
+import streaks from '~/lang/fr-CH/streaks'
 
 export default {
-  /**
-   * Components
-   */
+  ...account,
   ...accountCard,
+  ...adviceToCreators,
   ...alerts,
   ...aria,
   ...buttons,
   ...cart,
   ...categories,
+  ...comingSoon,
   ...creditCards,
   ...dropzone,
   ...footer,
   ...forms,
+  ...home,
   ...languages,
   ...modals,
   ...navbar,
   ...streaks,
-  /**
-   * Pages
-   */
-  ...account,
-  ...adviceToCreators,
-  ...comingSoon,
-  ...home,
 
   /**
    * Pages
    */
   pages: {
 
-    cart: {
-      title: 'Mon panier',
-      checkout: 'Passer à la caisse',
-      in_your_cart: 'Votre panier contient',
-      products: 'produits',
-      for: 'pour',
-      cart_is_empty: 'Votre panier est vide',
-      add_something: 'Ajoutez-y quelque chose!'
-    },
     checkout: {
       add_address: 'Ajouter une adresse',
       change_address: "Changer d'adresse?",

@@ -1,68 +1,47 @@
-/**
- * Components
- */
-import accountCard from '~/lang/it-IT/components/accountCard'
-import alerts from '~/lang/it-IT/components/alerts'
-import aria from '~/lang/it-IT/components/aria'
-import buttons from '~/lang/it-IT/components/buttons'
-import cart from '~/lang/it-IT/components/cart'
-import categories from '~/lang/it-IT/components/categories'
-import creditCards from '~/lang/it-IT/components/creditCards'
-import dropzone from '~/lang/it-IT/components/dropzone'
-import footer from '~/lang/it-IT/components/footer'
-import forms from '~/lang/it-IT/components/forms'
-import languages from '~/lang/it-IT/components/languages'
-import modals from '~/lang/it-IT/components/modals'
-import navbar from '~/lang/it-IT/components/navbar'
-import streaks from '~/lang/it-IT/components/streaks'
-/**
- * Pages
- */
-import account from '~/lang/it-IT/pages/account'
-import adviceToCreators from '~/lang/it-IT/pages/adviceToCreators'
-import comingSoon from '~/lang/it-IT/pages/comingSoon'
-import home from '~/lang/it-IT/pages/home'
+import account from '~/lang/it-IT/account'
+import accountCard from '~/lang/it-IT/accountCard'
+import adviceToCreators from '~/lang/it-IT/adviceToCreators'
+import alerts from '~/lang/it-IT/alerts'
+import aria from '~/lang/it-IT/aria'
+import buttons from '~/lang/it-IT/buttons'
+import cart from '~/lang/it-IT/cart'
+import categories from '~/lang/it-IT/categories'
+import comingSoon from '~/lang/it-IT/comingSoon'
+import creditCards from '~/lang/it-IT/creditCards'
+import dropzone from '~/lang/it-IT/dropzone'
+import footer from '~/lang/it-IT/footer'
+import forms from '~/lang/it-IT/forms'
+import home from '~/lang/it-IT/home'
+import languages from '~/lang/it-IT/languages'
+import modals from '~/lang/it-IT/modals'
+import navbar from '~/lang/it-IT/navbar'
+import streaks from '~/lang/it-IT/streaks'
 
 export default {
-  /**
-   * Components
-   */
+  ...account,
   ...accountCard,
+  ...adviceToCreators,
   ...alerts,
   ...aria,
   ...buttons,
   ...cart,
   ...categories,
+  ...comingSoon,
   ...creditCards,
   ...dropzone,
   ...footer,
   ...forms,
+  ...home,
   ...languages,
   ...modals,
   ...navbar,
   ...streaks,
-  /**
-   * Pages
-   */
-  ...account,
-  ...adviceToCreators,
-  ...comingSoon,
-  ...home,
 
   /**
    * Pages
    */
   pages: {
 
-    cart: {
-      title: 'Il mio carrello',
-      checkout: 'Procedere al checkout',
-      in_your_cart: 'Il vostro carrello contiene',
-      products: 'prodotti',
-      for: 'per',
-      cart_is_empty: 'il vostro carrello è vuoto',
-      add_something: 'Aggiungi qualcosa ad esso!'
-    },
     checkout: {
       add_address: 'Aggiungi un indirizzo',
       change_address: 'Cambia indirizzo?',
