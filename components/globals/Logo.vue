@@ -1,6 +1,7 @@
 <template>
   <svg
     viewBox="0 0 133 25"
+    fill="none"
   >
     <title>Logo Sowing</title>
     <g

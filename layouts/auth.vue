@@ -4,18 +4,23 @@
     <!-- Alert -->
     <Alert/>
 
-    <div class="min-h-screen flex flex-col justify-center items-center">
+    <main class="min-h-screen flex justify-center items-center bg-green-500">
+      <div class="w-full max-w-600 bg-white rounded-lg shadow-2xl p-48">
 
-      <!-- Logo -->
-      <nuxt-link
-        :to="{ name: 'index' }"
-        class="w-full max-w-200 sm:max-w-300 lg:max-w-400 my-36 px-20"
-      >
-        <Logo/>
-      </nuxt-link>
+        <!-- Logo -->
+        <div class="text-center mb-36">
+          <nuxt-link
+            :to="{ name: 'index' }"
+            class="inline-block"
+          >
+            <Logo class="w-200"/>
+          </nuxt-link>
+        </div>
 
-      <nuxt/>
-    </div>
+        <!-- Page content -->
+        <nuxt/>
+      </div>
+    </main>
   </div>
 </template>
 

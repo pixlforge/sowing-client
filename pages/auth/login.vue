@@ -2,81 +2,78 @@
   <main>
 
     <!-- Page contents -->
-    <ContentSection class="max-w-600">
 
-      <!-- Page title -->
-      <Heading
-        tag="h1"
-        visual="h1"
-        utilities="md:text-center"
+    <!-- Page title -->
+    <Heading
+      tag="h1"
+      visual="h4"
+      utilities="md:text-center"
+    >
+      {{ $t('login.title') }}
+    </Heading>
+
+    <form
+      @submit.prevent="login"
+      class="mt-36"
+    >
+
+      <!-- Email -->
+      <FormGroup>
+        <FormLabel name="email">
+          {{ $t("forms.labels.email") }}
+        </FormLabel>
+        <FormInput
+          ref="autofocus"
+          v-model="form.email"
+          :errors="errors"
+          name="email"
+          type="email"
+          placeholder="elon@musk.ch"
+          required
+        />
+        <FormValidation
+          :errors="errors"
+          name="email"
+        />
+      </FormGroup>
+
+      <!-- Password -->
+      <FormGroup>
+        <FormLabel name="password">
+          {{ $t("forms.labels.password") }}
+        </FormLabel>
+        <FormInput
+          v-model="form.password"
+          name="password"
+          type="password"
+          placeholder="••••••••"
+          required
+        />
+      </FormGroup>
+
+      <div class="flex flex-wrap justify-center my-36 md:my-60">
+
+        <!-- Password forgotten -->
+        <ButtonLinkTertiary :route="{ name: 'auth-forgot' }">
+          {{ $t("login.links.password") }}
+        </ButtonLinkTertiary>
+
+        <!-- Register an account -->
+        <ButtonLinkTertiary :route="{ name: 'auth-register' }">
+          {{ $t("login.links.register") }}
+        </ButtonLinkTertiary>
+      </div>
+
+      <!-- Submit -->
+      <ButtonPrimary
+        :disabled="missingCredentials"
+        type="submit"
+        icon="key"
+        class="mx-auto mt-36"
       >
-        {{ $t('login.title') }}
-      </Heading>
-
-      <form
-        @submit.prevent="login"
-        class="mt-36 sm:mt-72"
-      >
-
-        <!-- Email -->
-        <FormGroup>
-          <FormLabel name="email">
-            {{ $t("forms.labels.email") }}
-          </FormLabel>
-          <FormInput
-            ref="autofocus"
-            v-model="form.email"
-            :errors="errors"
-            name="email"
-            type="email"
-            placeholder="elon@musk.ch"
-            required
-          />
-          <FormValidation
-            :errors="errors"
-            name="email"
-          />
-        </FormGroup>
-
-        <!-- Password -->
-        <FormGroup>
-          <FormLabel name="password">
-            {{ $t("forms.labels.password") }}
-          </FormLabel>
-          <FormInput
-            v-model="form.password"
-            name="password"
-            type="password"
-            placeholder="••••••••"
-            required
-          />
-        </FormGroup>
-
-        <div class="flex flex-wrap justify-center my-36 md:my-60">
-
-          <!-- Password forgotten -->
-          <ButtonLinkTertiary :route="{ name: 'auth-forgot' }">
-            {{ $t("login.links.password") }}
-          </ButtonLinkTertiary>
-
-          <!-- Register an account -->
-          <ButtonLinkTertiary :route="{ name: 'auth-register' }">
-            {{ $t("login.links.register") }}
-          </ButtonLinkTertiary>
-        </div>
-
-        <!-- Submit -->
-        <ButtonPrimary
-          :disabled="missingCredentials"
-          type="submit"
-          icon="key"
-          class="shadow-xl mx-auto my-36 md:my-60"
-        >
-          {{ $t("buttons.connection") }}
-        </ButtonPrimary>
-      </form>
-    </ContentSection>
-
+        {{ $t("buttons.connection") }}
+      </ButtonPrimary>
+    </form>
   </main>
 </template>
 
@@ -87,7 +84,6 @@ import Heading from '@/components/globals/Heading'
 import FormLabel from '@/components/forms/FormLabel'
 import FormInput from '@/components/forms/FormInput'
 import FormGroup from '@/components/forms/FormGroup'
-import ContentSection from '@/components/globals/ContentSection'
 import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 import FormValidation from '@/components/forms/FormValidation'
 import ButtonLinkTertiary from '@/components/buttons/ButtonLinkTertiary'
@@ -117,7 +113,6 @@ export default {
     FormLabel,
     FormInput,
     FormGroup,
-    ContentSection,
     ButtonPrimary,
     FormValidation,
     ButtonLinkTertiary
