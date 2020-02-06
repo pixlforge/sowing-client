@@ -11,7 +11,7 @@
     <CategoryBar/>
 
     <!-- Page content -->
-    <nuxt/>
+    <Nuxt/>
 
     <!-- Footer -->
     <Footer/>

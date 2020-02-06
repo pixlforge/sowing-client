@@ -1,7 +1,5 @@
 <template>
-  <main>
-
-    <!-- Page contents -->
+  <div>
 
     <!-- Page title -->
     <Heading
@@ -74,7 +72,7 @@
         {{ $t("buttons.connection") }}
       </ButtonPrimary>
     </form>
-  </main>
+  </div>
 </template>
 
 <script>

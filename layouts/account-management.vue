@@ -53,7 +53,7 @@
 
           <!-- Page content -->
           <section class="w-full lg:w-3/4 xl:w-4/5 mt-72 lg:mt-0">
-            <nuxt/>
+            <Nuxt/>
           </section>
         </div>
       </ContentSection>
