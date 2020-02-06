@@ -56,8 +56,7 @@
       icon="exclamation-circle"
       color="red"
     />
-
-    </card></div>
+  </div>
 </template>
 
 <script>

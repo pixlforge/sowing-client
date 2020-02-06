@@ -191,8 +191,7 @@
         </div>
       </form>
     </Card>
-
-    </card></div>
+  </div>
 </template>
 
 <script>
