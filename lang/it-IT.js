@@ -18,6 +18,9 @@ import languages from '~/lang/it-IT/languages'
 import login from '~/lang/it-IT/login'
 import modals from '~/lang/it-IT/modals'
 import navbar from '~/lang/it-IT/navbar'
+import orders from '~/lang/it-IT/orders'
+import passwordEmail from '~/lang/it-IT/passwordEmail'
+import passwordReset from '~/lang/it-IT/passwordReset'
 import streaks from '~/lang/it-IT/streaks'
 
 export default {
@@ -41,6 +44,9 @@ export default {
   ...login,
   ...modals,
   ...navbar,
+  ...orders,
+  ...passwordEmail,
+  ...passwordReset,
   ...streaks,
 
   /**
@@ -48,25 +54,6 @@ export default {
    */
   pages: {
 
-    orders: {
-      title: 'I miei ordini',
-      statuses: {
-        completed: 'Completato',
-        pending: 'In sospeso',
-        processing: 'Trattamento',
-        payment_failed: 'Pagamento fallito'
-      }
-    },
-    password_email: {
-      title: "Recupero dell'account",
-      paragraphs: {
-        first: 'Hai dimenticato la password?',
-        second: 'Nessun problema, inserite semplicemente il vostro indirizzo e-mail nel campo sottostante e vi invieremo una e-mail contenente un link che vi permetterà di impostare una nuova password per il vostro account.'
-      }
-    },
-    password_reset: {
-      title: 'Reimpostare la password'
-    },
     register: {
       title: 'Registrazione del vostro account Sowing',
       links: {

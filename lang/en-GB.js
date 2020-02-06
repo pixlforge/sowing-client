@@ -18,6 +18,9 @@ import languages from '~/lang/en-GB/languages'
 import login from '~/lang/en-GB/login'
 import modals from '~/lang/en-GB/modals'
 import navbar from '~/lang/en-GB/navbar'
+import orders from '~/lang/en-GB/orders'
+import passwordEmail from '~/lang/en-GB/passwordEmail'
+import passwordReset from '~/lang/en-GB/passwordReset'
 import streaks from '~/lang/en-GB/streaks'
 
 export default {
@@ -41,6 +44,9 @@ export default {
   ...login,
   ...modals,
   ...navbar,
+  ...orders,
+  ...passwordEmail,
+  ...passwordReset,
   ...streaks,
 
   /**
@@ -48,25 +54,6 @@ export default {
    */
   pages: {
 
-    orders: {
-      title: 'My orders',
-      statuses: {
-        completed: 'Completed',
-        pending: 'Pending',
-        processing: 'Processing',
-        payment_failed: 'Payment Failed'
-      }
-    },
-    password_email: {
-      title: 'Account recovery',
-      paragraphs: {
-        first: 'Forgot your password?',
-        second: 'No problem, simply enter your e-mail address in the field below and we will send you an e-mail containing a link allowing you to set a new password for your account.'
-      }
-    },
-    password_reset: {
-      title: 'Password reset'
-    },
     register: {
       title: 'Registering your Sowing account',
       links: {

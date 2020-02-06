@@ -18,6 +18,9 @@ import languages from '~/lang/de-CH/languages'
 import login from '~/lang/de-CH/login'
 import modals from '~/lang/de-CH/modals'
 import navbar from '~/lang/de-CH/navbar'
+import orders from '~/lang/de-CH/orders'
+import passwordEmail from '~/lang/de-CH/passwordEmail'
+import passwordReset from '~/lang/de-CH/passwordReset'
 import streaks from '~/lang/de-CH/streaks'
 
 export default {
@@ -41,6 +44,9 @@ export default {
   ...login,
   ...modals,
   ...navbar,
+  ...orders,
+  ...passwordEmail,
+  ...passwordReset,
   ...streaks,
 
   /**
@@ -48,25 +54,6 @@ export default {
    */
   pages: {
 
-    orders: {
-      title: 'Meine Bestellungen',
-      statuses: {
-        completed: 'Abgeschlossen',
-        pending: 'Anstehend',
-        processing: 'Bearbeitung',
-        payment_failed: 'Bezahlung fehlgeschlagen'
-      }
-    },
-    password_email: {
-      title: 'Konto wiederherstellen',
-      paragraphs: {
-        first: 'Passwort vergessen?',
-        second: 'Kein Problem, geben Sie einfach Ihre E-Mail-Adresse in das Feld unten ein. Wir senden Ihnen eine E-Mail mit einem Link, über den Sie ein neues Passwort für Ihr Konto festlegen können.'
-      }
-    },
-    password_reset: {
-      title: 'Passwort zurücksetzen'
-    },
     register: {
       title: 'Registrieren Sie Ihr Sowing Konto',
       links: {
