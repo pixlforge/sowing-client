@@ -2,15 +2,15 @@
   <div>
 
     <!-- Step -->
-    <AppProductCreatorStep>
+    <ProductCreatorStep>
       1/5
-    </AppProductCreatorStep>
+    </ProductCreatorStep>
 
     <!-- Header -->
     <header class="flex flex-wrap items-center my-30">
 
       <!-- Back -->
-      <AppBackButton
+      <BackButton
         :route="{ name: 'shop-management-products' }"
         class="mr-20"
       />
@@ -25,9 +25,9 @@
     </header>
 
     <!-- Infotip -->
-    <AppInfoTip icon="info">
+    <InfoTip icon="info">
       {{ $t('products.management.create.tips.name_and_description') }}
-    </AppInfoTip>
+    </InfoTip>
 
     <!-- Form -->
     <form
@@ -36,199 +36,199 @@
     >
 
       <!-- French -->
-      <AppFormSection>
-        <AppFormSectionTitle>
+      <FormSection>
+        <FormSectionTitle>
           {{ $t('languages.french') }}
-        </AppFormSectionTitle>
-        <AppFormFieldset>
+        </FormSectionTitle>
+        <FormFieldset>
 
           <!-- Name -->
-          <AppFormGroup>
-            <AppFormLabel name="name.fr">
+          <FormGroup>
+            <FormLabel name="name.fr">
               {{ $t('forms.labels.name') }}
-            </AppFormLabel>
-            <AppFormLabelDescription>
+            </FormLabel>
+            <FormLabelDescription>
               Le nom de votre produit. Entrez, en français, un nom descriptif identifiant votre produit.
-            </AppFormLabelDescription>
-            <AppFormInput
+            </FormLabelDescription>
+            <FormInput
               v-model="form.name.fr"
               :errors="errors"
               name="name.fr"
             />
-            <AppFormValidation
+            <FormValidation
               :errors="errors"
               name="name.fr"
             />
-          </AppFormGroup>
+          </FormGroup>
 
           <!-- Description -->
-          <AppFormGroup>
-            <AppFormLabel name="description.fr">
+          <FormGroup>
+            <FormLabel name="description.fr">
               {{ $t('forms.labels.description') }}
-            </AppFormLabel>
-            <AppFormLabelDescription>
+            </FormLabel>
+            <FormLabelDescription>
               Décrivez, en français, votre produit de la manière dont vous le voulez.
-            </AppFormLabelDescription>
-            <AppFormTextarea
+            </FormLabelDescription>
+            <FormTextarea
               v-model="form.description.fr"
               :errors="errors"
               name="description.fr"
             />
-            <AppFormValidation
+            <FormValidation
               :errors="errors"
               name="description.fr"
             />
-          </AppFormGroup>
-        </AppFormFieldset>
-      </AppFormSection>
+          </FormGroup>
+        </FormFieldset>
+      </FormSection>
 
       <!-- English -->
-      <AppFormSection>
-        <AppFormSectionTitle>
+      <FormSection>
+        <FormSectionTitle>
           {{ $t('languages.english') }}
-        </AppFormSectionTitle>
-        <AppFormFieldset>
+        </FormSectionTitle>
+        <FormFieldset>
 
           <!-- Name -->
-          <AppFormGroup>
-            <AppFormLabel name="name.en">
+          <FormGroup>
+            <FormLabel name="name.en">
               {{ $t('forms.labels.name') }}
-            </AppFormLabel>
-            <AppFormLabelDescription>
+            </FormLabel>
+            <FormLabelDescription>
               Le nom de votre produit. Entrez, en anglais, un nom descriptif identifiant votre produit.
-            </AppFormLabelDescription>
-            <AppFormInput
+            </FormLabelDescription>
+            <FormInput
               v-model="form.name.en"
               :errors="errors"
               name="name.en"
             />
-            <AppFormValidation
+            <FormValidation
               :errors="errors"
               name="name.en"
             />
-          </AppFormGroup>
+          </FormGroup>
 
           <!-- Description -->
-          <AppFormGroup>
-            <AppFormLabel name="description.en">
+          <FormGroup>
+            <FormLabel name="description.en">
               {{ $t('forms.labels.description') }}
-            </AppFormLabel>
-            <AppFormLabelDescription>
+            </FormLabel>
+            <FormLabelDescription>
               Décrivez, en anglais, votre produit de la manière dont vous le voulez.
-            </AppFormLabelDescription>
-            <AppFormTextarea
+            </FormLabelDescription>
+            <FormTextarea
               v-model="form.description.en"
               :errors="errors"
               name="description.en"
             />
-            <AppFormValidation
+            <FormValidation
               :errors="errors"
               name="description.en"
             />
-          </AppFormGroup>
-        </AppFormFieldset>
-      </AppFormSection>
+          </FormGroup>
+        </FormFieldset>
+      </FormSection>
 
       <!-- German -->
-      <AppFormSection>
-        <AppFormSectionTitle>
+      <FormSection>
+        <FormSectionTitle>
           {{ $t('languages.german') }}
-        </AppFormSectionTitle>
-        <AppFormFieldset>
+        </FormSectionTitle>
+        <FormFieldset>
 
           <!-- Name -->
-          <AppFormGroup>
-            <AppFormLabel name="name.de">
+          <FormGroup>
+            <FormLabel name="name.de">
               {{ $t('forms.labels.name') }}
-            </AppFormLabel>
-            <AppFormLabelDescription>
+            </FormLabel>
+            <FormLabelDescription>
               Le nom de votre produit. Entrez, en allemand, un nom descriptif identifiant votre produit.
-            </AppFormLabelDescription>
-            <AppFormInput
+            </FormLabelDescription>
+            <FormInput
               v-model="form.name.de"
               :errors="errors"
               name="name.de"
             />
-            <AppFormValidation
+            <FormValidation
               :errors="errors"
               name="name.de"
             />
-          </AppFormGroup>
+          </FormGroup>
 
           <!-- Description -->
-          <AppFormGroup>
-            <AppFormLabel name="description.de">
+          <FormGroup>
+            <FormLabel name="description.de">
               {{ $t('forms.labels.description') }}
-            </AppFormLabel>
-            <AppFormLabelDescription>
+            </FormLabel>
+            <FormLabelDescription>
               Décrivez, en allemand, votre produit de la manière dont vous le voulez.
-            </AppFormLabelDescription>
-            <AppFormTextarea
+            </FormLabelDescription>
+            <FormTextarea
               v-model="form.description.de"
               :errors="errors"
               name="description.de"
             />
-            <AppFormValidation
+            <FormValidation
               :errors="errors"
               name="description.de"
             />
-          </AppFormGroup>
-        </AppFormFieldset>
-      </AppFormSection>
+          </FormGroup>
+        </FormFieldset>
+      </FormSection>
 
       <!-- Italian -->
-      <AppFormSection>
-        <AppFormSectionTitle>
+      <FormSection>
+        <FormSectionTitle>
           {{ $t('languages.italian') }}
-        </AppFormSectionTitle>
-        <AppFormFieldset>
+        </FormSectionTitle>
+        <FormFieldset>
 
           <!-- Name -->
-          <AppFormGroup>
-            <AppFormLabel name="name.it">
+          <FormGroup>
+            <FormLabel name="name.it">
               {{ $t('forms.labels.name') }}
-            </AppFormLabel>
-            <AppFormLabelDescription>
+            </FormLabel>
+            <FormLabelDescription>
               Le nom de votre produit. Entrez, en italien, un nom descriptif identifiant votre produit.
-            </AppFormLabelDescription>
-            <AppFormInput
+            </FormLabelDescription>
+            <FormInput
               v-model="form.name.it"
               :errors="errors"
               name="name.it"
             />
-            <AppFormValidation
+            <FormValidation
               :errors="errors"
               name="name.it"
             />
-          </AppFormGroup>
+          </FormGroup>
 
           <!-- Description -->
-          <AppFormGroup>
-            <AppFormLabel name="description.it">
+          <FormGroup>
+            <FormLabel name="description.it">
               {{ $t('forms.labels.description') }}
-            </AppFormLabel>
-            <AppFormLabelDescription>
+            </FormLabel>
+            <FormLabelDescription>
               Décrivez, en italien, votre produit de la manière dont vous le voulez.
-            </AppFormLabelDescription>
-            <AppFormTextarea
+            </FormLabelDescription>
+            <FormTextarea
               v-model="form.description.it"
               :errors="errors"
               name="description.it"
             />
-            <AppFormValidation
+            <FormValidation
               :errors="errors"
               name="description.it"
             />
-          </AppFormGroup>
-        </AppFormFieldset>
-      </AppFormSection>
+          </FormGroup>
+        </FormFieldset>
+      </FormSection>
 
       <!-- Controls -->
-      <AppFormSection class="lg:w-full">
+      <FormSection class="lg:w-full">
         <div class="flex justify-center items-center">
 
           <!-- Submit -->
-          <AppButtonPrimary
+          <ButtonPrimary
             :color="shopTheme"
             icon="check-circle"
             size="large"
@@ -236,17 +236,17 @@
             class="mr-10"
           >
             {{ $t('buttons.next') }}
-          </AppButtonPrimary>
+          </ButtonPrimary>
 
           <!-- Cancel -->
-          <AppButtonLinkTertiary
+          <ButtonLinkTertiary
             :route="{ name: 'shop-management-products' }"
             icon="times"
           >
             {{ $t('buttons.cancel') }}
-          </AppButtonLinkTertiary>
+          </ButtonLinkTertiary>
         </div>
-      </AppFormSection>
+      </FormSection>
     </form>
 
   </div>
@@ -256,20 +256,20 @@
 import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
-import AppInfoTip from '@/components/globals/AppInfoTip'
-import AppFormGroup from '@/components/forms/AppFormGroup'
-import AppFormLabel from '@/components/forms/AppFormLabel'
-import AppFormInput from '@/components/forms/AppFormInput'
-import AppBackButton from '@/components/buttons/AppBackButton'
-import AppFormSection from '@/components/forms/AppFormSection'
-import AppFormFieldset from '@/components/forms/AppFormFieldset'
-import AppFormTextarea from '@/components/forms/AppFormTextarea'
-import AppFormValidation from '@/components/forms/AppFormValidation'
-import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
-import AppFormSectionTitle from '@/components/forms/AppFormSectionTitle'
-import AppButtonLinkTertiary from '@/components/buttons/AppButtonLinkTertiary'
-import AppFormLabelDescription from '@/components/forms/AppFormLabelDescription'
-import AppProductCreatorStep from '@/components/products/creator/AppProductCreatorStep'
+import InfoTip from '@/components/globals/InfoTip'
+import FormGroup from '@/components/forms/FormGroup'
+import FormLabel from '@/components/forms/FormLabel'
+import FormInput from '@/components/forms/FormInput'
+import BackButton from '@/components/buttons/BackButton'
+import FormSection from '@/components/forms/FormSection'
+import FormFieldset from '@/components/forms/FormFieldset'
+import FormTextarea from '@/components/forms/FormTextarea'
+import FormValidation from '@/components/forms/FormValidation'
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
+import FormSectionTitle from '@/components/forms/FormSectionTitle'
+import ButtonLinkTertiary from '@/components/buttons/ButtonLinkTertiary'
+import FormLabelDescription from '@/components/forms/FormLabelDescription'
+import ProductCreatorStep from '@/components/products/creator/ProductCreatorStep'
 
 export default {
   head() {
@@ -295,20 +295,20 @@ export default {
     'hasShop'
   ],
   components: {
-    AppInfoTip,
-    AppFormGroup,
-    AppFormLabel,
-    AppFormInput,
-    AppBackButton,
-    AppFormSection,
-    AppFormFieldset,
-    AppFormTextarea,
-    AppFormValidation,
-    AppButtonPrimary,
-    AppFormSectionTitle,
-    AppButtonLinkTertiary,
-    AppFormLabelDescription,
-    AppProductCreatorStep
+    InfoTip,
+    FormGroup,
+    FormLabel,
+    FormInput,
+    BackButton,
+    FormSection,
+    FormFieldset,
+    FormTextarea,
+    FormValidation,
+    ButtonPrimary,
+    FormSectionTitle,
+    ButtonLinkTertiary,
+    FormLabelDescription,
+    ProductCreatorStep
   },
   mixins: [theming],
   data() {

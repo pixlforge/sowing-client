@@ -3,58 +3,58 @@
     <header class="flex items-center">
 
       <!-- Back -->
-      <AppBackButton
+      <BackButton
         :route="{ name: 'account-payment-methods' }"
         class="sm:mr-20"
       />
 
       <!-- Page title -->
-      <AppTitle
-        semantic="h1"
+      <Heading
+        tag="h1"
         visual="h1"
         utilities="mx-auto sm:mx-0"
       >
-        {{ $t('pages.account.payment_methods.titles.edit') }}
-      </AppTitle>
+        {{ $t('account.payment_methods.titles.edit') }}
+      </Heading>
     </header>
 
-    <AppCard>
-      <AppParagraph class="text-center mb-60">
-        {{ $t('pages.account.payment_methods.edit.paragraph') }}
-      </AppParagraph>
+    <Card>
+      <Paragraph class="text-center mb-60">
+        {{ $t('account.payment_methods.edit.paragraph') }}
+      </Paragraph>
 
-      <AppButtonPrimary
+      <ButtonPrimary
         @click.native="update"
         icon="star"
         class="mx-auto"
       >
         {{ $t('buttons.default') }}
-      </AppButtonPrimary>
-    </AppCard>
+      </ButtonPrimary>
+    </Card>
 
   </div>
 </template>
 
 <script>
-import AppCard from '@/components/AppCard'
-import AppTitle from '@/components/AppTitle'
-import AppBackButton from '@/components/buttons/AppBackButton'
-import AppParagraph from '@/components/paragraphs/AppParagraph'
-import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
+import Card from '@/components/globals/Card'
+import Heading from '@/components/globals/Heading'
+import BackButton from '@/components/buttons/BackButton'
+import Paragraph from '@/components/paragraphs/Paragraph'
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 
 export default {
   components: {
-    AppCard,
-    AppTitle,
-    AppBackButton,
-    AppParagraph,
-    AppButtonPrimary
+    Card,
+    Heading,
+    BackButton,
+    Paragraph,
+    ButtonPrimary
   },
   middleware: ['authenticated'],
   layout: 'account-management',
   head() {
     return {
-      title: `${this.$t('pages.account.payment_methods.titles.edit')} | ${this.$t('pages.account.title')}`,
+      title: `${this.$t('account.payment_methods.titles.edit')} | ${this.$t('account.title')}`,
       meta: [
         {
           hid: 'robots',

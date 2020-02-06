@@ -5,7 +5,7 @@ export default {
    ** Node server configuration
    */
   server: {
-    port: 8871
+    port: 3000
   },
   /*
    ** App mode

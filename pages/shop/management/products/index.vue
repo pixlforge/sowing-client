@@ -1,26 +1,26 @@
 <template>
   <div>
-    <AppResourceHeader>
+    <ResourceHeader>
 
       <!-- Page title -->
-      <AppTitle
-        semantic="h1"
+      <Heading
+        tag="h1"
         visual="h1"
       >
         {{ $t("products.management.index.title") }}
-      </AppTitle>
+      </Heading>
 
       <!-- Add a product -->
-      <AppAddButtonLink
+      <AddButtonLink
         :route="{ name: 'shop-management-products-create-product' }"
         :label="$t('buttons.add_product')"
         class="mt-60 md:mt-0"
       />
-    </AppResourceHeader>
+    </ResourceHeader>
 
-    <AppCard>
+    <Card>
       List of all products
-    </AppCard>
+    </Card>
 
   </div>
 </template>
@@ -28,10 +28,10 @@
 <script>
 import shopManagement from '@/mixins/shop-management'
 
-import AppCard from '@/components/AppCard'
-import AppTitle from '@/components/AppTitle'
-import AppAddButtonLink from '@/components/buttons/AppAddButtonLink'
-import AppResourceHeader from '@/components/resources/AppResourceHeader'
+import Card from '@/components/globals/Card'
+import Heading from '@/components/globals/Heading'
+import AddButtonLink from '@/components/buttons/AddButtonLink'
+import ResourceHeader from '@/components/resources/ResourceHeader'
 
 export default {
   head() {
@@ -54,10 +54,10 @@ export default {
   layout: 'shop-management',
   middleware: ['authenticated', 'hasShop'],
   components: {
-    AppCard,
-    AppTitle,
-    AppAddButtonLink,
-    AppResourceHeader
+    Card,
+    Heading,
+    AddButtonLink,
+    ResourceHeader
   },
   mixins: [shopManagement]
 }

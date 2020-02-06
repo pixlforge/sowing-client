@@ -2,15 +2,15 @@
   <div>
 
     <!-- Step -->
-    <AppProductCreatorStep>
+    <ProductCreatorStep>
       3/5
-    </AppProductCreatorStep>
+    </ProductCreatorStep>
 
     <!-- Header -->
     <header class="flex flex-wrap items-center my-30">
 
       <!-- Back -->
-      <AppBackButton
+      <BackButton
         :route="{
           name: 'shop-management-products-create-product-slug-category',
           params: {
@@ -30,47 +30,47 @@
     </header>
 
     <!-- Infotip -->
-    <AppInfoTip icon="info">
+    <InfoTip icon="info">
       {{ $t('products.management.create.tips.price') }}
-    </AppInfoTip>
+    </InfoTip>
 
     <!-- Form -->
     <form
       @submit.prevent="update"
       class="flex flex-wrap -mx-10"
     >
-      <AppFormSection class="lg:w-full">
-        <AppFormSectionTitle>
+      <FormSection class="lg:w-full">
+        <FormSectionTitle>
           {{ $t('forms.labels.price') }}
-        </AppFormSectionTitle>
-        <AppFormFieldset>
-          <AppFormGroup>
-            <AppFormLabel name="price">
+        </FormSectionTitle>
+        <FormFieldset>
+          <FormGroup>
+            <FormLabel name="price">
               {{ $t('forms.labels.price') }}
-            </AppFormLabel>
-            <AppFormLabelDescription>
+            </FormLabel>
+            <FormLabelDescription>
               Fixez le prix de votre produit en francs suisses (CHF) en tenant compte des frais d'envoi ainsi que des frais perçus par la plateforme.
-            </AppFormLabelDescription>
-            <AppFormInput
+            </FormLabelDescription>
+            <FormInput
               ref="priceInput"
               v-model="displayPrice"
               :errors="errors"
               name="price"
             />
-            <AppFormValidation
+            <FormValidation
               :errors="errors"
               name="price"
             />
-          </AppFormGroup>
-        </AppFormFieldset>
-      </AppFormSection>
+          </FormGroup>
+        </FormFieldset>
+      </FormSection>
 
       <!-- Controls -->
-      <AppFormSection class="lg:w-full">
+      <FormSection class="lg:w-full">
         <div class="flex justify-center items-center">
 
           <!-- Submit -->
-          <AppButtonPrimary
+          <ButtonPrimary
             :color="shopTheme"
             icon="check-circle"
             size="large"
@@ -78,10 +78,10 @@
             class="mr-10"
           >
             {{ $t('buttons.next') }}
-          </AppButtonPrimary>
+          </ButtonPrimary>
 
           <!-- Cancel -->
-          <AppButtonLinkTertiary
+          <ButtonLinkTertiary
             :route="{
               name: 'shop-management-products-create-product-slug-category',
               params: {
@@ -91,9 +91,9 @@
             icon="arrow-left"
           >
             {{ $t('buttons.back') }}
-          </AppButtonLinkTertiary>
+          </ButtonLinkTertiary>
         </div>
-      </AppFormSection>
+      </FormSection>
     </form>
   </div>
 </template>
@@ -103,19 +103,19 @@ import AutoNumeric from 'autonumeric'
 import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
-import AppInfoTip from '@/components/globals/AppInfoTip'
-import AppFormGroup from '@/components/forms/AppFormGroup'
-import AppFormInput from '@/components/forms/AppFormInput'
-import AppFormLabel from '@/components/forms/AppFormLabel'
-import AppBackButton from '@/components/buttons/AppBackButton'
-import AppFormSection from '@/components/forms/AppFormSection'
-import AppFormFieldset from '@/components/forms/AppFormFieldset'
-import AppFormValidation from '@/components/forms/AppFormValidation'
-import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
-import AppFormSectionTitle from '@/components/forms/AppFormSectionTitle'
-import AppButtonLinkTertiary from '@/components/buttons/AppButtonLinkTertiary'
-import AppFormLabelDescription from '@/components/forms/AppFormLabelDescription'
-import AppProductCreatorStep from '@/components/products/creator/AppProductCreatorStep'
+import InfoTip from '@/components/globals/InfoTip'
+import FormGroup from '@/components/forms/FormGroup'
+import FormInput from '@/components/forms/FormInput'
+import FormLabel from '@/components/forms/FormLabel'
+import BackButton from '@/components/buttons/BackButton'
+import FormSection from '@/components/forms/FormSection'
+import FormFieldset from '@/components/forms/FormFieldset'
+import FormValidation from '@/components/forms/FormValidation'
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
+import FormSectionTitle from '@/components/forms/FormSectionTitle'
+import ButtonLinkTertiary from '@/components/buttons/ButtonLinkTertiary'
+import FormLabelDescription from '@/components/forms/FormLabelDescription'
+import ProductCreatorStep from '@/components/products/creator/ProductCreatorStep'
 
 export default {
   head() {
@@ -141,19 +141,19 @@ export default {
     'hasShop'
   ],
   components: {
-    AppInfoTip,
-    AppFormGroup,
-    AppFormInput,
-    AppFormLabel,
-    AppBackButton,
-    AppFormSection,
-    AppFormFieldset,
-    AppFormValidation,
-    AppButtonPrimary,
-    AppFormSectionTitle,
-    AppButtonLinkTertiary,
-    AppFormLabelDescription,
-    AppProductCreatorStep
+    InfoTip,
+    FormGroup,
+    FormInput,
+    FormLabel,
+    BackButton,
+    FormSection,
+    FormFieldset,
+    FormValidation,
+    ButtonPrimary,
+    FormSectionTitle,
+    ButtonLinkTertiary,
+    FormLabelDescription,
+    ProductCreatorStep
   },
   mixins: [theming],
   data() {

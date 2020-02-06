@@ -2,57 +2,57 @@
   <main>
 
     <!-- Header -->
-    <AppHeader
-      :title="$t('pages.verify.title')"
+    <Header
+      :title="$t('verify.title')"
       icon="shield-check"
     />
 
     <!-- Verification successful -->
     <template v-if="verificationSuccessful">
-      <AppSplash
-        :title="$t('pages.verify.success')"
+      <Splash
+        :title="$t('verify.success')"
         :subtitle="$t('toasts.account_confirmed')"
         type="success"
         class="max-w-800"
       >
         <template slot="illustration">
           <img
-            :alt="$t('pages.verify.success')"
+            :alt="$t('verify.success')"
             src="~assets/img/success2.svg"
           >
         </template>
-      </AppSplash>
+      </Splash>
     </template>
 
     <!-- Verification failed -->
     <template v-if="verificationFailed">
-      <AppSplash
-        :title="$t('pages.verify.fail')"
+      <Splash
+        :title="$t('verify.fail')"
         :subtitle="error"
         type="error"
         class="max-w-800"
       >
         <template slot="illustration">
           <img
-            :alt="$t('pages.verify.fail')"
+            :alt="$t('verify.fail')"
             src="~assets/img/warning.svg"
           >
         </template>
-      </AppSplash>
+      </Splash>
     </template>
 
   </main>
 </template>
 
 <script>
-import AppHeader from '@/components/headers/AppHeader'
-import AppSplash from '@/components/AppSplash'
+import Header from '@/components/headers/Header'
+import Splash from '@/components/globals/Splash'
 
 export default {
   middleware: ['authenticated'],
   head() {
     return {
-      title: this.$t('pages.verify.title'),
+      title: this.$t('verify.title'),
       meta: [
         {
           hid: 'description',
@@ -68,8 +68,8 @@ export default {
     }
   },
   components: {
-    AppHeader,
-    AppSplash
+    Header,
+    Splash
   },
   data() {
     return {

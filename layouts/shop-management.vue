@@ -2,25 +2,25 @@
   <div>
 
     <!-- Alert -->
-    <AppAlert/>
+    <Alert/>
 
     <!-- Navbar -->
-    <AppNavbar/>
+    <Navbar/>
 
     <!-- Shop cover image -->
-    <AppShopCover
+    <ShopCover
       v-if="shopCover"
       :shop-cover="shopCover"
     />
 
     <!-- Header -->
-    <AppHeader
+    <Header
       v-if="shopExists"
       :class="bgTheme"
       :title="shopName"
       :description="shop.description_short[locale]"
     >
-      <AppHeaderList>
+      <HeaderList>
         <li>
           <font-awesome-icon
             :icon="['far', 'map-marker-alt']"
@@ -34,72 +34,72 @@
         >
           {{ shop.country.name[locale] }}
         </li>
-      </AppHeaderList>
-    </AppHeader>
+      </HeaderList>
+    </Header>
 
     <!-- Main -->
     <main class="bg-gray-100">
 
       <!-- User owns a shop -->
       <template v-if="userHasShop">
-        <AppContentSection>
+        <ContentSection>
 
           <!-- Content -->
           <div class="w-full flex">
 
             <!-- Side menu -->
-            <AppSideMenu>
-              <AppSideMenuList>
-                <AppSideMenuItem
-                  :label="$t('pages.shop.management.dashboard.title')"
+            <SideMenu>
+              <SideMenuList>
+                <SideMenuItem
+                  :label="$t('shop.management.dashboard.title')"
                   route="shop-management-dashboard"
                   icon="home"
                 />
-              </AppSideMenuList>
-              <AppSideMenuTitle>
+              </SideMenuList>
+              <SideMenuTitle>
                 {{ $t('side_menu.shop') }}
-              </AppSideMenuTitle>
-              <AppSideMenuList>
-                <AppSideMenuItem
-                  :label="$t('pages.shop.management.details.title')"
+              </SideMenuTitle>
+              <SideMenuList>
+                <SideMenuItem
+                  :label="$t('shop.management.details.title')"
                   route="shop-management-details"
                   icon="cog"
                 />
-                <AppSideMenuItem
-                  :label="$t('pages.shop.management.theme.title')"
+                <SideMenuItem
+                  :label="$t('shop.management.theme.title')"
                   route="shop-management-theme"
                   icon="palette"
                 />
-              </AppSideMenuList>
-              <AppSideMenuTitle>
+              </SideMenuList>
+              <SideMenuTitle>
                 {{ $t('side_menu.products') }}
-              </AppSideMenuTitle>
-              <AppSideMenuList>
-                <AppSideMenuItem
+              </SideMenuTitle>
+              <SideMenuList>
+                <SideMenuItem
                   :label="$t('products.management.index.title')"
                   route="shop-management-products"
                   icon="box-full"
                 />
-              </AppSideMenuList>
-            </AppSideMenu>
+              </SideMenuList>
+            </SideMenu>
 
             <!-- Page content -->
             <section class="w-full lg:w-3/4 mt-72 lg:mt-0">
               <nuxt/>
             </section>
           </div>
-        </AppContentSection>
+        </ContentSection>
       </template>
 
       <!-- User does not own a shop -->
       <template v-else>
-        <AppContentSection class="max-w-800">
-          <AppSplash
-            :title="$t('pages.shop.not_created_yet')"
+        <ContentSection class="max-w-800">
+          <Splash
+            :title="$t('shop.not_created_yet')"
             class="max-w-800"
           >
             <template slot="subtitle">
-              {{ $t("pages.shop.creation_cta_line_1") }}
+              {{ $t("shop.creation_cta_line_1") }}
             </template>
             <template slot="illustration">
               <img
@@ -107,26 +107,26 @@
                 alt="Illustration of a building under construction"
               >
             </template>
-          </AppSplash>
+          </Splash>
 
           <!-- Shop creation link -->
-          <AppButtonLinkPrimary
+          <ButtonLinkPrimary
             :route="{ name: 'shop-creator-terms' }"
             icon="rocket"
             size="large"
             class="w-full"
           >
             {{ $t("buttons.create_my_shop") }}
-          </AppButtonLinkPrimary>
-        </AppContentSection>
+          </ButtonLinkPrimary>
+        </ContentSection>
       </template>
     </main>
 
     <!-- Footer -->
-    <AppFooter/>
+    <Footer/>
 
     <!-- Disclaimer -->
-    <AppDisclaimer :class="bgTheme"/>
+    <Disclaimer :class="bgTheme"/>
   </div>
 </template>
 
@@ -134,37 +134,37 @@
 import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
-import AppSplash from '@/components/AppSplash'
-import AppNavbar from '@/components/AppNavbar'
-import AppAlert from '@/components/globals/AppAlert'
-import AppFooter from '@/components/footer/AppFooter'
-import AppHeader from '@/components/headers/AppHeader'
-import AppSideMenu from '@/components/menus/AppSideMenu'
-import AppShopCover from '@/components/shops/AppShopCover'
-import AppDisclaimer from '@/components/footer/AppDisclaimer'
-import AppContentSection from '@/components/AppContentSection'
-import AppHeaderList from '@/components/headers/AppHeaderList'
-import AppSideMenuList from '@/components/menus/AppSideMenuList'
-import AppSideMenuItem from '@/components/menus/AppSideMenuItem'
-import AppSideMenuTitle from '@/components/menus/AppSideMenuTitle'
-import AppButtonLinkPrimary from '@/components/buttons/AppButtonLinkPrimary'
+import Splash from '@/components/globals/Splash'
+import Navbar from '@/components/globals/Navbar'
+import Alert from '@/components/globals/Alert'
+import Footer from '@/components/footer/Footer'
+import Header from '@/components/headers/Header'
+import SideMenu from '@/components/menus/SideMenu'
+import ShopCover from '@/components/shops/ShopCover'
+import Disclaimer from '@/components/footer/Disclaimer'
+import ContentSection from '@/components/globals/ContentSection'
+import HeaderList from '@/components/headers/HeaderList'
+import SideMenuList from '@/components/menus/SideMenuList'
+import SideMenuItem from '@/components/menus/SideMenuItem'
+import SideMenuTitle from '@/components/menus/SideMenuTitle'
+import ButtonLinkPrimary from '@/components/buttons/ButtonLinkPrimary'
 
 export default {
   components: {
-    AppSplash,
-    AppNavbar,
-    AppAlert,
-    AppFooter,
-    AppHeader,
-    AppSideMenu,
-    AppShopCover,
-    AppDisclaimer,
-    AppContentSection,
-    AppHeaderList,
-    AppSideMenuList,
-    AppSideMenuItem,
-    AppSideMenuTitle,
-    AppButtonLinkPrimary
+    Splash,
+    Navbar,
+    Alert,
+    Footer,
+    Header,
+    SideMenu,
+    ShopCover,
+    Disclaimer,
+    ContentSection,
+    HeaderList,
+    SideMenuList,
+    SideMenuItem,
+    SideMenuTitle,
+    ButtonLinkPrimary
   },
   mixins: [theming],
   computed: {

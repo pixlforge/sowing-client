@@ -8,7 +8,7 @@
       </h1>
 
       <div class="flex flex-wrap -mx-24">
-        <AppFeaturedCategory
+        <FeaturedCategory
           v-for="category in featuredCategories"
           :key="category.id"
           :category="category"
@@ -17,102 +17,102 @@
     </section>
 
     <!-- Features -->
-    <AppContentSection class="max-w-1000">
-      <AppTitle
-        semantic="h1"
+    <ContentSection class="max-w-1000">
+      <Heading
+        tag="h1"
         visual="main"
         utilities="mb-30 sm:mb-72 md:mb-60"
       >
         {{ $t("home.titles.features") }}
-      </AppTitle>
+      </Heading>
 
       <div class="flex flex-wrap justify-between -mx-20">
-        <AppFeature
+        <Feature
           :title="$t('home.features.first.title')"
           :body="$t('home.features.first.body')"
           icon="lightbulb"
         />
 
-        <AppFeature
+        <Feature
           :title="$t('home.features.second.title')"
           :body="$t('home.features.second.body')"
           icon="eye"
         />
 
-        <AppFeature
+        <Feature
           :title="$t('home.features.third.title')"
           :body="$t('home.features.third.body')"
           icon="rocket"
         />
 
-        <AppFeature
+        <Feature
           :title="$t('home.features.fourth.title')"
           :body="$t('home.features.fourth.body')"
           icon="shield-check"
         />
       </div>
-    </AppContentSection>
+    </ContentSection>
 
     <!-- Streak register -->
-    <AppStreakRegister/>
+    <StreakRegister/>
 
     <!-- Shops -->
-    <AppContentSection>
-      <AppTitle
-        semantic="h1"
+    <ContentSection>
+      <Heading
+        tag="h1"
         visual="main"
       >
         {{ $t("home.titles.shops") }}
-      </AppTitle>
+      </Heading>
 
       <div class="flex flex-wrap -mx-20 mt-60 sm:mt-132">
-        <AppShopCard
+        <ShopCard
           v-for="shop in shops"
           :key="shop.id"
           :shop="shop"
           class="w-full lg:w-1/2"
         />
       </div>
-    </AppContentSection>
+    </ContentSection>
 
     <!-- Categories -->
-    <AppContentSection>
-      <AppTitle
-        semantic="h1"
+    <ContentSection>
+      <Heading
+        tag="h1"
         visual="main"
       >
         {{ $t("home.titles.categories") }}
-      </AppTitle>
+      </Heading>
 
       <div class="flex flex-wrap justify-center shadow-2xl -mx-20 mt-60 sm:mt-132">
-        <AppCategoryCard
+        <CategoryCard
           v-for="category in categories"
           :key="category.id"
           :category="category"
         />
       </div>
-    </AppContentSection>
+    </ContentSection>
 
     <!-- Reviews -->
-    <AppContentSection class="max-w-1000">
-      <AppTitle
-        semantic="h1"
+    <ContentSection class="max-w-1000">
+      <Heading
+        tag="h1"
         visual="main"
       >
         {{ $t("home.titles.reviews") }}
-      </AppTitle>
+      </Heading>
 
       <div class="mt-60 sm:mt-132">
-        <AppReview
+        <Review
           v-for="review in reviews"
           :key="review.id"
           :review="review"
         />
       </div>
-    </AppContentSection>
+    </ContentSection>
 
     <!-- Streak newsletter -->
-    <AppStreakNewsletter/>
+    <StreakNewsletter/>
 
   </main>
 </template>
@@ -120,15 +120,15 @@
 <script>
 import { mapGetters } from 'vuex'
 
-import AppTitle from '@/components/AppTitle'
-import AppReview from '@/components/AppReview'
-import AppFeature from '@/components/AppFeature'
-import AppShopCard from '@/components/shops/AppShopCard'
-import AppContentSection from '@/components/AppContentSection'
-import AppCategoryCard from '@/components/categories/AppCategoryCard'
-import AppStreakRegister from '@/components/streaks/AppStreakRegister'
-import AppStreakNewsletter from '@/components/streaks/AppStreakNewsletter'
-import AppFeaturedCategory from '@/components/categories/AppFeaturedCategory'
+import Review from '@/components/globals/Review'
+import Heading from '@/components/globals/Heading'
+import Feature from '@/components/globals/Feature'
+import ShopCard from '@/components/shops/ShopCard'
+import ContentSection from '@/components/globals/ContentSection'
+import CategoryCard from '@/components/categories/CategoryCard'
+import StreakRegister from '@/components/streaks/StreakRegister'
+import StreakNewsletter from '@/components/streaks/StreakNewsletter'
+import FeaturedCategory from '@/components/categories/FeaturedCategory'
 
 export default {
   head() {
@@ -137,15 +137,15 @@ export default {
     }
   },
   components: {
-    AppTitle,
-    AppReview,
-    AppFeature,
-    AppShopCard,
-    AppContentSection,
-    AppCategoryCard,
-    AppStreakRegister,
-    AppStreakNewsletter,
-    AppFeaturedCategory
+    Review,
+    Heading,
+    Feature,
+    ShopCard,
+    ContentSection,
+    CategoryCard,
+    StreakRegister,
+    StreakNewsletter,
+    FeaturedCategory
   },
   data() {
     return {

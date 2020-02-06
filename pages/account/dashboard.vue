@@ -2,36 +2,36 @@
   <div>
 
     <!-- Page title -->
-    <AppTitle
-      semantic="h1"
+    <Heading
+      tag="h1"
       visual="h1"
     >
-      {{ $t("pages.account.dashboard.title") }}
-    </AppTitle>
+      {{ $t("account.dashboard.title") }}
+    </Heading>
 
-    <AppCard>
-      <AppAccountCard :user="user"/>
-    </AppCard>
+    <Card>
+      <AccountCard :user="user"/>
+    </Card>
 
   </div>
 </template>
 
 <script>
-import AppCard from '@/components/AppCard'
-import AppTitle from '@/components/AppTitle'
-import AppAccountCard from '@/components/account/AppAccountCard'
+import Heading from '@/components/globals/Heading'
+import Card from '@/components/globals/Card'
+import AccountCard from '@/components/account/AccountCard'
 
 export default {
   components: {
-    AppCard,
-    AppTitle,
-    AppAccountCard
+    Heading,
+    Card,
+    AccountCard
   },
   middleware: ['authenticated'],
   layout: 'account-management',
   head() {
     return {
-      title: `${this.$t('pages.account.dashboard.title')} | ${this.$t('pages.account.title')}`,
+      title: `${this.$t('account.dashboard.title')} | ${this.$t('account.title')}`,
       meta: [
         {
           hid: 'robots',

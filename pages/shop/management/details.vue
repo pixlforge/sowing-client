@@ -2,30 +2,30 @@
   <div>
 
     <!-- Title -->
-    <AppTitle
-      semantic="h1"
+    <Heading
+      tag="h1"
       visual="h1"
     >
       Détails
-    </AppTitle>
+    </Heading>
 
     <!-- Shop details -->
-    <AppCard>
-      <AppShopDetails
+    <Card>
+      <ShopDetails
         :countries="countries"
         :errors="errors"
         editable
       />
 
       <!-- Save changes -->
-      <AppButtonPrimary
+      <ButtonPrimary
         :color="shopTheme"
         @click.native="update"
         icon="check"
       >
         {{ $t("buttons.update") }}
-      </AppButtonPrimary>
-    </AppCard>
+      </ButtonPrimary>
+    </Card>
 
   </div>
 </template>
@@ -35,16 +35,16 @@ import { mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 import shopManagement from '@/mixins/shop-management'
 
-import AppCard from '@/components/AppCard'
-import AppTitle from '@/components/AppTitle'
-import AppShopDetails from '@/components/shops/AppShopDetails'
-import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
+import Card from '@/components/globals/Card'
+import Heading from '@/components/globals/Heading'
+import ShopDetails from '@/components/shops/ShopDetails'
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 
 export default {
   middleware: ['authenticated'],
   head() {
     return {
-      title: this.$t('pages.shop.management.details.title'),
+      title: this.$t('shop.management.details.title'),
       meta: [
         {
           hid: 'description',
@@ -61,10 +61,10 @@ export default {
   },
   layout: 'shop-management',
   components: {
-    AppCard,
-    AppTitle,
-    AppShopDetails,
-    AppButtonPrimary
+    Card,
+    Heading,
+    ShopDetails,
+    ButtonPrimary
   },
   mixins: [
     theming,

@@ -2,9 +2,9 @@
   <main>
 
     <!-- Page contents -->
-    <AppContentSection>
+    <ContentSection>
 
-      <AppSplash
+      <Splash
         :title="$t('shop_creator.steps.done.title')"
         :subtitle="$t('shop_creator.steps.done.paragraph')"
         type="success"
@@ -13,31 +13,31 @@
         <template slot="illustration">
           <IllustrationSuccess/>
         </template>
-      </AppSplash>
+      </Splash>
 
       <!-- Controls -->
-      <AppShopCreatorControls>
+      <ShopCreatorControls>
 
         <!-- Previous -->
-        <AppButtonTertiary
+        <ButtonTertiary
           @click.native="prev"
           icon="chevron-circle-left"
           class="order-1 md:order-none mx-5"
         >
           {{ $t("buttons.back") }}
-        </AppButtonTertiary>
+        </ButtonTertiary>
 
         <!-- Next -->
-        <AppButtonPrimary
+        <ButtonPrimary
           :color="shopTheme"
           @click.native="next"
           icon="chevron-circle-right"
           class="order-none md_order-1 mx-5"
         >
           {{ $t("buttons.finish") }}
-        </AppButtonPrimary>
-      </AppShopCreatorControls>
-    </AppContentSection>
+        </ButtonPrimary>
+      </ShopCreatorControls>
+    </ContentSection>
   </main>
 </template>
 
@@ -45,11 +45,11 @@
 import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
-import AppSplash from '@/components/AppSplash'
-import AppContentSection from '@/components/AppContentSection'
-import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
-import AppButtonTertiary from '@/components/buttons/AppButtonTertiary'
-import AppShopCreatorControls from '@/components/shops/AppShopCreatorControls'
+import Splash from '@/components/globals/Splash'
+import ContentSection from '@/components/globals/ContentSection'
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
+import ButtonTertiary from '@/components/buttons/ButtonTertiary'
+import ShopCreatorControls from '@/components/shops/ShopCreatorControls'
 import IllustrationSuccess from '@/components/illustrations/IllustrationSuccess'
 
 export default {
@@ -77,11 +77,11 @@ export default {
     mode: 'out-in'
   },
   components: {
-    AppSplash,
-    AppContentSection,
-    AppButtonPrimary,
-    AppButtonTertiary,
-    AppShopCreatorControls,
+    Splash,
+    ContentSection,
+    ButtonPrimary,
+    ButtonTertiary,
+    ShopCreatorControls,
     IllustrationSuccess
   },
   mixins: [theming],

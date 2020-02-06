@@ -3,25 +3,25 @@
     <header class="flex items-center">
 
       <!-- Back -->
-      <AppBackButton
+      <BackButton
         :route="{ name: 'account-payment-methods' }"
         class="sm:mr-20"
       />
 
       <!-- Page title -->
-      <AppTitle
-        semantic="h1"
+      <Heading
+        tag="h1"
         visual="h1"
         utilities="mx-auto sm:mx-0"
       >
-        {{ $t('pages.account.payment_methods.titles.create') }}
-      </AppTitle>
+        {{ $t('account.payment_methods.titles.create') }}
+      </Heading>
     </header>
 
-    <AppCard>
-      <AppParagraph class="text-center md:text-left">
+    <Card>
+      <Paragraph class="text-center md:text-left">
         {{ $t("stripe.add_a_card") }}
-      </AppParagraph>
+      </Paragraph>
 
       <form
         @submit.prevent="store"
@@ -37,16 +37,16 @@
         </div>
 
         <!-- Store -->
-        <AppButtonPrimary
+        <ButtonPrimary
           :disabled="storing"
           type="submit"
           icon="plus"
           class="mx-auto md:mx-0"
         >
           {{ $t("buttons.add") }}
-        </AppButtonPrimary>
+        </ButtonPrimary>
       </form>
-    </AppCard>
+    </Card>
 
   </div>
 </template>
@@ -54,25 +54,25 @@
 <script>
 import { mapGetters } from 'vuex'
 
-import AppCard from '@/components/AppCard'
-import AppTitle from '@/components/AppTitle'
-import AppBackButton from '@/components/buttons/AppBackButton'
-import AppParagraph from '@/components/paragraphs/AppParagraph'
-import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
+import Card from '@/components/globals/Card'
+import Heading from '@/components/globals/Heading'
+import BackButton from '@/components/buttons/BackButton'
+import Paragraph from '@/components/paragraphs/Paragraph'
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 
 export default {
   components: {
-    AppCard,
-    AppTitle,
-    AppBackButton,
-    AppParagraph,
-    AppButtonPrimary
+    Card,
+    Heading,
+    BackButton,
+    Paragraph,
+    ButtonPrimary
   },
   middleware: ['authenticated'],
   layout: 'account-management',
   head() {
     return {
-      title: `${this.$t('pages.account.payment_methods.titles.create')} | ${this.$t('pages.account.title')}`,
+      title: `${this.$t('account.payment_methods.titles.create')} | ${this.$t('account.title')}`,
       meta: [
         {
           hid: 'robots',

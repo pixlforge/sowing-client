@@ -2,20 +2,20 @@
   <main>
 
     <!-- Header -->
-    <AppHeader
-      :title="$t('pages.search.title')"
-      :description="$t('pages.search.description')"
+    <Header
+      :title="$t('search.title')"
+      :description="$t('search.description')"
       icon="search"
     />
 
-    <AppContentSection class="min-h-half-screen">
+    <ContentSection class="min-h-half-screen">
 
       <!-- Search field -->
       <div class="search__input-group">
-        <AppFormInput
+        <FormInput
           v-model="query"
-          :placeholder="$t('pages.search.placeholder')"
-          :aria-label="$t('pages.search.placeholder')"
+          :placeholder="$t('search.placeholder')"
+          :aria-label="$t('search.placeholder')"
           class="text-30 font-normal px-24 py-20"
         />
       </div>
@@ -23,36 +23,36 @@
       <div class="search__results-wrapper">
 
         <!-- Product search results -->
-        <AppSearchResult
+        <SearchResult
           :query="query"
           index-name="products"
           class="search__results-component search__results-component--left"
         />
 
         <!-- Shop search results -->
-        <AppSearchResult
+        <SearchResult
           :query="query"
           index-name="shops"
           class="search__results-component search__results-component--right"
         />
 
       </div>
-    </AppContentSection>
+    </ContentSection>
   </main>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
 
-import AppHeader from '@/components/headers/AppHeader'
-import AppFormInput from '@/components/forms/AppFormInput'
-import AppContentSection from '@/components/AppContentSection'
-import AppSearchResult from '@/components/search/AppSearchResult'
+import Header from '@/components/headers/Header'
+import FormInput from '@/components/forms/FormInput'
+import ContentSection from '@/components/globals/ContentSection'
+import SearchResult from '@/components/search/SearchResult'
 
 export default {
   head() {
     return {
-      title: this.$t('pages.search.title'),
+      title: this.$t('search.title'),
       meta: [
         {
           hid: 'description',
@@ -63,10 +63,10 @@ export default {
     }
   },
   components: {
-    AppHeader,
-    AppFormInput,
-    AppContentSection,
-    AppSearchResult
+    Header,
+    FormInput,
+    ContentSection,
+    SearchResult
   },
   data() {
     return {

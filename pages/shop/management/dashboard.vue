@@ -2,16 +2,16 @@
   <div>
 
     <!-- Title -->
-    <AppTitle
-      semantic="h1"
+    <Heading
+      tag="h1"
       visual="h1"
     >
       Dashboard
-    </AppTitle>
+    </Heading>
 
-    <AppCard>
+    <Card>
       this is the dashboard of the shop management section
-    </AppCard>
+    </Card>
 
   </div>
 </template>
@@ -19,13 +19,13 @@
 <script>
 import shopManagement from '@/mixins/shop-management'
 
-import AppCard from '@/components/AppCard'
-import AppTitle from '@/components/AppTitle'
+import Card from '@/components/globals/Card'
+import Heading from '@/components/globals/Heading'
 
 export default {
   head() {
     return {
-      title: this.$t('pages.shop.management.dashboard.title'),
+      title: this.$t('shop.management.dashboard.title'),
       meta: [
         {
           hid: 'description',
@@ -41,8 +41,8 @@ export default {
     }
   },
   components: {
-    AppCard,
-    AppTitle
+    Card,
+    Heading
   },
   middleware: ['authenticated'],
   layout: 'shop-management',

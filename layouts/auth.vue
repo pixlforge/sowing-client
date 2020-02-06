@@ -2,7 +2,7 @@
   <div>
 
     <!-- Alert -->
-    <AppAlert/>
+    <Alert/>
 
     <div class="min-h-screen flex flex-col justify-center items-center">
 
@@ -11,7 +11,7 @@
         :to="{ name: 'index' }"
         class="w-full max-w-200 sm:max-w-300 lg:max-w-400 my-36 px-20"
       >
-        <AppLogo/>
+        <Logo/>
       </nuxt-link>
 
       <nuxt/>
@@ -20,13 +20,13 @@
 </template>
 
 <script>
-import AppLogo from '@/components/AppLogo'
-import AppAlert from '@/components/globals/AppAlert'
+import Logo from '@/components/globals/Logo'
+import Alert from '@/components/globals/Alert'
 
 export default {
   components: {
-    AppLogo,
-    AppAlert
+    Logo,
+    Alert
   }
 }
 </script>

@@ -2,13 +2,13 @@
   <main>
 
     <!-- Header -->
-    <AppHeader
+    <Header
       :title="product.shop.name"
       :description="product.shop.description_short[locale]"
       :class="bgTheme"
     >
       <template>
-        <AppHeaderButtonLink
+        <HeaderButtonLink
           :route="{
             name: 'shop-slug-details',
             params: {
@@ -18,18 +18,18 @@
           :color="shopTheme"
           class="mt-16 shadow-2xl"
         >
-          {{ $t("pages.shop.visit") }}
-        </AppHeaderButtonLink>
+          {{ $t("shop.visit") }}
+        </HeaderButtonLink>
       </template>
-    </AppHeader>
+    </Header>
 
     <!-- Product details -->
-    <AppContentSection>
-      <AppProductDetails :product="product"/>
-    </AppContentSection>
+    <ContentSection>
+      <ProductDetails :product="product"/>
+    </ContentSection>
 
     <!-- Streak newsletter -->
-    <AppStreakNewsletter/>
+    <StreakNewsletter/>
 
   </main>
 </template>
@@ -38,11 +38,11 @@
 import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
-import AppHeader from '@/components/headers/AppHeader'
-import AppContentSection from '@/components/AppContentSection'
-import AppProductDetails from '@/components/products/AppProductDetails'
-import AppStreakNewsletter from '@/components/streaks/AppStreakNewsletter'
-import AppHeaderButtonLink from '@/components/buttons/AppHeaderButtonLink'
+import Header from '@/components/headers/Header'
+import ContentSection from '@/components/globals/ContentSection'
+import ProductDetails from '@/components/products/ProductDetails'
+import StreakNewsletter from '@/components/streaks/StreakNewsletter'
+import HeaderButtonLink from '@/components/buttons/HeaderButtonLink'
 
 export default {
   head() {
@@ -58,11 +58,11 @@ export default {
     }
   },
   components: {
-    AppHeader,
-    AppContentSection,
-    AppProductDetails,
-    AppStreakNewsletter,
-    AppHeaderButtonLink
+    Header,
+    ContentSection,
+    ProductDetails,
+    StreakNewsletter,
+    HeaderButtonLink
   },
   mixins: [theming],
   data() {

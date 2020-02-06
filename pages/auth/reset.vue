@@ -2,16 +2,16 @@
   <main>
 
     <!-- Content -->
-    <AppContentSection class="max-w-600">
+    <ContentSection class="max-w-600">
 
       <!-- Page title -->
-      <AppTitle
-        semantic="h1"
+      <Heading
+        tag="h1"
         visual="h1"
         utilities="md:text-center"
       >
-        {{ $t("pages.password_reset.title") }}
-      </AppTitle>
+        {{ $t("password_reset.title") }}
+      </Heading>
 
       <form
         @submit.prevent="reset"
@@ -19,11 +19,11 @@
       >
 
         <!-- Email -->
-        <AppFormGroup>
-          <AppFormLabel name="user">
+        <FormGroup>
+          <FormLabel name="user">
             {{ $t("forms.labels.email") }}
-          </AppFormLabel>
-          <AppFormInput
+          </FormLabel>
+          <FormInput
             ref="autofocus"
             v-model="form.email"
             :errors="errors"
@@ -31,74 +31,74 @@
             type="email"
             required
           />
-          <AppFormValidation
+          <FormValidation
             :errors="errors"
             name="user"
           />
-        </AppFormGroup>
+        </FormGroup>
 
         <!-- Password -->
-        <AppFormGroup>
-          <AppFormLabel name="password">
+        <FormGroup>
+          <FormLabel name="password">
             {{ $t("forms.labels.password") }}
-          </AppFormLabel>
-          <AppFormInput
+          </FormLabel>
+          <FormInput
             v-model="form.password"
             :errors="errors"
             name="password"
             type="password"
             required
           />
-          <AppFormValidation
+          <FormValidation
             :errors="errors"
             name="password"
           />
-        </AppFormGroup>
+        </FormGroup>
 
         <!-- Password confirmation -->
-        <AppFormGroup>
-          <AppFormLabel name="password_confirmation">
+        <FormGroup>
+          <FormLabel name="password_confirmation">
             {{ $t("forms.labels.password_confirmation") }}
-          </AppFormLabel>
-          <AppFormInput
+          </FormLabel>
+          <FormInput
             v-model="form.password_confirmation"
             :errors="errors"
             name="password_confirmation"
             type="password"
             required
           />
-        </AppFormGroup>
+        </FormGroup>
 
         <!-- Submit -->
-        <AppButtonPrimary
+        <ButtonPrimary
           type="submit"
           icon="redo-alt"
           class="mx-auto my-72"
         >
           {{ $t("buttons.password_reset") }}
-        </AppButtonPrimary>
+        </ButtonPrimary>
       </form>
-    </AppContentSection>
+    </ContentSection>
   </main>
 </template>
 
 <script>
 import { mapActions } from 'vuex'
 
-import AppTitle from '@/components/AppTitle'
-import AppFormGroup from '@/components/forms/AppFormGroup'
-import AppFormLabel from '@/components/forms/AppFormLabel'
-import AppFormInput from '@/components/forms/AppFormInput'
-import AppContentSection from '@/components/AppContentSection'
-import AppFormValidation from '@/components/forms/AppFormValidation'
-import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
+import Heading from '@/components/globals/Heading'
+import FormGroup from '@/components/forms/FormGroup'
+import FormLabel from '@/components/forms/FormLabel'
+import FormInput from '@/components/forms/FormInput'
+import ContentSection from '@/components/globals/ContentSection'
+import FormValidation from '@/components/forms/FormValidation'
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 
 export default {
   layout: 'auth',
   middleware: ['guest'],
   head() {
     return {
-      title: this.$t('pages.password_reset.title'),
+      title: this.$t('password_reset.title'),
       meta: [
         {
           hid: 'description',
@@ -114,13 +114,13 @@ export default {
     }
   },
   components: {
-    AppTitle,
-    AppFormGroup,
-    AppFormLabel,
-    AppFormInput,
-    AppContentSection,
-    AppFormValidation,
-    AppButtonPrimary
+    Heading,
+    FormGroup,
+    FormLabel,
+    FormInput,
+    ContentSection,
+    FormValidation,
+    ButtonPrimary
   },
   data() {
     return {

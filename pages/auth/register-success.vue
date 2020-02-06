@@ -2,42 +2,42 @@
   <main>
 
     <!-- Header -->
-    <AppHeader
-      :title="$t('pages.register.title')"
+    <Header
+      :title="$t('register.title')"
       icon="user-plus"
     />
 
     <!-- Splash -->
-    <AppSplash
-      :title="$t('pages.register_success.congratulations')"
-      :subtitle="$t('pages.register_success.account_created')"
+    <Splash
+      :title="$t('register_success.congratulations')"
+      :subtitle="$t('register_success.account_created')"
       type="success"
       class="max-w-800"
     >
       <template slot="illustration">
         <img
-          :alt="$t('pages.register_success.congratulations')"
+          :alt="$t('register_success.congratulations')"
           src="~assets/img/success_smiley.svg"
         >
       </template>
-    </AppSplash>
+    </Splash>
   </main>
 </template>
 
 <script>
-import AppSplash from '@/components/AppSplash'
-import AppHeader from '@/components/headers/AppHeader'
+import Splash from '@/components/globals/Splash'
+import Header from '@/components/headers/Header'
 
 export default {
   middleware: ['authenticated'],
   head() {
     return {
-      title: this.$t('pages.register_success.title')
+      title: this.$t('register_success.title')
     }
   },
   components: {
-    AppSplash,
-    AppHeader
+    Splash,
+    Header
   }
 }
 </script>

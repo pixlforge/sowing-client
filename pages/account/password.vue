@@ -2,84 +2,84 @@
   <div>
 
     <!-- Page title -->
-    <AppTitle
-      semantic="h1"
+    <Heading
+      tag="h1"
       visual="h1"
     >
-      {{ $t("pages.account.password.title") }}
-    </AppTitle>
+      {{ $t("account.password.title") }}
+    </Heading>
 
-    <AppCard>
+    <Card>
       <form @submit.prevent="update">
 
         <!-- Password -->
-        <AppFormGroup>
-          <AppFormLabel name="password">
+        <FormGroup>
+          <FormLabel name="password">
             {{ $t("forms.labels.password") }}
-          </AppFormLabel>
-          <AppFormInput
+          </FormLabel>
+          <FormInput
             v-model="form.password"
             :errors="errors"
             name="password"
             type="password"
           />
-          <AppFormValidation
+          <FormValidation
             :errors="errors"
             name="password"
           />
-        </AppFormGroup>
+        </FormGroup>
 
         <!-- Password confirmation -->
-        <AppFormGroup>
-          <AppFormLabel name="password_confirmation">
+        <FormGroup>
+          <FormLabel name="password_confirmation">
             {{ $t("forms.labels.password_confirmation") }}
-          </AppFormLabel>
-          <AppFormInput
+          </FormLabel>
+          <FormInput
             v-model="form.password_confirmation"
             :errors="errors"
             name="password_confirmation"
             type="password"
           />
-        </AppFormGroup>
+        </FormGroup>
 
         <!-- Save changes -->
-        <AppButtonPrimary
+        <ButtonPrimary
           icon="check"
           type="submit"
         >
           {{ $t("buttons.update") }}
-        </AppButtonPrimary>
+        </ButtonPrimary>
       </form>
-    </AppCard>
+    </Card>
   </div>
 </template>
 
 <script>
 import { mapActions } from 'vuex'
 
-import AppCard from '@/components/AppCard'
-import AppTitle from '@/components/AppTitle'
-import AppFormGroup from '@/components/forms/AppFormGroup'
-import AppFormInput from '@/components/forms/AppFormInput'
-import AppFormLabel from '@/components/forms/AppFormLabel'
-import AppFormValidation from '@/components/forms/AppFormValidation'
-import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
+import Heading from '@/components/globals/Heading'
+import Card from '@/components/globals/Card'
+import FormGroup from '@/components/forms/FormGroup'
+import FormInput from '@/components/forms/FormInput'
+import FormLabel from '@/components/forms/FormLabel'
+import FormValidation from '@/components/forms/FormValidation'
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 
 export default {
   components: {
-    AppCard,
-    AppTitle,
-    AppFormGroup,
-    AppFormInput,
-    AppFormLabel,
-    AppFormValidation,
-    AppButtonPrimary
+    Heading,
+    Card,
+    FormGroup,
+    FormInput,
+    FormLabel,
+    FormValidation,
+    ButtonPrimary
   },
   middleware: ['authenticated'],
   layout: 'account-management',
   head() {
     return {
-      title: `${this.$t('pages.account.password.title')} | ${this.$t('pages.account.title')}`,
+      title: `${this.$t('account.password.title')} | ${this.$t('account.title')}`,
       meta: [
         {
           hid: 'robots',

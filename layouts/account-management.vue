@@ -2,93 +2,93 @@
   <div>
 
     <!-- Alert -->
-    <AppAlert/>
+    <Alert/>
 
     <!-- Navbar -->
-    <AppNavbar/>
+    <Navbar/>
 
     <!-- Header -->
-    <AppHeader
-      :title="$t('pages.account.title')"
-      :description="$t('pages.account.description')"
+    <Header
+      :title="$t('account.title')"
+      :description="$t('account.description')"
     />
 
     <!-- Main -->
     <main class="bg-gray-100">
-      <AppContentSection>
+      <ContentSection>
 
         <!-- Content -->
         <div class="w-full flex flex-wrap">
 
           <!-- Side menu -->
-          <AppSideMenu>
-            <AppSideMenuList>
-              <AppSideMenuItem
-                :label="$t('pages.account.dashboard.title')"
+          <SideMenu>
+            <SideMenuList>
+              <SideMenuItem
+                :label="$t('account.dashboard.title')"
                 route="account-dashboard"
                 icon="home"
               />
-              <AppSideMenuItem
-                :label="$t('pages.account.profile.title')"
+              <SideMenuItem
+                :label="$t('account.profile.title')"
                 route="account-profile"
                 icon="user"
               />
-              <AppSideMenuItem
-                :label="$t('pages.account.password.title')"
+              <SideMenuItem
+                :label="$t('account.password.title')"
                 route="account-password"
                 icon="shield-alt"
               />
-              <AppSideMenuItem
-                :label="$t('pages.account.addresses.titles.index')"
+              <SideMenuItem
+                :label="$t('account.addresses.titles.index')"
                 route="account-addresses"
                 icon="address-book"
               />
-              <AppSideMenuItem
-                :label="$t('pages.account.payment_methods.titles.index')"
+              <SideMenuItem
+                :label="$t('account.payment_methods.titles.index')"
                 route="account-payment-methods"
                 icon="credit-card"
               />
-            </AppSideMenuList>
-          </AppSideMenu>
+            </SideMenuList>
+          </SideMenu>
 
           <!-- Page content -->
           <section class="w-full lg:w-3/4 xl:w-4/5 mt-72 lg:mt-0">
             <nuxt/>
           </section>
         </div>
-      </AppContentSection>
+      </ContentSection>
     </main>
 
     <!-- Footer -->
-    <AppFooter/>
+    <Footer/>
 
     <!-- Disclaimer -->
-    <AppDisclaimer/>
+    <Disclaimer/>
   </div>
 </template>
 
 <script>
-import AppNavbar from '@/components/AppNavbar'
-import AppAlert from '@/components/globals/AppAlert'
-import AppFooter from '@/components/footer/AppFooter'
-import AppHeader from '@/components/headers/AppHeader'
-import AppSideMenu from '@/components/menus/AppSideMenu'
-import AppDisclaimer from '@/components/footer/AppDisclaimer'
-import AppContentSection from '@/components/AppContentSection'
-import AppSideMenuList from '@/components/menus/AppSideMenuList'
-import AppSideMenuItem from '@/components/menus/AppSideMenuItem'
+import Navbar from '@/components/globals/Navbar'
+import Alert from '@/components/globals/Alert'
+import Footer from '@/components/footer/Footer'
+import Header from '@/components/headers/Header'
+import SideMenu from '@/components/menus/SideMenu'
+import Disclaimer from '@/components/footer/Disclaimer'
+import ContentSection from '@/components/globals/ContentSection'
+import SideMenuList from '@/components/menus/SideMenuList'
+import SideMenuItem from '@/components/menus/SideMenuItem'
 
 export default {
   components: {
-    AppNavbar,
-    AppAlert,
-    AppFooter,
-    AppHeader,
-    AppSideMenu,
-    AppDisclaimer,
-    AppContentSection,
-    AppSideMenuList,
-    AppSideMenuItem
+    Navbar,
+    Alert,
+    Footer,
+    Header,
+    SideMenu,
+    Disclaimer,
+    ContentSection,
+    SideMenuList,
+    SideMenuItem
   }
 }
 </script>

@@ -2,18 +2,18 @@
   <main>
 
     <!-- Header -->
-    <AppHeader
-      :title="$t('pages.orders.title')"
+    <Header
+      :title="$t('orders.title')"
       icon="shipping-fast"
     />
 
     <!-- Page contents -->
-    <AppContentSection>
+    <ContentSection>
       <div
         v-if="orders.length"
         class="mt-96"
       >
-        <AppOrder
+        <Order
           v-for="order in orders"
           :key="order.id"
           :order="order"
@@ -25,21 +25,21 @@
       >
         <p>No orders yet</p>
       </div>
-    </AppContentSection>
+    </ContentSection>
 
   </main>
 </template>
 
 <script>
-import AppOrder from '@/components/orders/AppOrder'
-import AppHeader from '@/components/headers/AppHeader'
-import AppContentSection from '@/components/AppContentSection'
+import Order from '@/components/orders/Order'
+import Header from '@/components/headers/Header'
+import ContentSection from '@/components/globals/ContentSection'
 
 export default {
   middleware: ['authenticated'],
   head() {
     return {
-      title: this.$t('pages.orders.title'),
+      title: this.$t('orders.title'),
       meta: [
         {
           hid: 'description',
@@ -55,9 +55,9 @@ export default {
     }
   },
   components: {
-    AppOrder,
-    AppHeader,
-    AppContentSection
+    Order,
+    Header,
+    ContentSection
   },
   data() {
     return {
