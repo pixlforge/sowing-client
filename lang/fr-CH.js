@@ -6,13 +6,16 @@ import aria from '~/lang/fr-CH/aria'
 import buttons from '~/lang/fr-CH/buttons'
 import cart from '~/lang/fr-CH/cart'
 import categories from '~/lang/fr-CH/categories'
+import checkout from '~/lang/fr-CH/checkout'
 import comingSoon from '~/lang/fr-CH/comingSoon'
 import creditCards from '~/lang/fr-CH/creditCards'
 import dropzone from '~/lang/fr-CH/dropzone'
+import faq from '~/lang/fr-CH/faq'
 import footer from '~/lang/fr-CH/footer'
 import forms from '~/lang/fr-CH/forms'
 import home from '~/lang/fr-CH/home'
 import languages from '~/lang/fr-CH/languages'
+import login from '~/lang/fr-CH/login'
 import modals from '~/lang/fr-CH/modals'
 import navbar from '~/lang/fr-CH/navbar'
 import streaks from '~/lang/fr-CH/streaks'
@@ -26,13 +29,16 @@ export default {
   ...buttons,
   ...cart,
   ...categories,
+  ...checkout,
   ...comingSoon,
   ...creditCards,
   ...dropzone,
+  ...faq,
   ...footer,
   ...forms,
   ...home,
   ...languages,
+  ...login,
   ...modals,
   ...navbar,
   ...streaks,
@@ -42,29 +48,6 @@ export default {
    */
   pages: {
 
-    checkout: {
-      add_address: 'Ajouter une adresse',
-      change_address: "Changer d'adresse?",
-      delivery: 'Livraison',
-      delivery_address: 'Adresse de livraison',
-      delivery_method: 'Méthode de livraison',
-      new_address: 'Nouvelle adresse',
-      order: 'Commander',
-      payment: 'Paiement',
-      subtotal: 'Sous-total',
-      title: 'Caisse',
-      total: 'Total'
-    },
-    faq: {
-      title: 'Foire Aux Questions'
-    },
-    login: {
-      title: 'Connexion à votre compte Sowing',
-      links: {
-        password: 'Mot de passe oublié?',
-        register: 'Créer un compte Sowing'
-      }
-    },
     orders: {
       title: 'Mes commandes',
       statuses: {
