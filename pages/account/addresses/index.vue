@@ -1,53 +1,53 @@
 <template>
   <div>
-    <AppResourceHeader>
+    <ResourceHeader>
 
       <!-- Page title -->
-      <AppTitle
-        semantic="h1"
+      <Heading
+        tag="h1"
         visual="h1"
       >
-        {{ $t("pages.account.addresses.titles.index") }}
-      </AppTitle>
+        {{ $t("account.addresses.titles.index") }}
+      </Heading>
 
       <!-- Add an address -->
-      <AppAddButtonLink
+      <AddButtonLink
         :route="{ name: 'account-addresses-create' }"
         :label="$t('buttons.add_address')"
         class="mt-60 md:mt-0"
       />
-    </AppResourceHeader>
+    </ResourceHeader>
 
-    <AppCard>
+    <Card>
 
       <!-- Addresses -->
-      <AppResourceList v-if="addresses.length">
-        <AppAddressItem
+      <ResourceList v-if="addresses.length">
+        <AddressItem
           v-for="address in addresses"
           :key="address.id"
           :address="address"
         />
-      </AppResourceList>
+      </ResourceList>
 
       <!-- No address found -->
       <div
         v-else
         class="text-center"
       >
-        <AppParagraph class="text-center mb-60">
-          {{ $t('pages.account.addresses.no_address_found') }}
-        </AppParagraph>
-        <AppButtonLinkPrimary
+        <Paragraph class="text-center mb-60">
+          {{ $t('account.addresses.no_address_found') }}
+        </Paragraph>
+        <ButtonLinkPrimary
           :route="{ name: 'account-addresses-create' }"
           icon="plus-circle"
         >
           {{ $t('buttons.add_address') }}
-        </AppButtonLinkPrimary>
+        </ButtonLinkPrimary>
       </div>
-    </AppCard>
+    </Card>
 
     <!-- Confirmation modal -->
-    <AppConfirmationModal
+    <ConfirmationModal
       :title="$t('modals.addresses.delete.title')"
       :body="$t('modals.addresses.delete.body')"
       :button-label="$t('buttons.delete')"
@@ -57,39 +57,39 @@
       color="red"
     />
 
-  </div>
+    </card></div>
 </template>
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
 
-import AppCard from '@/components/AppCard'
-import AppTitle from '@/components/AppTitle'
-import AppParagraph from '@/components/paragraphs/AppParagraph'
-import AppAddressItem from '@/components/addresses/AppAddressItem'
-import AppAddButtonLink from '@/components/buttons/AppAddButtonLink'
-import AppResourceList from '@/components/resources/AppResourceList'
-import AppResourceHeader from '@/components/resources/AppResourceHeader'
-import AppConfirmationModal from '@/components/modals/AppConfirmationModal'
-import AppButtonLinkPrimary from '@/components/buttons/AppButtonLinkPrimary'
+import Card from '@/components/globals/Card'
+import Heading from '@/components/globals/Heading'
+import Paragraph from '@/components/paragraphs/Paragraph'
+import AddressItem from '@/components/addresses/AddressItem'
+import AddButtonLink from '@/components/buttons/AddButtonLink'
+import ResourceList from '@/components/resources/ResourceList'
+import ResourceHeader from '@/components/resources/ResourceHeader'
+import ConfirmationModal from '@/components/modals/ConfirmationModal'
+import ButtonLinkPrimary from '@/components/buttons/ButtonLinkPrimary'
 
 export default {
   components: {
-    AppCard,
-    AppTitle,
-    AppParagraph,
-    AppAddressItem,
-    AppAddButtonLink,
-    AppResourceList,
-    AppResourceHeader,
-    AppConfirmationModal,
-    AppButtonLinkPrimary
+    Heading,
+    Card,
+    Paragraph,
+    AddressItem,
+    AddButtonLink,
+    ResourceList,
+    ResourceHeader,
+    ConfirmationModal,
+    ButtonLinkPrimary
   },
   middleware: ['authenticated'],
   layout: 'account-management',
   head() {
     return {
-      title: `${this.$t('pages.account.addresses.titles.index')} | ${this.$t('pages.account.title')}`,
+      title: `${this.$t('account.addresses.titles.index')} | ${this.$t('account.title')}`,
       meta: [
         {
           hid: 'robots',

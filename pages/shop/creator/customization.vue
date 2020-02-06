@@ -2,55 +2,55 @@
   <main>
 
     <!-- Page contents -->
-    <AppContentSection>
+    <ContentSection>
 
       <!-- Title -->
-      <AppTitle
-        semantic="h1"
+      <Heading
+        tag="h1"
         visual="main"
       >
         {{ $t("shop_creator.steps.customization.title") }}
-      </AppTitle>
+      </Heading>
 
       <!-- Infos -->
-      <AppParagraph
+      <Paragraph
         class="max-w-800"
         center
       >
         {{ $t("shop_creator.steps.customization.paragraph") }}
-      </AppParagraph>
+      </Paragraph>
 
       <!-- Shop customization -->
-      <AppShopFeatureContainer
+      <ShopFeatureContainer
         v-if="shop.id"
         class="max-w-800"
       >
-        <AppShopCustomization/>
-      </AppShopFeatureContainer>
+        <ShopCustomization/>
+      </ShopFeatureContainer>
 
       <!-- Controls -->
-      <AppShopCreatorControls>
+      <ShopCreatorControls>
 
         <!-- Previous -->
-        <AppButtonTertiary
+        <ButtonTertiary
           @click.native="prev"
           icon="chevron-circle-left"
           class="order-1 md:order-none mx-5"
         >
           {{ $t("buttons.back") }}
-        </AppButtonTertiary>
+        </ButtonTertiary>
 
         <!-- Next -->
-        <AppButtonPrimary
+        <ButtonPrimary
           :color="shopTheme"
           @click.native="next"
           icon="chevron-circle-right"
           class="order-none md_order-1 mx-5"
         >
           {{ $t("buttons.next") }}
-        </AppButtonPrimary>
-      </AppShopCreatorControls>
-    </AppContentSection>
+        </ButtonPrimary>
+      </ShopCreatorControls>
+    </ContentSection>
   </main>
 </template>
 
@@ -58,14 +58,14 @@
 import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
-import AppTitle from '@/components/AppTitle'
-import AppContentSection from '@/components/AppContentSection'
-import AppParagraph from '@/components/paragraphs/AppParagraph'
-import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
-import AppButtonTertiary from '@/components/buttons/AppButtonTertiary'
-import AppShopCustomization from '@/components/shops/AppShopCustomization'
-import AppShopCreatorControls from '@/components/shops/AppShopCreatorControls'
-import AppShopFeatureContainer from '@/components/shops/AppShopFeatureContainer'
+import Heading from '@/components/globals/Heading'
+import ContentSection from '@/components/globals/ContentSection'
+import Paragraph from '@/components/paragraphs/Paragraph'
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
+import ButtonTertiary from '@/components/buttons/ButtonTertiary'
+import ShopCustomization from '@/components/shops/ShopCustomization'
+import ShopCreatorControls from '@/components/shops/ShopCreatorControls'
+import ShopFeatureContainer from '@/components/shops/ShopFeatureContainer'
 
 export default {
   middleware: ['authenticated', 'hasShop'],
@@ -92,14 +92,14 @@ export default {
     mode: 'out-in'
   },
   components: {
-    AppTitle,
-    AppContentSection,
-    AppParagraph,
-    AppButtonPrimary,
-    AppButtonTertiary,
-    AppShopCustomization,
-    AppShopCreatorControls,
-    AppShopFeatureContainer
+    Heading,
+    ContentSection,
+    Paragraph,
+    ButtonPrimary,
+    ButtonTertiary,
+    ShopCustomization,
+    ShopCreatorControls,
+    ShopFeatureContainer
   },
   mixins: [theming],
   computed: {

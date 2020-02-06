@@ -2,27 +2,27 @@
   <main>
 
     <!-- Page contents -->
-    <AppContentSection>
+    <ContentSection>
 
       <!-- Title -->
-      <AppTitle
-        semantic="h1"
+      <Heading
+        tag="h1"
         visual="main"
       >
         {{ $t("shop_creator.steps.connect.title") }}
-      </AppTitle>
+      </Heading>
 
       <!-- Infos -->
-      <AppParagraph
+      <Paragraph
         v-if="!shopStripeUserId || !shopStripePublishableKey"
         class="max-w-800"
         center
       >
         {{ $t("shop_creator.steps.connect.paragraph") }}
-      </AppParagraph>
+      </Paragraph>
 
       <!-- Connect process -->
-      <AppShopFeatureContainer class="max-w-800">
+      <ShopFeatureContainer class="max-w-800">
         <template v-if="!stripeInfos">
           <div class="text-center">
             <a
@@ -39,28 +39,28 @@
         </template>
 
         <template v-if="stripeInfosReceived">
-          <AppSplash
+          <Splash
             type="success"
             title="Félicitations!"
             subtitle="Votre compte Stripe a bien été associé à votre boutique!"
           />
         </template>
-      </AppShopFeatureContainer>
+      </ShopFeatureContainer>
 
       <!-- Controls -->
-      <AppShopCreatorControls>
+      <ShopCreatorControls>
 
         <!-- Previous -->
-        <AppButtonTertiary
+        <ButtonTertiary
           @click.native="prev"
           icon="chevron-circle-left"
           class="order-1 md:order-none mx-5"
         >
           {{ $t("buttons.back") }}
-        </AppButtonTertiary>
+        </ButtonTertiary>
 
         <!-- Next -->
-        <AppButtonPrimary
+        <ButtonPrimary
           :disabled="!stripeInfos"
           :color="stripeInfos ? shopTheme : ''"
           @click.native="next"
@@ -68,9 +68,9 @@
           class="order-none md_order-1 mx-5"
         >
           {{ $t("buttons.finalize_shop_creation") }}
-        </AppButtonPrimary>
-      </AppShopCreatorControls>
-    </AppContentSection>
+        </ButtonPrimary>
+      </ShopCreatorControls>
+    </ContentSection>
   </main>
 </template>
 
@@ -78,14 +78,14 @@
 import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
-import AppTitle from '@/components/AppTitle'
-import AppSplash from '@/components/AppSplash'
-import AppContentSection from '@/components/AppContentSection'
-import AppParagraph from '@/components/paragraphs/AppParagraph'
-import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
-import AppButtonTertiary from '@/components/buttons/AppButtonTertiary'
-import AppShopCreatorControls from '@/components/shops/AppShopCreatorControls'
-import AppShopFeatureContainer from '@/components/shops/AppShopFeatureContainer'
+import Heading from '@/components/globals/Heading'
+import Splash from '@/components/globals/Splash'
+import ContentSection from '@/components/globals/ContentSection'
+import Paragraph from '@/components/paragraphs/Paragraph'
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
+import ButtonTertiary from '@/components/buttons/ButtonTertiary'
+import ShopCreatorControls from '@/components/shops/ShopCreatorControls'
+import ShopFeatureContainer from '@/components/shops/ShopFeatureContainer'
 
 export default {
   middleware: [
@@ -115,14 +115,14 @@ export default {
     mode: 'out-in'
   },
   components: {
-    AppTitle,
-    AppSplash,
-    AppContentSection,
-    AppParagraph,
-    AppButtonPrimary,
-    AppButtonTertiary,
-    AppShopCreatorControls,
-    AppShopFeatureContainer
+    Heading,
+    Splash,
+    ContentSection,
+    Paragraph,
+    ButtonPrimary,
+    ButtonTertiary,
+    ShopCreatorControls,
+    ShopFeatureContainer
   },
   mixins: [theming],
   data() {

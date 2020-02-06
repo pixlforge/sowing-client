@@ -2,41 +2,41 @@
   <div>
 
     <!-- Alert -->
-    <AppAlert/>
+    <Alert/>
 
     <!-- Navbar -->
-    <AppNavbar/>
+    <Navbar/>
 
     <!-- Categories -->
-    <AppCategoryBar/>
+    <CategoryBar/>
 
     <!-- Page content -->
     <nuxt/>
 
     <!-- Footer -->
-    <AppFooter/>
+    <Footer/>
 
     <!-- Disclaimer -->
-    <AppDisclaimer :class="bgTheme"/>
+    <Disclaimer :class="bgTheme"/>
   </div>
 </template>
 
 <script>
 import theming from '@/mixins/theming'
 
-import AppNavbar from '@/components/AppNavbar'
-import AppAlert from '@/components/globals/AppAlert'
-import AppFooter from '@/components/footer/AppFooter'
-import AppDisclaimer from '@/components/footer/AppDisclaimer'
-import AppCategoryBar from '@/components/categories/AppCategoryBar'
+import Navbar from '@/components/globals/Navbar'
+import Alert from '@/components/globals/Alert'
+import Footer from '@/components/footer/Footer'
+import Disclaimer from '@/components/footer/Disclaimer'
+import CategoryBar from '@/components/categories/CategoryBar'
 
 export default {
   components: {
-    AppNavbar,
-    AppAlert,
-    AppFooter,
-    AppDisclaimer,
-    AppCategoryBar
+    Navbar,
+    Alert,
+    Footer,
+    Disclaimer,
+    CategoryBar
   },
   mixins: [theming]
 }

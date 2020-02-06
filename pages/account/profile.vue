@@ -2,58 +2,58 @@
   <div>
 
     <!-- Page title -->
-    <AppTitle
-      semantic="h1"
+    <Heading
+      tag="h1"
       visual="h1"
     >
-      {{ $t("pages.account.profile.title") }}
-    </AppTitle>
+      {{ $t("account.profile.title") }}
+    </Heading>
 
-    <AppCard>
+    <Card>
       <form @submit.prevent="update">
 
         <!-- Name -->
-        <AppFormGroup>
-          <AppFormLabel name="name">
+        <FormGroup>
+          <FormLabel name="name">
             {{ $t("forms.labels.name") }}
-          </AppFormLabel>
-          <AppFormInput
+          </FormLabel>
+          <FormInput
             v-model="form.name"
             :errors="errors"
             name="name"
           />
-          <AppFormValidation
+          <FormValidation
             :errors="errors"
             name="name"
           />
-        </AppFormGroup>
+        </FormGroup>
 
         <!-- Email -->
-        <AppFormGroup>
-          <AppFormLabel name="email">
+        <FormGroup>
+          <FormLabel name="email">
             {{ $t("forms.labels.email") }}
-          </AppFormLabel>
-          <AppFormInput
+          </FormLabel>
+          <FormInput
             v-model="form.email"
             :errors="errors"
             name="email"
             type="email"
           />
-          <AppFormValidation
+          <FormValidation
             :errors="errors"
             name="email"
           />
-        </AppFormGroup>
+        </FormGroup>
 
         <!-- Save changes -->
-        <AppButtonPrimary
+        <ButtonPrimary
           icon="check"
           type="submit"
         >
           {{ $t("buttons.update") }}
-        </AppButtonPrimary>
+        </ButtonPrimary>
       </form>
-    </AppCard>
+    </Card>
 
   </div>
 </template>
@@ -61,29 +61,29 @@
 <script>
 import { mapActions } from 'vuex'
 
-import AppCard from '@/components/AppCard'
-import AppTitle from '@/components/AppTitle'
-import AppFormGroup from '@/components/forms/AppFormGroup'
-import AppFormInput from '@/components/forms/AppFormInput'
-import AppFormLabel from '@/components/forms/AppFormLabel'
-import AppFormValidation from '@/components/forms/AppFormValidation'
-import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
+import Heading from '@/components/globals/Heading'
+import Card from '@/components/globals/Card'
+import FormGroup from '@/components/forms/FormGroup'
+import FormInput from '@/components/forms/FormInput'
+import FormLabel from '@/components/forms/FormLabel'
+import FormValidation from '@/components/forms/FormValidation'
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 
 export default {
   components: {
-    AppCard,
-    AppTitle,
-    AppFormGroup,
-    AppFormInput,
-    AppFormLabel,
-    AppFormValidation,
-    AppButtonPrimary
+    Heading,
+    Card,
+    FormGroup,
+    FormInput,
+    FormLabel,
+    FormValidation,
+    ButtonPrimary
   },
   middleware: ['authenticated'],
   layout: 'account-management',
   head() {
     return {
-      title: `${this.$t('pages.account.profile.title')} | ${this.$t('pages.account.title')}`,
+      title: `${this.$t('account.profile.title')} | ${this.$t('account.title')}`,
       meta: [
         {
           hid: 'robots',
@@ -141,7 +141,7 @@ export default {
           message: this.$t('alerts.verify_email_updated')
         })
       }
-      this.$toast.success(this.$t('pages.account.profile.updated'))
+      this.$toast.success(this.$t('account.profile.updated'))
     },
     displayErrorsFeedback() {
       this.$toast.error(this.$t('toasts.validation'))

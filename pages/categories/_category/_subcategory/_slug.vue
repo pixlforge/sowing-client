@@ -2,22 +2,22 @@
   <main>
 
     <!-- Header -->
-    <AppHeader
+    <Header
       :title="subcategory.name[locale]"
       :description="subcategory.description[locale]"
     />
 
-    <AppContentSection>
+    <ContentSection>
       <div class="flex flex-wrap justify-center -mx-16">
 
         <!-- Products -->
-        <AppProduct
+        <Product
           v-for="product in products"
           :key="product.id"
           :product="product"
         />
       </div>
-    </AppContentSection>
+    </ContentSection>
 
   </main>
 </template>
@@ -25,9 +25,9 @@
 <script>
 import { mapGetters } from 'vuex'
 
-import AppHeader from '@/components/headers/AppHeader'
-import AppProduct from '@/components/products/AppProduct'
-import AppContentSection from '@/components/AppContentSection'
+import Header from '@/components/headers/Header'
+import Product from '@/components/products/Product'
+import ContentSection from '@/components/globals/ContentSection'
 
 export default {
   head() {
@@ -36,9 +36,9 @@ export default {
     }
   },
   components: {
-    AppHeader,
-    AppProduct,
-    AppContentSection
+    Header,
+    Product,
+    ContentSection
   },
   data() {
     return {

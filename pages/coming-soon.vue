@@ -28,7 +28,7 @@
           {{ $t("coming_soon.soon") }}
         </h5>
 
-        <AppLogo class="w-full max-w-200 sm:max-w-400 mx-auto px-20"/>
+        <Logo class="w-full max-w-200 sm:max-w-400 mx-auto px-20"/>
       </header>
 
       <!-- Intro -->
@@ -223,7 +223,7 @@
 </template>
 
 <script>
-import AppLogo from '@/components/AppLogo'
+import Logo from '@/components/globals/Logo'
 import IllustrationEcommerce from '@/components/illustrations/IllustrationEcommerce'
 
 export default {
@@ -233,7 +233,7 @@ export default {
     }
   },
   components: {
-    AppLogo,
+    Logo,
     IllustrationEcommerce
   },
   layout: 'full-screen',

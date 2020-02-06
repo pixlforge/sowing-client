@@ -4,24 +4,24 @@
       <div class="flex items-center">
 
         <!-- Back -->
-        <AppBackButton
+        <BackButton
           :route="{ name: 'account-payment-methods' }"
           class="sm:mr-20"
         />
 
         <!-- Page title -->
-        <AppTitle
-          semantic="h1"
+        <Heading
+          tag="h1"
           visual="h1"
           utilities="mx-auto sm:mx-0"
         >
-          {{ $t('pages.account.payment_methods.titles.show') }}
-        </AppTitle>
+          {{ $t('account.payment_methods.titles.show') }}
+        </Heading>
       </div>
       <div class="flex justify-center items-center mt-48 sm:mt-0">
 
         <!-- Edit -->
-        <AppEditButton
+        <EditButton
           :route="{
             name: 'account-payment-methods-id-edit',
             params: {
@@ -31,11 +31,11 @@
         />
 
         <!-- Delete -->
-        <AppDeleteButton @click.native="openModal"/>
+        <DeleteButton @click.native="openModal"/>
       </div>
     </header>
 
-    <AppCard>
+    <Card>
       <div class="rounded-lg border-2 border-gray-100 px-20 py-20 md:py-30">
         <div class="flex flex-col md:flex-row">
 
@@ -72,20 +72,20 @@
             >
               <font-awesome-icon
                 :icon="['fas', 'star']"
-                :title="$t('pages.account.payment_methods.is_default')"
+                :title="$t('account.payment_methods.is_default')"
                 class="hidden md:block text-14 text-orange-400 mr-20"
               />
               <span class="block md:inline w-full md:w-auto text-12 text-gray-400 text-center md:text-left">
-                {{ $t('pages.account.payment_methods.is_default') }}
+                {{ $t('account.payment_methods.is_default') }}
               </span>
             </div>
           </div>
         </div>
       </div>
-    </AppCard>
+    </Card>
 
     <!-- Confirmation modal -->
-    <AppConfirmationModal
+    <ConfirmationModal
       :title="$t('modals.payment_methods.delete.title')"
       :body="$t('modals.payment_methods.delete.body')"
       :button-label="$t('buttons.delete')"
@@ -101,27 +101,27 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 
-import AppCard from '@/components/AppCard'
-import AppTitle from '@/components/AppTitle'
-import AppBackButton from '@/components/buttons/AppBackButton'
-import AppEditButton from '@/components/buttons/AppEditButton'
-import AppDeleteButton from '@/components/buttons/AppDeleteButton'
-import AppConfirmationModal from '@/components/modals/AppConfirmationModal'
+import Card from '@/components/globals/Card'
+import Heading from '@/components/globals/Heading'
+import BackButton from '@/components/buttons/BackButton'
+import EditButton from '@/components/buttons/EditButton'
+import DeleteButton from '@/components/buttons/DeleteButton'
+import ConfirmationModal from '@/components/modals/ConfirmationModal'
 
 export default {
   components: {
-    AppCard,
-    AppTitle,
-    AppBackButton,
-    AppEditButton,
-    AppDeleteButton,
-    AppConfirmationModal
+    Card,
+    Heading,
+    BackButton,
+    EditButton,
+    DeleteButton,
+    ConfirmationModal
   },
   middleware: ['authenticated'],
   layout: 'account-management',
   head() {
     return {
-      title: `${this.$t('pages.account.payment_methods.titles.show')} | ${this.$t('pages.account.title')}`,
+      title: `${this.$t('account.payment_methods.titles.show')} | ${this.$t('account.title')}`,
       meta: [
         {
           hid: 'robots',

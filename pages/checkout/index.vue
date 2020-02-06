@@ -2,24 +2,24 @@
   <main>
 
     <!-- Header -->
-    <AppHeader
+    <Header
       :title="pageTitle"
       icon="cash-register"
     />
 
-    <AppContentSection>
+    <ContentSection>
       <div class="flex">
         <div class="w-3/4 mr-48">
 
           <!-- Payment methods -->
-          <AppTitle
-            semantic="h2"
+          <Heading
+            tag="h2"
             visual="h3"
           >
-            {{ $t("pages.checkout.payment") }}
-          </AppTitle>
+            {{ $t("checkout.payment") }}
+          </Heading>
 
-          <AppPaymentMethods
+          <PaymentMethods
             v-model="form.payment_method_id"
             :payment-methods="paymentMethods"
             @payment-method:added="addPaymentMethod"
@@ -27,14 +27,14 @@
           />
 
           <!-- Cart Overview -->
-          <AppTitle
-            semantic="h2"
+          <Heading
+            tag="h2"
             visual="h3"
           >
-            {{ $t("pages.cart.title") }}
-          </AppTitle>
+            {{ $t("cart.title") }}
+          </Heading>
 
-          <AppCartOverviewProduct
+          <CartOverviewProduct
             v-for="product in products"
             :key="product.id"
             :product="product"
@@ -45,13 +45,13 @@
         <div class="w-1/4 bg-green-200 rounded-lg flex flex-col justify-start p-30 mt-48">
 
           <!-- Shipping address -->
-          <AppShippingAddress
+          <ShippingAddress
             v-model="form.address_id"
             :addresses="addresses"
           />
 
           <!-- Shipping methods dropdown -->
-          <AppShippingMethods
+          <ShippingMethods
             v-if="!addressManagersVisible"
             v-model="shippingMethodId"
             :methods="shippingMethods"
@@ -68,7 +68,7 @@
             <!-- Subtotal -->
             <div class="w-full text-gray-300 text-14 flex justify-between">
               <div>
-                {{ $t("pages.checkout.subtotal") }}
+                {{ $t("checkout.subtotal") }}
               </div>
               <div>
                 {{ subtotal.formatted }}
@@ -77,7 +77,7 @@
 
             <!-- Shipping -->
             <div class="w-full text-gray-300 text-14 flex justify-between mt-5">
-              <div>{{ $t("pages.checkout.delivery") }}</div>
+              <div>{{ $t("checkout.delivery") }}</div>
               <div v-if="shippingMethod">
                 {{ shippingMethod.price.currency }} {{ shippingMethod.price.amount }}
               </div>
@@ -86,7 +86,7 @@
             <!-- Total -->
             <div class="w-full text-20 font-bold uppercase flex justify-between mt-16">
               <div>
-                {{ $t("pages.checkout.total") }}
+                {{ $t("checkout.total") }}
               </div>
               <div>
                 {{ total.formatted }}
@@ -95,19 +95,19 @@
           </div>
 
           <!-- Checkout button -->
-          <AppButtonPrimary
+          <ButtonPrimary
             v-if="products.length && !addressManagersVisible"
             :disabled="is_empty || submitting"
-            :title="$t('pages.checkout.order')"
+            :title="$t('checkout.order')"
             @click.native="order"
             icon="check-circle"
             class="shadow-xl mt-72"
           >
-            {{ $t("pages.checkout.order") }}
-          </AppButtonPrimary>
+            {{ $t("checkout.order") }}
+          </ButtonPrimary>
         </div>
       </div>
-    </AppContentSection>
+    </ContentSection>
 
   </main>
 </template>
@@ -115,14 +115,14 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 
-import AppTitle from '@/components/AppTitle'
-import AppHeader from '@/components/headers/AppHeader'
-import AppContentSection from '@/components/AppContentSection'
-import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
-import AppShippingMethods from '@/components/addresses/AppShippingMethods'
-import AppShippingAddress from '@/components/addresses/AppShippingAddress'
-import AppCartOverviewProduct from '@/components/cart/AppCartOverviewProduct'
-import AppPaymentMethods from '@/components/payment-methods/AppPaymentMethods'
+import Heading from '@/components/globals/Heading'
+import Header from '@/components/headers/Header'
+import ContentSection from '@/components/globals/ContentSection'
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
+import ShippingMethods from '@/components/addresses/ShippingMethods'
+import ShippingAddress from '@/components/addresses/ShippingAddress'
+import CartOverviewProduct from '@/components/cart/CartOverviewProduct'
+import PaymentMethods from '@/components/payment-methods/PaymentMethods'
 
 export default {
   middleware: ['authenticated'],
@@ -144,14 +144,14 @@ export default {
     }
   },
   components: {
-    AppTitle,
-    AppHeader,
-    AppContentSection,
-    AppButtonPrimary,
-    AppShippingMethods,
-    AppShippingAddress,
-    AppCartOverviewProduct,
-    AppPaymentMethods
+    Heading,
+    Header,
+    ContentSection,
+    ButtonPrimary,
+    ShippingMethods,
+    ShippingAddress,
+    CartOverviewProduct,
+    PaymentMethods
   },
   data() {
     return {
@@ -177,7 +177,7 @@ export default {
       addressManagersVisible: 'checkout/addressManagersVisible'
     }),
     pageTitle() {
-      return this.$t('pages.checkout.title')
+      return this.$t('checkout.title')
     },
     shippingMethodId: {
       get() {

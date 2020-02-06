@@ -2,17 +2,17 @@
   <div>
 
     <!-- Title -->
-    <AppTitle
-      semantic="h1"
+    <Heading
+      tag="h1"
       visual="h1"
     >
       Thème
-    </AppTitle>
+    </Heading>
 
     <!-- Shop customization -->
-    <AppCard>
-      <AppShopCustomization/>
-    </AppCard>
+    <Card>
+      <ShopCustomization/>
+    </Card>
 
   </div>
 </template>
@@ -21,15 +21,15 @@
 import theming from '@/mixins/theming'
 import shopManagement from '@/mixins/shop-management'
 
-import AppCard from '@/components/AppCard'
-import AppTitle from '@/components/AppTitle'
-import AppShopCustomization from '@/components/shops/AppShopCustomization'
+import Card from '@/components/globals/Card'
+import Heading from '@/components/globals/Heading'
+import ShopCustomization from '@/components/shops/ShopCustomization'
 
 export default {
   middleware: ['authenticated'],
   head() {
     return {
-      title: this.$t('pages.shop.management.theme.title'),
+      title: this.$t('shop.management.theme.title'),
       meta: [
         {
           hid: 'description',
@@ -46,9 +46,9 @@ export default {
   },
   layout: 'shop-management',
   components: {
-    AppCard,
-    AppTitle,
-    AppShopCustomization
+    Card,
+    Heading,
+    ShopCustomization
   },
   mixins: [
     theming,
