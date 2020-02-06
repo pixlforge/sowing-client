@@ -29,7 +29,7 @@ export default {
   middleware: ['authenticated'],
   head() {
     return {
-      title: this.$t('pages.shop.management.theme.title'),
+      title: this.$t('shop.management.theme.title'),
       meta: [
         {
           hid: 'description',

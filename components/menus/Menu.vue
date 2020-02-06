@@ -20,7 +20,7 @@
           :to="{ name: 'account-dashboard' }"
           icon="user"
         >
-          {{ $t("pages.account.title") }}
+          {{ $t("account.title") }}
         </DropdownItem>
 
         <!-- Orders -->
@@ -28,7 +28,7 @@
           :to="{ name: 'orders' }"
           icon="shipping-fast"
         >
-          {{ $t("pages.orders.title") }}
+          {{ $t("orders.title") }}
         </DropdownItem>
 
         <!-- Shop -->
@@ -36,7 +36,7 @@
           :to="{ name: 'shop-management-dashboard' }"
           icon="store"
         >
-          {{ $t("pages.shop.title") }}
+          {{ $t("shop.title") }}
         </DropdownItem>
 
         <template v-if="!userHasShop">

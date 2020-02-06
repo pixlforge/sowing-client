@@ -15,16 +15,16 @@
           visual="h3"
         >
           <template v-if="indexName === 'products'">
-            {{ $t("pages.search.products") }}
+            {{ $t("search.products") }}
           </template>
           <template v-else>
-            {{ $t("pages.search.shops") }}
+            {{ $t("search.shops") }}
           </template>
         </Heading>
 
         <!-- Total results -->
         <small class="search__results">
-          {{ totalResults }} {{ $t("pages.search.results_found") }}
+          {{ totalResults }} {{ $t("search.results_found") }}
         </small>
 
       </template>
@@ -35,10 +35,10 @@
       <template>
         <p class="search__ais-no-results-label">
           <template v-if="indexName === 'products'">
-            {{ $t("pages.search.no_product_found") }}
+            {{ $t("search.no_product_found") }}
           </template>
           <template v-else>
-            {{ $t("pages.search.no_shop_found") }}
+            {{ $t("search.no_shop_found") }}
           </template>
         </p>
       </template>

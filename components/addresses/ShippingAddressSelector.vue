@@ -40,7 +40,7 @@
       icon="plus"
       class="w-full mt-20"
     >
-      {{ $t("pages.checkout.new_address") }}
+      {{ $t("checkout.new_address") }}
     </ButtonPrimary>
   </div>
 </template>

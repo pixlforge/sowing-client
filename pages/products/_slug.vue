@@ -18,7 +18,7 @@
           :color="shopTheme"
           class="mt-16 shadow-2xl"
         >
-          {{ $t("pages.shop.visit") }}
+          {{ $t("shop.visit") }}
         </HeaderButtonLink>
       </template>
     </Header>

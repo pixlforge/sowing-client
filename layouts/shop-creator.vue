@@ -19,7 +19,7 @@
     <!-- Header -->
     <Header
       :class="bgTheme"
-      :title="shopName ? shopName : $t('pages.shop.creation')"
+      :title="shopName ? shopName : $t('shop.creation')"
     />
 
     <!-- Navigation -->

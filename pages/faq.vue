@@ -3,7 +3,7 @@
 
     <!-- Header -->
     <Header
-      :title="$t('pages.faq.title')"
+      :title="$t('faq.title')"
       icon="question"
     />
 
@@ -72,7 +72,7 @@ import StreakNewsletter from '@/components/streaks/StreakNewsletter'
 export default {
   head() {
     return {
-      title: this.$t('pages.faq.title'),
+      title: this.$t('faq.title'),
       meta: [
         {
           hid: 'description',

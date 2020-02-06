@@ -13,7 +13,7 @@
         tag="h1"
         visual="h2"
       >
-        {{ $t('pages.account.addresses.titles.create') }}
+        {{ $t('account.addresses.titles.create') }}
       </Heading>
     </div>
 
@@ -232,7 +232,7 @@ export default {
   middleware: ['authenticated'],
   head() {
     return {
-      title: `${this.$t('pages.account.addresses.titles.create')} | ${this.$t('pages.account.title')}`,
+      title: `${this.$t('account.addresses.titles.create')} | ${this.$t('account.title')}`,
       meta: [
         {
           hid: 'robots',

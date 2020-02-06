@@ -51,7 +51,7 @@
             <SideMenu>
               <SideMenuList>
                 <SideMenuItem
-                  :label="$t('pages.shop.management.dashboard.title')"
+                  :label="$t('shop.management.dashboard.title')"
                   route="shop-management-dashboard"
                   icon="home"
                 />
@@ -61,12 +61,12 @@
               </SideMenuTitle>
               <SideMenuList>
                 <SideMenuItem
-                  :label="$t('pages.shop.management.details.title')"
+                  :label="$t('shop.management.details.title')"
                   route="shop-management-details"
                   icon="cog"
                 />
                 <SideMenuItem
-                  :label="$t('pages.shop.management.theme.title')"
+                  :label="$t('shop.management.theme.title')"
                   route="shop-management-theme"
                   icon="palette"
                 />
@@ -95,11 +95,11 @@
       <template v-else>
         <ContentSection class="max-w-800">
           <Splash
-            :title="$t('pages.shop.not_created_yet')"
+            :title="$t('shop.not_created_yet')"
             class="max-w-800"
           >
             <template slot="subtitle">
-              {{ $t("pages.shop.creation_cta_line_1") }}
+              {{ $t("shop.creation_cta_line_1") }}
             </template>
             <template slot="illustration">
               <img

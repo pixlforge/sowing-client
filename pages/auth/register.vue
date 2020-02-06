@@ -10,7 +10,7 @@
         visual="h1"
         utilities="md:text-center"
       >
-        {{ $t('pages.register.title') }}
+        {{ $t('register.title') }}
       </Heading>
 
       <form
@@ -94,13 +94,13 @@
           >
             <div class="flex flex-wrap">
               <span class="text-14 text-gray-300 select-none cursor-pointer mr-5">
-                {{ $t("pages.register.terms") }}
+                {{ $t("register.terms") }}
               </span>
               <nuxt-link
                 :to="{ name: 'index' }"
                 class="text-14 text-green-500 no-underline hover:underline select-none"
               >
-                {{ $t("pages.register.links.terms") }}
+                {{ $t("register.links.terms") }}
               </nuxt-link>
             </div>
           </FormCheckbox>
@@ -137,7 +137,7 @@ export default {
   middleware: ['guest'],
   head() {
     return {
-      title: this.$t('pages.register.title'),
+      title: this.$t('register.title'),
       meta: [
         {
           hid: 'description',

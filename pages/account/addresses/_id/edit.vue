@@ -14,7 +14,7 @@
         visual="h1"
         utilities="mx-auto sm:mx-0"
       >
-        {{ $t('pages.account.addresses.titles.edit') }}
+        {{ $t('account.addresses.titles.edit') }}
       </Heading>
     </header>
 
@@ -237,7 +237,7 @@ export default {
   middleware: ['authenticated'],
   head() {
     return {
-      title: `${this.$t('pages.account.addresses.titles.edit')} | ${this.$t('pages.account.title')}`,
+      title: `${this.$t('account.addresses.titles.edit')} | ${this.$t('account.title')}`,
       meta: [
         {
           hid: 'robots',

@@ -14,7 +14,7 @@
         visual="h1"
         utilities="mx-auto sm:mx-0"
       >
-        {{ $t('pages.account.payment_methods.titles.create') }}
+        {{ $t('account.payment_methods.titles.create') }}
       </Heading>
     </header>
 
@@ -72,7 +72,7 @@ export default {
   layout: 'account-management',
   head() {
     return {
-      title: `${this.$t('pages.account.payment_methods.titles.create')} | ${this.$t('pages.account.title')}`,
+      title: `${this.$t('account.payment_methods.titles.create')} | ${this.$t('account.title')}`,
       meta: [
         {
           hid: 'robots',

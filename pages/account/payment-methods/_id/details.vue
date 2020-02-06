@@ -15,7 +15,7 @@
           visual="h1"
           utilities="mx-auto sm:mx-0"
         >
-          {{ $t('pages.account.payment_methods.titles.show') }}
+          {{ $t('account.payment_methods.titles.show') }}
         </Heading>
       </div>
       <div class="flex justify-center items-center mt-48 sm:mt-0">
@@ -72,11 +72,11 @@
             >
               <font-awesome-icon
                 :icon="['fas', 'star']"
-                :title="$t('pages.account.payment_methods.is_default')"
+                :title="$t('account.payment_methods.is_default')"
                 class="hidden md:block text-14 text-orange-400 mr-20"
               />
               <span class="block md:inline w-full md:w-auto text-12 text-gray-400 text-center md:text-left">
-                {{ $t('pages.account.payment_methods.is_default') }}
+                {{ $t('account.payment_methods.is_default') }}
               </span>
             </div>
           </div>
@@ -121,7 +121,7 @@ export default {
   layout: 'account-management',
   head() {
     return {
-      title: `${this.$t('pages.account.payment_methods.titles.show')} | ${this.$t('pages.account.title')}`,
+      title: `${this.$t('account.payment_methods.titles.show')} | ${this.$t('account.title')}`,
       meta: [
         {
           hid: 'robots',

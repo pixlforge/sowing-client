@@ -3,21 +3,21 @@
 
     <!-- Header -->
     <Header
-      :title="$t('pages.verify.title')"
+      :title="$t('verify.title')"
       icon="shield-check"
     />
 
     <!-- Verification successful -->
     <template v-if="verificationSuccessful">
       <Splash
-        :title="$t('pages.verify.success')"
+        :title="$t('verify.success')"
         :subtitle="$t('toasts.account_confirmed')"
         type="success"
         class="max-w-800"
       >
         <template slot="illustration">
           <img
-            :alt="$t('pages.verify.success')"
+            :alt="$t('verify.success')"
             src="~assets/img/success2.svg"
           >
         </template>
@@ -27,14 +27,14 @@
     <!-- Verification failed -->
     <template v-if="verificationFailed">
       <Splash
-        :title="$t('pages.verify.fail')"
+        :title="$t('verify.fail')"
         :subtitle="error"
         type="error"
         class="max-w-800"
       >
         <template slot="illustration">
           <img
-            :alt="$t('pages.verify.fail')"
+            :alt="$t('verify.fail')"
             src="~assets/img/warning.svg"
           >
         </template>
@@ -52,7 +52,7 @@ export default {
   middleware: ['authenticated'],
   head() {
     return {
-      title: this.$t('pages.verify.title'),
+      title: this.$t('verify.title'),
       meta: [
         {
           hid: 'description',

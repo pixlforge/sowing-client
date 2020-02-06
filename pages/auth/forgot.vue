@@ -10,12 +10,12 @@
         visual="h1"
         utilities="md:text-center"
       >
-        {{ $t("pages.password_email.paragraphs.first") }}
+        {{ $t("password_email.paragraphs.first") }}
       </Heading>
 
       <!-- Infos -->
       <Paragraph center>
-        {{ $t("pages.password_email.paragraphs.second") }}
+        {{ $t("password_email.paragraphs.second") }}
       </Paragraph>
 
       <!-- Form -->
@@ -74,7 +74,7 @@ export default {
   middleware: ['guest'],
   head() {
     return {
-      title: this.$t('pages.password_email.title'),
+      title: this.$t('password_email.title'),
       meta: [
         {
           hid: 'description',

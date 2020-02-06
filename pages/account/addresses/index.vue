@@ -7,7 +7,7 @@
         tag="h1"
         visual="h1"
       >
-        {{ $t("pages.account.addresses.titles.index") }}
+        {{ $t("account.addresses.titles.index") }}
       </Heading>
 
       <!-- Add an address -->
@@ -35,7 +35,7 @@
         class="text-center"
       >
         <Paragraph class="text-center mb-60">
-          {{ $t('pages.account.addresses.no_address_found') }}
+          {{ $t('account.addresses.no_address_found') }}
         </Paragraph>
         <ButtonLinkPrimary
           :route="{ name: 'account-addresses-create' }"
@@ -89,7 +89,7 @@ export default {
   layout: 'account-management',
   head() {
     return {
-      title: `${this.$t('pages.account.addresses.titles.index')} | ${this.$t('pages.account.title')}`,
+      title: `${this.$t('account.addresses.titles.index')} | ${this.$t('account.title')}`,
       meta: [
         {
           hid: 'robots',

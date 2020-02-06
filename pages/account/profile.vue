@@ -6,7 +6,7 @@
       tag="h1"
       visual="h1"
     >
-      {{ $t("pages.account.profile.title") }}
+      {{ $t("account.profile.title") }}
     </Heading>
 
     <Card>
@@ -83,7 +83,7 @@ export default {
   layout: 'account-management',
   head() {
     return {
-      title: `${this.$t('pages.account.profile.title')} | ${this.$t('pages.account.title')}`,
+      title: `${this.$t('account.profile.title')} | ${this.$t('account.title')}`,
       meta: [
         {
           hid: 'robots',
@@ -141,7 +141,7 @@ export default {
           message: this.$t('alerts.verify_email_updated')
         })
       }
-      this.$toast.success(this.$t('pages.account.profile.updated'))
+      this.$toast.success(this.$t('account.profile.updated'))
     },
     displayErrorsFeedback() {
       this.$toast.error(this.$t('toasts.validation'))

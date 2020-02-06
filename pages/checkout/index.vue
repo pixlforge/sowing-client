@@ -16,7 +16,7 @@
             tag="h2"
             visual="h3"
           >
-            {{ $t("pages.checkout.payment") }}
+            {{ $t("checkout.payment") }}
           </Heading>
 
           <PaymentMethods
@@ -31,7 +31,7 @@
             tag="h2"
             visual="h3"
           >
-            {{ $t("pages.cart.title") }}
+            {{ $t("cart.title") }}
           </Heading>
 
           <CartOverviewProduct
@@ -68,7 +68,7 @@
             <!-- Subtotal -->
             <div class="w-full text-gray-300 text-14 flex justify-between">
               <div>
-                {{ $t("pages.checkout.subtotal") }}
+                {{ $t("checkout.subtotal") }}
               </div>
               <div>
                 {{ subtotal.formatted }}
@@ -77,7 +77,7 @@
 
             <!-- Shipping -->
             <div class="w-full text-gray-300 text-14 flex justify-between mt-5">
-              <div>{{ $t("pages.checkout.delivery") }}</div>
+              <div>{{ $t("checkout.delivery") }}</div>
               <div v-if="shippingMethod">
                 {{ shippingMethod.price.currency }} {{ shippingMethod.price.amount }}
               </div>
@@ -86,7 +86,7 @@
             <!-- Total -->
             <div class="w-full text-20 font-bold uppercase flex justify-between mt-16">
               <div>
-                {{ $t("pages.checkout.total") }}
+                {{ $t("checkout.total") }}
               </div>
               <div>
                 {{ total.formatted }}
@@ -98,12 +98,12 @@
           <ButtonPrimary
             v-if="products.length && !addressManagersVisible"
             :disabled="is_empty || submitting"
-            :title="$t('pages.checkout.order')"
+            :title="$t('checkout.order')"
             @click.native="order"
             icon="check-circle"
             class="shadow-xl mt-72"
           >
-            {{ $t("pages.checkout.order") }}
+            {{ $t("checkout.order") }}
           </ButtonPrimary>
         </div>
       </div>
@@ -177,7 +177,7 @@ export default {
       addressManagersVisible: 'checkout/addressManagersVisible'
     }),
     pageTitle() {
-      return this.$t('pages.checkout.title')
+      return this.$t('checkout.title')
     },
     shippingMethodId: {
       get() {

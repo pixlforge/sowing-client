@@ -33,7 +33,7 @@
         tag="h1"
         visual="main"
       >
-        {{ $t("pages.shop_details.welcome") }}
+        {{ $t("shop_details.welcome") }}
       </Heading>
 
       <p
@@ -65,7 +65,7 @@
         tag="h2"
         visual="main"
       >
-        {{ $t("pages.shop_details.interested") }}
+        {{ $t("shop_details.interested") }}
       </Heading>
 
       <div class="flex justify-center mt-72">

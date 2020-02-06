@@ -25,7 +25,7 @@ import Heading from '@/components/globals/Heading'
 export default {
   head() {
     return {
-      title: this.$t('pages.shop.management.dashboard.title'),
+      title: this.$t('shop.management.dashboard.title'),
       meta: [
         {
           hid: 'description',

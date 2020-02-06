@@ -68,11 +68,11 @@
         >
           <font-awesome-icon
             :icon="['fas', 'star']"
-            :title="$t('pages.account.payment_methods.is_default')"
+            :title="$t('account.payment_methods.is_default')"
             class="text-14 text-orange-400"
           />
           <div class="absolute top-0 bg-white rounded-lg shadow-lg invisible group-hover:visible text-12 px-20 py-12 -mx-72 -mt-72">
-            {{ $t('pages.account.payment_methods.is_default') }}
+            {{ $t('account.payment_methods.is_default') }}
           </div>
         </div>
       </div>

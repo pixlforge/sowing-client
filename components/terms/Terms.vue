@@ -4,7 +4,7 @@
       tag="h2"
       visual="main"
     >
-      {{ $t("pages.terms.title") }}
+      {{ $t("terms.title") }}
     </Heading>
 
     <ContentSection class="max-w-800">

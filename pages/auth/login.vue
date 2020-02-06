@@ -10,7 +10,7 @@
         visual="h1"
         utilities="md:text-center"
       >
-        {{ $t('pages.login.title') }}
+        {{ $t('login.title') }}
       </Heading>
 
       <form
@@ -56,12 +56,12 @@
 
           <!-- Password forgotten -->
           <ButtonLinkTertiary :route="{ name: 'auth-forgot' }">
-            {{ $t("pages.login.links.password") }}
+            {{ $t("login.links.password") }}
           </ButtonLinkTertiary>
 
           <!-- Register an account -->
           <ButtonLinkTertiary :route="{ name: 'auth-register' }">
-            {{ $t("pages.login.links.register") }}
+            {{ $t("login.links.register") }}
           </ButtonLinkTertiary>
         </div>
 
@@ -97,7 +97,7 @@ export default {
   middleware: ['guest'],
   head() {
     return {
-      title: this.$t('pages.login.title'),
+      title: this.$t('login.title'),
       meta: [
         {
           hid: 'description',

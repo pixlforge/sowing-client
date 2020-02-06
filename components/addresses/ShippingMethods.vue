@@ -6,7 +6,7 @@
       tag="h5"
       visual="h5"
     >
-      {{ $t("pages.checkout.delivery_method") }}
+      {{ $t("checkout.delivery_method") }}
     </Heading>
 
     <!-- Select -->

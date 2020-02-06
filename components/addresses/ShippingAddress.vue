@@ -4,7 +4,7 @@
       tag="h5"
       visual="h5"
     >
-      {{ $t("pages.checkout.delivery_address") }}
+      {{ $t("checkout.delivery_address") }}
     </Heading>
 
     <ShippingAddressSelector
@@ -50,7 +50,7 @@
       icon="repeat-alt"
       class="w-full mt-20"
     >
-      {{ $t("pages.checkout.change_address") }}
+      {{ $t("checkout.change_address") }}
     </ButtonPrimary>
 
     <!-- Add an address -->
@@ -60,7 +60,7 @@
       icon="plus"
       class="w-full mt-20"
     >
-      {{ $t("pages.checkout.add_address") }}
+      {{ $t("checkout.add_address") }}
     </ButtonPrimary>
   </div>
 </template>

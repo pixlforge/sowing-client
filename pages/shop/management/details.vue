@@ -44,7 +44,7 @@ export default {
   middleware: ['authenticated'],
   head() {
     return {
-      title: this.$t('pages.shop.management.details.title'),
+      title: this.$t('shop.management.details.title'),
       meta: [
         {
           hid: 'description',

@@ -24,7 +24,7 @@
 
           <div class="absolute top-0 left-0 sm:left-auto w-auto invisible group-hover:visible">
             <div class="opacity-0 group-hover:opacity-100 transition-opacity transition-medium bg-blue-500 rounded-lg shadow-lg text-12 text-white text-center sm:whitespace-no-wrap px-20 py-10 -mt-60 sm:-mt-48">
-              {{ $t('pages.account.addresses.is_default') }}
+              {{ $t('account.addresses.is_default') }}
             </div>
           </div>
         </div>

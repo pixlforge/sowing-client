@@ -3,8 +3,8 @@
 
     <!-- Header -->
     <Header
-      :title="$t('pages.search.title')"
-      :description="$t('pages.search.description')"
+      :title="$t('search.title')"
+      :description="$t('search.description')"
       icon="search"
     />
 
@@ -14,8 +14,8 @@
       <div class="search__input-group">
         <FormInput
           v-model="query"
-          :placeholder="$t('pages.search.placeholder')"
-          :aria-label="$t('pages.search.placeholder')"
+          :placeholder="$t('search.placeholder')"
+          :aria-label="$t('search.placeholder')"
           class="text-30 font-normal px-24 py-20"
         />
       </div>
@@ -52,7 +52,7 @@ import SearchResult from '@/components/search/SearchResult'
 export default {
   head() {
     return {
-      title: this.$t('pages.search.title'),
+      title: this.$t('search.title'),
       meta: [
         {
           hid: 'description',

@@ -10,7 +10,7 @@
         visual="h1"
         utilities="md:text-center"
       >
-        {{ $t("pages.password_reset.title") }}
+        {{ $t("password_reset.title") }}
       </Heading>
 
       <form
@@ -98,7 +98,7 @@ export default {
   middleware: ['guest'],
   head() {
     return {
-      title: this.$t('pages.password_reset.title'),
+      title: this.$t('password_reset.title'),
       meta: [
         {
           hid: 'description',

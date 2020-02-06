@@ -9,8 +9,8 @@
 
     <!-- Header -->
     <Header
-      :title="$t('pages.account.title')"
-      :description="$t('pages.account.description')"
+      :title="$t('account.title')"
+      :description="$t('account.description')"
     />
 
     <!-- Main -->
@@ -24,27 +24,27 @@
           <SideMenu>
             <SideMenuList>
               <SideMenuItem
-                :label="$t('pages.account.dashboard.title')"
+                :label="$t('account.dashboard.title')"
                 route="account-dashboard"
                 icon="home"
               />
               <SideMenuItem
-                :label="$t('pages.account.profile.title')"
+                :label="$t('account.profile.title')"
                 route="account-profile"
                 icon="user"
               />
               <SideMenuItem
-                :label="$t('pages.account.password.title')"
+                :label="$t('account.password.title')"
                 route="account-password"
                 icon="shield-alt"
               />
               <SideMenuItem
-                :label="$t('pages.account.addresses.titles.index')"
+                :label="$t('account.addresses.titles.index')"
                 route="account-addresses"
                 icon="address-book"
               />
               <SideMenuItem
-                :label="$t('pages.account.payment_methods.titles.index')"
+                :label="$t('account.payment_methods.titles.index')"
                 route="account-payment-methods"
                 icon="credit-card"
               />

@@ -3,7 +3,7 @@
 
     <!-- Header -->
     <Header
-      :title="$t('pages.orders.title')"
+      :title="$t('orders.title')"
       icon="shipping-fast"
     />
 
@@ -39,7 +39,7 @@ export default {
   middleware: ['authenticated'],
   head() {
     return {
-      title: this.$t('pages.orders.title'),
+      title: this.$t('orders.title'),
       meta: [
         {
           hid: 'description',

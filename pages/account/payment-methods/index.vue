@@ -7,7 +7,7 @@
         tag="h1"
         visual="h1"
       >
-        {{ $t("pages.account.payment_methods.titles.index") }}
+        {{ $t("account.payment_methods.titles.index") }}
       </Heading>
 
       <!-- Add a payment method -->
@@ -35,7 +35,7 @@
         class="text-center"
       >
         <Paragraph class="text-center mb-60">
-          {{ $t('pages.account.payment_methods.no_payment_method_found') }}
+          {{ $t('account.payment_methods.no_payment_method_found') }}
         </Paragraph>
         <ButtonLinkPrimary
           :route="{ name: 'account-payment-methods-create' }"
@@ -89,7 +89,7 @@ export default {
   layout: 'account-management',
   head() {
     return {
-      title: `${this.$t('pages.account.payment_methods.titles.index')} | ${this.$t('pages.account.title')}`,
+      title: `${this.$t('account.payment_methods.titles.index')} | ${this.$t('account.title')}`,
       meta: [
         {
           hid: 'robots',

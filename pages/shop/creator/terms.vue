@@ -3,7 +3,7 @@
 
     <!-- Header -->
     <Header
-      :title="$t('pages.shop.creation')"
+      :title="$t('shop.creation')"
       icon="file-contract"
     />
 
@@ -20,10 +20,10 @@
             v-model="localTerms"
             name="terms"
           >
-            {{ $t("pages.terms.approve") }}
+            {{ $t("terms.approve") }}
           </FormCheckbox>
           <small class="block text-gray-300">
-            {{ $t("pages.terms.must_approve") }}
+            {{ $t("terms.must_approve") }}
           </small>
         </div>
 
@@ -54,7 +54,7 @@ export default {
   middleware: ['authenticated'],
   head() {
     return {
-      title: this.$t('pages.terms.title'),
+      title: this.$t('terms.title'),
       meta: [
         {
           hid: 'description',

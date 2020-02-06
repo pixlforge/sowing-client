@@ -6,7 +6,7 @@
       tag="h1"
       visual="h1"
     >
-      {{ $t("pages.account.password.title") }}
+      {{ $t("account.password.title") }}
     </Heading>
 
     <Card>
@@ -79,7 +79,7 @@ export default {
   layout: 'account-management',
   head() {
     return {
-      title: `${this.$t('pages.account.password.title')} | ${this.$t('pages.account.title')}`,
+      title: `${this.$t('account.password.title')} | ${this.$t('account.title')}`,
       meta: [
         {
           hid: 'robots',

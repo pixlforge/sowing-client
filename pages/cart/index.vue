@@ -22,8 +22,8 @@
         <div v-else>
 
           <Splash
-            :title="$t('pages.cart.cart_is_empty')"
-            :subtitle="$t('pages.cart.add_something')"
+            :title="$t('cart.cart_is_empty')"
+            :subtitle="$t('cart.add_something')"
             class="max-w-800"
           >
             <template slot="illustration">
@@ -41,12 +41,12 @@
         v-if="products.length"
         class="text-24 font-semibold text-center mt-96"
       >
-        {{ $t("pages.cart.in_your_cart") }}
+        {{ $t("cart.in_your_cart") }}
         <span class="text-green-500">
           {{ products.length }}
         </span>
-        {{ $t("pages.cart.products") }}
-        {{ $t("pages.cart.for") }}
+        {{ $t("cart.products") }}
+        {{ $t("cart.for") }}
         {{ subtotal.detailed.currency }}
         <span class="text-green-500">
           {{ subtotal.detailed.amount }}
@@ -58,12 +58,12 @@
         v-if="products.length"
         :route="{ name: 'checkout' }"
         :disabled="is_empty"
-        :title="$t('pages.cart.checkout')"
+        :title="$t('cart.checkout')"
         icon="check-circle"
         size="large"
         class="w-full shadow-2xl my-72 md:my-96"
       >
-        {{ $t("pages.cart.checkout") }}
+        {{ $t("cart.checkout") }}
       </ButtonLinkPrimary>
     </ContentSection>
 
@@ -114,7 +114,7 @@ export default {
       has_changed: 'cart/hasChanged'
     }),
     pageTitle() {
-      return this.$t('pages.cart.title')
+      return this.$t('cart.title')
     }
   },
   mounted() {

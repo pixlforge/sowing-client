@@ -14,13 +14,13 @@
         visual="h1"
         utilities="mx-auto sm:mx-0"
       >
-        {{ $t('pages.account.payment_methods.titles.edit') }}
+        {{ $t('account.payment_methods.titles.edit') }}
       </Heading>
     </header>
 
     <Card>
       <Paragraph class="text-center mb-60">
-        {{ $t('pages.account.payment_methods.edit.paragraph') }}
+        {{ $t('account.payment_methods.edit.paragraph') }}
       </Paragraph>
 
       <ButtonPrimary
@@ -54,7 +54,7 @@ export default {
   layout: 'account-management',
   head() {
     return {
-      title: `${this.$t('pages.account.payment_methods.titles.edit')} | ${this.$t('pages.account.title')}`,
+      title: `${this.$t('account.payment_methods.titles.edit')} | ${this.$t('account.title')}`,
       meta: [
         {
           hid: 'robots',
