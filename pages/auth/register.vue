@@ -5,7 +5,7 @@
     <Heading
       tag="h1"
       visual="h4"
-      utilities="md:text-center"
+      utilities="text-center"
     >
       {{ $t('register.title') }}
     </Heading>

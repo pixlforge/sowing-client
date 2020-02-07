@@ -1,85 +1,81 @@
 <template>
-  <main>
+  <div>
 
-    <!-- Content -->
-    <ContentSection class="max-w-600">
+    <!-- Page title -->
+    <Heading
+      tag="h1"
+      visual="h1"
+      utilities="md:text-center"
+    >
+      {{ $t("password_reset.title") }}
+    </Heading>
 
-      <!-- Page title -->
-      <Heading
-        tag="h1"
-        visual="h1"
-        utilities="md:text-center"
+    <form
+      @submit.prevent="reset"
+      class="mt-36 sm:mt-72"
+    >
+
+      <!-- Email -->
+      <FormGroup>
+        <FormLabel name="user">
+          {{ $t("forms.labels.email") }}
+        </FormLabel>
+        <FormInput
+          ref="autofocus"
+          v-model="form.email"
+          :errors="errors"
+          name="user"
+          type="email"
+          required
+        />
+        <FormValidation
+          :errors="errors"
+          name="user"
+        />
+      </FormGroup>
+
+      <!-- Password -->
+      <FormGroup>
+        <FormLabel name="password">
+          {{ $t("forms.labels.password") }}
+        </FormLabel>
+        <FormInput
+          v-model="form.password"
+          :errors="errors"
+          name="password"
+          type="password"
+          required
+        />
+        <FormValidation
+          :errors="errors"
+          name="password"
+        />
+      </FormGroup>
+
+      <!-- Password confirmation -->
+      <FormGroup>
+        <FormLabel name="password_confirmation">
+          {{ $t("forms.labels.password_confirmation") }}
+        </FormLabel>
+        <FormInput
+          v-model="form.password_confirmation"
+          :errors="errors"
+          name="password_confirmation"
+          type="password"
+          required
+        />
+      </FormGroup>
+
+      <!-- Submit -->
+      <ButtonPrimary
+        type="submit"
+        icon="redo-alt"
+        class="mx-auto my-72"
       >
-        {{ $t("password_reset.title") }}
-      </Heading>
-
-      <form
-        @submit.prevent="reset"
-        class="mt-36 sm:mt-72"
-      >
-
-        <!-- Email -->
-        <FormGroup>
-          <FormLabel name="user">
-            {{ $t("forms.labels.email") }}
-          </FormLabel>
-          <FormInput
-            ref="autofocus"
-            v-model="form.email"
-            :errors="errors"
-            name="user"
-            type="email"
-            required
-          />
-          <FormValidation
-            :errors="errors"
-            name="user"
-          />
-        </FormGroup>
-
-        <!-- Password -->
-        <FormGroup>
-          <FormLabel name="password">
-            {{ $t("forms.labels.password") }}
-          </FormLabel>
-          <FormInput
-            v-model="form.password"
-            :errors="errors"
-            name="password"
-            type="password"
-            required
-          />
-          <FormValidation
-            :errors="errors"
-            name="password"
-          />
-        </FormGroup>
-
-        <!-- Password confirmation -->
-        <FormGroup>
-          <FormLabel name="password_confirmation">
-            {{ $t("forms.labels.password_confirmation") }}
-          </FormLabel>
-          <FormInput
-            v-model="form.password_confirmation"
-            :errors="errors"
-            name="password_confirmation"
-            type="password"
-            required
-          />
-        </FormGroup>
-
-        <!-- Submit -->
-        <ButtonPrimary
-          type="submit"
-          icon="redo-alt"
-          class="mx-auto my-72"
-        >
-          {{ $t("buttons.password_reset") }}
-        </ButtonPrimary>
-      </form>
-    </ContentSection>
-  </main>
+        {{ $t("buttons.password_reset") }}
+      </ButtonPrimary>
+    </form>
+  </div>
 </template>
 
 <script>
@@ -89,7 +85,6 @@ import Heading from '@/components/globals/Heading'
 import FormGroup from '@/components/forms/FormGroup'
 import FormLabel from '@/components/forms/FormLabel'
 import FormInput from '@/components/forms/FormInput'
-import ContentSection from '@/components/globals/ContentSection'
 import FormValidation from '@/components/forms/FormValidation'
 import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 
@@ -118,7 +113,6 @@ export default {
     FormGroup,
     FormLabel,
     FormInput,
-    ContentSection,
     FormValidation,
     ButtonPrimary
   },
@@ -145,6 +139,8 @@ export default {
       if (!this.form.token) {
         return
       }
+
+      this.errors = {}
 
       try {
         const res = await this.$axios.$post('/auth/reset', this.form)

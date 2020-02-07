@@ -1,60 +1,56 @@
 <template>
-  <main>
+  <div>
 
-    <!-- Content -->
-    <ContentSection class="max-w-600">
+    <!-- Page title -->
+    <Heading
+      tag="h1"
+      visual="h4"
+      utilities="text-center"
+    >
+      {{ $t("password_email.paragraphs.first") }}
+    </Heading>
 
-      <!-- Page title -->
-      <Heading
-        tag="h1"
-        visual="h1"
-        utilities="md:text-center"
+    <!-- Infos -->
+    <Paragraph class="text-center mx-auto my-36">
+      {{ $t("password_email.paragraphs.second") }}
+    </Paragraph>
+
+    <!-- Form -->
+    <form
+      @submit.prevent="send"
+      class="mt-36"
+    >
+
+      <!-- Email -->
+      <FormGroup>
+        <FormLabel name="email">
+          {{ $t("forms.labels.email") }}
+        </FormLabel>
+        <FormInput
+          ref="autofocus"
+          v-model="email"
+          :errors="errors"
+          name="email"
+          type="email"
+          placeholder="elon@musk.ch"
+          required
+        />
+        <FormValidation
+          :errors="errors"
+          name="email"
+        />
+      </FormGroup>
+
+      <!-- Submit -->
+      <ButtonPrimary
+        type="submit"
+        icon="redo-alt"
+        class="mx-auto mt-36"
       >
-        {{ $t("password_email.paragraphs.first") }}
-      </Heading>
-
-      <!-- Infos -->
-      <Paragraph center>
-        {{ $t("password_email.paragraphs.second") }}
-      </Paragraph>
-
-      <!-- Form -->
-      <form
-        @submit.prevent="send"
-        class="mt-36 sm:mt-72"
-      >
-
-        <!-- Email -->
-        <FormGroup>
-          <FormLabel name="email">
-            {{ $t("forms.labels.email") }}
-          </FormLabel>
-          <FormInput
-            ref="autofocus"
-            v-model="email"
-            :errors="errors"
-            name="email"
-            type="email"
-            placeholder="elon@musk.ch"
-            required
-          />
-          <FormValidation
-            :errors="errors"
-            name="email"
-          />
-        </FormGroup>
-
-        <!-- Submit -->
-        <ButtonPrimary
-          type="submit"
-          icon="redo-alt"
-          class="mx-auto my-72"
-        >
-          {{ $t("buttons.password_email") }}
-        </ButtonPrimary>
-      </form>
-    </ContentSection>
-  </main>
+        {{ $t("buttons.password_email") }}
+      </ButtonPrimary>
+    </form>
+  </div>
 </template>
 
 <script>
@@ -64,7 +60,6 @@ import Heading from '@/components/globals/Heading'
 import FormGroup from '@/components/forms/FormGroup'
 import FormLabel from '@/components/forms/FormLabel'
 import FormInput from '@/components/forms/FormInput'
-import ContentSection from '@/components/globals/ContentSection'
 import Paragraph from '@/components/paragraphs/Paragraph'
 import FormValidation from '@/components/forms/FormValidation'
 import ButtonPrimary from '@/components/buttons/ButtonPrimary'
@@ -94,7 +89,6 @@ export default {
     FormGroup,
     FormLabel,
     FormInput,
-    ContentSection,
     Paragraph,
     FormValidation,
     ButtonPrimary
@@ -113,6 +107,8 @@ export default {
       flash: 'alert/flash'
     }),
     async send() {
+      this.errors = {}
+
       try {
         const res = await this.$axios.$post('/auth/forgot', { email: this.email })
         this.$toast.success(res.message)

@@ -1,11 +1,5 @@
 <template>
-  <p
-    :class="{
-      'text-center mx-auto my-36 md:my-72': center,
-      'my-20 last:mb-0': !center
-    }"
-    class="text-14 md:text-16 leading-loose"
-  >
+  <p class="text-14 md:text-16 leading-loose my-20 last:mb-0">
     <slot/>
   </p>
 </template>
