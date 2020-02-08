@@ -2,15 +2,15 @@
   <div>
 
     <!-- Step -->
-    <AppProductCreatorStep>
+    <ProductCreatorStep>
       4/5
-    </AppProductCreatorStep>
+    </ProductCreatorStep>
 
     <!-- Header -->
     <header class="flex flex-wrap items-center my-30">
 
       <!-- Back -->
-      <AppBackButton
+      <BackButton
         :route="{
           name: 'shop-management-products-create-product-slug-price',
           params: {
@@ -30,9 +30,9 @@
     </header>
 
     <!-- Infotip -->
-    <AppInfoTip icon="info">
+    <InfoTip icon="info">
       {{ $t('products.management.create.tips.variations') }}
-    </AppInfoTip>
+    </InfoTip>
 
   </div>
 </template>
@@ -41,9 +41,9 @@
 import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
-import AppInfoTip from '@/components/globals/AppInfoTip'
-import AppBackButton from '@/components/buttons/AppBackButton'
-import AppProductCreatorStep from '@/components/products/creator/AppProductCreatorStep'
+import InfoTip from '@/components/globals/InfoTip'
+import BackButton from '@/components/buttons/BackButton'
+import ProductCreatorStep from '@/components/products/creator/ProductCreatorStep'
 
 export default {
   head() {
@@ -69,9 +69,9 @@ export default {
     'hasShop'
   ],
   components: {
-    AppInfoTip,
-    AppBackButton,
-    AppProductCreatorStep
+    InfoTip,
+    BackButton,
+    ProductCreatorStep
   },
   mixins: [theming],
   data() {
