@@ -41,12 +41,12 @@
     >
       <FormSection class="lg:w-full">
         <FormSectionTitle>
-          {{ $t('form.labels.category') }}
+          {{ $t('form.category.label') }}
         </FormSectionTitle>
         <FormFieldset>
           <FormGroup>
             <FormLabel name="category_id">
-              {{ $t('form.labels.category') }}
+              {{ $t('form.category.label') }}
             </FormLabel>
             <FormLabelDescription>
               Associez votre produit à une catégorie afin que nous puissions le répertorier dans le catalogue.

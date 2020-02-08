@@ -1,27 +1,88 @@
 export default {
   form: {
-    labels: {
-      address_line_1: 'Address line 1',
-      address_line_2: 'Address line 2',
-      avatar: 'Avatar',
-      category: 'Category',
-      city: 'City',
-      company_name: 'Company',
-      country: 'Country',
-      cover_image: 'Cover image',
-      default_address: 'This address is my default address',
-      description: 'Description',
-      description_short: 'Short description',
-      description_long: 'Detailed description',
-      email: 'Email address',
-      first_name: 'First name',
-      last_name: 'Last name',
-      name: 'Name',
-      password: 'Password',
-      password_confirmation: 'Confirm password',
-      postal_code: 'Postal code',
-      price: 'Price',
-      theme_selection: 'Theme selection'
+    address_line_1: {
+      label: 'Address line 1',
+      placeholder: ''
+    },
+    address_line_2: {
+      label: 'Address line 2',
+      placeholder: ''
+    },
+    avatar: {
+      label: 'Avatar',
+      placeholder: ''
+    },
+    category: {
+      label: 'Category',
+      placeholder: ''
+    },
+    city: {
+      label: 'City',
+      placeholder: ''
+    },
+    company_name: {
+      label: 'Company',
+      placeholder: ''
+    },
+    country: {
+      label: 'Country',
+      placeholder: ''
+    },
+    cover_image: {
+      label: 'Cover image',
+      placeholder: ''
+    },
+    default_address: {
+      label: 'This address is my default address',
+      placeholder: ''
+    },
+    description: {
+      label: 'Description',
+      placeholder: ''
+    },
+    description_short: {
+      label: 'Short description',
+      placeholder: ''
+    },
+    description_long: {
+      label: 'Detailed description',
+      placeholder: ''
+    },
+    email: {
+      label: 'Email address',
+      placeholder: ''
+    },
+    first_name: {
+      label: 'First name',
+      placeholder: ''
+    },
+    last_name: {
+      label: 'Last name',
+      placeholder: ''
+    },
+    name: {
+      label: 'Name',
+      placeholder: ''
+    },
+    password: {
+      label: 'Password',
+      placeholder: ''
+    },
+    password_confirmation: {
+      label: 'Confirm password',
+      placeholder: ''
+    },
+    postal_code: {
+      label: 'Postal code',
+      placeholder: ''
+    },
+    price: {
+      label: 'Price',
+      placeholder: ''
+    },
+    theme_selection: {
+      label: 'Theme selection',
+      placeholder: ''
     },
     select: 'Select'
   }

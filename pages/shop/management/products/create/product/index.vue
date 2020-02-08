@@ -45,7 +45,7 @@
           <!-- Name -->
           <FormGroup>
             <FormLabel name="name.fr">
-              {{ $t('form.labels.name') }}
+              {{ $t('form.name.label') }}
             </FormLabel>
             <FormLabelDescription>
               Le nom de votre produit. Entrez, en français, un nom descriptif identifiant votre produit.
@@ -64,7 +64,7 @@
           <!-- Description -->
           <FormGroup>
             <FormLabel name="description.fr">
-              {{ $t('form.labels.description') }}
+              {{ $t('form.description.label') }}
             </FormLabel>
             <FormLabelDescription>
               Décrivez, en français, votre produit de la manière dont vous le voulez.
@@ -92,7 +92,7 @@
           <!-- Name -->
           <FormGroup>
             <FormLabel name="name.en">
-              {{ $t('form.labels.name') }}
+              {{ $t('form.name.label') }}
             </FormLabel>
             <FormLabelDescription>
               Le nom de votre produit. Entrez, en anglais, un nom descriptif identifiant votre produit.
@@ -111,7 +111,7 @@
           <!-- Description -->
           <FormGroup>
             <FormLabel name="description.en">
-              {{ $t('form.labels.description') }}
+              {{ $t('form.description.label') }}
             </FormLabel>
             <FormLabelDescription>
               Décrivez, en anglais, votre produit de la manière dont vous le voulez.
@@ -139,7 +139,7 @@
           <!-- Name -->
           <FormGroup>
             <FormLabel name="name.de">
-              {{ $t('form.labels.name') }}
+              {{ $t('form.name.label') }}
             </FormLabel>
             <FormLabelDescription>
               Le nom de votre produit. Entrez, en allemand, un nom descriptif identifiant votre produit.
@@ -158,7 +158,7 @@
           <!-- Description -->
           <FormGroup>
             <FormLabel name="description.de">
-              {{ $t('form.labels.description') }}
+              {{ $t('form.description.label') }}
             </FormLabel>
             <FormLabelDescription>
               Décrivez, en allemand, votre produit de la manière dont vous le voulez.
@@ -186,7 +186,7 @@
           <!-- Name -->
           <FormGroup>
             <FormLabel name="name.it">
-              {{ $t('form.labels.name') }}
+              {{ $t('form.name.label') }}
             </FormLabel>
             <FormLabelDescription>
               Le nom de votre produit. Entrez, en italien, un nom descriptif identifiant votre produit.
@@ -205,7 +205,7 @@
           <!-- Description -->
           <FormGroup>
             <FormLabel name="description.it">
-              {{ $t('form.labels.description') }}
+              {{ $t('form.description.label') }}
             </FormLabel>
             <FormLabelDescription>
               Décrivez, en italien, votre produit de la manière dont vous le voulez.

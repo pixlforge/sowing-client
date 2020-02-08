@@ -15,7 +15,7 @@
         <!-- Name -->
         <FormGroup>
           <FormLabel name="name">
-            {{ $t("form.labels.name") }}
+            {{ $t("form.name.label") }}
           </FormLabel>
           <FormInput
             v-model="form.name"
@@ -31,7 +31,7 @@
         <!-- Email -->
         <FormGroup>
           <FormLabel name="email">
-            {{ $t("form.labels.email") }}
+            {{ $t("form.email.label") }}
           </FormLabel>
           <FormInput
             v-model="form.email"

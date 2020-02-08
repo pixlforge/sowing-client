@@ -15,7 +15,7 @@
         <!-- Password -->
         <FormGroup>
           <FormLabel name="password">
-            {{ $t("form.labels.password") }}
+            {{ $t("form.password.label") }}
           </FormLabel>
           <FormInput
             v-model="form.password"
@@ -32,7 +32,7 @@
         <!-- Password confirmation -->
         <FormGroup>
           <FormLabel name="password_confirmation">
-            {{ $t("form.labels.password_confirmation") }}
+            {{ $t("form.password_confirmation.label") }}
           </FormLabel>
           <FormInput
             v-model="form.password_confirmation"

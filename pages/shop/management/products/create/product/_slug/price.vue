@@ -41,12 +41,12 @@
     >
       <FormSection class="lg:w-full">
         <FormSectionTitle>
-          {{ $t('form.labels.price') }}
+          {{ $t('form.price.label') }}
         </FormSectionTitle>
         <FormFieldset>
           <FormGroup>
             <FormLabel name="price">
-              {{ $t('form.labels.price') }}
+              {{ $t('form.price.label') }}
             </FormLabel>
             <FormLabelDescription>
               Fixez le prix de votre produit en francs suisses (CHF) en tenant compte des frais d'envoi ainsi que des frais perçus par la plateforme.
