@@ -4,29 +4,28 @@
     <!-- Alert -->
     <Alert/>
 
-    <div class="min-h-screen flex flex-col justify-center items-center">
+    <main class="min-h-screen flex justify-center items-center lg:items-start sm:bg-green-500">
+      <div class="w-full max-w-400 sm:max-w-500 lg:max-w-600 bg-white sm:rounded-lg sm:shadow-2xl px-20 sm:px-48 sm:py-48 my-48">
 
-      <!-- Logo -->
-      <nuxt-link
-        :to="{ name: 'index' }"
-        class="w-full max-w-200 sm:max-w-300 lg:max-w-400 my-36 px-20"
-      >
-        <Logo/>
-      </nuxt-link>
+        <!-- Logo -->
+        <LogoLink/>
 
-      <nuxt/>
-    </div>
+        <!-- Page content -->
+        <Nuxt/>
+
+      </div>
+    </main>
   </div>
 </template>
 
 <script>
-import Logo from '@/components/globals/Logo'
 import Alert from '@/components/globals/Alert'
+import LogoLink from '@/components/globals/LogoLink'
 
 export default {
   components: {
-    Logo,
-    Alert
+    Alert,
+    LogoLink
   }
 }
 </script>

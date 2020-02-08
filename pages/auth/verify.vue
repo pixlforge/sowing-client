@@ -49,6 +49,10 @@ import Header from '@/components/headers/Header'
 import Splash from '@/components/globals/Splash'
 
 export default {
+  components: {
+    Header,
+    Splash
+  },
   middleware: ['authenticated'],
   head() {
     return {
@@ -66,10 +70,6 @@ export default {
         }
       ]
     }
-  },
-  components: {
-    Header,
-    Splash
   },
   data() {
     return {
