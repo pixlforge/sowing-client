@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen bg-gray-100 flex justify-center items-center">
     <ContentSection>
-      <nuxt/>
+      <Nuxt/>
     </ContentSection>
   </div>
 </template>

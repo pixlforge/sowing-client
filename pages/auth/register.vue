@@ -1,123 +1,119 @@
 <template>
-  <main>
+  <div>
 
-    <!-- Form -->
-    <ContentSection class="max-w-600">
+    <!-- Page title -->
+    <Heading
+      tag="h1"
+      visual="h4"
+      utilities="text-center"
+    >
+      {{ $t('register.title') }}
+    </Heading>
 
-      <!-- Page title -->
-      <Heading
-        tag="h1"
-        visual="h1"
-        utilities="md:text-center"
-      >
-        {{ $t('register.title') }}
-      </Heading>
+    <form
+      @submit.prevent="register"
+      class="mt-36"
+    >
 
-      <form
-        @submit.prevent="register"
-        class="mt-36 sm:mt-72"
-      >
+      <!-- Name -->
+      <FormGroup>
+        <FormLabel name="name">
+          {{ $t("forms.labels.name") }}
+        </FormLabel>
+        <FormInput
+          ref="autofocus"
+          v-model="form.name"
+          :errors="errors"
+          name="name"
+          required
+        />
+        <FormValidation
+          :errors="errors"
+          name="name"
+        />
+      </FormGroup>
 
-        <!-- Name -->
-        <FormGroup>
-          <FormLabel name="name">
-            {{ $t("forms.labels.name") }}
-          </FormLabel>
-          <FormInput
-            ref="autofocus"
-            v-model="form.name"
-            :errors="errors"
-            name="name"
-            required
-          />
-          <FormValidation
-            :errors="errors"
-            name="name"
-          />
-        </FormGroup>
+      <!-- Email -->
+      <FormGroup>
+        <FormLabel name="email">
+          {{ $t("forms.labels.email") }}
+        </FormLabel>
+        <FormInput
+          v-model="form.email"
+          :errors="errors"
+          name="email"
+          type="email"
+          required
+        />
+        <FormValidation
+          :errors="errors"
+          name="email"
+        />
+      </FormGroup>
 
-        <!-- Email -->
-        <FormGroup>
-          <FormLabel name="email">
-            {{ $t("forms.labels.email") }}
-          </FormLabel>
-          <FormInput
-            v-model="form.email"
-            :errors="errors"
-            name="email"
-            type="email"
-            required
-          />
-          <FormValidation
-            :errors="errors"
-            name="email"
-          />
-        </FormGroup>
+      <!-- Password -->
+      <FormGroup>
+        <FormLabel name="password">
+          {{ $t("forms.labels.password") }}
+        </FormLabel>
+        <FormInput
+          v-model="form.password"
+          :errors="errors"
+          name="password"
+          type="password"
+          required
+        />
+        <FormValidation
+          :errors="errors"
+          name="password"
+        />
+      </FormGroup>
 
-        <!-- Password -->
-        <FormGroup>
-          <FormLabel name="password">
-            {{ $t("forms.labels.password") }}
-          </FormLabel>
-          <FormInput
-            v-model="form.password"
-            :errors="errors"
-            name="password"
-            type="password"
-            required
-          />
-          <FormValidation
-            :errors="errors"
-            name="password"
-          />
-        </FormGroup>
+      <!-- Password confirmation -->
+      <FormGroup>
+        <FormLabel name="password_confirmation">
+          {{ $t("forms.labels.password_confirmation") }}
+        </FormLabel>
+        <FormInput
+          v-model="form.password_confirmation"
+          :errors="errors"
+          name="password_confirmation"
+          type="password"
+          required
+        />
+      </FormGroup>
 
-        <!-- Password confirmation -->
-        <FormGroup>
-          <FormLabel name="password_confirmation">
-            {{ $t("forms.labels.password_confirmation") }}
-          </FormLabel>
-          <FormInput
-            v-model="form.password_confirmation"
-            :errors="errors"
-            name="password_confirmation"
-            type="password"
-            required
-          />
-        </FormGroup>
-
-        <!-- Terms -->
-        <FormGroup>
-          <FormCheckbox
-            v-model="terms"
-            name="terms"
-          >
-            <div class="flex flex-wrap">
-              <span class="text-14 text-gray-300 select-none cursor-pointer mr-5">
-                {{ $t("register.terms") }}
-              </span>
-              <nuxt-link
-                :to="{ name: 'index' }"
-                class="text-14 text-green-500 no-underline hover:underline select-none"
-              >
-                {{ $t("register.links.terms") }}
-              </nuxt-link>
-            </div>
-          </FormCheckbox>
-        </FormGroup>
-
-        <!-- Submit -->
-        <ButtonPrimary
-          :disabled="missingCredentials"
-          type="submit"
-          icon="user"
-          class="shadow-xl mx-auto my-72"
+      <!-- Terms -->
+      <FormGroup>
+        <FormCheckbox
+          v-model="terms"
+          name="terms"
         >
-          {{ $t("buttons.create_account") }}
-        </ButtonPrimary>
-      </form>
-    </ContentSection>
-  </main>
+          <div class="flex flex-wrap">
+            <span class="text-14 text-gray-300 select-none cursor-pointer mr-5">
+              {{ $t("register.terms") }}
+            </span>
+            <nuxt-link
+              :to="{ name: 'index' }"
+              class="text-14 text-green-500 no-underline hover:underline select-none"
+            >
+              {{ $t("register.links.terms") }}
+            </nuxt-link>
+          </div>
+        </FormCheckbox>
+      </FormGroup>
+
+      <!-- Submit -->
+      <ButtonPrimary
+        :disabled="missingCredentials"
+        type="submit"
+        icon="user"
+        class="mx-auto mt-36"
+      >
+        {{ $t("buttons.create_account") }}
+      </ButtonPrimary>
+    </form>
+  </div>
 </template>
 
 <script>
@@ -127,12 +123,20 @@ import Heading from '@/components/globals/Heading'
 import FormGroup from '@/components/forms/FormGroup'
 import FormLabel from '@/components/forms/FormLabel'
 import FormInput from '@/components/forms/FormInput'
-import ContentSection from '@/components/globals/ContentSection'
 import FormCheckbox from '@/components/forms/FormCheckbox'
 import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 import FormValidation from '@/components/forms/FormValidation'
 
 export default {
+  components: {
+    Heading,
+    FormGroup,
+    FormLabel,
+    FormInput,
+    FormCheckbox,
+    ButtonPrimary,
+    FormValidation
+  },
   layout: 'auth',
   middleware: ['guest'],
   head() {
@@ -151,16 +155,6 @@ export default {
         }
       ]
     }
-  },
-  components: {
-    Heading,
-    FormGroup,
-    FormLabel,
-    FormInput,
-    ContentSection,
-    FormCheckbox,
-    ButtonPrimary,
-    FormValidation
   },
   data() {
     return {

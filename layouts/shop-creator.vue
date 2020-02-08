@@ -26,7 +26,7 @@
     <ShopNavigation/>
 
     <!-- Page content -->
-    <nuxt/>
+    <Nuxt/>
 
     <!-- Footer -->
     <Footer/>
