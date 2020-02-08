@@ -24,7 +24,7 @@
       <!-- Email -->
       <FormGroup>
         <FormLabel name="email">
-          {{ $t("forms.labels.email") }}
+          {{ $t("form.labels.email") }}
         </FormLabel>
         <FormInput
           ref="autofocus"

@@ -1,7 +1,7 @@
 <template>
   <div>
     <FormLabel name="country_id">
-      {{ $t("forms.labels.country") }}
+      {{ $t("form.labels.country") }}
     </FormLabel>
     <FormSelect
       :errors="errors"

@@ -10,7 +10,7 @@
           tag="h1"
           visual="h3"
         >
-          {{ $t("forms.labels.avatar") }}
+          {{ $t("form.labels.avatar") }}
         </Heading>
 
         <!-- Delete avatar -->
@@ -43,7 +43,7 @@
           tag="h1"
           visual="h3"
         >
-          {{ $t("forms.labels.cover_image") }}
+          {{ $t("form.labels.cover_image") }}
         </Heading>
 
         <!-- Delete cover -->
@@ -75,7 +75,7 @@
         tag="h1"
         visual="h3"
       >
-        {{ $t("forms.labels.theme_selection") }}
+        {{ $t("form.labels.theme_selection") }}
       </Heading>
 
       <!-- Tiles list -->

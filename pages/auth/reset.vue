@@ -23,7 +23,7 @@
       <!-- Email -->
       <FormGroup>
         <FormLabel name="user">
-          {{ $t("forms.labels.email") }}
+          {{ $t("form.labels.email") }}
         </FormLabel>
         <FormInput
           ref="autofocus"
@@ -42,7 +42,7 @@
       <!-- Password -->
       <FormGroup>
         <FormLabel name="password">
-          {{ $t("forms.labels.password") }}
+          {{ $t("form.labels.password") }}
         </FormLabel>
         <FormInput
           v-model="form.password"
@@ -60,7 +60,7 @@
       <!-- Password confirmation -->
       <FormGroup>
         <FormLabel name="password_confirmation">
-          {{ $t("forms.labels.password_confirmation") }}
+          {{ $t("form.labels.password_confirmation") }}
         </FormLabel>
         <FormInput
           v-model="form.password_confirmation"

@@ -1,5 +1,5 @@
 export default {
-  forms: {
+  form: {
     labels: {
       address_line_1: 'Indirizzo linea 1',
       address_line_2: 'Indirizzo linea 2',

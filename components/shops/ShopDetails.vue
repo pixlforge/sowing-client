@@ -3,7 +3,7 @@
 
     <!-- Postal code -->
     <ShopDetailsGroupInline
-      :title="$t('forms.labels.postal_code')"
+      :title="$t('form.labels.postal_code')"
     >
       <FormInput
         v-model="localPostalCode"
@@ -19,7 +19,7 @@
 
     <!-- City -->
     <ShopDetailsGroupInline
-      :title="$t('forms.labels.city')"
+      :title="$t('form.labels.city')"
     >
       <FormInput
         v-model="localCity"
@@ -35,7 +35,7 @@
 
     <!-- Country -->
     <ShopDetailsGroupInline
-      :title="$t('forms.labels.country')"
+      :title="$t('form.labels.country')"
     >
       <FormSelect
         v-model="localCountry"
@@ -61,7 +61,7 @@
 
     <!-- Short description FR -->
     <ShopDetailsGroup
-      :title="$t('forms.labels.description_short')"
+      :title="$t('form.labels.description_short')"
       :language="$t('languages.french')"
       :description="$t('shop_creator.steps.details.description_short_description')"
       class="my-72"
@@ -76,7 +76,7 @@
 
     <!-- Long description FR -->
     <ShopDetailsGroup
-      :title="$t('forms.labels.description_long')"
+      :title="$t('form.labels.description_long')"
       :language="$t('languages.french')"
       :description="$t('shop_creator.steps.details.description_long_description')"
       class="my-72"
@@ -93,7 +93,7 @@
 
     <!-- Short description EN -->
     <ShopDetailsGroup
-      :title="$t('forms.labels.description_short')"
+      :title="$t('form.labels.description_short')"
       :language="$t('languages.english')"
       :description="$t('shop_creator.steps.details.description_short_description')"
       class="my-72"
@@ -108,7 +108,7 @@
 
     <!-- Long description EN -->
     <ShopDetailsGroup
-      :title="$t('forms.labels.description_long')"
+      :title="$t('form.labels.description_long')"
       :language="$t('languages.english')"
       :description="$t('shop_creator.steps.details.description_long_description')"
       class="my-72"
@@ -125,7 +125,7 @@
 
     <!-- Short description DE -->
     <ShopDetailsGroup
-      :title="$t('forms.labels.description_short')"
+      :title="$t('form.labels.description_short')"
       :language="$t('languages.german')"
       :description="$t('shop_creator.steps.details.description_short_description')"
       class="my-72"
@@ -140,7 +140,7 @@
 
     <!-- Long description DE -->
     <ShopDetailsGroup
-      :title="$t('forms.labels.description_long')"
+      :title="$t('form.labels.description_long')"
       :language="$t('languages.german')"
       :description="$t('shop_creator.steps.details.description_long_description')"
       class="my-72"
@@ -157,7 +157,7 @@
 
     <!-- Short description IT -->
     <ShopDetailsGroup
-      :title="$t('forms.labels.description_short')"
+      :title="$t('form.labels.description_short')"
       :language="$t('languages.italian')"
       :description="$t('shop_creator.steps.details.description_short_description')"
       class="my-72"
@@ -172,7 +172,7 @@
 
     <!-- Long description IT -->
     <ShopDetailsGroup
-      :title="$t('forms.labels.description_long')"
+      :title="$t('form.labels.description_long')"
       :language="$t('languages.italian')"
       :description="$t('shop_creator.steps.details.description_long_description')"
       class="my-72"

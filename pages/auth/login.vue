@@ -18,7 +18,7 @@
       <!-- Email -->
       <FormGroup>
         <FormLabel name="email">
-          {{ $t("forms.labels.email") }}
+          {{ $t("form.labels.email") }}
         </FormLabel>
         <FormInput
           ref="autofocus"
@@ -38,7 +38,7 @@
       <!-- Password -->
       <FormGroup>
         <FormLabel name="password">
-          {{ $t("forms.labels.password") }}
+          {{ $t("form.labels.password") }}
         </FormLabel>
         <FormInput
           v-model="form.password"

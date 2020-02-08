@@ -20,7 +20,7 @@
         selected
         disabled
       >
-        {{ $t("forms.select") }}
+        {{ $t("form.select") }}
       </option>
       <slot/>
     </select>

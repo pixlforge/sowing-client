@@ -28,7 +28,7 @@
           <!-- First name -->
           <FormRowGroup>
             <FormLabel name="first_name">
-              {{ $t('forms.labels.first_name') }}
+              {{ $t('form.labels.first_name') }}
             </FormLabel>
             <FormInput
               v-model="form.first_name"
@@ -45,7 +45,7 @@
           <!-- Last name -->
           <FormRowGroup>
             <FormLabel name="last_name">
-              {{ $t('forms.labels.last_name') }}
+              {{ $t('form.labels.last_name') }}
             </FormLabel>
             <FormInput
               v-model="form.last_name"
@@ -63,7 +63,7 @@
         <!-- Company name -->
         <FormGroup>
           <FormLabel name="company_name">
-            {{ $t('forms.labels.company_name') }}
+            {{ $t('form.labels.company_name') }}
           </FormLabel>
           <FormInput
             v-model="form.company_name"
@@ -81,7 +81,7 @@
           <!-- Address line 1 -->
           <FormRowGroup>
             <FormLabel name="address_line_1">
-              {{ $t('forms.labels.address_line_1') }}
+              {{ $t('form.labels.address_line_1') }}
             </FormLabel>
             <FormInput
               v-model="form.address_line_1"
@@ -98,7 +98,7 @@
           <!-- Address line 2 -->
           <FormRowGroup>
             <FormLabel name="address_line_2">
-              {{ $t('forms.labels.address_line_2') }}
+              {{ $t('form.labels.address_line_2') }}
             </FormLabel>
             <FormInput
               v-model="form.address_line_2"
@@ -118,7 +118,7 @@
           <!-- Postal code -->
           <FormRowGroup>
             <FormLabel name="postal_code">
-              {{ $t('forms.labels.postal_code') }}
+              {{ $t('form.labels.postal_code') }}
             </FormLabel>
             <FormInput
               v-model="form.postal_code"
@@ -135,7 +135,7 @@
           <!-- City -->
           <FormRowGroup>
             <FormLabel name="city">
-              {{ $t('forms.labels.city') }}
+              {{ $t('form.labels.city') }}
             </FormLabel>
             <FormInput
               v-model="form.city"
@@ -166,7 +166,7 @@
             name="is_default"
           >
             <FormCheckboxLabel name="is_default">
-              {{ $t('forms.labels.default_address') }}
+              {{ $t('form.labels.default_address') }}
             </FormCheckboxLabel>
           </FormCheckbox>
         </FormGroup>

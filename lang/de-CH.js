@@ -12,7 +12,7 @@ import creditCards from '~/lang/de-CH/creditCards'
 import dropzone from '~/lang/de-CH/dropzone'
 import faq from '~/lang/de-CH/faq'
 import footer from '~/lang/de-CH/footer'
-import forms from '~/lang/de-CH/forms'
+import form from '~/lang/de-CH/form'
 import home from '~/lang/de-CH/home'
 import languages from '~/lang/de-CH/languages'
 import login from '~/lang/de-CH/login'
@@ -50,7 +50,7 @@ export default {
   ...dropzone,
   ...faq,
   ...footer,
-  ...forms,
+  ...form,
   ...home,
   ...languages,
   ...login,

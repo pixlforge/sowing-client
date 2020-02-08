@@ -12,7 +12,7 @@ import creditCards from '~/lang/en-GB/creditCards'
 import dropzone from '~/lang/en-GB/dropzone'
 import faq from '~/lang/en-GB/faq'
 import footer from '~/lang/en-GB/footer'
-import forms from '~/lang/en-GB/forms'
+import form from '~/lang/en-GB/form'
 import home from '~/lang/en-GB/home'
 import languages from '~/lang/en-GB/languages'
 import login from '~/lang/en-GB/login'
@@ -50,7 +50,7 @@ export default {
   ...dropzone,
   ...faq,
   ...footer,
-  ...forms,
+  ...form,
   ...home,
   ...languages,
   ...login,

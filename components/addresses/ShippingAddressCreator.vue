@@ -5,7 +5,7 @@
       <!-- First name -->
       <FormGroup tight>
         <FormLabel name="first_name">
-          {{ $t("forms.labels.first_name") }}
+          {{ $t("form.labels.first_name") }}
         </FormLabel>
         <FormInput
           v-model="form.first_name"
@@ -22,7 +22,7 @@
       <!-- Last name -->
       <FormGroup tight>
         <FormLabel name="last_name">
-          {{ $t("forms.labels.last_name") }}
+          {{ $t("form.labels.last_name") }}
         </FormLabel>
         <FormInput
           v-model="form.last_name"
@@ -39,7 +39,7 @@
       <!-- Company name -->
       <FormGroup tight>
         <FormLabel name="company_name">
-          {{ $t("forms.labels.company_name") }}
+          {{ $t("form.labels.company_name") }}
         </FormLabel>
         <FormInput
           v-model="form.company_name"
@@ -56,7 +56,7 @@
       <!-- Address line 1 -->
       <FormGroup tight>
         <FormLabel name="address_line_1">
-          {{ $t("forms.labels.address_line_1") }}
+          {{ $t("form.labels.address_line_1") }}
         </FormLabel>
         <FormInput
           v-model="form.address_line_1"
@@ -73,7 +73,7 @@
       <!-- Address line 2 -->
       <FormGroup tight>
         <FormLabel name="address_line_2">
-          {{ $t("forms.labels.address_line_2") }}
+          {{ $t("form.labels.address_line_2") }}
         </FormLabel>
         <FormInput
           v-model="form.address_line_2"
@@ -90,7 +90,7 @@
       <!-- Postal code -->
       <FormGroup tight>
         <FormLabel name="postal_code">
-          {{ $t("forms.labels.postal_code") }}
+          {{ $t("form.labels.postal_code") }}
         </FormLabel>
         <FormInput
           v-model="form.postal_code"
@@ -107,7 +107,7 @@
       <!-- City -->
       <FormGroup tight>
         <FormLabel name="city">
-          {{ $t("forms.labels.city") }}
+          {{ $t("form.labels.city") }}
         </FormLabel>
         <FormInput
           v-model="form.city"
