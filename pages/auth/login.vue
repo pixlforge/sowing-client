@@ -87,6 +87,15 @@ import FormValidation from '@/components/forms/FormValidation'
 import ButtonLinkTertiary from '@/components/buttons/ButtonLinkTertiary'
 
 export default {
+  components: {
+    Heading,
+    FormLabel,
+    FormInput,
+    FormGroup,
+    ButtonPrimary,
+    FormValidation,
+    ButtonLinkTertiary
+  },
   layout: 'auth',
   middleware: ['guest'],
   head() {
@@ -105,15 +114,6 @@ export default {
         }
       ]
     }
-  },
-  components: {
-    Heading,
-    FormLabel,
-    FormInput,
-    FormGroup,
-    ButtonPrimary,
-    FormValidation,
-    ButtonLinkTertiary
   },
   data() {
     return {

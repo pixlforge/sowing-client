@@ -128,6 +128,15 @@ import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 import FormValidation from '@/components/forms/FormValidation'
 
 export default {
+  components: {
+    Heading,
+    FormGroup,
+    FormLabel,
+    FormInput,
+    FormCheckbox,
+    ButtonPrimary,
+    FormValidation
+  },
   layout: 'auth',
   middleware: ['guest'],
   head() {
@@ -146,15 +155,6 @@ export default {
         }
       ]
     }
-  },
-  components: {
-    Heading,
-    FormGroup,
-    FormLabel,
-    FormInput,
-    FormCheckbox,
-    ButtonPrimary,
-    FormValidation
   },
   data() {
     return {

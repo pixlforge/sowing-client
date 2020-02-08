@@ -4,11 +4,16 @@
     <!-- Page title -->
     <Heading
       tag="h1"
-      visual="h1"
-      utilities="md:text-center"
+      visual="h4"
+      utilities="text-center"
     >
       {{ $t("password_reset.title") }}
     </Heading>
+
+    <!-- Instructions -->
+    <Paragraph class="text-center mx-auto my-36">
+      {{ $t("password_reset.instructions") }}
+    </Paragraph>
 
     <form
       @submit.prevent="reset"
@@ -70,7 +75,7 @@
       <ButtonPrimary
         type="submit"
         icon="redo-alt"
-        class="mx-auto my-72"
+        class="mx-auto mt-36"
       >
         {{ $t("buttons.password_reset") }}
       </ButtonPrimary>
@@ -85,12 +90,22 @@ import Heading from '@/components/globals/Heading'
 import FormGroup from '@/components/forms/FormGroup'
 import FormLabel from '@/components/forms/FormLabel'
 import FormInput from '@/components/forms/FormInput'
+import Paragraph from '@/components/paragraphs/Paragraph'
 import FormValidation from '@/components/forms/FormValidation'
 import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 
 export default {
-  layout: 'auth',
+  components: {
+    Heading,
+    FormGroup,
+    FormLabel,
+    FormInput,
+    Paragraph,
+    FormValidation,
+    ButtonPrimary
+  },
   middleware: ['guest'],
+  layout: 'auth',
   head() {
     return {
       title: this.$t('password_reset.title'),
@@ -107,14 +122,6 @@ export default {
         }
       ]
     }
-  },
-  components: {
-    Heading,
-    FormGroup,
-    FormLabel,
-    FormInput,
-    FormValidation,
-    ButtonPrimary
   },
   data() {
     return {

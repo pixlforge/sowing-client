@@ -10,7 +10,7 @@
       {{ $t("password_email.paragraphs.first") }}
     </Heading>
 
-    <!-- Infos -->
+    <!-- Instructions -->
     <Paragraph class="text-center mx-auto my-36">
       {{ $t("password_email.paragraphs.second") }}
     </Paragraph>
@@ -65,8 +65,17 @@ import FormValidation from '@/components/forms/FormValidation'
 import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 
 export default {
-  layout: 'auth',
+  components: {
+    Heading,
+    FormGroup,
+    FormLabel,
+    FormInput,
+    Paragraph,
+    FormValidation,
+    ButtonPrimary
+  },
   middleware: ['guest'],
+  layout: 'auth',
   head() {
     return {
       title: this.$t('password_email.title'),
@@ -83,15 +92,6 @@ export default {
         }
       ]
     }
-  },
-  components: {
-    Heading,
-    FormGroup,
-    FormLabel,
-    FormInput,
-    Paragraph,
-    FormValidation,
-    ButtonPrimary
   },
   data() {
     return {

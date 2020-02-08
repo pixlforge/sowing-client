@@ -19,13 +19,13 @@
 </template>
 
 <script>
-import LogoLink from '@/components/globals/LogoLink'
 import Alert from '@/components/globals/Alert'
+import LogoLink from '@/components/globals/LogoLink'
 
 export default {
   components: {
-    LogoLink,
-    Alert
+    Alert,
+    LogoLink
   }
 }
 </script>
