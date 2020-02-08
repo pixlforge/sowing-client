@@ -100,11 +100,6 @@ import StreakRegister from '@/components/streaks/StreakRegister'
 import ButtonLinkPrimary from '@/components/buttons/ButtonLinkPrimary'
 
 export default {
-  head() {
-    return {
-      title: `${this.shop.name} | ${this.title}`
-    }
-  },
   components: {
     Heading,
     Header,
@@ -113,6 +108,11 @@ export default {
     HeaderList,
     StreakRegister,
     ButtonLinkPrimary
+  },
+  head() {
+    return {
+      title: `${this.shop.name} | ${this.title}`
+    }
   },
   mixins: [theming],
   data() {

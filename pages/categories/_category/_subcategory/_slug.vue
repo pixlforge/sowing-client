@@ -30,15 +30,15 @@ import Product from '@/components/products/Product'
 import ContentSection from '@/components/globals/ContentSection'
 
 export default {
-  head() {
-    return {
-      title: this.subcategory.name[this.locale]
-    }
-  },
   components: {
     Header,
     Product,
     ContentSection
+  },
+  head() {
+    return {
+      title: this.subcategory.name[this.locale]
+    }
   },
   data() {
     return {

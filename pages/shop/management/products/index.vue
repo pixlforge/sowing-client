@@ -34,6 +34,15 @@ import AddButtonLink from '@/components/buttons/AddButtonLink'
 import ResourceHeader from '@/components/resources/ResourceHeader'
 
 export default {
+  components: {
+    Card,
+    Heading,
+    AddButtonLink,
+    ResourceHeader
+  },
+  mixins: [shopManagement],
+  middleware: ['authenticated', 'hasShop'],
+  layout: 'shop-management',
   head() {
     return {
       title: this.$t('products.management.index.title'),
@@ -50,15 +59,6 @@ export default {
         }
       ]
     }
-  },
-  layout: 'shop-management',
-  middleware: ['authenticated', 'hasShop'],
-  components: {
-    Card,
-    Heading,
-    AddButtonLink,
-    ResourceHeader
-  },
-  mixins: [shopManagement]
+  }
 }
 </script>

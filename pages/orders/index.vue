@@ -36,6 +36,11 @@ import Header from '@/components/headers/Header'
 import ContentSection from '@/components/globals/ContentSection'
 
 export default {
+  components: {
+    Order,
+    Header,
+    ContentSection
+  },
   middleware: ['authenticated'],
   head() {
     return {
@@ -53,11 +58,6 @@ export default {
         }
       ]
     }
-  },
-  components: {
-    Order,
-    Header,
-    ContentSection
   },
   data() {
     return {

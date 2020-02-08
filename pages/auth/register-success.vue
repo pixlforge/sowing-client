@@ -29,15 +29,15 @@ import Splash from '@/components/globals/Splash'
 import Header from '@/components/headers/Header'
 
 export default {
+  components: {
+    Splash,
+    Header
+  },
   middleware: ['authenticated'],
   head() {
     return {
       title: this.$t('register_success.title')
     }
-  },
-  components: {
-    Splash,
-    Header
   }
 }
 </script>

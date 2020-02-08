@@ -53,7 +53,21 @@ import ShopCreatorControls from '@/components/shops/ShopCreatorControls'
 import IllustrationSuccess from '@/components/illustrations/IllustrationSuccess'
 
 export default {
+  components: {
+    Splash,
+    ContentSection,
+    ButtonPrimary,
+    ButtonTertiary,
+    ShopCreatorControls,
+    IllustrationSuccess
+  },
+  mixins: [theming],
   middleware: ['authenticated', 'hasShop'],
+  layout: 'shop-creator',
+  transition: {
+    name: 'slide',
+    mode: 'out-in'
+  },
   head() {
     return {
       title: this.$t('shop_creator.steps.done.title'),
@@ -71,20 +85,6 @@ export default {
       ]
     }
   },
-  layout: 'shop-creator',
-  transition: {
-    name: 'slide',
-    mode: 'out-in'
-  },
-  components: {
-    Splash,
-    ContentSection,
-    ButtonPrimary,
-    ButtonTertiary,
-    ShopCreatorControls,
-    IllustrationSuccess
-  },
-  mixins: [theming],
   computed: {
     ...mapGetters({
       stepName: 'shop/stepName',

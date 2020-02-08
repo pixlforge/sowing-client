@@ -65,16 +65,16 @@ import ContentSection from '@/components/globals/ContentSection'
 import SubCategory from '@/components/categories/SubCategory'
 
 export default {
-  head() {
-    return {
-      title: this.category.name[this.locale]
-    }
-  },
   components: {
     Heading,
     Header,
     ContentSection,
     SubCategory
+  },
+  head() {
+    return {
+      title: this.category.name[this.locale]
+    }
   },
   data() {
     return {

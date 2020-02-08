@@ -50,6 +50,12 @@ import ContentSection from '@/components/globals/ContentSection'
 import SearchResult from '@/components/search/SearchResult'
 
 export default {
+  components: {
+    Header,
+    FormInput,
+    ContentSection,
+    SearchResult
+  },
   head() {
     return {
       title: this.$t('search.title'),
@@ -61,12 +67,6 @@ export default {
         }
       ]
     }
-  },
-  components: {
-    Header,
-    FormInput,
-    ContentSection,
-    SearchResult
   },
   data() {
     return {

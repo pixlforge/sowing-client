@@ -125,6 +125,16 @@ import CartOverviewProduct from '@/components/cart/CartOverviewProduct'
 import PaymentMethods from '@/components/payment-methods/PaymentMethods'
 
 export default {
+  components: {
+    Heading,
+    Header,
+    ContentSection,
+    ButtonPrimary,
+    ShippingMethods,
+    ShippingAddress,
+    CartOverviewProduct,
+    PaymentMethods
+  },
   middleware: ['authenticated'],
   head() {
     return {
@@ -142,16 +152,6 @@ export default {
         }
       ]
     }
-  },
-  components: {
-    Heading,
-    Header,
-    ContentSection,
-    ButtonPrimary,
-    ShippingMethods,
-    ShippingAddress,
-    CartOverviewProduct,
-    PaymentMethods
   },
   data() {
     return {

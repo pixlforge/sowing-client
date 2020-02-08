@@ -66,7 +66,23 @@ import ShopCreatorControls from '@/components/shops/ShopCreatorControls'
 import ShopFeatureContainer from '@/components/shops/ShopFeatureContainer'
 
 export default {
+  components: {
+    Heading,
+    ShopName,
+    ContentSection,
+    Paragraph,
+    ButtonPrimary,
+    ButtonTertiary,
+    ShopCreatorControls,
+    ShopFeatureContainer
+  },
+  mixins: [theming],
   middleware: ['authenticated'],
+  layout: 'shop-creator',
+  transition: {
+    name: 'slide',
+    mode: 'out-in'
+  },
   head() {
     return {
       title: this.$t('shop_creator.steps.name.title'),
@@ -84,22 +100,6 @@ export default {
       ]
     }
   },
-  layout: 'shop-creator',
-  transition: {
-    name: 'slide',
-    mode: 'out-in'
-  },
-  components: {
-    Heading,
-    ShopName,
-    ContentSection,
-    Paragraph,
-    ButtonPrimary,
-    ButtonTertiary,
-    ShopCreatorControls,
-    ShopFeatureContainer
-  },
-  mixins: [theming],
   computed: {
     ...mapGetters({
       terms: 'shop/terms',

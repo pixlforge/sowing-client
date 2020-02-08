@@ -80,6 +80,13 @@ import ButtonLinkPrimary from '@/components/buttons/ButtonLinkPrimary'
 import CartOverviewProduct from '@/components/cart/CartOverviewProduct'
 
 export default {
+  components: {
+    Splash,
+    Header,
+    ContentSection,
+    ButtonLinkPrimary,
+    CartOverviewProduct
+  },
   middleware: ['authenticated'],
   head() {
     return {
@@ -97,13 +104,6 @@ export default {
         }
       ]
     }
-  },
-  components: {
-    Splash,
-    Header,
-    ContentSection,
-    ButtonLinkPrimary,
-    CartOverviewProduct
   },
   computed: {
     ...mapGetters({

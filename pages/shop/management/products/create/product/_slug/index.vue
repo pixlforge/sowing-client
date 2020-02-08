@@ -272,28 +272,6 @@ import FormLabelDescription from '@/components/forms/FormLabelDescription'
 import ProductCreatorStep from '@/components/products/creator/ProductCreatorStep'
 
 export default {
-  head() {
-    return {
-      title: this.$t('products.management.create.title'),
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: ''
-        },
-        {
-          hid: 'robots',
-          name: 'robots',
-          content: 'noindex'
-        }
-      ]
-    }
-  },
-  layout: 'create-product',
-  middleware: [
-    'authenticated',
-    'hasShop'
-  ],
   components: {
     InfoTip,
     FormGroup,
@@ -311,6 +289,28 @@ export default {
     ProductCreatorStep
   },
   mixins: [theming],
+  middleware: [
+    'authenticated',
+    'hasShop'
+  ],
+  layout: 'create-product',
+  head() {
+    return {
+      title: this.$t('products.management.create.title'),
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: ''
+        },
+        {
+          hid: 'robots',
+          name: 'robots',
+          content: 'noindex'
+        }
+      ]
+    }
+  },
   data() {
     return {
       form: {

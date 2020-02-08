@@ -118,6 +118,27 @@ import FormLabelDescription from '@/components/forms/FormLabelDescription'
 import ProductCreatorStep from '@/components/products/creator/ProductCreatorStep'
 
 export default {
+  components: {
+    InfoTip,
+    FormGroup,
+    FormInput,
+    FormLabel,
+    BackButton,
+    FormSection,
+    FormFieldset,
+    FormValidation,
+    ButtonPrimary,
+    FormSectionTitle,
+    ButtonLinkTertiary,
+    FormLabelDescription,
+    ProductCreatorStep
+  },
+  mixins: [theming],
+  layout: 'create-product',
+  middleware: [
+    'authenticated',
+    'hasShop'
+  ],
   head() {
     return {
       title: `${this.$t('products.management.create.add_price')} | ${this.product.name[this.locale]}`,
@@ -135,27 +156,6 @@ export default {
       ]
     }
   },
-  layout: 'create-product',
-  middleware: [
-    'authenticated',
-    'hasShop'
-  ],
-  components: {
-    InfoTip,
-    FormGroup,
-    FormInput,
-    FormLabel,
-    BackButton,
-    FormSection,
-    FormFieldset,
-    FormValidation,
-    ButtonPrimary,
-    FormSectionTitle,
-    ButtonLinkTertiary,
-    FormLabelDescription,
-    ProductCreatorStep
-  },
-  mixins: [theming],
   data() {
     return {
       form: {

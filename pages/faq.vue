@@ -70,6 +70,14 @@ import ParagraphGroup from '@/components/paragraphs/ParagraphGroup'
 import StreakNewsletter from '@/components/streaks/StreakNewsletter'
 
 export default {
+  components: {
+    Heading,
+    Header,
+    ContentSection,
+    Paragraph,
+    ParagraphGroup,
+    StreakNewsletter
+  },
   head() {
     return {
       title: this.$t('faq.title'),
@@ -81,14 +89,6 @@ export default {
         }
       ]
     }
-  },
-  components: {
-    Heading,
-    Header,
-    ContentSection,
-    Paragraph,
-    ParagraphGroup,
-    StreakNewsletter
   },
   asyncData({ app }) {
     return {

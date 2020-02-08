@@ -49,6 +49,15 @@ import StreakNewsletter from '@/components/streaks/StreakNewsletter'
 import IllustrationNewIdeas from '@/components/illustrations/IllustrationNewIdeas'
 
 export default {
+  components: {
+    Heading,
+    List,
+    Header,
+    ContentSection,
+    Paragraph,
+    StreakNewsletter,
+    IllustrationNewIdeas
+  },
   head() {
     return {
       title: this.$t('advice_to_creators.title'),
@@ -60,15 +69,6 @@ export default {
         }
       ]
     }
-  },
-  components: {
-    Heading,
-    List,
-    Header,
-    ContentSection,
-    Paragraph,
-    StreakNewsletter,
-    IllustrationNewIdeas
   },
   computed: {
     advices() {

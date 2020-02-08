@@ -45,6 +45,13 @@ import StreakNewsletter from '@/components/streaks/StreakNewsletter'
 import HeaderButtonLink from '@/components/buttons/HeaderButtonLink'
 
 export default {
+  components: {
+    Header,
+    ContentSection,
+    ProductDetails,
+    StreakNewsletter,
+    HeaderButtonLink
+  },
   head() {
     return {
       title: this.product.name[this.locale],
@@ -56,13 +63,6 @@ export default {
         }
       ]
     }
-  },
-  components: {
-    Header,
-    ContentSection,
-    ProductDetails,
-    StreakNewsletter,
-    HeaderButtonLink
   },
   mixins: [theming],
   data() {

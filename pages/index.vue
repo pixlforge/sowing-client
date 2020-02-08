@@ -131,11 +131,6 @@ import StreakNewsletter from '@/components/streaks/StreakNewsletter'
 import FeaturedCategory from '@/components/categories/FeaturedCategory'
 
 export default {
-  head() {
-    return {
-      title: this.$t('home.title')
-    }
-  },
   components: {
     Review,
     Heading,
@@ -146,6 +141,11 @@ export default {
     StreakRegister,
     StreakNewsletter,
     FeaturedCategory
+  },
+  head() {
+    return {
+      title: this.$t('home.title')
+    }
   },
   data() {
     return {

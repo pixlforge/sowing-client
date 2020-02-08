@@ -51,6 +51,13 @@ import FormCheckbox from '@/components/forms/FormCheckbox'
 import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 
 export default {
+  components: {
+    Terms,
+    Header,
+    ContentSection,
+    FormCheckbox,
+    ButtonPrimary
+  },
   middleware: ['authenticated'],
   head() {
     return {
@@ -68,13 +75,6 @@ export default {
         }
       ]
     }
-  },
-  components: {
-    Terms,
-    Header,
-    ContentSection,
-    FormCheckbox,
-    ButtonPrimary
   },
   computed: {
     ...mapGetters({

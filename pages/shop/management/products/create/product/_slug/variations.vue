@@ -46,6 +46,17 @@ import BackButton from '@/components/buttons/BackButton'
 import ProductCreatorStep from '@/components/products/creator/ProductCreatorStep'
 
 export default {
+  components: {
+    InfoTip,
+    BackButton,
+    ProductCreatorStep
+  },
+  mixins: [theming],
+  middleware: [
+    'authenticated',
+    'hasShop'
+  ],
+  layout: 'create-product',
   head() {
     return {
       title: `${this.$t('products.management.create.add_variations')} | ${this.product.name[this.locale]}`,
@@ -63,17 +74,6 @@ export default {
       ]
     }
   },
-  layout: 'create-product',
-  middleware: [
-    'authenticated',
-    'hasShop'
-  ],
-  components: {
-    InfoTip,
-    BackButton,
-    ProductCreatorStep
-  },
-  mixins: [theming],
   data() {
     return {
       form: {},
