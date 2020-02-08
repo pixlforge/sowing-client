@@ -1,582 +1,75 @@
+import account from '~/lang/en-GB/account'
+import accountCard from '~/lang/en-GB/accountCard'
+import adviceToCreators from '~/lang/en-GB/adviceToCreators'
+import alerts from '~/lang/en-GB/alerts'
+import aria from '~/lang/en-GB/aria'
+import buttons from '~/lang/en-GB/buttons'
+import cart from '~/lang/en-GB/cart'
+import categories from '~/lang/en-GB/categories'
+import checkout from '~/lang/en-GB/checkout'
+import comingSoon from '~/lang/en-GB/comingSoon'
+import creditCards from '~/lang/en-GB/creditCards'
+import dropzone from '~/lang/en-GB/dropzone'
+import faq from '~/lang/en-GB/faq'
+import footer from '~/lang/en-GB/footer'
+import forms from '~/lang/en-GB/forms'
+import home from '~/lang/en-GB/home'
+import languages from '~/lang/en-GB/languages'
+import login from '~/lang/en-GB/login'
+import modals from '~/lang/en-GB/modals'
+import navbar from '~/lang/en-GB/navbar'
+import orders from '~/lang/en-GB/orders'
+import passwordEmail from '~/lang/en-GB/passwordEmail'
+import passwordReset from '~/lang/en-GB/passwordReset'
+import products from '~/lang/en-GB/products'
+import register from '~/lang/en-GB/register'
+import registerSuccess from '~/lang/en-GB/registerSuccess'
+import search from '~/lang/en-GB/search'
+import shop from '~/lang/en-GB/shop'
+import shopCreator from '~/lang/en-GB/shopCreator'
+import shopDetails from '~/lang/en-GB/shopDetails'
+import sideMenu from '~/lang/en-GB/sideMenu'
+import streaks from '~/lang/en-GB/streaks'
+import stripe from '~/lang/en-GB/stripe'
+import terms from '~/lang/en-GB/terms'
+import toasts from '~/lang/en-GB/toasts'
+import verify from '~/lang/en-GB/verify'
+
 export default {
-  /**
-   * Account card component
-   */
-  account_card: {
-    member_for: 'Member since',
-    verified: 'This account is verified.',
-    verification_pending: 'Verification pending.'
-  },
-
-  /**
-   * Advice to creators page
-   */
-  advice_to_creators: {
-    title: 'Advice to creators',
-    created_a_shop: 'You chose to open a shop on Sowing and sell your creations? Congratulations!',
-    list_of_advices: "Our desire is that you achieve maximum sales. That's why we've put together a small list of tips to help you achieve this:",
-    advice_01: 'Take the time and care to personalize your shop. You can change the general color, insert photos and describe your shop.',
-    advice_02: 'Switzerland is a multilingual country. Also, if you take the time to translate your descriptions into other languages, you will reach more people.',
-    advice_03: 'When inserting an object for sale, pay special attention to the quality of your photos (whole, not too dark or too bright, clear, putting your object in first place, etc.).',
-    advice_04: 'Indicate all necessary information, such as dimensions, materials used, methods used, etc. The more complete you are, the more likely you are to close a sale.',
-    advice_05: 'Sowing is a hand-only platform that aims to connect sellers and buyers. Therefore, all costs must be included in the selling price: Price of the item, VAT, delivery charges and commission charged by Sowing.',
-    advice_06: 'Do not raise the price of your item in which case you may run out of sales.',
-    advice_07: 'The repayment of VAT is not our responsibility, you are responsible.',
-    advice_08: 'Delivery costs are to be included in the selling price. When creating your shop, you can choose to send your items outside Switzerland; be careful, the shipping costs are not the same and you will have to calculate at the fair for the sale price.',
-    advice_09: 'Sowing commissions up to 8% of the total value of the object. This percentage is used to pay for the platform and all associated services. The sale of your items is completely free.',
-    advice_10: 'When you make a sale, make sure to send the paid items quickly. The trouble you give yourself will be appreciated by the buyers.',
-    wish_you_succcess: 'We wish you all the best on Sowing and we thank you from the bottom of our hearts for joining our community.'
-  },
-
-  /**
-   * Alerts
-   */
-  alerts: {
-    password_updated: 'Your password has been successfully updated!',
-    verify_email_updated: 'Your email address has been updated successfully. A verification email has been sent to your new address.'
-  },
-
-  /**
-   * ARIA
-   */
-  aria: {
-    buttons: {
-      languages: 'Languages'
-    },
-    inputs: {
-      email: 'E-mail address'
-    },
-    links: {
-      cart: 'Cart',
-      search: 'Search'
-    }
-  },
-
-  /**
-   * Buttons
-   */
-  buttons: {
-    add: 'Add',
-    add_address: 'Add an address',
-    add_payment_method: 'Add a payment method',
-    add_product: 'Add a product',
-    add_to_cart: 'Add to cart',
-    back: 'Back',
-    begin_shop_creation: 'Start the creation of my shop',
-    cancel: 'Cancel',
-    check_availability: 'Check availability',
-    connection: 'Log in',
-    connect_with_stripe: 'Connect my shop to Stripe',
-    create: 'Create',
-    create_account: 'Create account',
-    create_my_shop: 'Create my shop',
-    customize_my_shop: 'Customize my shop',
-    default: 'Set as default',
-    delete: 'Delete',
-    edit: 'Edit',
-    finalize_shop_creation: 'Finalize the creation of my shop',
-    finish: 'Finish',
-    login: 'Log in',
-    next: 'Next',
-    password_email: 'Send me a link',
-    password_reset: 'Reset password',
-    register: 'Create an account',
-    see_all_articles: 'See all articles',
-    subscribe: 'Subscribe',
-    to_my_shop_details: 'To my shop details',
-    update: 'Update',
-    view: 'View'
-  },
-
-  /**
-   * Cart
-   */
-  cart: {
-    labels: {
-      price: 'Price',
-      quantity: 'Quantity'
-    }
-  },
-
-  /**
-   * Categories
-   */
-  categories: {
-    featured_categories: 'Featured categories',
-    in: 'in',
-    img: {
-      alt: 'Category image'
-    },
-    link: {
-      see_all: 'Show all products'
-    }
-  },
-
-  /**
-   * Coming soon page
-   */
-  coming_soon: {
-    soon: 'Coming soon',
-    title: 'E-commerce Marketplace',
-    subtitle: 'Crafts & Handmade',
-    subscribe: 'Enter your email address to be kept informed of the official opening of Sowing and if you wish to create your shop before the platform launches.',
-    description_first_line: 'Market place dedicated to crafts and handmade.',
-    description_second_line: 'Create the shop that suits you and sell your creations.',
-    button: 'Keep me updated',
-    features: {
-      first: 'Create your own customizable store',
-      second: 'Sell your original creations',
-      third: 'Discover the superb creations of our artisans',
-      fourth: 'Available in 4 languages: French, English, German and Italian',
-      fifth: 'Unique in Switzerland'
-    },
-    social_networks: 'Social networks',
-    follow_us: 'Follow us also on social networks'
-  },
-
-  /**
-   * Credit Cards
-   */
-  credit_cards: {
-    ending_in: 'Ending in',
-    card_added_on: 'Card added on'
-  },
-
-  /**
-   * Dropzone
-   */
-  dropzone: {
-    dict_remove_file: 'Remove',
-    dict_cancel_upload: 'Cancel',
-    dict_cancel_upload_confirmation: 'Are you sure you want to cancel the upload?',
-    dict_default_message: 'Drag and drop an image here to download or click to choose your image.',
-    dict_fallback_message: 'Your browser is too old or incompatible.',
-    dict_file_too_big: 'This file is too large.'
-  },
-
-  /**
-   * Footer
-   */
-  footer: {
-    titles: {
-      categories: 'Categories',
-      language: 'Language',
-      sell_on_sowing: 'Sell on Sowing',
-      about: 'About',
-      social_networks: 'Social Networks'
-    },
-    links: {
-      login: 'Log in',
-      your_own_store: 'Your own store',
-      advice_to_creators: 'Advice to creators',
-      new_vendors: 'Newest vendors',
-      terms: 'Terms of use',
-      payments: 'Payment methods',
-      shipments: 'Shipments',
-      faq: 'FAQ'
-    },
-    disclaimer: {
-      rights: 'All rights reserved',
-      made_with: 'Made with',
-      by: 'by'
-    }
-  },
-
-  /**
-   * Forms
-   */
-  forms: {
-    labels: {
-      address_line_1: 'Address line 1',
-      address_line_2: 'Address line 2',
-      avatar: 'Avatar',
-      category: 'Category',
-      city: 'City',
-      company_name: 'Company',
-      country: 'Country',
-      cover_image: 'Cover image',
-      default_address: 'This address is my default address',
-      description: 'Description',
-      description_short: 'Short description',
-      description_long: 'Detailed description',
-      email: 'Email address',
-      first_name: 'First name',
-      last_name: 'Last name',
-      name: 'Name',
-      password: 'Password',
-      password_confirmation: 'Confirm password',
-      postal_code: 'Postal code',
-      price: 'Price',
-      theme_selection: 'Theme selection'
-    },
-    select: 'Select'
-  },
-
-  /**
-   * Home page
-   */
-  home: {
-    title: 'Home',
-    titles: {
-      features: 'All the Sowing advantages for you',
-      shops: 'Discover our new shops',
-      categories: 'Discover our products by category',
-      reviews: 'They gave their opinion'
-    },
-    features: {
-      first: {
-        title: 'Sowing is unique in Switzerland',
-        body: 'This platform dedicated to handmade and craft is available in 4 languages. Each creator can create his own shop for free and customize it to make it unique.'
-      },
-      second: {
-        title: 'An unprecedented visibility for you',
-        body: 'Taking part in the Sowing community is multiplying your chances of being visible on the web. Alongside other creators, you have a springboard to promote your creations throughout Switzerland and elsewhere.'
-      },
-      third: {
-        title: 'Sowing is independent',
-        body: 'And you are too! You are free to propose the articles you want, you can put your shop in pause, you make a supplement of income according to your desires in all freedom.'
-      },
-      fourth: {
-        title: 'Your security, our mission',
-        body: 'We make every effort to ensure the utmost security regarding your personal information and your transactions. Everything is done to ensure maximum comfort.'
-      }
-    }
-  },
-
-  /**
-   * Languages
-   */
-  languages: {
-    french: 'french',
-    english: 'english',
-    german: 'german',
-    italian: 'italian'
-  },
-
-  /**
-   * Navbar
-   */
-  navbar: {
-    user: {
-      logout: 'Log out'
-    }
-  },
-
-  /**
-   * Modals
-   */
-  modals: {
-    addresses: {
-      delete: {
-        title: 'Delete an address',
-        body: 'Are you sure you want to delete this address?'
-      }
-    },
-    payment_methods: {
-      delete: {
-        title: 'Delete a payment method',
-        body: 'Are you sure you want to delete this payment method?'
-      }
-    }
-  },
-
-  /**
-   * Pages
-   */
-  pages: {
-    account: {
-      title: 'My account',
-      description: 'Set up your Sowing account as you see fit.',
-      dashboard: {
-        title: 'Dashboard'
-      },
-      profile: {
-        title: 'Profile',
-        updated: 'Your profile was updated successfully!'
-      },
-      password: {
-        title: 'Password'
-      },
-      addresses: {
-        titles: {
-          index: 'Addresses',
-          show: 'My address',
-          create: 'New address',
-          edit: 'Update my address'
-        },
-        is_default: 'This is your default address.',
-        no_address_found: 'You have no address yet.'
-      },
-      payment_methods: {
-        edit: {
-          paragraph: 'Set this card as your new default payment method.'
-        },
-        titles: {
-          index: 'Payment methods',
-          create: 'Add a payment method',
-          show: 'My card in details',
-          edit: 'Update my card'
-        },
-        is_default: 'This is your default payment method.',
-        no_payment_method_found: "You don't have any payment method saved, yet."
-      }
-    },
-    cart: {
-      title: 'My cart',
-      checkout: 'Proceed to checkout',
-      in_your_cart: 'Your cart contains',
-      products: 'products',
-      for: 'for',
-      cart_is_empty: 'Your cart is empty',
-      add_something: 'Add something to it!'
-    },
-    checkout: {
-      add_address: 'Add an address',
-      change_address: 'Change address?',
-      delivery: 'Delivery',
-      delivery_address: 'Delivery address',
-      delivery_method: 'Delivery method',
-      new_address: 'New address',
-      order: 'Order',
-      payment: 'Payment',
-      subtotal: 'Subtotal',
-      title: 'Checkout',
-      total: 'Total'
-    },
-    faq: {
-      title: 'Frequently Asked Questions'
-    },
-    login: {
-      title: 'Log in to your Sowing account',
-      links: {
-        password: 'Password forgotten?',
-        register: 'Register a Sowing account'
-      }
-    },
-    orders: {
-      title: 'My orders',
-      statuses: {
-        completed: 'Completed',
-        pending: 'Pending',
-        processing: 'Processing',
-        payment_failed: 'Payment Failed'
-      }
-    },
-    password_email: {
-      title: 'Account recovery',
-      paragraphs: {
-        first: 'Forgot your password?',
-        second: 'No problem, simply enter your e-mail address in the field below and we will send you an e-mail containing a link allowing you to set a new password for your account.'
-      }
-    },
-    password_reset: {
-      title: 'Password reset'
-    },
-    register: {
-      title: 'Registering your Sowing account',
-      links: {
-        terms: 'terms of use'
-      },
-      terms: "I've read and I accept the"
-    },
-    register_success: {
-      title: 'Account created successfully!',
-      congratulations: 'Congratulations!',
-      account_created: 'Your account has been successfully created!'
-    },
-    search: {
-      title: 'Search',
-      description: 'Search for products and shops',
-      placeholder: 'Search for products and shops',
-      results_found: 'found',
-      products: 'Products',
-      shops: 'Shops',
-      no_product_found: 'No product found',
-      no_shop_found: 'No shop found'
-    },
-    shop: {
-      title: 'Management of my shop',
-      creation: 'Creation of my shop',
-      not_created_yet: "You haven't created a shop yet",
-      creation_cta_line_1: 'Create your own online shop for free today!',
-      creation_cta_line_2: "It's very easy with the Sowing shop creation assistant, just let yourself be guided.",
-      management: {
-        dashboard: {
-          title: 'Dashboard'
-        },
-        details: {
-          title: 'Details'
-        },
-        theme: {
-          title: 'Theme'
-        }
-      },
-      visit: 'Browse shop'
-    },
-    shop_details: {
-      welcome: 'Welcome to our shop',
-      interested: 'The articles of this shop interest me!'
-    },
-    terms: {
-      title: 'Terms of use',
-      approve: 'I have read and agree to the Sowing terms of use',
-      must_approve: 'You must accept the terms before proceeding'
-    },
-    verify: {
-      title: 'Email address verification',
-      success: 'Verification completed!',
-      fail: 'Oops...'
-    }
-  },
-
-  /**
-   * Products
-   */
-  products: {
-    img: {
-      alt: 'Product image'
-    },
-    details: {
-      remaining: 'products in stock',
-      out_of_stock: 'Out of stock'
-    },
-    management: {
-      index: {
-        title: 'Products'
-      },
-      create: {
-        add_category: 'Associate with a category',
-        add_price: 'Set a price',
-        add_variations: 'Add variations',
-        category_for: 'Category for',
-        name_and_description_for: 'Name and description for',
-        price_for: 'Price for',
-        tips: {
-          category: 'Linking your product to the corresponding category makes it easier for Sowing visitors to find your product.',
-          name_and_description: 'Name and describe in detail the features and strengths of your product. Translating the name and description of your product is not mandatory but increases the likelihood that it will be noticed.',
-          price: 'You are free to set a different price for variations of your product.',
-          variations: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab placeat maxime magnam quae facere quidem, asperiores quo, eum odit doloribus earum nobis natus, nesciunt fugit. Dolorum, quisquam. At, aliquid ipsa.'
-        },
-        title: 'Add a product',
-        unnamed: 'New unnamed product',
-        variations_for: 'Variations for'
-      }
-    },
-    variations: {
-      labels: {
-        quantity: 'Quantity',
-        selection: 'Select'
-      },
-      select: {
-        out_of_stock: 'Out of stock'
-      }
-    }
-  },
-
-  /**
-   * Shop Creator
-   */
-  shop_creator: {
-    navigation: {
-      name: 'Name',
-      details: 'Details',
-      customize: 'Theme',
-      connect: 'Merchant',
-      done: 'Done!'
-    },
-    steps: {
-      name: {
-        title: 'Name your shop',
-        paragraph: 'Give your store a unique name that sets the tone and encourages visitors to take an interest in your products. A strong identity is a good way to build an attractive and recognized shop.',
-        placeholder: 'The name of your shop'
-      },
-      details: {
-        title: 'Details of your shop',
-        paragraph: 'Tell us about your shop. Where is it located? What does it have to offer? Describe it as best you can to give your shop a good image, in addition to effectively inform your visitors of your activities and methods.',
-        description_short_description: 'Description in one sentence of your shop. It usually accompanies the title of your shop wherever it is displayed.',
-        description_long_description: 'Detailed description of your shop. This is displayed only on the profile page of your shop.'
-      },
-      customization: {
-        title: 'Customize your shop',
-        paragraph: 'Customize your shop to give it a unique identity!'
-      },
-      connect: {
-        title: 'Create or link your merchant account',
-        paragraph: 'Create or link an existing Stripe account on which to transfer revenue from your sales.'
-      },
-      done: {
-        title: 'Terminé!',
-        paragraph: 'Vous avez maintenant terminé la création de votre boutique. Félicitations!',
-        provision_shop: 'Vous pouvrez dès à présent approvisionner votre boutique en y ajoutant des produits.'
-      }
-    }
-  },
-
-  /**
-   * Side menu
-   */
-  side_menu: {
-    products: 'Products',
-    shop: 'Shop'
-  },
-
-  /**
-   * Streaks
-   */
-  streaks: {
-    register: {
-      title: 'Sell today',
-      body: 'Launch your own store easily in a few clicks now.'
-    },
-    newsletter: {
-      title: 'Subscribe to our newsletter',
-      body: 'Quick, easy registration, no spam, and unsubscribe whenever you want.',
-      placeholder: 'your.email@address.ch'
-    }
-  },
-
-  /**
-   * Stripe
-   */
-  stripe: {
-    add_a_card: 'Add a credit or debit card by entering the corresponding information below.'
-  },
-
-  /**
-   * Toasts
-   */
-  toasts: {
-    account_confirmed: 'Thank you! Your account is now verified.',
-    addresses: {
-      created: 'New address created successfully!',
-      selected: 'Address selected.',
-      updated: 'Address updated!',
-      deleted: 'Address deleted successfully.'
-    },
-    cart: {
-      has_changed: 'One or more items in your cart have been updated, please review them before ordering.',
-      item_added_singular: 'added to cart!',
-      item_added_plural: 'added to cart!',
-      product_removed: 'removed.'
-    },
-    cc_added: 'The credit or debit card has been added to your account successfully!',
-    general_error: 'An error has occurred. Please reload the page and try again, please.',
-    is_already_in_use: 'is already in use',
-    is_available: 'is available',
-    logged_out: 'You are now logged out.',
-    payment_methods: {
-      updated: 'Card set as default successfully.',
-      deleted: 'Card deleted successfully.'
-    },
-    products: {
-      created: 'Your product has been added successfully.'
-    },
-    shop_avatar_updated: 'The avatar of your shop has been updated successfully!',
-    shop_cover_updated: 'The cover of your shop has been updated successfully!',
-    subscribed: 'Thank you! You are now subscribed to our newsletter!',
-    terms: 'You must first agree to the terms and conditions before going forward.',
-    theme_updated: 'The theme of your shop has been updated!',
-    validation: 'The form contains errors. Please correct them and try again.',
-    welcome: 'Welcome back'
-  }
+  ...account,
+  ...accountCard,
+  ...adviceToCreators,
+  ...alerts,
+  ...aria,
+  ...buttons,
+  ...cart,
+  ...categories,
+  ...checkout,
+  ...comingSoon,
+  ...creditCards,
+  ...dropzone,
+  ...faq,
+  ...footer,
+  ...forms,
+  ...home,
+  ...languages,
+  ...login,
+  ...modals,
+  ...navbar,
+  ...orders,
+  ...passwordEmail,
+  ...passwordReset,
+  ...products,
+  ...register,
+  ...registerSuccess,
+  ...search,
+  ...shop,
+  ...shopCreator,
+  ...shopDetails,
+  ...sideMenu,
+  ...streaks,
+  ...stripe,
+  ...terms,
+  ...toasts,
+  ...verify
 }

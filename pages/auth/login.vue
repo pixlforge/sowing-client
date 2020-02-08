@@ -1,103 +1,106 @@
 <template>
-  <main>
+  <div>
 
-    <!-- Page contents -->
-    <AppContentSection class="max-w-600">
+    <!-- Page title -->
+    <Heading
+      tag="h1"
+      visual="h4"
+      utilities="text-center"
+    >
+      {{ $t('login.title') }}
+    </Heading>
 
-      <!-- Page title -->
-      <AppTitle
-        semantic="h1"
-        visual="h1"
-        utilities="md:text-center"
+    <form
+      @submit.prevent="login"
+      class="mt-36"
+    >
+
+      <!-- Email -->
+      <FormGroup>
+        <FormLabel name="email">
+          {{ $t("forms.labels.email") }}
+        </FormLabel>
+        <FormInput
+          ref="autofocus"
+          v-model="form.email"
+          :errors="errors"
+          name="email"
+          type="email"
+          placeholder="elon@musk.ch"
+          required
+        />
+        <FormValidation
+          :errors="errors"
+          name="email"
+        />
+      </FormGroup>
+
+      <!-- Password -->
+      <FormGroup>
+        <FormLabel name="password">
+          {{ $t("forms.labels.password") }}
+        </FormLabel>
+        <FormInput
+          v-model="form.password"
+          name="password"
+          type="password"
+          placeholder="••••••••"
+          required
+        />
+      </FormGroup>
+
+      <div class="flex flex-wrap justify-center my-36 md:my-60">
+
+        <!-- Password forgotten -->
+        <ButtonLinkTertiary :route="{ name: 'auth-forgot' }">
+          {{ $t("login.links.password") }}
+        </ButtonLinkTertiary>
+
+        <!-- Register an account -->
+        <ButtonLinkTertiary :route="{ name: 'auth-register' }">
+          {{ $t("login.links.register") }}
+        </ButtonLinkTertiary>
+      </div>
+
+      <!-- Submit -->
+      <ButtonPrimary
+        :disabled="missingCredentials"
+        type="submit"
+        icon="key"
+        class="mx-auto mt-36"
       >
-        {{ $t('pages.login.title') }}
-      </AppTitle>
-
-      <form
-        @submit.prevent="login"
-        class="mt-36 sm:mt-72"
-      >
-
-        <!-- Email -->
-        <AppFormGroup>
-          <AppFormLabel name="email">
-            {{ $t("forms.labels.email") }}
-          </AppFormLabel>
-          <AppFormInput
-            ref="autofocus"
-            v-model="form.email"
-            :errors="errors"
-            name="email"
-            type="email"
-            placeholder="elon@musk.ch"
-            required
-          />
-          <AppFormValidation
-            :errors="errors"
-            name="email"
-          />
-        </AppFormGroup>
-
-        <!-- Password -->
-        <AppFormGroup>
-          <AppFormLabel name="password">
-            {{ $t("forms.labels.password") }}
-          </AppFormLabel>
-          <AppFormInput
-            v-model="form.password"
-            name="password"
-            type="password"
-            placeholder="••••••••"
-            required
-          />
-        </AppFormGroup>
-
-        <div class="flex flex-wrap justify-center my-36 md:my-60">
-
-          <!-- Password forgotten -->
-          <AppButtonLinkTertiary :route="{ name: 'auth-forgot' }">
-            {{ $t("pages.login.links.password") }}
-          </AppButtonLinkTertiary>
-
-          <!-- Register an account -->
-          <AppButtonLinkTertiary :route="{ name: 'auth-register' }">
-            {{ $t("pages.login.links.register") }}
-          </AppButtonLinkTertiary>
-        </div>
-
-        <!-- Submit -->
-        <AppButtonPrimary
-          :disabled="missingCredentials"
-          type="submit"
-          icon="key"
-          class="shadow-xl mx-auto my-36 md:my-60"
-        >
-          {{ $t("buttons.connection") }}
-        </AppButtonPrimary>
-      </form>
-    </AppContentSection>
-
-  </main>
+        {{ $t("buttons.connection") }}
+      </ButtonPrimary>
+    </form>
+  </div>
 </template>
 
 <script>
 import { mapActions } from 'vuex'
 
-import AppTitle from '@/components/AppTitle'
-import AppFormLabel from '@/components/forms/AppFormLabel'
-import AppFormInput from '@/components/forms/AppFormInput'
-import AppFormGroup from '@/components/forms/AppFormGroup'
-import AppContentSection from '@/components/AppContentSection'
-import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
-import AppFormValidation from '@/components/forms/AppFormValidation'
-import AppButtonLinkTertiary from '@/components/buttons/AppButtonLinkTertiary'
+import Heading from '@/components/globals/Heading'
+import FormLabel from '@/components/forms/FormLabel'
+import FormInput from '@/components/forms/FormInput'
+import FormGroup from '@/components/forms/FormGroup'
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
+import FormValidation from '@/components/forms/FormValidation'
+import ButtonLinkTertiary from '@/components/buttons/ButtonLinkTertiary'
 
 export default {
+  components: {
+    Heading,
+    FormLabel,
+    FormInput,
+    FormGroup,
+    ButtonPrimary,
+    FormValidation,
+    ButtonLinkTertiary
+  },
   layout: 'auth',
   middleware: ['guest'],
   head() {
     return {
-      title: this.$t('pages.login.title'),
+      title: this.$t('login.title'),
       meta: [
         {
           hid: 'description',
@@ -111,16 +114,6 @@ export default {
         }
       ]
     }
-  },
-  components: {
-    AppTitle,
-    AppFormLabel,
-    AppFormInput,
-    AppFormGroup,
-    AppContentSection,
-    AppButtonPrimary,
-    AppFormValidation,
-    AppButtonLinkTertiary
   },
   data() {
     return {

@@ -2,59 +2,59 @@
   <main>
 
     <!-- Header -->
-    <AppHeader
-      :title="$t('pages.shop.creation')"
+    <Header
+      :title="$t('shop.creation')"
       icon="file-contract"
     />
 
     <!-- Page contents -->
-    <AppContentSection>
+    <ContentSection>
 
       <!-- Terms -->
-      <AppTerms/>
+      <Terms/>
 
       <!-- Controls -->
       <div class="flex flex-col items-center">
         <div class="text-18 text-center leading-normal mb-36 md:mb-72">
-          <AppFormCheckbox
+          <FormCheckbox
             v-model="localTerms"
             name="terms"
           >
-            {{ $t("pages.terms.approve") }}
-          </AppFormCheckbox>
+            {{ $t("terms.approve") }}
+          </FormCheckbox>
           <small class="block text-gray-300">
-            {{ $t("pages.terms.must_approve") }}
+            {{ $t("terms.must_approve") }}
           </small>
         </div>
 
         <!-- Next -->
-        <AppButtonPrimary
+        <ButtonPrimary
           :disabled="!userAgreesToTerms"
           @click.native="next"
           icon="chevron-circle-right"
         >
           {{ $t("buttons.begin_shop_creation") }}
-        </AppButtonPrimary>
+        </ButtonPrimary>
 
       </div>
-    </AppContentSection>
+    </ContentSection>
   </main>
 </template>
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
 
-import AppTerms from '@/components/terms/AppTerms'
-import AppHeader from '@/components/headers/AppHeader'
-import AppContentSection from '@/components/AppContentSection'
-import AppFormCheckbox from '@/components/forms/AppFormCheckbox'
-import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
+import Terms from '@/components/terms/Terms'
+import Header from '@/components/headers/Header'
+import ContentSection from '@/components/globals/ContentSection'
+import FormCheckbox from '@/components/forms/FormCheckbox'
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 
 export default {
   middleware: ['authenticated'],
   head() {
     return {
-      title: this.$t('pages.terms.title'),
+      title: this.$t('terms.title'),
       meta: [
         {
           hid: 'description',
@@ -70,11 +70,11 @@ export default {
     }
   },
   components: {
-    AppTerms,
-    AppHeader,
-    AppContentSection,
-    AppFormCheckbox,
-    AppButtonPrimary
+    Terms,
+    Header,
+    ContentSection,
+    FormCheckbox,
+    ButtonPrimary
   },
   computed: {
     ...mapGetters({

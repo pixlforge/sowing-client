@@ -1,104 +1,114 @@
 <template>
-  <main>
+  <div>
 
-    <!-- Content -->
-    <AppContentSection class="max-w-600">
+    <!-- Page title -->
+    <Heading
+      tag="h1"
+      visual="h4"
+      utilities="text-center"
+    >
+      {{ $t("password_reset.title") }}
+    </Heading>
 
-      <!-- Page title -->
-      <AppTitle
-        semantic="h1"
-        visual="h1"
-        utilities="md:text-center"
+    <!-- Instructions -->
+    <Paragraph class="text-center mx-auto my-36">
+      {{ $t("password_reset.instructions") }}
+    </Paragraph>
+
+    <form
+      @submit.prevent="reset"
+      class="mt-36 sm:mt-72"
+    >
+
+      <!-- Email -->
+      <FormGroup>
+        <FormLabel name="user">
+          {{ $t("forms.labels.email") }}
+        </FormLabel>
+        <FormInput
+          ref="autofocus"
+          v-model="form.email"
+          :errors="errors"
+          name="user"
+          type="email"
+          required
+        />
+        <FormValidation
+          :errors="errors"
+          name="user"
+        />
+      </FormGroup>
+
+      <!-- Password -->
+      <FormGroup>
+        <FormLabel name="password">
+          {{ $t("forms.labels.password") }}
+        </FormLabel>
+        <FormInput
+          v-model="form.password"
+          :errors="errors"
+          name="password"
+          type="password"
+          required
+        />
+        <FormValidation
+          :errors="errors"
+          name="password"
+        />
+      </FormGroup>
+
+      <!-- Password confirmation -->
+      <FormGroup>
+        <FormLabel name="password_confirmation">
+          {{ $t("forms.labels.password_confirmation") }}
+        </FormLabel>
+        <FormInput
+          v-model="form.password_confirmation"
+          :errors="errors"
+          name="password_confirmation"
+          type="password"
+          required
+        />
+      </FormGroup>
+
+      <!-- Submit -->
+      <ButtonPrimary
+        type="submit"
+        icon="redo-alt"
+        class="mx-auto mt-36"
       >
-        {{ $t("pages.password_reset.title") }}
-      </AppTitle>
-
-      <form
-        @submit.prevent="reset"
-        class="mt-36 sm:mt-72"
-      >
-
-        <!-- Email -->
-        <AppFormGroup>
-          <AppFormLabel name="user">
-            {{ $t("forms.labels.email") }}
-          </AppFormLabel>
-          <AppFormInput
-            ref="autofocus"
-            v-model="form.email"
-            :errors="errors"
-            name="user"
-            type="email"
-            required
-          />
-          <AppFormValidation
-            :errors="errors"
-            name="user"
-          />
-        </AppFormGroup>
-
-        <!-- Password -->
-        <AppFormGroup>
-          <AppFormLabel name="password">
-            {{ $t("forms.labels.password") }}
-          </AppFormLabel>
-          <AppFormInput
-            v-model="form.password"
-            :errors="errors"
-            name="password"
-            type="password"
-            required
-          />
-          <AppFormValidation
-            :errors="errors"
-            name="password"
-          />
-        </AppFormGroup>
-
-        <!-- Password confirmation -->
-        <AppFormGroup>
-          <AppFormLabel name="password_confirmation">
-            {{ $t("forms.labels.password_confirmation") }}
-          </AppFormLabel>
-          <AppFormInput
-            v-model="form.password_confirmation"
-            :errors="errors"
-            name="password_confirmation"
-            type="password"
-            required
-          />
-        </AppFormGroup>
-
-        <!-- Submit -->
-        <AppButtonPrimary
-          type="submit"
-          icon="redo-alt"
-          class="mx-auto my-72"
-        >
-          {{ $t("buttons.password_reset") }}
-        </AppButtonPrimary>
-      </form>
-    </AppContentSection>
-  </main>
+        {{ $t("buttons.password_reset") }}
+      </ButtonPrimary>
+    </form>
+  </div>
 </template>
 
 <script>
 import { mapActions } from 'vuex'
 
-import AppTitle from '@/components/AppTitle'
-import AppFormGroup from '@/components/forms/AppFormGroup'
-import AppFormLabel from '@/components/forms/AppFormLabel'
-import AppFormInput from '@/components/forms/AppFormInput'
-import AppContentSection from '@/components/AppContentSection'
-import AppFormValidation from '@/components/forms/AppFormValidation'
-import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
+import Heading from '@/components/globals/Heading'
+import FormGroup from '@/components/forms/FormGroup'
+import FormLabel from '@/components/forms/FormLabel'
+import FormInput from '@/components/forms/FormInput'
+import Paragraph from '@/components/paragraphs/Paragraph'
+import FormValidation from '@/components/forms/FormValidation'
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 
 export default {
-  layout: 'auth',
+  components: {
+    Heading,
+    FormGroup,
+    FormLabel,
+    FormInput,
+    Paragraph,
+    FormValidation,
+    ButtonPrimary
+  },
   middleware: ['guest'],
+  layout: 'auth',
   head() {
     return {
-      title: this.$t('pages.password_reset.title'),
+      title: this.$t('password_reset.title'),
       meta: [
         {
           hid: 'description',
@@ -112,15 +122,6 @@ export default {
         }
       ]
     }
-  },
-  components: {
-    AppTitle,
-    AppFormGroup,
-    AppFormLabel,
-    AppFormInput,
-    AppContentSection,
-    AppFormValidation,
-    AppButtonPrimary
   },
   data() {
     return {
@@ -145,6 +146,8 @@ export default {
       if (!this.form.token) {
         return
       }
+
+      this.errors = {}
 
       try {
         const res = await this.$axios.$post('/auth/reset', this.form)

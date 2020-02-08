@@ -2,37 +2,37 @@
   <div>
 
     <!-- Alert -->
-    <AppAlert/>
+    <Alert/>
 
     <!-- Navbar -->
-    <AppNavbar/>
+    <Navbar/>
 
     <!-- Categories -->
-    <AppCategoryBar/>
+    <CategoryBar/>
 
     <!-- Shop cover image -->
-    <AppShopCover
+    <ShopCover
       v-if="shopCover"
       :shop-cover="shopCover"
     />
 
     <!-- Header -->
-    <AppHeader
+    <Header
       :class="bgTheme"
-      :title="shopName ? shopName : $t('pages.shop.creation')"
+      :title="shopName ? shopName : $t('shop.creation')"
     />
 
     <!-- Navigation -->
-    <AppShopNavigation/>
+    <ShopNavigation/>
 
     <!-- Page content -->
-    <nuxt/>
+    <Nuxt/>
 
     <!-- Footer -->
-    <AppFooter/>
+    <Footer/>
 
     <!-- Disclaimer -->
-    <AppDisclaimer :class="bgTheme"/>
+    <Disclaimer :class="bgTheme"/>
   </div>
 </template>
 
@@ -40,25 +40,25 @@
 import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
-import AppNavbar from '@/components/AppNavbar'
-import AppAlert from '@/components/globals/AppAlert'
-import AppFooter from '@/components/footer/AppFooter'
-import AppHeader from '@/components/headers/AppHeader'
-import AppShopCover from '@/components/shops/AppShopCover'
-import AppDisclaimer from '@/components/footer/AppDisclaimer'
-import AppCategoryBar from '@/components/categories/AppCategoryBar'
-import AppShopNavigation from '@/components/shops/navigation/AppShopNavigation'
+import Navbar from '@/components/globals/Navbar'
+import Alert from '@/components/globals/Alert'
+import Footer from '@/components/footer/Footer'
+import Header from '@/components/headers/Header'
+import ShopCover from '@/components/shops/ShopCover'
+import Disclaimer from '@/components/footer/Disclaimer'
+import CategoryBar from '@/components/categories/CategoryBar'
+import ShopNavigation from '@/components/shops/navigation/ShopNavigation'
 
 export default {
   components: {
-    AppNavbar,
-    AppAlert,
-    AppFooter,
-    AppHeader,
-    AppShopCover,
-    AppDisclaimer,
-    AppCategoryBar,
-    AppShopNavigation
+    Navbar,
+    Alert,
+    Footer,
+    Header,
+    ShopCover,
+    Disclaimer,
+    CategoryBar,
+    ShopNavigation
   },
   mixins: [theming],
   computed: {

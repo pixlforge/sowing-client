@@ -2,50 +2,50 @@
   <main>
 
     <!-- Header -->
-    <AppHeader
+    <Header
       :title="$t('advice_to_creators.title')"
       icon="comment-dots"
     />
 
     <!-- Content -->
-    <AppContentSection class="max-w-800">
-      <AppTitle
-        semantic="h1"
+    <ContentSection class="max-w-800">
+      <Heading
+        tag="h1"
         visual="h4"
       >
         {{ $t('advice_to_creators.created_a_shop') }}
-      </AppTitle>
-      <AppParagraph>
+      </Heading>
+      <Paragraph>
         {{ $t('advice_to_creators.list_of_advices') }}
-      </AppParagraph>
-      <AppList
+      </Paragraph>
+      <List
         :items="advices"
         icon="chevron-circle-right"
         icon-color="green"
       />
-      <AppParagraph class="font-bold">
+      <Paragraph class="font-bold">
         {{ $t('advice_to_creators.wish_you_succcess') }}
-      </AppParagraph>
+      </Paragraph>
 
       <!-- Illustration -->
       <div class="my-72 md:my-96">
         <IllustrationNewIdeas class="max-w-400 mx-auto"/>
       </div>
-    </AppContentSection>
+    </ContentSection>
 
     <!-- Streak newsletter -->
-    <AppStreakNewsletter/>
+    <StreakNewsletter/>
 
   </main>
 </template>
 
 <script>
-import AppTitle from '@/components/AppTitle'
-import AppList from '@/components/paragraphs/AppList'
-import AppHeader from '@/components/headers/AppHeader'
-import AppContentSection from '@/components/AppContentSection'
-import AppParagraph from '@/components/paragraphs/AppParagraph'
-import AppStreakNewsletter from '@/components/streaks/AppStreakNewsletter'
+import Heading from '@/components/globals/Heading'
+import List from '@/components/paragraphs/List'
+import Header from '@/components/headers/Header'
+import ContentSection from '@/components/globals/ContentSection'
+import Paragraph from '@/components/paragraphs/Paragraph'
+import StreakNewsletter from '@/components/streaks/StreakNewsletter'
 import IllustrationNewIdeas from '@/components/illustrations/IllustrationNewIdeas'
 
 export default {
@@ -62,12 +62,12 @@ export default {
     }
   },
   components: {
-    AppTitle,
-    AppList,
-    AppHeader,
-    AppContentSection,
-    AppParagraph,
-    AppStreakNewsletter,
+    Heading,
+    List,
+    Header,
+    ContentSection,
+    Paragraph,
+    StreakNewsletter,
     IllustrationNewIdeas
   },
   computed: {

@@ -1,53 +1,53 @@
 <template>
   <div>
-    <AppResourceHeader>
+    <ResourceHeader>
 
       <!-- Page title -->
-      <AppTitle
-        semantic="h1"
+      <Heading
+        tag="h1"
         visual="h1"
       >
-        {{ $t("pages.account.payment_methods.titles.index") }}
-      </AppTitle>
+        {{ $t("account.payment_methods.titles.index") }}
+      </Heading>
 
       <!-- Add a payment method -->
-      <AppAddButtonLink
+      <AddButtonLink
         :route="{ name: 'account-payment-methods-create' }"
         :label="$t('buttons.add_payment_method')"
         class="mt-60 md:mt-0"
       />
-    </AppResourceHeader>
+    </ResourceHeader>
 
-    <AppCard>
+    <Card>
 
       <!-- Payment methods -->
-      <AppResourceList v-if="paymentMethods.length">
-        <AppPaymentMethodItem
+      <ResourceList v-if="paymentMethods.length">
+        <PaymentMethodItem
           v-for="paymentMethod in paymentMethods"
           :key="paymentMethod.id"
           :payment-method="paymentMethod"
         />
-      </AppResourceList>
+      </ResourceList>
 
       <!-- No payment method found -->
       <div
         v-else
         class="text-center"
       >
-        <AppParagraph class="text-center mb-60">
-          {{ $t('pages.account.payment_methods.no_payment_method_found') }}
-        </AppParagraph>
-        <AppButtonLinkPrimary
+        <Paragraph class="text-center mb-60">
+          {{ $t('account.payment_methods.no_payment_method_found') }}
+        </Paragraph>
+        <ButtonLinkPrimary
           :route="{ name: 'account-payment-methods-create' }"
           icon="plus-circle"
         >
           {{ $t('buttons.add_payment_method') }}
-        </AppButtonLinkPrimary>
+        </ButtonLinkPrimary>
       </div>
-    </AppCard>
+    </Card>
 
     <!-- Confirmation modal -->
-    <AppConfirmationModal
+    <ConfirmationModal
       :title="$t('modals.payment_methods.delete.title')"
       :body="$t('modals.payment_methods.delete.body')"
       :button-label="$t('buttons.delete')"
@@ -63,33 +63,33 @@
 <script>
 import { mapActions, mapGetters } from 'vuex'
 
-import AppCard from '@/components/AppCard'
-import AppTitle from '@/components/AppTitle'
-import AppParagraph from '@/components/paragraphs/AppParagraph'
-import AppAddButtonLink from '@/components/buttons/AppAddButtonLink'
-import AppResourceList from '@/components/resources/AppResourceList'
-import AppResourceHeader from '@/components/resources/AppResourceHeader'
-import AppConfirmationModal from '@/components/modals/AppConfirmationModal'
-import AppButtonLinkPrimary from '@/components/buttons/AppButtonLinkPrimary'
-import AppPaymentMethodItem from '@/components/payment-methods/AppPaymentMethodItem'
+import Card from '@/components/globals/Card'
+import Heading from '@/components/globals/Heading'
+import Paragraph from '@/components/paragraphs/Paragraph'
+import AddButtonLink from '@/components/buttons/AddButtonLink'
+import ResourceList from '@/components/resources/ResourceList'
+import ResourceHeader from '@/components/resources/ResourceHeader'
+import ConfirmationModal from '@/components/modals/ConfirmationModal'
+import ButtonLinkPrimary from '@/components/buttons/ButtonLinkPrimary'
+import PaymentMethodItem from '@/components/payment-methods/PaymentMethodItem'
 
 export default {
   components: {
-    AppCard,
-    AppTitle,
-    AppParagraph,
-    AppAddButtonLink,
-    AppResourceList,
-    AppResourceHeader,
-    AppConfirmationModal,
-    AppButtonLinkPrimary,
-    AppPaymentMethodItem
+    Card,
+    Heading,
+    Paragraph,
+    AddButtonLink,
+    ResourceList,
+    ResourceHeader,
+    ConfirmationModal,
+    ButtonLinkPrimary,
+    PaymentMethodItem
   },
   middleware: ['authenticated'],
   layout: 'account-management',
   head() {
     return {
-      title: `${this.$t('pages.account.payment_methods.titles.index')} | ${this.$t('pages.account.title')}`,
+      title: `${this.$t('account.payment_methods.titles.index')} | ${this.$t('account.title')}`,
       meta: [
         {
           hid: 'robots',

@@ -2,18 +2,18 @@
   <main>
 
     <!-- Cover -->
-    <AppShopCover
+    <ShopCover
       v-if="shopCover"
       :shop-cover="shopCover"
     />
 
     <!-- Header -->
-    <AppHeader
+    <Header
       :class="bgTheme"
       :title="shopName"
       :description="shop.description_short[locale]"
     >
-      <AppHeaderList>
+      <HeaderList>
         <li>
           <font-awesome-icon
             :icon="['far', 'map-marker-alt']"
@@ -24,26 +24,26 @@
         <li class="ml-20">
           {{ shop.country.name[locale] }}
         </li>
-      </AppHeaderList>
-    </AppHeader>
+      </HeaderList>
+    </Header>
 
     <!-- About -->
-    <AppContentSection>
-      <AppTitle
-        semantic="h1"
+    <ContentSection>
+      <Heading
+        tag="h1"
         visual="main"
       >
-        {{ $t("pages.shop_details.welcome") }}
-      </AppTitle>
+        {{ $t("shop_details.welcome") }}
+      </Heading>
 
       <p
-        class="max-w-600 text-16 leading-loose text-center mx-auto my-36 md:my-72 mt-72 sm:mt-132"
         v-html="shop.description_long[locale]"
+        class="max-w-600 text-16 leading-loose text-center mx-auto my-36 md:my-72 mt-72 sm:mt-132"
       />
-    </AppContentSection>
+    </ContentSection>
 
     <!-- Additional images -->
-    <AppContentSection>
+    <ContentSection>
       <div class="flex flex-wrap justify-center items-start -m-20">
         <div
           v-for="n in 10"
@@ -57,32 +57,32 @@
           >
         </div>
       </div>
-    </AppContentSection>
+    </ContentSection>
 
     <!-- Shop articles -->
-    <AppContentSection>
-      <AppTitle
-        semantic="h2"
+    <ContentSection>
+      <Heading
+        tag="h2"
         visual="main"
       >
-        {{ $t("pages.shop_details.interested") }}
-      </AppTitle>
+        {{ $t("shop_details.interested") }}
+      </Heading>
 
       <div class="flex justify-center mt-72">
-        <AppButtonLinkPrimary
+        <ButtonLinkPrimary
           :route="{ name: 'index' }"
-          icon="search"
           :color="shopTheme"
+          icon="search"
           size="large"
           class="shadow-2xl"
         >
           {{ $t("buttons.see_all_articles") }}
-        </AppButtonLinkPrimary>
+        </ButtonLinkPrimary>
       </div>
-    </AppContentSection>
+    </ContentSection>
 
     <!-- Register CTA -->
-    <AppStreakRegister/>
+    <StreakRegister/>
 
   </main>
 </template>
@@ -91,14 +91,13 @@
 import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
-import AppTitle from '@/components/AppTitle'
-import AppHeader from '@/components/headers/AppHeader'
-import AppShopCover from '@/components/shops/AppShopCover'
-import AppContentSection from '@/components/AppContentSection'
-import AppHeaderList from '@/components/headers/AppHeaderList'
-import AppParagraph from '@/components/paragraphs/AppParagraph'
-import AppStreakRegister from '@/components/streaks/AppStreakRegister'
-import AppButtonLinkPrimary from '@/components/buttons/AppButtonLinkPrimary'
+import Heading from '@/components/globals/Heading'
+import Header from '@/components/headers/Header'
+import ShopCover from '@/components/shops/ShopCover'
+import ContentSection from '@/components/globals/ContentSection'
+import HeaderList from '@/components/headers/HeaderList'
+import StreakRegister from '@/components/streaks/StreakRegister'
+import ButtonLinkPrimary from '@/components/buttons/ButtonLinkPrimary'
 
 export default {
   head() {
@@ -107,14 +106,13 @@ export default {
     }
   },
   components: {
-    AppTitle,
-    AppHeader,
-    AppShopCover,
-    AppContentSection,
-    AppHeaderList,
-    AppParagraph,
-    AppStreakRegister,
-    AppButtonLinkPrimary
+    Heading,
+    Header,
+    ShopCover,
+    ContentSection,
+    HeaderList,
+    StreakRegister,
+    ButtonLinkPrimary
   },
   mixins: [theming],
   data() {

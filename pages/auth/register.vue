@@ -1,143 +1,147 @@
 <template>
-  <main>
+  <div>
 
-    <!-- Form -->
-    <AppContentSection class="max-w-600">
+    <!-- Page title -->
+    <Heading
+      tag="h1"
+      visual="h4"
+      utilities="text-center"
+    >
+      {{ $t('register.title') }}
+    </Heading>
 
-      <!-- Page title -->
-      <AppTitle
-        semantic="h1"
-        visual="h1"
-        utilities="md:text-center"
-      >
-        {{ $t('pages.register.title') }}
-      </AppTitle>
+    <form
+      @submit.prevent="register"
+      class="mt-36"
+    >
 
-      <form
-        @submit.prevent="register"
-        class="mt-36 sm:mt-72"
-      >
+      <!-- Name -->
+      <FormGroup>
+        <FormLabel name="name">
+          {{ $t("forms.labels.name") }}
+        </FormLabel>
+        <FormInput
+          ref="autofocus"
+          v-model="form.name"
+          :errors="errors"
+          name="name"
+          required
+        />
+        <FormValidation
+          :errors="errors"
+          name="name"
+        />
+      </FormGroup>
 
-        <!-- Name -->
-        <AppFormGroup>
-          <AppFormLabel name="name">
-            {{ $t("forms.labels.name") }}
-          </AppFormLabel>
-          <AppFormInput
-            ref="autofocus"
-            v-model="form.name"
-            :errors="errors"
-            name="name"
-            required
-          />
-          <AppFormValidation
-            :errors="errors"
-            name="name"
-          />
-        </AppFormGroup>
+      <!-- Email -->
+      <FormGroup>
+        <FormLabel name="email">
+          {{ $t("forms.labels.email") }}
+        </FormLabel>
+        <FormInput
+          v-model="form.email"
+          :errors="errors"
+          name="email"
+          type="email"
+          required
+        />
+        <FormValidation
+          :errors="errors"
+          name="email"
+        />
+      </FormGroup>
 
-        <!-- Email -->
-        <AppFormGroup>
-          <AppFormLabel name="email">
-            {{ $t("forms.labels.email") }}
-          </AppFormLabel>
-          <AppFormInput
-            v-model="form.email"
-            :errors="errors"
-            name="email"
-            type="email"
-            required
-          />
-          <AppFormValidation
-            :errors="errors"
-            name="email"
-          />
-        </AppFormGroup>
+      <!-- Password -->
+      <FormGroup>
+        <FormLabel name="password">
+          {{ $t("forms.labels.password") }}
+        </FormLabel>
+        <FormInput
+          v-model="form.password"
+          :errors="errors"
+          name="password"
+          type="password"
+          required
+        />
+        <FormValidation
+          :errors="errors"
+          name="password"
+        />
+      </FormGroup>
 
-        <!-- Password -->
-        <AppFormGroup>
-          <AppFormLabel name="password">
-            {{ $t("forms.labels.password") }}
-          </AppFormLabel>
-          <AppFormInput
-            v-model="form.password"
-            :errors="errors"
-            name="password"
-            type="password"
-            required
-          />
-          <AppFormValidation
-            :errors="errors"
-            name="password"
-          />
-        </AppFormGroup>
+      <!-- Password confirmation -->
+      <FormGroup>
+        <FormLabel name="password_confirmation">
+          {{ $t("forms.labels.password_confirmation") }}
+        </FormLabel>
+        <FormInput
+          v-model="form.password_confirmation"
+          :errors="errors"
+          name="password_confirmation"
+          type="password"
+          required
+        />
+      </FormGroup>
 
-        <!-- Password confirmation -->
-        <AppFormGroup>
-          <AppFormLabel name="password_confirmation">
-            {{ $t("forms.labels.password_confirmation") }}
-          </AppFormLabel>
-          <AppFormInput
-            v-model="form.password_confirmation"
-            :errors="errors"
-            name="password_confirmation"
-            type="password"
-            required
-          />
-        </AppFormGroup>
-
-        <!-- Terms -->
-        <AppFormGroup>
-          <AppFormCheckbox
-            v-model="terms"
-            name="terms"
-          >
-            <div class="flex flex-wrap">
-              <span class="text-14 text-gray-300 select-none cursor-pointer mr-5">
-                {{ $t("pages.register.terms") }}
-              </span>
-              <nuxt-link
-                :to="{ name: 'index' }"
-                class="text-14 text-green-500 no-underline hover:underline select-none"
-              >
-                {{ $t("pages.register.links.terms") }}
-              </nuxt-link>
-            </div>
-          </AppFormCheckbox>
-        </AppFormGroup>
-
-        <!-- Submit -->
-        <AppButtonPrimary
-          :disabled="missingCredentials"
-          type="submit"
-          icon="user"
-          class="shadow-xl mx-auto my-72"
+      <!-- Terms -->
+      <FormGroup>
+        <FormCheckbox
+          v-model="terms"
+          name="terms"
         >
-          {{ $t("buttons.create_account") }}
-        </AppButtonPrimary>
-      </form>
-    </AppContentSection>
-  </main>
+          <div class="flex flex-wrap">
+            <span class="text-14 text-gray-300 select-none cursor-pointer mr-5">
+              {{ $t("register.terms") }}
+            </span>
+            <nuxt-link
+              :to="{ name: 'index' }"
+              class="text-14 text-green-500 no-underline hover:underline select-none"
+            >
+              {{ $t("register.links.terms") }}
+            </nuxt-link>
+          </div>
+        </FormCheckbox>
+      </FormGroup>
+
+      <!-- Submit -->
+      <ButtonPrimary
+        :disabled="missingCredentials"
+        type="submit"
+        icon="user"
+        class="mx-auto mt-36"
+      >
+        {{ $t("buttons.create_account") }}
+      </ButtonPrimary>
+    </form>
+  </div>
 </template>
 
 <script>
 import { mapActions } from 'vuex'
 
-import AppTitle from '@/components/AppTitle'
-import AppFormGroup from '@/components/forms/AppFormGroup'
-import AppFormLabel from '@/components/forms/AppFormLabel'
-import AppFormInput from '@/components/forms/AppFormInput'
-import AppContentSection from '@/components/AppContentSection'
-import AppFormCheckbox from '@/components/forms/AppFormCheckbox'
-import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
-import AppFormValidation from '@/components/forms/AppFormValidation'
+import Heading from '@/components/globals/Heading'
+import FormGroup from '@/components/forms/FormGroup'
+import FormLabel from '@/components/forms/FormLabel'
+import FormInput from '@/components/forms/FormInput'
+import FormCheckbox from '@/components/forms/FormCheckbox'
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
+import FormValidation from '@/components/forms/FormValidation'
 
 export default {
+  components: {
+    Heading,
+    FormGroup,
+    FormLabel,
+    FormInput,
+    FormCheckbox,
+    ButtonPrimary,
+    FormValidation
+  },
   layout: 'auth',
   middleware: ['guest'],
   head() {
     return {
-      title: this.$t('pages.register.title'),
+      title: this.$t('register.title'),
       meta: [
         {
           hid: 'description',
@@ -151,16 +155,6 @@ export default {
         }
       ]
     }
-  },
-  components: {
-    AppTitle,
-    AppFormGroup,
-    AppFormLabel,
-    AppFormInput,
-    AppContentSection,
-    AppFormCheckbox,
-    AppButtonPrimary,
-    AppFormValidation
   },
   data() {
     return {

@@ -2,18 +2,18 @@
   <main>
 
     <!-- Header -->
-    <AppHeader
+    <Header
       :title="pageTitle"
       icon="shopping-cart"
     />
 
     <!-- Page contents -->
-    <AppContentSection>
+    <ContentSection>
 
       <!-- Cart Overview -->
       <div>
         <template v-if="products.length">
-          <AppCartOverviewProduct
+          <CartOverviewProduct
             v-for="product in products"
             :key="product.id"
             :product="product"
@@ -21,9 +21,9 @@
         </template>
         <div v-else>
 
-          <AppSplash
-            :title="$t('pages.cart.cart_is_empty')"
-            :subtitle="$t('pages.cart.add_something')"
+          <Splash
+            :title="$t('cart.cart_is_empty')"
+            :subtitle="$t('cart.add_something')"
             class="max-w-800"
           >
             <template slot="illustration">
@@ -32,7 +32,7 @@
                 alt="Illustration of an empty box"
               >
             </template>
-          </AppSplash>
+          </Splash>
 
         </div>
       </div>
@@ -41,12 +41,12 @@
         v-if="products.length"
         class="text-24 font-semibold text-center mt-96"
       >
-        {{ $t("pages.cart.in_your_cart") }}
+        {{ $t("cart.in_your_cart") }}
         <span class="text-green-500">
           {{ products.length }}
         </span>
-        {{ $t("pages.cart.products") }}
-        {{ $t("pages.cart.for") }}
+        {{ $t("cart.products") }}
+        {{ $t("cart.for") }}
         {{ subtotal.detailed.currency }}
         <span class="text-green-500">
           {{ subtotal.detailed.amount }}
@@ -54,18 +54,18 @@
       </div>
 
       <!-- Checkout button -->
-      <AppButtonLinkPrimary
+      <ButtonLinkPrimary
         v-if="products.length"
         :route="{ name: 'checkout' }"
         :disabled="is_empty"
-        :title="$t('pages.cart.checkout')"
+        :title="$t('cart.checkout')"
         icon="check-circle"
         size="large"
         class="w-full shadow-2xl my-72 md:my-96"
       >
-        {{ $t("pages.cart.checkout") }}
-      </AppButtonLinkPrimary>
-    </AppContentSection>
+        {{ $t("cart.checkout") }}
+      </ButtonLinkPrimary>
+    </ContentSection>
 
   </main>
 </template>
@@ -73,11 +73,11 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 
-import AppSplash from '@/components/AppSplash'
-import AppHeader from '@/components/headers/AppHeader'
-import AppContentSection from '@/components/AppContentSection'
-import AppButtonLinkPrimary from '@/components/buttons/AppButtonLinkPrimary'
-import AppCartOverviewProduct from '@/components/cart/AppCartOverviewProduct'
+import Splash from '@/components/globals/Splash'
+import Header from '@/components/headers/Header'
+import ContentSection from '@/components/globals/ContentSection'
+import ButtonLinkPrimary from '@/components/buttons/ButtonLinkPrimary'
+import CartOverviewProduct from '@/components/cart/CartOverviewProduct'
 
 export default {
   middleware: ['authenticated'],
@@ -99,11 +99,11 @@ export default {
     }
   },
   components: {
-    AppSplash,
-    AppHeader,
-    AppContentSection,
-    AppButtonLinkPrimary,
-    AppCartOverviewProduct
+    Splash,
+    Header,
+    ContentSection,
+    ButtonLinkPrimary,
+    CartOverviewProduct
   },
   computed: {
     ...mapGetters({
@@ -114,7 +114,7 @@ export default {
       has_changed: 'cart/hasChanged'
     }),
     pageTitle() {
-      return this.$t('pages.cart.title')
+      return this.$t('cart.title')
     }
   },
   mounted() {

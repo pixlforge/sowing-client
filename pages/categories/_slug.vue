@@ -2,13 +2,13 @@
   <main>
 
     <!-- Header -->
-    <AppHeader
+    <Header
       :title="categoryName"
       :description="categoryDescription"
     />
 
     <!-- Content -->
-    <AppContentSection>
+    <ContentSection>
 
       <!-- Subcategories with sections -->
       <template v-if="categoryHasSections">
@@ -18,17 +18,17 @@
         >
 
           <!-- Section name -->
-          <AppTitle
-            semantic="h1"
+          <Heading
+            tag="h1"
             visual="main"
           >
             {{ section.name[locale] }}
-          </AppTitle>
+          </Heading>
 
           <div class="flex flex-wrap justify-center -mx-16 mb-96 md:mb-132 lg:mb-196">
 
             <!-- Subcategory -->
-            <AppSubCategory
+            <SubCategory
               v-for="subcategory in section.children"
               :key="subcategory.slug"
               :category="category"
@@ -43,7 +43,7 @@
         <div class="flex flex-wrap justify-center sm:-mx-36 mt-96">
 
           <!-- Subcategory -->
-          <AppSubCategory
+          <SubCategory
             v-for="subcategory in category.children"
             :key="subcategory.slug"
             :category="category"
@@ -51,7 +51,7 @@
           />
         </div>
       </template>
-    </AppContentSection>
+    </ContentSection>
 
   </main>
 </template>
@@ -59,10 +59,10 @@
 <script>
 import { mapGetters } from 'vuex'
 
-import AppTitle from '@/components/AppTitle'
-import AppHeader from '@/components/headers/AppHeader'
-import AppContentSection from '@/components/AppContentSection'
-import AppSubCategory from '@/components/categories/AppSubCategory'
+import Heading from '@/components/globals/Heading'
+import Header from '@/components/headers/Header'
+import ContentSection from '@/components/globals/ContentSection'
+import SubCategory from '@/components/categories/SubCategory'
 
 export default {
   head() {
@@ -71,10 +71,10 @@ export default {
     }
   },
   components: {
-    AppTitle,
-    AppHeader,
-    AppContentSection,
-    AppSubCategory
+    Heading,
+    Header,
+    ContentSection,
+    SubCategory
   },
   data() {
     return {

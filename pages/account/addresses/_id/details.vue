@@ -4,30 +4,30 @@
       <div class="flex items-center">
 
         <!-- Back -->
-        <AppBackButton
+        <BackButton
           :route="{ name: 'account-addresses' }"
           class="mr-20"
         />
 
         <!-- Page title -->
-        <AppTitle
-          semantic="h1"
+        <Heading
+          tag="h1"
           visual="h2"
         >
-          {{ $t('pages.account.addresses.titles.show') }}
-        </AppTitle>
+          {{ $t('account.addresses.titles.show') }}
+        </Heading>
       </div>
 
       <!-- Delete -->
-      <AppDeleteButton @click.native="openModal"/>
+      <DeleteButton @click.native="openModal"/>
     </header>
 
-    <AppCard>
-      <AppAddressCard :address="address"/>
-    </AppCard>
+    <Card>
+      <AddressCard :address="address"/>
+    </Card>
 
     <!-- Confirmation modal -->
-    <AppConfirmationModal
+    <ConfirmationModal
       :title="$t('modals.addresses.delete.title')"
       :body="$t('modals.addresses.delete.body')"
       :button-label="$t('buttons.delete')"
@@ -43,27 +43,27 @@
 <script>
 import { mapActions } from 'vuex'
 
-import AppCard from '@/components/AppCard'
-import AppTitle from '@/components/AppTitle'
-import AppBackButton from '@/components/buttons/AppBackButton'
-import AppDeleteButton from '@/components/buttons/AppDeleteButton'
-import AppAddressCard from '@/components/addresses/AppAddressCard'
-import AppConfirmationModal from '@/components/modals/AppConfirmationModal'
+import Card from '@/components/globals/Card'
+import Heading from '@/components/globals/Heading'
+import BackButton from '@/components/buttons/BackButton'
+import DeleteButton from '@/components/buttons/DeleteButton'
+import AddressCard from '@/components/addresses/AddressCard'
+import ConfirmationModal from '@/components/modals/ConfirmationModal'
 
 export default {
   components: {
-    AppCard,
-    AppTitle,
-    AppBackButton,
-    AppDeleteButton,
-    AppAddressCard,
-    AppConfirmationModal
+    Card,
+    Heading,
+    BackButton,
+    DeleteButton,
+    AddressCard,
+    ConfirmationModal
   },
   layout: 'account-management',
   middleware: ['authenticated'],
   head() {
     return {
-      title: `${this.$t('pages.account.addresses.titles.show')} | ${this.$t('pages.account.title')}`,
+      title: `${this.$t('account.addresses.titles.show')} | ${this.$t('account.title')}`,
       meta: [
         {
           hid: 'robots',

@@ -1,80 +1,84 @@
 <template>
-  <main>
+  <div>
 
-    <!-- Content -->
-    <AppContentSection class="max-w-600">
+    <!-- Page title -->
+    <Heading
+      tag="h1"
+      visual="h4"
+      utilities="text-center"
+    >
+      {{ $t("password_email.paragraphs.first") }}
+    </Heading>
 
-      <!-- Page title -->
-      <AppTitle
-        semantic="h1"
-        visual="h1"
-        utilities="md:text-center"
+    <!-- Instructions -->
+    <Paragraph class="text-center mx-auto my-36">
+      {{ $t("password_email.paragraphs.second") }}
+    </Paragraph>
+
+    <!-- Form -->
+    <form
+      @submit.prevent="send"
+      class="mt-36"
+    >
+
+      <!-- Email -->
+      <FormGroup>
+        <FormLabel name="email">
+          {{ $t("forms.labels.email") }}
+        </FormLabel>
+        <FormInput
+          ref="autofocus"
+          v-model="email"
+          :errors="errors"
+          name="email"
+          type="email"
+          placeholder="elon@musk.ch"
+          required
+        />
+        <FormValidation
+          :errors="errors"
+          name="email"
+        />
+      </FormGroup>
+
+      <!-- Submit -->
+      <ButtonPrimary
+        type="submit"
+        icon="redo-alt"
+        class="mx-auto mt-36"
       >
-        {{ $t("pages.password_email.paragraphs.first") }}
-      </AppTitle>
-
-      <!-- Infos -->
-      <AppParagraph center>
-        {{ $t("pages.password_email.paragraphs.second") }}
-      </AppParagraph>
-
-      <!-- Form -->
-      <form
-        @submit.prevent="send"
-        class="mt-36 sm:mt-72"
-      >
-
-        <!-- Email -->
-        <AppFormGroup>
-          <AppFormLabel name="email">
-            {{ $t("forms.labels.email") }}
-          </AppFormLabel>
-          <AppFormInput
-            ref="autofocus"
-            v-model="email"
-            :errors="errors"
-            name="email"
-            type="email"
-            placeholder="elon@musk.ch"
-            required
-          />
-          <AppFormValidation
-            :errors="errors"
-            name="email"
-          />
-        </AppFormGroup>
-
-        <!-- Submit -->
-        <AppButtonPrimary
-          type="submit"
-          icon="redo-alt"
-          class="mx-auto my-72"
-        >
-          {{ $t("buttons.password_email") }}
-        </AppButtonPrimary>
-      </form>
-    </AppContentSection>
-  </main>
+        {{ $t("buttons.password_email") }}
+      </ButtonPrimary>
+    </form>
+  </div>
 </template>
 
 <script>
 import { mapActions } from 'vuex'
 
-import AppTitle from '@/components/AppTitle'
-import AppFormGroup from '@/components/forms/AppFormGroup'
-import AppFormLabel from '@/components/forms/AppFormLabel'
-import AppFormInput from '@/components/forms/AppFormInput'
-import AppContentSection from '@/components/AppContentSection'
-import AppParagraph from '@/components/paragraphs/AppParagraph'
-import AppFormValidation from '@/components/forms/AppFormValidation'
-import AppButtonPrimary from '@/components/buttons/AppButtonPrimary'
+import Heading from '@/components/globals/Heading'
+import FormGroup from '@/components/forms/FormGroup'
+import FormLabel from '@/components/forms/FormLabel'
+import FormInput from '@/components/forms/FormInput'
+import Paragraph from '@/components/paragraphs/Paragraph'
+import FormValidation from '@/components/forms/FormValidation'
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 
 export default {
-  layout: 'auth',
+  components: {
+    Heading,
+    FormGroup,
+    FormLabel,
+    FormInput,
+    Paragraph,
+    FormValidation,
+    ButtonPrimary
+  },
   middleware: ['guest'],
+  layout: 'auth',
   head() {
     return {
-      title: this.$t('pages.password_email.title'),
+      title: this.$t('password_email.title'),
       meta: [
         {
           hid: 'description',
@@ -88,16 +92,6 @@ export default {
         }
       ]
     }
-  },
-  components: {
-    AppTitle,
-    AppFormGroup,
-    AppFormLabel,
-    AppFormInput,
-    AppContentSection,
-    AppParagraph,
-    AppFormValidation,
-    AppButtonPrimary
   },
   data() {
     return {
@@ -113,6 +107,8 @@ export default {
       flash: 'alert/flash'
     }),
     async send() {
+      this.errors = {}
+
       try {
         const res = await this.$axios.$post('/auth/forgot', { email: this.email })
         this.$toast.success(res.message)
