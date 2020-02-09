@@ -1,7 +1,7 @@
 <template>
   <nuxt-link
     :to="route"
-    class="block outline-none focus:shadow-outline rounded-lg border border-gray-200 text-12 text-gray-500 font-bold text-center uppercase transition-color transition-faster no-underline whitespace-no-wrap px-30 py-12"
+    class="block outline-none focus:shadow-outline rounded-lg border border-gray-200 text-12 text-gray-500 font-bold text-center uppercase no-underline whitespace-no-wrap transition-colors duration-200 ease-out px-30 py-12"
   >
     <font-awesome-icon
       v-if="icon"

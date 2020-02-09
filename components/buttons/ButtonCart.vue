@@ -4,7 +4,7 @@
     :title="$t('aria.links.cart')"
     :aria-label="$t('aria.links.cart')"
     :class="`bg-${shopTheme}-500 hover:bg-${shopTheme}-700`"
-    class="block relative w-40 h-40 outline-none focus:shadow-outline rounded-full transition-color transition-faster text-white flex justify-center items-center"
+    class="block relative w-40 h-40 outline-none focus:shadow-outline rounded-full text-white flex justify-center items-center  transition transition-colors duration-200 ease-out"
   >
     <font-awesome-icon
       :icon="['far', 'shopping-cart']"

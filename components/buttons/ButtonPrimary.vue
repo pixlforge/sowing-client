@@ -12,7 +12,7 @@
         'bg-pink-600 hover:bg-pink-700': color === 'pink-dark'
       }
     ]"
-    class="block disabled:bg-white outline-none focus:shadow-outline disabled:shadow-none rounded-lg border border-transparent disabled:border-gray-200 text-white disabled:text-gray-200 text-center uppercase transition-color transition-faster no-underline whitespace-no-wrap disabled:cursor-not-allowed"
+    class="block disabled:bg-white outline-none focus:shadow-outline disabled:shadow-none rounded-lg border border-transparent disabled:border-gray-200 text-white disabled:text-gray-200 text-center uppercase no-underline whitespace-no-wrap disabled:cursor-not-allowed transition-colors duration-200 ease-out"
   >
     <font-awesome-icon
       v-if="icon"

@@ -2,9 +2,8 @@
 @import "base";
 
 @tailwind components;
-@import "partials/dropzone.scss";
+@import "partials/dropzone";
 @import "partials/search";
-@import "partials/toasts.scss";
+@import "partials/toasts";
 
 @tailwind utilities;
-@import "utilities";
