@@ -320,6 +320,7 @@ module.exports = {
     textColor: ['responsive', 'hover', 'focus', 'group-hover', 'disabled'],
     textDecoration: ['responsive', 'hover'],
     textTransform: ['responsive', 'hover'],
+    translate: ['responsive', 'hover', 'focus', 'group-hover'],
     userSelect: [],
     visibility: ['group-hover'],
     whitespace: ['responsive'],

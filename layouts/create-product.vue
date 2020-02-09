@@ -1,17 +1,18 @@
 <template>
-  <div class="min-h-screen bg-gray-100 flex justify-center items-center">
-    <ContentSection>
+  <div
+    :class="`bg-${shopTheme}-500`"
+    class="min-h-screen flex justify-center items-center"
+  >
+    <main class="container bg-white shadow-2xl p-36 lg:p-48 xl:p-60">
       <Nuxt/>
-    </ContentSection>
+    </main>
   </div>
 </template>
 
 <script>
-import ContentSection from '@/components/globals/ContentSection'
+import theming from '@/mixins/theming'
 
 export default {
-  components: {
-    ContentSection
-  }
+  mixins: [theming]
 }
 </script>
