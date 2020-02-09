@@ -67,6 +67,7 @@
       class="my-72"
     >
       <FormInput
+        id="description_short_fr"
         v-model="localShortDescriptionFr"
         :disabled="shopExistsAndNotEditable"
         :errors="errors"
@@ -99,6 +100,7 @@
       class="my-72"
     >
       <FormInput
+        id="description_short_en"
         v-model="localShortDescriptionEn"
         :disabled="shopExistsAndNotEditable"
         :errors="errors"
@@ -131,6 +133,7 @@
       class="my-72"
     >
       <FormInput
+        id="description_short_de"
         v-model="localShortDescriptionDe"
         :disabled="shopExistsAndNotEditable"
         :errors="errors"
@@ -163,6 +166,7 @@
       class="my-72"
     >
       <FormInput
+        id="description_short_it"
         v-model="localShortDescriptionIt"
         :disabled="shopExistsAndNotEditable"
         :errors="errors"
