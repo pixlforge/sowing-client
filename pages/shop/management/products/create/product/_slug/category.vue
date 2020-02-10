@@ -156,7 +156,7 @@ export default {
   layout: 'create-product',
   head() {
     return {
-      title: `${this.$t('products.management.create.add_category')} | ${this.product.name[this.locale]}`,
+      title: `${this.$t('products.management.create.category')} | ${this.product.name[this.locale]} | ${this.$t('products.management.create.title')} | ${this.shop.name}`,
       meta: [
         {
           hid: 'description',

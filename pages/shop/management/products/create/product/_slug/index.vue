@@ -296,7 +296,7 @@ export default {
   layout: 'create-product',
   head() {
     return {
-      title: this.$t('products.management.create.title'),
+      title: `${this.$t('products.management.create.name_and_description')} | ${this.form.name[this.locale]} | ${this.$t('products.management.create.title')} | ${this.shop.name}`,
       meta: [
         {
           hid: 'description',

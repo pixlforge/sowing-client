@@ -12,8 +12,10 @@ export default {
         title: 'Produits'
       },
       create: {
-        add_category: 'Associer avec une catégorie',
+        add_price: 'Définir un prix pour',
+        category: 'Associer avec une catégorie',
         category_for: 'Catégorie pour',
+        name_and_description: 'Nom et description',
         name_and_description_for: 'Nom et description pour',
         price_for: 'Prix pour',
         tips: {
