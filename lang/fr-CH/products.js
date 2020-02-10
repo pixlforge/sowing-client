@@ -13,7 +13,7 @@ export default {
       },
       create: {
         add_price: 'Définir un prix pour',
-        category: 'Associer avec une catégorie',
+        category: 'Catégorie',
         category_for: 'Catégorie pour',
         name_and_description: 'Nom et description',
         name_and_description_for: 'Nom et description pour',
