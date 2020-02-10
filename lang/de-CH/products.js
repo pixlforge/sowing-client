@@ -12,19 +12,22 @@ export default {
         title: 'Produkte'
       },
       create: {
-        add_price: 'Legen Sie einen Preis für fest',
         category: 'Kategorie',
         category_for: 'Kategorie für',
         name_and_description: 'Name und Beschreibung',
         name_and_description_for: 'Name und Beschreibung für',
+        price: 'Preis',
         price_for: 'Preis für',
         tips: {
           category: 'Durch die Verknüpfung Ihres Produkts mit der entsprechenden Kategorie können Sowing-Besucher Ihr Produkt leichter finden.',
           name_and_description: 'Nennen und beschreiben Sie detailliert die Eigenschaften und Stärken Ihres Produkts. Das Übersetzen des Namens und der Beschreibung Ihres Produkts ist nicht obligatorisch, erhöht jedoch die Wahrscheinlichkeit, dass es bemerkt wird.',
-          price: 'Sie können einen anderen Preis für Variationen Ihres Produkts festlegen.'
+          price: 'Sie können einen anderen Preis für Variationen Ihres Produkts festlegen.',
+          variations: 'Lorem ipsum dolor sit amet'
         },
         title: 'Produkt hinzufügen',
-        unnamed: 'Neues Produkt ohne Namen'
+        unnamed: 'Neues Produkt ohne Namen',
+        variations: 'Variationen',
+        variations_for: 'Variationen für'
       }
     },
     variations: {

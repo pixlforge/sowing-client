@@ -59,7 +59,7 @@ export default {
   layout: 'create-product',
   head() {
     return {
-      title: `${this.$t('products.management.create.add_variations')} | ${this.product.name[this.locale]}`,
+      title: `${this.$t('products.management.create.variations')} | ${this.$t('products.management.create.title')} | ${this.product.name[this.locale]} | ${this.shop.name}`,
       meta: [
         {
           hid: 'description',
