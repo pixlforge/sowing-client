@@ -34,6 +34,10 @@
       {{ $t('products.management.create.tips.variations') }}
     </InfoTip>
 
+    <ButtonPrimary @click.native="addType">
+      Add type
+    </ButtonPrimary>
+
   </div>
 </template>
 
@@ -43,12 +47,14 @@ import theming from '@/mixins/theming'
 
 import InfoTip from '@/components/globals/InfoTip'
 import BackButton from '@/components/buttons/BackButton'
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 import ProductCreatorStep from '@/components/products/creator/ProductCreatorStep'
 
 export default {
   components: {
     InfoTip,
     BackButton,
+    ButtonPrimary,
     ProductCreatorStep
   },
   mixins: [theming],
@@ -78,6 +84,7 @@ export default {
     return {
       form: {},
       product: {},
+      types: [],
       errors: {}
     }
   },
@@ -101,7 +108,16 @@ export default {
   methods: {
     ...mapActions({
       setShop: 'shop/setShop'
-    })
+    }),
+    async addType() {
+      try {
+        const res = await this.$axios.$post(`/products/${this.product.slug}/product-variation-types`)
+        this.types.push(res.data)
+        console.log(res.data)
+      } catch (e) {
+        console.log(e)
+      }
+    }
   }
 }
 </script>
