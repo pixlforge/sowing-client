@@ -34,7 +34,14 @@
       {{ $t('products.management.create.tips.variations') }}
     </InfoTip>
 
-    <ButtonPrimary @click.native="addType">
+    <!-- Types -->
+    <FormFieldset
+      v-for="type in product.types"
+      :key="type.id"
+      class="mb-20"
+    />
+
+    <ButtonPrimary @click.native="addVariationType">
       Add type
     </ButtonPrimary>
 
@@ -47,6 +54,7 @@ import theming from '@/mixins/theming'
 
 import InfoTip from '@/components/globals/InfoTip'
 import BackButton from '@/components/buttons/BackButton'
+import FormFieldset from '@/components/forms/FormFieldset'
 import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 import ProductCreatorStep from '@/components/products/creator/ProductCreatorStep'
 
@@ -54,6 +62,7 @@ export default {
   components: {
     InfoTip,
     BackButton,
+    FormFieldset,
     ButtonPrimary,
     ProductCreatorStep
   },
@@ -84,7 +93,6 @@ export default {
     return {
       form: {},
       product: {},
-      types: [],
       errors: {}
     }
   },
@@ -104,16 +112,19 @@ export default {
   },
   mounted() {
     this.setShop(this.shop)
+
+    if (!this.product.types.length) {
+      this.addVariationType()
+    }
   },
   methods: {
     ...mapActions({
       setShop: 'shop/setShop'
     }),
-    async addType() {
+    async addVariationType() {
       try {
-        const res = await this.$axios.$post(`/products/${this.product.slug}/product-variation-types`)
-        this.types.push(res.data)
-        console.log(res.data)
+        const product = await this.$axios.$post(`/products/${this.product.slug}/product-variation-types`)
+        this.product = product.data
       } catch (e) {
         console.log(e)
       }
