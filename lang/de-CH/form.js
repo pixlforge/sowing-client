@@ -1,5 +1,6 @@
 export default {
   form: {
+    select: 'Wählen',
     address_line_1: {
       label: 'Anschrift Zeile 1',
       placeholder: ''
@@ -84,6 +85,13 @@ export default {
       label: 'Themenauswahl',
       placeholder: ''
     },
-    select: 'Wählen'
+    product_variation_type: {
+      name: {
+        fr: 'Name der Variationsart in Französisch',
+        en: 'Name der Variationsart in Englisch',
+        de: 'Name der Variationsart in Deutsch',
+        it: 'Name der Variationsart in Italienisch'
+      }
+    }
   }
 }
