@@ -1,5 +1,5 @@
 @tailwind base;
-@import "base";
+@import "partials/base";
 
 @tailwind components;
 @import "partials/dropzone";
@@ -7,3 +7,4 @@
 @import "partials/toasts";
 
 @tailwind utilities;
+@import "partials/utilities";

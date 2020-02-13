@@ -1,14 +1,18 @@
 <template>
   <FormFieldset>
-    <div
-      v-for="(locale, index) of form.name"
-      :key="index"
-    >
-      <input
-        v-model="form.name[index]"
-        type="text"
-        class="block border-2 border-gray-400 rounded-lg mb-10 h-40"
+    <div class="flex flex-wrap">
+      <div
+        v-for="(locale, index) of form.name"
+        :key="index"
+        class="w-full lg:w-1/2"
       >
+        <input
+          v-model="form.name[index]"
+          :placeholder="`Type name in ${index}`"
+          type="text"
+          class="w-full h-40 border-2 border-dashed border-gray-200 rounded-lg mb-10"
+        >
+      </div>
     </div>
   </FormFieldset>
 </template>

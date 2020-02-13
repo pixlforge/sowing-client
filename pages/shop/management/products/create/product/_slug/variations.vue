@@ -54,7 +54,6 @@ import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
 import InfoTip from '@/components/globals/InfoTip'
-import FormInput from '@/components/forms/FormInput'
 import BackButton from '@/components/buttons/BackButton'
 import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 import ProductCreatorStep from '@/components/products/creator/ProductCreatorStep'
@@ -63,7 +62,6 @@ import ProductVariationType from '@/components/products/creator/ProductVariation
 export default {
   components: {
     InfoTip,
-    FormInput,
     BackButton,
     ButtonPrimary,
     ProductCreatorStep,
@@ -125,8 +123,8 @@ export default {
     }),
     async addVariationType() {
       try {
-        const product = await this.$axios.$post(`/products/${this.product.slug}/product-variation-types`)
-        this.product = product.data
+        const type = await this.$axios.$post(`/products/${this.product.slug}/product-variation-types`)
+        this.product.types.push(type.data)
       } catch (e) {
         console.log(e)
       }

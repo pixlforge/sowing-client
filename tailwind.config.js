@@ -1,6 +1,14 @@
 // See default config https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
 module.exports = {
   theme: {
+    screens: {
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
+      '2xl': '1920px',
+      '3xl': '2560px'
+    },
     colors: {
       transparent: 'transparent',
 
@@ -329,6 +337,7 @@ module.exports = {
     zIndex: []
   },
   corePlugins: {
+    container: false,
     float: false,
     listStylePosition: false,
     listStyleType: false,
