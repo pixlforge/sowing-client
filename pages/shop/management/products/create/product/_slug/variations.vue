@@ -35,9 +35,10 @@
     </InfoTip>
 
     <!-- Types -->
-    <FormFieldset
+    <ProductVariationType
       v-for="type in product.types"
       :key="type.id"
+      :type="type"
       class="mb-20"
     />
 
@@ -53,18 +54,20 @@ import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
 import InfoTip from '@/components/globals/InfoTip'
+import FormInput from '@/components/forms/FormInput'
 import BackButton from '@/components/buttons/BackButton'
-import FormFieldset from '@/components/forms/FormFieldset'
 import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 import ProductCreatorStep from '@/components/products/creator/ProductCreatorStep'
+import ProductVariationType from '@/components/products/creator/ProductVariationType'
 
 export default {
   components: {
     InfoTip,
+    FormInput,
     BackButton,
-    FormFieldset,
     ButtonPrimary,
-    ProductCreatorStep
+    ProductCreatorStep,
+    ProductVariationType
   },
   mixins: [theming],
   middleware: [
@@ -91,7 +94,6 @@ export default {
   },
   data() {
     return {
-      form: {},
       product: {},
       errors: {}
     }
