@@ -1,6 +1,13 @@
 <template>
   <FormFieldset>
-    <div class="flex flex-wrap">
+    <Heading
+      tag="h5"
+      visual="h4"
+    >
+      Type
+    </Heading>
+
+    <div class="flex flex-wrap -mx-10 mt-16">
       <div
         v-for="locale in availableLocales"
         :key="locale.code"
@@ -20,16 +27,23 @@
 
 <script>
 import theming from '@/mixins/theming'
+import { debounce as _debounce } from 'lodash'
 
+import Heading from '@/components/globals/Heading'
 import FormFieldset from '@/components/forms/FormFieldset'
 
 export default {
   components: {
+    Heading,
     FormFieldset
   },
   mixins: [theming],
   props: {
     type: {
+      type: Object,
+      required: true
+    },
+    product: {
       type: Object,
       required: true
     }
@@ -44,6 +58,14 @@ export default {
   computed: {
     availableLocales() {
       return this.$i18n.locales
+    }
+  },
+  watch: {
+    'form.name': {
+      deep: true,
+      handler: _debounce(async function () {
+        await this.$axios.$patch(`/products/${this.product.slug}/product-variation-types/${this.type.id}`, this.form)
+      }, 500)
     }
   }
 }

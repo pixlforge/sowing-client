@@ -39,12 +39,43 @@
       v-for="type in product.types"
       :key="type.id"
       :type="type"
+      :product="product"
       class="mb-20"
     />
 
     <ButtonPrimary @click.native="addVariationType">
       Add type
     </ButtonPrimary>
+
+    <!-- Controls -->
+    <FormSection class="lg:w-full">
+      <div class="flex justify-center items-center">
+
+        <!-- Cancel -->
+        <ButtonLinkTertiary
+          :route="{
+            name: 'shop-management-products-create-product-slug-price',
+            params: {
+              slug: product.slug
+            }
+          }"
+          icon="arrow-left"
+        >
+          {{ $t('buttons.back') }}
+        </ButtonLinkTertiary>
+
+        <!-- Submit -->
+        <ButtonPrimary
+          :color="shopTheme"
+          icon="check-circle"
+          size="large"
+          type="submit"
+          class="ml-10"
+        >
+          {{ $t('buttons.next') }}
+        </ButtonPrimary>
+      </div>
+    </FormSection>
 
   </div>
 </template>
@@ -55,7 +86,9 @@ import theming from '@/mixins/theming'
 
 import InfoTip from '@/components/globals/InfoTip'
 import BackButton from '@/components/buttons/BackButton'
+import FormSection from '@/components/forms/FormSection'
 import ButtonPrimary from '@/components/buttons/ButtonPrimary'
+import ButtonLinkTertiary from '@/components/buttons/ButtonLinkTertiary'
 import ProductCreatorStep from '@/components/products/creator/ProductCreatorStep'
 import ProductVariationType from '@/components/products/creator/ProductVariationType'
 
@@ -63,7 +96,9 @@ export default {
   components: {
     InfoTip,
     BackButton,
+    FormSection,
     ButtonPrimary,
+    ButtonLinkTertiary,
     ProductCreatorStep,
     ProductVariationType
   },

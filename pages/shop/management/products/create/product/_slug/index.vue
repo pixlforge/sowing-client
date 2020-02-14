@@ -227,17 +227,6 @@
       <FormSection class="lg:w-full">
         <div class="flex justify-center items-center">
 
-          <!-- Submit -->
-          <ButtonPrimary
-            :color="shopTheme"
-            icon="check-circle"
-            size="large"
-            type="submit"
-            class="mr-10"
-          >
-            {{ $t('buttons.next') }}
-          </ButtonPrimary>
-
           <!-- Cancel -->
           <ButtonLinkTertiary
             :route="{ name: 'shop-management-products' }"
@@ -245,6 +234,17 @@
           >
             {{ $t('buttons.back') }}
           </ButtonLinkTertiary>
+
+          <!-- Submit -->
+          <ButtonPrimary
+            :color="shopTheme"
+            icon="check-circle"
+            size="large"
+            type="submit"
+            class="ml-10"
+          >
+            {{ $t('buttons.next') }}
+          </ButtonPrimary>
         </div>
       </FormSection>
     </form>
