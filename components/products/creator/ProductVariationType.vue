@@ -4,7 +4,7 @@
       tag="h5"
       visual="h4"
     >
-      Type
+      {{ form.name[locale] || 'untitled' }}
     </Heading>
 
     <div class="flex flex-wrap -mx-10 mt-16">
@@ -28,6 +28,7 @@
 <script>
 import theming from '@/mixins/theming'
 import { debounce as _debounce } from 'lodash'
+import { mapGetters } from 'vuex'
 
 import Heading from '@/components/globals/Heading'
 import FormFieldset from '@/components/forms/FormFieldset'
@@ -56,6 +57,9 @@ export default {
     }
   },
   computed: {
+    ...mapGetters({
+      locale: 'locale'
+    }),
     availableLocales() {
       return this.$i18n.locales
     }
