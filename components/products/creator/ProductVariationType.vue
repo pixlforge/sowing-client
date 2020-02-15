@@ -4,7 +4,7 @@
       tag="h5"
       visual="h4"
     >
-      {{ form.name[locale] || 'untitled' }}
+      {{ form.name[locale] || $t('product_variation_type.unnamed') }}
     </Heading>
 
     <div class="flex flex-wrap -mx-10 mt-16">

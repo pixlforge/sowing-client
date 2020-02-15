@@ -43,8 +43,23 @@
       class="mb-20"
     />
 
-    <ButtonPrimary @click.native="addVariationType">
-      Add type
+    <ButtonPrimary
+      @click.native="addVariationType"
+      :class="`bg-${shopTheme}-300 hover:bg-${shopTheme}-500`"
+      size="large"
+      type="button"
+      class="w-full"
+    >
+      <font-awesome-icon
+        :icon="['fas', 'plus']"
+        class="mr-10"
+      />
+      <template v-if="productHasNoType">
+        First, add a new variation type to your product
+      </template>
+      <template v-else>
+        Add another variation type
+      </template>
     </ButtonPrimary>
 
     <!-- Controls -->
@@ -66,6 +81,7 @@
 
         <!-- Submit -->
         <ButtonPrimary
+          :disabled="productHasNoType"
           :color="shopTheme"
           icon="check-circle"
           size="large"
@@ -134,7 +150,10 @@ export default {
   computed: {
     ...mapGetters({
       locale: 'locale'
-    })
+    }),
+    productHasNoType() {
+      return !this.product.types.length
+    }
   },
   async asyncData({ app, params }) {
     const shop = await app.$axios.$get('/user/shop')
@@ -147,10 +166,6 @@ export default {
   },
   mounted() {
     this.setShop(this.shop)
-
-    if (!this.product.types.length) {
-      this.addVariationType()
-    }
   },
   methods: {
     ...mapActions({
