@@ -21,12 +21,16 @@
       />
 
       <!-- Page title -->
-      <h1 class="text-20 sm:text-24 md:text-30 font-extrabold leading-relaxed text-center md:text-left">
+      <Heading
+        tag="h1"
+        visual="h4"
+        utilities="text-center"
+      >
         {{ $t('products.management.create.variations_for') }}
         <span :class="`text-${shopTheme}-500`">
           {{ product.name[locale] || $t('products.management.create.unnamed') }}
         </span>
-      </h1>
+      </Heading>
     </header>
 
     <!-- Infotip -->
@@ -43,6 +47,7 @@
       class="mb-20"
     />
 
+    <!-- Add a new variation type -->
     <ButtonPrimary
       @click.native="addVariationType"
       :class="`bg-${shopTheme}-300 hover:bg-${shopTheme}-500`"
@@ -55,10 +60,10 @@
         class="mr-10"
       />
       <template v-if="productHasNoType">
-        First, add a new variation type to your product
+        {{ $t('product_variation_type.add_type') }}
       </template>
       <template v-else>
-        Add another variation type
+        {{ $t('product_variation_type.add_another_type') }}
       </template>
     </ButtonPrimary>
 
@@ -100,6 +105,7 @@
 import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
+import Heading from '@/components/globals/Heading'
 import InfoTip from '@/components/globals/InfoTip'
 import BackButton from '@/components/buttons/BackButton'
 import FormSection from '@/components/forms/FormSection'
@@ -110,6 +116,7 @@ import ProductVariationType from '@/components/products/creator/ProductVariation
 
 export default {
   components: {
+    Heading,
     InfoTip,
     BackButton,
     FormSection,

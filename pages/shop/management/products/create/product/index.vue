@@ -16,12 +16,16 @@
       />
 
       <!-- Page title -->
-      <h1 class="text-20 sm:text-24 md:text-30 font-extrabold leading-relaxed text-center md:text-left">
+      <Heading
+        tag="h1"
+        visual="h4"
+        utilities="text-center"
+      >
         {{ $t('products.management.create.name_and_description_for') }}
         <span :class="`text-${shopTheme}-500`">
           {{ form.name[locale] || $t('products.management.create.unnamed') }}
         </span>
-      </h1>
+      </Heading>
     </header>
 
     <!-- Infotip -->
@@ -256,6 +260,7 @@
 import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
+import Heading from '@/components/globals/Heading'
 import InfoTip from '@/components/globals/InfoTip'
 import FormGroup from '@/components/forms/FormGroup'
 import FormLabel from '@/components/forms/FormLabel'
@@ -273,6 +278,7 @@ import ProductCreatorStep from '@/components/products/creator/ProductCreatorStep
 
 export default {
   components: {
+    Heading,
     InfoTip,
     FormGroup,
     FormLabel,
