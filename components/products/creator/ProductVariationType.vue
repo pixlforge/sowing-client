@@ -1,6 +1,7 @@
 <template>
   <FormFieldset>
     <Heading
+      :utilities="headingUtilities"
       tag="h5"
       visual="h4"
     >
@@ -62,6 +63,13 @@ export default {
     }),
     availableLocales() {
       return this.$i18n.locales
+    },
+    headingUtilities() {
+      if (this.form.name[this.locale]) {
+        return
+      }
+
+      return 'text-gray-300'
     }
   },
   watch: {
