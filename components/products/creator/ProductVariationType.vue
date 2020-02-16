@@ -9,18 +9,10 @@
       <div class="flex">
 
         <!-- Collapse or expand the content -->
-        <button
-          @click.prevent="toggleCollapse"
-          class="text-gray-300 hover:text-gray-500 transition-colors duration-200 ease-out mr-16"
-        >
-          <font-awesome-icon
-            :icon="['far', 'caret-circle-up']"
-            :class="{
-              'rotate-180': collapse
-            }"
-            class="text-20 transform transition-transform duration-200 ease-out"
-          />
-        </button>
+        <ButtonCollapse
+          @click.native="toggleCollapse"
+          :active="collapse"
+        />
 
         <!-- Type title -->
         <Heading
@@ -72,11 +64,13 @@ import { mapGetters } from 'vuex'
 
 import Heading from '@/components/globals/Heading'
 import InfoBubble from '@/components/globals/InfoBubble'
+import ButtonCollapse from '@/components/buttons/ButtonCollapse'
 
 export default {
   components: {
     Heading,
-    InfoBubble
+    InfoBubble,
+    ButtonCollapse
   },
   mixins: [theming],
   props: {
