@@ -5,7 +5,7 @@
   >
 
     <!-- Header -->
-    <header class="relative flex justify-between items-center bg-gray-100 p-20 lg:px-36 lg:py-20">
+    <header class="flex justify-between items-center bg-gray-100 p-20 lg:px-36 lg:py-20">
       <div class="flex">
 
         <!-- Collapse or expand the content -->

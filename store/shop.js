@@ -37,6 +37,7 @@ export const state = () => ({
     'green',
     'pink',
     'orange',
+    'red',
     'purple',
     'indigo',
     'blue',

@@ -1,10 +1,13 @@
 <template>
-  <div class="md:relative group cursor-pointer">
+  <div class="group cursor-pointer">
     <font-awesome-icon
       :icon="['fas', 'info-circle']"
       :class="`${iconSize} text-${color}-400`"
     />
-    <div class="w-screen md:w-300 fixed md:absolute top-0 left-0 text-12 text-center leading-relaxed bg-white rounded-lg shadow-xl transform origin-center md:origin-top-left scale-0 group-hover:scale-100 opacity-0 group-hover:opacity-100 transition-all duration-200 ease-in-out px-20 py-16 md:ml-18 md:mt-18">
+    <div
+      :class="`bg-${color}-500`"
+      class="w-screen fixed top-0 left-0 text-12 md:text-14 xl:text-16 font-semibold text-center leading-relaxed text-white shadow-lg transform origin-top scale-y-0 group-hover:scale-y-100 opacity-0 group-hover:opacity-100 transition-all duration-200 ease-in-out px-20 py-16 lg:py-36"
+    >
       <slot/>
     </div>
   </div>
