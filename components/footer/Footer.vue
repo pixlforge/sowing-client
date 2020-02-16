@@ -88,6 +88,7 @@
 <script>
 import { mapGetters } from 'vuex'
 import theming from '@/mixins/theming'
+import locales from '@/mixins/locales'
 
 import FooterItem from '@/components/footer/FooterItem'
 import FooterColumn from '@/components/footer/FooterColumn'
@@ -99,20 +100,14 @@ export default {
     FooterColumn,
     FooterItemSocial
   },
-  mixins: [theming],
+  mixins: [
+    theming,
+    locales
+  ],
   computed: {
     ...mapGetters({
-      locale: 'locale',
       categories: 'categories'
-    }),
-    availableLocales() {
-      return this.$i18n.locales
-    }
-  },
-  methods: {
-    setLocale(locale) {
-      this.$i18n.setLocale(locale.code)
-    }
+    })
   }
 }
 </script>

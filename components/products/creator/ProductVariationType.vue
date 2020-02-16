@@ -59,8 +59,8 @@
 
 <script>
 import theming from '@/mixins/theming'
+import locales from '@/mixins/locales'
 import { debounce as _debounce } from 'lodash'
-import { mapGetters } from 'vuex'
 
 import Heading from '@/components/globals/Heading'
 import InfoBubble from '@/components/globals/InfoBubble'
@@ -72,7 +72,10 @@ export default {
     InfoBubble,
     ButtonCollapse
   },
-  mixins: [theming],
+  mixins: [
+    theming,
+    locales
+  ],
   props: {
     type: {
       type: Object,
@@ -92,15 +95,6 @@ export default {
     }
   },
   computed: {
-    ...mapGetters({
-      locale: 'locale'
-    }),
-    availableLocales() {
-      return this.$i18n.locales
-    },
-    currentLocale() {
-      return this.availableLocales.find(locale => locale.code === this.locale)
-    },
     headingUtilities() {
       if (this.form.name[this.locale]) {
         return
