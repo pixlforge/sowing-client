@@ -205,7 +205,7 @@ export default {
       try {
         await this.$axios.$patch(`/products/${this.product.slug}`, this.form)
         this.$router.push({
-          name: 'shop-management-products-create-product-slug-variations',
+          name: 'shop-management-products-create-product-slug-types',
           params: {
             slug: this.product.slug
           }

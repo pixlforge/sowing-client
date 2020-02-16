@@ -76,10 +76,15 @@ module.exports = {
       },
 
       orange: {
-        300: '#FBD38D',
-        400: '#F6AD55',
-        500: '#ED8936',
-        700: '#C05621'
+        100: '#fffaf0',
+        200: '#feebc8',
+        300: '#fbd38d',
+        400: '#f6ad55',
+        500: '#ed8936',
+        600: '#dd6b20',
+        700: '#c05621',
+        800: '#9c4221',
+        900: '#7b341e'
       },
 
       purple: {
@@ -294,7 +299,7 @@ module.exports = {
     borderWidth: ['responsive', 'last'],
     boxShadow: ['responsive', 'hover', 'focus', 'group-hover', 'disabled'],
     cursor: ['disabled'],
-    display: ['responsive'],
+    display: ['responsive', 'group-hover'],
     fill: [],
     flex: ['responsive'],
     flexDirection: ['responsive'],

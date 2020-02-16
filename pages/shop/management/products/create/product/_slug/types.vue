@@ -26,7 +26,7 @@
         visual="h4"
         utilities="text-center"
       >
-        {{ $t('products.management.create.variations_for') }}
+        {{ $t('products.management.create.types_for') }}
         <span :class="`text-${shopTheme}-500`">
           {{ product.name[locale] || $t('products.management.create.unnamed') }}
         </span>
@@ -35,7 +35,7 @@
 
     <!-- Infotip -->
     <InfoTip icon="info">
-      {{ $t('products.management.create.tips.variations') }}
+      {{ $t('products.management.create.tips.types') }}
     </InfoTip>
 
     <!-- Types -->
@@ -44,7 +44,7 @@
       :key="type.id"
       :type="type"
       :product="product"
-      class="mb-20"
+      class="my-48"
     />
 
     <!-- Add a new variation type -->
@@ -53,7 +53,7 @@
       :class="`bg-${shopTheme}-300 hover:bg-${shopTheme}-500`"
       size="large"
       type="button"
-      class="w-full"
+      class=""
     >
       <font-awesome-icon
         :icon="['fas', 'plus']"
@@ -133,7 +133,7 @@ export default {
   layout: 'create-product',
   head() {
     return {
-      title: `${this.$t('products.management.create.variations')} | ${this.$t('products.management.create.title')} | ${this.product.name[this.locale]} | ${this.shop.name}`,
+      title: `${this.$t('products.management.create.types')} | ${this.$t('products.management.create.title')} | ${this.product.name[this.locale]} | ${this.shop.name}`,
       meta: [
         {
           hid: 'description',

@@ -22,10 +22,13 @@ export default {
           category: 'Associer votre produit à la catégorie correspondante permet aux visiteurs de Sowing de trouver plus facilement votre produit.',
           name_and_description: "Nommez et décrivez en détails les caractéristiques et les points forts de votre produit. Traduire le nom et la description de votre produit n'est pas obligatoire mais augmente les probabilités qu'il soit remarqué.",
           price: 'Vous êtes libre de définir un prix différent pour les variations de votre produit.',
+          types: 'Lorem ipsum dolor sit amet',
           variations: 'Lorem ipsum dolor sit amet'
         },
         title: 'Ajouter un produit',
         unnamed: 'Nouveau produit sans nom',
+        types: 'Types',
+        types_for: 'Types pour',
         variations: 'Variations',
         variations_for: 'Variations pour'
       }

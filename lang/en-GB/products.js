@@ -22,10 +22,13 @@ export default {
           category: 'Linking your product to the corresponding category makes it easier for Sowing visitors to find your product.',
           name_and_description: 'Name and describe in detail the features and strengths of your product. Translating the name and description of your product is not mandatory but increases the likelihood that it will be noticed.',
           price: 'You are free to set a different price for variations of your product.',
+          types: 'Lorem ipsum dolor sit amet',
           variations: 'Lorem ipsum dolor sit amet'
         },
         title: 'Add a product',
         unnamed: 'New unnamed product',
+        types: 'Types',
+        types_for: 'Types for',
         variations: 'Variations',
         variations_for: 'Variations for'
       }
