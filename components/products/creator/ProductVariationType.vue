@@ -1,13 +1,7 @@
 <template>
   <div
-    :class="[
-      `border-${shopTheme}-200`,
-      {
-        'my-10': collapse,
-        'my-48': !collapse
-      }
-    ]"
-    class="bg-white border rounded-lg"
+    :class="`border-${shopTheme}-200`"
+    class="bg-white border rounded-lg my-10"
   >
 
     <!-- Header -->
