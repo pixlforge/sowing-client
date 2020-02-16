@@ -3,8 +3,8 @@
     :class="[
       `border-${shopTheme}-200`,
       {
-        'mb-10': collapse,
-        'mb-48': !collapse
+        'my-10': collapse,
+        'my-48': !collapse
       }
     ]"
     class="bg-white border rounded-lg"
@@ -24,7 +24,7 @@
             :class="{
               'rotate-180': collapse
             }"
-            class="text-20 transform"
+            class="text-20 transform transition-transform duration-200 ease-out"
           />
         </button>
 
@@ -48,6 +48,7 @@
       </InfoBubble>
     </header>
 
+    <!-- Types -->
     <div
       v-if="!collapse"
       class="flex flex-wrap p-20 lg:px-36 lg:py-20 -mx-10 mt-16"
@@ -66,6 +67,7 @@
         >
       </div>
     </div>
+
   </div>
 </template>
 
