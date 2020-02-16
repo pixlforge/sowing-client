@@ -5,7 +5,7 @@
   >
 
     <!-- Header -->
-    <header class="flex items-baseline bg-gray-100 p-20 lg:px-36 lg:py-20">
+    <header class="relative flex items-baseline bg-gray-100 p-20 lg:px-36 lg:py-20">
       <Heading
         :utilities="headingUtilities"
         tag="h5"
@@ -13,19 +13,14 @@
       >
         {{ form.name[locale] || $t('product_variation_type.unnamed') }}
       </Heading>
-      <div
+
+      <InfoBubble
         v-if="!form.name[locale]"
-        class="relative group cursor-pointer ml-16"
+        :color="shopTheme"
+        class="ml-16"
       >
-        <font-awesome-icon
-          :icon="['fas', 'exclamation-triangle']"
-          :class="`text-${shopTheme}-400`"
-          class="text-14"
-        />
-        <div class="w-200 absolute top-0 left-0 hidden group-hover:block text-12 text-center leading-relaxed bg-white rounded-lg shadow-xl px-20 py-16 ml-18 mt-18">
-          Il est recommandé d'ajouter un nom en <span class="lowercase">{{ currentLocale.name }}</span>
-        </div>
-      </div>
+        Vous devriez, au minimum, ajouter un nom dans votre langue.
+      </InfoBubble>
     </header>
 
     <div class="flex flex-wrap p-20 lg:px-36 lg:py-20 -mx-10 mt-16">
@@ -52,10 +47,12 @@ import { debounce as _debounce } from 'lodash'
 import { mapGetters } from 'vuex'
 
 import Heading from '@/components/globals/Heading'
+import InfoBubble from '@/components/globals/InfoBubble'
 
 export default {
   components: {
-    Heading
+    Heading,
+    InfoBubble
   },
   mixins: [theming],
   props: {

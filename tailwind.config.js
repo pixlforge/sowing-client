@@ -328,6 +328,7 @@ module.exports = {
     placeholderColor: [],
     position: ['responsive'],
     resize: [],
+    scale: ['responsive', 'hover', 'focus', 'group-hover'],
     stroke: [],
     textAlign: ['responsive'],
     textColor: ['responsive', 'hover', 'focus', 'group-hover', 'disabled'],
