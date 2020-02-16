@@ -44,7 +44,6 @@
       :key="type.id"
       :type="type"
       :product="product"
-      class="my-48"
     />
 
     <!-- Add a new variation type -->
@@ -53,7 +52,7 @@
       :class="`bg-${shopTheme}-300 hover:bg-${shopTheme}-500`"
       size="large"
       type="button"
-      class=""
+      class="mt-48"
     >
       <font-awesome-icon
         :icon="['fas', 'plus']"

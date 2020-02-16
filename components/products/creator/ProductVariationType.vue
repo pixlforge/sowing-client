@@ -1,6 +1,12 @@
 <template>
   <div
-    :class="`border-${shopTheme}-200`"
+    :class="[
+      `border-${shopTheme}-200`,
+      {
+        'mb-10': collapse,
+        'mb-48': !collapse
+      }
+    ]"
     class="bg-white border rounded-lg"
   >
 
@@ -11,11 +17,14 @@
         <!-- Collapse or expand the content -->
         <button
           @click.prevent="toggleCollapse"
-          class="mr-16"
+          class="text-gray-300 hover:text-gray-500 transition-colors duration-200 ease-out mr-16"
         >
           <font-awesome-icon
-            :icon="['far', 'caret-circle-down']"
-            class="text-20 text-gray-300"
+            :icon="['far', 'caret-circle-up']"
+            :class="{
+              'rotate-180': collapse
+            }"
+            class="text-20 transform"
           />
         </button>
 
@@ -39,7 +48,10 @@
       </InfoBubble>
     </header>
 
-    <div class="flex flex-wrap p-20 lg:px-36 lg:py-20 -mx-10 mt-16">
+    <div
+      v-if="!collapse"
+      class="flex flex-wrap p-20 lg:px-36 lg:py-20 -mx-10 mt-16"
+    >
       <div
         v-for="locale in availableLocales"
         :key="locale.code"
