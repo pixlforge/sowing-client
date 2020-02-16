@@ -5,21 +5,37 @@
   >
 
     <!-- Header -->
-    <header class="relative flex items-baseline bg-gray-100 p-20 lg:px-36 lg:py-20">
-      <Heading
-        :utilities="headingUtilities"
-        tag="h5"
-        visual="h5"
-      >
-        {{ form.name[locale] || $t('product_variation_type.unnamed') }}
-      </Heading>
+    <header class="relative flex justify-between items-center bg-gray-100 p-20 lg:px-36 lg:py-20">
+      <div class="flex">
 
+        <!-- Collapse or expand the content -->
+        <button
+          @click.prevent="toggleCollapse"
+          class="mr-16"
+        >
+          <font-awesome-icon
+            :icon="['far', 'caret-circle-down']"
+            class="text-20 text-gray-300"
+          />
+        </button>
+
+        <!-- Type title -->
+        <Heading
+          :utilities="headingUtilities"
+          tag="h5"
+          visual="h5"
+        >
+          {{ form.name[locale] || $t('product_variation_type.unnamed') }}
+        </Heading>
+      </div>
+
+      <!-- Info Bubble: Add at least the type name in your own language -->
       <InfoBubble
         v-if="!form.name[locale]"
         :color="shopTheme"
         class="ml-16"
       >
-        Vous devriez, au minimum, ajouter un nom dans votre langue.
+        {{ $t('product_variation_type.add_type_name_in_your_own_language') }}
       </InfoBubble>
     </header>
 
@@ -69,7 +85,8 @@ export default {
     return {
       form: {
         name: this.type.name
-      }
+      },
+      collapse: false
     }
   },
   computed: {
@@ -96,6 +113,11 @@ export default {
       handler: _debounce(async function () {
         await this.$axios.$patch(`/products/${this.product.slug}/product-variation-types/${this.type.id}`, this.form)
       }, 500)
+    }
+  },
+  methods: {
+    toggleCollapse() {
+      this.collapse = !this.collapse
     }
   }
 }
