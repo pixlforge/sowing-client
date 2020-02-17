@@ -31,7 +31,7 @@
         />
 
         <!-- Delete -->
-        <DeleteButton @click.native="openModal"/>
+        <ButtonDelete @click.native="openModal"/>
       </div>
     </header>
 
@@ -105,7 +105,7 @@ import Card from '@/components/globals/Card'
 import Heading from '@/components/globals/Heading'
 import BackButton from '@/components/buttons/BackButton'
 import EditButton from '@/components/buttons/EditButton'
-import DeleteButton from '@/components/buttons/DeleteButton'
+import ButtonDelete from '@/components/buttons/ButtonDelete'
 import ConfirmationModal from '@/components/modals/ConfirmationModal'
 
 export default {
@@ -114,7 +114,7 @@ export default {
     Heading,
     BackButton,
     EditButton,
-    DeleteButton,
+    ButtonDelete,
     ConfirmationModal
   },
   middleware: ['authenticated'],

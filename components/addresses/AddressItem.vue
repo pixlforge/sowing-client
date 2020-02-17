@@ -30,7 +30,7 @@
         />
 
         <!-- Delete -->
-        <DeleteButton @click.native="confirmDelete"/>
+        <ButtonDelete @click.native="confirmDelete"/>
       </template>
     </div>
 
@@ -86,14 +86,14 @@ import { mapActions } from 'vuex'
 
 import ViewButton from '@/components/buttons/ViewButton'
 import EditButton from '@/components/buttons/EditButton'
-import DeleteButton from '@/components/buttons/DeleteButton'
+import ButtonDelete from '@/components/buttons/ButtonDelete'
 import ResourceControlsButton from '@/components/buttons/ResourceControlsButton'
 
 export default {
   components: {
     ViewButton,
     EditButton,
-    DeleteButton,
+    ButtonDelete,
     ResourceControlsButton
   },
   props: {

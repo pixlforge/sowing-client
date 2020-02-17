@@ -6,7 +6,7 @@
 
     <!-- Header -->
     <header class="flex justify-between items-center bg-gray-100 p-20 lg:px-36 lg:py-20">
-      <div class="flex">
+      <div class="flex items-center">
 
         <!-- Collapse or expand the content -->
         <ButtonCollapse
@@ -22,16 +22,19 @@
         >
           {{ form.name[locale] || $t('product_variation_type.unnamed') }}
         </Heading>
+
+        <!-- Info Bubble: Add at least the type name in your own language -->
+        <InfoBubble
+          v-if="!form.name[locale]"
+          :color="shopTheme"
+          class="ml-16"
+        >
+          {{ $t('product_variation_type.add_type_name_in_your_own_language') }}
+        </InfoBubble>
       </div>
 
-      <!-- Info Bubble: Add at least the type name in your own language -->
-      <InfoBubble
-        v-if="!form.name[locale]"
-        :color="shopTheme"
-        class="ml-16"
-      >
-        {{ $t('product_variation_type.add_type_name_in_your_own_language') }}
-      </InfoBubble>
+      <!-- Delete -->
+      <ButtonDelete icon-size="text-16"/>
     </header>
 
     <!-- Types -->
@@ -64,12 +67,14 @@ import { debounce as _debounce } from 'lodash'
 
 import Heading from '@/components/globals/Heading'
 import InfoBubble from '@/components/globals/InfoBubble'
+import ButtonDelete from '@/components/buttons/ButtonDelete'
 import ButtonCollapse from '@/components/buttons/ButtonCollapse'
 
 export default {
   components: {
     Heading,
     InfoBubble,
+    ButtonDelete,
     ButtonCollapse
   },
   mixins: [

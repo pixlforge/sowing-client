@@ -19,7 +19,7 @@
       </div>
 
       <!-- Delete -->
-      <DeleteButton @click.native="openModal"/>
+      <ButtonDelete @click.native="openModal"/>
     </header>
 
     <Card>
@@ -46,7 +46,7 @@ import { mapActions } from 'vuex'
 import Card from '@/components/globals/Card'
 import Heading from '@/components/globals/Heading'
 import BackButton from '@/components/buttons/BackButton'
-import DeleteButton from '@/components/buttons/DeleteButton'
+import ButtonDelete from '@/components/buttons/ButtonDelete'
 import AddressCard from '@/components/addresses/AddressCard'
 import ConfirmationModal from '@/components/modals/ConfirmationModal'
 
@@ -55,7 +55,7 @@ export default {
     Card,
     Heading,
     BackButton,
-    DeleteButton,
+    ButtonDelete,
     AddressCard,
     ConfirmationModal
   },
