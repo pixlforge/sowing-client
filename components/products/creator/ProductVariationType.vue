@@ -34,7 +34,10 @@
       </div>
 
       <!-- Delete -->
-      <ButtonDelete icon-size="text-16"/>
+      <ButtonDelete
+        @click.native="openModal"
+        icon-size="text-16"
+      />
     </header>
 
     <!-- Types -->
@@ -57,6 +60,17 @@
       </div>
     </div>
 
+    <!-- Confirmation modal -->
+    <ConfirmationModal
+      @confirm="destroy"
+      title="Placeholder title"
+      body="Are you sure about that?"
+      button-label="Yup"
+      button-icon="trash-alt"
+      icon="exclamation-circle"
+      color="red"
+    />
+
   </div>
 </template>
 
@@ -64,18 +78,21 @@
 import theming from '@/mixins/theming'
 import locales from '@/mixins/locales'
 import { debounce as _debounce } from 'lodash'
+import { mapActions } from 'vuex'
 
 import Heading from '@/components/globals/Heading'
 import InfoBubble from '@/components/globals/InfoBubble'
 import ButtonDelete from '@/components/buttons/ButtonDelete'
 import ButtonCollapse from '@/components/buttons/ButtonCollapse'
+import ConfirmationModal from '@/components/modals/ConfirmationModal'
 
 export default {
   components: {
     Heading,
     InfoBubble,
     ButtonDelete,
-    ButtonCollapse
+    ButtonCollapse,
+    ConfirmationModal
   },
   mixins: [
     theming,
@@ -117,8 +134,16 @@ export default {
     }
   },
   methods: {
+    ...mapActions({
+      openModal: 'confirmation/openModal',
+      closeModal: 'confirmation/closeModal'
+    }),
     toggleCollapse() {
       this.collapse = !this.collapse
+    },
+    destroy() {
+      console.log('Delete type')
+      this.closeModal()
     }
   }
 }
