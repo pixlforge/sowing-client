@@ -2,7 +2,7 @@
   <div class="group cursor-pointer">
     <font-awesome-icon
       :icon="['fas', 'info-circle']"
-      :class="`${iconSize} text-${color}-400`"
+      :class="`${iconSize} text-${color}-300`"
     />
     <div
       :class="`bg-${color}-500`"
