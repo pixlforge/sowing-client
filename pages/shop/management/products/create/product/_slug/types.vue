@@ -100,6 +100,17 @@
       </div>
     </FormSection>
 
+    <!-- Confirmation modal -->
+    <ConfirmationModal
+      :title="$t('modals.product_variation_type.delete.title')"
+      :body="$t('modals.product_variation_type.delete.title')"
+      :button-label="$t('buttons.delete')"
+      @confirm="destroy"
+      button-icon="trash-alt"
+      icon="exclamation-circle"
+      color="red"
+    />
+
   </div>
 </template>
 
@@ -112,6 +123,7 @@ import InfoTip from '@/components/globals/InfoTip'
 import BackButton from '@/components/buttons/BackButton'
 import FormSection from '@/components/forms/FormSection'
 import ButtonPrimary from '@/components/buttons/ButtonPrimary'
+import ConfirmationModal from '@/components/modals/ConfirmationModal'
 import ButtonLinkTertiary from '@/components/buttons/ButtonLinkTertiary'
 import ProductCreatorStep from '@/components/products/creator/ProductCreatorStep'
 import ProductVariationType from '@/components/products/creator/ProductVariationType'
@@ -123,6 +135,7 @@ export default {
     BackButton,
     FormSection,
     ButtonPrimary,
+    ConfirmationModal,
     ButtonLinkTertiary,
     ProductCreatorStep,
     ProductVariationType
@@ -158,7 +171,8 @@ export default {
   },
   computed: {
     ...mapGetters({
-      locale: 'locale'
+      locale: 'locale',
+      getResourceId: 'confirmation/getResourceId'
     }),
     productHasNoType() {
       return !this.product.types.length
@@ -178,7 +192,8 @@ export default {
   },
   methods: {
     ...mapActions({
-      setShop: 'shop/setShop'
+      setShop: 'shop/setShop',
+      closeModal: 'confirmation/closeModal'
     }),
     async addVariationType() {
       try {
@@ -187,6 +202,20 @@ export default {
       } catch (e) {
         console.log(e)
       }
+    },
+    async destroy() {
+      try {
+        await this.$axios.$delete(`/products/${this.product.slug}/product-variation-types/${this.getResourceId}`)
+        await this.getProduct()
+        this.$toasted.success(this.$t('toasts.addresses.deleted'))
+      } catch (e) {
+        this.$toasted.error(this.$t('toasts.general_error'))
+      }
+      this.closeModal()
+    },
+    async getProduct() {
+      const res = await this.$axios.$get(`/products/${this.product.slug}`)
+      this.product = res.data
     }
   }
 }

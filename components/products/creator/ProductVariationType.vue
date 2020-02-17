@@ -35,7 +35,7 @@
 
       <!-- Delete -->
       <ButtonDelete
-        @click.native="openModal"
+        @click.native="confirmDelete"
         icon-size="text-16"
       />
     </header>
@@ -59,18 +59,6 @@
         >
       </div>
     </div>
-
-    <!-- Confirmation modal -->
-    <ConfirmationModal
-      @confirm="destroy"
-      title="Placeholder title"
-      body="Are you sure about that?"
-      button-label="Yup"
-      button-icon="trash-alt"
-      icon="exclamation-circle"
-      color="red"
-    />
-
   </div>
 </template>
 
@@ -84,15 +72,13 @@ import Heading from '@/components/globals/Heading'
 import InfoBubble from '@/components/globals/InfoBubble'
 import ButtonDelete from '@/components/buttons/ButtonDelete'
 import ButtonCollapse from '@/components/buttons/ButtonCollapse'
-import ConfirmationModal from '@/components/modals/ConfirmationModal'
 
 export default {
   components: {
     Heading,
     InfoBubble,
     ButtonDelete,
-    ButtonCollapse,
-    ConfirmationModal
+    ButtonCollapse
   },
   mixins: [
     theming,
@@ -130,20 +116,18 @@ export default {
       deep: true,
       handler: _debounce(async function () {
         await this.$axios.$patch(`/products/${this.product.slug}/product-variation-types/${this.type.id}`, this.form)
-      }, 500)
+      }, 750)
     }
   },
   methods: {
     ...mapActions({
-      openModal: 'confirmation/openModal',
-      closeModal: 'confirmation/closeModal'
+      openModal: 'confirmation/openModal'
     }),
+    confirmDelete() {
+      this.openModal(this.type.id)
+    },
     toggleCollapse() {
       this.collapse = !this.collapse
-    },
-    destroy() {
-      console.log('Delete type')
-      this.closeModal()
     }
   }
 }

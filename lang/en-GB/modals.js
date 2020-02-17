@@ -11,6 +11,12 @@ export default {
         title: 'Delete a payment method',
         body: 'Are you sure you want to delete this payment method?'
       }
+    },
+    product_variation_type: {
+      delete: {
+        title: 'Delete a variation type',
+        body: 'Are you sure you want to delete this type of variation?'
+      }
     }
   }
 }
