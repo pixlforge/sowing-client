@@ -1,10 +1,10 @@
 <template>
   <div>
 
-    <!-- Step -->
-    <ProductCreatorStep>
-      4/5
-    </ProductCreatorStep>
+    <!-- Timeline -->
+    <div>
+      &nbsp;
+    </div>
 
     <!-- Header -->
     <header class="flex flex-wrap items-center my-30">
@@ -124,7 +124,6 @@ import FormSection from '@/components/forms/FormSection'
 import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 import ConfirmationModal from '@/components/modals/ConfirmationModal'
 import ButtonLinkTertiary from '@/components/buttons/ButtonLinkTertiary'
-import ProductCreatorStep from '@/components/products/creator/ProductCreatorStep'
 import ProductVariationType from '@/components/products/creator/ProductVariationType'
 
 export default {
@@ -136,7 +135,6 @@ export default {
     ButtonPrimary,
     ConfirmationModal,
     ButtonLinkTertiary,
-    ProductCreatorStep,
     ProductVariationType
   },
   mixins: [theming],
