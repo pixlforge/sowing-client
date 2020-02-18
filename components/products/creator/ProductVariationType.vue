@@ -116,7 +116,7 @@ export default {
       deep: true,
       handler: _debounce(async function () {
         await this.$axios.$patch(`/products/${this.product.slug}/product-variation-types/${this.type.id}`, this.form)
-      }, 750)
+      }, 1000)
     }
   },
   methods: {
