@@ -47,18 +47,17 @@
       :key="type.id"
       :type="type"
       :product="product"
+      class="mb-10"
     />
 
     <!-- Add a new variation type -->
-    <ButtonPrimary
-      @click.native="addVariationType"
-      :class="`bg-${shopTheme}-300 hover:bg-${shopTheme}-500`"
-      size="large"
+    <button
+      @click="addVariationType"
       type="button"
-      class="mt-48"
+      class="w-full hover:bg-gray-100 border border-gray-200 hover:border-gray-300 rounded-lg text-14 text-gray-300 hover:text-gray-400 transition-all duration-200 ease-out select-none py-12"
     >
       <font-awesome-icon
-        :icon="['fas', 'plus']"
+        :icon="['far', 'plus']"
         class="mr-10"
       />
       <template v-if="productHasNoType">
@@ -67,7 +66,7 @@
       <template v-else>
         {{ $t('product_variation_type.add_another_type') }}
       </template>
-    </ButtonPrimary>
+    </button>
 
     <!-- Controls -->
     <FormSection class="lg:w-full">

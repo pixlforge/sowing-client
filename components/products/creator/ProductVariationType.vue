@@ -1,7 +1,7 @@
 <template>
   <div
     :class="`border-${shopTheme}-200`"
-    class="bg-white border rounded-lg my-10"
+    class="bg-white border rounded-lg"
   >
 
     <!-- Header -->
