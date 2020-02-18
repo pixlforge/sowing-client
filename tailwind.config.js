@@ -150,6 +150,7 @@ module.exports = {
       'backdrop': 'rgba(0, 0, 0, .25)'
     },
     fontSize: {
+      '5': '.5rem',
       '10': '1rem',
       '12': '1.2rem',
       '14': '1.4rem',
@@ -234,6 +235,7 @@ module.exports = {
     margin: {
       auto: 'auto',
       '0': '0',
+      '1': '.1rem',
       '2': '.2rem',
       '5': '.5rem',
       '10': '1rem',

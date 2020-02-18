@@ -3,7 +3,47 @@
 
     <!-- Timeline -->
     <div>
-      &nbsp;
+      <div class="flex justify-center">
+
+        <!-- Done -->
+        <div
+          v-for="n in 3"
+          :key="`done-${n}`"
+          class="w-20 h-20 flex justify-center items-center bg-green-500 rounded-full mx-2"
+        >
+          <font-awesome-icon
+            :icon="['far', 'check']"
+            class="text-12 text-white"
+          />
+        </div>
+
+        <!-- Current -->
+        <div
+          :class="`bg-${shopTheme}-500`"
+          class="w-20 h-20 flex justify-center items-center rounded-full mx-2"
+        >
+          <font-awesome-icon
+            :icon="['far', 'dot-circle']"
+            class="text-12 text-white"
+          />
+        </div>
+
+        <!-- Remaining -->
+        <div
+          v-for="n in 2"
+          :key="`remaining-${n}`"
+          class="w-20 h-20 flex justify-center items-center bg-gray-300 rounded-full mx-2"
+        >
+          <font-awesome-icon
+            :icon="['far', 'question-circle']"
+            class="text-12 text-white"
+          />
+        </div>
+
+      </div>
+      <div class="text-14 text-center mt-5">
+        Types
+      </div>
     </div>
 
     <!-- Header -->
