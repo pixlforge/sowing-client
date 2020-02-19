@@ -55,7 +55,7 @@
           :placeholder="$t(`form.product_variation_type.name.${locale.code}`)"
           :class="`border-${shopTheme}-200`"
           type="text"
-          class="w-full border-2 border-dashed rounded-lg text-16 placeholder-gray-300 px-20 py-16 mb-10"
+          class="w-full border-2 border-dashed rounded-lg text-14 lg:text-16 placeholder-gray-300 px-20 py-16 mb-10"
         >
       </div>
     </div>
