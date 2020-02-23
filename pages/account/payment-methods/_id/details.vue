@@ -101,21 +101,21 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 
-import Card from '@/components/globals/Card'
-import Heading from '@/components/globals/Heading'
 import ButtonBack from '@/components/buttons/ButtonBack'
-import ButtonEdit from '@/components/buttons/ButtonEdit'
 import ButtonDelete from '@/components/buttons/ButtonDelete'
+import ButtonEdit from '@/components/buttons/ButtonEdit'
+import Card from '@/components/globals/Card'
 import ConfirmationModal from '@/components/modals/ConfirmationModal'
+import Heading from '@/components/globals/Heading'
 
 export default {
   components: {
-    Card,
-    Heading,
     ButtonBack,
-    ButtonEdit,
     ButtonDelete,
-    ConfirmationModal
+    ButtonEdit,
+    Card,
+    ConfirmationModal,
+    Heading
   },
   middleware: ['authenticated'],
   layout: 'account-management',

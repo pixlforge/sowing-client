@@ -43,21 +43,21 @@
 <script>
 import { mapActions } from 'vuex'
 
-import Card from '@/components/globals/Card'
-import Heading from '@/components/globals/Heading'
+import AddressCard from '@/components/addresses/AddressCard'
 import ButtonBack from '@/components/buttons/ButtonBack'
 import ButtonDelete from '@/components/buttons/ButtonDelete'
-import AddressCard from '@/components/addresses/AddressCard'
+import Card from '@/components/globals/Card'
 import ConfirmationModal from '@/components/modals/ConfirmationModal'
+import Heading from '@/components/globals/Heading'
 
 export default {
   components: {
-    Card,
-    Heading,
+    AddressCard,
     ButtonBack,
     ButtonDelete,
-    AddressCard,
-    ConfirmationModal
+    Card,
+    ConfirmationModal,
+    Heading
   },
   layout: 'account-management',
   middleware: ['authenticated'],

@@ -36,19 +36,19 @@
 </template>
 
 <script>
+import ButtonBack from '@/components/buttons/ButtonBack'
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 import Card from '@/components/globals/Card'
 import Heading from '@/components/globals/Heading'
-import ButtonBack from '@/components/buttons/ButtonBack'
 import Paragraph from '@/components/paragraphs/Paragraph'
-import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 
 export default {
   components: {
+    ButtonBack,
+    ButtonPrimary,
     Card,
     Heading,
-    ButtonBack,
-    Paragraph,
-    ButtonPrimary
+    Paragraph
   },
   middleware: ['authenticated'],
   layout: 'account-management',

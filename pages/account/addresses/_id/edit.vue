@@ -201,37 +201,37 @@
 <script>
 import { mapActions } from 'vuex'
 
-import Card from '@/components/globals/Card'
-import Heading from '@/components/globals/Heading'
-import FormRow from '@/components/forms/FormRow'
-import FormGroup from '@/components/forms/FormGroup'
-import FormLabel from '@/components/forms/FormLabel'
-import FormInput from '@/components/forms/FormInput'
 import ButtonBack from '@/components/buttons/ButtonBack'
-import FormRowGroup from '@/components/forms/FormRowGroup'
-import FormCheckbox from '@/components/forms/FormCheckbox'
-import FormValidation from '@/components/forms/FormValidation'
 import ButtonPrimary from '@/components/buttons/ButtonPrimary'
-import CountryDropdown from '@/components/forms/CountryDropdown'
 import ButtonTertiary from '@/components/buttons/ButtonTertiary'
+import Card from '@/components/globals/Card'
+import CountryDropdown from '@/components/forms/CountryDropdown'
+import FormCheckbox from '@/components/forms/FormCheckbox'
 import FormCheckboxLabel from '@/components/forms/FormCheckboxLabel'
+import FormGroup from '@/components/forms/FormGroup'
+import FormInput from '@/components/forms/FormInput'
+import FormLabel from '@/components/forms/FormLabel'
+import FormRow from '@/components/forms/FormRow'
+import FormRowGroup from '@/components/forms/FormRowGroup'
+import FormValidation from '@/components/forms/FormValidation'
+import Heading from '@/components/globals/Heading'
 
 export default {
   components: {
-    Card,
-    Heading,
-    FormGroup,
-    FormLabel,
-    FormInput,
     ButtonBack,
-    FormRowGroup,
-    FormCheckbox,
-    FormRow,
-    FormValidation,
     ButtonPrimary,
-    CountryDropdown,
     ButtonTertiary,
-    FormCheckboxLabel
+    Card,
+    CountryDropdown,
+    FormCheckbox,
+    FormCheckboxLabel,
+    FormGroup,
+    FormInput,
+    FormLabel,
+    FormRow,
+    FormRowGroup,
+    FormValidation,
+    Heading
   },
   layout: 'account-management',
   middleware: ['authenticated'],

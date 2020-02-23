@@ -62,27 +62,27 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 
-import Card from '@/components/globals/Card'
-import Heading from '@/components/globals/Heading'
-import Paragraph from '@/components/paragraphs/Paragraph'
 import AddressItem from '@/components/addresses/AddressItem'
 import ButtonLinkAdd from '@/components/buttons/ButtonLinkAdd'
-import ResourceList from '@/components/resources/ResourceList'
-import ResourceHeader from '@/components/resources/ResourceHeader'
-import ConfirmationModal from '@/components/modals/ConfirmationModal'
 import ButtonLinkPrimary from '@/components/buttons/ButtonLinkPrimary'
+import Card from '@/components/globals/Card'
+import ConfirmationModal from '@/components/modals/ConfirmationModal'
+import Heading from '@/components/globals/Heading'
+import Paragraph from '@/components/paragraphs/Paragraph'
+import ResourceHeader from '@/components/resources/ResourceHeader'
+import ResourceList from '@/components/resources/ResourceList'
 
 export default {
   components: {
-    Heading,
-    Card,
-    Paragraph,
     AddressItem,
     ButtonLinkAdd,
-    ResourceList,
-    ResourceHeader,
+    ButtonLinkPrimary,
+    Card,
     ConfirmationModal,
-    ButtonLinkPrimary
+    Heading,
+    Paragraph,
+    ResourceHeader,
+    ResourceList
   },
   middleware: ['authenticated'],
   layout: 'account-management',
