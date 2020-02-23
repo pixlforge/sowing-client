@@ -25,20 +25,20 @@
 <script>
 import { mapGetters } from 'vuex'
 
+import ContentSection from '@/components/globals/ContentSection'
 import Header from '@/components/headers/Header'
 import Product from '@/components/products/Product'
-import ContentSection from '@/components/globals/ContentSection'
 
 export default {
+  components: {
+    ContentSection,
+    Header,
+    Product
+  },
   head() {
     return {
       title: this.subcategory.name[this.locale]
     }
-  },
-  components: {
-    Header,
-    Product,
-    ContentSection
   },
   data() {
     return {

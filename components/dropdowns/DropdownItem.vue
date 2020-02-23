@@ -8,7 +8,7 @@
           'text-pink-600': color === 'pink-dark'
         }
       ]"
-      class="block text-14 md:text-12 font-bold leading-normal uppercase no-underline whitespace-no-wrap transition-color transition-faster py-5 cursor-pointer"
+      class="block text-14 md:text-12 font-bold leading-normal uppercase no-underline whitespace-no-wrap cursor-pointer transition-colors duration-200 ease-out py-5"
     >
       <font-awesome-icon
         v-if="icon"

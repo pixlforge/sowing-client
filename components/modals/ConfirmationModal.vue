@@ -28,7 +28,7 @@
                 <font-awesome-icon
                   :icon="['far', icon]"
                   :class="`text-${color}-600`"
-                  class="text-30"
+                  class="text-24 animation-pulse"
                 />
               </div>
             </div>

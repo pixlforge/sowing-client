@@ -5,7 +5,7 @@
         <img
           :src="`img/reviews/avatars/${review.avatar}`"
           :alt="review.name"
-          class="block rounded-full"
+          class="block rounded-full select-none"
         >
       </div>
       <div class="flex justify-center">

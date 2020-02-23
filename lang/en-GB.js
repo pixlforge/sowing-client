@@ -12,7 +12,7 @@ import creditCards from '~/lang/en-GB/creditCards'
 import dropzone from '~/lang/en-GB/dropzone'
 import faq from '~/lang/en-GB/faq'
 import footer from '~/lang/en-GB/footer'
-import forms from '~/lang/en-GB/forms'
+import form from '~/lang/en-GB/form'
 import home from '~/lang/en-GB/home'
 import languages from '~/lang/en-GB/languages'
 import login from '~/lang/en-GB/login'
@@ -22,6 +22,7 @@ import orders from '~/lang/en-GB/orders'
 import passwordEmail from '~/lang/en-GB/passwordEmail'
 import passwordReset from '~/lang/en-GB/passwordReset'
 import products from '~/lang/en-GB/products'
+import productVariationType from '~/lang/en-GB/productVariationType'
 import register from '~/lang/en-GB/register'
 import registerSuccess from '~/lang/en-GB/registerSuccess'
 import search from '~/lang/en-GB/search'
@@ -50,7 +51,7 @@ export default {
   ...dropzone,
   ...faq,
   ...footer,
-  ...forms,
+  ...form,
   ...home,
   ...languages,
   ...login,
@@ -60,6 +61,7 @@ export default {
   ...passwordEmail,
   ...passwordReset,
   ...products,
+  ...productVariationType,
   ...register,
   ...registerSuccess,
   ...search,

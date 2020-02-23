@@ -5,7 +5,7 @@
     <button
       v-if="!showing"
       @click.prevent="showing = true"
-      class="bg-gray-200 hover:bg-green-500 transition-color transition-faster text-white w-80 h-80 rounded-full p-0"
+      class="w-80 h-80 rounded-full bg-gray-200 hover:bg-green-500 text-white transition-colors duration-200 ease-out p-0"
     >
       <font-awesome-icon
         :icon="['far', 'plus']"

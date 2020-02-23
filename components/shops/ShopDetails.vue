@@ -3,7 +3,7 @@
 
     <!-- Postal code -->
     <ShopDetailsGroupInline
-      :title="$t('forms.labels.postal_code')"
+      :title="$t('form.postal_code.label')"
     >
       <FormInput
         v-model="localPostalCode"
@@ -19,7 +19,7 @@
 
     <!-- City -->
     <ShopDetailsGroupInline
-      :title="$t('forms.labels.city')"
+      :title="$t('form.city.label')"
     >
       <FormInput
         v-model="localCity"
@@ -35,7 +35,7 @@
 
     <!-- Country -->
     <ShopDetailsGroupInline
-      :title="$t('forms.labels.country')"
+      :title="$t('form.country.label')"
     >
       <FormSelect
         v-model="localCountry"
@@ -61,12 +61,13 @@
 
     <!-- Short description FR -->
     <ShopDetailsGroup
-      :title="$t('forms.labels.description_short')"
+      :title="$t('form.description_short.label')"
       :language="$t('languages.french')"
       :description="$t('shop_creator.steps.details.description_short_description')"
       class="my-72"
     >
       <FormInput
+        id="description_short_fr"
         v-model="localShortDescriptionFr"
         :disabled="shopExistsAndNotEditable"
         :errors="errors"
@@ -76,7 +77,7 @@
 
     <!-- Long description FR -->
     <ShopDetailsGroup
-      :title="$t('forms.labels.description_long')"
+      :title="$t('form.description_long.label')"
       :language="$t('languages.french')"
       :description="$t('shop_creator.steps.details.description_long_description')"
       class="my-72"
@@ -93,12 +94,13 @@
 
     <!-- Short description EN -->
     <ShopDetailsGroup
-      :title="$t('forms.labels.description_short')"
+      :title="$t('form.description_short.label')"
       :language="$t('languages.english')"
       :description="$t('shop_creator.steps.details.description_short_description')"
       class="my-72"
     >
       <FormInput
+        id="description_short_en"
         v-model="localShortDescriptionEn"
         :disabled="shopExistsAndNotEditable"
         :errors="errors"
@@ -108,7 +110,7 @@
 
     <!-- Long description EN -->
     <ShopDetailsGroup
-      :title="$t('forms.labels.description_long')"
+      :title="$t('form.description_long.label')"
       :language="$t('languages.english')"
       :description="$t('shop_creator.steps.details.description_long_description')"
       class="my-72"
@@ -125,12 +127,13 @@
 
     <!-- Short description DE -->
     <ShopDetailsGroup
-      :title="$t('forms.labels.description_short')"
+      :title="$t('form.description_short.label')"
       :language="$t('languages.german')"
       :description="$t('shop_creator.steps.details.description_short_description')"
       class="my-72"
     >
       <FormInput
+        id="description_short_de"
         v-model="localShortDescriptionDe"
         :disabled="shopExistsAndNotEditable"
         :errors="errors"
@@ -140,7 +143,7 @@
 
     <!-- Long description DE -->
     <ShopDetailsGroup
-      :title="$t('forms.labels.description_long')"
+      :title="$t('form.description_long.label')"
       :language="$t('languages.german')"
       :description="$t('shop_creator.steps.details.description_long_description')"
       class="my-72"
@@ -157,12 +160,13 @@
 
     <!-- Short description IT -->
     <ShopDetailsGroup
-      :title="$t('forms.labels.description_short')"
+      :title="$t('form.description_short.label')"
       :language="$t('languages.italian')"
       :description="$t('shop_creator.steps.details.description_short_description')"
       class="my-72"
     >
       <FormInput
+        id="description_short_it"
         v-model="localShortDescriptionIt"
         :disabled="shopExistsAndNotEditable"
         :errors="errors"
@@ -172,7 +176,7 @@
 
     <!-- Long description IT -->
     <ShopDetailsGroup
-      :title="$t('forms.labels.description_long')"
+      :title="$t('form.description_long.label')"
       :language="$t('languages.italian')"
       :description="$t('shop_creator.steps.details.description_long_description')"
       class="my-72"
@@ -191,9 +195,9 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 
+import FormDivider from '@/components/forms/FormDivider'
 import FormInput from '@/components/forms/FormInput'
 import FormSelect from '@/components/forms/FormSelect'
-import FormDivider from '@/components/forms/FormDivider'
 import FormTextarea from '@/components/forms/FormTextarea'
 import FormValidation from '@/components/forms/FormValidation'
 import ShopDetailsGroup from '@/components/shops/ShopDetailsGroup'
@@ -201,9 +205,9 @@ import ShopDetailsGroupInline from '@/components/shops/ShopDetailsGroupInline'
 
 export default {
   components: {
+    FormDivider,
     FormInput,
     FormSelect,
-    FormDivider,
     FormTextarea,
     FormValidation,
     ShopDetailsGroup,

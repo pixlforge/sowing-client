@@ -81,15 +81,15 @@
 </template>
 
 <script>
-import Heading from '@/components/globals/Heading'
 import ContentSection from '@/components/globals/ContentSection'
+import Heading from '@/components/globals/Heading'
 import Paragraph from '@/components/paragraphs/Paragraph'
 import ParagraphGroup from '@/components/paragraphs/ParagraphGroup'
 
 export default {
   components: {
-    Heading,
     ContentSection,
+    Heading,
     Paragraph,
     ParagraphGroup
   }

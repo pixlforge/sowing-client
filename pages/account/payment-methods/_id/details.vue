@@ -4,7 +4,7 @@
       <div class="flex items-center">
 
         <!-- Back -->
-        <BackButton
+        <ButtonBack
           :route="{ name: 'account-payment-methods' }"
           class="sm:mr-20"
         />
@@ -21,7 +21,7 @@
       <div class="flex justify-center items-center mt-48 sm:mt-0">
 
         <!-- Edit -->
-        <EditButton
+        <ButtonEdit
           :route="{
             name: 'account-payment-methods-id-edit',
             params: {
@@ -31,7 +31,7 @@
         />
 
         <!-- Delete -->
-        <DeleteButton @click.native="openModal"/>
+        <ButtonDelete @click.native="openModal"/>
       </div>
     </header>
 
@@ -101,21 +101,21 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 
+import ButtonBack from '@/components/buttons/ButtonBack'
+import ButtonDelete from '@/components/buttons/ButtonDelete'
+import ButtonEdit from '@/components/buttons/ButtonEdit'
 import Card from '@/components/globals/Card'
-import Heading from '@/components/globals/Heading'
-import BackButton from '@/components/buttons/BackButton'
-import EditButton from '@/components/buttons/EditButton'
-import DeleteButton from '@/components/buttons/DeleteButton'
 import ConfirmationModal from '@/components/modals/ConfirmationModal'
+import Heading from '@/components/globals/Heading'
 
 export default {
   components: {
+    ButtonBack,
+    ButtonDelete,
+    ButtonEdit,
     Card,
-    Heading,
-    BackButton,
-    EditButton,
-    DeleteButton,
-    ConfirmationModal
+    ConfirmationModal,
+    Heading
   },
   middleware: ['authenticated'],
   layout: 'account-management',

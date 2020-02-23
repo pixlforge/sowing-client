@@ -23,7 +23,7 @@
       <!-- Email -->
       <FormGroup>
         <FormLabel name="user">
-          {{ $t("forms.labels.email") }}
+          {{ $t("form.email.label") }}
         </FormLabel>
         <FormInput
           ref="autofocus"
@@ -42,7 +42,7 @@
       <!-- Password -->
       <FormGroup>
         <FormLabel name="password">
-          {{ $t("forms.labels.password") }}
+          {{ $t("form.password.label") }}
         </FormLabel>
         <FormInput
           v-model="form.password"
@@ -60,7 +60,7 @@
       <!-- Password confirmation -->
       <FormGroup>
         <FormLabel name="password_confirmation">
-          {{ $t("forms.labels.password_confirmation") }}
+          {{ $t("form.password_confirmation.label") }}
         </FormLabel>
         <FormInput
           v-model="form.password_confirmation"
@@ -86,23 +86,23 @@
 <script>
 import { mapActions } from 'vuex'
 
-import Heading from '@/components/globals/Heading'
-import FormGroup from '@/components/forms/FormGroup'
-import FormLabel from '@/components/forms/FormLabel'
-import FormInput from '@/components/forms/FormInput'
-import Paragraph from '@/components/paragraphs/Paragraph'
-import FormValidation from '@/components/forms/FormValidation'
 import ButtonPrimary from '@/components/buttons/ButtonPrimary'
+import FormGroup from '@/components/forms/FormGroup'
+import FormInput from '@/components/forms/FormInput'
+import FormLabel from '@/components/forms/FormLabel'
+import FormValidation from '@/components/forms/FormValidation'
+import Heading from '@/components/globals/Heading'
+import Paragraph from '@/components/paragraphs/Paragraph'
 
 export default {
   components: {
-    Heading,
+    ButtonPrimary,
     FormGroup,
-    FormLabel,
     FormInput,
-    Paragraph,
+    FormLabel,
     FormValidation,
-    ButtonPrimary
+    Heading,
+    Paragraph
   },
   middleware: ['guest'],
   layout: 'auth',

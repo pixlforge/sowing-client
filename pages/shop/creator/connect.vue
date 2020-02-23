@@ -28,7 +28,7 @@
             <a
               :href="stripeConnectOAuthUrl"
               :class="btnTheme"
-              class="inline-block outline-none focus:shadow-outline rounded-lg text-white font-bold text-center uppercase transition-color transition-faster no-underline whitespace-no-wrap text-16 font-black px-48 py-20"
+              class="inline-block outline-none focus:shadow-outline rounded-lg text-16 font-black text-white text-center uppercase no-underline whitespace-no-wrap transition-colors duration-200 ease-out px-48 py-20"
             >
               <font-awesome-icon
                 :icon="['fab', 'cc-stripe']"
@@ -78,20 +78,36 @@
 import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
-import Heading from '@/components/globals/Heading'
-import Splash from '@/components/globals/Splash'
-import ContentSection from '@/components/globals/ContentSection'
-import Paragraph from '@/components/paragraphs/Paragraph'
 import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 import ButtonTertiary from '@/components/buttons/ButtonTertiary'
+import ContentSection from '@/components/globals/ContentSection'
+import Heading from '@/components/globals/Heading'
+import Paragraph from '@/components/paragraphs/Paragraph'
 import ShopCreatorControls from '@/components/shops/ShopCreatorControls'
 import ShopFeatureContainer from '@/components/shops/ShopFeatureContainer'
+import Splash from '@/components/globals/Splash'
 
 export default {
+  components: {
+    ButtonPrimary,
+    ButtonTertiary,
+    ContentSection,
+    Heading,
+    Paragraph,
+    ShopCreatorControls,
+    ShopFeatureContainer,
+    Splash
+  },
+  mixins: [theming],
   middleware: [
     'authenticated',
     'hasShop'
   ],
+  layout: 'shop-creator',
+  transition: {
+    name: 'slide',
+    mode: 'out-in'
+  },
   head() {
     return {
       title: this.$t('shop_creator.steps.connect.title'),
@@ -109,22 +125,6 @@ export default {
       ]
     }
   },
-  layout: 'shop-creator',
-  transition: {
-    name: 'slide',
-    mode: 'out-in'
-  },
-  components: {
-    Heading,
-    Splash,
-    ContentSection,
-    Paragraph,
-    ButtonPrimary,
-    ButtonTertiary,
-    ShopCreatorControls,
-    ShopFeatureContainer
-  },
-  mixins: [theming],
   data() {
     return {
       tried: false

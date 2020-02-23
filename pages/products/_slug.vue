@@ -8,7 +8,7 @@
       :class="bgTheme"
     >
       <template>
-        <HeaderButtonLink
+        <ButtonLinkHeader
           :route="{
             name: 'shop-slug-details',
             params: {
@@ -19,7 +19,7 @@
           class="mt-16 shadow-2xl"
         >
           {{ $t("shop.visit") }}
-        </HeaderButtonLink>
+        </ButtonLinkHeader>
       </template>
     </Header>
 
@@ -38,13 +38,20 @@
 import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
-import Header from '@/components/headers/Header'
+import ButtonLinkHeader from '@/components/buttons/ButtonLinkHeader'
 import ContentSection from '@/components/globals/ContentSection'
+import Header from '@/components/headers/Header'
 import ProductDetails from '@/components/products/ProductDetails'
 import StreakNewsletter from '@/components/streaks/StreakNewsletter'
-import HeaderButtonLink from '@/components/buttons/HeaderButtonLink'
 
 export default {
+  components: {
+    ButtonLinkHeader,
+    ContentSection,
+    Header,
+    ProductDetails,
+    StreakNewsletter
+  },
   head() {
     return {
       title: this.product.name[this.locale],
@@ -56,13 +63,6 @@ export default {
         }
       ]
     }
-  },
-  components: {
-    Header,
-    ContentSection,
-    ProductDetails,
-    StreakNewsletter,
-    HeaderButtonLink
   },
   mixins: [theming],
   data() {

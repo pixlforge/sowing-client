@@ -223,35 +223,30 @@
 </template>
 
 <script>
-import Logo from '@/components/globals/Logo'
+import locales from '@/mixins/locales'
+
 import IllustrationEcommerce from '@/components/illustrations/IllustrationEcommerce'
+import Logo from '@/components/globals/Logo'
 
 export default {
+  components: {
+    IllustrationEcommerce,
+    Logo
+  },
+  mixins: [locales],
+  layout: 'full-screen',
   head() {
     return {
       titleTemplate: 'Sowing'
     }
   },
-  components: {
-    Logo,
-    IllustrationEcommerce
-  },
-  layout: 'full-screen',
   data() {
     return {
       email: '',
       errors: {}
     }
   },
-  computed: {
-    availableLocales() {
-      return this.$i18n.locales
-    }
-  },
   methods: {
-    setLocale(locale) {
-      this.$i18n.setLocale(locale.code)
-    },
     async subscribe() {
       this.errors = {}
 

@@ -1,17 +1,18 @@
 <template>
-  <div class="min-h-screen bg-gray-100 flex justify-center items-center">
-    <ContentSection>
+  <div class="min-h-screen flex flex-col bg-white pt-36">
+    <main class="container py-36">
+      <LogoLink :to="{ name: 'shop-management-products' }"/>
       <Nuxt/>
-    </ContentSection>
+    </main>
   </div>
 </template>
 
 <script>
-import ContentSection from '@/components/globals/ContentSection'
+import LogoLink from '@/components/globals/LogoLink'
 
 export default {
   components: {
-    ContentSection
+    LogoLink
   }
 }
 </script>

@@ -35,26 +35,25 @@
 
 <script>
 import theming from '@/mixins/theming'
+import locales from '@/mixins/locales'
 
+import DropdownContainer from '@/components/dropdowns/DropdownContainer'
 import DropdownItem from '@/components/dropdowns/DropdownItem'
 import DropdownTransition from '@/components/transitions/DropdownTransition'
-import DropdownContainer from '@/components/dropdowns/DropdownContainer'
 
 export default {
   components: {
+    DropdownContainer,
     DropdownItem,
-    DropdownTransition,
-    DropdownContainer
+    DropdownTransition
   },
-  mixins: [theming],
+  mixins: [
+    theming,
+    locales
+  ],
   data() {
     return {
       dropdownIsOpen: false
-    }
-  },
-  computed: {
-    availableLocales() {
-      return this.$i18n.locales
     }
   },
   mounted() {
@@ -82,9 +81,6 @@ export default {
   methods: {
     toggleDropdown() {
       this.dropdownIsOpen = !this.dropdownIsOpen
-    },
-    setLocale(locale) {
-      this.$i18n.setLocale(locale.code)
     }
   }
 }

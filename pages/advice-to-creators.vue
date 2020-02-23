@@ -40,15 +40,24 @@
 </template>
 
 <script>
-import Heading from '@/components/globals/Heading'
-import List from '@/components/paragraphs/List'
-import Header from '@/components/headers/Header'
 import ContentSection from '@/components/globals/ContentSection'
+import Header from '@/components/headers/Header'
+import Heading from '@/components/globals/Heading'
+import IllustrationNewIdeas from '@/components/illustrations/IllustrationNewIdeas'
+import List from '@/components/paragraphs/List'
 import Paragraph from '@/components/paragraphs/Paragraph'
 import StreakNewsletter from '@/components/streaks/StreakNewsletter'
-import IllustrationNewIdeas from '@/components/illustrations/IllustrationNewIdeas'
 
 export default {
+  components: {
+    ContentSection,
+    Header,
+    Heading,
+    IllustrationNewIdeas,
+    List,
+    Paragraph,
+    StreakNewsletter
+  },
   head() {
     return {
       title: this.$t('advice_to_creators.title'),
@@ -60,15 +69,6 @@ export default {
         }
       ]
     }
-  },
-  components: {
-    Heading,
-    List,
-    Header,
-    ContentSection,
-    Paragraph,
-    StreakNewsletter,
-    IllustrationNewIdeas
   },
   computed: {
     advices() {

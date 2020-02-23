@@ -47,13 +47,13 @@
 </template>
 
 <script>
-import Heading from '@/components/globals/Heading'
 import ContentSection from '@/components/globals/ContentSection'
+import Heading from '@/components/globals/Heading'
 
 export default {
   components: {
-    Heading,
-    ContentSection
+    ContentSection,
+    Heading
   },
   props: {
     type: {

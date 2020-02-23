@@ -5,7 +5,7 @@
       <!-- First name -->
       <FormGroup tight>
         <FormLabel name="first_name">
-          {{ $t("forms.labels.first_name") }}
+          {{ $t("form.first_name.label") }}
         </FormLabel>
         <FormInput
           v-model="form.first_name"
@@ -22,7 +22,7 @@
       <!-- Last name -->
       <FormGroup tight>
         <FormLabel name="last_name">
-          {{ $t("forms.labels.last_name") }}
+          {{ $t("form.last_name.label") }}
         </FormLabel>
         <FormInput
           v-model="form.last_name"
@@ -39,7 +39,7 @@
       <!-- Company name -->
       <FormGroup tight>
         <FormLabel name="company_name">
-          {{ $t("forms.labels.company_name") }}
+          {{ $t("form.company_name.label") }}
         </FormLabel>
         <FormInput
           v-model="form.company_name"
@@ -56,7 +56,7 @@
       <!-- Address line 1 -->
       <FormGroup tight>
         <FormLabel name="address_line_1">
-          {{ $t("forms.labels.address_line_1") }}
+          {{ $t("form.address_line_1.label") }}
         </FormLabel>
         <FormInput
           v-model="form.address_line_1"
@@ -73,7 +73,7 @@
       <!-- Address line 2 -->
       <FormGroup tight>
         <FormLabel name="address_line_2">
-          {{ $t("forms.labels.address_line_2") }}
+          {{ $t("form.address_line_2.label") }}
         </FormLabel>
         <FormInput
           v-model="form.address_line_2"
@@ -90,7 +90,7 @@
       <!-- Postal code -->
       <FormGroup tight>
         <FormLabel name="postal_code">
-          {{ $t("forms.labels.postal_code") }}
+          {{ $t("form.postal_code.label") }}
         </FormLabel>
         <FormInput
           v-model="form.postal_code"
@@ -107,7 +107,7 @@
       <!-- City -->
       <FormGroup tight>
         <FormLabel name="city">
-          {{ $t("forms.labels.city") }}
+          {{ $t("form.city.label") }}
         </FormLabel>
         <FormInput
           v-model="form.city"
@@ -156,23 +156,23 @@
 <script>
 import { mapActions } from 'vuex'
 
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
+import ButtonTertiary from '@/components/buttons/ButtonTertiary'
+import CountryDropdown from '@/components/forms/CountryDropdown'
 import FormGroup from '@/components/forms/FormGroup'
 import FormLabel from '@/components/forms/FormLabel'
 import FormInput from '@/components/forms/FormInput'
 import FormValidation from '@/components/forms/FormValidation'
-import ButtonPrimary from '@/components/buttons/ButtonPrimary'
-import ButtonTertiary from '@/components/buttons/ButtonTertiary'
-import CountryDropdown from '@/components/forms/CountryDropdown'
 
 export default {
   components: {
+    ButtonPrimary,
+    ButtonTertiary,
+    CountryDropdown,
     FormGroup,
     FormLabel,
     FormInput,
-    FormValidation,
-    ButtonPrimary,
-    ButtonTertiary,
-    CountryDropdown
+    FormValidation
   },
   data() {
     return {

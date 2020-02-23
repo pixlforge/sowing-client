@@ -24,19 +24,19 @@
 <script>
 import theming from '@/mixins/theming'
 
-import Navbar from '@/components/globals/Navbar'
 import Alert from '@/components/globals/Alert'
-import Footer from '@/components/footer/Footer'
-import Disclaimer from '@/components/footer/Disclaimer'
 import CategoryBar from '@/components/categories/CategoryBar'
+import Disclaimer from '@/components/footer/Disclaimer'
+import Footer from '@/components/footer/Footer'
+import Navbar from '@/components/globals/Navbar'
 
 export default {
   components: {
-    Navbar,
     Alert,
-    Footer,
+    CategoryBar,
     Disclaimer,
-    CategoryBar
+    Footer,
+    Navbar
   },
   mixins: [theming]
 }

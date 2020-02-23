@@ -18,7 +18,7 @@
       <!-- Email -->
       <FormGroup>
         <FormLabel name="email">
-          {{ $t("forms.labels.email") }}
+          {{ $t("form.email.label") }}
         </FormLabel>
         <FormInput
           ref="autofocus"
@@ -38,7 +38,7 @@
       <!-- Password -->
       <FormGroup>
         <FormLabel name="password">
-          {{ $t("forms.labels.password") }}
+          {{ $t("form.password.label") }}
         </FormLabel>
         <FormInput
           v-model="form.password"
@@ -78,23 +78,23 @@
 <script>
 import { mapActions } from 'vuex'
 
-import Heading from '@/components/globals/Heading'
-import FormLabel from '@/components/forms/FormLabel'
-import FormInput from '@/components/forms/FormInput'
-import FormGroup from '@/components/forms/FormGroup'
-import ButtonPrimary from '@/components/buttons/ButtonPrimary'
-import FormValidation from '@/components/forms/FormValidation'
 import ButtonLinkTertiary from '@/components/buttons/ButtonLinkTertiary'
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
+import FormGroup from '@/components/forms/FormGroup'
+import FormInput from '@/components/forms/FormInput'
+import FormLabel from '@/components/forms/FormLabel'
+import FormValidation from '@/components/forms/FormValidation'
+import Heading from '@/components/globals/Heading'
 
 export default {
   components: {
-    Heading,
-    FormLabel,
-    FormInput,
-    FormGroup,
+    ButtonLinkTertiary,
     ButtonPrimary,
+    FormGroup,
+    FormInput,
+    FormLabel,
     FormValidation,
-    ButtonLinkTertiary
+    Heading
   },
   layout: 'auth',
   middleware: ['guest'],

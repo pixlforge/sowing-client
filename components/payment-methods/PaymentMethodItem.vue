@@ -10,7 +10,7 @@
       <template v-if="controlsOpen">
 
         <!-- View -->
-        <ViewButton
+        <ButtonView
           :route="{
             name: 'account-payment-methods-id-details',
             params: {
@@ -20,7 +20,7 @@
         />
 
         <!-- Edit -->
-        <EditButton
+        <ButtonEdit
           :route="{
             name: 'account-payment-methods-id-edit',
             params: {
@@ -30,7 +30,7 @@
         />
 
         <!-- Delete -->
-        <DeleteButton @click.native="confirmDelete"/>
+        <ButtonDelete @click.native="confirmDelete"/>
       </template>
     </div>
 
@@ -79,7 +79,7 @@
 
       <!-- Controls button -->
       <div class="w-1/6 md:w-1/12 flex justify-end">
-        <ResourceControlsButton @click.native="controlsOpen = !controlsOpen"/>
+        <ButtonResourceControls @click.native="controlsOpen = !controlsOpen"/>
       </div>
     </div>
 
@@ -89,17 +89,17 @@
 <script>
 import { mapActions } from 'vuex'
 
-import ViewButton from '@/components/buttons/ViewButton'
-import EditButton from '@/components/buttons/EditButton'
-import DeleteButton from '@/components/buttons/DeleteButton'
-import ResourceControlsButton from '@/components/buttons/ResourceControlsButton'
+import ButtonDelete from '@/components/buttons/ButtonDelete'
+import ButtonEdit from '@/components/buttons/ButtonEdit'
+import ButtonResourceControls from '@/components/buttons/ButtonResourceControls'
+import ButtonView from '@/components/buttons/ButtonView'
 
 export default {
   components: {
-    ViewButton,
-    EditButton,
-    DeleteButton,
-    ResourceControlsButton
+    ButtonDelete,
+    ButtonEdit,
+    ButtonResourceControls,
+    ButtonView
   },
   props: {
     paymentMethod: {

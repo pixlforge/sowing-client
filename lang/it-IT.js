@@ -12,7 +12,7 @@ import creditCards from '~/lang/it-IT/creditCards'
 import dropzone from '~/lang/it-IT/dropzone'
 import faq from '~/lang/it-IT/faq'
 import footer from '~/lang/it-IT/footer'
-import forms from '~/lang/it-IT/forms'
+import form from '~/lang/it-IT/form'
 import home from '~/lang/it-IT/home'
 import languages from '~/lang/it-IT/languages'
 import login from '~/lang/it-IT/login'
@@ -22,6 +22,7 @@ import orders from '~/lang/it-IT/orders'
 import passwordEmail from '~/lang/it-IT/passwordEmail'
 import passwordReset from '~/lang/it-IT/passwordReset'
 import products from '~/lang/it-IT/products'
+import productVariationType from '~/lang/it-IT/productVariationType'
 import register from '~/lang/it-IT/register'
 import registerSuccess from '~/lang/it-IT/registerSuccess'
 import search from '~/lang/it-IT/search'
@@ -50,7 +51,7 @@ export default {
   ...dropzone,
   ...faq,
   ...footer,
-  ...forms,
+  ...form,
   ...home,
   ...languages,
   ...login,
@@ -60,6 +61,7 @@ export default {
   ...passwordEmail,
   ...passwordReset,
   ...products,
+  ...productVariationType,
   ...register,
   ...registerSuccess,
   ...search,

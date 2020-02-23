@@ -44,12 +44,18 @@
 <script>
 import { mapGetters } from 'vuex'
 
-import Header from '@/components/headers/Header'
-import FormInput from '@/components/forms/FormInput'
 import ContentSection from '@/components/globals/ContentSection'
+import FormInput from '@/components/forms/FormInput'
+import Header from '@/components/headers/Header'
 import SearchResult from '@/components/search/SearchResult'
 
 export default {
+  components: {
+    ContentSection,
+    FormInput,
+    Header,
+    SearchResult
+  },
   head() {
     return {
       title: this.$t('search.title'),
@@ -61,12 +67,6 @@ export default {
         }
       ]
     }
-  },
-  components: {
-    Header,
-    FormInput,
-    ContentSection,
-    SearchResult
   },
   data() {
     return {

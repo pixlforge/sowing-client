@@ -38,13 +38,13 @@
 </template>
 
 <script>
-import Heading from '@/components/globals/Heading'
 import ButtonLinkPrimary from '@/components/buttons/ButtonLinkPrimary'
+import Heading from '@/components/globals/Heading'
 
 export default {
   components: {
-    Heading,
-    ButtonLinkPrimary
+    ButtonLinkPrimary,
+    Heading
   }
 }
 </script>

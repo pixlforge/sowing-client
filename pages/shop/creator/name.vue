@@ -56,17 +56,33 @@
 import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
-import Heading from '@/components/globals/Heading'
-import ShopName from '@/components/shops/ShopName'
-import ContentSection from '@/components/globals/ContentSection'
-import Paragraph from '@/components/paragraphs/Paragraph'
 import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 import ButtonTertiary from '@/components/buttons/ButtonTertiary'
+import ContentSection from '@/components/globals/ContentSection'
+import Heading from '@/components/globals/Heading'
+import Paragraph from '@/components/paragraphs/Paragraph'
 import ShopCreatorControls from '@/components/shops/ShopCreatorControls'
 import ShopFeatureContainer from '@/components/shops/ShopFeatureContainer'
+import ShopName from '@/components/shops/ShopName'
 
 export default {
+  components: {
+    ButtonPrimary,
+    ButtonTertiary,
+    ContentSection,
+    Heading,
+    Paragraph,
+    ShopCreatorControls,
+    ShopFeatureContainer,
+    ShopName
+  },
+  mixins: [theming],
   middleware: ['authenticated'],
+  layout: 'shop-creator',
+  transition: {
+    name: 'slide',
+    mode: 'out-in'
+  },
   head() {
     return {
       title: this.$t('shop_creator.steps.name.title'),
@@ -84,22 +100,6 @@ export default {
       ]
     }
   },
-  layout: 'shop-creator',
-  transition: {
-    name: 'slide',
-    mode: 'out-in'
-  },
-  components: {
-    Heading,
-    ShopName,
-    ContentSection,
-    Paragraph,
-    ButtonPrimary,
-    ButtonTertiary,
-    ShopCreatorControls,
-    ShopFeatureContainer
-  },
-  mixins: [theming],
   computed: {
     ...mapGetters({
       terms: 'shop/terms',

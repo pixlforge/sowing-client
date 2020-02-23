@@ -134,37 +134,37 @@
 import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
-import Splash from '@/components/globals/Splash'
-import Navbar from '@/components/globals/Navbar'
 import Alert from '@/components/globals/Alert'
+import ButtonLinkPrimary from '@/components/buttons/ButtonLinkPrimary'
+import ContentSection from '@/components/globals/ContentSection'
+import Disclaimer from '@/components/footer/Disclaimer'
 import Footer from '@/components/footer/Footer'
 import Header from '@/components/headers/Header'
-import SideMenu from '@/components/menus/SideMenu'
-import ShopCover from '@/components/shops/ShopCover'
-import Disclaimer from '@/components/footer/Disclaimer'
-import ContentSection from '@/components/globals/ContentSection'
 import HeaderList from '@/components/headers/HeaderList'
-import SideMenuList from '@/components/menus/SideMenuList'
+import Navbar from '@/components/globals/Navbar'
+import ShopCover from '@/components/shops/ShopCover'
+import SideMenu from '@/components/menus/SideMenu'
 import SideMenuItem from '@/components/menus/SideMenuItem'
+import SideMenuList from '@/components/menus/SideMenuList'
 import SideMenuTitle from '@/components/menus/SideMenuTitle'
-import ButtonLinkPrimary from '@/components/buttons/ButtonLinkPrimary'
+import Splash from '@/components/globals/Splash'
 
 export default {
   components: {
-    Splash,
-    Navbar,
     Alert,
+    ButtonLinkPrimary,
+    ContentSection,
+    Disclaimer,
     Footer,
     Header,
-    SideMenu,
-    ShopCover,
-    Disclaimer,
-    ContentSection,
     HeaderList,
-    SideMenuList,
+    Navbar,
+    ShopCover,
+    SideMenu,
     SideMenuItem,
+    SideMenuList,
     SideMenuTitle,
-    ButtonLinkPrimary
+    Splash
   },
   mixins: [theming],
   computed: {

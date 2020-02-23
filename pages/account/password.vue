@@ -15,7 +15,7 @@
         <!-- Password -->
         <FormGroup>
           <FormLabel name="password">
-            {{ $t("forms.labels.password") }}
+            {{ $t("form.password.label") }}
           </FormLabel>
           <FormInput
             v-model="form.password"
@@ -32,7 +32,7 @@
         <!-- Password confirmation -->
         <FormGroup>
           <FormLabel name="password_confirmation">
-            {{ $t("forms.labels.password_confirmation") }}
+            {{ $t("form.password_confirmation.label") }}
           </FormLabel>
           <FormInput
             v-model="form.password_confirmation"
@@ -57,23 +57,23 @@
 <script>
 import { mapActions } from 'vuex'
 
-import Heading from '@/components/globals/Heading'
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 import Card from '@/components/globals/Card'
 import FormGroup from '@/components/forms/FormGroup'
 import FormInput from '@/components/forms/FormInput'
 import FormLabel from '@/components/forms/FormLabel'
 import FormValidation from '@/components/forms/FormValidation'
-import ButtonPrimary from '@/components/buttons/ButtonPrimary'
+import Heading from '@/components/globals/Heading'
 
 export default {
   components: {
-    Heading,
+    ButtonPrimary,
     Card,
     FormGroup,
     FormInput,
     FormLabel,
     FormValidation,
-    ButtonPrimary
+    Heading
   },
   middleware: ['authenticated'],
   layout: 'account-management',

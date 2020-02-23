@@ -17,15 +17,15 @@
 </template>
 
 <script>
-import Heading from '@/components/globals/Heading'
-import Card from '@/components/globals/Card'
 import AccountCard from '@/components/account/AccountCard'
+import Card from '@/components/globals/Card'
+import Heading from '@/components/globals/Heading'
 
 export default {
   components: {
-    Heading,
+    AccountCard,
     Card,
-    AccountCard
+    Heading
   },
   middleware: ['authenticated'],
   layout: 'account-management',
