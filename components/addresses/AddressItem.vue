@@ -74,7 +74,7 @@
 
       <!-- Controls button -->
       <div class="w-1/6 md:w-1/12 flex justify-end">
-        <ResourceControlsButton @click.native="controlsOpen = !controlsOpen"/>
+        <ButtonResourceControls @click.native="controlsOpen = !controlsOpen"/>
       </div>
     </div>
 
@@ -86,14 +86,14 @@ import { mapActions } from 'vuex'
 
 import ButtonDelete from '@/components/buttons/ButtonDelete'
 import ButtonEdit from '@/components/buttons/ButtonEdit'
-import ResourceControlsButton from '@/components/buttons/ResourceControlsButton'
+import ButtonResourceControls from '@/components/buttons/ButtonResourceControls'
 import ButtonView from '@/components/buttons/ButtonView'
 
 export default {
   components: {
     ButtonDelete,
     ButtonEdit,
-    ResourceControlsButton,
+    ButtonResourceControls,
     ButtonView
   },
   props: {
