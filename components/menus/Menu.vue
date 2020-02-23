@@ -73,19 +73,19 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 
-import DropdownItem from '@/components/dropdowns/DropdownItem'
-import DropdownDivider from '@/components/dropdowns/DropdownDivider'
 import ButtonLinkPrimary from '@/components/buttons/ButtonLinkPrimary'
-import DropdownTransition from '@/components/transitions/DropdownTransition'
 import DropdownContainer from '@/components/dropdowns/DropdownContainer'
+import DropdownDivider from '@/components/dropdowns/DropdownDivider'
+import DropdownItem from '@/components/dropdowns/DropdownItem'
+import DropdownTransition from '@/components/transitions/DropdownTransition'
 
 export default {
   components: {
-    DropdownItem,
-    DropdownDivider,
     ButtonLinkPrimary,
-    DropdownTransition,
-    DropdownContainer
+    DropdownContainer,
+    DropdownDivider,
+    DropdownItem,
+    DropdownTransition
   },
   data() {
     return {

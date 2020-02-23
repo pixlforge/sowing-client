@@ -37,15 +37,15 @@
 import theming from '@/mixins/theming'
 import locales from '@/mixins/locales'
 
+import DropdownContainer from '@/components/dropdowns/DropdownContainer'
 import DropdownItem from '@/components/dropdowns/DropdownItem'
 import DropdownTransition from '@/components/transitions/DropdownTransition'
-import DropdownContainer from '@/components/dropdowns/DropdownContainer'
 
 export default {
   components: {
+    DropdownContainer,
     DropdownItem,
-    DropdownTransition,
-    DropdownContainer
+    DropdownTransition
   },
   mixins: [
     theming,

@@ -68,17 +68,17 @@ import locales from '@/mixins/locales'
 import { debounce as _debounce } from 'lodash'
 import { mapActions } from 'vuex'
 
+import ButtonCollapse from '@/components/buttons/ButtonCollapse'
+import ButtonDelete from '@/components/buttons/ButtonDelete'
 import Heading from '@/components/globals/Heading'
 import InfoBubble from '@/components/globals/InfoBubble'
-import ButtonDelete from '@/components/buttons/ButtonDelete'
-import ButtonCollapse from '@/components/buttons/ButtonCollapse'
 
 export default {
   components: {
-    Heading,
-    InfoBubble,
+    ButtonCollapse,
     ButtonDelete,
-    ButtonCollapse
+    Heading,
+    InfoBubble
   },
   mixins: [
     theming,

@@ -68,15 +68,15 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 
-import Heading from '@/components/globals/Heading'
 import ButtonPrimary from '@/components/buttons/ButtonPrimary'
+import Heading from '@/components/globals/Heading'
 import ShippingAddressCreator from '@/components/addresses/ShippingAddressCreator'
 import ShippingAddressSelector from '@/components/addresses/ShippingAddressSelector'
 
 export default {
   components: {
-    Heading,
     ButtonPrimary,
+    Heading,
     ShippingAddressCreator,
     ShippingAddressSelector
   },

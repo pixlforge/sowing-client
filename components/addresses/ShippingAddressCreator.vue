@@ -156,23 +156,23 @@
 <script>
 import { mapActions } from 'vuex'
 
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
+import ButtonTertiary from '@/components/buttons/ButtonTertiary'
+import CountryDropdown from '@/components/forms/CountryDropdown'
 import FormGroup from '@/components/forms/FormGroup'
 import FormLabel from '@/components/forms/FormLabel'
 import FormInput from '@/components/forms/FormInput'
 import FormValidation from '@/components/forms/FormValidation'
-import ButtonPrimary from '@/components/buttons/ButtonPrimary'
-import ButtonTertiary from '@/components/buttons/ButtonTertiary'
-import CountryDropdown from '@/components/forms/CountryDropdown'
 
 export default {
   components: {
+    ButtonPrimary,
+    ButtonTertiary,
+    CountryDropdown,
     FormGroup,
     FormLabel,
     FormInput,
-    FormValidation,
-    ButtonPrimary,
-    ButtonTertiary,
-    CountryDropdown
+    FormValidation
   },
   data() {
     return {

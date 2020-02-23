@@ -32,17 +32,17 @@
 </template>
 
 <script>
-import CardVisa from '@/components/payment-methods/cards/CardVisa'
 import CardAmex from '@/components/payment-methods/cards/CardAmex'
 import CardMasterCard from '@/components/payment-methods/cards/CardMasterCard'
+import CardVisa from '@/components/payment-methods/cards/CardVisa'
 import PaymentMethodCreator from '@/components/payment-methods/PaymentMethodCreator'
 
 export default {
   components: {
     /* eslint-disable */
-    visa: CardVisa,
     'american-express': CardAmex,
     mastercard: CardMasterCard,
+    visa: CardVisa,
     PaymentMethodCreator
     /* eslint-enable */
   },

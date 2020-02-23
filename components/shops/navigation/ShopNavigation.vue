@@ -85,17 +85,17 @@
 import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
-import NavOval from '@/components/shops/navigation/ShopNavigationOval'
-import NavLine from '@/components/shops/navigation/ShopNavigationLine'
-import NavLabel from '@/components/shops/navigation/ShopNavigationLabel'
 import NavGroup from '@/components/shops/navigation/ShopNavigationGroup'
+import NavLabel from '@/components/shops/navigation/ShopNavigationLabel'
+import NavLine from '@/components/shops/navigation/ShopNavigationLine'
+import NavOval from '@/components/shops/navigation/ShopNavigationOval'
 
 export default {
   components: {
-    NavOval,
-    NavLine,
+    NavGroup,
     NavLabel,
-    NavGroup
+    NavLine,
+    NavOval
   },
   mixins: [theming],
   computed: {

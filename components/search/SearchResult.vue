@@ -71,14 +71,14 @@
 </template>
 
 <script>
-import SearchResultShop from '@/components/search/SearchResultShop'
 import SearchResultProduct from '@/components/search/SearchResultProduct'
+import SearchResultShop from '@/components/search/SearchResultShop'
 
 export default {
   components: {
     /* eslint-disable */
-    'shops': SearchResultShop,
-    'products': SearchResultProduct
+    'products': SearchResultProduct,
+    'shops': SearchResultShop
     /* eslint-enable */
   },
   props: {

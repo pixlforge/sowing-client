@@ -84,17 +84,17 @@
 <script>
 import { mapActions } from 'vuex'
 
-import ViewButton from '@/components/buttons/ViewButton'
-import EditButton from '@/components/buttons/EditButton'
 import ButtonDelete from '@/components/buttons/ButtonDelete'
+import EditButton from '@/components/buttons/EditButton'
 import ResourceControlsButton from '@/components/buttons/ResourceControlsButton'
+import ViewButton from '@/components/buttons/ViewButton'
 
 export default {
   components: {
-    ViewButton,
-    EditButton,
     ButtonDelete,
-    ResourceControlsButton
+    EditButton,
+    ResourceControlsButton,
+    ViewButton
   },
   props: {
     address: {

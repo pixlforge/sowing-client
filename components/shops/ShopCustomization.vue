@@ -97,17 +97,17 @@
 import { mapGetters, mapActions } from 'vuex'
 
 import 'vue2-dropzone/dist/vue2Dropzone.css'
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 import Dropzone from 'nuxt-dropzone'
 import Heading from '@/components/globals/Heading'
 import Tile from '@/components/themes/Tile'
-import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 
 export default {
   components: {
+    ButtonPrimary,
     Dropzone,
     Heading,
-    Tile,
-    ButtonPrimary
+    Tile
   },
   data() {
     return {

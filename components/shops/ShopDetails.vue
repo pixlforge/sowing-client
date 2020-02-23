@@ -195,9 +195,9 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 
+import FormDivider from '@/components/forms/FormDivider'
 import FormInput from '@/components/forms/FormInput'
 import FormSelect from '@/components/forms/FormSelect'
-import FormDivider from '@/components/forms/FormDivider'
 import FormTextarea from '@/components/forms/FormTextarea'
 import FormValidation from '@/components/forms/FormValidation'
 import ShopDetailsGroup from '@/components/shops/ShopDetailsGroup'
@@ -205,9 +205,9 @@ import ShopDetailsGroupInline from '@/components/shops/ShopDetailsGroupInline'
 
 export default {
   components: {
+    FormDivider,
     FormInput,
     FormSelect,
-    FormDivider,
     FormTextarea,
     FormValidation,
     ShopDetailsGroup,

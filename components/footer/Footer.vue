@@ -90,14 +90,14 @@ import { mapGetters } from 'vuex'
 import theming from '@/mixins/theming'
 import locales from '@/mixins/locales'
 
-import FooterItem from '@/components/footer/FooterItem'
 import FooterColumn from '@/components/footer/FooterColumn'
+import FooterItem from '@/components/footer/FooterItem'
 import FooterItemSocial from '@/components/footer/FooterItemSocial'
 
 export default {
   components: {
-    FooterItem,
     FooterColumn,
+    FooterItem,
     FooterItemSocial
   },
   mixins: [
