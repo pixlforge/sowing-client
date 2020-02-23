@@ -68,27 +68,27 @@
 </template>
 
 <script>
-import Navbar from '@/components/globals/Navbar'
 import Alert from '@/components/globals/Alert'
+import ContentSection from '@/components/globals/ContentSection'
+import Disclaimer from '@/components/footer/Disclaimer'
 import Footer from '@/components/footer/Footer'
 import Header from '@/components/headers/Header'
+import Navbar from '@/components/globals/Navbar'
 import SideMenu from '@/components/menus/SideMenu'
-import Disclaimer from '@/components/footer/Disclaimer'
-import ContentSection from '@/components/globals/ContentSection'
-import SideMenuList from '@/components/menus/SideMenuList'
 import SideMenuItem from '@/components/menus/SideMenuItem'
+import SideMenuList from '@/components/menus/SideMenuList'
 
 export default {
   components: {
-    Navbar,
     Alert,
+    ContentSection,
+    Disclaimer,
     Footer,
     Header,
+    Navbar,
     SideMenu,
-    Disclaimer,
-    ContentSection,
-    SideMenuList,
-    SideMenuItem
+    SideMenuItem,
+    SideMenuList
   }
 }
 </script>
