@@ -3,7 +3,7 @@
     <header class="flex items-center">
 
       <!-- Back -->
-      <BackButton
+      <ButtonBack
         :route="{ name: 'account-addresses' }"
         class="sm:mr-20"
       />
@@ -207,7 +207,7 @@ import FormRow from '@/components/forms/FormRow'
 import FormGroup from '@/components/forms/FormGroup'
 import FormLabel from '@/components/forms/FormLabel'
 import FormInput from '@/components/forms/FormInput'
-import BackButton from '@/components/buttons/BackButton'
+import ButtonBack from '@/components/buttons/ButtonBack'
 import FormRowGroup from '@/components/forms/FormRowGroup'
 import FormCheckbox from '@/components/forms/FormCheckbox'
 import FormValidation from '@/components/forms/FormValidation'
@@ -223,7 +223,7 @@ export default {
     FormGroup,
     FormLabel,
     FormInput,
-    BackButton,
+    ButtonBack,
     FormRowGroup,
     FormCheckbox,
     FormRow,

@@ -10,7 +10,7 @@
     <header class="flex flex-wrap items-center my-30">
 
       <!-- Back -->
-      <BackButton
+      <ButtonBack
         :route="{
           name: 'shop-management-products-create-product-slug-category',
           params: {
@@ -112,7 +112,7 @@ import InfoTip from '@/components/globals/InfoTip'
 import FormGroup from '@/components/forms/FormGroup'
 import FormInput from '@/components/forms/FormInput'
 import FormLabel from '@/components/forms/FormLabel'
-import BackButton from '@/components/buttons/BackButton'
+import ButtonBack from '@/components/buttons/ButtonBack'
 import FormSection from '@/components/forms/FormSection'
 import FormFieldset from '@/components/forms/FormFieldset'
 import FormValidation from '@/components/forms/FormValidation'
@@ -129,7 +129,7 @@ export default {
     FormGroup,
     FormInput,
     FormLabel,
-    BackButton,
+    ButtonBack,
     FormSection,
     FormFieldset,
     FormValidation,

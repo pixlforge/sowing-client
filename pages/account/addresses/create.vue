@@ -3,7 +3,7 @@
     <div class="flex items-center">
 
       <!-- Back -->
-      <BackButton
+      <ButtonBack
         :route="{ name: 'account-addresses' }"
         class="mr-20"
       />
@@ -195,37 +195,37 @@
 </template>
 
 <script>
-import Card from '@/components/globals/Card'
-import Heading from '@/components/globals/Heading'
-import FormRow from '@/components/forms/FormRow'
-import FormGroup from '@/components/forms/FormGroup'
-import FormLabel from '@/components/forms/FormLabel'
-import FormInput from '@/components/forms/FormInput'
-import BackButton from '@/components/buttons/BackButton'
-import FormRowGroup from '@/components/forms/FormRowGroup'
-import FormCheckbox from '@/components/forms/FormCheckbox'
-import FormValidation from '@/components/forms/FormValidation'
-import ButtonPrimary from '@/components/buttons/ButtonPrimary'
-import CountryDropdown from '@/components/forms/CountryDropdown'
-import FormCheckboxLabel from '@/components/forms/FormCheckboxLabel'
+import ButtonBack from '@/components/buttons/ButtonBack'
 import ButtonLinkTertiary from '@/components/buttons/ButtonLinkTertiary'
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
+import Card from '@/components/globals/Card'
+import CountryDropdown from '@/components/forms/CountryDropdown'
+import FormCheckbox from '@/components/forms/FormCheckbox'
+import FormCheckboxLabel from '@/components/forms/FormCheckboxLabel'
+import FormGroup from '@/components/forms/FormGroup'
+import FormInput from '@/components/forms/FormInput'
+import FormLabel from '@/components/forms/FormLabel'
+import FormRow from '@/components/forms/FormRow'
+import FormRowGroup from '@/components/forms/FormRowGroup'
+import FormValidation from '@/components/forms/FormValidation'
+import Heading from '@/components/globals/Heading'
 
 export default {
   components: {
-    Card,
-    Heading,
-    FormGroup,
-    FormLabel,
-    FormInput,
-    BackButton,
-    FormRowGroup,
-    FormCheckbox,
-    FormRow,
-    FormValidation,
-    ButtonPrimary,
-    CountryDropdown,
+    ButtonBack,
     ButtonLinkTertiary,
-    FormCheckboxLabel
+    ButtonPrimary,
+    Card,
+    CountryDropdown,
+    FormCheckbox,
+    FormCheckboxLabel,
+    FormGroup,
+    FormInput,
+    FormLabel,
+    FormRow,
+    FormRowGroup,
+    FormValidation,
+    Heading
   },
   layout: 'account-management',
   middleware: ['authenticated'],

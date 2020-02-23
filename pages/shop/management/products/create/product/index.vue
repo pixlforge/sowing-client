@@ -10,7 +10,7 @@
     <header class="flex flex-wrap items-center my-30">
 
       <!-- Back -->
-      <BackButton
+      <ButtonBack
         :route="{ name: 'shop-management-products' }"
         class="mr-20"
       />
@@ -265,7 +265,7 @@ import InfoTip from '@/components/globals/InfoTip'
 import FormGroup from '@/components/forms/FormGroup'
 import FormLabel from '@/components/forms/FormLabel'
 import FormInput from '@/components/forms/FormInput'
-import BackButton from '@/components/buttons/BackButton'
+import ButtonBack from '@/components/buttons/ButtonBack'
 import FormSection from '@/components/forms/FormSection'
 import FormFieldset from '@/components/forms/FormFieldset'
 import FormTextarea from '@/components/forms/FormTextarea'
@@ -283,7 +283,7 @@ export default {
     FormGroup,
     FormLabel,
     FormInput,
-    BackButton,
+    ButtonBack,
     FormSection,
     FormFieldset,
     FormTextarea,

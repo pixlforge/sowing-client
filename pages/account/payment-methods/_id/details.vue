@@ -4,7 +4,7 @@
       <div class="flex items-center">
 
         <!-- Back -->
-        <BackButton
+        <ButtonBack
           :route="{ name: 'account-payment-methods' }"
           class="sm:mr-20"
         />
@@ -103,7 +103,7 @@ import { mapGetters, mapActions } from 'vuex'
 
 import Card from '@/components/globals/Card'
 import Heading from '@/components/globals/Heading'
-import BackButton from '@/components/buttons/BackButton'
+import ButtonBack from '@/components/buttons/ButtonBack'
 import EditButton from '@/components/buttons/EditButton'
 import ButtonDelete from '@/components/buttons/ButtonDelete'
 import ConfirmationModal from '@/components/modals/ConfirmationModal'
@@ -112,7 +112,7 @@ export default {
   components: {
     Card,
     Heading,
-    BackButton,
+    ButtonBack,
     EditButton,
     ButtonDelete,
     ConfirmationModal

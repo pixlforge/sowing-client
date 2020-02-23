@@ -50,7 +50,7 @@
     <header class="flex flex-wrap items-center my-30">
 
       <!-- Back -->
-      <BackButton
+      <ButtonBack
         :route="{
           name: 'shop-management-products-create-product-slug-price',
           params: {
@@ -159,7 +159,7 @@ import theming from '@/mixins/theming'
 
 import Heading from '@/components/globals/Heading'
 import InfoTip from '@/components/globals/InfoTip'
-import BackButton from '@/components/buttons/BackButton'
+import ButtonBack from '@/components/buttons/ButtonBack'
 import FormSection from '@/components/forms/FormSection'
 import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 import ConfirmationModal from '@/components/modals/ConfirmationModal'
@@ -170,7 +170,7 @@ export default {
   components: {
     Heading,
     InfoTip,
-    BackButton,
+    ButtonBack,
     FormSection,
     ButtonPrimary,
     ConfirmationModal,

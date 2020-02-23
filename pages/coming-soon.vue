@@ -225,13 +225,13 @@
 <script>
 import locales from '@/mixins/locales'
 
-import Logo from '@/components/globals/Logo'
 import IllustrationEcommerce from '@/components/illustrations/IllustrationEcommerce'
+import Logo from '@/components/globals/Logo'
 
 export default {
   components: {
-    Logo,
-    IllustrationEcommerce
+    IllustrationEcommerce,
+    Logo
   },
   mixins: [locales],
   layout: 'full-screen',

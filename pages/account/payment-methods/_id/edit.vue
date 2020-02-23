@@ -3,7 +3,7 @@
     <header class="flex items-center">
 
       <!-- Back -->
-      <BackButton
+      <ButtonBack
         :route="{ name: 'account-payment-methods' }"
         class="sm:mr-20"
       />
@@ -38,7 +38,7 @@
 <script>
 import Card from '@/components/globals/Card'
 import Heading from '@/components/globals/Heading'
-import BackButton from '@/components/buttons/BackButton'
+import ButtonBack from '@/components/buttons/ButtonBack'
 import Paragraph from '@/components/paragraphs/Paragraph'
 import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 
@@ -46,7 +46,7 @@ export default {
   components: {
     Card,
     Heading,
-    BackButton,
+    ButtonBack,
     Paragraph,
     ButtonPrimary
   },
