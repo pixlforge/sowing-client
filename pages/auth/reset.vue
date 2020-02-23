@@ -86,23 +86,23 @@
 <script>
 import { mapActions } from 'vuex'
 
-import Heading from '@/components/globals/Heading'
-import FormGroup from '@/components/forms/FormGroup'
-import FormLabel from '@/components/forms/FormLabel'
-import FormInput from '@/components/forms/FormInput'
-import Paragraph from '@/components/paragraphs/Paragraph'
-import FormValidation from '@/components/forms/FormValidation'
 import ButtonPrimary from '@/components/buttons/ButtonPrimary'
+import FormGroup from '@/components/forms/FormGroup'
+import FormInput from '@/components/forms/FormInput'
+import FormLabel from '@/components/forms/FormLabel'
+import FormValidation from '@/components/forms/FormValidation'
+import Heading from '@/components/globals/Heading'
+import Paragraph from '@/components/paragraphs/Paragraph'
 
 export default {
   components: {
-    Heading,
+    ButtonPrimary,
     FormGroup,
-    FormLabel,
     FormInput,
-    Paragraph,
+    FormLabel,
     FormValidation,
-    ButtonPrimary
+    Heading,
+    Paragraph
   },
   middleware: ['guest'],
   layout: 'auth',

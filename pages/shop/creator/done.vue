@@ -45,21 +45,21 @@
 import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
-import Splash from '@/components/globals/Splash'
-import ContentSection from '@/components/globals/ContentSection'
 import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 import ButtonTertiary from '@/components/buttons/ButtonTertiary'
-import ShopCreatorControls from '@/components/shops/ShopCreatorControls'
+import ContentSection from '@/components/globals/ContentSection'
 import IllustrationSuccess from '@/components/illustrations/IllustrationSuccess'
+import ShopCreatorControls from '@/components/shops/ShopCreatorControls'
+import Splash from '@/components/globals/Splash'
 
 export default {
   components: {
-    Splash,
-    ContentSection,
     ButtonPrimary,
     ButtonTertiary,
+    ContentSection,
+    IllustrationSuccess,
     ShopCreatorControls,
-    IllustrationSuccess
+    Splash
   },
   mixins: [theming],
   middleware: ['authenticated', 'hasShop'],

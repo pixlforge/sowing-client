@@ -107,36 +107,36 @@ import AutoNumeric from 'autonumeric'
 import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
-import Heading from '@/components/globals/Heading'
-import InfoTip from '@/components/globals/InfoTip'
+import ButtonBack from '@/components/buttons/ButtonBack'
+import ButtonLinkTertiary from '@/components/buttons/ButtonLinkTertiary'
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
+import FormFieldset from '@/components/forms/FormFieldset'
 import FormGroup from '@/components/forms/FormGroup'
 import FormInput from '@/components/forms/FormInput'
 import FormLabel from '@/components/forms/FormLabel'
-import ButtonBack from '@/components/buttons/ButtonBack'
-import FormSection from '@/components/forms/FormSection'
-import FormFieldset from '@/components/forms/FormFieldset'
-import FormValidation from '@/components/forms/FormValidation'
-import ButtonPrimary from '@/components/buttons/ButtonPrimary'
-import FormSectionTitle from '@/components/forms/FormSectionTitle'
-import ButtonLinkTertiary from '@/components/buttons/ButtonLinkTertiary'
 import FormLabelDescription from '@/components/forms/FormLabelDescription'
+import FormSection from '@/components/forms/FormSection'
+import FormSectionTitle from '@/components/forms/FormSectionTitle'
+import FormValidation from '@/components/forms/FormValidation'
+import Heading from '@/components/globals/Heading'
+import InfoTip from '@/components/globals/InfoTip'
 import ProductCreatorStep from '@/components/products/creator/ProductCreatorStep'
 
 export default {
   components: {
-    Heading,
-    InfoTip,
+    ButtonBack,
+    ButtonLinkTertiary,
+    ButtonPrimary,
+    FormFieldset,
     FormGroup,
     FormInput,
     FormLabel,
-    ButtonBack,
-    FormSection,
-    FormFieldset,
-    FormValidation,
-    ButtonPrimary,
-    FormSectionTitle,
-    ButtonLinkTertiary,
     FormLabelDescription,
+    FormSection,
+    FormSectionTitle,
+    FormValidation,
+    Heading,
+    InfoTip,
     ProductCreatorStep
   },
   mixins: [theming],

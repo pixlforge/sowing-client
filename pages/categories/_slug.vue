@@ -59,16 +59,16 @@
 <script>
 import { mapGetters } from 'vuex'
 
-import Heading from '@/components/globals/Heading'
-import Header from '@/components/headers/Header'
 import ContentSection from '@/components/globals/ContentSection'
+import Header from '@/components/headers/Header'
+import Heading from '@/components/globals/Heading'
 import SubCategory from '@/components/categories/SubCategory'
 
 export default {
   components: {
-    Heading,
-    Header,
     ContentSection,
+    Header,
+    Heading,
     SubCategory
   },
   head() {

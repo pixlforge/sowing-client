@@ -115,25 +115,25 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 
-import Heading from '@/components/globals/Heading'
-import Header from '@/components/headers/Header'
-import ContentSection from '@/components/globals/ContentSection'
 import ButtonPrimary from '@/components/buttons/ButtonPrimary'
+import CartOverviewProduct from '@/components/cart/CartOverviewProduct'
+import ContentSection from '@/components/globals/ContentSection'
+import Header from '@/components/headers/Header'
+import Heading from '@/components/globals/Heading'
+import PaymentMethods from '@/components/payment-methods/PaymentMethods'
 import ShippingMethods from '@/components/addresses/ShippingMethods'
 import ShippingAddress from '@/components/addresses/ShippingAddress'
-import CartOverviewProduct from '@/components/cart/CartOverviewProduct'
-import PaymentMethods from '@/components/payment-methods/PaymentMethods'
 
 export default {
   components: {
-    Heading,
-    Header,
-    ContentSection,
     ButtonPrimary,
-    ShippingMethods,
-    ShippingAddress,
     CartOverviewProduct,
-    PaymentMethods
+    ContentSection,
+    Header,
+    Heading,
+    PaymentMethods,
+    ShippingMethods,
+    ShippingAddress
   },
   middleware: ['authenticated'],
   head() {

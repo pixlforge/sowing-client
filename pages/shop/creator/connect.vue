@@ -78,25 +78,25 @@
 import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
-import Heading from '@/components/globals/Heading'
-import Splash from '@/components/globals/Splash'
-import ContentSection from '@/components/globals/ContentSection'
-import Paragraph from '@/components/paragraphs/Paragraph'
 import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 import ButtonTertiary from '@/components/buttons/ButtonTertiary'
+import ContentSection from '@/components/globals/ContentSection'
+import Heading from '@/components/globals/Heading'
+import Paragraph from '@/components/paragraphs/Paragraph'
 import ShopCreatorControls from '@/components/shops/ShopCreatorControls'
 import ShopFeatureContainer from '@/components/shops/ShopFeatureContainer'
+import Splash from '@/components/globals/Splash'
 
 export default {
   components: {
-    Heading,
-    Splash,
-    ContentSection,
-    Paragraph,
     ButtonPrimary,
     ButtonTertiary,
+    ContentSection,
+    Heading,
+    Paragraph,
     ShopCreatorControls,
-    ShopFeatureContainer
+    ShopFeatureContainer,
+    Splash
   },
   mixins: [theming],
   middleware: [

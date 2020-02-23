@@ -122,36 +122,36 @@
 import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
+import ButtonBack from '@/components/buttons/ButtonBack'
+import ButtonLinkTertiary from '@/components/buttons/ButtonLinkTertiary'
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 import Heading from '@/components/globals/Heading'
-import InfoTip from '@/components/globals/InfoTip'
+import FormFieldset from '@/components/forms/FormFieldset'
 import FormGroup from '@/components/forms/FormGroup'
 import FormLabel from '@/components/forms/FormLabel'
-import FormSelect from '@/components/forms/FormSelect'
-import ButtonBack from '@/components/buttons/ButtonBack'
-import FormSection from '@/components/forms/FormSection'
-import FormFieldset from '@/components/forms/FormFieldset'
-import FormValidation from '@/components/forms/FormValidation'
-import ButtonPrimary from '@/components/buttons/ButtonPrimary'
-import FormSectionTitle from '@/components/forms/FormSectionTitle'
-import ButtonLinkTertiary from '@/components/buttons/ButtonLinkTertiary'
 import FormLabelDescription from '@/components/forms/FormLabelDescription'
+import FormSection from '@/components/forms/FormSection'
+import FormSectionTitle from '@/components/forms/FormSectionTitle'
+import FormSelect from '@/components/forms/FormSelect'
+import FormValidation from '@/components/forms/FormValidation'
+import InfoTip from '@/components/globals/InfoTip'
 import ProductCreatorStep from '@/components/products/creator/ProductCreatorStep'
 
 export default {
   components: {
+    ButtonBack,
+    ButtonLinkTertiary,
+    ButtonPrimary,
     Heading,
-    InfoTip,
+    FormFieldset,
     FormGroup,
     FormLabel,
-    FormSelect,
-    ButtonBack,
-    FormSection,
-    FormFieldset,
-    FormValidation,
-    ButtonPrimary,
-    FormSectionTitle,
-    ButtonLinkTertiary,
     FormLabelDescription,
+    FormSection,
+    FormSectionTitle,
+    FormSelect,
+    FormValidation,
+    InfoTip,
     ProductCreatorStep
   },
   mixins: [theming],

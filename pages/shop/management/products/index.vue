@@ -28,16 +28,16 @@
 <script>
 import shopManagement from '@/mixins/shop-management'
 
+import ButtonLinkAdd from '@/components/buttons/ButtonLinkAdd'
 import Card from '@/components/globals/Card'
 import Heading from '@/components/globals/Heading'
-import ButtonLinkAdd from '@/components/buttons/ButtonLinkAdd'
 import ResourceHeader from '@/components/resources/ResourceHeader'
 
 export default {
   components: {
+    ButtonLinkAdd,
     Card,
     Heading,
-    ButtonLinkAdd,
     ResourceHeader
   },
   mixins: [shopManagement],

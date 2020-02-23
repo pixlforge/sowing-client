@@ -73,19 +73,19 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 
-import Splash from '@/components/globals/Splash'
-import Header from '@/components/headers/Header'
-import ContentSection from '@/components/globals/ContentSection'
 import ButtonLinkPrimary from '@/components/buttons/ButtonLinkPrimary'
 import CartOverviewProduct from '@/components/cart/CartOverviewProduct'
+import ContentSection from '@/components/globals/ContentSection'
+import Header from '@/components/headers/Header'
+import Splash from '@/components/globals/Splash'
 
 export default {
   components: {
-    Splash,
-    Header,
-    ContentSection,
     ButtonLinkPrimary,
-    CartOverviewProduct
+    CartOverviewProduct,
+    ContentSection,
+    Header,
+    Splash
   },
   middleware: ['authenticated'],
   head() {

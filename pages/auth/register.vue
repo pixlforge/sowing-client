@@ -119,23 +119,23 @@
 <script>
 import { mapActions } from 'vuex'
 
-import Heading from '@/components/globals/Heading'
-import FormGroup from '@/components/forms/FormGroup'
-import FormLabel from '@/components/forms/FormLabel'
-import FormInput from '@/components/forms/FormInput'
-import FormCheckbox from '@/components/forms/FormCheckbox'
 import ButtonPrimary from '@/components/buttons/ButtonPrimary'
+import FormCheckbox from '@/components/forms/FormCheckbox'
+import FormGroup from '@/components/forms/FormGroup'
+import FormInput from '@/components/forms/FormInput'
+import FormLabel from '@/components/forms/FormLabel'
 import FormValidation from '@/components/forms/FormValidation'
+import Heading from '@/components/globals/Heading'
 
 export default {
   components: {
-    Heading,
-    FormGroup,
-    FormLabel,
-    FormInput,
-    FormCheckbox,
     ButtonPrimary,
-    FormValidation
+    FormCheckbox,
+    FormGroup,
+    FormInput,
+    FormLabel,
+    FormValidation,
+    Heading
   },
   layout: 'auth',
   middleware: ['guest'],

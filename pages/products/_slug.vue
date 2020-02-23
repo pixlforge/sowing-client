@@ -38,19 +38,19 @@
 import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
-import Header from '@/components/headers/Header'
+import ButtonLinkHeader from '@/components/buttons/ButtonLinkHeader'
 import ContentSection from '@/components/globals/ContentSection'
+import Header from '@/components/headers/Header'
 import ProductDetails from '@/components/products/ProductDetails'
 import StreakNewsletter from '@/components/streaks/StreakNewsletter'
-import ButtonLinkHeader from '@/components/buttons/ButtonLinkHeader'
 
 export default {
   components: {
-    Header,
+    ButtonLinkHeader,
     ContentSection,
+    Header,
     ProductDetails,
-    StreakNewsletter,
-    ButtonLinkHeader
+    StreakNewsletter
   },
   head() {
     return {

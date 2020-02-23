@@ -35,17 +35,17 @@ import { mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 import shopManagement from '@/mixins/shop-management'
 
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 import Card from '@/components/globals/Card'
 import Heading from '@/components/globals/Heading'
 import ShopDetails from '@/components/shops/ShopDetails'
-import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 
 export default {
   components: {
+    ButtonPrimary,
     Card,
     Heading,
-    ShopDetails,
-    ButtonPrimary
+    ShopDetails
   },
   mixins: [
     theming,

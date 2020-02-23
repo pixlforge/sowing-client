@@ -31,15 +31,15 @@
 </template>
 
 <script>
-import Order from '@/components/orders/Order'
-import Header from '@/components/headers/Header'
 import ContentSection from '@/components/globals/ContentSection'
+import Header from '@/components/headers/Header'
+import Order from '@/components/orders/Order'
 
 export default {
   components: {
-    Order,
+    ContentSection,
     Header,
-    ContentSection
+    Order
   },
   middleware: ['authenticated'],
   head() {

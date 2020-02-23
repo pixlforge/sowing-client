@@ -44,19 +44,19 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 
-import Terms from '@/components/terms/Terms'
-import Header from '@/components/headers/Header'
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 import ContentSection from '@/components/globals/ContentSection'
 import FormCheckbox from '@/components/forms/FormCheckbox'
-import ButtonPrimary from '@/components/buttons/ButtonPrimary'
+import Header from '@/components/headers/Header'
+import Terms from '@/components/terms/Terms'
 
 export default {
   components: {
-    Terms,
-    Header,
+    ButtonPrimary,
     ContentSection,
     FormCheckbox,
-    ButtonPrimary
+    Header,
+    Terms
   },
   middleware: ['authenticated'],
   head() {

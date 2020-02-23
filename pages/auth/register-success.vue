@@ -25,13 +25,13 @@
 </template>
 
 <script>
-import Splash from '@/components/globals/Splash'
 import Header from '@/components/headers/Header'
+import Splash from '@/components/globals/Splash'
 
 export default {
   components: {
-    Splash,
-    Header
+    Header,
+    Splash
   },
   middleware: ['authenticated'],
   head() {

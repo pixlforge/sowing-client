@@ -157,24 +157,24 @@
 import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
-import Heading from '@/components/globals/Heading'
-import InfoTip from '@/components/globals/InfoTip'
 import ButtonBack from '@/components/buttons/ButtonBack'
-import FormSection from '@/components/forms/FormSection'
+import ButtonLinkTertiary from '@/components/buttons/ButtonLinkTertiary'
 import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 import ConfirmationModal from '@/components/modals/ConfirmationModal'
-import ButtonLinkTertiary from '@/components/buttons/ButtonLinkTertiary'
+import FormSection from '@/components/forms/FormSection'
+import Heading from '@/components/globals/Heading'
+import InfoTip from '@/components/globals/InfoTip'
 import ProductVariationType from '@/components/products/creator/ProductVariationType'
 
 export default {
   components: {
-    Heading,
-    InfoTip,
     ButtonBack,
-    FormSection,
+    ButtonLinkTertiary,
     ButtonPrimary,
     ConfirmationModal,
-    ButtonLinkTertiary,
+    FormSection,
+    Heading,
+    InfoTip,
     ProductVariationType
   },
   mixins: [theming],

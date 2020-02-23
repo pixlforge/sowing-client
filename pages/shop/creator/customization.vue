@@ -58,24 +58,24 @@
 import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
-import Heading from '@/components/globals/Heading'
-import ContentSection from '@/components/globals/ContentSection'
-import Paragraph from '@/components/paragraphs/Paragraph'
 import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 import ButtonTertiary from '@/components/buttons/ButtonTertiary'
-import ShopCustomization from '@/components/shops/ShopCustomization'
+import ContentSection from '@/components/globals/ContentSection'
+import Heading from '@/components/globals/Heading'
+import Paragraph from '@/components/paragraphs/Paragraph'
 import ShopCreatorControls from '@/components/shops/ShopCreatorControls'
+import ShopCustomization from '@/components/shops/ShopCustomization'
 import ShopFeatureContainer from '@/components/shops/ShopFeatureContainer'
 
 export default {
   components: {
-    Heading,
-    ContentSection,
-    Paragraph,
     ButtonPrimary,
     ButtonTertiary,
-    ShopCustomization,
+    ContentSection,
+    Heading,
+    Paragraph,
     ShopCreatorControls,
+    ShopCustomization,
     ShopFeatureContainer
   },
   mixins: [theming],
