@@ -15,12 +15,12 @@
     <img
       :src="imgSrc"
       :alt="imgAlt"
-      class="w-full h-250 sm:h-300 md:h-300 lg:h-350 object-cover rounded-lg shadow-md group-hover:shadow-lg transition-shadow transition-faster"
+      class="w-full h-250 sm:h-300 md:h-300 lg:h-350 object-cover rounded-lg group-hover:shadow-lg transform group-hover:-translate-y-1 transition-all duration-200 ease-out"
     >
 
     <!-- Card content -->
     <div class="relative px-20 sm:px-30 -mt-36">
-      <div class="bg-white outline-none focus:shadow-outline rounded-lg shadow-lg group-hover:shadow-xl transition-shadow transition-faster overflow-hidden px-20 sm:px-24 py-36">
+      <div class="bg-white outline-none focus:shadow-outline border border-gray-200 rounded-lg group-hover:shadow-lg transform group-hover:-translate-y-1 transition-all duration-200 ease-out overflow-hidden px-20 sm:px-24 py-36">
 
         <!-- Title -->
         <Heading

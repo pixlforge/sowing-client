@@ -22,7 +22,7 @@
   }
 
   &__link {
-    @apply text-14 font-bold text-green-800 no-underline transition-color transition-faster w-30 h-30 rounded-full bg-green-200 flex justify-center items-center mx-5;
+    @apply w-30 h-30 rounded-full bg-green-200 flex justify-center items-center text-14 font-bold text-green-800 no-underline transition transition-colors duration-200 ease-out mx-5;
 
     &--active,
     &:hover {

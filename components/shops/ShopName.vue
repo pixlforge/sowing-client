@@ -23,13 +23,13 @@
 import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
-import FormInput from '@/components/forms/FormInput'
 import ButtonPrimary from '@/components/buttons/ButtonPrimary'
+import FormInput from '@/components/forms/FormInput'
 
 export default {
   components: {
-    FormInput,
-    ButtonPrimary
+    ButtonPrimary,
+    FormInput
   },
   mixins: [theming],
   props: {

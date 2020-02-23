@@ -40,24 +40,24 @@
 import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
-import Navbar from '@/components/globals/Navbar'
 import Alert from '@/components/globals/Alert'
+import CategoryBar from '@/components/categories/CategoryBar'
+import Disclaimer from '@/components/footer/Disclaimer'
 import Footer from '@/components/footer/Footer'
 import Header from '@/components/headers/Header'
+import Navbar from '@/components/globals/Navbar'
 import ShopCover from '@/components/shops/ShopCover'
-import Disclaimer from '@/components/footer/Disclaimer'
-import CategoryBar from '@/components/categories/CategoryBar'
 import ShopNavigation from '@/components/shops/navigation/ShopNavigation'
 
 export default {
   components: {
-    Navbar,
     Alert,
+    CategoryBar,
+    Disclaimer,
     Footer,
     Header,
+    Navbar,
     ShopCover,
-    Disclaimer,
-    CategoryBar,
     ShopNavigation
   },
   mixins: [theming],

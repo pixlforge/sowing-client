@@ -1,0 +1,19 @@
+.container {
+  @apply w-full px-20 mx-auto;
+
+  @screen sm {
+    max-width: 640px;
+  }
+
+  @screen md {
+    max-width: 768px;
+  }
+
+  @screen lg {
+    max-width: 1024px;
+  }
+
+  @screen xl {
+    max-width: 1280px;
+  }
+}

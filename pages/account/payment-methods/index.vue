@@ -11,7 +11,7 @@
       </Heading>
 
       <!-- Add a payment method -->
-      <AddButtonLink
+      <ButtonLinkAdd
         :route="{ name: 'account-payment-methods-create' }"
         :label="$t('buttons.add_payment_method')"
         class="mt-60 md:mt-0"
@@ -63,27 +63,27 @@
 <script>
 import { mapActions, mapGetters } from 'vuex'
 
+import ButtonLinkAdd from '@/components/buttons/ButtonLinkAdd'
+import ButtonLinkPrimary from '@/components/buttons/ButtonLinkPrimary'
 import Card from '@/components/globals/Card'
+import ConfirmationModal from '@/components/modals/ConfirmationModal'
 import Heading from '@/components/globals/Heading'
 import Paragraph from '@/components/paragraphs/Paragraph'
-import AddButtonLink from '@/components/buttons/AddButtonLink'
-import ResourceList from '@/components/resources/ResourceList'
-import ResourceHeader from '@/components/resources/ResourceHeader'
-import ConfirmationModal from '@/components/modals/ConfirmationModal'
-import ButtonLinkPrimary from '@/components/buttons/ButtonLinkPrimary'
 import PaymentMethodItem from '@/components/payment-methods/PaymentMethodItem'
+import ResourceHeader from '@/components/resources/ResourceHeader'
+import ResourceList from '@/components/resources/ResourceList'
 
 export default {
   components: {
+    ButtonLinkAdd,
+    ButtonLinkPrimary,
     Card,
+    ConfirmationModal,
     Heading,
     Paragraph,
-    AddButtonLink,
-    ResourceList,
+    PaymentMethodItem,
     ResourceHeader,
-    ConfirmationModal,
-    ButtonLinkPrimary,
-    PaymentMethodItem
+    ResourceList
   },
   middleware: ['authenticated'],
   layout: 'account-management',

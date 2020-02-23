@@ -10,18 +10,22 @@
     <header class="flex flex-wrap items-center my-30">
 
       <!-- Back -->
-      <BackButton
+      <ButtonBack
         :route="{ name: 'shop-management-products' }"
         class="mr-20"
       />
 
       <!-- Page title -->
-      <h1 class="text-20 sm:text-24 md:text-30 font-extrabold leading-relaxed text-center md:text-left">
+      <Heading
+        tag="h1"
+        visual="h4"
+        utilities="text-center"
+      >
         {{ $t('products.management.create.name_and_description_for') }}
         <span :class="`text-${shopTheme}-500`">
           {{ form.name[locale] || $t('products.management.create.unnamed') }}
         </span>
-      </h1>
+      </Heading>
     </header>
 
     <!-- Infotip -->
@@ -45,7 +49,7 @@
           <!-- Name -->
           <FormGroup>
             <FormLabel name="name.fr">
-              {{ $t('forms.labels.name') }}
+              {{ $t('form.name.label') }}
             </FormLabel>
             <FormLabelDescription>
               Le nom de votre produit. Entrez, en français, un nom descriptif identifiant votre produit.
@@ -64,7 +68,7 @@
           <!-- Description -->
           <FormGroup>
             <FormLabel name="description.fr">
-              {{ $t('forms.labels.description') }}
+              {{ $t('form.description.label') }}
             </FormLabel>
             <FormLabelDescription>
               Décrivez, en français, votre produit de la manière dont vous le voulez.
@@ -92,7 +96,7 @@
           <!-- Name -->
           <FormGroup>
             <FormLabel name="name.en">
-              {{ $t('forms.labels.name') }}
+              {{ $t('form.name.label') }}
             </FormLabel>
             <FormLabelDescription>
               Le nom de votre produit. Entrez, en anglais, un nom descriptif identifiant votre produit.
@@ -111,7 +115,7 @@
           <!-- Description -->
           <FormGroup>
             <FormLabel name="description.en">
-              {{ $t('forms.labels.description') }}
+              {{ $t('form.description.label') }}
             </FormLabel>
             <FormLabelDescription>
               Décrivez, en anglais, votre produit de la manière dont vous le voulez.
@@ -139,7 +143,7 @@
           <!-- Name -->
           <FormGroup>
             <FormLabel name="name.de">
-              {{ $t('forms.labels.name') }}
+              {{ $t('form.name.label') }}
             </FormLabel>
             <FormLabelDescription>
               Le nom de votre produit. Entrez, en allemand, un nom descriptif identifiant votre produit.
@@ -158,7 +162,7 @@
           <!-- Description -->
           <FormGroup>
             <FormLabel name="description.de">
-              {{ $t('forms.labels.description') }}
+              {{ $t('form.description.label') }}
             </FormLabel>
             <FormLabelDescription>
               Décrivez, en allemand, votre produit de la manière dont vous le voulez.
@@ -186,7 +190,7 @@
           <!-- Name -->
           <FormGroup>
             <FormLabel name="name.it">
-              {{ $t('forms.labels.name') }}
+              {{ $t('form.name.label') }}
             </FormLabel>
             <FormLabelDescription>
               Le nom de votre produit. Entrez, en italien, un nom descriptif identifiant votre produit.
@@ -205,7 +209,7 @@
           <!-- Description -->
           <FormGroup>
             <FormLabel name="description.it">
-              {{ $t('forms.labels.description') }}
+              {{ $t('form.description.label') }}
             </FormLabel>
             <FormLabelDescription>
               Décrivez, en italien, votre produit de la manière dont vous le voulez.
@@ -227,17 +231,6 @@
       <FormSection class="lg:w-full">
         <div class="flex justify-center items-center">
 
-          <!-- Submit -->
-          <ButtonPrimary
-            :color="shopTheme"
-            icon="check-circle"
-            size="large"
-            type="submit"
-            class="mr-10"
-          >
-            {{ $t('buttons.next') }}
-          </ButtonPrimary>
-
           <!-- Cancel -->
           <ButtonLinkTertiary
             :route="{ name: 'shop-management-products' }"
@@ -245,6 +238,17 @@
           >
             {{ $t('buttons.cancel') }}
           </ButtonLinkTertiary>
+
+          <!-- Submit -->
+          <ButtonPrimary
+            :color="shopTheme"
+            icon="check-circle"
+            size="large"
+            type="submit"
+            class="ml-10"
+          >
+            {{ $t('buttons.next') }}
+          </ButtonPrimary>
         </div>
       </FormSection>
     </form>
@@ -256,25 +260,49 @@
 import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
-import InfoTip from '@/components/globals/InfoTip'
-import FormGroup from '@/components/forms/FormGroup'
-import FormLabel from '@/components/forms/FormLabel'
-import FormInput from '@/components/forms/FormInput'
-import BackButton from '@/components/buttons/BackButton'
-import FormSection from '@/components/forms/FormSection'
+import ButtonBack from '@/components/buttons/ButtonBack'
+import ButtonLinkTertiary from '@/components/buttons/ButtonLinkTertiary'
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 import FormFieldset from '@/components/forms/FormFieldset'
+import FormGroup from '@/components/forms/FormGroup'
+import FormInput from '@/components/forms/FormInput'
+import FormLabel from '@/components/forms/FormLabel'
+import FormLabelDescription from '@/components/forms/FormLabelDescription'
+import FormSection from '@/components/forms/FormSection'
+import FormSectionTitle from '@/components/forms/FormSectionTitle'
 import FormTextarea from '@/components/forms/FormTextarea'
 import FormValidation from '@/components/forms/FormValidation'
-import ButtonPrimary from '@/components/buttons/ButtonPrimary'
-import FormSectionTitle from '@/components/forms/FormSectionTitle'
-import ButtonLinkTertiary from '@/components/buttons/ButtonLinkTertiary'
-import FormLabelDescription from '@/components/forms/FormLabelDescription'
+import Heading from '@/components/globals/Heading'
+import InfoTip from '@/components/globals/InfoTip'
 import ProductCreatorStep from '@/components/products/creator/ProductCreatorStep'
 
 export default {
+  components: {
+    ButtonBack,
+    ButtonLinkTertiary,
+    ButtonPrimary,
+    FormFieldset,
+    FormGroup,
+    FormInput,
+    FormLabel,
+    FormLabelDescription,
+    FormSection,
+    FormSectionTitle,
+    FormTextarea,
+    FormValidation,
+    Heading,
+    InfoTip,
+    ProductCreatorStep
+  },
+  mixins: [theming],
+  middleware: [
+    'authenticated',
+    'hasShop'
+  ],
+  layout: 'create-product',
   head() {
     return {
-      title: this.$t('products.management.create.title'),
+      title: `${this.$t('products.management.create.title')} | ${this.shop.name}`,
       meta: [
         {
           hid: 'description',
@@ -289,28 +317,6 @@ export default {
       ]
     }
   },
-  layout: 'create-product',
-  middleware: [
-    'authenticated',
-    'hasShop'
-  ],
-  components: {
-    InfoTip,
-    FormGroup,
-    FormLabel,
-    FormInput,
-    BackButton,
-    FormSection,
-    FormFieldset,
-    FormTextarea,
-    FormValidation,
-    ButtonPrimary,
-    FormSectionTitle,
-    ButtonLinkTertiary,
-    FormLabelDescription,
-    ProductCreatorStep
-  },
-  mixins: [theming],
   data() {
     return {
       form: {

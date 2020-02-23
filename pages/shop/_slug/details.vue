@@ -91,28 +91,28 @@
 import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
-import Heading from '@/components/globals/Heading'
-import Header from '@/components/headers/Header'
-import ShopCover from '@/components/shops/ShopCover'
-import ContentSection from '@/components/globals/ContentSection'
-import HeaderList from '@/components/headers/HeaderList'
-import StreakRegister from '@/components/streaks/StreakRegister'
 import ButtonLinkPrimary from '@/components/buttons/ButtonLinkPrimary'
+import ContentSection from '@/components/globals/ContentSection'
+import Header from '@/components/headers/Header'
+import HeaderList from '@/components/headers/HeaderList'
+import Heading from '@/components/globals/Heading'
+import ShopCover from '@/components/shops/ShopCover'
+import StreakRegister from '@/components/streaks/StreakRegister'
 
 export default {
+  components: {
+    ButtonLinkPrimary,
+    ContentSection,
+    Header,
+    HeaderList,
+    Heading,
+    ShopCover,
+    StreakRegister
+  },
   head() {
     return {
       title: `${this.shop.name} | ${this.title}`
     }
-  },
-  components: {
-    Heading,
-    Header,
-    ShopCover,
-    ContentSection,
-    HeaderList,
-    StreakRegister,
-    ButtonLinkPrimary
   },
   mixins: [theming],
   data() {

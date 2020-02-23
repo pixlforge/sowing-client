@@ -31,11 +31,16 @@
 </template>
 
 <script>
-import Order from '@/components/orders/Order'
-import Header from '@/components/headers/Header'
 import ContentSection from '@/components/globals/ContentSection'
+import Header from '@/components/headers/Header'
+import Order from '@/components/orders/Order'
 
 export default {
+  components: {
+    ContentSection,
+    Header,
+    Order
+  },
   middleware: ['authenticated'],
   head() {
     return {
@@ -53,11 +58,6 @@ export default {
         }
       ]
     }
-  },
-  components: {
-    Order,
-    Header,
-    ContentSection
   },
   data() {
     return {

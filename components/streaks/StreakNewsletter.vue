@@ -60,15 +60,15 @@
 </template>
 
 <script>
-import Heading from '@/components/globals/Heading'
-import FormInput from '@/components/forms/FormInput'
 import ButtonPrimary from '@/components/buttons/ButtonPrimary'
+import FormInput from '@/components/forms/FormInput'
+import Heading from '@/components/globals/Heading'
 
 export default {
   components: {
-    Heading,
+    ButtonPrimary,
     FormInput,
-    ButtonPrimary
+    Heading
   },
   data() {
     return {

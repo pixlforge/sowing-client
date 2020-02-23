@@ -23,6 +23,13 @@ import Card from '@/components/globals/Card'
 import Heading from '@/components/globals/Heading'
 
 export default {
+  components: {
+    Card,
+    Heading
+  },
+  mixins: [shopManagement],
+  middleware: ['authenticated'],
+  layout: 'shop-management',
   head() {
     return {
       title: this.$t('shop.management.dashboard.title'),
@@ -39,13 +46,6 @@ export default {
         }
       ]
     }
-  },
-  components: {
-    Card,
-    Heading
-  },
-  middleware: ['authenticated'],
-  layout: 'shop-management',
-  mixins: [shopManagement]
+  }
 }
 </script>

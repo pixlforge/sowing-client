@@ -120,32 +120,32 @@
 <script>
 import { mapGetters } from 'vuex'
 
-import Review from '@/components/globals/Review'
-import Heading from '@/components/globals/Heading'
-import Feature from '@/components/globals/Feature'
-import ShopCard from '@/components/shops/ShopCard'
-import ContentSection from '@/components/globals/ContentSection'
 import CategoryCard from '@/components/categories/CategoryCard'
-import StreakRegister from '@/components/streaks/StreakRegister'
-import StreakNewsletter from '@/components/streaks/StreakNewsletter'
+import ContentSection from '@/components/globals/ContentSection'
+import Feature from '@/components/globals/Feature'
 import FeaturedCategory from '@/components/categories/FeaturedCategory'
+import Heading from '@/components/globals/Heading'
+import Review from '@/components/globals/Review'
+import ShopCard from '@/components/shops/ShopCard'
+import StreakNewsletter from '@/components/streaks/StreakNewsletter'
+import StreakRegister from '@/components/streaks/StreakRegister'
 
 export default {
+  components: {
+    CategoryCard,
+    ContentSection,
+    Feature,
+    FeaturedCategory,
+    Heading,
+    Review,
+    ShopCard,
+    StreakNewsletter,
+    StreakRegister
+  },
   head() {
     return {
       title: this.$t('home.title')
     }
-  },
-  components: {
-    Review,
-    Heading,
-    Feature,
-    ShopCard,
-    ContentSection,
-    CategoryCard,
-    StreakRegister,
-    StreakNewsletter,
-    FeaturedCategory
   },
   data() {
     return {

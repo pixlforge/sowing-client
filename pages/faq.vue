@@ -62,14 +62,22 @@
 </template>
 
 <script>
-import Heading from '@/components/globals/Heading'
-import Header from '@/components/headers/Header'
 import ContentSection from '@/components/globals/ContentSection'
+import Header from '@/components/headers/Header'
+import Heading from '@/components/globals/Heading'
 import Paragraph from '@/components/paragraphs/Paragraph'
 import ParagraphGroup from '@/components/paragraphs/ParagraphGroup'
 import StreakNewsletter from '@/components/streaks/StreakNewsletter'
 
 export default {
+  components: {
+    ContentSection,
+    Header,
+    Heading,
+    Paragraph,
+    ParagraphGroup,
+    StreakNewsletter
+  },
   head() {
     return {
       title: this.$t('faq.title'),
@@ -81,14 +89,6 @@ export default {
         }
       ]
     }
-  },
-  components: {
-    Heading,
-    Header,
-    ContentSection,
-    Paragraph,
-    ParagraphGroup,
-    StreakNewsletter
   },
   asyncData({ app }) {
     return {

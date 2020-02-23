@@ -36,9 +36,12 @@ export const state = () => ({
   available_themes: [
     'green',
     'pink',
+    'orange',
+    'red',
     'purple',
     'indigo',
     'blue',
+    'teal',
     'brown',
     'gray',
     'slate'

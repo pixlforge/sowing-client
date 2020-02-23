@@ -1,6 +1,6 @@
 export default {
   shop: {
-    title: 'Management of my shop',
+    title: 'Shop management',
     creation: 'Creation of my shop',
     not_created_yet: "You haven't created a shop yet",
     creation_cta_line_1: 'Create your own online shop for free today!',

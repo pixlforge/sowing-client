@@ -10,7 +10,7 @@
     <header class="flex flex-wrap items-center my-30">
 
       <!-- Back -->
-      <BackButton
+      <ButtonBack
         :route="{
           name: 'shop-management-products-create-product-slug',
           params: {
@@ -21,12 +21,16 @@
       />
 
       <!-- Page title -->
-      <h1 class="text-20 sm:text-24 md:text-30 font-extrabold leading-relaxed text-center md:text-left">
+      <Heading
+        tag="h1"
+        visual="h4"
+        utilities="text-center"
+      >
         {{ $t('products.management.create.category_for') }}
         <span :class="`text-${shopTheme}-500`">
           {{ product.name[locale] || $t('products.management.create.unnamed') }}
         </span>
-      </h1>
+      </Heading>
     </header>
 
     <!-- Infotip -->
@@ -41,12 +45,12 @@
     >
       <FormSection class="lg:w-full">
         <FormSectionTitle>
-          {{ $t('forms.labels.category') }}
+          {{ $t('form.category.label') }}
         </FormSectionTitle>
         <FormFieldset>
           <FormGroup>
             <FormLabel name="category_id">
-              {{ $t('forms.labels.category') }}
+              {{ $t('form.category.label') }}
             </FormLabel>
             <FormLabelDescription>
               Associez votre produit à une catégorie afin que nous puissions le répertorier dans le catalogue.
@@ -85,17 +89,6 @@
       <FormSection class="lg:w-full">
         <div class="flex justify-center items-center">
 
-          <!-- Submit -->
-          <ButtonPrimary
-            :color="shopTheme"
-            icon="check-circle"
-            size="large"
-            type="submit"
-            class="mr-10"
-          >
-            {{ $t('buttons.next') }}
-          </ButtonPrimary>
-
           <!-- Cancel -->
           <ButtonLinkTertiary
             :route="{
@@ -108,6 +101,17 @@
           >
             {{ $t('buttons.back') }}
           </ButtonLinkTertiary>
+
+          <!-- Submit -->
+          <ButtonPrimary
+            :color="shopTheme"
+            icon="check-circle"
+            size="large"
+            type="submit"
+            class="ml-10"
+          >
+            {{ $t('buttons.next') }}
+          </ButtonPrimary>
         </div>
       </FormSection>
     </form>
@@ -118,24 +122,47 @@
 import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
-import InfoTip from '@/components/globals/InfoTip'
+import ButtonBack from '@/components/buttons/ButtonBack'
+import ButtonLinkTertiary from '@/components/buttons/ButtonLinkTertiary'
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
+import Heading from '@/components/globals/Heading'
+import FormFieldset from '@/components/forms/FormFieldset'
 import FormGroup from '@/components/forms/FormGroup'
 import FormLabel from '@/components/forms/FormLabel'
-import FormSelect from '@/components/forms/FormSelect'
-import BackButton from '@/components/buttons/BackButton'
-import FormSection from '@/components/forms/FormSection'
-import FormFieldset from '@/components/forms/FormFieldset'
-import FormValidation from '@/components/forms/FormValidation'
-import ButtonPrimary from '@/components/buttons/ButtonPrimary'
-import FormSectionTitle from '@/components/forms/FormSectionTitle'
-import ButtonLinkTertiary from '@/components/buttons/ButtonLinkTertiary'
 import FormLabelDescription from '@/components/forms/FormLabelDescription'
+import FormSection from '@/components/forms/FormSection'
+import FormSectionTitle from '@/components/forms/FormSectionTitle'
+import FormSelect from '@/components/forms/FormSelect'
+import FormValidation from '@/components/forms/FormValidation'
+import InfoTip from '@/components/globals/InfoTip'
 import ProductCreatorStep from '@/components/products/creator/ProductCreatorStep'
 
 export default {
+  components: {
+    ButtonBack,
+    ButtonLinkTertiary,
+    ButtonPrimary,
+    Heading,
+    FormFieldset,
+    FormGroup,
+    FormLabel,
+    FormLabelDescription,
+    FormSection,
+    FormSectionTitle,
+    FormSelect,
+    FormValidation,
+    InfoTip,
+    ProductCreatorStep
+  },
+  mixins: [theming],
+  middleware: [
+    'authenticated',
+    'hasShop'
+  ],
+  layout: 'create-product',
   head() {
     return {
-      title: `${this.$t('products.management.create.add_category')} | ${this.product.name[this.locale]}`,
+      title: `${this.$t('products.management.create.category')} | ${this.product.name[this.locale]} | ${this.$t('products.management.create.title')} | ${this.shop.name}`,
       meta: [
         {
           hid: 'description',
@@ -150,27 +177,6 @@ export default {
       ]
     }
   },
-  layout: 'create-product',
-  middleware: [
-    'authenticated',
-    'hasShop'
-  ],
-  components: {
-    InfoTip,
-    FormGroup,
-    FormLabel,
-    FormSelect,
-    BackButton,
-    FormSection,
-    FormFieldset,
-    FormValidation,
-    ButtonPrimary,
-    FormSectionTitle,
-    ButtonLinkTertiary,
-    FormLabelDescription,
-    ProductCreatorStep
-  },
-  mixins: [theming],
   data() {
     return {
       form: {

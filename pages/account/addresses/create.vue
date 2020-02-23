@@ -3,7 +3,7 @@
     <div class="flex items-center">
 
       <!-- Back -->
-      <BackButton
+      <ButtonBack
         :route="{ name: 'account-addresses' }"
         class="mr-20"
       />
@@ -26,7 +26,7 @@
           <!-- First name -->
           <FormRowGroup>
             <FormLabel name="first_name">
-              {{ $t('forms.labels.first_name') }}
+              {{ $t('form.first_name.label') }}
             </FormLabel>
             <FormInput
               v-model="form.first_name"
@@ -43,7 +43,7 @@
           <!-- Last name -->
           <FormRowGroup>
             <FormLabel name="last_name">
-              {{ $t('forms.labels.last_name') }}
+              {{ $t('form.last_name.label') }}
             </FormLabel>
             <FormInput
               v-model="form.last_name"
@@ -61,7 +61,7 @@
         <!-- Company name -->
         <FormGroup>
           <FormLabel name="company_name">
-            {{ $t('forms.labels.company_name') }}
+            {{ $t('form.company_name.label') }}
           </FormLabel>
           <FormInput
             v-model="form.company_name"
@@ -79,7 +79,7 @@
           <!-- Address line 1 -->
           <FormRowGroup>
             <FormLabel name="address_line_1">
-              {{ $t('forms.labels.address_line_1') }}
+              {{ $t('form.address_line_1.label') }}
             </FormLabel>
             <FormInput
               v-model="form.address_line_1"
@@ -96,7 +96,7 @@
           <!-- Address line 2 -->
           <FormRowGroup>
             <FormLabel name="address_line_2">
-              {{ $t('forms.labels.address_line_2') }}
+              {{ $t('form.address_line_2.label') }}
             </FormLabel>
             <FormInput
               v-model="form.address_line_2"
@@ -116,7 +116,7 @@
           <!-- Postal code -->
           <FormRowGroup>
             <FormLabel name="postal_code">
-              {{ $t('forms.labels.postal_code') }}
+              {{ $t('form.postal_code.label') }}
             </FormLabel>
             <FormInput
               v-model="form.postal_code"
@@ -133,7 +133,7 @@
           <!-- City -->
           <FormRowGroup>
             <FormLabel name="city">
-              {{ $t('forms.labels.city') }}
+              {{ $t('form.city.label') }}
             </FormLabel>
             <FormInput
               v-model="form.city"
@@ -164,7 +164,7 @@
             name="is_default"
           >
             <FormCheckboxLabel name="is_default">
-              {{ $t('forms.labels.default_address') }}
+              {{ $t('form.default_address.label') }}
             </FormCheckboxLabel>
           </FormCheckbox>
         </FormGroup>
@@ -195,37 +195,37 @@
 </template>
 
 <script>
-import Card from '@/components/globals/Card'
-import Heading from '@/components/globals/Heading'
-import FormRow from '@/components/forms/FormRow'
-import FormGroup from '@/components/forms/FormGroup'
-import FormLabel from '@/components/forms/FormLabel'
-import FormInput from '@/components/forms/FormInput'
-import BackButton from '@/components/buttons/BackButton'
-import FormRowGroup from '@/components/forms/FormRowGroup'
-import FormCheckbox from '@/components/forms/FormCheckbox'
-import FormValidation from '@/components/forms/FormValidation'
-import ButtonPrimary from '@/components/buttons/ButtonPrimary'
-import CountryDropdown from '@/components/forms/CountryDropdown'
-import FormCheckboxLabel from '@/components/forms/FormCheckboxLabel'
+import ButtonBack from '@/components/buttons/ButtonBack'
 import ButtonLinkTertiary from '@/components/buttons/ButtonLinkTertiary'
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
+import Card from '@/components/globals/Card'
+import CountryDropdown from '@/components/forms/CountryDropdown'
+import FormCheckbox from '@/components/forms/FormCheckbox'
+import FormCheckboxLabel from '@/components/forms/FormCheckboxLabel'
+import FormGroup from '@/components/forms/FormGroup'
+import FormInput from '@/components/forms/FormInput'
+import FormLabel from '@/components/forms/FormLabel'
+import FormRow from '@/components/forms/FormRow'
+import FormRowGroup from '@/components/forms/FormRowGroup'
+import FormValidation from '@/components/forms/FormValidation'
+import Heading from '@/components/globals/Heading'
 
 export default {
   components: {
-    Card,
-    Heading,
-    FormGroup,
-    FormLabel,
-    FormInput,
-    BackButton,
-    FormRowGroup,
-    FormCheckbox,
-    FormRow,
-    FormValidation,
-    ButtonPrimary,
-    CountryDropdown,
+    ButtonBack,
     ButtonLinkTertiary,
-    FormCheckboxLabel
+    ButtonPrimary,
+    Card,
+    CountryDropdown,
+    FormCheckbox,
+    FormCheckboxLabel,
+    FormGroup,
+    FormInput,
+    FormLabel,
+    FormRow,
+    FormRowGroup,
+    FormValidation,
+    Heading
   },
   layout: 'account-management',
   middleware: ['authenticated'],

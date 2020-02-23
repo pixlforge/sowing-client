@@ -63,23 +63,23 @@
 </template>
 
 <script>
-import Logo from '@/components/globals/Logo'
-import Menu from '@/components/menus/Menu'
 import ButtonCart from '@/components/buttons/ButtonCart'
-import ButtonSearch from '@/components/buttons/ButtonSearch'
 import ButtonLanguages from '@/components/buttons/ButtonLanguages'
 import ButtonLinkPrimary from '@/components/buttons/ButtonLinkPrimary'
 import ButtonLinkSecondary from '@/components/buttons/ButtonLinkSecondary'
+import ButtonSearch from '@/components/buttons/ButtonSearch'
+import Logo from '@/components/globals/Logo'
+import Menu from '@/components/menus/Menu'
 
 export default {
   components: {
-    Logo,
-    Menu,
     ButtonCart,
-    ButtonSearch,
     ButtonLanguages,
     ButtonLinkPrimary,
-    ButtonLinkSecondary
+    ButtonLinkSecondary,
+    ButtonSearch,
+    Logo,
+    Menu
   },
   computed: {
     loggedIn() {

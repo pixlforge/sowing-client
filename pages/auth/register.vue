@@ -18,7 +18,7 @@
       <!-- Name -->
       <FormGroup>
         <FormLabel name="name">
-          {{ $t("forms.labels.name") }}
+          {{ $t("form.name.label") }}
         </FormLabel>
         <FormInput
           ref="autofocus"
@@ -36,7 +36,7 @@
       <!-- Email -->
       <FormGroup>
         <FormLabel name="email">
-          {{ $t("forms.labels.email") }}
+          {{ $t("form.email.label") }}
         </FormLabel>
         <FormInput
           v-model="form.email"
@@ -54,7 +54,7 @@
       <!-- Password -->
       <FormGroup>
         <FormLabel name="password">
-          {{ $t("forms.labels.password") }}
+          {{ $t("form.password.label") }}
         </FormLabel>
         <FormInput
           v-model="form.password"
@@ -72,7 +72,7 @@
       <!-- Password confirmation -->
       <FormGroup>
         <FormLabel name="password_confirmation">
-          {{ $t("forms.labels.password_confirmation") }}
+          {{ $t("form.password_confirmation.label") }}
         </FormLabel>
         <FormInput
           v-model="form.password_confirmation"
@@ -119,23 +119,23 @@
 <script>
 import { mapActions } from 'vuex'
 
-import Heading from '@/components/globals/Heading'
-import FormGroup from '@/components/forms/FormGroup'
-import FormLabel from '@/components/forms/FormLabel'
-import FormInput from '@/components/forms/FormInput'
-import FormCheckbox from '@/components/forms/FormCheckbox'
 import ButtonPrimary from '@/components/buttons/ButtonPrimary'
+import FormCheckbox from '@/components/forms/FormCheckbox'
+import FormGroup from '@/components/forms/FormGroup'
+import FormInput from '@/components/forms/FormInput'
+import FormLabel from '@/components/forms/FormLabel'
 import FormValidation from '@/components/forms/FormValidation'
+import Heading from '@/components/globals/Heading'
 
 export default {
   components: {
-    Heading,
-    FormGroup,
-    FormLabel,
-    FormInput,
-    FormCheckbox,
     ButtonPrimary,
-    FormValidation
+    FormCheckbox,
+    FormGroup,
+    FormInput,
+    FormLabel,
+    FormValidation,
+    Heading
   },
   layout: 'auth',
   middleware: ['guest'],

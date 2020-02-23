@@ -90,13 +90,13 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 
-import Heading from '@/components/globals/Heading'
 import FormSelect from '@/components/forms/FormSelect'
+import Heading from '@/components/globals/Heading'
 
 export default {
   components: {
-    Heading,
-    FormSelect
+    FormSelect,
+    Heading
   },
   props: {
     product: {

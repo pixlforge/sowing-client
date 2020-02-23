@@ -4,7 +4,7 @@
       <div class="flex items-center">
 
         <!-- Back -->
-        <BackButton
+        <ButtonBack
           :route="{ name: 'account-addresses' }"
           class="mr-20"
         />
@@ -19,7 +19,7 @@
       </div>
 
       <!-- Delete -->
-      <DeleteButton @click.native="openModal"/>
+      <ButtonDelete @click.native="openModal"/>
     </header>
 
     <Card>
@@ -43,21 +43,21 @@
 <script>
 import { mapActions } from 'vuex'
 
-import Card from '@/components/globals/Card'
-import Heading from '@/components/globals/Heading'
-import BackButton from '@/components/buttons/BackButton'
-import DeleteButton from '@/components/buttons/DeleteButton'
 import AddressCard from '@/components/addresses/AddressCard'
+import ButtonBack from '@/components/buttons/ButtonBack'
+import ButtonDelete from '@/components/buttons/ButtonDelete'
+import Card from '@/components/globals/Card'
 import ConfirmationModal from '@/components/modals/ConfirmationModal'
+import Heading from '@/components/globals/Heading'
 
 export default {
   components: {
-    Card,
-    Heading,
-    BackButton,
-    DeleteButton,
     AddressCard,
-    ConfirmationModal
+    ButtonBack,
+    ButtonDelete,
+    Card,
+    ConfirmationModal,
+    Heading
   },
   layout: 'account-management',
   middleware: ['authenticated'],

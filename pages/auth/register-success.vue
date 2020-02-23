@@ -25,19 +25,19 @@
 </template>
 
 <script>
-import Splash from '@/components/globals/Splash'
 import Header from '@/components/headers/Header'
+import Splash from '@/components/globals/Splash'
 
 export default {
+  components: {
+    Header,
+    Splash
+  },
   middleware: ['authenticated'],
   head() {
     return {
       title: this.$t('register_success.title')
     }
-  },
-  components: {
-    Splash,
-    Header
   }
 }
 </script>

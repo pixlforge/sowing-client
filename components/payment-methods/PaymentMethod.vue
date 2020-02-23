@@ -12,16 +12,16 @@
 </template>
 
 <script>
-import CardVisa from '@/components/payment-methods/cards/CardVisa'
 import CardAmex from '@/components/payment-methods/cards/CardAmex'
 import CardMasterCard from '@/components/payment-methods/cards/CardMasterCard'
+import CardVisa from '@/components/payment-methods/cards/CardVisa'
 
 export default {
   components: {
     /* eslint-disable */
-    visa: CardVisa,
     'american-express': CardAmex,
-    mastercard: CardMasterCard
+    mastercard: CardMasterCard,
+    visa: CardVisa
     /* eslint-enable */
   },
   props: {

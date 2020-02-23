@@ -150,21 +150,21 @@
 import { mapGetters, mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 
-import Heading from '@/components/globals/Heading'
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
+import FormDivider from '@/components/forms/FormDivider'
 import FormLabel from '@/components/forms/FormLabel'
 import FormSelect from '@/components/forms/FormSelect'
+import Heading from '@/components/globals/Heading'
 import ProductVariation from '@/components/products/ProductVariation'
-import FormDivider from '@/components/forms/FormDivider'
-import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 
 export default {
   components: {
-    Heading,
+    ButtonPrimary,
+    FormDivider,
     FormLabel,
     FormSelect,
-    ProductVariation,
-    FormDivider,
-    ButtonPrimary
+    Heading,
+    ProductVariation
   },
   mixins: [theming],
   props: {

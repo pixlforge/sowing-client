@@ -12,14 +12,14 @@
         'text-green-500': selectedPaymentMethod,
         'text-gray-200': !selectedPaymentMethod
       }"
-      class="text-72 transition-color transition-faster"
+      class="text-72 transition-colors duration-200 ease-out"
     />
     <h5
       :class="{
         'text-green-500': selectedPaymentMethod,
         'text-gray-200': !selectedPaymentMethod
       }"
-      class="text-16 font-extrabold uppercase transition-color transition-faster mt-20"
+      class="text-16 font-extrabold uppercase transition-colors duration-200 ease-out mt-20"
     >
       Visa
     </h5>

@@ -15,7 +15,7 @@
         <!-- Name -->
         <FormGroup>
           <FormLabel name="name">
-            {{ $t("forms.labels.name") }}
+            {{ $t("form.name.label") }}
           </FormLabel>
           <FormInput
             v-model="form.name"
@@ -31,7 +31,7 @@
         <!-- Email -->
         <FormGroup>
           <FormLabel name="email">
-            {{ $t("forms.labels.email") }}
+            {{ $t("form.email.label") }}
           </FormLabel>
           <FormInput
             v-model="form.email"
@@ -61,23 +61,23 @@
 <script>
 import { mapActions } from 'vuex'
 
-import Heading from '@/components/globals/Heading'
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 import Card from '@/components/globals/Card'
 import FormGroup from '@/components/forms/FormGroup'
 import FormInput from '@/components/forms/FormInput'
 import FormLabel from '@/components/forms/FormLabel'
 import FormValidation from '@/components/forms/FormValidation'
-import ButtonPrimary from '@/components/buttons/ButtonPrimary'
+import Heading from '@/components/globals/Heading'
 
 export default {
   components: {
-    Heading,
+    ButtonPrimary,
     Card,
     FormGroup,
     FormInput,
     FormLabel,
     FormValidation,
-    ButtonPrimary
+    Heading
   },
   middleware: ['authenticated'],
   layout: 'account-management',

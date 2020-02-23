@@ -12,7 +12,7 @@ import creditCards from '~/lang/fr-CH/creditCards'
 import dropzone from '~/lang/fr-CH/dropzone'
 import faq from '~/lang/fr-CH/faq'
 import footer from '~/lang/fr-CH/footer'
-import forms from '~/lang/fr-CH/forms'
+import form from '~/lang/fr-CH/form'
 import home from '~/lang/fr-CH/home'
 import languages from '~/lang/fr-CH/languages'
 import login from '~/lang/fr-CH/login'
@@ -22,6 +22,7 @@ import orders from '~/lang/fr-CH/orders'
 import passwordEmail from '~/lang/fr-CH/passwordEmail'
 import passwordReset from '~/lang/fr-CH/passwordReset'
 import products from '~/lang/fr-CH/products'
+import productVariationType from '~/lang/fr-CH/productVariationType'
 import register from '~/lang/fr-CH/register'
 import registerSuccess from '~/lang/fr-CH/registerSuccess'
 import search from '~/lang/fr-CH/search'
@@ -50,7 +51,7 @@ export default {
   ...dropzone,
   ...faq,
   ...footer,
-  ...forms,
+  ...form,
   ...home,
   ...languages,
   ...login,
@@ -60,6 +61,7 @@ export default {
   ...passwordEmail,
   ...passwordReset,
   ...products,
+  ...productVariationType,
   ...register,
   ...registerSuccess,
   ...search,

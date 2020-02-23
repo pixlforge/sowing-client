@@ -43,18 +43,18 @@
 <script>
 import { mapGetters } from 'vuex'
 
-import StatusPending from '@/components/orders/statuses/StatusPending'
 import StatusCompleted from '@/components/orders/statuses/StatusCompleted'
-import StatusProcessing from '@/components/orders/statuses/StatusProcessing'
 import StatusPaymentFailed from '@/components/orders/statuses/StatusPaymentFailed'
+import StatusPending from '@/components/orders/statuses/StatusPending'
+import StatusProcessing from '@/components/orders/statuses/StatusProcessing'
 
 export default {
   components: {
     /* eslint-disable */
-    pending: StatusPending,
     completed: StatusCompleted,
-    processing: StatusProcessing,
-    payment_failed: StatusPaymentFailed
+    payment_failed: StatusPaymentFailed,
+    pending: StatusPending,
+    processing: StatusProcessing
     /* eslint-enable */
   },
   props: {

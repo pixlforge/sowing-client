@@ -1,7 +1,7 @@
 <template>
   <div class="text-center mb-36">
     <nuxt-link
-      :to="{ name: 'index' }"
+      :to="to"
       class="inline-block"
     >
       <Logo class="w-200"/>
@@ -15,6 +15,15 @@ import Logo from '@/components/globals/Logo'
 export default {
   components: {
     Logo
+  },
+  props: {
+    to: {
+      type: Object,
+      required: false,
+      default() {
+        return { name: 'index' }
+      }
+    }
   }
 }
 </script>

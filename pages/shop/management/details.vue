@@ -35,13 +35,24 @@ import { mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 import shopManagement from '@/mixins/shop-management'
 
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 import Card from '@/components/globals/Card'
 import Heading from '@/components/globals/Heading'
 import ShopDetails from '@/components/shops/ShopDetails'
-import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 
 export default {
+  components: {
+    ButtonPrimary,
+    Card,
+    Heading,
+    ShopDetails
+  },
+  mixins: [
+    theming,
+    shopManagement
+  ],
   middleware: ['authenticated'],
+  layout: 'shop-management',
   head() {
     return {
       title: this.$t('shop.management.details.title'),
@@ -59,17 +70,6 @@ export default {
       ]
     }
   },
-  layout: 'shop-management',
-  components: {
-    Card,
-    Heading,
-    ShopDetails,
-    ButtonPrimary
-  },
-  mixins: [
-    theming,
-    shopManagement
-  ],
   data() {
     return {
       errors: {}
