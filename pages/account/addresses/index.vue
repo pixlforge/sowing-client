@@ -11,7 +11,7 @@
       </Heading>
 
       <!-- Add an address -->
-      <AddButtonLink
+      <ButtonLinkAdd
         :route="{ name: 'account-addresses-create' }"
         :label="$t('buttons.add_address')"
         class="mt-60 md:mt-0"
@@ -66,7 +66,7 @@ import Card from '@/components/globals/Card'
 import Heading from '@/components/globals/Heading'
 import Paragraph from '@/components/paragraphs/Paragraph'
 import AddressItem from '@/components/addresses/AddressItem'
-import AddButtonLink from '@/components/buttons/AddButtonLink'
+import ButtonLinkAdd from '@/components/buttons/ButtonLinkAdd'
 import ResourceList from '@/components/resources/ResourceList'
 import ResourceHeader from '@/components/resources/ResourceHeader'
 import ConfirmationModal from '@/components/modals/ConfirmationModal'
@@ -78,7 +78,7 @@ export default {
     Card,
     Paragraph,
     AddressItem,
-    AddButtonLink,
+    ButtonLinkAdd,
     ResourceList,
     ResourceHeader,
     ConfirmationModal,

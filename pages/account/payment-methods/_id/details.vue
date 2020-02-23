@@ -21,7 +21,7 @@
       <div class="flex justify-center items-center mt-48 sm:mt-0">
 
         <!-- Edit -->
-        <EditButton
+        <ButtonEdit
           :route="{
             name: 'account-payment-methods-id-edit',
             params: {
@@ -104,7 +104,7 @@ import { mapGetters, mapActions } from 'vuex'
 import Card from '@/components/globals/Card'
 import Heading from '@/components/globals/Heading'
 import ButtonBack from '@/components/buttons/ButtonBack'
-import EditButton from '@/components/buttons/EditButton'
+import ButtonEdit from '@/components/buttons/ButtonEdit'
 import ButtonDelete from '@/components/buttons/ButtonDelete'
 import ConfirmationModal from '@/components/modals/ConfirmationModal'
 
@@ -113,7 +113,7 @@ export default {
     Card,
     Heading,
     ButtonBack,
-    EditButton,
+    ButtonEdit,
     ButtonDelete,
     ConfirmationModal
   },

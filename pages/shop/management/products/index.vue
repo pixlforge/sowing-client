@@ -11,7 +11,7 @@
       </Heading>
 
       <!-- Add a product -->
-      <AddButtonLink
+      <ButtonLinkAdd
         :route="{ name: 'shop-management-products-create-product' }"
         :label="$t('buttons.add_product')"
         class="mt-60 md:mt-0"
@@ -30,14 +30,14 @@ import shopManagement from '@/mixins/shop-management'
 
 import Card from '@/components/globals/Card'
 import Heading from '@/components/globals/Heading'
-import AddButtonLink from '@/components/buttons/AddButtonLink'
+import ButtonLinkAdd from '@/components/buttons/ButtonLinkAdd'
 import ResourceHeader from '@/components/resources/ResourceHeader'
 
 export default {
   components: {
     Card,
     Heading,
-    AddButtonLink,
+    ButtonLinkAdd,
     ResourceHeader
   },
   mixins: [shopManagement],

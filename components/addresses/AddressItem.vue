@@ -10,7 +10,7 @@
       <template v-if="controlsOpen">
 
         <!-- View -->
-        <ViewButton
+        <ButtonView
           :route="{
             name: 'account-addresses-id-details',
             params: {
@@ -20,7 +20,7 @@
         />
 
         <!-- Edit -->
-        <EditButton
+        <ButtonEdit
           :route="{
             name: 'account-addresses-id-edit',
             params: {
@@ -85,16 +85,16 @@
 import { mapActions } from 'vuex'
 
 import ButtonDelete from '@/components/buttons/ButtonDelete'
-import EditButton from '@/components/buttons/EditButton'
+import ButtonEdit from '@/components/buttons/ButtonEdit'
 import ResourceControlsButton from '@/components/buttons/ResourceControlsButton'
-import ViewButton from '@/components/buttons/ViewButton'
+import ButtonView from '@/components/buttons/ButtonView'
 
 export default {
   components: {
     ButtonDelete,
-    EditButton,
+    ButtonEdit,
     ResourceControlsButton,
-    ViewButton
+    ButtonView
   },
   props: {
     address: {

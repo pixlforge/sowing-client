@@ -11,7 +11,7 @@
       </Heading>
 
       <!-- Add a payment method -->
-      <AddButtonLink
+      <ButtonLinkAdd
         :route="{ name: 'account-payment-methods-create' }"
         :label="$t('buttons.add_payment_method')"
         class="mt-60 md:mt-0"
@@ -66,7 +66,7 @@ import { mapActions, mapGetters } from 'vuex'
 import Card from '@/components/globals/Card'
 import Heading from '@/components/globals/Heading'
 import Paragraph from '@/components/paragraphs/Paragraph'
-import AddButtonLink from '@/components/buttons/AddButtonLink'
+import ButtonLinkAdd from '@/components/buttons/ButtonLinkAdd'
 import ResourceList from '@/components/resources/ResourceList'
 import ResourceHeader from '@/components/resources/ResourceHeader'
 import ConfirmationModal from '@/components/modals/ConfirmationModal'
@@ -78,7 +78,7 @@ export default {
     Card,
     Heading,
     Paragraph,
-    AddButtonLink,
+    ButtonLinkAdd,
     ResourceList,
     ResourceHeader,
     ConfirmationModal,
