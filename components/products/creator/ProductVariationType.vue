@@ -59,6 +59,31 @@
         >
       </div>
     </div>
+
+    <ProductVariation
+      v-for="variation in variationsForType"
+      :key="variation.id"
+      :variation="variation"
+    />
+
+    <!-- Add a new variation type -->
+    <button
+      @click="addVariation"
+      type="button"
+      class="w-full hover:bg-gray-100 border border-gray-200 hover:border-gray-300 rounded-lg text-14 text-gray-300 hover:text-gray-400 transition-all duration-200 ease-out select-none py-12"
+    >
+      <font-awesome-icon
+        :icon="['far', 'plus']"
+        class="mr-10"
+      />
+      <template v-if="productHasNoVariation">
+        {{ $t('product_variation_type.add_type') }}
+      </template>
+      <template v-else>
+        {{ $t('product_variation_type.add_another_type') }}
+      </template>
+    </button>
+
   </div>
 </template>
 
@@ -72,13 +97,15 @@ import ButtonCollapse from '@/components/buttons/ButtonCollapse'
 import ButtonDelete from '@/components/buttons/ButtonDelete'
 import Heading from '@/components/globals/Heading'
 import InfoBubble from '@/components/globals/InfoBubble'
+import ProductVariation from '@/components/products/creator/ProductVariation'
 
 export default {
   components: {
     ButtonCollapse,
     ButtonDelete,
     Heading,
-    InfoBubble
+    InfoBubble,
+    ProductVariation
   },
   mixins: [
     theming,
@@ -109,6 +136,12 @@ export default {
       }
 
       return 'text-gray-300'
+    },
+    variationsForType() {
+      return this.product.variations[this.type.id]
+    },
+    productHasNoVariation() {
+      return !this.variationsForType
     }
   },
   watch: {
@@ -128,6 +161,9 @@ export default {
     },
     toggleCollapse() {
       this.collapse = !this.collapse
+    },
+    addVariation() {
+      console.log('Add a product variation 😄')
     }
   }
 }

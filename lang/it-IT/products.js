@@ -3,6 +3,11 @@ export default {
     img: {
       alt: 'Immagine del prodotto'
     },
+    creator: {
+      variation: {
+        unnamed: 'Variazione senza nome'
+      }
+    },
     details: {
       remaining: 'prodotti in magazzino',
       out_of_stock: 'Esaurito'
