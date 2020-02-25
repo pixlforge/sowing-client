@@ -5,6 +5,8 @@ export default {
     },
     creator: {
       variation: {
+        add: 'Ajoutez une variation à votre produit',
+        add_another: 'Ajouter une nouvelle variation',
         unnamed: 'Variation sans nom'
       }
     },

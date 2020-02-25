@@ -41,48 +41,49 @@
     </header>
 
     <!-- Types -->
-    <div
-      v-if="!collapse"
-      class="flex flex-wrap p-20 lg:px-36 lg:py-20 -mx-10 mt-16"
-    >
-      <div
-        v-for="locale in availableLocales"
-        :key="locale.code"
-        class="w-full lg:w-1/2 px-10"
-      >
-        <input
-          v-model="form.name[locale.code]"
-          :placeholder="$t(`form.product_variation_type.name.${locale.code}`)"
-          :class="`border-${shopTheme}-200`"
-          type="text"
-          class="w-full border-2 border-dashed rounded-lg text-14 lg:text-16 placeholder-gray-300 px-20 py-16 mb-10"
+    <template v-if="!collapse">
+      <div class="flex flex-wrap p-20 lg:px-36 lg:py-20 -mx-10 mt-16">
+        <div
+          v-for="locale in availableLocales"
+          :key="locale.code"
+          class="w-full lg:w-1/2 px-10"
         >
+          <input
+            v-model="form.name[locale.code]"
+            :placeholder="$t(`form.product_variation_type.name.${locale.code}`)"
+            :class="`border-${shopTheme}-200`"
+            type="text"
+            class="w-full border-2 border-dashed rounded-lg text-14 lg:text-16 placeholder-gray-300 px-20 py-16 mb-10"
+          >
+        </div>
       </div>
-    </div>
 
-    <ProductVariation
-      v-for="variation in variationsForType"
-      :key="variation.id"
-      :variation="variation"
-    />
-
-    <!-- Add a new variation type -->
-    <button
-      @click="addVariation"
-      type="button"
-      class="w-full hover:bg-gray-100 border border-gray-200 hover:border-gray-300 rounded-lg text-14 text-gray-300 hover:text-gray-400 transition-all duration-200 ease-out select-none py-12"
-    >
-      <font-awesome-icon
-        :icon="['far', 'plus']"
-        class="mr-10"
+      <ProductVariation
+        v-for="variation in variationsForType"
+        :key="variation.id"
+        :variation="variation"
       />
-      <template v-if="productHasNoVariation">
-        {{ $t('product_variation_type.add_type') }}
-      </template>
-      <template v-else>
-        {{ $t('product_variation_type.add_another_type') }}
-      </template>
-    </button>
+
+      <!-- Add a new variation type -->
+      <div class="p-20 lg:px-36">
+        <button
+          @click="addVariation"
+          type="button"
+          class="w-full hover:bg-gray-100 border border-gray-200 hover:border-gray-300 rounded-lg text-12 text-gray-300 hover:text-gray-400 transition-all duration-200 ease-out select-none py-12"
+        >
+          <font-awesome-icon
+            :icon="['far', 'plus']"
+            class="mr-10"
+          />
+          <template v-if="productHasNoVariation">
+            {{ $t('products.creator.variation.add') }}
+          </template>
+          <template v-else>
+            {{ $t('products.creator.variation.add_another') }}
+          </template>
+        </button>
+      </div>
+    </template>
 
   </div>
 </template>
