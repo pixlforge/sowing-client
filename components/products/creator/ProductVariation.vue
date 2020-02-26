@@ -14,7 +14,7 @@ export default {
   },
   computed: {
     variationName() {
-      return this.variation.name[this.locale] || this.$t('products.creator.variation.unnamed')
+      return this.variation.name[this.locale] || this.$t('product.creator.variation.unnamed')
     }
   }
 }

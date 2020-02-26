@@ -1,5 +1,5 @@
 export default {
-  products: {
+  product: {
     img: {
       alt: 'Product image'
     },

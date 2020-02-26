@@ -131,7 +131,7 @@ export default {
       return 'https://bulma.io/images/placeholders/1280x960.png'
     },
     imgAlt() {
-      return this.$t('products.img.alt')
+      return this.$t('product.img.alt')
     }
   },
   async asyncData({ app, route }) {

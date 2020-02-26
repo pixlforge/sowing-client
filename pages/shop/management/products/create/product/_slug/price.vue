@@ -26,16 +26,16 @@
         visual="h4"
         utilities="text-center"
       >
-        {{ $t('products.management.create.price_for') }}
+        {{ $t('product.management.create.price_for') }}
         <span :class="`text-${shopTheme}-500`">
-          {{ product.name[locale] || $t('products.management.create.unnamed') }}
+          {{ product.name[locale] || $t('product.management.create.unnamed') }}
         </span>
       </Heading>
     </header>
 
     <!-- Infotip -->
     <InfoTip icon="info">
-      {{ $t('products.management.create.tips.price') }}
+      {{ $t('product.management.create.tips.price') }}
     </InfoTip>
 
     <!-- Form -->
@@ -147,7 +147,7 @@ export default {
   ],
   head() {
     return {
-      title: `${this.$t('products.management.create.price')} | ${this.product.name[this.locale]} | ${this.$t('products.management.create.title')} | ${this.shop.name}`,
+      title: `${this.$t('product.management.create.price')} | ${this.product.name[this.locale]} | ${this.$t('product.management.create.title')} | ${this.shop.name}`,
       meta: [
         {
           hid: 'description',

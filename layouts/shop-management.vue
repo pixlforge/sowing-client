@@ -76,7 +76,7 @@
               </SideMenuTitle>
               <SideMenuList>
                 <SideMenuItem
-                  :label="$t('products.management.index.title')"
+                  :label="$t('product.management.index.title')"
                   route="shop-management-products"
                   icon="box-full"
                 />

@@ -20,16 +20,16 @@
           tag="h5"
           visual="h5"
         >
-          {{ form.name[locale] || $t('products.creator.type.unnamed') }}
+          {{ typeName[locale] || $t('product.creator.type.unnamed') }}
         </Heading>
 
         <!-- Info Bubble: Add at least the type name in your own language -->
         <InfoBubble
-          v-if="!form.name[locale]"
+          v-if="!typeName[locale]"
           :color="shopTheme"
           class="ml-16"
         >
-          {{ $t('products.creator.type.add_type_name_in_your_own_language') }}
+          {{ $t('product.creator.type.add_type_name_in_your_own_language') }}
         </InfoBubble>
       </div>
 
@@ -49,7 +49,7 @@
           class="w-full lg:w-1/2 px-10"
         >
           <input
-            v-model="form.name[locale.code]"
+            v-model="typeName[locale.code]"
             :placeholder="$t(`form.product_variation_type.name.${locale.code}`)"
             :class="`border-${shopTheme}-200`"
             type="text"
@@ -76,10 +76,10 @@
             class="mr-10"
           />
           <template v-if="productHasNoVariation">
-            {{ $t('products.creator.variation.add') }}
+            {{ $t('product.creator.variation.add') }}
           </template>
           <template v-else>
-            {{ $t('products.creator.variation.add_another') }}
+            {{ $t('product.creator.variation.add_another') }}
           </template>
         </button>
       </div>
@@ -143,6 +143,9 @@ export default {
     },
     productHasNoVariation() {
       return !this.variationsForType
+    },
+    typeName() {
+      return this.form.name
     }
   },
   watch: {

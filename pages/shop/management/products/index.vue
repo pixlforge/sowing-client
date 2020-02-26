@@ -7,7 +7,7 @@
         tag="h1"
         visual="h1"
       >
-        {{ $t("products.management.index.title") }}
+        {{ $t("product.management.index.title") }}
       </Heading>
 
       <!-- Add a product -->
@@ -45,7 +45,7 @@ export default {
   layout: 'shop-management',
   head() {
     return {
-      title: this.$t('products.management.index.title'),
+      title: this.$t('product.management.index.title'),
       meta: [
         {
           hid: 'description',

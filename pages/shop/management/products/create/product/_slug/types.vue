@@ -66,9 +66,9 @@
         visual="h4"
         utilities="text-center"
       >
-        {{ $t('products.management.create.types_for') }}
+        {{ $t('product.management.create.types_for') }}
         <span :class="`text-${shopTheme}-500`">
-          {{ product.name[locale] || $t('products.management.create.unnamed') }}
+          {{ product.name[locale] || $t('product.management.create.unnamed') }}
         </span>
       </Heading>
     </header>
@@ -78,7 +78,7 @@
       icon="info"
       class="mb-48"
     >
-      {{ $t('products.management.create.tips.types') }}
+      {{ $t('product.management.create.tips.types') }}
     </InfoTip>
 
     <!-- Types -->
@@ -101,10 +101,10 @@
         class="mr-10"
       />
       <template v-if="productHasNoType">
-        {{ $t('products.creator.type.add') }}
+        {{ $t('product.creator.type.add') }}
       </template>
       <template v-else>
-        {{ $t('products.creator.type.add_another') }}
+        {{ $t('product.creator.type.add_another') }}
       </template>
     </button>
 
@@ -185,7 +185,7 @@ export default {
   layout: 'create-product',
   head() {
     return {
-      title: `${this.$t('products.management.create.types')} | ${this.$t('products.management.create.title')} | ${this.product.name[this.locale]} | ${this.shop.name}`,
+      title: `${this.$t('product.management.create.types')} | ${this.$t('product.management.create.title')} | ${this.product.name[this.locale]} | ${this.shop.name}`,
       meta: [
         {
           hid: 'description',

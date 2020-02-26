@@ -96,7 +96,7 @@
 
           <!-- Checkout button -->
           <ButtonPrimary
-            v-if="products.length && !addressManagersVisible"
+            v-if="product.length && !addressManagersVisible"
             :disabled="is_empty || submitting"
             :title="$t('checkout.order')"
             @click.native="order"

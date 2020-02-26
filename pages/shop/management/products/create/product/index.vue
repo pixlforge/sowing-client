@@ -21,16 +21,16 @@
         visual="h4"
         utilities="text-center"
       >
-        {{ $t('products.management.create.name_and_description_for') }}
+        {{ $t('product.management.create.name_and_description_for') }}
         <span :class="`text-${shopTheme}-500`">
-          {{ form.name[locale] || $t('products.management.create.unnamed') }}
+          {{ form.name[locale] || $t('product.management.create.unnamed') }}
         </span>
       </Heading>
     </header>
 
     <!-- Infotip -->
     <InfoTip icon="info">
-      {{ $t('products.management.create.tips.name_and_description') }}
+      {{ $t('product.management.create.tips.name_and_description') }}
     </InfoTip>
 
     <!-- Form -->
@@ -302,7 +302,7 @@ export default {
   layout: 'create-product',
   head() {
     return {
-      title: `${this.$t('products.management.create.title')} | ${this.shop.name}`,
+      title: `${this.$t('product.management.create.title')} | ${this.shop.name}`,
       meta: [
         {
           hid: 'description',
