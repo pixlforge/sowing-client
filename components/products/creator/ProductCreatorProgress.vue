@@ -4,7 +4,7 @@
 
       <!-- Done -->
       <div
-        v-for="n in 3"
+        v-for="n in completedSteps"
         :key="`done-${n}`"
         :class="`bg-${shopTheme}-300`"
         class="w-10 h-10 flex justify-center items-center rounded-full mx-3"
@@ -18,14 +18,16 @@
 
       <!-- Remaining -->
       <div
-        v-for="n in 2"
+        v-for="n in remainingSteps"
         :key="`remaining-${n}`"
         class="w-10 h-10 flex justify-center items-center bg-gray-200 rounded-full mx-3"
       />
 
     </div>
+
+    <!-- Label -->
     <div class="text-14 text-center mt-5">
-      Types &amp; variations
+      <slot/>
     </div>
   </div>
 </template>
@@ -34,6 +36,25 @@
 import theming from '@/mixins/theming'
 
 export default {
-  mixins: [theming]
+  mixins: [theming],
+  props: {
+    currentStep: {
+      type: Number,
+      required: true
+    }
+  },
+  data() {
+    return {
+      steps: 5
+    }
+  },
+  computed: {
+    completedSteps() {
+      return this.currentStep - 1
+    },
+    remainingSteps() {
+      return this.steps - this.currentStep
+    }
+  }
 }
 </script>

@@ -2,7 +2,9 @@
   <div>
 
     <!-- Progress -->
-    <ProductCreatorProgress/>
+    <ProductCreatorProgress :current-step="4">
+      Types &amp; variations
+    </ProductCreatorProgress>
 
     <!-- Header -->
     <header class="flex flex-wrap items-center my-30">
