@@ -57,7 +57,7 @@ export default {
 
     return {
       subcategory: subcategory.data,
-      products: product.data
+      products: products.data
     }
   }
 }
