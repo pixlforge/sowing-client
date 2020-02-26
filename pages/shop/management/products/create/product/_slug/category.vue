@@ -1,10 +1,10 @@
 <template>
   <div>
 
-    <!-- Step -->
-    <ProductCreatorStep>
-      2/5
-    </ProductCreatorStep>
+    <!-- Progress -->
+    <ProductCreatorProgress :current-step="2">
+      Catégorie
+    </ProductCreatorProgress>
 
     <!-- Header -->
     <header class="flex flex-wrap items-center my-30">
@@ -135,7 +135,7 @@ import FormSectionTitle from '@/components/forms/FormSectionTitle'
 import FormSelect from '@/components/forms/FormSelect'
 import FormValidation from '@/components/forms/FormValidation'
 import InfoTip from '@/components/globals/InfoTip'
-import ProductCreatorStep from '@/components/products/creator/ProductCreatorStep'
+import ProductCreatorProgress from '@/components/products/creator/ProductCreatorProgress'
 
 export default {
   components: {
@@ -152,7 +152,7 @@ export default {
     FormSelect,
     FormValidation,
     InfoTip,
-    ProductCreatorStep
+    ProductCreatorProgress
   },
   mixins: [theming],
   middleware: [

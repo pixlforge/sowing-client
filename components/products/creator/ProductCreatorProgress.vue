@@ -45,7 +45,7 @@ export default {
   },
   data() {
     return {
-      steps: 5
+      steps: 4
     }
   },
   computed: {
