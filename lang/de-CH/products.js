@@ -4,10 +4,20 @@ export default {
       alt: 'Produktbild'
     },
     creator: {
+      category: {
+        category: 'Kategorie'
+      },
+      name_description: {
+        name_description: 'Name & Beschreibung'
+      },
+      price: {
+        price: 'Preis'
+      },
       type: {
         add: 'Fügen Sie Ihrem Produkt zunächst einen neuen Variationstyp hinzu',
         add_another: 'Fügen Sie einen weiteren Variationstyp hinzu',
         add_type_name_in_your_own_language: 'Sie sollten mindestens einen Namen in Ihrer Sprache hinzufügen.',
+        types_variations: 'Typen & Variationen',
         unnamed: 'Unbenannter Typ'
       },
       variation: {

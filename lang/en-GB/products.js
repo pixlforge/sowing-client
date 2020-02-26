@@ -4,10 +4,20 @@ export default {
       alt: 'Product image'
     },
     creator: {
+      category: {
+        category: 'Category'
+      },
+      name_description: {
+        name_description: 'Name & description'
+      },
+      price: {
+        price: 'Price'
+      },
       type: {
         add: 'First, add a new variation type to your product',
         add_another: 'Add another variation type',
         add_type_name_in_your_own_language: 'At a minimum, you should add a name in your language.',
+        types_variations: 'Types & variations',
         unnamed: 'Unnamed type'
       },
       variation: {

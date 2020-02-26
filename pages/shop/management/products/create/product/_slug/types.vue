@@ -3,7 +3,7 @@
 
     <!-- Progress -->
     <ProductCreatorProgress :current-step="4">
-      Types &amp; variations
+      {{ $t('product.creator.type.types_variations') }}
     </ProductCreatorProgress>
 
     <!-- Header -->

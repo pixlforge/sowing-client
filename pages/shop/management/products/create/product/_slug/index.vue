@@ -3,7 +3,7 @@
 
     <!-- Progress -->
     <ProductCreatorProgress :current-step="1">
-      Nom &amp; description
+      {{ $t('product.creator.name_description.name_description') }}
     </ProductCreatorProgress>
 
     <!-- Header -->

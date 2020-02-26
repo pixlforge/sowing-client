@@ -3,7 +3,7 @@
 
     <!-- Progress -->
     <ProductCreatorProgress :current-step="3">
-      Prix
+      {{ $t('product.creator.price.price') }}
     </ProductCreatorProgress>
 
     <!-- Header -->

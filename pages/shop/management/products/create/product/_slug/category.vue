@@ -3,7 +3,7 @@
 
     <!-- Progress -->
     <ProductCreatorProgress :current-step="2">
-      Catégorie
+      {{ $t('product.creator.category.category') }}
     </ProductCreatorProgress>
 
     <!-- Header -->
