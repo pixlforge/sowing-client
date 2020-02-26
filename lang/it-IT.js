@@ -22,7 +22,6 @@ import orders from '~/lang/it-IT/orders'
 import passwordEmail from '~/lang/it-IT/passwordEmail'
 import passwordReset from '~/lang/it-IT/passwordReset'
 import products from '~/lang/it-IT/products'
-import productVariationType from '~/lang/it-IT/productVariationType'
 import register from '~/lang/it-IT/register'
 import registerSuccess from '~/lang/it-IT/registerSuccess'
 import search from '~/lang/it-IT/search'
@@ -61,7 +60,6 @@ export default {
   ...passwordEmail,
   ...passwordReset,
   ...products,
-  ...productVariationType,
   ...register,
   ...registerSuccess,
   ...search,

@@ -20,7 +20,7 @@
           tag="h5"
           visual="h5"
         >
-          {{ form.name[locale] || $t('product_variation_type.unnamed') }}
+          {{ form.name[locale] || $t('products.creator.type.unnamed') }}
         </Heading>
 
         <!-- Info Bubble: Add at least the type name in your own language -->
@@ -29,7 +29,7 @@
           :color="shopTheme"
           class="ml-16"
         >
-          {{ $t('product_variation_type.add_type_name_in_your_own_language') }}
+          {{ $t('products.creator.type.add_type_name_in_your_own_language') }}
         </InfoBubble>
       </div>
 

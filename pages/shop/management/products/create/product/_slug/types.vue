@@ -101,10 +101,10 @@
         class="mr-10"
       />
       <template v-if="productHasNoType">
-        {{ $t('product_variation_type.add_type') }}
+        {{ $t('products.creator.type.add') }}
       </template>
       <template v-else>
-        {{ $t('product_variation_type.add_another_type') }}
+        {{ $t('products.creator.type.add_another') }}
       </template>
     </button>
 

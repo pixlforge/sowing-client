@@ -4,6 +4,12 @@ export default {
       alt: 'Image du produit'
     },
     creator: {
+      type: {
+        add: "Ajoutez d'abord un type de variation à votre produit",
+        add_another: 'Ajouter un autre type de variation',
+        add_type_name_in_your_own_language: 'Vous devriez, au minimum, ajouter un nom dans votre langue.',
+        unnamed: 'Type sans nom'
+      },
       variation: {
         add: 'Ajoutez une variation à votre produit',
         add_another: 'Ajouter une nouvelle variation',
