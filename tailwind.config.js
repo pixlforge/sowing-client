@@ -168,6 +168,8 @@ module.exports = {
     height: {
       auto: 'auto',
       '3': '.3rem',
+      '10': '1rem',
+      '15': '1.5rem',
       '20': '2rem',
       '25': '2.5rem',
       '30': '3rem',
@@ -237,6 +239,7 @@ module.exports = {
       '0': '0',
       '1': '.1rem',
       '2': '.2rem',
+      '3': '.3rem',
       '5': '.5rem',
       '10': '1rem',
       '12': '1.2rem',
@@ -275,6 +278,8 @@ module.exports = {
         sans: ['Montserrat']
       },
       width: {
+        '10': '1rem',
+        '15': '1.5rem',
         '20': '2rem',
         '25': '2.5rem',
         '30': '3rem',

@@ -1,50 +1,8 @@
 <template>
   <div>
 
-    <!-- Timeline -->
-    <div>
-      <div class="flex justify-center">
-
-        <!-- Done -->
-        <div
-          v-for="n in 3"
-          :key="`done-${n}`"
-          class="w-20 h-20 flex justify-center items-center bg-green-500 rounded-full mx-2"
-        >
-          <font-awesome-icon
-            :icon="['far', 'check']"
-            class="text-12 text-white"
-          />
-        </div>
-
-        <!-- Current -->
-        <div
-          :class="`bg-${shopTheme}-500`"
-          class="w-20 h-20 flex justify-center items-center rounded-full mx-2"
-        >
-          <font-awesome-icon
-            :icon="['far', 'dot-circle']"
-            class="text-12 text-white"
-          />
-        </div>
-
-        <!-- Remaining -->
-        <div
-          v-for="n in 2"
-          :key="`remaining-${n}`"
-          class="w-20 h-20 flex justify-center items-center bg-gray-300 rounded-full mx-2"
-        >
-          <font-awesome-icon
-            :icon="['far', 'question-circle']"
-            class="text-12 text-white"
-          />
-        </div>
-
-      </div>
-      <div class="text-14 text-center mt-5">
-        Types
-      </div>
-    </div>
+    <!-- Progress -->
+    <ProductCreatorProgress/>
 
     <!-- Header -->
     <header class="flex flex-wrap items-center my-30">
@@ -164,6 +122,7 @@ import ConfirmationModal from '@/components/modals/ConfirmationModal'
 import FormSection from '@/components/forms/FormSection'
 import Heading from '@/components/globals/Heading'
 import InfoTip from '@/components/globals/InfoTip'
+import ProductCreatorProgress from '@/components/products/creator/ProductCreatorProgress'
 import ProductVariationType from '@/components/products/creator/ProductVariationType'
 
 export default {
@@ -175,6 +134,7 @@ export default {
     FormSection,
     Heading,
     InfoTip,
+    ProductCreatorProgress,
     ProductVariationType
   },
   mixins: [theming],
