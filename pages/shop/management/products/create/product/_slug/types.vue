@@ -51,26 +51,19 @@
     />
 
     <!-- Add a new variation type -->
-    <button
-      @click="addVariationType"
-      :class="{
-        'button-pulse-gray': productHasNoType,
-        'border-gray-200 hover:border-gray-300 text-gray-300 hover:text-gray-400': !productHasNoType
-      }"
-      type="button"
-      class="w-full hover:bg-gray-100 border rounded-lg text-14 transition-all duration-200 ease-out select-none py-12"
+    <ButtonPulse
+      @click.native="addVariationType"
+      :should-pulse="productHasNoType"
+      icon="plus"
+      class="text-14"
     >
-      <font-awesome-icon
-        :icon="['far', 'plus']"
-        class="mr-10"
-      />
       <template v-if="productHasNoType">
         {{ $t('product.creator.type.add') }}
       </template>
       <template v-else>
         {{ $t('product.creator.type.add_another') }}
       </template>
-    </button>
+    </ButtonPulse>
 
     <!-- Controls -->
     <FormSection class="lg:w-full">
@@ -124,6 +117,7 @@ import theming from '@/mixins/theming'
 import ButtonBack from '@/components/buttons/ButtonBack'
 import ButtonLinkTertiary from '@/components/buttons/ButtonLinkTertiary'
 import ButtonPrimary from '@/components/buttons/ButtonPrimary'
+import ButtonPulse from '@/components/buttons/ButtonPulse'
 import ConfirmationModal from '@/components/modals/ConfirmationModal'
 import FormSection from '@/components/forms/FormSection'
 import Heading from '@/components/globals/Heading'
@@ -136,6 +130,7 @@ export default {
     ButtonBack,
     ButtonLinkTertiary,
     ButtonPrimary,
+    ButtonPulse,
     ConfirmationModal,
     FormSection,
     Heading,

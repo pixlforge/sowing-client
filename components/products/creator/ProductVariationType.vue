@@ -66,26 +66,19 @@
 
       <!-- Add a new variation type -->
       <div class="p-20 lg:px-36">
-        <button
-          @click="addVariation"
-          :class="{
-            'button-pulse-gray': productHasNoVariation,
-            'border-gray-200 hover:border-gray-300 text-gray-300 hover:text-gray-400': !productHasNoVariation
-          }"
-          type="button"
-          class="w-full hover:bg-gray-100 border rounded-lg text-12 transition-all duration-200 ease-out select-none py-12"
+        <ButtonPulse
+          @click.native="addVariation"
+          :should-pulse="productHasNoVariation"
+          icon="box"
+          class="text-12"
         >
-          <font-awesome-icon
-            :icon="['far', 'plus']"
-            class="mr-10"
-          />
           <template v-if="productHasNoVariation">
             {{ $t('product.creator.variation.add') }}
           </template>
           <template v-else>
             {{ $t('product.creator.variation.add_another') }}
           </template>
-        </button>
+        </ButtonPulse>
       </div>
     </template>
 
@@ -100,6 +93,7 @@ import { mapActions } from 'vuex'
 
 import ButtonCollapse from '@/components/buttons/ButtonCollapse'
 import ButtonDelete from '@/components/buttons/ButtonDelete'
+import ButtonPulse from '@/components/buttons/ButtonPulse'
 import Heading from '@/components/globals/Heading'
 import InfoBubble from '@/components/globals/InfoBubble'
 import ProductVariation from '@/components/products/creator/ProductVariation'
@@ -108,6 +102,7 @@ export default {
   components: {
     ButtonCollapse,
     ButtonDelete,
+    ButtonPulse,
     Heading,
     InfoBubble,
     ProductVariation
