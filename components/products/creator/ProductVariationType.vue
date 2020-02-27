@@ -68,8 +68,12 @@
       <div class="p-20 lg:px-36">
         <button
           @click="addVariation"
+          :class="{
+            'button-pulse-gray': productHasNoVariation,
+            'border-gray-200 hover:border-gray-300 text-gray-300 hover:text-gray-400': !productHasNoVariation
+          }"
           type="button"
-          class="w-full hover:bg-gray-100 border border-gray-200 hover:border-gray-300 rounded-lg text-12 text-gray-300 hover:text-gray-400 transition-all duration-200 ease-out select-none py-12"
+          class="w-full hover:bg-gray-100 border rounded-lg text-12 transition-all duration-200 ease-out select-none py-12"
         >
           <font-awesome-icon
             :icon="['far', 'plus']"
