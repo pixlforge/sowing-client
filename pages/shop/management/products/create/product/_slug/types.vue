@@ -38,7 +38,21 @@
       icon="info"
       class="mb-48"
     >
-      {{ $t('product.management.create.tips.types') }}
+      <p>
+        {{ $t('product.management.create.tips.types') }}
+      </p>
+
+      <ol class="list-decimal ml-18 mt-20">
+        <li>
+          Commencez par ajouter un type
+        </li>
+        <li v-if="productHasAtLeastOneType">
+          Ensuite ajoutez une variation de votre produit de base
+        </li>
+        <li v-if="productHasAtLeastOneVariation">
+          Ajoutez autant de types et de variations que vous le souhaitez
+        </li>
+      </ol>
     </InfoTip>
 
     <!-- Types -->
@@ -172,8 +186,14 @@ export default {
       locale: 'locale',
       getResourceId: 'confirmation/getResourceId'
     }),
+    productHasAtLeastOneType() {
+      return this.product.types.length
+    },
     productHasNoType() {
-      return !this.product.types.length
+      return !this.productHasAtLeastOneType
+    },
+    productHasAtLeastOneVariation() {
+      return this.product.variations.length
     }
   },
   async asyncData({ app, params }) {

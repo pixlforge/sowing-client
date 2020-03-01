@@ -335,6 +335,7 @@ module.exports = {
     inset: ['responsive'],
     letterSpacing: ['responsive'],
     lineHeight: ['responsive'],
+    listStyleType: [],
     margin: ['responsive', 'first', 'last'],
     maxWidth: ['responsive'],
     minHeight: ['responsive'],
@@ -365,7 +366,6 @@ module.exports = {
     container: false,
     float: false,
     listStylePosition: false,
-    listStyleType: false,
     maxHeight: false,
     pointerEvents: false,
     verticalAlign: false
