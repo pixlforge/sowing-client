@@ -59,11 +59,15 @@
       </div>
 
       <!-- Product variations -->
-      <ProductVariation
-        v-for="variation in variationsForType"
-        :key="variation.id"
-        :variation="variation"
-      />
+      <div class="px-20 lg:px-36">
+        <ResourceList>
+          <ProductVariation
+            v-for="variation in variationsForType"
+            :key="variation.id"
+            :variation="variation"
+          />
+        </ResourceList>
+      </div>
 
       <!-- Add a new product variation -->
       <div class="p-20 lg:px-36">
@@ -98,6 +102,7 @@ import ButtonPulse from '@/components/buttons/ButtonPulse'
 import Heading from '@/components/globals/Heading'
 import InfoBubble from '@/components/globals/InfoBubble'
 import ProductVariation from '@/components/products/creator/ProductVariation'
+import ResourceList from '@/components/resources/ResourceList'
 
 export default {
   components: {
@@ -106,7 +111,8 @@ export default {
     ButtonPulse,
     Heading,
     InfoBubble,
-    ProductVariation
+    ProductVariation,
+    ResourceList
   },
   mixins: [
     theming,
