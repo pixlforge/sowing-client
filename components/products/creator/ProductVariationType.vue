@@ -58,13 +58,14 @@
         </div>
       </div>
 
+      <!-- Product variations -->
       <ProductVariation
         v-for="variation in variationsForType"
         :key="variation.id"
         :variation="variation"
       />
 
-      <!-- Add a new variation type -->
+      <!-- Add a new product variation -->
       <div class="p-20 lg:px-36">
         <ButtonPulse
           @click.native="addVariation"
