@@ -3,11 +3,11 @@
     :class="[
       `bg-${shopTheme}-200`,
       {
-        'px-48 py-20': open,
-        'px-20 py-10': !open
+        'px-48 py-20 my-24': open,
+        'px-20 py-10 my-10': !open
       }
     ]"
-    class="w-full relative rounded-lg flex flex-col lg:flex-row items-start transition-all duration-100 ease-out my-24"
+    class="w-full relative rounded-lg flex flex-col lg:flex-row items-start transition-all duration-100 ease-out"
   >
 
     <!-- Button minimize / maximize -->
@@ -19,7 +19,7 @@
     >
       <font-awesome-icon
         :icon="['fas', open ? 'window-minimize' : 'window-maximize']"
-        class="text-14 transition-all duration-100 ease-out mr-20 mt-12"
+        class="text-14 transition-all duration-100 ease-out mr-36 mt-12"
       />
     </button>
 

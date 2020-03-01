@@ -38,7 +38,6 @@
       <p>
         {{ $t('product.management.create.tips.types') }}
       </p>
-
       <ol class="list-decimal ml-18 mt-20">
         <li>
           {{ $t('product.creator.infotip.add_type') }}
