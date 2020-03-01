@@ -165,8 +165,14 @@ export default {
     toggleCollapse() {
       this.collapse = !this.collapse
     },
-    addVariation() {
-      console.log('Add a product variation 😄')
+    async addVariation() {
+      try {
+        await this.$axios.post(`/products/${this.product.slug}/${this.type.id}/product-variations`)
+        this.$emit('product-variation:added')
+        this.$toast.success('Congratulations!')
+      } catch (e) {
+        this.$toast.success(this.$t('toasts.theme_updated'))
+      }
     }
   }
 }

@@ -57,6 +57,7 @@
       :key="type.id"
       :type="type"
       :product="product"
+      @product-variation:added="getProduct"
       class="mb-10"
     />
 
