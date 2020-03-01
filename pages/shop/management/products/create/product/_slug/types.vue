@@ -214,8 +214,9 @@ export default {
       try {
         const type = await this.$axios.$post(`/products/${this.product.slug}/product-variation-types`)
         this.product.types.push(type.data)
+        this.$toast.success('Congratulations!!!')
       } catch (e) {
-        console.log(e)
+        this.$toasted.error(this.$t('toasts.general_error'))
       }
     },
     async destroy() {

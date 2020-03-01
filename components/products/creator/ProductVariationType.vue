@@ -171,7 +171,7 @@ export default {
         this.$emit('product-variation:added')
         this.$toast.success('Congratulations!')
       } catch (e) {
-        this.$toast.success(this.$t('toasts.theme_updated'))
+        this.$toasted.error(this.$t('toasts.general_error'))
       }
     }
   }
