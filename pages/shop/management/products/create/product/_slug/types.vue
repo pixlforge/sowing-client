@@ -34,10 +34,7 @@
     </header>
 
     <!-- Infotip -->
-    <InfoTip
-      icon="info"
-      class="mb-48"
-    >
+    <InfoTip icon="info">
       <p>
         {{ $t('product.management.create.tips.types') }}
       </p>

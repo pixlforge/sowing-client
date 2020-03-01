@@ -19,7 +19,7 @@
     >
       <font-awesome-icon
         :icon="['fas', open ? 'window-minimize' : 'window-maximize']"
-        class="text-14 mr-20 mt-12"
+        class="text-14 transition-all duration-100 ease-out mr-20 mt-12"
       />
     </button>
 
@@ -40,14 +40,21 @@
             'text-14': !open
           }
         ]"
+        class="transition-all duration-100 ease-out"
       />
     </div>
 
     <!-- Content -->
     <div
       v-if="open"
-      :class="`text-${shopTheme}-600`"
-      class="text-14 lg:text-16 leading-relaxed text-center lg:text-left"
+      :class="[
+        `text-${shopTheme}-600`,
+        {
+          'opacity-100': open,
+          'opacity-0': !open
+        }
+      ]"
+      class="text-14 leading-relaxed text-center lg:text-left transition-opacity duration-400 ease-out"
     >
       <slot/>
     </div>
