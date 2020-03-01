@@ -41,13 +41,13 @@
 
       <ol class="list-decimal ml-18 mt-20">
         <li>
-          Commencez par ajouter un type
+          {{ $t('product.creator.infotip.add_type') }}
         </li>
         <li v-if="productHasAtLeastOneType">
-          Ensuite ajoutez une variation de votre produit de base
+          {{ $t('product.creator.infotip.add_variation') }}
         </li>
         <li v-if="productHasAtLeastOneVariation">
-          Ajoutez autant de types et de variations que vous le souhaitez
+          {{ $t('product.creator.infotip.add_many') }}
         </li>
       </ol>
     </InfoTip>

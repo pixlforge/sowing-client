@@ -7,6 +7,11 @@ export default {
       category: {
         category: 'Category'
       },
+      infotip: {
+        add_type: 'Start by adding a type',
+        add_variation: 'Then add a variation of your base product',
+        add_many: 'Add as many types and variations as you want'
+      },
       name_description: {
         name_description: 'Name & description'
       },
