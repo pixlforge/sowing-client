@@ -21,7 +21,7 @@ import navbar from '~/lang/fr-CH/navbar'
 import orders from '~/lang/fr-CH/orders'
 import passwordEmail from '~/lang/fr-CH/passwordEmail'
 import passwordReset from '~/lang/fr-CH/passwordReset'
-import products from '~/lang/fr-CH/products'
+import product from '~/lang/fr-CH/product'
 import register from '~/lang/fr-CH/register'
 import registerSuccess from '~/lang/fr-CH/registerSuccess'
 import search from '~/lang/fr-CH/search'
@@ -59,7 +59,7 @@ export default {
   ...orders,
   ...passwordEmail,
   ...passwordReset,
-  ...products,
+  ...product,
   ...register,
   ...registerSuccess,
   ...search,
