@@ -14,6 +14,10 @@ export default {
     theming,
     locales
   ],
+  middleware: [
+    'authenticated',
+    'hasShop'
+  ],
   layout: 'create-product',
   head() {
     return {
@@ -35,14 +39,12 @@ export default {
   async asyncData({ app, params }) {
     const shop = await app.$axios.$get('/user/shop')
     const product = await app.$axios.$get(`/products/${params.slug}`)
-    // const variation = await app.$axios.$get(`/products/${params.slug}/${params.}`)
-
-    console.log(params)
+    const variation = await app.$axios.$get(`/products/${params.slug}/product-variations/${params.id}`)
 
     return {
       shop: shop.data,
       product: product.data,
-      variation: {}
+      variation: variation.data
     }
   },
   mounted() {
