@@ -33,6 +33,7 @@ export default {
       variation: {
         add: 'Ajoutez une variation à votre produit',
         add_another: 'Ajouter une nouvelle variation',
+        title: 'Détails pour',
         unnamed: 'Variation sans nom'
       }
     },
