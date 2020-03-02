@@ -59,7 +59,10 @@
       </div>
 
       <!-- Product variations -->
-      <div class="px-20 lg:px-36">
+      <div
+        v-if="variationsForType"
+        class="px-20 lg:px-36"
+      >
         <ResourceList>
           <ProductVariation
             v-for="variation in variationsForType"
