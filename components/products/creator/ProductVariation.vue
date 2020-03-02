@@ -1,7 +1,13 @@
 <template>
   <ResourceListItem>
     <nuxt-link
-      :to="{}"
+      :to="{
+        name: 'shop-management-products-create-product-slug-variation-id-edit',
+        params: {
+          slug: variation.product.slug,
+          id: variation.id
+        }
+      }"
       class="w-full flex justify-between items-center text-center group"
     >
       <div class="w-1/3 px-20">
