@@ -2,7 +2,7 @@
   <ResourceListItem>
     <nuxt-link
       :to="{
-        name: 'shop-management-products-create-product-slug-variation-id-edit',
+        name: 'shop-management-products-create-product-slug-variations-id-edit',
         params: {
           slug: variation.product.slug,
           id: variation.id
