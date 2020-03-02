@@ -67,6 +67,7 @@
           <ProductVariation
             v-for="variation in variationsForType"
             :key="variation.id"
+            :type="type"
             :variation="variation"
           />
         </ResourceList>
