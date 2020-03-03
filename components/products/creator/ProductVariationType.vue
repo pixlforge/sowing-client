@@ -178,7 +178,9 @@ export default {
     },
     async addVariation() {
       try {
-        await this.$axios.post(`/products/${this.product.slug}/${this.type.id}/product-variations`)
+        await this.$axios.post(`/products/${this.product.slug}/product-variations`, {
+          product_variation_type_id: this.type.id
+        })
         this.$emit('product-variation:added')
         this.$toast.success('Congratulations!')
       } catch (e) {

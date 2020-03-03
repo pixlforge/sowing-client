@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container-narrow">
 
     <!-- Progress -->
     <ProductCreatorProgress :current-step="2">

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
 
     <!-- Progress -->
     <ProductCreatorProgress :current-step="4">

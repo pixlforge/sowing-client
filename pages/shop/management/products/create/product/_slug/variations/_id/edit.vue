@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="">
 
     <!-- Header -->
     <header class="flex flex-wrap items-center my-30">
@@ -28,6 +28,50 @@
       </Heading>
     </header>
 
+    <!-- Infotip -->
+    <InfoTip icon="info">
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde numquam quia fugiat cum laboriosam iste. Ab, excepturi qui, repellat odio odit vitae aliquam dignissimos facere minus, quod obcaecati facilis. Quisquam.
+      </p>
+    </InfoTip>
+
+    <!-- Content -->
+    <form @submit.prevent="update">
+
+      <!-- Name -->
+      <FormGroup>
+        <FormLabel name="name.fr">
+          {{ $t('form.name.label') }}
+        </FormLabel>
+        <FormInput
+          v-model="form.name.fr"
+          :errors="errors"
+          name="name.fr"
+        />
+        <FormValidation
+          :errors="errors"
+          name="name.fr"
+        />
+      </FormGroup>
+
+      <!-- Description -->
+      <FormGroup>
+        <FormLabel name="description.fr">
+          {{ $t('form.description.label') }}
+        </FormLabel>
+        <FormTextarea
+          v-model="form.description.fr"
+          :errors="errors"
+          name="description.fr"
+        />
+        <FormValidation
+          :errors="errors"
+          name="description.fr"
+        />
+      </FormGroup>
+
+    </form>
+
   </div>
 </template>
 
@@ -38,12 +82,24 @@ import locales from '@/mixins/locales'
 import { capitalizeFirstLetter } from '@/mixins/filters'
 
 import ButtonBack from '@/components/buttons/ButtonBack'
+import FormGroup from '@/components/forms/FormGroup'
+import FormInput from '@/components/forms/FormInput'
+import FormLabel from '@/components/forms/FormLabel'
+import FormTextarea from '@/components/forms/FormTextarea'
+import FormValidation from '@/components/forms/FormValidation'
 import Heading from '@/components/globals/Heading'
+import InfoTip from '@/components/globals/InfoTip'
 
 export default {
   components: {
     ButtonBack,
-    Heading
+    FormGroup,
+    FormInput,
+    FormLabel,
+    FormTextarea,
+    FormValidation,
+    Heading,
+    InfoTip
   },
   mixins: [
     theming,
@@ -69,7 +125,8 @@ export default {
   },
   data() {
     return {
-      form: {}
+      form: {},
+      errors: {}
     }
   },
   computed: {

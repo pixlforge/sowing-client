@@ -17,3 +17,16 @@
     max-width: 1280px;
   }
 }
+
+.container-narrow {
+  @apply w-full px-20 mx-auto;
+  
+  @screen sm {
+    max-width: 640px;
+    @apply px-30;
+  }
+
+  @screen md {
+    max-width: 768px;
+  }
+}
