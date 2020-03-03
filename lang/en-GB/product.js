@@ -29,7 +29,7 @@ export default {
         add: 'Add a variation to your product',
         add_another: 'Add a new variation',
         title: 'Details for',
-        unnamed: 'Unnamed variation'
+        unnamed: 'unnamed variation'
       }
     },
     details: {

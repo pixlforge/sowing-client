@@ -16,7 +16,7 @@
             'text-gray-300': !hasVariationName,
             'text-gray-800': hasVariationName
           }"
-          class="text-14"
+          class="text-14 capitalize"
         >
           {{ variationName }}
         </h5>

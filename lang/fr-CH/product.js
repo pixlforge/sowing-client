@@ -22,11 +22,6 @@ export default {
         add: "Ajoutez d'abord un type de variation à votre produit",
         add_another: 'Ajouter un autre type de variation',
         add_type_name_in_your_own_language: 'Vous devriez, au minimum, ajouter un nom dans votre langue.',
-        infotip: {
-          step_1: '',
-          step_2: '',
-          step_3: ''
-        },
         types_variations: 'Types & variations',
         unnamed: 'Type sans nom'
       },
@@ -34,7 +29,7 @@ export default {
         add: 'Ajoutez une variation à votre produit',
         add_another: 'Ajouter une nouvelle variation',
         title: 'Détails pour',
-        unnamed: 'Variation sans nom'
+        unnamed: 'variation sans nom'
       }
     },
     details: {
