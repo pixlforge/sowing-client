@@ -242,12 +242,12 @@
             }
           }"
           :color="shopTheme"
-          icon="check-circle"
+          icon="arrow-left"
           size="large"
           type="submit"
           class="ml-10"
         >
-          {{ $t('button.ok') }}
+          {{ $t('button.types') }}
         </ButtonLinkPrimary>
       </div>
     </FormSection>

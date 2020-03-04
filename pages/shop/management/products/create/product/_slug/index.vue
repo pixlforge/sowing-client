@@ -239,15 +239,15 @@
             {{ $t('button.back') }}
           </ButtonLinkTertiary>
 
-          <!-- Submit -->
+          <!-- Next -->
           <ButtonPrimary
             :color="shopTheme"
-            icon="check-circle"
+            icon="arrow-right"
             size="large"
             type="submit"
             class="ml-10"
           >
-            {{ $t('button.next') }}
+            {{ $t('button.category') }}
           </ButtonPrimary>
         </div>
       </FormSection>

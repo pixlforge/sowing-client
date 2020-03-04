@@ -8,6 +8,7 @@ export default {
     back: 'Retour',
     begin_shop_creation: 'Commencer la création de ma boutique',
     cancel: 'Annuler',
+    category: 'Catégorie',
     check_availability: 'Vérifier la disponibilité',
     connection: 'Connexion',
     connect_with_stripe: 'Connecter ma boutique avec Stripe',
@@ -25,10 +26,13 @@ export default {
     ok: 'Ok',
     password_email: 'Envoyez-moi un lien',
     password_reset: 'Réinitialiser le mot de passe',
+    pictures: 'Images',
+    price: 'Prix',
     register: 'Créer un compte',
     see_all_articles: 'Voir tous les articles',
     subscribe: 'Inscription',
     to_my_shop_details: 'Vers les détails de ma boutique',
+    types: 'Types',
     update: 'Mettre à jour',
     view: 'Voir'
   }
