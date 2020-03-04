@@ -1,5 +1,10 @@
 <template>
-  <div class="">
+  <div class="container">
+
+    <!-- Progress -->
+    <ProductCreatorProgress :current-step="5">
+      {{ $t('product.creator.variation.variation') }}
+    </ProductCreatorProgress>
 
     <!-- Header -->
     <header class="flex flex-wrap items-center my-30">
@@ -36,39 +41,178 @@
     </InfoTip>
 
     <!-- Content -->
-    <form @submit.prevent="update">
+    <form
+      @submit.prevent="update"
+      class="flex flex-wrap -mx-10"
+    >
 
-      <!-- Name -->
-      <FormGroup>
-        <FormLabel name="name.fr">
-          {{ $t('form.name.label') }}
-        </FormLabel>
-        <FormInput
-          v-model="form.name.fr"
-          :errors="errors"
-          name="name.fr"
-        />
-        <FormValidation
-          :errors="errors"
-          name="name.fr"
-        />
-      </FormGroup>
+      <!-- French -->
+      <FormSection>
+        <FormSectionTitle>
+          {{ $t('languages.french') }}
+        </FormSectionTitle>
+        <FormFieldset>
 
-      <!-- Description -->
-      <FormGroup>
-        <FormLabel name="description.fr">
-          {{ $t('form.description.label') }}
-        </FormLabel>
-        <FormTextarea
-          v-model="form.description.fr"
-          :errors="errors"
-          name="description.fr"
-        />
-        <FormValidation
-          :errors="errors"
-          name="description.fr"
-        />
-      </FormGroup>
+          <!-- Name -->
+          <FormGroup>
+            <FormLabel name="name.fr">
+              {{ $t('form.name.label') }}
+            </FormLabel>
+            <FormInput
+              v-model="form.name.fr"
+              :errors="errors"
+              name="name.fr"
+            />
+            <FormValidation
+              :errors="errors"
+              name="name.fr"
+            />
+          </FormGroup>
+
+          <!-- Description -->
+          <FormGroup>
+            <FormLabel name="description.fr">
+              {{ $t('form.description.label') }}
+            </FormLabel>
+            <FormTextarea
+              v-model="form.description.fr"
+              :rows="3"
+              :errors="errors"
+              name="description.fr"
+            />
+            <FormValidation
+              :errors="errors"
+              name="description.fr"
+            />
+          </FormGroup>
+        </FormFieldset>
+      </FormSection>
+
+      <!-- English -->
+      <FormSection>
+        <FormSectionTitle>
+          {{ $t('languages.english') }}
+        </FormSectionTitle>
+        <FormFieldset>
+
+          <!-- Name -->
+          <FormGroup>
+            <FormLabel name="name.en">
+              {{ $t('form.name.label') }}
+            </FormLabel>
+            <FormInput
+              v-model="form.name.en"
+              :errors="errors"
+              name="name.en"
+            />
+            <FormValidation
+              :errors="errors"
+              name="name.en"
+            />
+          </FormGroup>
+
+          <!-- Description -->
+          <FormGroup>
+            <FormLabel name="description.en">
+              {{ $t('form.description.label') }}
+            </FormLabel>
+            <FormTextarea
+              v-model="form.description.en"
+              :rows="3"
+              :errors="errors"
+              name="description.en"
+            />
+            <FormValidation
+              :errors="errors"
+              name="description.en"
+            />
+          </FormGroup>
+        </FormFieldset>
+      </FormSection>
+
+      <!-- German -->
+      <FormSection>
+        <FormSectionTitle>
+          {{ $t('languages.german') }}
+        </FormSectionTitle>
+        <FormFieldset>
+
+          <!-- Name -->
+          <FormGroup>
+            <FormLabel name="name.de">
+              {{ $t('form.name.label') }}
+            </FormLabel>
+            <FormInput
+              v-model="form.name.de"
+              :errors="errors"
+              name="name.de"
+            />
+            <FormValidation
+              :errors="errors"
+              name="name.de"
+            />
+          </FormGroup>
+
+          <!-- Description -->
+          <FormGroup>
+            <FormLabel name="description.de">
+              {{ $t('form.description.label') }}
+            </FormLabel>
+            <FormTextarea
+              v-model="form.description.de"
+              :rows="3"
+              :errors="errors"
+              name="description.de"
+            />
+            <FormValidation
+              :errors="errors"
+              name="description.de"
+            />
+          </FormGroup>
+        </FormFieldset>
+      </FormSection>
+
+      <!-- Italian -->
+      <FormSection>
+        <FormSectionTitle>
+          {{ $t('languages.italian') }}
+        </FormSectionTitle>
+        <FormFieldset>
+
+          <!-- Name -->
+          <FormGroup>
+            <FormLabel name="name.it">
+              {{ $t('form.name.label') }}
+            </FormLabel>
+            <FormInput
+              v-model="form.name.it"
+              :errors="errors"
+              name="name.it"
+            />
+            <FormValidation
+              :errors="errors"
+              name="name.it"
+            />
+          </FormGroup>
+
+          <!-- Description -->
+          <FormGroup>
+            <FormLabel name="description.it">
+              {{ $t('form.description.label') }}
+            </FormLabel>
+            <FormTextarea
+              v-model="form.description.it"
+              :rows="3"
+              :errors="errors"
+              name="description.it"
+            />
+            <FormValidation
+              :errors="errors"
+              name="description.it"
+            />
+          </FormGroup>
+        </FormFieldset>
+      </FormSection>
 
     </form>
 
@@ -82,24 +226,32 @@ import locales from '@/mixins/locales'
 import { capitalizeFirstLetter } from '@/mixins/filters'
 
 import ButtonBack from '@/components/buttons/ButtonBack'
+import FormFieldset from '@/components/forms/FormFieldset'
 import FormGroup from '@/components/forms/FormGroup'
 import FormInput from '@/components/forms/FormInput'
 import FormLabel from '@/components/forms/FormLabel'
+import FormSection from '@/components/forms/FormSection'
+import FormSectionTitle from '@/components/forms/FormSectionTitle'
 import FormTextarea from '@/components/forms/FormTextarea'
 import FormValidation from '@/components/forms/FormValidation'
 import Heading from '@/components/globals/Heading'
 import InfoTip from '@/components/globals/InfoTip'
+import ProductCreatorProgress from '@/components/products/creator/ProductCreatorProgress'
 
 export default {
   components: {
     ButtonBack,
+    FormFieldset,
     FormGroup,
     FormInput,
     FormLabel,
     FormTextarea,
+    FormSection,
+    FormSectionTitle,
     FormValidation,
     Heading,
-    InfoTip
+    InfoTip,
+    ProductCreatorProgress
   },
   mixins: [
     theming,
