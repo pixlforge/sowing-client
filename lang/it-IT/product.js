@@ -29,7 +29,8 @@ export default {
         add: 'Aggiungete una variante al vostro prodotto',
         add_another: 'Aggiungete una nuova variante',
         title: 'Dettagli per',
-        unnamed: 'variazione senza nome'
+        unnamed: 'variazione senza nome',
+        variation: 'Variazione'
       }
     },
     details: {
