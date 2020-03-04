@@ -1,6 +1,6 @@
 <template>
   <button
-    :title="$t('buttons.delete')"
+    :title="$t('button.delete')"
     :class="`${iconSize}`"
     class="text-gray-300 hover:text-red-500 transition-colors duration-200 ease-out"
   >

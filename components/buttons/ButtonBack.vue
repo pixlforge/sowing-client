@@ -1,7 +1,7 @@
 <template>
   <nuxt-link
     :to="route"
-    :title="$t('buttons.back')"
+    :title="$t('button.back')"
     class="text-20 text-gray-300 hover:text-gray-400"
   >
     <font-awesome-icon :icon="['far', 'arrow-alt-circle-left']"/>

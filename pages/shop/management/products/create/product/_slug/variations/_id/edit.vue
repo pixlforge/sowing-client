@@ -216,6 +216,42 @@
 
     </form>
 
+    <!-- Controls -->
+    <FormSection class="lg:w-full">
+      <div class="flex justify-center items-center">
+
+        <!-- Back -->
+        <ButtonLinkTertiary
+          :route="{
+            name: 'shop-management-products-create-product-slug-types',
+            params: {
+              slug: product.slug
+            }
+          }"
+          icon="arrow-left"
+        >
+          {{ $t('button.back') }}
+        </ButtonLinkTertiary>
+
+        <!-- Ok -->
+        <ButtonLinkPrimary
+          :route="{
+            name: 'shop-management-products-create-product-slug-types',
+            params: {
+              slug: product.slug
+            }
+          }"
+          :color="shopTheme"
+          icon="check-circle"
+          size="large"
+          type="submit"
+          class="ml-10"
+        >
+          {{ $t('button.ok') }}
+        </ButtonLinkPrimary>
+      </div>
+    </FormSection>
+
   </div>
 </template>
 
@@ -226,6 +262,8 @@ import locales from '@/mixins/locales'
 import { capitalizeFirstLetter } from '@/mixins/filters'
 
 import ButtonBack from '@/components/buttons/ButtonBack'
+import ButtonLinkPrimary from '@/components/buttons/ButtonLinkPrimary'
+import ButtonLinkTertiary from '@/components/buttons/ButtonLinkTertiary'
 import FormFieldset from '@/components/forms/FormFieldset'
 import FormGroup from '@/components/forms/FormGroup'
 import FormInput from '@/components/forms/FormInput'
@@ -241,6 +279,8 @@ import ProductCreatorProgress from '@/components/products/creator/ProductCreator
 export default {
   components: {
     ButtonBack,
+    ButtonLinkPrimary,
+    ButtonLinkTertiary,
     FormFieldset,
     FormGroup,
     FormInput,

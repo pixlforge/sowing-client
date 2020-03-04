@@ -83,7 +83,7 @@
             }"
             icon="arrow-left"
           >
-            {{ $t('buttons.back') }}
+            {{ $t('button.back') }}
           </ButtonLinkTertiary>
 
           <!-- Submit -->
@@ -94,7 +94,7 @@
             type="submit"
             class="ml-10"
           >
-            {{ $t('buttons.next') }}
+            {{ $t('button.next') }}
           </ButtonPrimary>
         </div>
       </FormSection>

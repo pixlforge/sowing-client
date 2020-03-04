@@ -180,7 +180,7 @@
             type="submit"
             class="mr-10"
           >
-            {{ $t('buttons.update') }}
+            {{ $t('button.update') }}
           </ButtonPrimary>
 
           <!-- Cancel -->
@@ -189,7 +189,7 @@
             type="button"
             icon="times"
           >
-            {{ $t('buttons.cancel') }}
+            {{ $t('button.cancel') }}
           </ButtonTertiary>
         </div>
       </form>

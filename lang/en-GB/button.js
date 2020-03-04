@@ -1,5 +1,5 @@
 export default {
-  buttons: {
+  button: {
     add: 'Add',
     add_address: 'Add an address',
     add_payment_method: 'Add a payment method',
@@ -22,6 +22,7 @@ export default {
     finish: 'Finish',
     login: 'Log in',
     next: 'Next',
+    ok: 'Ok',
     password_email: 'Send me a link',
     password_reset: 'Reset password',
     register: 'Create an account',

@@ -90,7 +90,7 @@
           }"
           icon="arrow-left"
         >
-          {{ $t('buttons.back') }}
+          {{ $t('button.back') }}
         </ButtonLinkTertiary>
 
         <!-- Submit -->
@@ -102,7 +102,7 @@
           type="submit"
           class="ml-10"
         >
-          {{ $t('buttons.next') }}
+          {{ $t('button.next') }}
         </ButtonPrimary>
       </div>
     </FormSection>
@@ -111,7 +111,7 @@
     <ConfirmationModal
       :title="$t('modals.product_variation_type.delete.title')"
       :body="$t('modals.product_variation_type.delete.title')"
-      :button-label="$t('buttons.delete')"
+      :button-label="$t('button.delete')"
       @confirm="destroy"
       button-icon="trash-alt"
       icon="exclamation-circle"

@@ -3,7 +3,7 @@ import accountCard from '~/lang/fr-CH/accountCard'
 import adviceToCreators from '~/lang/fr-CH/adviceToCreators'
 import alerts from '~/lang/fr-CH/alerts'
 import aria from '~/lang/fr-CH/aria'
-import buttons from '~/lang/fr-CH/buttons'
+import button from '~/lang/fr-CH/button'
 import cart from '~/lang/fr-CH/cart'
 import categories from '~/lang/fr-CH/categories'
 import checkout from '~/lang/fr-CH/checkout'
@@ -41,7 +41,7 @@ export default {
   ...adviceToCreators,
   ...alerts,
   ...aria,
-  ...buttons,
+  ...button,
   ...cart,
   ...categories,
   ...checkout,

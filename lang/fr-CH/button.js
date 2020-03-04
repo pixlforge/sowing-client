@@ -1,5 +1,5 @@
 export default {
-  buttons: {
+  button: {
     add: 'Ajouter',
     add_address: 'Ajouter une adresse',
     add_payment_method: 'Ajouter un moyen de paiement',
@@ -22,6 +22,7 @@ export default {
     finish: 'Terminer',
     login: 'Connexion',
     next: 'Suivant',
+    ok: 'Ok',
     password_email: 'Envoyez-moi un lien',
     password_reset: 'Réinitialiser le mot de passe',
     register: 'Créer un compte',

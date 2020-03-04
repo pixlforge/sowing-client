@@ -236,7 +236,7 @@
             :route="{ name: 'shop-management-products' }"
             icon="times"
           >
-            {{ $t('buttons.cancel') }}
+            {{ $t('button.cancel') }}
           </ButtonLinkTertiary>
 
           <!-- Submit -->
@@ -247,7 +247,7 @@
             type="submit"
             class="ml-10"
           >
-            {{ $t('buttons.next') }}
+            {{ $t('button.next') }}
           </ButtonPrimary>
         </div>
       </FormSection>
