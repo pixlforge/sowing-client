@@ -43,7 +43,7 @@
           icon="plus"
           class="mr-5"
         >
-          {{ $t("buttons.add") }}
+          {{ $t("button.add") }}
         </ButtonPrimary>
 
         <!-- Cancel -->
@@ -51,7 +51,7 @@
           :disabled="storing"
           @click.native.prevent="showing = false"
         >
-          {{ $t("buttons.cancel") }}
+          {{ $t("button.cancel") }}
         </ButtonTertiary>
       </div>
     </form>

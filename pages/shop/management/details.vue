@@ -23,7 +23,7 @@
         @click.native="update"
         icon="check"
       >
-        {{ $t("buttons.update") }}
+        {{ $t("button.update") }}
       </ButtonPrimary>
     </Card>
 

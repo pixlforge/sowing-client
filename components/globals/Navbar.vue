@@ -29,7 +29,7 @@
         :route="{ name: 'auth-login' }"
         class="ml-10 lg:ml-20"
       >
-        {{ $t("buttons.login") }}
+        {{ $t("button.login") }}
       </ButtonLinkSecondary>
 
       <!-- Register -->
@@ -40,7 +40,7 @@
         color="pink-dark"
         class="hidden md:block ml-10 lg:ml-20"
       >
-        {{ $t("buttons.register") }}
+        {{ $t("button.register") }}
       </ButtonLinkPrimary>
 
       <!-- Menu -->

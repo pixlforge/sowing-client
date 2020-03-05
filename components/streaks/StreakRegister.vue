@@ -29,7 +29,7 @@
             icon="store"
             color="pink-dark"
           >
-            {{ $t("buttons.create_my_shop") }}
+            {{ $t("button.create_my_shop") }}
           </ButtonLinkPrimary>
         </div>
       </div>

@@ -69,7 +69,7 @@
         icon="key"
         class="mx-auto mt-36"
       >
-        {{ $t("buttons.connection") }}
+        {{ $t("button.connection") }}
       </ButtonPrimary>
     </form>
   </div>

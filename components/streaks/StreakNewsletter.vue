@@ -43,7 +43,7 @@
               type="submit"
               class="md:rounded-l-none shadow-2xl mt-20 md:mt-0"
             >
-              {{ $t("buttons.subscribe") }}
+              {{ $t("button.subscribe") }}
             </ButtonPrimary>
           </div>
 

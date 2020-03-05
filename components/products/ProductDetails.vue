@@ -121,7 +121,7 @@
             size="large"
             class="shadow-2xl mt-36"
           >
-            {{ $t("buttons.add_to_cart") }}
+            {{ $t("button.add_to_cart") }}
           </ButtonPrimary>
 
         </form>

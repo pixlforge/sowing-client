@@ -47,7 +47,7 @@
         icon="redo-alt"
         class="mx-auto mt-36"
       >
-        {{ $t("buttons.password_email") }}
+        {{ $t("button.password_email") }}
       </ButtonPrimary>
     </form>
   </div>

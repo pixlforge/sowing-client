@@ -14,7 +14,7 @@
       icon="rocket"
       class="w-full h-46 sm:w-auto sm:rounded-l-none"
     >
-      {{ $t("buttons.check_availability") }}
+      {{ $t("button.check_availability") }}
     </ButtonPrimary>
   </section>
 </template>

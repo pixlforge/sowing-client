@@ -116,7 +116,7 @@
             size="large"
             class="w-full"
           >
-            {{ $t("buttons.create_my_shop") }}
+            {{ $t("button.create_my_shop") }}
           </ButtonLinkPrimary>
         </ContentSection>
       </template>

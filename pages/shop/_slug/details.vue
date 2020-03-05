@@ -76,7 +76,7 @@
           size="large"
           class="shadow-2xl"
         >
-          {{ $t("buttons.see_all_articles") }}
+          {{ $t("button.see_all_articles") }}
         </ButtonLinkPrimary>
       </div>
     </ContentSection>
