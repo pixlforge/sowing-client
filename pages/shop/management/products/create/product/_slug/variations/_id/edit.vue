@@ -214,6 +214,29 @@
         </FormFieldset>
       </FormSection>
 
+      <FormSection class="lg:w-full">
+        <FormSectionTitle>
+          {{ $t('form.price.label') }}
+        </FormSectionTitle>
+        <FormFieldset>
+          <FormGroup>
+            <FormLabel name="price">
+              {{ $t('form.price.label') }}
+            </FormLabel>
+            <FormInput
+              ref="priceInput"
+              v-model="displayPrice"
+              :errors="errors"
+              name="price"
+            />
+            <FormValidation
+              :errors="errors"
+              name="price"
+            />
+          </FormGroup>
+        </FormFieldset>
+      </FormSection>
+
     </form>
 
     <!-- Controls -->
@@ -256,6 +279,7 @@
 </template>
 
 <script>
+import AutoNumeric from 'autonumeric'
 import { mapActions } from 'vuex'
 import theming from '@/mixins/theming'
 import locales from '@/mixins/locales'
@@ -318,12 +342,20 @@ export default {
   data() {
     return {
       form: {},
+      displayPrice: null,
+      autoNumeric: {},
       errors: {}
     }
   },
   computed: {
     variationName() {
       return this.form.name[this.locale]
+    }
+  },
+  watch: {
+    displayPrice() {
+      this.autoNumeric.reformat()
+      this.form.price = this.autoNumeric.rawValue * 100
     }
   },
   async asyncData({ app, params }) {
@@ -339,11 +371,29 @@ export default {
   },
   mounted() {
     this.setShop(this.shop)
+    this.initAutoNumeric()
   },
   methods: {
     ...mapActions({
       setShop: 'shop/setShop'
-    })
+    }),
+    initAutoNumeric() {
+      this.autoNumeric = new AutoNumeric(this.$refs.priceInput.$el, {
+        digitGroupSeparator: "'",
+        decimalCharacter: '.',
+        decimalCharacterAlternative: ',',
+        currencySymbol: 'CHF ',
+        currencySymbolPlacement: AutoNumeric.options.currencySymbolPlacement.prefix,
+        roundingMethod: AutoNumeric.options.roundingMethod.toNearest05Alt,
+        minimumValue: '1',
+        selectNumberOnly: true,
+        modifyValueOnWheel: false
+      })
+      if (this.product.price.detailed.amount > 0) {
+        this.autoNumeric.set(this.product.price.detailed.amount)
+        this.form.price = this.autoNumeric.rawValue * 100
+      }
+    }
   }
 }
 </script>
