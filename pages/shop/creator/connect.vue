@@ -33,7 +33,7 @@
               <font-awesome-icon
                 :icon="['fab', 'cc-stripe']"
               />
-              {{ $t("buttons.connect_with_stripe") }}
+              {{ $t("button.connect_with_stripe") }}
             </a>
           </div>
         </template>
@@ -56,7 +56,7 @@
           icon="chevron-circle-left"
           class="order-1 md:order-none mx-5"
         >
-          {{ $t("buttons.back") }}
+          {{ $t("button.back") }}
         </ButtonTertiary>
 
         <!-- Next -->
@@ -67,7 +67,7 @@
           icon="chevron-circle-right"
           class="order-none md_order-1 mx-5"
         >
-          {{ $t("buttons.finalize_shop_creation") }}
+          {{ $t("button.finalize_shop_creation") }}
         </ButtonPrimary>
       </ShopCreatorControls>
     </ContentSection>

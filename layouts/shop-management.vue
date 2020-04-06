@@ -76,7 +76,7 @@
               </SideMenuTitle>
               <SideMenuList>
                 <SideMenuItem
-                  :label="$t('products.management.index.title')"
+                  :label="$t('product.management.index.title')"
                   route="shop-management-products"
                   icon="box-full"
                 />
@@ -116,7 +116,7 @@
             size="large"
             class="w-full"
           >
-            {{ $t("buttons.create_my_shop") }}
+            {{ $t("button.create_my_shop") }}
           </ButtonLinkPrimary>
         </ContentSection>
       </template>

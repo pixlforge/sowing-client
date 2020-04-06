@@ -1,5 +1,5 @@
 export default {
-  buttons: {
+  button: {
     add: 'Add',
     add_address: 'Add an address',
     add_payment_method: 'Add a payment method',
@@ -8,6 +8,7 @@ export default {
     back: 'Back',
     begin_shop_creation: 'Start the creation of my shop',
     cancel: 'Cancel',
+    category: 'Category',
     check_availability: 'Check availability',
     connection: 'Log in',
     connect_with_stripe: 'Connect my shop to Stripe',
@@ -22,12 +23,16 @@ export default {
     finish: 'Finish',
     login: 'Log in',
     next: 'Next',
+    ok: 'Ok',
     password_email: 'Send me a link',
     password_reset: 'Reset password',
+    pictures: 'Pictures',
+    price: 'Price',
     register: 'Create an account',
     see_all_articles: 'See all articles',
     subscribe: 'Subscribe',
     to_my_shop_details: 'To my shop details',
+    types: 'Types',
     update: 'Update',
     view: 'View'
   }

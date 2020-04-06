@@ -47,7 +47,7 @@
           icon="check"
           type="submit"
         >
-          {{ $t("buttons.update") }}
+          {{ $t("button.update") }}
         </ButtonPrimary>
       </form>
     </Card>

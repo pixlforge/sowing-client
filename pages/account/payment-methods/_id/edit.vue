@@ -28,7 +28,7 @@
         icon="star"
         class="mx-auto"
       >
-        {{ $t('buttons.default') }}
+        {{ $t('button.default') }}
       </ButtonPrimary>
     </Card>
 

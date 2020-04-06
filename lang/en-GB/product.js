@@ -1,7 +1,37 @@
 export default {
-  products: {
+  product: {
     img: {
       alt: 'Product image'
+    },
+    creator: {
+      category: {
+        category: 'Category'
+      },
+      infotip: {
+        add_type: 'Start by adding a type',
+        add_variation: 'Then add a variation of your base product',
+        add_many: 'Add as many types and variations as you want'
+      },
+      name_description: {
+        name_description: 'Name & description'
+      },
+      price: {
+        price: 'Price'
+      },
+      type: {
+        add: 'First, add a new variation type to your product',
+        add_another: 'Add another variation type',
+        add_type_name_in_your_own_language: 'At a minimum, you should add a name in your language.',
+        types_variations: 'Types & variations',
+        unnamed: 'Unnamed type'
+      },
+      variation: {
+        add: 'Add a variation to your product',
+        add_another: 'Add a new variation',
+        title: 'Details for',
+        unnamed: 'unnamed variation',
+        variation: 'Variation'
+      }
     },
     details: {
       remaining: 'products in stock',

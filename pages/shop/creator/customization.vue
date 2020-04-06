@@ -37,7 +37,7 @@
           icon="chevron-circle-left"
           class="order-1 md:order-none mx-5"
         >
-          {{ $t("buttons.back") }}
+          {{ $t("button.back") }}
         </ButtonTertiary>
 
         <!-- Next -->
@@ -47,7 +47,7 @@
           icon="chevron-circle-right"
           class="order-none md_order-1 mx-5"
         >
-          {{ $t("buttons.next") }}
+          {{ $t("button.next") }}
         </ButtonPrimary>
       </ShopCreatorControls>
     </ContentSection>

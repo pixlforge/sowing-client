@@ -1,5 +1,5 @@
 <template>
-  <li class="relative h-80 odd:bg-green-100 border-b-2 last:border-b-0 border-gray-100 flex px-20">
+  <ResourceListItem>
 
     <!-- Controls -->
     <div
@@ -83,7 +83,7 @@
       </div>
     </div>
 
-  </li>
+  </ResourceListItem>
 </template>
 
 <script>
@@ -93,13 +93,15 @@ import ButtonDelete from '@/components/buttons/ButtonDelete'
 import ButtonEdit from '@/components/buttons/ButtonEdit'
 import ButtonResourceControls from '@/components/buttons/ButtonResourceControls'
 import ButtonView from '@/components/buttons/ButtonView'
+import ResourceListItem from '@/components/resources/ResourceListItem'
 
 export default {
   components: {
     ButtonDelete,
     ButtonEdit,
     ButtonResourceControls,
-    ButtonView
+    ButtonView,
+    ResourceListItem
   },
   props: {
     paymentMethod: {

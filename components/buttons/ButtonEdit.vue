@@ -1,7 +1,7 @@
 <template>
   <nuxt-link
     :to="route"
-    :title="$t('buttons.edit')"
+    :title="$t('button.edit')"
     class="text-20 text-gray-300 hover:text-gray-500 mr-20"
   >
     <font-awesome-icon :icon="['far', 'edit']"/>

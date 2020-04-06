@@ -12,7 +12,7 @@
 
       <!-- Cart Overview -->
       <div>
-        <template v-if="products.length">
+        <template v-if="product.length">
           <CartOverviewProduct
             v-for="product in products"
             :key="product.id"
@@ -38,12 +38,12 @@
       </div>
 
       <div
-        v-if="products.length"
+        v-if="product.length"
         class="text-24 font-semibold text-center mt-96"
       >
         {{ $t("cart.in_your_cart") }}
         <span class="text-green-500">
-          {{ products.length }}
+          {{ product.length }}
         </span>
         {{ $t("cart.products") }}
         {{ $t("cart.for") }}
@@ -55,7 +55,7 @@
 
       <!-- Checkout button -->
       <ButtonLinkPrimary
-        v-if="products.length"
+        v-if="product.length"
         :route="{ name: 'checkout' }"
         :disabled="is_empty"
         :title="$t('cart.checkout')"

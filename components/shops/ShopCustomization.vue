@@ -19,7 +19,7 @@
           size="mini"
           color="pink-dark"
         >
-          {{ $t("buttons.delete") }}
+          {{ $t("button.delete") }}
         </ButtonPrimary>
       </div>
 
@@ -52,7 +52,7 @@
           size="mini"
           color="pink-dark"
         >
-          {{ $t("buttons.delete") }}
+          {{ $t("button.delete") }}
         </ButtonPrimary>
       </div>
 

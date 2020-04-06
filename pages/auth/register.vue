@@ -110,7 +110,7 @@
         icon="user"
         class="mx-auto mt-36"
       >
-        {{ $t("buttons.create_account") }}
+        {{ $t("button.create_account") }}
       </ButtonPrimary>
     </form>
   </div>

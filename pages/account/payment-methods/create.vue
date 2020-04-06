@@ -43,7 +43,7 @@
           icon="plus"
           class="mx-auto md:mx-0"
         >
-          {{ $t("buttons.add") }}
+          {{ $t("button.add") }}
         </ButtonPrimary>
       </form>
     </Card>

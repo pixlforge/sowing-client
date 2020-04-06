@@ -13,3 +13,19 @@
     transform: scale(1);
   }
 }
+
+.button-pulse-gray {
+  animation: button-pulse-gray 2s infinite;
+}
+
+@keyframes button-pulse-gray {
+  0% {
+    @apply border-gray-200 text-gray-300;
+  }
+  50% {
+    @apply border-gray-500 text-gray-500;
+  }
+  100% {
+    @apply border-gray-200 text-gray-300;
+  }
+}
