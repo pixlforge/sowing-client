@@ -1,11 +1,11 @@
 <template>
-  <li class="relative h-80 odd:bg-green-100 border-b-2 last:border-b-0 border-gray-100 flex px-20">
+  <ResourceListItem>
 
     <!-- Controls -->
     <div
       ref="controls"
       :class="{ 'w-full': controlsOpen }"
-      class="absolute w-0 h-full bg-white rounded-lg flex justify-center items-center -mx-20 origin-left transition-all transition-medium z-10"
+      class="w-0 h-full absolute z-10 bg-white rounded-lg flex justify-center items-center origin-left transition-all duration-200 ease-out -mx-20"
     >
       <template v-if="controlsOpen">
 
@@ -78,7 +78,7 @@
       </div>
     </div>
 
-  </li>
+  </ResourceListItem>
 </template>
 
 <script>
@@ -88,13 +88,15 @@ import ButtonDelete from '@/components/buttons/ButtonDelete'
 import ButtonEdit from '@/components/buttons/ButtonEdit'
 import ButtonResourceControls from '@/components/buttons/ButtonResourceControls'
 import ButtonView from '@/components/buttons/ButtonView'
+import ResourceListItem from '@/components/resources/ResourceListItem'
 
 export default {
   components: {
     ButtonDelete,
     ButtonEdit,
     ButtonResourceControls,
-    ButtonView
+    ButtonView,
+    ResourceListItem
   },
   props: {
     address: {

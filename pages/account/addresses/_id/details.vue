@@ -30,7 +30,7 @@
     <ConfirmationModal
       :title="$t('modals.addresses.delete.title')"
       :body="$t('modals.addresses.delete.body')"
-      :button-label="$t('buttons.delete')"
+      :button-label="$t('button.delete')"
       @confirm="destroy"
       button-icon="trash-alt"
       icon="exclamation-circle"

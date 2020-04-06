@@ -138,7 +138,7 @@
           type="submit"
           class="w-full mt-20"
         >
-          {{ $t("buttons.create") }}
+          {{ $t("button.create") }}
         </ButtonPrimary>
 
         <!-- Close -->
@@ -146,7 +146,7 @@
           @click.native="closeAddressCreator"
           class="w-full"
         >
-          {{ $t("buttons.cancel") }}
+          {{ $t("button.cancel") }}
         </ButtonTertiary>
       </FormGroup>
     </form>

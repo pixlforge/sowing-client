@@ -13,7 +13,7 @@
       <!-- Add an address -->
       <ButtonLinkAdd
         :route="{ name: 'account-addresses-create' }"
-        :label="$t('buttons.add_address')"
+        :label="$t('button.add_address')"
         class="mt-60 md:mt-0"
       />
     </ResourceHeader>
@@ -41,7 +41,7 @@
           :route="{ name: 'account-addresses-create' }"
           icon="plus-circle"
         >
-          {{ $t('buttons.add_address') }}
+          {{ $t('button.add_address') }}
         </ButtonLinkPrimary>
       </div>
     </Card>
@@ -50,7 +50,7 @@
     <ConfirmationModal
       :title="$t('modals.addresses.delete.title')"
       :body="$t('modals.addresses.delete.body')"
-      :button-label="$t('buttons.delete')"
+      :button-label="$t('button.delete')"
       @confirm="destroy"
       button-icon="trash-alt"
       icon="exclamation-circle"

@@ -121,7 +121,7 @@
             size="large"
             class="shadow-2xl mt-36"
           >
-            {{ $t("buttons.add_to_cart") }}
+            {{ $t("button.add_to_cart") }}
           </ButtonPrimary>
 
         </form>
@@ -189,7 +189,7 @@ export default {
       return require('@/assets/img/placeholders/category.svg')
     },
     imgAlt() {
-      return this.$t('products.img.alt')
+      return this.$t('product.img.alt')
     },
     productName() {
       return this.product.name[this.locale]
@@ -204,13 +204,13 @@ export default {
       return this.product.price.detailed.amount
     },
     quantityLabel() {
-      return this.$t('products.variations.labels.quantity')
+      return this.$t('product.variations.labels.quantity')
     },
     productsRemaining() {
-      return this.$t('products.details.remaining')
+      return this.$t('product.details.remaining')
     },
     productOutOfStock() {
-      return this.$t('products.details.out_of_stock')
+      return this.$t('product.details.out_of_stock')
     }
   },
   watch: {

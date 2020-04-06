@@ -50,7 +50,7 @@
               color="pink-dark"
               class="shadow-md"
             >
-              {{ $t("buttons.create_my_shop") }}
+              {{ $t("button.create_my_shop") }}
             </ButtonLinkPrimary>
           </li>
         </template>

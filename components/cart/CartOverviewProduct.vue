@@ -120,7 +120,7 @@ export default {
       return require('@/assets/img/placeholders/category.svg')
     },
     imgAlt() {
-      return this.$t('products.img.alt')
+      return this.$t('product.img.alt')
     },
     labelPrice() {
       return this.$t('cart.labels.price')

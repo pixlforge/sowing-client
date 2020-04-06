@@ -2,8 +2,8 @@
   <div class="container">
 
     <!-- Progress -->
-    <ProductCreatorProgress :current-step="1">
-      {{ $t('product.creator.name_description.name_description') }}
+    <ProductCreatorProgress :current-step="5">
+      {{ $t('product.creator.variation.variation') }}
     </ProductCreatorProgress>
 
     <!-- Header -->
@@ -11,7 +11,13 @@
 
       <!-- Back -->
       <ButtonBack
-        :route="{ name: 'shop-management-products' }"
+        v-if="product"
+        :route="{
+          name: 'shop-management-products-create-product-slug-types',
+          params: {
+            slug: product.slug
+          }
+        }"
         class="mr-20"
       />
 
@@ -21,19 +27,20 @@
         visual="h4"
         utilities="text-center"
       >
-        {{ $t('product.management.create.name_and_description_for') }}
         <span :class="`text-${shopTheme}-500`">
-          {{ form.name[locale] || $t('product.management.create.unnamed') }}
+          {{ variationName || $t('product.creator.variation.unnamed') | capitalizeFirstLetter }}
         </span>
       </Heading>
     </header>
 
     <!-- Infotip -->
     <InfoTip icon="info">
-      {{ $t('product.management.create.tips.name_and_description') }}
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde numquam quia fugiat cum laboriosam iste. Ab, excepturi qui, repellat odio odit vitae aliquam dignissimos facere minus, quod obcaecati facilis. Quisquam.
+      </p>
     </InfoTip>
 
-    <!-- Form -->
+    <!-- Content -->
     <form
       @submit.prevent="update"
       class="flex flex-wrap -mx-10"
@@ -51,9 +58,6 @@
             <FormLabel name="name.fr">
               {{ $t('form.name.label') }}
             </FormLabel>
-            <FormLabelDescription>
-              Le nom de votre produit. Entrez, en français, un nom descriptif identifiant votre produit.
-            </FormLabelDescription>
             <FormInput
               v-model="form.name.fr"
               :errors="errors"
@@ -70,11 +74,9 @@
             <FormLabel name="description.fr">
               {{ $t('form.description.label') }}
             </FormLabel>
-            <FormLabelDescription>
-              Décrivez, en français, votre produit de la manière dont vous le voulez.
-            </FormLabelDescription>
             <FormTextarea
               v-model="form.description.fr"
+              :rows="3"
               :errors="errors"
               name="description.fr"
             />
@@ -98,9 +100,6 @@
             <FormLabel name="name.en">
               {{ $t('form.name.label') }}
             </FormLabel>
-            <FormLabelDescription>
-              Le nom de votre produit. Entrez, en anglais, un nom descriptif identifiant votre produit.
-            </FormLabelDescription>
             <FormInput
               v-model="form.name.en"
               :errors="errors"
@@ -117,11 +116,9 @@
             <FormLabel name="description.en">
               {{ $t('form.description.label') }}
             </FormLabel>
-            <FormLabelDescription>
-              Décrivez, en anglais, votre produit de la manière dont vous le voulez.
-            </FormLabelDescription>
             <FormTextarea
               v-model="form.description.en"
+              :rows="3"
               :errors="errors"
               name="description.en"
             />
@@ -145,9 +142,6 @@
             <FormLabel name="name.de">
               {{ $t('form.name.label') }}
             </FormLabel>
-            <FormLabelDescription>
-              Le nom de votre produit. Entrez, en allemand, un nom descriptif identifiant votre produit.
-            </FormLabelDescription>
             <FormInput
               v-model="form.name.de"
               :errors="errors"
@@ -164,11 +158,9 @@
             <FormLabel name="description.de">
               {{ $t('form.description.label') }}
             </FormLabel>
-            <FormLabelDescription>
-              Décrivez, en allemand, votre produit de la manière dont vous le voulez.
-            </FormLabelDescription>
             <FormTextarea
               v-model="form.description.de"
+              :rows="3"
               :errors="errors"
               name="description.de"
             />
@@ -192,9 +184,6 @@
             <FormLabel name="name.it">
               {{ $t('form.name.label') }}
             </FormLabel>
-            <FormLabelDescription>
-              Le nom de votre produit. Entrez, en italien, un nom descriptif identifiant votre produit.
-            </FormLabelDescription>
             <FormInput
               v-model="form.name.it"
               :errors="errors"
@@ -211,11 +200,9 @@
             <FormLabel name="description.it">
               {{ $t('form.description.label') }}
             </FormLabel>
-            <FormLabelDescription>
-              Décrivez, en italien, votre produit de la manière dont vous le voulez.
-            </FormLabelDescription>
             <FormTextarea
               v-model="form.description.it"
+              :rows="3"
               :errors="errors"
               name="description.it"
             />
@@ -227,47 +214,84 @@
         </FormFieldset>
       </FormSection>
 
-      <!-- Controls -->
       <FormSection class="lg:w-full">
-        <div class="flex justify-center items-center">
-
-          <!-- Cancel -->
-          <ButtonLinkTertiary
-            :route="{ name: 'shop-management-products' }"
-            icon="arrow-left"
-          >
-            {{ $t('button.back') }}
-          </ButtonLinkTertiary>
-
-          <!-- Next -->
-          <ButtonPrimary
-            :color="shopTheme"
-            icon="arrow-right"
-            size="large"
-            type="submit"
-            class="ml-10"
-          >
-            {{ $t('button.category') }}
-          </ButtonPrimary>
-        </div>
+        <FormSectionTitle>
+          {{ $t('form.price.label') }}
+        </FormSectionTitle>
+        <FormFieldset>
+          <FormGroup>
+            <FormLabel name="price">
+              {{ $t('form.price.label') }}
+            </FormLabel>
+            <FormInput
+              ref="priceInput"
+              v-model="displayPrice"
+              :errors="errors"
+              name="price"
+            />
+            <FormValidation
+              :errors="errors"
+              name="price"
+            />
+          </FormGroup>
+        </FormFieldset>
       </FormSection>
+
     </form>
+
+    <!-- Controls -->
+    <FormSection class="lg:w-full">
+      <div class="flex justify-center items-center">
+
+        <!-- Back -->
+        <ButtonLinkTertiary
+          :route="{
+            name: 'shop-management-products-create-product-slug-types',
+            params: {
+              slug: product.slug
+            }
+          }"
+          icon="arrow-left"
+        >
+          {{ $t('button.back') }}
+        </ButtonLinkTertiary>
+
+        <!-- Ok -->
+        <ButtonLinkPrimary
+          :route="{
+            name: 'shop-management-products-create-product-slug-types',
+            params: {
+              slug: product.slug
+            }
+          }"
+          :color="shopTheme"
+          icon="arrow-left"
+          size="large"
+          type="submit"
+          class="ml-10"
+        >
+          {{ $t('button.types') }}
+        </ButtonLinkPrimary>
+      </div>
+    </FormSection>
 
   </div>
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex'
+import AutoNumeric from 'autonumeric'
+import { mapActions } from 'vuex'
 import theming from '@/mixins/theming'
+import locales from '@/mixins/locales'
+import { capitalizeFirstLetter } from '@/mixins/filters'
 
 import ButtonBack from '@/components/buttons/ButtonBack'
+import ButtonLinkPrimary from '@/components/buttons/ButtonLinkPrimary'
 import ButtonLinkTertiary from '@/components/buttons/ButtonLinkTertiary'
-import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 import FormFieldset from '@/components/forms/FormFieldset'
 import FormGroup from '@/components/forms/FormGroup'
-import FormLabel from '@/components/forms/FormLabel'
-import FormLabelDescription from '@/components/forms/FormLabelDescription'
 import FormInput from '@/components/forms/FormInput'
+import FormLabel from '@/components/forms/FormLabel'
 import FormSection from '@/components/forms/FormSection'
 import FormSectionTitle from '@/components/forms/FormSectionTitle'
 import FormTextarea from '@/components/forms/FormTextarea'
@@ -279,22 +303,25 @@ import ProductCreatorProgress from '@/components/products/creator/ProductCreator
 export default {
   components: {
     ButtonBack,
+    ButtonLinkPrimary,
     ButtonLinkTertiary,
-    ButtonPrimary,
     FormFieldset,
     FormGroup,
-    FormLabel,
-    FormLabelDescription,
     FormInput,
+    FormLabel,
+    FormTextarea,
     FormSection,
     FormSectionTitle,
-    FormTextarea,
     FormValidation,
     Heading,
     InfoTip,
     ProductCreatorProgress
   },
-  mixins: [theming],
+  mixins: [
+    theming,
+    locales,
+    capitalizeFirstLetter
+  ],
   middleware: [
     'authenticated',
     'hasShop'
@@ -302,13 +329,8 @@ export default {
   layout: 'create-product',
   head() {
     return {
-      title: `${this.$t('product.management.create.name_and_description')} | ${this.form.name[this.locale]} | ${this.$t('product.management.create.title')} | ${this.shop.name}`,
+      title: `${this.$t('product.creator.variation.title')} ${this.form.name[this.locale] || this.$t('product.creator.variation.unnamed')} | ${this.$t('product.management.create.title')} | ${this.product.name[this.locale]} | ${this.shop.name}`,
       meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: ''
-        },
         {
           hid: 'robots',
           name: 'robots',
@@ -319,61 +341,57 @@ export default {
   },
   data() {
     return {
-      form: {
-        name: {
-          en: '',
-          fr: '',
-          de: '',
-          it: ''
-        },
-        description: {
-          en: '',
-          fr: '',
-          de: '',
-          it: ''
-        },
-        slug: null
-      },
+      form: {},
+      displayPrice: null,
+      autoNumeric: {},
       errors: {}
     }
   },
   computed: {
-    ...mapGetters({
-      categories: 'categories',
-      locale: 'locale'
-    })
+    variationName() {
+      return this.form.name[this.locale]
+    }
+  },
+  watch: {
+    displayPrice() {
+      this.autoNumeric.reformat()
+      this.form.price = this.autoNumeric.rawValue * 100
+    }
   },
   async asyncData({ app, params }) {
     const shop = await app.$axios.$get('/user/shop')
     const product = await app.$axios.$get(`/products/${params.slug}`)
+    const variation = await app.$axios.$get(`/products/${params.slug}/product-variations/${params.id}`)
 
     return {
       shop: shop.data,
-      form: {
-        name: product.data.name,
-        description: product.data.description,
-        slug: product.data.slug
-      }
+      product: product.data,
+      form: variation.data
     }
   },
   mounted() {
     this.setShop(this.shop)
+    this.initAutoNumeric()
   },
   methods: {
     ...mapActions({
       setShop: 'shop/setShop'
     }),
-    update() {
-      try {
-        this.errors = {}
-        this.$router.push({
-          name: 'shop-management-products-create-product-slug-category',
-          params: {
-            slug: this.form.slug
-          }
-        })
-      } catch (e) {
-        this.errors = e.response.data.errors
+    initAutoNumeric() {
+      this.autoNumeric = new AutoNumeric(this.$refs.priceInput.$el, {
+        digitGroupSeparator: "'",
+        decimalCharacter: '.',
+        decimalCharacterAlternative: ',',
+        currencySymbol: 'CHF ',
+        currencySymbolPlacement: AutoNumeric.options.currencySymbolPlacement.prefix,
+        roundingMethod: AutoNumeric.options.roundingMethod.toNearest05Alt,
+        minimumValue: '1',
+        selectNumberOnly: true,
+        modifyValueOnWheel: false
+      })
+      if (this.product.price.detailed.amount > 0) {
+        this.autoNumeric.set(this.product.price.detailed.amount)
+        this.form.price = this.autoNumeric.rawValue * 100
       }
     }
   }

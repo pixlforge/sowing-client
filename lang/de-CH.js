@@ -3,7 +3,7 @@ import accountCard from '~/lang/de-CH/accountCard'
 import adviceToCreators from '~/lang/de-CH/adviceToCreators'
 import alerts from '~/lang/de-CH/alerts'
 import aria from '~/lang/de-CH/aria'
-import buttons from '~/lang/de-CH/buttons'
+import button from '~/lang/de-CH/button'
 import cart from '~/lang/de-CH/cart'
 import categories from '~/lang/de-CH/categories'
 import checkout from '~/lang/de-CH/checkout'
@@ -21,8 +21,7 @@ import navbar from '~/lang/de-CH/navbar'
 import orders from '~/lang/de-CH/orders'
 import passwordEmail from '~/lang/de-CH/passwordEmail'
 import passwordReset from '~/lang/de-CH/passwordReset'
-import products from '~/lang/de-CH/products'
-import productVariationType from '~/lang/de-CH/productVariationType'
+import product from '~/lang/de-CH/product'
 import register from '~/lang/de-CH/register'
 import registerSuccess from '~/lang/de-CH/registerSuccess'
 import search from '~/lang/de-CH/search'
@@ -42,7 +41,7 @@ export default {
   ...adviceToCreators,
   ...alerts,
   ...aria,
-  ...buttons,
+  ...button,
   ...cart,
   ...categories,
   ...checkout,
@@ -60,8 +59,7 @@ export default {
   ...orders,
   ...passwordEmail,
   ...passwordReset,
-  ...products,
-  ...productVariationType,
+  ...product,
   ...register,
   ...registerSuccess,
   ...search,

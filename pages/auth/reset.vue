@@ -77,7 +77,7 @@
         icon="redo-alt"
         class="mx-auto mt-36"
       >
-        {{ $t("buttons.password_reset") }}
+        {{ $t("button.password_reset") }}
       </ButtonPrimary>
     </form>
   </div>

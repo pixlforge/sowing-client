@@ -178,7 +178,7 @@
             type="submit"
             class="mr-10"
           >
-            {{ $t('buttons.add') }}
+            {{ $t('button.add') }}
           </ButtonPrimary>
 
           <!-- Cancel -->
@@ -186,7 +186,7 @@
             :route="{ name: 'account-addresses' }"
             icon="times"
           >
-            {{ $t('buttons.cancel') }}
+            {{ $t('button.cancel') }}
           </ButtonLinkTertiary>
         </div>
       </form>

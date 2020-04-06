@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div class="container-narrow">
 
-    <!-- Step -->
-    <ProductCreatorStep>
-      2/5
-    </ProductCreatorStep>
+    <!-- Progress -->
+    <ProductCreatorProgress :current-step="2">
+      {{ $t('product.creator.category.category') }}
+    </ProductCreatorProgress>
 
     <!-- Header -->
     <header class="flex flex-wrap items-center my-30">
@@ -26,16 +26,16 @@
         visual="h4"
         utilities="text-center"
       >
-        {{ $t('products.management.create.category_for') }}
+        {{ $t('product.management.create.category_for') }}
         <span :class="`text-${shopTheme}-500`">
-          {{ product.name[locale] || $t('products.management.create.unnamed') }}
+          {{ product.name[locale] || $t('product.management.create.unnamed') }}
         </span>
       </Heading>
     </header>
 
     <!-- Infotip -->
     <InfoTip icon="info">
-      {{ $t('products.management.create.tips.category') }}
+      {{ $t('product.management.create.tips.category') }}
     </InfoTip>
 
     <!-- Form -->
@@ -99,18 +99,18 @@
             }"
             icon="arrow-left"
           >
-            {{ $t('buttons.back') }}
+            {{ $t('button.back') }}
           </ButtonLinkTertiary>
 
-          <!-- Submit -->
+          <!-- Next -->
           <ButtonPrimary
             :color="shopTheme"
-            icon="check-circle"
+            icon="arrow-right"
             size="large"
             type="submit"
             class="ml-10"
           >
-            {{ $t('buttons.next') }}
+            {{ $t('button.price') }}
           </ButtonPrimary>
         </div>
       </FormSection>
@@ -135,7 +135,7 @@ import FormSectionTitle from '@/components/forms/FormSectionTitle'
 import FormSelect from '@/components/forms/FormSelect'
 import FormValidation from '@/components/forms/FormValidation'
 import InfoTip from '@/components/globals/InfoTip'
-import ProductCreatorStep from '@/components/products/creator/ProductCreatorStep'
+import ProductCreatorProgress from '@/components/products/creator/ProductCreatorProgress'
 
 export default {
   components: {
@@ -152,7 +152,7 @@ export default {
     FormSelect,
     FormValidation,
     InfoTip,
-    ProductCreatorStep
+    ProductCreatorProgress
   },
   mixins: [theming],
   middleware: [
@@ -162,7 +162,7 @@ export default {
   layout: 'create-product',
   head() {
     return {
-      title: `${this.$t('products.management.create.category')} | ${this.product.name[this.locale]} | ${this.$t('products.management.create.title')} | ${this.shop.name}`,
+      title: `${this.$t('product.management.create.category')} | ${this.product.name[this.locale]} | ${this.$t('product.management.create.title')} | ${this.shop.name}`,
       meta: [
         {
           hid: 'description',

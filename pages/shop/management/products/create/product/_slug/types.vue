@@ -1,50 +1,10 @@
 <template>
-  <div>
+  <div class="container">
 
-    <!-- Timeline -->
-    <div>
-      <div class="flex justify-center">
-
-        <!-- Done -->
-        <div
-          v-for="n in 3"
-          :key="`done-${n}`"
-          class="w-20 h-20 flex justify-center items-center bg-green-500 rounded-full mx-2"
-        >
-          <font-awesome-icon
-            :icon="['far', 'check']"
-            class="text-12 text-white"
-          />
-        </div>
-
-        <!-- Current -->
-        <div
-          :class="`bg-${shopTheme}-500`"
-          class="w-20 h-20 flex justify-center items-center rounded-full mx-2"
-        >
-          <font-awesome-icon
-            :icon="['far', 'dot-circle']"
-            class="text-12 text-white"
-          />
-        </div>
-
-        <!-- Remaining -->
-        <div
-          v-for="n in 2"
-          :key="`remaining-${n}`"
-          class="w-20 h-20 flex justify-center items-center bg-gray-300 rounded-full mx-2"
-        >
-          <font-awesome-icon
-            :icon="['far', 'question-circle']"
-            class="text-12 text-white"
-          />
-        </div>
-
-      </div>
-      <div class="text-14 text-center mt-5">
-        Types
-      </div>
-    </div>
+    <!-- Progress -->
+    <ProductCreatorProgress :current-step="4">
+      {{ $t('product.creator.type.types_variations') }}
+    </ProductCreatorProgress>
 
     <!-- Header -->
     <header class="flex flex-wrap items-center my-30">
@@ -66,19 +26,29 @@
         visual="h4"
         utilities="text-center"
       >
-        {{ $t('products.management.create.types_for') }}
+        {{ $t('product.management.create.types_for') }}
         <span :class="`text-${shopTheme}-500`">
-          {{ product.name[locale] || $t('products.management.create.unnamed') }}
+          {{ product.name[locale] || $t('product.management.create.unnamed') }}
         </span>
       </Heading>
     </header>
 
     <!-- Infotip -->
-    <InfoTip
-      icon="info"
-      class="mb-48"
-    >
-      {{ $t('products.management.create.tips.types') }}
+    <InfoTip icon="info">
+      <p>
+        {{ $t('product.management.create.tips.types') }}
+      </p>
+      <ol class="list-decimal ml-18 mt-20">
+        <li>
+          {{ $t('product.creator.infotip.add_type') }}
+        </li>
+        <li v-if="productHasAtLeastOneType">
+          {{ $t('product.creator.infotip.add_variation') }}
+        </li>
+        <li v-if="productHasAtLeastOneVariation">
+          {{ $t('product.creator.infotip.add_many') }}
+        </li>
+      </ol>
     </InfoTip>
 
     <!-- Types -->
@@ -87,26 +57,24 @@
       :key="type.id"
       :type="type"
       :product="product"
+      @product-variation:added="getProduct"
       class="mb-10"
     />
 
     <!-- Add a new variation type -->
-    <button
-      @click="addVariationType"
-      type="button"
-      class="w-full hover:bg-gray-100 border border-gray-200 hover:border-gray-300 rounded-lg text-14 text-gray-300 hover:text-gray-400 transition-all duration-200 ease-out select-none py-12"
+    <ButtonPulse
+      @click.native="addVariationType"
+      :should-pulse="productHasNoType"
+      icon="plus"
+      class="text-14"
     >
-      <font-awesome-icon
-        :icon="['far', 'plus']"
-        class="mr-10"
-      />
       <template v-if="productHasNoType">
-        {{ $t('product_variation_type.add_type') }}
+        {{ $t('product.creator.type.add') }}
       </template>
       <template v-else>
-        {{ $t('product_variation_type.add_another_type') }}
+        {{ $t('product.creator.type.add_another') }}
       </template>
-    </button>
+    </ButtonPulse>
 
     <!-- Controls -->
     <FormSection class="lg:w-full">
@@ -122,19 +90,19 @@
           }"
           icon="arrow-left"
         >
-          {{ $t('buttons.back') }}
+          {{ $t('button.back') }}
         </ButtonLinkTertiary>
 
-        <!-- Submit -->
+        <!-- Next -->
         <ButtonPrimary
           :disabled="productHasNoType"
           :color="shopTheme"
-          icon="check-circle"
+          icon="arrow-right"
           size="large"
           type="submit"
           class="ml-10"
         >
-          {{ $t('buttons.next') }}
+          {{ $t('button.pictures') }}
         </ButtonPrimary>
       </div>
     </FormSection>
@@ -143,7 +111,7 @@
     <ConfirmationModal
       :title="$t('modals.product_variation_type.delete.title')"
       :body="$t('modals.product_variation_type.delete.title')"
-      :button-label="$t('buttons.delete')"
+      :button-label="$t('button.delete')"
       @confirm="destroy"
       button-icon="trash-alt"
       icon="exclamation-circle"
@@ -160,10 +128,12 @@ import theming from '@/mixins/theming'
 import ButtonBack from '@/components/buttons/ButtonBack'
 import ButtonLinkTertiary from '@/components/buttons/ButtonLinkTertiary'
 import ButtonPrimary from '@/components/buttons/ButtonPrimary'
+import ButtonPulse from '@/components/buttons/ButtonPulse'
 import ConfirmationModal from '@/components/modals/ConfirmationModal'
 import FormSection from '@/components/forms/FormSection'
 import Heading from '@/components/globals/Heading'
 import InfoTip from '@/components/globals/InfoTip'
+import ProductCreatorProgress from '@/components/products/creator/ProductCreatorProgress'
 import ProductVariationType from '@/components/products/creator/ProductVariationType'
 
 export default {
@@ -171,10 +141,12 @@ export default {
     ButtonBack,
     ButtonLinkTertiary,
     ButtonPrimary,
+    ButtonPulse,
     ConfirmationModal,
     FormSection,
     Heading,
     InfoTip,
+    ProductCreatorProgress,
     ProductVariationType
   },
   mixins: [theming],
@@ -185,7 +157,7 @@ export default {
   layout: 'create-product',
   head() {
     return {
-      title: `${this.$t('products.management.create.types')} | ${this.$t('products.management.create.title')} | ${this.product.name[this.locale]} | ${this.shop.name}`,
+      title: `${this.$t('product.management.create.types')} | ${this.$t('product.management.create.title')} | ${this.product.name[this.locale]} | ${this.shop.name}`,
       meta: [
         {
           hid: 'description',
@@ -211,8 +183,14 @@ export default {
       locale: 'locale',
       getResourceId: 'confirmation/getResourceId'
     }),
+    productHasAtLeastOneType() {
+      return this.product.types.length
+    },
     productHasNoType() {
-      return !this.product.types.length
+      return !this.productHasAtLeastOneType
+    },
+    productHasAtLeastOneVariation() {
+      return this.product.variations.length
     }
   },
   async asyncData({ app, params }) {
@@ -236,8 +214,9 @@ export default {
       try {
         const type = await this.$axios.$post(`/products/${this.product.slug}/product-variation-types`)
         this.product.types.push(type.data)
+        this.$toast.success('Congratulations!!!')
       } catch (e) {
-        console.log(e)
+        this.$toasted.error(this.$t('toasts.general_error'))
       }
     },
     async destroy() {

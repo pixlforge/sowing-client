@@ -71,7 +71,7 @@ export default {
       locale: 'locale'
     }),
     imgAlt() {
-      return this.$t('products.img.alt')
+      return this.$t('product.img.alt')
     },
     imgUrl() {
       if (!this.product.media) {

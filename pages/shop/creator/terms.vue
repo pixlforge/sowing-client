@@ -33,7 +33,7 @@
           @click.native="next"
           icon="chevron-circle-right"
         >
-          {{ $t("buttons.begin_shop_creation") }}
+          {{ $t("button.begin_shop_creation") }}
         </ButtonPrimary>
 
       </div>

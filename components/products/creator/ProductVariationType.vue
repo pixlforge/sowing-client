@@ -20,16 +20,16 @@
           tag="h5"
           visual="h5"
         >
-          {{ form.name[locale] || $t('product_variation_type.unnamed') }}
+          {{ typeName[locale] || $t('product.creator.type.unnamed') }}
         </Heading>
 
         <!-- Info Bubble: Add at least the type name in your own language -->
         <InfoBubble
-          v-if="!form.name[locale]"
+          v-if="!typeName[locale]"
           :color="shopTheme"
           class="ml-16"
         >
-          {{ $t('product_variation_type.add_type_name_in_your_own_language') }}
+          {{ $t('product.creator.type.add_type_name_in_your_own_language') }}
         </InfoBubble>
       </div>
 
@@ -41,24 +41,56 @@
     </header>
 
     <!-- Types -->
-    <div
-      v-if="!collapse"
-      class="flex flex-wrap p-20 lg:px-36 lg:py-20 -mx-10 mt-16"
-    >
-      <div
-        v-for="locale in availableLocales"
-        :key="locale.code"
-        class="w-full lg:w-1/2 px-10"
-      >
-        <input
-          v-model="form.name[locale.code]"
-          :placeholder="$t(`form.product_variation_type.name.${locale.code}`)"
-          :class="`border-${shopTheme}-200`"
-          type="text"
-          class="w-full border-2 border-dashed rounded-lg text-14 lg:text-16 placeholder-gray-300 px-20 py-16 mb-10"
+    <template v-if="!collapse">
+      <div class="flex flex-wrap p-20 lg:px-36 lg:py-20 -mx-10 mt-16">
+        <div
+          v-for="locale in availableLocales"
+          :key="locale.code"
+          class="w-full lg:w-1/2 px-10"
         >
+          <input
+            v-model="typeName[locale.code]"
+            :placeholder="$t(`form.product_variation_type.name.${locale.code}`)"
+            :class="`border-${shopTheme}-200`"
+            type="text"
+            class="w-full border-2 border-dashed rounded-lg text-14 lg:text-16 placeholder-gray-300 px-20 py-16 mb-10"
+          >
+        </div>
       </div>
-    </div>
+
+      <!-- Product variations -->
+      <div
+        v-if="variationsForType"
+        class="px-20 lg:px-36"
+      >
+        <ResourceList>
+          <ProductVariation
+            v-for="variation in variationsForType"
+            :key="variation.id"
+            :type="type"
+            :variation="variation"
+          />
+        </ResourceList>
+      </div>
+
+      <!-- Add a new product variation -->
+      <div class="p-20 lg:px-36">
+        <ButtonPulse
+          @click.native="addVariation"
+          :should-pulse="productHasNoVariation"
+          icon="box"
+          class="text-12"
+        >
+          <template v-if="productHasNoVariation">
+            {{ $t('product.creator.variation.add') }}
+          </template>
+          <template v-else>
+            {{ $t('product.creator.variation.add_another') }}
+          </template>
+        </ButtonPulse>
+      </div>
+    </template>
+
   </div>
 </template>
 
@@ -70,15 +102,21 @@ import { mapActions } from 'vuex'
 
 import ButtonCollapse from '@/components/buttons/ButtonCollapse'
 import ButtonDelete from '@/components/buttons/ButtonDelete'
+import ButtonPulse from '@/components/buttons/ButtonPulse'
 import Heading from '@/components/globals/Heading'
 import InfoBubble from '@/components/globals/InfoBubble'
+import ProductVariation from '@/components/products/creator/ProductVariation'
+import ResourceList from '@/components/resources/ResourceList'
 
 export default {
   components: {
     ButtonCollapse,
     ButtonDelete,
+    ButtonPulse,
     Heading,
-    InfoBubble
+    InfoBubble,
+    ProductVariation,
+    ResourceList
   },
   mixins: [
     theming,
@@ -109,6 +147,15 @@ export default {
       }
 
       return 'text-gray-300'
+    },
+    variationsForType() {
+      return this.product.variations[this.type.id]
+    },
+    productHasNoVariation() {
+      return !this.variationsForType
+    },
+    typeName() {
+      return this.form.name
     }
   },
   watch: {
@@ -128,6 +175,17 @@ export default {
     },
     toggleCollapse() {
       this.collapse = !this.collapse
+    },
+    async addVariation() {
+      try {
+        await this.$axios.post(`/products/${this.product.slug}/product-variations`, {
+          product_variation_type_id: this.type.id
+        })
+        this.$emit('product-variation:added')
+        this.$toast.success('Congratulations!')
+      } catch (e) {
+        this.$toasted.error(this.$t('toasts.general_error'))
+      }
     }
   }
 }

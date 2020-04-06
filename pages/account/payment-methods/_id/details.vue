@@ -88,7 +88,7 @@
     <ConfirmationModal
       :title="$t('modals.payment_methods.delete.title')"
       :body="$t('modals.payment_methods.delete.body')"
-      :button-label="$t('buttons.delete')"
+      :button-label="$t('button.delete')"
       @confirm="destroy"
       button-icon="trash-alt"
       icon="exclamation-circle"

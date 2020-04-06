@@ -13,7 +13,7 @@
       <!-- Add a payment method -->
       <ButtonLinkAdd
         :route="{ name: 'account-payment-methods-create' }"
-        :label="$t('buttons.add_payment_method')"
+        :label="$t('button.add_payment_method')"
         class="mt-60 md:mt-0"
       />
     </ResourceHeader>
@@ -41,7 +41,7 @@
           :route="{ name: 'account-payment-methods-create' }"
           icon="plus-circle"
         >
-          {{ $t('buttons.add_payment_method') }}
+          {{ $t('button.add_payment_method') }}
         </ButtonLinkPrimary>
       </div>
     </Card>
@@ -50,7 +50,7 @@
     <ConfirmationModal
       :title="$t('modals.payment_methods.delete.title')"
       :body="$t('modals.payment_methods.delete.body')"
-      :button-label="$t('buttons.delete')"
+      :button-label="$t('button.delete')"
       @confirm="destroy"
       button-icon="trash-alt"
       icon="exclamation-circle"

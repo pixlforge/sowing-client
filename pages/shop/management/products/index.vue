@@ -7,13 +7,13 @@
         tag="h1"
         visual="h1"
       >
-        {{ $t("products.management.index.title") }}
+        {{ $t("product.management.index.title") }}
       </Heading>
 
       <!-- Add a product -->
       <ButtonLinkAdd
         :route="{ name: 'shop-management-products-create-product' }"
-        :label="$t('buttons.add_product')"
+        :label="$t('button.add_product')"
         class="mt-60 md:mt-0"
       />
     </ResourceHeader>
@@ -45,7 +45,7 @@ export default {
   layout: 'shop-management',
   head() {
     return {
-      title: this.$t('products.management.index.title'),
+      title: this.$t('product.management.index.title'),
       meta: [
         {
           hid: 'description',

@@ -65,7 +65,7 @@
               @click.native="closeModal"
               icon="times"
             >
-              {{ $t('buttons.cancel') }}
+              {{ $t('button.cancel') }}
             </ButtonTertiary>
           </div>
         </div>
