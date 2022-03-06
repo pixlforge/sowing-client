@@ -6,20 +6,18 @@
       :description="product.shop.description_short[locale]"
       :class="bgTheme"
     >
-      <template>
-        <ButtonLinkHeader
-          :route="{
-            name: 'shop-slug-details',
-            params: {
-              slug: product.shop.slug,
-            },
-          }"
-          :color="shopTheme"
-          class="mt-16 shadow-2xl"
-        >
-          {{ $t('shop.visit') }}
-        </ButtonLinkHeader>
-      </template>
+      <ButtonLinkHeader
+        :route="{
+          name: 'shop-slug-details',
+          params: {
+            slug: product.shop.slug,
+          },
+        }"
+        :color="shopTheme"
+        class="mt-16 shadow-2xl"
+      >
+        {{ $t('shop.visit') }}
+      </ButtonLinkHeader>
     </Header>
 
     <!-- Product details -->
@@ -51,6 +49,15 @@ export default {
     StreakNewsletter,
   },
   mixins: [theming],
+  async asyncData({ params, app }) {
+    const product = await app.$axios.$get(`/products/${params.slug}`)
+    const shop = await app.$axios.$get(`/shops/${product.data.shop.slug}`)
+
+    return {
+      product: product.data,
+      shop: shop.data,
+    }
+  },
   data() {
     return {
       product: {},
@@ -74,15 +81,6 @@ export default {
       locale: 'locale',
       shopAvatar: 'shop/shopAvatar',
     }),
-  },
-  async asyncData({ params, app }) {
-    const product = await app.$axios.$get(`/products/${params.slug}`)
-    const shop = await app.$axios.$get(`/shops/${product.data.shop.slug}`)
-
-    return {
-      product: product.data,
-      shop: shop.data,
-    }
   },
   mounted() {
     this.setShop(this.shop)

@@ -121,6 +121,16 @@ export default {
     ShippingAddress,
   },
   middleware: ['authenticated'],
+  async asyncData({ app }) {
+    const addresses = await app.$axios.$get('/addresses')
+    const paymentMethods = await app.$axios.$get('/payment-methods')
+
+    return {
+      title: app.head.title,
+      addresses: addresses.data,
+      paymentMethods: paymentMethods.data,
+    }
+  },
   data() {
     return {
       form: {
@@ -186,16 +196,6 @@ export default {
     shippingMethodId() {
       this.getCart()
     },
-  },
-  async asyncData({ app }) {
-    const addresses = await app.$axios.$get('/addresses')
-    const paymentMethods = await app.$axios.$get('/payment-methods')
-
-    return {
-      title: app.head.title,
-      addresses: addresses.data,
-      paymentMethods: paymentMethods.data,
-    }
   },
   methods: {
     ...mapActions({

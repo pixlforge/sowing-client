@@ -145,6 +145,15 @@ export default {
   mixins: [theming],
   layout: 'create-product',
   middleware: ['authenticated', 'hasShop'],
+  async asyncData({ app, params }) {
+    const shop = await app.$axios.$get('/user/shop')
+    const product = await app.$axios.$get(`/products/${params.slug}`)
+
+    return {
+      shop: shop.data,
+      product: product.data,
+    }
+  },
   data() {
     return {
       form: {
@@ -194,15 +203,6 @@ export default {
         return parentCategory
       })
     },
-  },
-  async asyncData({ app, params }) {
-    const shop = await app.$axios.$get('/user/shop')
-    const product = await app.$axios.$get(`/products/${params.slug}`)
-
-    return {
-      shop: shop.data,
-      product: product.data,
-    }
   },
   mounted() {
     this.setShop(this.shop)

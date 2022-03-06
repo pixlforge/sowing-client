@@ -78,6 +78,13 @@ export default {
   },
   layout: 'account-management',
   middleware: ['authenticated'],
+  async asyncData({ app }) {
+    const paymentMethods = await app.$axios.$get('/payment-methods')
+
+    return {
+      paymentMethods: paymentMethods.data,
+    }
+  },
   data() {
     return {
       selectedPaymentMethod: {},
@@ -101,13 +108,6 @@ export default {
     ...mapGetters({
       getResourceId: 'confirmation/getResourceId',
     }),
-  },
-  async asyncData({ app }) {
-    const paymentMethods = await app.$axios.$get('/payment-methods')
-
-    return {
-      paymentMethods: paymentMethods.data,
-    }
   },
   methods: {
     ...mapActions({

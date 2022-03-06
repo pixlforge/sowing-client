@@ -58,6 +58,13 @@ export default {
     Heading,
     SubCategory,
   },
+  async asyncData({ params, app }) {
+    const res = await app.$axios.$get(`/categories/${params.slug}`)
+
+    return {
+      category: res.data,
+    }
+  },
   data() {
     return {
       category: {},
@@ -81,13 +88,6 @@ export default {
     categoryDescription() {
       return this.category.description[this.locale]
     },
-  },
-  async asyncData({ params, app }) {
-    const res = await app.$axios.$get(`/categories/${params.slug}`)
-
-    return {
-      category: res.data,
-    }
   },
 }
 </script>

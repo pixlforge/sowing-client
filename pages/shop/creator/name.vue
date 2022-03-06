@@ -74,6 +74,13 @@ export default {
     name: 'slide',
     mode: 'out-in',
   },
+  async asyncData({ app, store }) {
+    const shop = await app.$axios.$get('/user/shop')
+
+    if (shop.data) {
+      store.dispatch('shop/setShop', shop.data)
+    }
+  },
   head() {
     return {
       title: this.$t('shop_creator.steps.name.title'),
@@ -101,13 +108,6 @@ export default {
     basicInfosProvided() {
       return this.shopName
     },
-  },
-  async asyncData({ app, store }) {
-    const shop = await app.$axios.$get('/user/shop')
-
-    if (shop.data) {
-      store.dispatch('shop/setShop', shop.data)
-    }
   },
   mounted() {
     if (!this.terms) {

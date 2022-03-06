@@ -78,6 +78,13 @@ export default {
   },
   layout: 'account-management',
   middleware: ['authenticated'],
+  async asyncData({ app }) {
+    const addresses = await app.$axios.$get('/addresses')
+
+    return {
+      addresses: addresses.data,
+    }
+  },
   data() {
     return {
       addresses: [],
@@ -101,13 +108,6 @@ export default {
     ...mapGetters({
       getResourceId: 'confirmation/getResourceId',
     }),
-  },
-  async asyncData({ app }) {
-    const addresses = await app.$axios.$get('/addresses')
-
-    return {
-      addresses: addresses.data,
-    }
   },
   methods: {
     ...mapActions({

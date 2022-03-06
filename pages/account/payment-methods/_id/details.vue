@@ -121,6 +121,13 @@ export default {
   },
   layout: 'account-management',
   middleware: ['authenticated'],
+  async asyncData({ app, route }) {
+    const res = await app.$axios.$get(`/payment-methods/${route.params.id}`)
+
+    return {
+      paymentMethod: res.data,
+    }
+  },
   head() {
     return {
       title: `${this.$t('account.payment_methods.titles.show')} | ${this.$t(
@@ -145,13 +152,6 @@ export default {
       }
       return 'cc-' + this.paymentMethod.card_type_slug
     },
-  },
-  async asyncData({ app, route }) {
-    const res = await app.$axios.$get(`/payment-methods/${route.params.id}`)
-
-    return {
-      paymentMethod: res.data,
-    }
   },
   methods: {
     ...mapActions({

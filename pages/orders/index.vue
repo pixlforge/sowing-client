@@ -16,9 +16,9 @@
 </template>
 
 <script>
-import ContentSection from '@/components/globals/ContentSection'
-import Header from '@/components/headers/Header'
 import Order from '@/components/orders/Order'
+import Header from '@/components/headers/Header'
+import ContentSection from '@/components/globals/ContentSection'
 
 export default {
   components: {

@@ -14,7 +14,14 @@
       <Heading tag="h1" visual="h4" utilities="text-center">
         {{ $t('product.management.create.name_and_description_for') }}
         <span :class="`text-${shopTheme}-500`">
-          {{ form.name[locale] || $t('product.management.create.unnamed') }}
+          {{
+            form.name[locale] ||
+            form.name['en'] ||
+            form.name['fr'] ||
+            form.name['de'] ||
+            form.name['it'] ||
+            $t('product.management.create.unnamed')
+          }}
         </span>
       </Heading>
     </header>
@@ -246,6 +253,13 @@ export default {
   mixins: [theming],
   layout: 'create-product',
   middleware: ['authenticated', 'hasShop'],
+  async asyncData({ app, params }) {
+    const shop = await app.$axios.$get('/user/shop')
+
+    return {
+      shop: shop.data,
+    }
+  },
   data() {
     return {
       form: {
@@ -289,13 +303,6 @@ export default {
       categories: 'categories',
       locale: 'locale',
     }),
-  },
-  async asyncData({ app, params }) {
-    const shop = await app.$axios.$get('/user/shop')
-
-    return {
-      shop: shop.data,
-    }
   },
   mounted() {
     this.setShop(this.shop)

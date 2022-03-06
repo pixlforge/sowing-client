@@ -74,6 +74,13 @@ export default {
     name: 'slide',
     mode: 'out-in',
   },
+  async asyncData({ app }) {
+    const countries = await app.$axios.$get('/countries')
+
+    return {
+      countries: countries.data,
+    }
+  },
   data() {
     return {
       countries: [],
@@ -112,13 +119,6 @@ export default {
     basicInfosProvided() {
       return this.shopPostalCode && this.shopCity && this.shopCountryId
     },
-  },
-  async asyncData({ app }) {
-    const countries = await app.$axios.$get('/countries')
-
-    return {
-      countries: countries.data,
-    }
   },
   mounted() {
     if (!this.terms) {

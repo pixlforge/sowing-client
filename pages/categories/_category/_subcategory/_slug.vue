@@ -48,18 +48,5 @@ export default {
       locale: 'locale',
     }),
   },
-  async asyncData({ app, params }) {
-    const subcategory = await app.$axios.$get(
-      `/categories/${params.subcategory}`
-    )
-    const products = await app.$axios.$get(
-      `/products?category=${params.subcategory}`
-    )
-
-    return {
-      subcategory: subcategory.data,
-      products: products.data,
-    }
-  },
 }
 </script>

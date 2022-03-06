@@ -125,6 +125,13 @@ export default {
     StreakNewsletter,
     StreakRegister,
   },
+  async asyncData({ app }) {
+    const featuredCategories = await app.$axios.$get('/categories/featured')
+
+    return {
+      featuredCategories: featuredCategories.data,
+    }
+  },
   data() {
     return {
       reviews: [
@@ -203,13 +210,6 @@ export default {
       locale: 'locale',
       categories: 'categories',
     }),
-  },
-  async asyncData({ app }) {
-    const featuredCategories = await app.$axios.$get('/categories/featured')
-
-    return {
-      featuredCategories: featuredCategories.data,
-    }
   },
 }
 </script>

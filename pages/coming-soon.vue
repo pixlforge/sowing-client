@@ -82,7 +82,7 @@
         />
 
         <ul
-          class="w-full sm:w-1/2 text-16 md:text-18 text-left px-16 sm:px-36 sm:px-0 sm:pl-20 md:pl-36"
+          class="w-full sm:w-1/2 text-16 md:text-18 text-left px-16 sm:px-0 sm:pl-20 md:pl-36"
         >
           <li class="flex items-center my-20">
             <font-awesome-icon

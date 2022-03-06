@@ -26,10 +26,12 @@
         {{ $t('shop_details.welcome') }}
       </Heading>
 
+      <!-- eslint-disable vue/no-v-html -->
       <p
         class="max-w-600 text-16 leading-loose text-center mx-auto my-36 md:my-72 mt-72 sm:mt-132"
         v-html="shop.description_long[locale]"
       />
+      <!-- eslint-enable vue/no-v-html -->
     </ContentSection>
 
     <!-- Additional images -->
@@ -92,6 +94,14 @@ export default {
     StreakRegister,
   },
   mixins: [theming],
+  async asyncData({ app, route }) {
+    const shop = await app.$axios.$get(`/shops/${route.params.slug}`)
+
+    return {
+      title: app.head.title,
+      shop: shop.data,
+    }
+  },
   data() {
     return {
       shop: {},
@@ -115,14 +125,6 @@ export default {
     imgAlt() {
       return this.$t('product.img.alt')
     },
-  },
-  async asyncData({ app, route }) {
-    const shop = await app.$axios.$get(`/shops/${route.params.slug}`)
-
-    return {
-      title: app.head.title,
-      shop: shop.data,
-    }
   },
   mounted() {
     this.setShop(this.shop)
