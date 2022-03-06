@@ -109,7 +109,7 @@
     <!-- Footer -->
     <Footer />
 
-    <!-- Disclaimer -->
+    <!-- FooterDisclaimer -->
     <FooterDisclaimer :class="bgTheme" />
   </div>
 </template>
@@ -121,7 +121,7 @@ import theming from '@/mixins/theming'
 import Alert from '@/components/globals/Alert'
 import ButtonLinkPrimary from '@/components/buttons/ButtonLinkPrimary'
 import ContentSection from '@/components/globals/ContentSection'
-import Disclaimer from '@/components/footer/Disclaimer'
+import FooterDisclaimer from '@/components/footer/FooterDisclaimer'
 import Footer from '@/components/footer/Footer'
 import Header from '@/components/headers/Header'
 import HeaderList from '@/components/headers/HeaderList'
@@ -138,7 +138,7 @@ export default {
     Alert,
     ButtonLinkPrimary,
     ContentSection,
-    Disclaimer,
+    FooterDisclaimer,
     Footer,
     Header,
     HeaderList,

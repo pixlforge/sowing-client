@@ -27,7 +27,7 @@
     <!-- Footer -->
     <Footer />
 
-    <!-- Disclaimer -->
+    <!-- FooterDisclaimer -->
     <FooterDisclaimer :class="bgTheme" />
   </div>
 </template>
@@ -38,7 +38,7 @@ import theming from '@/mixins/theming'
 
 import Alert from '@/components/globals/Alert'
 import CategoryBar from '@/components/categories/CategoryBar'
-import Disclaimer from '@/components/footer/Disclaimer'
+import FooterDisclaimer from '@/components/footer/FooterDisclaimer'
 import Footer from '@/components/footer/Footer'
 import Header from '@/components/headers/Header'
 import Navbar from '@/components/globals/Navbar'
@@ -49,7 +49,7 @@ export default {
   components: {
     Alert,
     CategoryBar,
-    Disclaimer,
+    FooterDisclaimer,
     Footer,
     Header,
     Navbar,

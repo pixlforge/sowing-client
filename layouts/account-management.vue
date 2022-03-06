@@ -59,7 +59,7 @@
     <!-- Footer -->
     <Footer />
 
-    <!-- Disclaimer -->
+    <!-- FooterDisclaimer -->
     <FooterDisclaimer />
   </div>
 </template>
@@ -67,7 +67,7 @@
 <script>
 import Alert from '@/components/globals/Alert'
 import ContentSection from '@/components/globals/ContentSection'
-import Disclaimer from '@/components/footer/Disclaimer'
+import FooterDisclaimer from '@/components/footer/FooterDisclaimer'
 import Footer from '@/components/footer/Footer'
 import Header from '@/components/headers/Header'
 import Navbar from '@/components/globals/Navbar'
@@ -79,7 +79,7 @@ export default {
   components: {
     Alert,
     ContentSection,
-    Disclaimer,
+    FooterDisclaimer,
     Footer,
     Header,
     Navbar,
