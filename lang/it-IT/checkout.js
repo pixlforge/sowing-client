@@ -10,6 +10,6 @@ export default {
     payment: 'Pagamento',
     subtotal: 'Totale parziale',
     title: 'Checkout',
-    total: 'Totale'
-  }
+    total: 'Totale',
+  },
 }

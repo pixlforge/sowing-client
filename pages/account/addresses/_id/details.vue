@@ -2,28 +2,21 @@
   <div>
     <header class="flex flex-col sm:flex-row justify-between">
       <div class="flex items-center">
-
         <!-- Back -->
-        <ButtonBack
-          :route="{ name: 'account-addresses' }"
-          class="mr-20"
-        />
+        <ButtonBack :route="{ name: 'account-addresses' }" class="mr-20" />
 
         <!-- Page title -->
-        <Heading
-          tag="h1"
-          visual="h2"
-        >
+        <Heading tag="h1" visual="h2">
           {{ $t('account.addresses.titles.show') }}
         </Heading>
       </div>
 
       <!-- Delete -->
-      <ButtonDelete @click.native="openModal"/>
+      <ButtonDelete @click.native="openModal" />
     </header>
 
     <Card>
-      <AddressCard :address="address"/>
+      <AddressCard :address="address" />
     </Card>
 
     <!-- Confirmation modal -->
@@ -31,12 +24,11 @@
       :title="$t('modals.addresses.delete.title')"
       :body="$t('modals.addresses.delete.body')"
       :button-label="$t('button.delete')"
-      @confirm="destroy"
       button-icon="trash-alt"
       icon="exclamation-circle"
       color="red"
+      @confirm="destroy"
     />
-
   </div>
 </template>
 
@@ -57,39 +49,41 @@ export default {
     ButtonDelete,
     Card,
     ConfirmationModal,
-    Heading
+    Heading,
   },
   layout: 'account-management',
   middleware: ['authenticated'],
-  head() {
+  async asyncData({ app, params }) {
+    const res = await app.$axios.$get(`/addresses/${params.id}`)
+
     return {
-      title: `${this.$t('account.addresses.titles.show')} | ${this.$t('account.title')}`,
-      meta: [
-        {
-          hid: 'robots',
-          name: 'robots',
-          content: 'noindex'
-        }
-      ]
+      address: res.data,
     }
   },
   data() {
     return {
       address: {},
-      errors: {}
+      errors: {},
     }
   },
-  async asyncData({ app, params }) {
-    const res = await app.$axios.$get(`/addresses/${params.id}`)
-
+  head() {
     return {
-      address: res.data
+      title: `${this.$t('account.addresses.titles.show')} | ${this.$t(
+        'account.title'
+      )}`,
+      meta: [
+        {
+          hid: 'robots',
+          name: 'robots',
+          content: 'noindex',
+        },
+      ],
     }
   },
   methods: {
     ...mapActions({
       openModal: 'confirmation/openModal',
-      closeModal: 'confirmation/closeModal'
+      closeModal: 'confirmation/closeModal',
     }),
     async destroy() {
       try {
@@ -100,7 +94,7 @@ export default {
         this.$toast.error(this.$t('toasts.general_error'))
       }
       this.closeModal()
-    }
-  }
+    },
+  },
 }
 </script>

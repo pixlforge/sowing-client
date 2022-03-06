@@ -6,7 +6,8 @@
         class="w-1/2 flex items-center px-20 mt-48"
       >
         <p class="text-16 text-center leading-relaxed">
-          Aucun moyen de paiement n'est associé à votre compte pour le moment.<br>
+          Aucun moyen de paiement n'est associé à votre compte pour le
+          moment.<br />
           Cliquez sur le bouton pour ajouter votre première carte de crédit.
         </p>
       </li>
@@ -25,7 +26,7 @@
         <!-- eslint-enable -->
       </li>
       <li class="w-1/2 px-20 mt-48">
-        <PaymentMethodCreator @payment-method:added="addPaymentMethod"/>
+        <PaymentMethodCreator @payment-method:added="addPaymentMethod" />
       </li>
     </ul>
   </div>
@@ -43,25 +44,25 @@ export default {
     'american-express': CardAmex,
     mastercard: CardMasterCard,
     visa: CardVisa,
-    PaymentMethodCreator
+    PaymentMethodCreator,
     /* eslint-enable */
   },
   props: {
     paymentMethods: {
       type: Array,
-      required: true
-    }
+      required: true,
+    },
   },
   data() {
     return {
       currentPaymentMethods: this.paymentMethods,
-      selectedPaymentMethod: {}
+      selectedPaymentMethod: {},
     }
   },
   computed: {
     defaultPaymentMethod() {
-      return this.currentPaymentMethods.find(method => method.is_default)
-    }
+      return this.currentPaymentMethods.find((method) => method.is_default)
+    },
   },
   created() {
     if (this.paymentMethods.length) {
@@ -76,7 +77,7 @@ export default {
     switchPaymentMethod(method) {
       this.selectedPaymentMethod = method
       this.$emit('input', this.selectedPaymentMethod.id)
-    }
-  }
+    },
+  },
 }
 </script>

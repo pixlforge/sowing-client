@@ -1,11 +1,7 @@
 <template>
   <main>
-
     <!-- Header -->
-    <Header
-      :title="$t('verify.title')"
-      icon="shield-check"
-    />
+    <Header :title="$t('verify.title')" icon="shield-check" />
 
     <!-- Verification successful -->
     <template v-if="verificationSuccessful">
@@ -16,10 +12,7 @@
         class="max-w-800"
       >
         <template slot="illustration">
-          <img
-            :alt="$t('verify.success')"
-            src="~assets/img/success2.svg"
-          >
+          <img :alt="$t('verify.success')" src="~assets/img/success2.svg" />
         </template>
       </Splash>
     </template>
@@ -33,14 +26,10 @@
         class="max-w-800"
       >
         <template slot="illustration">
-          <img
-            :alt="$t('verify.fail')"
-            src="~assets/img/warning.svg"
-          >
+          <img :alt="$t('verify.fail')" src="~assets/img/warning.svg" />
         </template>
       </Splash>
     </template>
-
   </main>
 </template>
 
@@ -51,9 +40,16 @@ import Splash from '@/components/globals/Splash'
 export default {
   components: {
     Header,
-    Splash
+    Splash,
   },
   middleware: ['authenticated'],
+  data() {
+    return {
+      tried: false,
+      verified: false,
+      error: null,
+    }
+  },
   head() {
     return {
       title: this.$t('verify.title'),
@@ -61,21 +57,14 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: ''
+          content: '',
         },
         {
           hid: 'robots',
           name: 'robots',
-          content: 'noindex'
-        }
-      ]
-    }
-  },
-  data() {
-    return {
-      tried: false,
-      verified: false,
-      error: null
+          content: 'noindex',
+        },
+      ],
     }
   },
   computed: {
@@ -84,7 +73,7 @@ export default {
     },
     verificationFailed() {
       return this.tried && !this.verified
-    }
+    },
   },
   mounted() {
     this.verifyEmailAddress()
@@ -107,7 +96,7 @@ export default {
       }
 
       this.tried = true
-    }
-  }
+    },
+  },
 }
 </script>

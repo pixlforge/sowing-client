@@ -4,10 +4,7 @@
     :class="`${iconSize}`"
     class="text-gray-300 hover:text-red-500 transition-colors duration-200 ease-out"
   >
-    <font-awesome-icon
-      :icon="['far', 'trash-alt']"
-      class=""
-    />
+    <font-awesome-icon :icon="['far', 'trash-alt']" class="" />
   </button>
 </template>
 
@@ -19,8 +16,8 @@ export default {
       required: false,
       default() {
         return 'text-20'
-      }
-    }
-  }
+      },
+    },
+  },
 }
 </script>

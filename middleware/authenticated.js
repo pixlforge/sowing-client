@@ -3,8 +3,8 @@ export default function ({ app, redirect, route }) {
     return redirect({
       name: 'auth-login',
       query: {
-        redirect: route.fullPath
-      }
+        redirect: route.fullPath,
+      },
     })
   }
 }

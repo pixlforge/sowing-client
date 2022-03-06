@@ -1,13 +1,9 @@
 <template>
   <div>
     <ResourceHeader>
-
       <!-- Page title -->
-      <Heading
-        tag="h1"
-        visual="h1"
-      >
-        {{ $t("account.payment_methods.titles.index") }}
+      <Heading tag="h1" visual="h1">
+        {{ $t('account.payment_methods.titles.index') }}
       </Heading>
 
       <!-- Add a payment method -->
@@ -19,7 +15,6 @@
     </ResourceHeader>
 
     <Card>
-
       <!-- Payment methods -->
       <ResourceList v-if="paymentMethods.length">
         <PaymentMethodItem
@@ -30,10 +25,7 @@
       </ResourceList>
 
       <!-- No payment method found -->
-      <div
-        v-else
-        class="text-center"
-      >
+      <div v-else class="text-center">
         <Paragraph class="text-center mb-60">
           {{ $t('account.payment_methods.no_payment_method_found') }}
         </Paragraph>
@@ -51,12 +43,11 @@
       :title="$t('modals.payment_methods.delete.title')"
       :body="$t('modals.payment_methods.delete.body')"
       :button-label="$t('button.delete')"
-      @confirm="destroy"
       button-icon="trash-alt"
       icon="exclamation-circle"
       color="red"
+      @confirm="destroy"
     />
-
   </div>
 </template>
 
@@ -83,42 +74,44 @@ export default {
     Paragraph,
     PaymentMethodItem,
     ResourceHeader,
-    ResourceList
+    ResourceList,
   },
-  middleware: ['authenticated'],
   layout: 'account-management',
+  middleware: ['authenticated'],
+  data() {
+    return {
+      selectedPaymentMethod: {},
+    }
+  },
   head() {
     return {
-      title: `${this.$t('account.payment_methods.titles.index')} | ${this.$t('account.title')}`,
+      title: `${this.$t('account.payment_methods.titles.index')} | ${this.$t(
+        'account.title'
+      )}`,
       meta: [
         {
           hid: 'robots',
           name: 'robots',
-          content: 'noindex'
-        }
-      ]
-    }
-  },
-  data() {
-    return {
-      selectedPaymentMethod: {}
+          content: 'noindex',
+        },
+      ],
     }
   },
   computed: {
     ...mapGetters({
-      getResourceId: 'confirmation/getResourceId'
-    })
+      getResourceId: 'confirmation/getResourceId',
+    }),
   },
   async asyncData({ app }) {
     const paymentMethods = await app.$axios.$get('/payment-methods')
 
     return {
-      paymentMethods: paymentMethods.data
+      paymentMethods: paymentMethods.data,
     }
   },
   methods: {
     ...mapActions({
-      closeModal: 'confirmation/closeModal'
+      closeModal: 'confirmation/closeModal',
     }),
     async destroy() {
       try {
@@ -133,7 +126,7 @@ export default {
     async getPaymentMethods() {
       const res = await this.$axios.$get('/payment-methods')
       this.paymentMethods = res.data
-    }
-  }
+    },
+  },
 }
 </script>

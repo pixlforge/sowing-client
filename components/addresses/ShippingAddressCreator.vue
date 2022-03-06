@@ -1,11 +1,10 @@
 <template>
   <div class="mt-20">
     <form @submit.prevent="store">
-
       <!-- First name -->
       <FormGroup tight>
         <FormLabel name="first_name">
-          {{ $t("form.first_name.label") }}
+          {{ $t('form.first_name.label') }}
         </FormLabel>
         <FormInput
           v-model="form.first_name"
@@ -13,16 +12,13 @@
           name="first_name"
           theme="light"
         />
-        <FormValidation
-          :errors="errors"
-          name="first_name"
-        />
+        <FormValidation :errors="errors" name="first_name" />
       </FormGroup>
 
       <!-- Last name -->
       <FormGroup tight>
         <FormLabel name="last_name">
-          {{ $t("form.last_name.label") }}
+          {{ $t('form.last_name.label') }}
         </FormLabel>
         <FormInput
           v-model="form.last_name"
@@ -30,16 +26,13 @@
           name="last_name"
           theme="light"
         />
-        <FormValidation
-          :errors="errors"
-          name="last_name"
-        />
+        <FormValidation :errors="errors" name="last_name" />
       </FormGroup>
 
       <!-- Company name -->
       <FormGroup tight>
         <FormLabel name="company_name">
-          {{ $t("form.company_name.label") }}
+          {{ $t('form.company_name.label') }}
         </FormLabel>
         <FormInput
           v-model="form.company_name"
@@ -47,16 +40,13 @@
           name="company_name"
           theme="light"
         />
-        <FormValidation
-          :errors="errors"
-          name="company_name"
-        />
+        <FormValidation :errors="errors" name="company_name" />
       </FormGroup>
 
       <!-- Address line 1 -->
       <FormGroup tight>
         <FormLabel name="address_line_1">
-          {{ $t("form.address_line_1.label") }}
+          {{ $t('form.address_line_1.label') }}
         </FormLabel>
         <FormInput
           v-model="form.address_line_1"
@@ -64,16 +54,13 @@
           name="address_line_1"
           theme="light"
         />
-        <FormValidation
-          :errors="errors"
-          name="address_line_1"
-        />
+        <FormValidation :errors="errors" name="address_line_1" />
       </FormGroup>
 
       <!-- Address line 2 -->
       <FormGroup tight>
         <FormLabel name="address_line_2">
-          {{ $t("form.address_line_2.label") }}
+          {{ $t('form.address_line_2.label') }}
         </FormLabel>
         <FormInput
           v-model="form.address_line_2"
@@ -81,16 +68,13 @@
           name="address_line_2"
           theme="light"
         />
-        <FormValidation
-          :errors="errors"
-          name="address_line_2"
-        />
+        <FormValidation :errors="errors" name="address_line_2" />
       </FormGroup>
 
       <!-- Postal code -->
       <FormGroup tight>
         <FormLabel name="postal_code">
-          {{ $t("form.postal_code.label") }}
+          {{ $t('form.postal_code.label') }}
         </FormLabel>
         <FormInput
           v-model="form.postal_code"
@@ -98,16 +82,13 @@
           name="postal_code"
           theme="light"
         />
-        <FormValidation
-          :errors="errors"
-          name="postal_code"
-        />
+        <FormValidation :errors="errors" name="postal_code" />
       </FormGroup>
 
       <!-- City -->
       <FormGroup tight>
         <FormLabel name="city">
-          {{ $t("form.city.label") }}
+          {{ $t('form.city.label') }}
         </FormLabel>
         <FormInput
           v-model="form.city"
@@ -115,38 +96,24 @@
           name="city"
           theme="light"
         />
-        <FormValidation
-          :errors="errors"
-          name="city"
-        />
+        <FormValidation :errors="errors" name="city" />
       </FormGroup>
 
       <!-- Country -->
       <FormGroup tight>
-        <CountryDropdown
-          v-model="form.country_id"
-          :errors="errors"
-        />
+        <CountryDropdown v-model="form.country_id" :errors="errors" />
       </FormGroup>
 
       <!-- Controls -->
       <FormGroup>
-
         <!-- Submit -->
-        <ButtonPrimary
-          icon="check"
-          type="submit"
-          class="w-full mt-20"
-        >
-          {{ $t("button.create") }}
+        <ButtonPrimary icon="check" type="submit" class="w-full mt-20">
+          {{ $t('button.create') }}
         </ButtonPrimary>
 
         <!-- Close -->
-        <ButtonTertiary
-          @click.native="closeAddressCreator"
-          class="w-full"
-        >
-          {{ $t("button.cancel") }}
+        <ButtonTertiary class="w-full" @click.native="closeAddressCreator">
+          {{ $t('button.cancel') }}
         </ButtonTertiary>
       </FormGroup>
     </form>
@@ -172,7 +139,7 @@ export default {
     FormGroup,
     FormLabel,
     FormInput,
-    FormValidation
+    FormValidation,
   },
   data() {
     return {
@@ -185,14 +152,14 @@ export default {
         postal_code: '',
         city: '',
         country_id: '',
-        is_default: true
+        is_default: true,
       },
-      errors: {}
+      errors: {},
     }
   },
   methods: {
     ...mapActions({
-      closeAddressCreator: 'checkout/closeAddressCreator'
+      closeAddressCreator: 'checkout/closeAddressCreator',
     }),
     async store() {
       try {
@@ -202,7 +169,7 @@ export default {
         this.$toast.error(this.$t('toasts.validation'))
         this.errors = e.response.data.errors
       }
-    }
-  }
+    },
+  },
 }
 </script>

@@ -1,32 +1,21 @@
 <template>
   <main>
-
     <!-- Header -->
-    <Header
-      :title="categoryName"
-      :description="categoryDescription"
-    />
+    <Header :title="categoryName" :description="categoryDescription" />
 
     <!-- Content -->
     <ContentSection>
-
       <!-- Subcategories with sections -->
       <template v-if="categoryHasSections">
-        <div
-          v-for="section in category.children"
-          :key="section.id"
-        >
-
+        <div v-for="section in category.children" :key="section.id">
           <!-- Section name -->
-          <Heading
-            tag="h1"
-            visual="main"
-          >
+          <Heading tag="h1" visual="main">
             {{ section.name[locale] }}
           </Heading>
 
-          <div class="flex flex-wrap justify-center -mx-16 mb-96 md:mb-132 lg:mb-196">
-
+          <div
+            class="flex flex-wrap justify-center -mx-16 mb-96 md:mb-132 lg:mb-196"
+          >
             <!-- Subcategory -->
             <SubCategory
               v-for="subcategory in section.children"
@@ -41,7 +30,6 @@
       <!-- Subcategories without sections -->
       <template v-else>
         <div class="flex flex-wrap justify-center sm:-mx-36 mt-96">
-
           <!-- Subcategory -->
           <SubCategory
             v-for="subcategory in category.children"
@@ -52,7 +40,6 @@
         </div>
       </template>
     </ContentSection>
-
   </main>
 </template>
 
@@ -69,21 +56,21 @@ export default {
     ContentSection,
     Header,
     Heading,
-    SubCategory
-  },
-  head() {
-    return {
-      title: this.category.name[this.locale]
-    }
+    SubCategory,
   },
   data() {
     return {
-      category: {}
+      category: {},
+    }
+  },
+  head() {
+    return {
+      title: this.category.name[this.locale],
     }
   },
   computed: {
     ...mapGetters({
-      locale: 'locale'
+      locale: 'locale',
     }),
     categoryHasSections() {
       return this.category.children[0].is_section
@@ -93,14 +80,14 @@ export default {
     },
     categoryDescription() {
       return this.category.description[this.locale]
-    }
+    },
   },
   async asyncData({ params, app }) {
     const res = await app.$axios.$get(`/categories/${params.slug}`)
 
     return {
-      category: res.data
+      category: res.data,
     }
-  }
+  },
 }
 </script>

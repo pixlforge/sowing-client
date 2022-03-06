@@ -4,7 +4,7 @@
     :title="$t('button.back')"
     class="text-20 text-gray-300 hover:text-gray-400"
   >
-    <font-awesome-icon :icon="['far', 'arrow-alt-circle-left']"/>
+    <font-awesome-icon :icon="['far', 'arrow-alt-circle-left']" />
   </nuxt-link>
 </template>
 
@@ -13,8 +13,8 @@ export default {
   props: {
     route: {
       type: Object,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 }
 </script>

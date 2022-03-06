@@ -3,7 +3,7 @@ export default {
     title: 'Log in to your Sowing account',
     links: {
       password: 'Password forgotten?',
-      register: 'Register a Sowing account'
-    }
-  }
+      register: 'Register a Sowing account',
+    },
+  },
 }

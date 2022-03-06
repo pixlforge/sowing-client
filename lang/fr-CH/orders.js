@@ -5,7 +5,7 @@ export default {
       completed: 'Terminé',
       pending: 'En attente',
       processing: 'Traitement',
-      payment_failed: 'Paiement a échoué'
-    }
-  }
+      payment_failed: 'Paiement a échoué',
+    },
+  },
 }

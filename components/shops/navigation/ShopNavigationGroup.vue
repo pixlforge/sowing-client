@@ -2,11 +2,11 @@
   <div
     :class="{
       'flex-grow': !last,
-      'flex-initial': last
+      'flex-initial': last,
     }"
     class="relative flex items-center"
   >
-    <slot/>
+    <slot />
   </div>
 </template>
 
@@ -16,8 +16,8 @@ export default {
     last: {
       type: Boolean,
       required: false,
-      default: false
-    }
-  }
+      default: false,
+    },
+  },
 }
 </script>

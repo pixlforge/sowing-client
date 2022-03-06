@@ -1,7 +1,6 @@
 <template>
   <footer class="bg-white">
     <div class="container flex flex-wrap pb-96">
-
       <!-- Categories -->
       <FooterColumn :title="$t('footer.titles.categories')">
         <FooterItem
@@ -10,8 +9,8 @@
           :to="{
             name: 'categories-slug',
             params: {
-              slug: category.slug
-            }
+              slug: category.slug,
+            },
           }"
           :label="category.name[locale]"
         />
@@ -39,10 +38,7 @@
 
       <!-- About -->
       <FooterColumn :title="$t('footer.titles.about')">
-        <FooterItem
-          :to="{ name: 'index' }"
-          :label="$t('footer.links.terms')"
-        />
+        <FooterItem :to="{ name: 'index' }" :label="$t('footer.links.terms')" />
         <FooterItem
           :to="{ name: 'index' }"
           :label="$t('footer.links.payments')"
@@ -51,10 +47,7 @@
           :to="{ name: 'index' }"
           :label="$t('footer.links.shipments')"
         />
-        <FooterItem
-          :to="{ name: 'faq' }"
-          :label="$t('footer.links.faq')"
-        />
+        <FooterItem :to="{ name: 'faq' }" :label="$t('footer.links.faq')" />
       </FooterColumn>
 
       <!-- Languages -->
@@ -80,7 +73,6 @@
           label="Instagram"
         />
       </FooterColumn>
-
     </div>
   </footer>
 </template>
@@ -98,16 +90,13 @@ export default {
   components: {
     FooterColumn,
     FooterItem,
-    FooterItemSocial
+    FooterItemSocial,
   },
-  mixins: [
-    theming,
-    locales
-  ],
+  mixins: [theming, locales],
   computed: {
     ...mapGetters({
-      categories: 'categories'
-    })
-  }
+      categories: 'categories',
+    }),
+  },
 }
 </script>

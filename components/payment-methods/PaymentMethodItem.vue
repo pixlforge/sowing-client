@@ -1,6 +1,5 @@
 <template>
   <ResourceListItem>
-
     <!-- Controls -->
     <div
       ref="controls"
@@ -8,14 +7,13 @@
       class="absolute w-0 h-full bg-white rounded-lg flex justify-center items-center -mx-20 origin-left transition-all transition-medium z-10"
     >
       <template v-if="controlsOpen">
-
         <!-- View -->
         <ButtonView
           :route="{
             name: 'account-payment-methods-id-details',
             params: {
-              id: paymentMethod.id
-            }
+              id: paymentMethod.id,
+            },
           }"
         />
 
@@ -24,19 +22,18 @@
           :route="{
             name: 'account-payment-methods-id-edit',
             params: {
-              id: paymentMethod.id
-            }
+              id: paymentMethod.id,
+            },
           }"
         />
 
         <!-- Delete -->
-        <ButtonDelete @click.native="confirmDelete"/>
+        <ButtonDelete @click.native="confirmDelete" />
       </template>
     </div>
 
     <!-- Content -->
     <div class="w-full flex items-center text-center">
-
       <!-- Card type icon -->
       <div class="hidden md:block md:w-1/12">
         <font-awesome-icon
@@ -71,7 +68,9 @@
             :title="$t('account.payment_methods.is_default')"
             class="text-14 text-orange-400"
           />
-          <div class="absolute top-0 bg-white rounded-lg shadow-lg invisible group-hover:visible text-12 px-20 py-12 -mx-72 -mt-72">
+          <div
+            class="absolute top-0 bg-white rounded-lg shadow-lg invisible group-hover:visible text-12 px-20 py-12 -mx-72 -mt-72"
+          >
             {{ $t('account.payment_methods.is_default') }}
           </div>
         </div>
@@ -79,10 +78,9 @@
 
       <!-- Controls button -->
       <div class="w-1/6 md:w-1/12 flex justify-end">
-        <ButtonResourceControls @click.native="controlsOpen = !controlsOpen"/>
+        <ButtonResourceControls @click.native="controlsOpen = !controlsOpen" />
       </div>
     </div>
-
   </ResourceListItem>
 </template>
 
@@ -101,17 +99,17 @@ export default {
     ButtonEdit,
     ButtonResourceControls,
     ButtonView,
-    ResourceListItem
+    ResourceListItem,
   },
   props: {
     paymentMethod: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
   data() {
     return {
-      controlsOpen: false
+      controlsOpen: false,
     }
   },
   computed: {
@@ -120,7 +118,7 @@ export default {
         return 'cc-amex'
       }
       return 'cc-' + this.paymentMethod.card_type_slug
-    }
+    },
   },
   mounted() {
     const escapeHandler = (event) => {
@@ -146,12 +144,12 @@ export default {
   },
   methods: {
     ...mapActions({
-      openModal: 'confirmation/openModal'
+      openModal: 'confirmation/openModal',
     }),
     confirmDelete() {
       this.openModal(this.paymentMethod.id)
       this.controlsOpen = false
-    }
-  }
+    },
+  },
 }
 </script>

@@ -1,9 +1,14 @@
 <template>
-  <div class="max-w-400 sm:max-w-600 rounded-lg shadow-lg border border-gray-200 flex flex-col sm:flex-row mx-auto lg:mx-0">
-
+  <div
+    class="max-w-400 sm:max-w-600 rounded-lg shadow-lg border border-gray-200 flex flex-col sm:flex-row mx-auto lg:mx-0"
+  >
     <!-- Icon -->
-    <div class="w-full sm:w-1/4 bg-gray-200 flex justify-center items-center py-20 sm:py-0">
-      <div class="w-60 sm:w-90 h-60 sm:h-90 bg-white rounded-full flex justify-center items-center">
+    <div
+      class="w-full sm:w-1/4 bg-gray-200 flex justify-center items-center py-20 sm:py-0"
+    >
+      <div
+        class="w-60 sm:w-90 h-60 sm:h-90 bg-white rounded-full flex justify-center items-center"
+      >
         <font-awesome-icon
           :icon="['fas', 'mailbox']"
           class="text-24 sm:text-36 text-gray-200"
@@ -22,8 +27,12 @@
             class="text-blue-500 ml-10"
           />
 
-          <div class="absolute top-0 left-0 sm:left-auto w-auto invisible group-hover:visible">
-            <div class="opacity-0 group-hover:opacity-100 transition-opacity transition-medium bg-blue-500 rounded-lg shadow-lg text-12 text-white text-center sm:whitespace-no-wrap px-20 py-10 -mt-60 sm:-mt-48">
+          <div
+            class="absolute top-0 left-0 sm:left-auto w-auto invisible group-hover:visible"
+          >
+            <div
+              class="opacity-0 group-hover:opacity-100 transition-opacity transition-medium bg-blue-500 rounded-lg shadow-lg text-12 text-white text-center sm:whitespace-no-wrap px-20 py-10 -mt-60 sm:-mt-48"
+            >
               {{ $t('account.addresses.is_default') }}
             </div>
           </div>
@@ -39,10 +48,10 @@
         {{ address.address_line_2 }}
       </li>
       <li class="text-14 sm:text-16">
-        {{ address.country.code }} &ndash; {{ address.postal_code }} {{ address.city }} ({{ address.country.name[locale] }})
+        {{ address.country.code }} &ndash; {{ address.postal_code }}
+        {{ address.city }} ({{ address.country.name[locale] }})
       </li>
     </ul>
-
   </div>
 </template>
 
@@ -53,13 +62,13 @@ export default {
   props: {
     address: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
   computed: {
     ...mapGetters({
-      locale: 'locale'
-    })
-  }
+      locale: 'locale',
+    }),
+  },
 }
 </script>

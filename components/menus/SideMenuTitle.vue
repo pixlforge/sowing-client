@@ -3,7 +3,7 @@
     :class="`text-${shopTheme}-400`"
     class="text-12 font-extrabold uppercase tracking-wide select-none mb-10 mt-20"
   >
-    <slot/>
+    <slot />
   </h2>
 </template>
 
@@ -11,6 +11,6 @@
 import theming from '@/mixins/theming'
 
 export default {
-  mixins: [theming]
+  mixins: [theming],
 }
 </script>

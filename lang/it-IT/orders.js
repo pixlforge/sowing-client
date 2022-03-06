@@ -5,7 +5,7 @@ export default {
       completed: 'Completato',
       pending: 'In sospeso',
       processing: 'Trattamento',
-      payment_failed: 'Pagamento fallito'
-    }
-  }
+      payment_failed: 'Pagamento fallito',
+    },
+  },
 }

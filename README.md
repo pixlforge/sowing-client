@@ -4,7 +4,7 @@
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 $ npm install
 
@@ -26,6 +26,6 @@ For detailed explanation on how things work, checkout [Nuxt.js docs](https://nux
 ### December 2018
 
 - Le panier est maintenant vidé lorsque l'utilisateur se déconnecte
-- La police *Source Sans Pro* est maintenant chargée de manière plus efficace à l'aide de Nuxt Webfont Loader
+- La police _Source Sans Pro_ est maintenant chargée de manière plus efficace à l'aide de Nuxt Webfont Loader
 - Installation du module Google Analytics
 - Normalisation des tailles de police

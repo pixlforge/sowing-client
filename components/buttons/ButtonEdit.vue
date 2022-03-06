@@ -4,7 +4,7 @@
     :title="$t('button.edit')"
     class="text-20 text-gray-300 hover:text-gray-500 mr-20"
   >
-    <font-awesome-icon :icon="['far', 'edit']"/>
+    <font-awesome-icon :icon="['far', 'edit']" />
   </nuxt-link>
 </template>
 
@@ -13,8 +13,8 @@ export default {
   props: {
     route: {
       type: Object,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 }
 </script>

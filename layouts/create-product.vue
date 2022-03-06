@@ -1,8 +1,8 @@
 <template>
   <div class="min-h-screen flex flex-col bg-white pt-36">
     <main class="py-36">
-      <LogoLink :to="{ name: 'shop-management-products' }"/>
-      <Nuxt/>
+      <LogoLink :to="{ name: 'shop-management-products' }" />
+      <Nuxt />
     </main>
   </div>
 </template>
@@ -12,7 +12,7 @@ import LogoLink from '@/components/globals/LogoLink'
 
 export default {
   components: {
-    LogoLink
-  }
+    LogoLink,
+  },
 }
 </script>

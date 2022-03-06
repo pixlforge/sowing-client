@@ -1,15 +1,10 @@
 <template>
   <main>
-
     <!-- Header -->
-    <Header
-      :title="pageTitle"
-      icon="shopping-cart"
-    />
+    <Header :title="pageTitle" icon="shopping-cart" />
 
     <!-- Page contents -->
     <ContentSection>
-
       <!-- Cart Overview -->
       <div>
         <template v-if="product.length">
@@ -20,7 +15,6 @@
           />
         </template>
         <div v-else>
-
           <Splash
             :title="$t('cart.cart_is_empty')"
             :subtitle="$t('cart.add_something')"
@@ -30,10 +24,9 @@
               <img
                 src="~assets/img/empty.svg"
                 alt="Illustration of an empty box"
-              >
+              />
             </template>
           </Splash>
-
         </div>
       </div>
 
@@ -41,12 +34,12 @@
         v-if="product.length"
         class="text-24 font-semibold text-center mt-96"
       >
-        {{ $t("cart.in_your_cart") }}
+        {{ $t('cart.in_your_cart') }}
         <span class="text-green-500">
           {{ product.length }}
         </span>
-        {{ $t("cart.products") }}
-        {{ $t("cart.for") }}
+        {{ $t('cart.products') }}
+        {{ $t('cart.for') }}
         {{ subtotal.detailed.currency }}
         <span class="text-green-500">
           {{ subtotal.detailed.amount }}
@@ -63,10 +56,9 @@
         size="large"
         class="w-full shadow-2xl my-72 md:my-96"
       >
-        {{ $t("cart.checkout") }}
+        {{ $t('cart.checkout') }}
       </ButtonLinkPrimary>
     </ContentSection>
-
   </main>
 </template>
 
@@ -85,7 +77,7 @@ export default {
     CartOverviewProduct,
     ContentSection,
     Header,
-    Splash
+    Splash,
   },
   middleware: ['authenticated'],
   head() {
@@ -95,14 +87,14 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: ''
+          content: '',
         },
         {
           hid: 'robots',
           name: 'robots',
-          content: 'noindex'
-        }
-      ]
+          content: 'noindex',
+        },
+      ],
     }
   },
   computed: {
@@ -111,11 +103,11 @@ export default {
       products: 'cart/products',
       subtotal: 'cart/subtotal',
       total: 'cart/total',
-      has_changed: 'cart/hasChanged'
+      has_changed: 'cart/hasChanged',
     }),
     pageTitle() {
       return this.$t('cart.title')
-    }
+    },
   },
   mounted() {
     this.getCart()
@@ -126,8 +118,8 @@ export default {
   },
   methods: {
     ...mapActions({
-      getCart: 'cart/getCart'
-    })
-  }
+      getCart: 'cart/getCart',
+    }),
+  },
 }
 </script>

@@ -1,21 +1,16 @@
 <template>
   <div>
-
     <!-- Page title -->
-    <Heading
-      tag="h1"
-      visual="h1"
-    >
-      {{ $t("account.password.title") }}
+    <Heading tag="h1" visual="h1">
+      {{ $t('account.password.title') }}
     </Heading>
 
     <Card>
       <form @submit.prevent="update">
-
         <!-- Password -->
         <FormGroup>
           <FormLabel name="password">
-            {{ $t("form.password.label") }}
+            {{ $t('form.password.label') }}
           </FormLabel>
           <FormInput
             v-model="form.password"
@@ -23,16 +18,13 @@
             name="password"
             type="password"
           />
-          <FormValidation
-            :errors="errors"
-            name="password"
-          />
+          <FormValidation :errors="errors" name="password" />
         </FormGroup>
 
         <!-- Password confirmation -->
         <FormGroup>
           <FormLabel name="password_confirmation">
-            {{ $t("form.password_confirmation.label") }}
+            {{ $t('form.password_confirmation.label') }}
           </FormLabel>
           <FormInput
             v-model="form.password_confirmation"
@@ -43,11 +35,8 @@
         </FormGroup>
 
         <!-- Save changes -->
-        <ButtonPrimary
-          icon="check"
-          type="submit"
-        >
-          {{ $t("button.update") }}
+        <ButtonPrimary icon="check" type="submit">
+          {{ $t('button.update') }}
         </ButtonPrimary>
       </form>
     </Card>
@@ -73,34 +62,36 @@ export default {
     FormInput,
     FormLabel,
     FormValidation,
-    Heading
+    Heading,
   },
-  middleware: ['authenticated'],
   layout: 'account-management',
-  head() {
-    return {
-      title: `${this.$t('account.password.title')} | ${this.$t('account.title')}`,
-      meta: [
-        {
-          hid: 'robots',
-          name: 'robots',
-          content: 'noindex'
-        }
-      ]
-    }
-  },
+  middleware: ['authenticated'],
   data() {
     return {
       form: {
         password: '',
-        password_confirmation: ''
+        password_confirmation: '',
       },
-      errors: {}
+      errors: {},
+    }
+  },
+  head() {
+    return {
+      title: `${this.$t('account.password.title')} | ${this.$t(
+        'account.title'
+      )}`,
+      meta: [
+        {
+          hid: 'robots',
+          name: 'robots',
+          content: 'noindex',
+        },
+      ],
     }
   },
   methods: {
     ...mapActions({
-      flash: 'alert/flash'
+      flash: 'alert/flash',
     }),
     async update() {
       try {
@@ -115,7 +106,7 @@ export default {
     displaySuccessFeedback() {
       this.flash({
         type: 'success',
-        message: this.$t('alerts.password_updated')
+        message: this.$t('alerts.password_updated'),
       })
       this.$toast.success(this.$t('alerts.password_updated'))
     },
@@ -125,11 +116,11 @@ export default {
     resetFields() {
       this.form = {
         password: '',
-        password_confirmation: ''
+        password_confirmation: '',
       }
 
       this.errors = {}
-    }
-  }
+    },
+  },
 }
 </script>

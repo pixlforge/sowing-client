@@ -1,15 +1,12 @@
 <template>
   <div class="w-full flex flex-col lg:flex-row mt-48 first:mt-0">
     <div class="lg:w-1/2 lg:pr-10">
-      <Heading
-        tag="h5"
-        visual="h3"
-      >
+      <Heading tag="h5" visual="h3">
         {{ title }}
       </Heading>
     </div>
     <div class="lg:w-1/2 lg:pl-10 mt-20 lg:mt-0">
-      <slot/>
+      <slot />
     </div>
   </div>
 </template>
@@ -19,13 +16,13 @@ import Heading from '@/components/globals/Heading'
 
 export default {
   components: {
-    Heading
+    Heading,
   },
   props: {
     title: {
       type: String,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 }
 </script>

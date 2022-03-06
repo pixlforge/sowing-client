@@ -20,7 +20,7 @@
 
 .container-narrow {
   @apply w-full px-20 mx-auto;
-  
+
   @screen sm {
     max-width: 640px;
     @apply px-30;

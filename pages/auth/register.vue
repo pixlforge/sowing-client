@@ -1,24 +1,15 @@
 <template>
   <div>
-
     <!-- Page title -->
-    <Heading
-      tag="h1"
-      visual="h4"
-      utilities="text-center"
-    >
+    <Heading tag="h1" visual="h4" utilities="text-center">
       {{ $t('register.title') }}
     </Heading>
 
-    <form
-      @submit.prevent="register"
-      class="mt-36"
-    >
-
+    <form class="mt-36" @submit.prevent="register">
       <!-- Name -->
       <FormGroup>
         <FormLabel name="name">
-          {{ $t("form.name.label") }}
+          {{ $t('form.name.label') }}
         </FormLabel>
         <FormInput
           ref="autofocus"
@@ -27,16 +18,13 @@
           name="name"
           required
         />
-        <FormValidation
-          :errors="errors"
-          name="name"
-        />
+        <FormValidation :errors="errors" name="name" />
       </FormGroup>
 
       <!-- Email -->
       <FormGroup>
         <FormLabel name="email">
-          {{ $t("form.email.label") }}
+          {{ $t('form.email.label') }}
         </FormLabel>
         <FormInput
           v-model="form.email"
@@ -45,16 +33,13 @@
           type="email"
           required
         />
-        <FormValidation
-          :errors="errors"
-          name="email"
-        />
+        <FormValidation :errors="errors" name="email" />
       </FormGroup>
 
       <!-- Password -->
       <FormGroup>
         <FormLabel name="password">
-          {{ $t("form.password.label") }}
+          {{ $t('form.password.label') }}
         </FormLabel>
         <FormInput
           v-model="form.password"
@@ -63,16 +48,13 @@
           type="password"
           required
         />
-        <FormValidation
-          :errors="errors"
-          name="password"
-        />
+        <FormValidation :errors="errors" name="password" />
       </FormGroup>
 
       <!-- Password confirmation -->
       <FormGroup>
         <FormLabel name="password_confirmation">
-          {{ $t("form.password_confirmation.label") }}
+          {{ $t('form.password_confirmation.label') }}
         </FormLabel>
         <FormInput
           v-model="form.password_confirmation"
@@ -85,19 +67,16 @@
 
       <!-- Terms -->
       <FormGroup>
-        <FormCheckbox
-          v-model="terms"
-          name="terms"
-        >
+        <FormCheckbox v-model="terms" name="terms">
           <div class="flex flex-wrap">
             <span class="text-14 text-gray-300 select-none cursor-pointer mr-5">
-              {{ $t("register.terms") }}
+              {{ $t('register.terms') }}
             </span>
             <nuxt-link
               :to="{ name: 'index' }"
               class="text-14 text-green-500 no-underline hover:underline select-none"
             >
-              {{ $t("register.links.terms") }}
+              {{ $t('register.links.terms') }}
             </nuxt-link>
           </div>
         </FormCheckbox>
@@ -110,7 +89,7 @@
         icon="user"
         class="mx-auto mt-36"
       >
-        {{ $t("button.create_account") }}
+        {{ $t('button.create_account') }}
       </ButtonPrimary>
     </form>
   </div>
@@ -135,10 +114,22 @@ export default {
     FormInput,
     FormLabel,
     FormValidation,
-    Heading
+    Heading,
   },
   layout: 'auth',
   middleware: ['guest'],
+  data() {
+    return {
+      form: {
+        name: '',
+        email: '',
+        password: '',
+        password_confirmation: '',
+      },
+      terms: false,
+      errors: {},
+    }
+  },
   head() {
     return {
       title: this.$t('register.title'),
@@ -146,43 +137,33 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: ''
+          content: '',
         },
         {
           hid: 'robots',
           name: 'robots',
-          content: 'noindex'
-        }
-      ]
-    }
-  },
-  data() {
-    return {
-      form: {
-        name: '',
-        email: '',
-        password: '',
-        password_confirmation: ''
-      },
-      terms: false,
-      errors: {}
+          content: 'noindex',
+        },
+      ],
     }
   },
   computed: {
     missingCredentials() {
-      return !this.form.name ||
+      return (
+        !this.form.name ||
         !this.form.email ||
         this.form.password.length < 8 ||
         this.form.password_confirmation.length < 8 ||
         !this.terms
-    }
+      )
+    },
   },
   mounted() {
     this.$refs.autofocus.$el.focus()
   },
   methods: {
     ...mapActions({
-      getCart: 'cart/getCart'
+      getCart: 'cart/getCart',
     }),
     async register() {
       if (!this.terms) {
@@ -204,9 +185,9 @@ export default {
     },
     async login() {
       await this.$auth.loginWith('local', {
-        data: this.form
+        data: this.form,
       })
-    }
-  }
+    },
+  },
 }
 </script>

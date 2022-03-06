@@ -5,8 +5,8 @@
         name: 'shop-management-products-create-product-slug-variations-id-edit',
         params: {
           slug: variation.product.slug,
-          id: variation.id
-        }
+          id: variation.id,
+        },
       }"
       class="w-full flex justify-between items-center text-center group"
     >
@@ -14,7 +14,7 @@
         <h5
           :class="{
             'text-gray-300': !hasVariationName,
-            'text-gray-800': hasVariationName
+            'text-gray-800': hasVariationName,
           }"
           class="text-14 capitalize"
         >
@@ -27,10 +27,7 @@
         <small class="text-gray-400">
           {{ variationCurrency }}
         </small>
-        <span
-          :class="`text-${shopTheme}-500`"
-          class="font-extrabold"
-        >
+        <span :class="`text-${shopTheme}-500`" class="font-extrabold">
           {{ variationPrice }}
         </span>
       </div>
@@ -54,21 +51,21 @@ import ResourceListItem from '@/components/resources/ResourceListItem'
 
 export default {
   components: {
-    ResourceListItem
+    ResourceListItem,
   },
-  mixins: [
-    locales,
-    theming
-  ],
+  mixins: [locales, theming],
   props: {
     variation: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
   computed: {
     variationName() {
-      return this.variation.name[this.locale] || this.$t('product.creator.variation.unnamed')
+      return (
+        this.variation.name[this.locale] ||
+        this.$t('product.creator.variation.unnamed')
+      )
     },
     hasVariationName() {
       return this.variation.name[this.locale]
@@ -78,7 +75,7 @@ export default {
     },
     variationPrice() {
       return this.variation.price.detailed.amount
-    }
-  }
+    },
+  },
 }
 </script>

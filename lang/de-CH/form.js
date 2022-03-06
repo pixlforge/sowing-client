@@ -3,95 +3,95 @@ export default {
     select: 'Wählen',
     address_line_1: {
       label: 'Anschrift Zeile 1',
-      placeholder: ''
+      placeholder: '',
     },
     address_line_2: {
       label: 'Anschrift Zeile 2',
-      placeholder: ''
+      placeholder: '',
     },
     avatar: {
       label: 'Avatar',
-      placeholder: ''
+      placeholder: '',
     },
     category: {
       label: 'Kategorie',
-      placeholder: ''
+      placeholder: '',
     },
     city: {
       label: 'Ort',
-      placeholder: ''
+      placeholder: '',
     },
     company_name: {
       label: 'Firma',
-      placeholder: ''
+      placeholder: '',
     },
     country: {
       label: 'Land',
-      placeholder: ''
+      placeholder: '',
     },
     cover_image: {
       label: 'Titelbild',
-      placeholder: ''
+      placeholder: '',
     },
     default_address: {
       label: 'Diese Adresse ist meine Standardadresse',
-      placeholder: ''
+      placeholder: '',
     },
     description: {
       label: 'Beschreibung',
-      placeholder: ''
+      placeholder: '',
     },
     description_short: {
       label: 'Kurze Beschreibung',
-      placeholder: ''
+      placeholder: '',
     },
     description_long: {
       label: 'Ausführliche Beschreibung',
-      placeholder: ''
+      placeholder: '',
     },
     email: {
       label: 'E-mail Adresse',
-      placeholder: ''
+      placeholder: '',
     },
     first_name: {
       label: 'Vorname',
-      placeholder: ''
+      placeholder: '',
     },
     last_name: {
       label: 'Nachname',
-      placeholder: ''
+      placeholder: '',
     },
     name: {
       label: 'Name',
-      placeholder: ''
+      placeholder: '',
     },
     password: {
       label: 'Passwort',
-      placeholder: ''
+      placeholder: '',
     },
     password_confirmation: {
       label: 'Passwort bestätigen',
-      placeholder: ''
+      placeholder: '',
     },
     postal_code: {
       label: 'Postleitzahl',
-      placeholder: ''
+      placeholder: '',
     },
     price: {
       label: 'Preis',
-      placeholder: ''
+      placeholder: '',
     },
     theme_selection: {
       label: 'Themenauswahl',
-      placeholder: ''
+      placeholder: '',
     },
     product_variation_type: {
       name: {
         fr: 'Name der Variationsart in Französisch',
         en: 'Name der Variationsart in Englisch',
         de: 'Name der Variationsart in Deutsch',
-        it: 'Name der Variationsart in Italienisch'
-      }
-    }
-  }
+        it: 'Name der Variationsart in Italienisch',
+      },
+    },
+  },
 }

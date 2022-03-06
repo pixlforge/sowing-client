@@ -1,24 +1,15 @@
 <template>
   <div>
-
     <!-- Page title -->
-    <Heading
-      tag="h1"
-      visual="h4"
-      utilities="text-center"
-    >
+    <Heading tag="h1" visual="h4" utilities="text-center">
       {{ $t('login.title') }}
     </Heading>
 
-    <form
-      @submit.prevent="login"
-      class="mt-36"
-    >
-
+    <form class="mt-36" @submit.prevent="login">
       <!-- Email -->
       <FormGroup>
         <FormLabel name="email">
-          {{ $t("form.email.label") }}
+          {{ $t('form.email.label') }}
         </FormLabel>
         <FormInput
           ref="autofocus"
@@ -29,16 +20,13 @@
           placeholder="elon@musk.ch"
           required
         />
-        <FormValidation
-          :errors="errors"
-          name="email"
-        />
+        <FormValidation :errors="errors" name="email" />
       </FormGroup>
 
       <!-- Password -->
       <FormGroup>
         <FormLabel name="password">
-          {{ $t("form.password.label") }}
+          {{ $t('form.password.label') }}
         </FormLabel>
         <FormInput
           v-model="form.password"
@@ -50,15 +38,14 @@
       </FormGroup>
 
       <div class="flex flex-wrap justify-center my-36 md:my-60">
-
         <!-- Password forgotten -->
         <ButtonLinkTertiary :route="{ name: 'auth-forgot' }">
-          {{ $t("login.links.password") }}
+          {{ $t('login.links.password') }}
         </ButtonLinkTertiary>
 
         <!-- Register an account -->
         <ButtonLinkTertiary :route="{ name: 'auth-register' }">
-          {{ $t("login.links.register") }}
+          {{ $t('login.links.register') }}
         </ButtonLinkTertiary>
       </div>
 
@@ -69,7 +56,7 @@
         icon="key"
         class="mx-auto mt-36"
       >
-        {{ $t("button.connection") }}
+        {{ $t('button.connection') }}
       </ButtonPrimary>
     </form>
   </div>
@@ -94,10 +81,19 @@ export default {
     FormInput,
     FormLabel,
     FormValidation,
-    Heading
+    Heading,
   },
   layout: 'auth',
   middleware: ['guest'],
+  data() {
+    return {
+      form: {
+        email: '',
+        password: '',
+      },
+      errors: {},
+    }
+  },
   head() {
     return {
       title: this.$t('login.title'),
@@ -105,43 +101,34 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: ''
+          content: '',
         },
         {
           hid: 'robots',
           name: 'robots',
-          content: 'noindex'
-        }
-      ]
-    }
-  },
-  data() {
-    return {
-      form: {
-        email: '',
-        password: ''
-      },
-      errors: {}
+          content: 'noindex',
+        },
+      ],
     }
   },
   computed: {
     missingCredentials() {
       return !this.form.email || this.form.password.length < 8
-    }
+    },
   },
   mounted() {
     this.$refs.autofocus.$el.focus()
   },
   methods: {
     ...mapActions({
-      getCart: 'cart/getCart'
+      getCart: 'cart/getCart',
     }),
     async login() {
       this.errors = {}
 
       try {
         await this.$auth.loginWith('local', {
-          data: this.form
+          data: this.form,
         })
 
         if (this.$route.query.redirect) {
@@ -159,7 +146,7 @@ export default {
         this.errors = e.response.data.errors
         this.$toast.error(this.errors.email)
       }
-    }
-  }
+    },
+  },
 }
 </script>

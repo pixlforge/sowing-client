@@ -1,29 +1,23 @@
 <template>
   <div class="px-20 mb-36">
     <div class="flex flex-col md:flex-row rounded-lg shadow-2xl bg-white">
-
       <!-- Left side -->
       <div
         :style="style"
         class="w-full md:w-1/4 flex justify-center items-center rounded-t-lg md:rounded-tr-none md:rounded-bl-lg py-30 md:py-0"
       >
-
         <!-- Avatar -->
         <img
           :src="shop.avatar"
           class="w-75 h-75 rounded-full border-4 border-white"
           alt="Shop avatar"
-        >
+        />
       </div>
 
       <!-- Right side -->
       <div class="w-full md:w-3/4 p-30">
-
         <!-- Title -->
-        <Heading
-          tag="h5"
-          visual="h4"
-        >
+        <Heading tag="h5" visual="h4">
           {{ shop.name }}
         </Heading>
 
@@ -33,14 +27,11 @@
         </p>
 
         <!-- Meta -->
-        <div class="flex justify-center md:justify-start items-center text-14 text-gray-300 mt-30">
-          <font-awesome-icon
-            :icon="['far', 'box-full']"
-            class="mr-10"
-          />
-          <span>
-            {{ shop.articles }} articles
-          </span>
+        <div
+          class="flex justify-center md:justify-start items-center text-14 text-gray-300 mt-30"
+        >
+          <font-awesome-icon :icon="['far', 'box-full']" class="mr-10" />
+          <span> {{ shop.articles }} articles </span>
         </div>
       </div>
     </div>
@@ -52,18 +43,18 @@ import Heading from '@/components/globals/Heading'
 
 export default {
   components: {
-    Heading
+    Heading,
   },
   props: {
     shop: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
   computed: {
     style() {
       return `background-color: ${this.shop.accent}`
-    }
-  }
+    },
+  },
 }
 </script>

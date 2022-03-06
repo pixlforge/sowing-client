@@ -1,45 +1,46 @@
 export default {
   product: {
     img: {
-      alt: 'Product image'
+      alt: 'Product image',
     },
     creator: {
       category: {
-        category: 'Category'
+        category: 'Category',
       },
       infotip: {
         add_type: 'Start by adding a type',
         add_variation: 'Then add a variation of your base product',
-        add_many: 'Add as many types and variations as you want'
+        add_many: 'Add as many types and variations as you want',
       },
       name_description: {
-        name_description: 'Name & description'
+        name_description: 'Name & description',
       },
       price: {
-        price: 'Price'
+        price: 'Price',
       },
       type: {
         add: 'First, add a new variation type to your product',
         add_another: 'Add another variation type',
-        add_type_name_in_your_own_language: 'At a minimum, you should add a name in your language.',
+        add_type_name_in_your_own_language:
+          'At a minimum, you should add a name in your language.',
         types_variations: 'Types & variations',
-        unnamed: 'Unnamed type'
+        unnamed: 'Unnamed type',
       },
       variation: {
         add: 'Add a variation to your product',
         add_another: 'Add a new variation',
         title: 'Details for',
         unnamed: 'unnamed variation',
-        variation: 'Variation'
-      }
+        variation: 'Variation',
+      },
     },
     details: {
       remaining: 'products in stock',
-      out_of_stock: 'Out of stock'
+      out_of_stock: 'Out of stock',
     },
     management: {
       index: {
-        title: 'Products'
+        title: 'Products',
       },
       create: {
         category: 'Category',
@@ -49,28 +50,32 @@ export default {
         price: 'Price',
         price_for: 'Price for',
         tips: {
-          category: 'Linking your product to the corresponding category makes it easier for Sowing visitors to find your product.',
-          name_and_description: 'Name and describe in detail the features and strengths of your product. Translating the name and description of your product is not mandatory but increases the likelihood that it will be noticed.',
-          price: 'You are free to set a different price for variations of your product.',
-          types: 'Create and group together the different variations of your base product.',
-          variations: 'Lorem ipsum dolor sit amet'
+          category:
+            'Linking your product to the corresponding category makes it easier for Sowing visitors to find your product.',
+          name_and_description:
+            'Name and describe in detail the features and strengths of your product. Translating the name and description of your product is not mandatory but increases the likelihood that it will be noticed.',
+          price:
+            'You are free to set a different price for variations of your product.',
+          types:
+            'Create and group together the different variations of your base product.',
+          variations: 'Lorem ipsum dolor sit amet',
         },
         title: 'Add a product',
         unnamed: 'New unnamed product',
         types: 'Types',
         types_for: 'Types for',
         variations: 'Variations',
-        variations_for: 'Variations for'
-      }
+        variations_for: 'Variations for',
+      },
     },
     variations: {
       labels: {
         quantity: 'Quantity',
-        selection: 'Select'
+        selection: 'Select',
       },
       select: {
-        out_of_stock: 'Out of stock'
-      }
-    }
-  }
+        out_of_stock: 'Out of stock',
+      },
+    },
+  },
 }

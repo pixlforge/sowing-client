@@ -17,21 +17,9 @@
         y2="205.4"
         gradientUnits="userSpaceOnUse"
       >
-        <stop
-          offset="0"
-          stop-color="gray"
-          stop-opacity="0.25"
-        />
-        <stop
-          offset="0.54"
-          stop-color="gray"
-          stop-opacity="0.12"
-        />
-        <stop
-          offset="1"
-          stop-color="gray"
-          stop-opacity="0.1"
-        />
+        <stop offset="0" stop-color="gray" stop-opacity="0.25" />
+        <stop offset="0.54" stop-color="gray" stop-opacity="0.12" />
+        <stop offset="1" stop-color="gray" stop-opacity="0.1" />
       </linearGradient>
       <linearGradient
         id="5cb8051f-96be-4c7d-9e37-aa3efd21256e"
@@ -319,12 +307,7 @@
         transform="translate(-25.44 -72.24)"
       />
     </g>
-    <circle
-      cx="786.53"
-      cy="295.97"
-      r="0.39"
-      fill="#e6e8ec"
-    />
+    <circle cx="786.53" cy="295.97" r="0.39" fill="#e6e8ec" />
     <path
       :class="textTheme"
       d="M497.7,587.63s11-7.89,22.43-3c0,0-3.2,6.78-17.4,6.69Z"
@@ -783,11 +766,7 @@
       transform="translate(-25.44 -72.24)"
       fill="#5c5c8e"
     />
-    <path
-      d="M135.46,630.91"
-      transform="translate(-25.44 -72.24)"
-      fill="none"
-    />
+    <path d="M135.46,630.91" transform="translate(-25.44 -72.24)" fill="none" />
     <g opacity="0.1">
       <path
         d="M208.8,644.75l1.67.17v.82l-9.32-1c-9.33-.94-23.59-2.28-33-2.67C174.66,641.49,196.21,643.48,208.8,644.75Z"
@@ -964,11 +943,11 @@ import { mapGetters } from 'vuex'
 export default {
   computed: {
     ...mapGetters({
-      shopTheme: 'shop/shopTheme'
+      shopTheme: 'shop/shopTheme',
     }),
     textTheme() {
       return `text-${this.shopTheme}`
-    }
-  }
+    },
+  },
 }
 </script>

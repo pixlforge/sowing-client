@@ -34,6 +34,6 @@ export default {
     to_my_shop_details: 'To my shop details',
     types: 'Types',
     update: 'Update',
-    view: 'View'
-  }
+    view: 'View',
+  },
 }

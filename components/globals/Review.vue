@@ -6,7 +6,7 @@
           :src="`img/reviews/avatars/${review.avatar}`"
           :alt="review.name"
           class="block rounded-full select-none"
-        >
+        />
       </div>
       <div class="flex justify-center">
         <font-awesome-icon
@@ -18,10 +18,7 @@
       </div>
     </div>
     <div class="text-center md:text-left px-20 sm:px-48 mt-48 md:mt-0">
-      <Heading
-        tag="h5"
-        visual="h4"
-      >
+      <Heading tag="h5" visual="h4">
         {{ review.name }}
       </Heading>
       <p class="text-16 leading-loose mt-20">
@@ -36,13 +33,13 @@ import Heading from '@/components/globals/Heading'
 
 export default {
   components: {
-    Heading
+    Heading,
   },
   props: {
     review: {
       type: Object,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 }
 </script>

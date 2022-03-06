@@ -11,11 +11,11 @@
     :class="{
       'border-red-500': errors[name],
       'bg-gray-100': theme !== 'light',
-      'bg-white': theme === 'light'
+      'bg-white': theme === 'light',
     }"
-    @input="$emit('input', $event.target.value)"
     class="block w-full appearance-none disabled:bg-white rounded-lg text-16 leading-tight text-gray-900 disabled:text-gray-200 placeholder-gray-200 outline-none focus:shadow-outline border border-transparent disabled:border-gray-200 disabled:cursor-not-allowed px-16 py-12"
-  >
+    @input="$emit('input', $event.target.value)"
+  />
 </template>
 
 <script>
@@ -24,50 +24,50 @@ export default {
     value: {
       type: [String, Number],
       required: false,
-      default: null
+      default: null,
     },
     name: {
       type: String,
       required: false,
-      default: ''
+      default: '',
     },
     type: {
       type: String,
       required: false,
-      default: 'text'
+      default: 'text',
     },
     disabled: {
       type: Boolean,
       required: false,
-      default: false
+      default: false,
     },
     errors: {
       type: Object,
       required: false,
       default: () => {
         return {}
-      }
+      },
     },
     placeholder: {
       type: String,
       required: false,
-      default: ''
+      default: '',
     },
     required: {
       type: Boolean,
       required: false,
-      default: false
+      default: false,
     },
     theme: {
       type: String,
       required: false,
-      default: ''
+      default: '',
     },
     ariaLabel: {
       type: String,
       required: false,
-      default: ''
-    }
-  }
+      default: '',
+    },
+  },
 }
 </script>

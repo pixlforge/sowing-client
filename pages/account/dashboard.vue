@@ -1,18 +1,13 @@
 <template>
   <div>
-
     <!-- Page title -->
-    <Heading
-      tag="h1"
-      visual="h1"
-    >
-      {{ $t("account.dashboard.title") }}
+    <Heading tag="h1" visual="h1">
+      {{ $t('account.dashboard.title') }}
     </Heading>
 
     <Card>
-      <AccountCard :user="user"/>
+      <AccountCard :user="user" />
     </Card>
-
   </div>
 </template>
 
@@ -25,28 +20,30 @@ export default {
   components: {
     AccountCard,
     Card,
-    Heading
+    Heading,
   },
-  middleware: ['authenticated'],
   layout: 'account-management',
-  head() {
-    return {
-      title: `${this.$t('account.dashboard.title')} | ${this.$t('account.title')}`,
-      meta: [
-        {
-          hid: 'robots',
-          name: 'robots',
-          content: 'noindex'
-        }
-      ]
-    }
-  },
+  middleware: ['authenticated'],
   async asyncData({ app }) {
     const user = await app.$axios.$get('/user/account')
 
     return {
-      user: user.data
+      user: user.data,
     }
-  }
+  },
+  head() {
+    return {
+      title: `${this.$t('account.dashboard.title')} | ${this.$t(
+        'account.title'
+      )}`,
+      meta: [
+        {
+          hid: 'robots',
+          name: 'robots',
+          content: 'noindex',
+        },
+      ],
+    }
+  },
 }
 </script>

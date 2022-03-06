@@ -1,33 +1,27 @@
 <template>
   <section class="bg-pink-600">
     <div class="container flex items-center">
-
       <div class="hidden lg:block lg:w-1/2 xl:w-1/3">
         <img
           src="~assets/img/newsletter.svg"
           alt="Illustration representing a newsletter"
           class="block w-4/5"
-        >
+        />
       </div>
 
       <div class="w-full lg:w-1/2 xl:w-2/3 py-132">
-        <Heading
-          tag="h1"
-          visual="main"
-          utilities="text-white lg:text-left"
-        >
-          {{ $t("streaks.newsletter.title") }}
+        <Heading tag="h1" visual="main" utilities="text-white lg:text-left">
+          {{ $t('streaks.newsletter.title') }}
         </Heading>
 
         <p class="text-20 xl:text-24 text-white text-center lg:text-left mt-30">
-          {{ $t("streaks.newsletter.body") }}
+          {{ $t('streaks.newsletter.body') }}
         </p>
 
-        <form
-          @submit.prevent="subscribe"
-          class="relative"
-        >
-          <div class="flex flex-col md:flex-row justify-center lg:justify-start mt-48">
+        <form class="relative" @submit.prevent="subscribe">
+          <div
+            class="flex flex-col md:flex-row justify-center lg:justify-start mt-48"
+          >
             <FormInput
               v-model="email"
               :placeholder="placeholder"
@@ -43,7 +37,7 @@
               type="submit"
               class="md:rounded-l-none shadow-2xl mt-20 md:mt-0"
             >
-              {{ $t("button.subscribe") }}
+              {{ $t('button.subscribe') }}
             </ButtonPrimary>
           </div>
 
@@ -68,18 +62,18 @@ export default {
   components: {
     ButtonPrimary,
     FormInput,
-    Heading
+    Heading,
   },
   data() {
     return {
       email: '',
-      errors: {}
+      errors: {},
     }
   },
   computed: {
     placeholder() {
       return this.$t('streaks.newsletter.placeholder')
-    }
+    },
   },
   methods: {
     async subscribe() {
@@ -87,7 +81,7 @@ export default {
 
       try {
         await this.$axios.$post('/newsletter/subscribe', {
-          email: this.email
+          email: this.email,
         })
         this.$toast.success(this.$t('toasts.subscribed'))
         this.email = ''
@@ -95,7 +89,7 @@ export default {
         this.errors = e.response.data.errors
         this.$toast.error(this.$t('toasts.validation'))
       }
-    }
-  }
+    },
+  },
 }
 </script>

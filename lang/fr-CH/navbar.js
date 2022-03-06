@@ -1,7 +1,7 @@
 export default {
   navbar: {
     user: {
-      logout: 'Déconnexion'
-    }
-  }
+      logout: 'Déconnexion',
+    },
+  },
 }

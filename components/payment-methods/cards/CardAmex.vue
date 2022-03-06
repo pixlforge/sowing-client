@@ -2,7 +2,7 @@
   <div
     :class="{
       'border-green-500 shadow-2xl': selectedPaymentMethod,
-      'border-gray-200': !selectedPaymentMethod
+      'border-gray-200': !selectedPaymentMethod,
     }"
     class="relative rounded-lg flex border transition-shadow transition-faster flex-col items-center cursor-pointer p-36"
   >
@@ -10,14 +10,14 @@
       :icon="['fab', 'cc-amex']"
       :class="{
         'text-green-500': selectedPaymentMethod,
-        'text-gray-200': !selectedPaymentMethod
+        'text-gray-200': !selectedPaymentMethod,
       }"
       class="text-72 transition-colors duration-200 ease-out"
     />
     <h5
       :class="{
         'text-green-500': selectedPaymentMethod,
-        'text-gray-200': !selectedPaymentMethod
+        'text-gray-200': !selectedPaymentMethod,
       }"
       class="text-16 font-extrabold uppercase transition-colors duration-200 ease-out mt-20"
     >
@@ -26,11 +26,11 @@
     <p
       :class="{
         'text-green-500': selectedPaymentMethod,
-        'text-gray-200': !selectedPaymentMethod
+        'text-gray-200': !selectedPaymentMethod,
       }"
       class="text-12 transition-color transition-faster mt-5"
     >
-      {{ $t("credit_cards.ending_in") }} {{ paymentMethod.last_four }}
+      {{ $t('credit_cards.ending_in') }} {{ paymentMethod.last_four }}
     </p>
     <font-awesome-icon
       v-if="selectedPaymentMethod"
@@ -45,12 +45,12 @@ export default {
   props: {
     paymentMethod: {
       type: Object,
-      required: true
+      required: true,
     },
     selectedPaymentMethod: {
       type: Boolean,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 }
 </script>

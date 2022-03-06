@@ -1,22 +1,17 @@
 <template>
-  <div class="relative bg-white rounded-lg shadow-xl hover:shadow-2xl transition-shadow transition-fast flex items-center p-30 my-48">
-
+  <div
+    class="relative bg-white rounded-lg shadow-xl hover:shadow-2xl transition-shadow transition-fast flex items-center p-30 my-48"
+  >
     <!-- Product featured image -->
     <div class="w-1/5">
-      <img
-        :src="imgUrl"
-        :alt="imgAlt"
-        class="block w-full rounded-lg"
-      >
+      <img :src="imgUrl" :alt="imgAlt" class="block w-full rounded-lg" />
     </div>
 
     <!-- Name & description -->
     <div class="w-2/5 pl-30">
-      <Heading
-        tag="h3"
-        visual="h4"
-      >
-        {{ baseProductName }} &ndash; {{ variationType }} &ndash; {{ variationName }}
+      <Heading tag="h3" visual="h4">
+        {{ baseProductName }} &ndash; {{ variationType }} &ndash;
+        {{ variationName }}
       </Heading>
 
       <p class="text-14 leading-relaxed mt-20">
@@ -26,41 +21,25 @@
 
     <!-- Price -->
     <div class="w-1/5 text-center px-20">
-      <Heading
-        tag="h5"
-        visual="h5"
-        utilities="text-12 text-gray-200"
-      >
+      <Heading tag="h5" visual="h5" utilities="text-12 text-gray-200">
         {{ labelPrice }}
       </Heading>
 
-      <div class="h-42 text-18 font-extrabold mt-20 flex justify-center items-center">
+      <div
+        class="h-42 text-18 font-extrabold mt-20 flex justify-center items-center"
+      >
         {{ product.total.formatted }}
       </div>
     </div>
 
     <!-- Quantity -->
     <div class="w-1/5 text-center px-20">
-      <Heading
-        tag="h5"
-        visual="h5"
-        utilities="text-12 text-gray-200"
-      >
+      <Heading tag="h5" visual="h5" utilities="text-12 text-gray-200">
         {{ labelQuantity }}
       </Heading>
 
-      <FormSelect
-        v-model="quantity"
-        name="quantity"
-        class="mt-16"
-      >
-        <option
-          v-if="product.quantity == 0"
-          value="0"
-          disabled
-        >
-          0
-        </option>
+      <FormSelect v-model="quantity" name="quantity" class="mt-16">
+        <option v-if="product.quantity == 0" value="0" disabled>0</option>
         <option
           v-for="n in parseInt(product.stock_count)"
           :key="n"
@@ -74,10 +53,10 @@
 
     <!-- Remove control -->
     <button
-      @click="remove(product.id)"
       role="button"
       title="Remove"
       class="absolute top-0 right-0 mt-20 mr-20"
+      @click="remove(product.id)"
     >
       <font-awesome-icon
         :icon="['far', 'times']"
@@ -96,17 +75,17 @@ import Heading from '@/components/globals/Heading'
 export default {
   components: {
     FormSelect,
-    Heading
+    Heading,
   },
   props: {
     product: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
   computed: {
     ...mapGetters({
-      locale: 'locale'
+      locale: 'locale',
     }),
     quantity: {
       get() {
@@ -114,7 +93,7 @@ export default {
       },
       set(quantity) {
         this.update({ productId: this.product.id, quantity })
-      }
+      },
     },
     imgUrl() {
       return require('@/assets/img/placeholders/category.svg')
@@ -142,12 +121,12 @@ export default {
     },
     variationType() {
       return this.product.type.name[this.locale]
-    }
+    },
   },
   methods: {
     ...mapActions({
       destroy: 'cart/destroy',
-      update: 'cart/update'
+      update: 'cart/update',
     }),
     remove(productId) {
       this.$toast.success(
@@ -156,7 +135,7 @@ export default {
         } ${this.$t('toasts.cart.product_removed')}`
       )
       this.destroy(productId)
-    }
-  }
+    },
+  },
 }
 </script>

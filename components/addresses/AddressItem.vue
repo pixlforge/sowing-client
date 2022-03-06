@@ -1,6 +1,5 @@
 <template>
   <ResourceListItem>
-
     <!-- Controls -->
     <div
       ref="controls"
@@ -8,14 +7,13 @@
       class="w-0 h-full absolute z-10 bg-white rounded-lg flex justify-center items-center origin-left transition-all duration-200 ease-out -mx-20"
     >
       <template v-if="controlsOpen">
-
         <!-- View -->
         <ButtonView
           :route="{
             name: 'account-addresses-id-details',
             params: {
-              id: address.id
-            }
+              id: address.id,
+            },
           }"
         />
 
@@ -24,19 +22,18 @@
           :route="{
             name: 'account-addresses-id-edit',
             params: {
-              id: address.id
-            }
+              id: address.id,
+            },
           }"
         />
 
         <!-- Delete -->
-        <ButtonDelete @click.native="confirmDelete"/>
+        <ButtonDelete @click.native="confirmDelete" />
       </template>
     </div>
 
     <!-- Content -->
     <div class="w-full flex items-center text-center">
-
       <!-- Address icon -->
       <div class="hidden md:block md:w-1/12">
         <font-awesome-icon
@@ -57,16 +54,15 @@
 
       <!-- Default payment method -->
       <div class="hidden md:block md:w-1/12">
-        <div
-          v-if="address.is_default"
-          class="relative group cursor-pointer"
-        >
+        <div v-if="address.is_default" class="relative group cursor-pointer">
           <font-awesome-icon
             :icon="['fas', 'star']"
             :title="$t('account.payment_methods.is_default')"
             class="text-14 text-orange-400"
           />
-          <div class="absolute top-0 bg-white rounded-lg shadow-lg invisible group-hover:visible text-12 px-20 py-12 -mx-72 -mt-72">
+          <div
+            class="absolute top-0 bg-white rounded-lg shadow-lg invisible group-hover:visible text-12 px-20 py-12 -mx-72 -mt-72"
+          >
             {{ $t('account.addresses.is_default') }}
           </div>
         </div>
@@ -74,10 +70,9 @@
 
       <!-- Controls button -->
       <div class="w-1/6 md:w-1/12 flex justify-end">
-        <ButtonResourceControls @click.native="controlsOpen = !controlsOpen"/>
+        <ButtonResourceControls @click.native="controlsOpen = !controlsOpen" />
       </div>
     </div>
-
   </ResourceListItem>
 </template>
 
@@ -96,17 +91,17 @@ export default {
     ButtonEdit,
     ButtonResourceControls,
     ButtonView,
-    ResourceListItem
+    ResourceListItem,
   },
   props: {
     address: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
   data() {
     return {
-      controlsOpen: false
+      controlsOpen: false,
     }
   },
   mounted() {
@@ -133,12 +128,12 @@ export default {
   },
   methods: {
     ...mapActions({
-      openModal: 'confirmation/openModal'
+      openModal: 'confirmation/openModal',
     }),
     confirmDelete() {
       this.openModal(this.address.id)
       this.controlsOpen = false
-    }
-  }
+    },
+  },
 }
 </script>

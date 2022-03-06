@@ -1,17 +1,13 @@
 <template>
   <div>
-
     <!-- Alert -->
-    <Alert/>
+    <Alert />
 
     <!-- Navbar -->
-    <Navbar/>
+    <Navbar />
 
     <!-- Shop cover image -->
-    <ShopCover
-      v-if="shopCover"
-      :shop-cover="shopCover"
-    />
+    <ShopCover v-if="shopCover" :shop-cover="shopCover" />
 
     <!-- Header -->
     <Header
@@ -22,16 +18,10 @@
     >
       <HeaderList>
         <li>
-          <font-awesome-icon
-            :icon="['far', 'map-marker-alt']"
-            class="mr-5"
-          />
+          <font-awesome-icon :icon="['far', 'map-marker-alt']" class="mr-5" />
           {{ shop.postal_code }} {{ shop.city }}
         </li>
-        <li
-          v-if="shop.country"
-          class="ml-20"
-        >
+        <li v-if="shop.country" class="ml-20">
           {{ shop.country.name[locale] }}
         </li>
       </HeaderList>
@@ -39,14 +29,11 @@
 
     <!-- Main -->
     <main class="bg-gray-100">
-
       <!-- User owns a shop -->
       <template v-if="userHasShop">
         <ContentSection>
-
           <!-- Content -->
           <div class="w-full flex">
-
             <!-- Side menu -->
             <SideMenu>
               <SideMenuList>
@@ -85,7 +72,7 @@
 
             <!-- Page content -->
             <section class="w-full lg:w-3/4 mt-72 lg:mt-0">
-              <Nuxt/>
+              <Nuxt />
             </section>
           </div>
         </ContentSection>
@@ -94,18 +81,15 @@
       <!-- User does not own a shop -->
       <template v-else>
         <ContentSection class="max-w-800">
-          <Splash
-            :title="$t('shop.not_created_yet')"
-            class="max-w-800"
-          >
+          <Splash :title="$t('shop.not_created_yet')" class="max-w-800">
             <template slot="subtitle">
-              {{ $t("shop.creation_cta_line_1") }}
+              {{ $t('shop.creation_cta_line_1') }}
             </template>
             <template slot="illustration">
               <img
                 src="~assets/img/under_construction.svg"
                 alt="Illustration of a building under construction"
-              >
+              />
             </template>
           </Splash>
 
@@ -116,17 +100,17 @@
             size="large"
             class="w-full"
           >
-            {{ $t("button.create_my_shop") }}
+            {{ $t('button.create_my_shop') }}
           </ButtonLinkPrimary>
         </ContentSection>
       </template>
     </main>
 
     <!-- Footer -->
-    <Footer/>
+    <Footer />
 
     <!-- Disclaimer -->
-    <Disclaimer :class="bgTheme"/>
+    <FooterDisclaimer :class="bgTheme" />
   </div>
 </template>
 
@@ -164,7 +148,7 @@ export default {
     SideMenuItem,
     SideMenuList,
     SideMenuTitle,
-    Splash
+    Splash,
   },
   mixins: [theming],
   computed: {
@@ -175,16 +159,16 @@ export default {
       shopExists: 'shop/shopExists',
       userHasShop: 'userHasShop',
       shop: 'shop/shop',
-      locale: 'locale'
-    })
+      locale: 'locale',
+    }),
   },
   destroyed() {
     this.resetShop()
   },
   methods: {
     ...mapActions({
-      resetShop: 'shop/resetShop'
-    })
-  }
+      resetShop: 'shop/resetShop',
+    }),
+  },
 }
 </script>

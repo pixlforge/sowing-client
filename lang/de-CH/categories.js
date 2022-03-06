@@ -3,10 +3,10 @@ export default {
     featured_categories: 'Beliebte Kategorien',
     in: 'in',
     img: {
-      alt: 'Kategorie Bild'
+      alt: 'Kategorie Bild',
     },
     link: {
-      see_all: 'Siehe all Produkte'
-    }
-  }
+      see_all: 'Siehe all Produkte',
+    },
+  },
 }

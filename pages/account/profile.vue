@@ -1,37 +1,25 @@
 <template>
   <div>
-
     <!-- Page title -->
-    <Heading
-      tag="h1"
-      visual="h1"
-    >
-      {{ $t("account.profile.title") }}
+    <Heading tag="h1" visual="h1">
+      {{ $t('account.profile.title') }}
     </Heading>
 
     <Card>
       <form @submit.prevent="update">
-
         <!-- Name -->
         <FormGroup>
           <FormLabel name="name">
-            {{ $t("form.name.label") }}
+            {{ $t('form.name.label') }}
           </FormLabel>
-          <FormInput
-            v-model="form.name"
-            :errors="errors"
-            name="name"
-          />
-          <FormValidation
-            :errors="errors"
-            name="name"
-          />
+          <FormInput v-model="form.name" :errors="errors" name="name" />
+          <FormValidation :errors="errors" name="name" />
         </FormGroup>
 
         <!-- Email -->
         <FormGroup>
           <FormLabel name="email">
-            {{ $t("form.email.label") }}
+            {{ $t('form.email.label') }}
           </FormLabel>
           <FormInput
             v-model="form.email"
@@ -39,22 +27,15 @@
             name="email"
             type="email"
           />
-          <FormValidation
-            :errors="errors"
-            name="email"
-          />
+          <FormValidation :errors="errors" name="email" />
         </FormGroup>
 
         <!-- Save changes -->
-        <ButtonPrimary
-          icon="check"
-          type="submit"
-        >
-          {{ $t("button.update") }}
+        <ButtonPrimary icon="check" type="submit">
+          {{ $t('button.update') }}
         </ButtonPrimary>
       </form>
     </Card>
-
   </div>
 </template>
 
@@ -77,38 +58,40 @@ export default {
     FormInput,
     FormLabel,
     FormValidation,
-    Heading
+    Heading,
   },
-  middleware: ['authenticated'],
   layout: 'account-management',
-  head() {
+  middleware: ['authenticated'],
+  async asyncData({ app }) {
+    const user = await app.$axios.$get('/user/account')
+
     return {
-      title: `${this.$t('account.profile.title')} | ${this.$t('account.title')}`,
-      meta: [
-        {
-          hid: 'robots',
-          name: 'robots',
-          content: 'noindex'
-        }
-      ]
+      user: user.data,
     }
   },
   data() {
     return {
       form: {
         name: '',
-        email: ''
+        email: '',
       },
       oldEmail: '',
       newEmail: '',
-      errors: {}
+      errors: {},
     }
   },
-  async asyncData({ app }) {
-    const user = await app.$axios.$get('/user/account')
-
+  head() {
     return {
-      user: user.data
+      title: `${this.$t('account.profile.title')} | ${this.$t(
+        'account.title'
+      )}`,
+      meta: [
+        {
+          hid: 'robots',
+          name: 'robots',
+          content: 'noindex',
+        },
+      ],
     }
   },
   mounted() {
@@ -117,14 +100,14 @@ export default {
   methods: {
     ...mapActions({
       setUser: 'setUser',
-      flash: 'alert/flash'
+      flash: 'alert/flash',
     }),
     async update() {
       try {
         this.oldEmail = this.$auth.user.email
         const res = await this.$axios.$patch('/user/account', {
           id: this.$auth.user.id,
-          ...this.form
+          ...this.form,
         })
         this.setUser(res.data)
         this.newEmail = this.$auth.user.email
@@ -138,7 +121,7 @@ export default {
       if (this.newEmail !== this.oldEmail) {
         this.flash({
           type: 'success',
-          message: this.$t('alerts.verify_email_updated')
+          message: this.$t('alerts.verify_email_updated'),
         })
       }
       this.$toast.success(this.$t('account.profile.updated'))
@@ -149,7 +132,7 @@ export default {
     hydrateUser() {
       this.form.name = this.user.name
       this.form.email = this.user.email
-    }
-  }
+    },
+  },
 }
 </script>

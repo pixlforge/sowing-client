@@ -1,20 +1,16 @@
 <template>
   <div>
-
     <!-- Alert -->
-    <Alert/>
+    <Alert />
 
     <!-- Navbar -->
-    <Navbar/>
+    <Navbar />
 
     <!-- Categories -->
-    <CategoryBar/>
+    <CategoryBar />
 
     <!-- Shop cover image -->
-    <ShopCover
-      v-if="shopCover"
-      :shop-cover="shopCover"
-    />
+    <ShopCover v-if="shopCover" :shop-cover="shopCover" />
 
     <!-- Header -->
     <Header
@@ -23,16 +19,16 @@
     />
 
     <!-- Navigation -->
-    <ShopNavigation/>
+    <ShopNavigation />
 
     <!-- Page content -->
-    <Nuxt/>
+    <Nuxt />
 
     <!-- Footer -->
-    <Footer/>
+    <Footer />
 
     <!-- Disclaimer -->
-    <Disclaimer :class="bgTheme"/>
+    <FooterDisclaimer :class="bgTheme" />
   </div>
 </template>
 
@@ -58,23 +54,23 @@ export default {
     Header,
     Navbar,
     ShopCover,
-    ShopNavigation
+    ShopNavigation,
   },
   mixins: [theming],
   computed: {
     ...mapGetters({
       shopName: 'shop/shopName',
       shopAvatar: 'shop/shopAvatar',
-      shopCover: 'shop/shopCover'
-    })
+      shopCover: 'shop/shopCover',
+    }),
   },
   destroyed() {
     this.resetShop()
   },
   methods: {
     ...mapActions({
-      resetShop: 'shop/resetShop'
-    })
-  }
+      resetShop: 'shop/resetShop',
+    }),
+  },
 }
 </script>

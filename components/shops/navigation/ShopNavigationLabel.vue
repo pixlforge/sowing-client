@@ -1,5 +1,7 @@
 <template>
-  <div class="hidden lg:block w-110 absolute bottom-0 text-16 text-center font-semibold cursor-pointer">
+  <div
+    class="hidden lg:block w-110 absolute bottom-0 text-16 text-center font-semibold cursor-pointer"
+  >
     {{ label }}
   </div>
 </template>
@@ -9,9 +11,9 @@ export default {
   props: {
     label: {
       type: String,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 }
 </script>
 

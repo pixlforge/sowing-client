@@ -8,27 +8,22 @@
       :class="{
         'border-red-500': errors[name],
         'bg-gray-100': theme !== 'light',
-        'bg-white': theme === 'light'
+        'bg-white': theme === 'light',
       }"
       :required="required"
-      @change="$emit('input', $event.target.value)"
       class="block w-full appearance-none disabled:bg-white rounded-lg text-16 leading-tight text-gray-900 disabled:text-gray-200 placeholder-gray-200 outline-none focus:shadow-outline border border-transparent disabled:border-gray-200 disabled:cursor-not-allowed px-16 py-12"
+      @change="$emit('input', $event.target.value)"
     >
-      <option
-        v-if="!value"
-        value=""
-        selected
-        disabled
-      >
-        {{ $t("form.select") }}
+      <option v-if="!value" value="" selected disabled>
+        {{ $t('form.select') }}
       </option>
-      <slot/>
+      <slot />
     </select>
     <font-awesome-icon
       :icon="['fas', 'caret-down']"
       :class="{
         'text-gray-200': disabled,
-        'text-gray-900': !disabled
+        'text-gray-900': !disabled,
       }"
       class="absolute h-full inset-y-0 right-0 text-16 mr-20"
     />
@@ -41,35 +36,35 @@ export default {
     value: {
       type: [String, Number],
       required: false,
-      default: null
+      default: null,
     },
     name: {
       type: String,
       required: false,
-      default: ''
+      default: '',
     },
     disabled: {
       type: Boolean,
       required: false,
-      default: false
+      default: false,
     },
     errors: {
       type: Object,
       required: false,
       default: () => {
         return {}
-      }
+      },
     },
     theme: {
       type: String,
       required: false,
-      default: ''
+      default: '',
     },
     required: {
       type: Boolean,
       required: false,
-      default: false
-    }
-  }
+      default: false,
+    },
+  },
 }
 </script>

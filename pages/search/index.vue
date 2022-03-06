@@ -1,6 +1,5 @@
 <template>
   <main>
-
     <!-- Header -->
     <Header
       :title="$t('search.title')"
@@ -9,7 +8,6 @@
     />
 
     <ContentSection class="min-h-half-screen">
-
       <!-- Search field -->
       <div class="search__input-group">
         <FormInput
@@ -21,7 +19,6 @@
       </div>
 
       <div class="search__results-wrapper">
-
         <!-- Product search results -->
         <SearchResult
           :query="query"
@@ -35,7 +32,6 @@
           index-name="shops"
           class="search__results-component search__results-component--right"
         />
-
       </div>
     </ContentSection>
   </main>
@@ -54,7 +50,12 @@ export default {
     ContentSection,
     FormInput,
     Header,
-    SearchResult
+    SearchResult,
+  },
+  data() {
+    return {
+      query: '',
+    }
   },
   head() {
     return {
@@ -63,20 +64,15 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: ''
-        }
-      ]
-    }
-  },
-  data() {
-    return {
-      query: ''
+          content: '',
+        },
+      ],
     }
   },
   computed: {
     ...mapGetters({
-      locale: 'locale'
-    })
-  }
+      locale: 'locale',
+    }),
+  },
 }
 </script>

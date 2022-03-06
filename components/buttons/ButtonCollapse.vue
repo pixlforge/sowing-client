@@ -6,7 +6,7 @@
     <font-awesome-icon
       :icon="['far', 'caret-circle-up']"
       :class="{
-        'rotate-180': active
+        'rotate-180': active,
       }"
       class="text-20 transform transition-transform duration-200 ease-out"
     />
@@ -18,8 +18,8 @@ export default {
   props: {
     active: {
       type: Boolean,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 }
 </script>

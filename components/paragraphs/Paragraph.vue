@@ -1,6 +1,6 @@
 <template>
   <p class="text-14 md:text-16 leading-loose my-20 last:mb-0">
-    <slot/>
+    <slot />
   </p>
 </template>
 
@@ -10,8 +10,8 @@ export default {
     center: {
       type: Boolean,
       required: false,
-      default: false
-    }
-  }
+      default: false,
+    },
+  },
 }
 </script>

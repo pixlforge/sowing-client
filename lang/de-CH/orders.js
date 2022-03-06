@@ -5,7 +5,7 @@ export default {
       completed: 'Abgeschlossen',
       pending: 'Anstehend',
       processing: 'Bearbeitung',
-      payment_failed: 'Bezahlung fehlgeschlagen'
-    }
-  }
+      payment_failed: 'Bezahlung fehlgeschlagen',
+    },
+  },
 }

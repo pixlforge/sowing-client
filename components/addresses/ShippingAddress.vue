@@ -1,10 +1,7 @@
 <template>
   <div>
-    <Heading
-      tag="h5"
-      visual="h5"
-    >
-      {{ $t("checkout.delivery_address") }}
+    <Heading tag="h5" visual="h5">
+      {{ $t('checkout.delivery_address') }}
     </Heading>
 
     <ShippingAddressSelector
@@ -20,12 +17,12 @@
     />
 
     <ul
-      v-if="selectedAddress && selectedAddress.country && !addressManagersVisible"
+      v-if="
+        selectedAddress && selectedAddress.country && !addressManagersVisible
+      "
       class="text-14 leading-relaxed mt-10"
     >
-      <li>
-        {{ selectedAddress.first_name }} {{ selectedAddress.last_name }}
-      </li>
+      <li>{{ selectedAddress.first_name }} {{ selectedAddress.last_name }}</li>
       <li v-if="selectedAddress.company_name">
         {{ selectedAddress.company_name }}
       </li>
@@ -36,31 +33,30 @@
         {{ selectedAddress.address_line_2 }}
       </li>
       <li>
-        {{ selectedAddress.country.code }} &ndash; {{ selectedAddress.postal_code }} {{ selectedAddress.city }}
+        {{ selectedAddress.country.code }} &ndash;
+        {{ selectedAddress.postal_code }} {{ selectedAddress.city }}
       </li>
-      <li>
-        ({{ selectedAddress.country.name[locale] }})
-      </li>
+      <li>({{ selectedAddress.country.name[locale] }})</li>
     </ul>
 
     <!-- Change address -->
     <ButtonPrimary
       v-if="addresses.length && !addressManagersVisible"
-      @click.native="openAddressSelector"
       icon="repeat-alt"
       class="w-full mt-20"
+      @click.native="openAddressSelector"
     >
-      {{ $t("checkout.change_address") }}
+      {{ $t('checkout.change_address') }}
     </ButtonPrimary>
 
     <!-- Add an address -->
     <ButtonPrimary
       v-if="!addresses.length && !addressManagersVisible"
-      @click.native="openAddressCreator"
       icon="plus"
       class="w-full mt-20"
+      @click.native="openAddressCreator"
     >
-      {{ $t("checkout.add_address") }}
+      {{ $t('checkout.add_address') }}
     </ButtonPrimary>
   </div>
 </template>
@@ -78,18 +74,18 @@ export default {
     ButtonPrimary,
     Heading,
     ShippingAddressCreator,
-    ShippingAddressSelector
+    ShippingAddressSelector,
   },
   props: {
     addresses: {
       type: Array,
-      required: true
-    }
+      required: true,
+    },
   },
   data() {
     return {
       currentAddresses: this.addresses,
-      selectedAddress: {}
+      selectedAddress: {},
     }
   },
   computed: {
@@ -97,11 +93,11 @@ export default {
       locale: 'locale',
       addressSelector: 'checkout/addressSelector',
       addressCreator: 'checkout/addressCreator',
-      addressManagersVisible: 'checkout/addressManagersVisible'
+      addressManagersVisible: 'checkout/addressManagersVisible',
     }),
     defaultAddress() {
-      return this.currentAddresses.find(address => address.is_default)
-    }
+      return this.currentAddresses.find((address) => address.is_default)
+    },
   },
   created() {
     if (this.addresses.length) {
@@ -113,7 +109,7 @@ export default {
       openAddressSelector: 'checkout/openAddressSelector',
       closeAddressSelector: 'checkout/closeAddressSelector',
       openAddressCreator: 'checkout/openAddressCreator',
-      closeAddressCreator: 'checkout/closeAddressCreator'
+      closeAddressCreator: 'checkout/closeAddressCreator',
     }),
     switchAddress(address) {
       this.selectedAddress = address
@@ -125,7 +121,7 @@ export default {
       this.switchAddress(address)
       this.closeAddressCreator()
       this.$toast.success(this.$t('toasts.addresses.created'))
-    }
-  }
+    },
+  },
 }
 </script>

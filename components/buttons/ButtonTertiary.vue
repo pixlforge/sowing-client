@@ -5,13 +5,9 @@
     :title="title"
     class="flex justify-center items-center outline-none focus:shadow-outline rounded-lg border border-transparent text-12 text-gray-300 font-bold text-center uppercase no-underline leading-tight sm:whitespace-no-wrap select-none px-30 py-12"
   >
-    <font-awesome-icon
-      v-if="icon"
-      :icon="['far', icon]"
-      class="mr-10"
-    />
-    <slot/>
-    <slot name="icon"/>
+    <font-awesome-icon v-if="icon" :icon="['far', icon]" class="mr-10" />
+    <slot />
+    <slot name="icon" />
   </button>
 </template>
 
@@ -21,23 +17,23 @@ export default {
     type: {
       type: String,
       required: false,
-      default: ''
+      default: '',
     },
     icon: {
       type: String,
       required: false,
-      default: null
+      default: null,
     },
     disabled: {
       type: Boolean,
       required: false,
-      default: false
+      default: false,
     },
     title: {
       type: String,
       required: false,
-      default: ''
-    }
-  }
+      default: '',
+    },
+  },
 }
 </script>

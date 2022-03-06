@@ -10,6 +10,6 @@ export default {
     payment: 'Zahlung',
     subtotal: 'Zwischensumme',
     title: 'Checkout',
-    total: 'Gesamt'
-  }
+    total: 'Gesamt',
+  },
 }

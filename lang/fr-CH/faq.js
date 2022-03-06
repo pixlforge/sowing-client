@@ -1,5 +1,5 @@
 export default {
   faq: {
-    title: 'Foire Aux Questions'
-  }
+    title: 'Foire Aux Questions',
+  },
 }

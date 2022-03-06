@@ -6,7 +6,7 @@
     }"
     class="flex-1 sm:last:mb-0"
   >
-    <slot/>
+    <slot />
   </div>
 </template>
 
@@ -16,8 +16,8 @@ export default {
     tight: {
       type: Boolean,
       required: false,
-      default: false
-    }
-  }
+      default: false,
+    },
+  },
 }
 </script>

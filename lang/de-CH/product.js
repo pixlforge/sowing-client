@@ -1,45 +1,48 @@
 export default {
   product: {
     img: {
-      alt: 'Produktbild'
+      alt: 'Produktbild',
     },
     creator: {
       category: {
-        category: 'Kategorie'
+        category: 'Kategorie',
       },
       infotip: {
         add_type: 'Beginnen Sie mit dem Hinzufügen eines Typs',
-        add_variation: 'Fügen Sie dann eine Variation Ihres Basisprodukts hinzu',
-        add_many: 'Fügen Sie so viele Typen und Variationen hinzu, wie Sie möchten'
+        add_variation:
+          'Fügen Sie dann eine Variation Ihres Basisprodukts hinzu',
+        add_many:
+          'Fügen Sie so viele Typen und Variationen hinzu, wie Sie möchten',
       },
       name_description: {
-        name_description: 'Name & Beschreibung'
+        name_description: 'Name & Beschreibung',
       },
       price: {
-        price: 'Preis'
+        price: 'Preis',
       },
       type: {
         add: 'Fügen Sie Ihrem Produkt zunächst einen neuen Variationstyp hinzu',
         add_another: 'Fügen Sie einen weiteren Variationstyp hinzu',
-        add_type_name_in_your_own_language: 'Sie sollten mindestens einen Namen in Ihrer Sprache hinzufügen.',
+        add_type_name_in_your_own_language:
+          'Sie sollten mindestens einen Namen in Ihrer Sprache hinzufügen.',
         types_variations: 'Typen & Variationen',
-        unnamed: 'Unbenannter Typ'
+        unnamed: 'Unbenannter Typ',
       },
       variation: {
         add: 'Fügen Sie Ihrem Produkt eine Variation hinzu',
         add_another: 'Fügen Sie eine neue Variante hinzu',
         title: 'Details für',
         unnamed: 'unbenannte Variation',
-        variation: 'Variation'
-      }
+        variation: 'Variation',
+      },
     },
     details: {
       remaining: 'Produkte auf Lager',
-      out_of_stock: 'Ausverkauft'
+      out_of_stock: 'Ausverkauft',
     },
     management: {
       index: {
-        title: 'Produkte'
+        title: 'Produkte',
       },
       create: {
         category: 'Kategorie',
@@ -49,28 +52,32 @@ export default {
         price: 'Preis',
         price_for: 'Preis für',
         tips: {
-          category: 'Durch die Verknüpfung Ihres Produkts mit der entsprechenden Kategorie können Sowing-Besucher Ihr Produkt leichter finden.',
-          name_and_description: 'Nennen und beschreiben Sie detailliert die Eigenschaften und Stärken Ihres Produkts. Das Übersetzen des Namens und der Beschreibung Ihres Produkts ist nicht obligatorisch, erhöht jedoch die Wahrscheinlichkeit, dass es bemerkt wird.',
-          price: 'Sie können einen anderen Preis für Variationen Ihres Produkts festlegen.',
-          types: 'Erstellen und gruppieren Sie die verschiedenen Variationen Ihres Basisprodukts.',
-          variations: 'Lorem ipsum dolor sit amet'
+          category:
+            'Durch die Verknüpfung Ihres Produkts mit der entsprechenden Kategorie können Sowing-Besucher Ihr Produkt leichter finden.',
+          name_and_description:
+            'Nennen und beschreiben Sie detailliert die Eigenschaften und Stärken Ihres Produkts. Das Übersetzen des Namens und der Beschreibung Ihres Produkts ist nicht obligatorisch, erhöht jedoch die Wahrscheinlichkeit, dass es bemerkt wird.',
+          price:
+            'Sie können einen anderen Preis für Variationen Ihres Produkts festlegen.',
+          types:
+            'Erstellen und gruppieren Sie die verschiedenen Variationen Ihres Basisprodukts.',
+          variations: 'Lorem ipsum dolor sit amet',
         },
         title: 'Produkt hinzufügen',
         unnamed: 'Neues Produkt ohne Namen',
         types: 'Arten',
         types_for: 'Arten für',
         variations: 'Variationen',
-        variations_for: 'Variationen für'
-      }
+        variations_for: 'Variationen für',
+      },
     },
     variations: {
       labels: {
         quantity: 'Menge',
-        selection: 'Auswahl'
+        selection: 'Auswahl',
       },
       select: {
-        out_of_stock: 'Ausverkauft'
-      }
-    }
-  }
+        out_of_stock: 'Ausverkauft',
+      },
+    },
+  },
 }

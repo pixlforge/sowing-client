@@ -8,25 +8,20 @@
   >
     <ais-stats class="search__ais-stats">
       <template slot-scope="{ totalResults }">
-
         <!-- Index titles -->
-        <Heading
-          tag="h3"
-          visual="h3"
-        >
+        <Heading tag="h3" visual="h3">
           <template v-if="indexName === 'products'">
-            {{ $t("search.products") }}
+            {{ $t('search.products') }}
           </template>
           <template v-else>
-            {{ $t("search.shops") }}
+            {{ $t('search.shops') }}
           </template>
         </Heading>
 
         <!-- Total results -->
         <small class="search__results">
-          {{ totalResults }} {{ $t("search.results_found") }}
+          {{ totalResults }} {{ $t('search.results_found') }}
         </small>
-
       </template>
     </ais-stats>
 
@@ -35,26 +30,19 @@
       <template>
         <p class="search__ais-no-results-label">
           <template v-if="indexName === 'products'">
-            {{ $t("search.no_product_found") }}
+            {{ $t('search.no_product_found') }}
           </template>
           <template v-else>
-            {{ $t("search.no_shop_found") }}
+            {{ $t('search.no_shop_found') }}
           </template>
         </p>
       </template>
     </ais-no-results>
 
     <!-- Results -->
-    <ais-results
-      :results-per-page="5"
-      class="search__ais-results"
-    >
+    <ais-results :results-per-page="5" class="search__ais-results">
       <!-- eslint-disable -->
-      <component
-        :is="indexName"
-        slot-scope="{ result }"
-        :result="result"
-      />
+      <component :is="indexName" slot-scope="{ result }" :result="result" />
       <!-- eslint-enable -->
     </ais-results>
 
@@ -66,7 +54,6 @@
         </div>
       </template>
     </ais-pagination>
-
   </ais-index>
 </template>
 
@@ -77,27 +64,27 @@ import SearchResultShop from '@/components/search/SearchResultShop'
 export default {
   components: {
     /* eslint-disable */
-    'products': SearchResultProduct,
-    'shops': SearchResultShop
+    products: SearchResultProduct,
+    shops: SearchResultShop,
     /* eslint-enable */
   },
   props: {
     query: {
       type: String,
-      required: true
+      required: true,
     },
     indexName: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
   data() {
     return {
       api: {
         id: process.env.ALGOLIA_APP_ID,
-        key: process.env.ALGOLIA_SECRET
-      }
+        key: process.env.ALGOLIA_SECRET,
+      },
     }
-  }
+  },
 }
 </script>

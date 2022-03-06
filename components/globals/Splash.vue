@@ -1,6 +1,5 @@
 <template>
   <ContentSection>
-
     <!-- Icon -->
     <div class="text-center mb-60">
       <template v-if="success">
@@ -24,16 +23,15 @@
     </div>
 
     <!-- Title -->
-    <Heading
-      tag="h2"
-      visual="main"
-    >
+    <Heading tag="h2" visual="main">
       <slot name="title">
         {{ title }}
       </slot>
     </Heading>
 
-    <p class="text-18 md:text-20 lg:text-30 font-bold text-center mb-72 md:mb-96 lg:mb-132">
+    <p
+      class="text-18 md:text-20 lg:text-30 font-bold text-center mb-72 md:mb-96 lg:mb-132"
+    >
       <slot name="subtitle">
         {{ subtitle }}
       </slot>
@@ -41,7 +39,7 @@
 
     <!-- Illustration -->
     <div class="flex justify-center px-20">
-      <slot name="illustration"/>
+      <slot name="illustration" />
     </div>
   </ContentSection>
 </template>
@@ -53,24 +51,24 @@ import Heading from '@/components/globals/Heading'
 export default {
   components: {
     ContentSection,
-    Heading
+    Heading,
   },
   props: {
     type: {
       type: String,
       required: false,
-      default: ''
+      default: '',
     },
     title: {
       type: String,
       required: false,
-      default: ''
+      default: '',
     },
     subtitle: {
       type: String,
       required: false,
-      default: ''
-    }
+      default: '',
+    },
   },
   computed: {
     success() {
@@ -78,7 +76,7 @@ export default {
     },
     error() {
       return this.type === 'error'
-    }
-  }
+    },
+  },
 }
 </script>

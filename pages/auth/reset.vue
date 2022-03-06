@@ -1,29 +1,20 @@
 <template>
   <div>
-
     <!-- Page title -->
-    <Heading
-      tag="h1"
-      visual="h4"
-      utilities="text-center"
-    >
-      {{ $t("password_reset.title") }}
+    <Heading tag="h1" visual="h4" utilities="text-center">
+      {{ $t('password_reset.title') }}
     </Heading>
 
     <!-- Instructions -->
     <Paragraph class="text-center mx-auto my-36">
-      {{ $t("password_reset.instructions") }}
+      {{ $t('password_reset.instructions') }}
     </Paragraph>
 
-    <form
-      @submit.prevent="reset"
-      class="mt-36 sm:mt-72"
-    >
-
+    <form class="mt-36 sm:mt-72" @submit.prevent="reset">
       <!-- Email -->
       <FormGroup>
         <FormLabel name="user">
-          {{ $t("form.email.label") }}
+          {{ $t('form.email.label') }}
         </FormLabel>
         <FormInput
           ref="autofocus"
@@ -33,16 +24,13 @@
           type="email"
           required
         />
-        <FormValidation
-          :errors="errors"
-          name="user"
-        />
+        <FormValidation :errors="errors" name="user" />
       </FormGroup>
 
       <!-- Password -->
       <FormGroup>
         <FormLabel name="password">
-          {{ $t("form.password.label") }}
+          {{ $t('form.password.label') }}
         </FormLabel>
         <FormInput
           v-model="form.password"
@@ -51,16 +39,13 @@
           type="password"
           required
         />
-        <FormValidation
-          :errors="errors"
-          name="password"
-        />
+        <FormValidation :errors="errors" name="password" />
       </FormGroup>
 
       <!-- Password confirmation -->
       <FormGroup>
         <FormLabel name="password_confirmation">
-          {{ $t("form.password_confirmation.label") }}
+          {{ $t('form.password_confirmation.label') }}
         </FormLabel>
         <FormInput
           v-model="form.password_confirmation"
@@ -72,12 +57,8 @@
       </FormGroup>
 
       <!-- Submit -->
-      <ButtonPrimary
-        type="submit"
-        icon="redo-alt"
-        class="mx-auto mt-36"
-      >
-        {{ $t("button.password_reset") }}
+      <ButtonPrimary type="submit" icon="redo-alt" class="mx-auto mt-36">
+        {{ $t('button.password_reset') }}
       </ButtonPrimary>
     </form>
   </div>
@@ -102,10 +83,21 @@ export default {
     FormLabel,
     FormValidation,
     Heading,
-    Paragraph
+    Paragraph,
   },
-  middleware: ['guest'],
   layout: 'auth',
+  middleware: ['guest'],
+  data() {
+    return {
+      form: {
+        token: null,
+        email: '',
+        password: '',
+        password_confirmation: '',
+      },
+      errors: {},
+    }
+  },
   head() {
     return {
       title: this.$t('password_reset.title'),
@@ -113,25 +105,14 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: ''
+          content: '',
         },
         {
           hid: 'robots',
           name: 'robots',
-          content: 'noindex'
-        }
-      ]
-    }
-  },
-  data() {
-    return {
-      form: {
-        token: null,
-        email: '',
-        password: '',
-        password_confirmation: ''
-      },
-      errors: {}
+          content: 'noindex',
+        },
+      ],
     }
   },
   mounted() {
@@ -140,7 +121,7 @@ export default {
   },
   methods: {
     ...mapActions({
-      flash: 'alert/flash'
+      flash: 'alert/flash',
     }),
     async reset() {
       if (!this.form.token) {
@@ -154,7 +135,7 @@ export default {
         this.$toast.success(res.message)
         this.flash({
           message: res.message,
-          type: 'success'
+          type: 'success',
         })
         this.$router.push({ name: 'auth-login' })
       } catch (e) {
@@ -164,7 +145,7 @@ export default {
           this.$toast.error(this.errors[error])
         }
       }
-    }
-  }
+    },
+  },
 }
 </script>

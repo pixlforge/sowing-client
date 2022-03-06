@@ -5,7 +5,7 @@ export default {
       completed: 'Completed',
       pending: 'Pending',
       processing: 'Processing',
-      payment_failed: 'Payment Failed'
-    }
-  }
+      payment_failed: 'Payment Failed',
+    },
+  },
 }

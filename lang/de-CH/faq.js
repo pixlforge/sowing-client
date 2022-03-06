@@ -1,5 +1,5 @@
 export default {
   faq: {
-    title: 'Häufig gestellte Fragen'
-  }
+    title: 'Häufig gestellte Fragen',
+  },
 }

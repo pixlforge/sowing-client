@@ -1,8 +1,8 @@
 <template>
   <div
     :class="bgTheme"
-    @click.prevent="update"
     class="w-60 h-60 rounded-lg flex justify-center items-center cursor-pointer"
+    @click.prevent="update"
   >
     <font-awesome-icon
       v-if="theme === shopTheme"
@@ -19,20 +19,20 @@ export default {
   props: {
     theme: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
   computed: {
     ...mapGetters({
-      shopTheme: 'shop/shopTheme'
+      shopTheme: 'shop/shopTheme',
     }),
     bgTheme() {
       return `bg-${this.theme}-500`
-    }
+    },
   },
   methods: {
     ...mapActions({
-      setShopTheme: 'shop/setShopTheme'
+      setShopTheme: 'shop/setShopTheme',
     }),
     async update() {
       try {
@@ -41,7 +41,7 @@ export default {
       } catch (e) {
         this.$toast.error(this.$t('toasts.general_error'))
       }
-    }
-  }
+    },
+  },
 }
 </script>

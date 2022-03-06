@@ -1,11 +1,7 @@
 <template>
   <main>
-
     <!-- Cover -->
-    <ShopCover
-      v-if="shopCover"
-      :shop-cover="shopCover"
-    />
+    <ShopCover v-if="shopCover" :shop-cover="shopCover" />
 
     <!-- Header -->
     <Header
@@ -15,10 +11,7 @@
     >
       <HeaderList>
         <li>
-          <font-awesome-icon
-            :icon="['far', 'map-marker-alt']"
-            class="mr-5"
-          />
+          <font-awesome-icon :icon="['far', 'map-marker-alt']" class="mr-5" />
           {{ shop.postal_code }} {{ shop.city }}
         </li>
         <li class="ml-20">
@@ -29,16 +22,13 @@
 
     <!-- About -->
     <ContentSection>
-      <Heading
-        tag="h1"
-        visual="main"
-      >
-        {{ $t("shop_details.welcome") }}
+      <Heading tag="h1" visual="main">
+        {{ $t('shop_details.welcome') }}
       </Heading>
 
       <p
-        v-html="shop.description_long[locale]"
         class="max-w-600 text-16 leading-loose text-center mx-auto my-36 md:my-72 mt-72 sm:mt-132"
+        v-html="shop.description_long[locale]"
       />
     </ContentSection>
 
@@ -50,22 +40,15 @@
           :key="n"
           class="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 p-20"
         >
-          <img
-            :src="imgUrl"
-            :alt="imgAlt"
-            class="rounded-lg shadow-xl"
-          >
+          <img :src="imgUrl" :alt="imgAlt" class="rounded-lg shadow-xl" />
         </div>
       </div>
     </ContentSection>
 
     <!-- Shop articles -->
     <ContentSection>
-      <Heading
-        tag="h2"
-        visual="main"
-      >
-        {{ $t("shop_details.interested") }}
+      <Heading tag="h2" visual="main">
+        {{ $t('shop_details.interested') }}
       </Heading>
 
       <div class="flex justify-center mt-72">
@@ -76,14 +59,13 @@
           size="large"
           class="shadow-2xl"
         >
-          {{ $t("button.see_all_articles") }}
+          {{ $t('button.see_all_articles') }}
         </ButtonLinkPrimary>
       </div>
     </ContentSection>
 
     <!-- Register CTA -->
-    <StreakRegister/>
-
+    <StreakRegister />
   </main>
 </template>
 
@@ -107,17 +89,17 @@ export default {
     HeaderList,
     Heading,
     ShopCover,
-    StreakRegister
-  },
-  head() {
-    return {
-      title: `${this.shop.name} | ${this.title}`
-    }
+    StreakRegister,
   },
   mixins: [theming],
   data() {
     return {
-      shop: {}
+      shop: {},
+    }
+  },
+  head() {
+    return {
+      title: `${this.shop.name} | ${this.title}`,
     }
   },
   computed: {
@@ -125,21 +107,21 @@ export default {
       locale: 'locale',
       shopAvatar: 'shop/shopAvatar',
       shopCover: 'shop/shopCover',
-      shopName: 'shop/shopName'
+      shopName: 'shop/shopName',
     }),
     imgUrl() {
       return 'https://bulma.io/images/placeholders/1280x960.png'
     },
     imgAlt() {
       return this.$t('product.img.alt')
-    }
+    },
   },
   async asyncData({ app, route }) {
     const shop = await app.$axios.$get(`/shops/${route.params.slug}`)
 
     return {
       title: app.head.title,
-      shop: shop.data
+      shop: shop.data,
     }
   },
   mounted() {
@@ -151,8 +133,8 @@ export default {
   methods: {
     ...mapActions({
       setShop: 'shop/setShop',
-      resetShop: 'shop/resetShop'
-    })
-  }
+      resetShop: 'shop/resetShop',
+    }),
+  },
 }
 </script>

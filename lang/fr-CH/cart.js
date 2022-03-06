@@ -2,7 +2,7 @@ export default {
   cart: {
     labels: {
       price: 'Prix',
-      quantity: 'Quantité'
+      quantity: 'Quantité',
     },
     title: 'Mon panier',
     checkout: 'Passer à la caisse',
@@ -10,6 +10,6 @@ export default {
     products: 'produits',
     for: 'pour',
     cart_is_empty: 'Votre panier est vide',
-    add_something: 'Ajoutez-y quelque chose!'
-  }
+    add_something: 'Ajoutez-y quelque chose!',
+  },
 }

@@ -71,5 +71,5 @@ export default {
   ...stripe,
   ...terms,
   ...toasts,
-  ...verify
+  ...verify,
 }

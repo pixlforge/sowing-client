@@ -1,6 +1,5 @@
 <template>
   <main>
-
     <!-- Header -->
     <Header
       :title="product.shop.name"
@@ -12,25 +11,24 @@
           :route="{
             name: 'shop-slug-details',
             params: {
-              slug: product.shop.slug
-            }
+              slug: product.shop.slug,
+            },
           }"
           :color="shopTheme"
           class="mt-16 shadow-2xl"
         >
-          {{ $t("shop.visit") }}
+          {{ $t('shop.visit') }}
         </ButtonLinkHeader>
       </template>
     </Header>
 
     <!-- Product details -->
     <ContentSection>
-      <ProductDetails :product="product"/>
+      <ProductDetails :product="product" />
     </ContentSection>
 
     <!-- Streak newsletter -->
-    <StreakNewsletter/>
-
+    <StreakNewsletter />
   </main>
 </template>
 
@@ -50,7 +48,14 @@ export default {
     ContentSection,
     Header,
     ProductDetails,
-    StreakNewsletter
+    StreakNewsletter,
+  },
+  mixins: [theming],
+  data() {
+    return {
+      product: {},
+      shop: {},
+    }
   },
   head() {
     return {
@@ -59,23 +64,16 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: ''
-        }
-      ]
-    }
-  },
-  mixins: [theming],
-  data() {
-    return {
-      product: {},
-      shop: {}
+          content: '',
+        },
+      ],
     }
   },
   computed: {
     ...mapGetters({
       locale: 'locale',
-      shopAvatar: 'shop/shopAvatar'
-    })
+      shopAvatar: 'shop/shopAvatar',
+    }),
   },
   async asyncData({ params, app }) {
     const product = await app.$axios.$get(`/products/${params.slug}`)
@@ -83,7 +81,7 @@ export default {
 
     return {
       product: product.data,
-      shop: shop.data
+      shop: shop.data,
     }
   },
   mounted() {
@@ -95,8 +93,8 @@ export default {
   methods: {
     ...mapActions({
       setShop: 'shop/setShop',
-      resetShop: 'shop/resetShop'
-    })
-  }
+      resetShop: 'shop/resetShop',
+    }),
+  },
 }
 </script>

@@ -1,8 +1,5 @@
 <template>
-  <svg
-    viewBox="0 0 133 25"
-    fill="none"
-  >
+  <svg viewBox="0 0 133 25" fill="none">
     <title>Logo Sowing</title>
     <g
       id="Symbols"
@@ -11,10 +8,7 @@
       fill="none"
       fill-rule="evenodd"
     >
-      <g
-        id="Navbar-/-Navbar"
-        transform="translate(-300.000000, -28.000000)"
-      >
+      <g id="Navbar-/-Navbar" transform="translate(-300.000000, -28.000000)">
         <g
           id="Logos-/-Logo-small-color"
           transform="translate(300.000000, 28.000000)"
@@ -40,6 +34,6 @@
 import theming from '@/mixins/theming'
 
 export default {
-  mixins: [theming]
+  mixins: [theming],
 }
 </script>

@@ -1,13 +1,13 @@
 <template>
   <div>
     <FormLabel name="country_id">
-      {{ $t("form.country.label") }}
+      {{ $t('form.country.label') }}
     </FormLabel>
     <FormSelect
       :errors="errors"
       :required="required"
-      @change.native="$emit('input', $event.target.value)"
       name="country_id"
+      @change.native="$emit('input', $event.target.value)"
     >
       <option
         v-for="country in countries"
@@ -18,10 +18,7 @@
         {{ country.name[locale] }}
       </option>
     </FormSelect>
-    <FormValidation
-      :errors="errors"
-      name="country_id"
-    />
+    <FormValidation :errors="errors" name="country_id" />
   </div>
 </template>
 
@@ -36,33 +33,33 @@ export default {
   components: {
     FormLabel,
     FormSelect,
-    FormValidation
+    FormValidation,
   },
   props: {
     value: {
       type: [String, Number],
       required: false,
-      default: ''
+      default: '',
     },
     errors: {
       type: Object,
-      required: true
+      required: true,
     },
     required: {
       type: Boolean,
       required: false,
-      default: false
-    }
+      default: false,
+    },
   },
   data() {
     return {
-      countries: []
+      countries: [],
     }
   },
   computed: {
     ...mapGetters({
-      locale: 'locale'
-    })
+      locale: 'locale',
+    }),
   },
   created() {
     this.getCountries()
@@ -71,7 +68,7 @@ export default {
     async getCountries() {
       const res = await this.$axios.$get('/countries')
       this.countries = res.data
-    }
-  }
+    },
+  },
 }
 </script>

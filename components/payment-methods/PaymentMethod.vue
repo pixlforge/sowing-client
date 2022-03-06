@@ -21,14 +21,14 @@ export default {
     /* eslint-disable */
     'american-express': CardAmex,
     mastercard: CardMasterCard,
-    visa: CardVisa
+    visa: CardVisa,
     /* eslint-enable */
   },
   props: {
     paymentMethod: {
       type: Object,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 }
 </script>

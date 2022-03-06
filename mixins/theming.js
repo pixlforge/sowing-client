@@ -3,7 +3,7 @@ import { mapGetters } from 'vuex'
 export default {
   computed: {
     ...mapGetters({
-      shopTheme: 'shop/shopTheme'
+      shopTheme: 'shop/shopTheme',
     }),
     btnTheme() {
       return `bg-${this.shopTheme}-500`
@@ -13,6 +13,6 @@ export default {
     },
     textTheme() {
       return `text-${this.shopTheme}-500`
-    }
-  }
+    },
+  },
 }

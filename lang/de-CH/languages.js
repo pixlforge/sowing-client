@@ -3,6 +3,6 @@ export default {
     french: 'französisch',
     english: 'englisch',
     german: 'deutsch',
-    italian: 'italienisch'
-  }
+    italian: 'italienisch',
+  },
 }

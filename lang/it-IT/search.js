@@ -7,6 +7,6 @@ export default {
     products: 'Prodotti',
     shops: 'Negozi',
     no_product_found: 'Nessun prodotto trovato',
-    no_shop_found: 'Nessun negozio trovato'
-  }
+    no_shop_found: 'Nessun negozio trovato',
+  },
 }

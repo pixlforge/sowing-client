@@ -10,8 +10,8 @@ export default {
   props: {
     shopCover: {
       type: String,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 }
 </script>

@@ -10,11 +10,11 @@
 
     <ButtonPrimary
       :disabled="(shopExists || !shopName) && !editable"
-      @click.native="check"
       icon="rocket"
       class="w-full h-46 sm:w-auto sm:rounded-l-none"
+      @click.native="check"
     >
-      {{ $t("button.check_availability") }}
+      {{ $t('button.check_availability') }}
     </ButtonPrimary>
   </section>
 </template>
@@ -29,20 +29,20 @@ import FormInput from '@/components/forms/FormInput'
 export default {
   components: {
     ButtonPrimary,
-    FormInput
+    FormInput,
   },
   mixins: [theming],
   props: {
     editable: {
       type: Boolean,
       required: false,
-      default: false
-    }
+      default: false,
+    },
   },
   computed: {
     ...mapGetters({
       shopName: 'shop/shopName',
-      shopExists: 'shop/shopExists'
+      shopExists: 'shop/shopExists',
     }),
     localShopName: {
       get() {
@@ -50,19 +50,19 @@ export default {
       },
       set(name) {
         this.setShopName(name)
-      }
-    }
+      },
+    },
   },
   methods: {
     ...mapActions({
       flash: 'alert/flash',
       close: 'alert/close',
-      setShopName: 'shop/setShopName'
+      setShopName: 'shop/setShopName',
     }),
     async check() {
       try {
         await this.$axios.$post('/shops/checker', {
-          name: this.shopName
+          name: this.shopName,
         })
         this.$toast.success(
           `"<em>${this.shopName}</em>" ${this.$t('toasts.is_available')}!`
@@ -71,7 +71,7 @@ export default {
           type: 'success',
           message: `"<em>${this.shopName}</em>" ${this.$t(
             'toasts.is_available'
-          )}!`
+          )}!`,
         })
       } catch (e) {
         this.$toast.error(
@@ -81,10 +81,10 @@ export default {
           type: 'danger',
           message: `"<em>${this.shopName}</em>" ${this.$t(
             'toasts.is_already_in_use'
-          )}!`
+          )}!`,
         })
       }
-    }
-  }
+    },
+  },
 }
 </script>

@@ -1,8 +1,5 @@
 <template>
-  <p
-    v-if="errorPresent"
-    class="text-12 text-red-500 mt-5"
-  >
+  <p v-if="errorPresent" class="text-12 text-red-500 mt-5">
     {{ errorMessage }}
   </p>
 </template>
@@ -15,12 +12,12 @@ export default {
       required: false,
       default: () => {
         return {}
-      }
+      },
     },
     name: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
   computed: {
     errorPresent() {
@@ -28,7 +25,7 @@ export default {
     },
     errorMessage() {
       return this.errors[this.name][0]
-    }
-  }
+    },
+  },
 }
 </script>

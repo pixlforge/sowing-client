@@ -1,24 +1,26 @@
 <template>
-  <div class="max-w-600 rounded-lg border border-gray-100 shadow flex px-24 py-72">
+  <div
+    class="max-w-600 rounded-lg border border-gray-100 shadow flex px-24 py-72"
+  >
     <div class="w-1/4">
-      <div class="w-100 h-100 bg-gray-200 rounded-full flex justify-center items-center mx-auto">
-        <font-awesome-icon
-          :icon="['fas', 'user']"
-          class="text-36 text-white"
-        />
+      <div
+        class="w-100 h-100 bg-gray-200 rounded-full flex justify-center items-center mx-auto"
+      >
+        <font-awesome-icon :icon="['fas', 'user']" class="text-36 text-white" />
       </div>
     </div>
     <div class="w-3/4 pl-60">
-
       <div class="relative flex items-center">
-
         <!-- Status -->
         <div class="flex items-center group cursor-pointer mr-12">
           <font-awesome-icon
-            :icon="['fas', userIsVerified ? 'check-circle' : 'exclamation-triangle']"
+            :icon="[
+              'fas',
+              userIsVerified ? 'check-circle' : 'exclamation-triangle',
+            ]"
             :class="{
               'text-blue-500': userIsVerified,
-              'text-orange-500': !userIsVerified
+              'text-orange-500': !userIsVerified,
             }"
             class="text-24"
           />
@@ -26,7 +28,7 @@
             <div
               :class="{
                 'bg-blue-500': userIsVerified,
-                'bg-orange-500': !userIsVerified
+                'bg-orange-500': !userIsVerified,
               }"
               class="opacity-0 group-hover:opacity-100 transition-opacity transition-medium rounded-lg shadow-lg text-12 text-white px-20 py-10 -mt-48"
             >
@@ -41,35 +43,24 @@
         </div>
 
         <!-- Name -->
-        <Heading
-          tag="h3"
-          visual="h3"
-        >
+        <Heading tag="h3" visual="h3">
           {{ user.name }}
         </Heading>
       </div>
 
       <div class="ml-36">
-
         <!-- Email -->
         <div class="text-14 text-gray-500 flex items-center my-10">
-          <font-awesome-icon
-            :icon="['far', 'envelope']"
-            class="mr-10"
-          />
+          <font-awesome-icon :icon="['far', 'envelope']" class="mr-10" />
           {{ user.email }}
         </div>
 
         <!-- Created -->
         <div class="text-12 text-gray-300 flex items-baseline">
-          <font-awesome-icon
-            :icon="['far', 'birthday-cake']"
-            class="mr-10"
-          />
-          {{ $t("account_card.member_for") }} {{ user.member_for[locale] }}
+          <font-awesome-icon :icon="['far', 'birthday-cake']" class="mr-10" />
+          {{ $t('account_card.member_for') }} {{ user.member_for[locale] }}
         </div>
       </div>
-
     </div>
   </div>
 </template>
@@ -81,21 +72,22 @@ import Heading from '@/components/globals/Heading'
 
 export default {
   components: {
-    Heading
+    Heading,
   },
   props: {
     user: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
+
   computed: {
     ...mapGetters({
-      locale: 'locale'
+      locale: 'locale',
     }),
     userIsVerified() {
       return this.user.is_verified
-    }
-  }
+    },
+  },
 }
 </script>

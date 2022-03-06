@@ -3,7 +3,7 @@
     :for="name"
     class="block text-12 font-extrabold uppercase tracking-wide mb-12"
   >
-    <slot/>
+    <slot />
   </label>
 </template>
 
@@ -12,8 +12,8 @@ export default {
   props: {
     name: {
       type: String,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 }
 </script>

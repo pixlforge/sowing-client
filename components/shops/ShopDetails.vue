@@ -1,42 +1,29 @@
 <template>
   <section class="w-full">
-
     <!-- Postal code -->
-    <ShopDetailsGroupInline
-      :title="$t('form.postal_code.label')"
-    >
+    <ShopDetailsGroupInline :title="$t('form.postal_code.label')">
       <FormInput
         v-model="localPostalCode"
         :disabled="shopExistsAndNotEditable"
         :errors="errors"
         name="postal_code"
       />
-      <FormValidation
-        :errors="errors"
-        name="postal_code"
-      />
+      <FormValidation :errors="errors" name="postal_code" />
     </ShopDetailsGroupInline>
 
     <!-- City -->
-    <ShopDetailsGroupInline
-      :title="$t('form.city.label')"
-    >
+    <ShopDetailsGroupInline :title="$t('form.city.label')">
       <FormInput
         v-model="localCity"
         :disabled="shopExistsAndNotEditable"
         :errors="errors"
         name="city"
       />
-      <FormValidation
-        :errors="errors"
-        name="city"
-      />
+      <FormValidation :errors="errors" name="city" />
     </ShopDetailsGroupInline>
 
     <!-- Country -->
-    <ShopDetailsGroupInline
-      :title="$t('form.country.label')"
-    >
+    <ShopDetailsGroupInline :title="$t('form.country.label')">
       <FormSelect
         v-model="localCountry"
         :disabled="shopExistsAndNotEditable"
@@ -51,19 +38,18 @@
           {{ country.name[locale] }}
         </option>
       </FormSelect>
-      <FormValidation
-        :errors="errors"
-        name="country_id"
-      />
+      <FormValidation :errors="errors" name="country_id" />
     </ShopDetailsGroupInline>
 
-    <FormDivider large/>
+    <FormDivider large />
 
     <!-- Short description FR -->
     <ShopDetailsGroup
       :title="$t('form.description_short.label')"
       :language="$t('languages.french')"
-      :description="$t('shop_creator.steps.details.description_short_description')"
+      :description="
+        $t('shop_creator.steps.details.description_short_description')
+      "
       class="my-72"
     >
       <FormInput
@@ -79,7 +65,9 @@
     <ShopDetailsGroup
       :title="$t('form.description_long.label')"
       :language="$t('languages.french')"
-      :description="$t('shop_creator.steps.details.description_long_description')"
+      :description="
+        $t('shop_creator.steps.details.description_long_description')
+      "
       class="my-72"
     >
       <FormTextarea
@@ -90,13 +78,15 @@
       />
     </ShopDetailsGroup>
 
-    <FormDivider large/>
+    <FormDivider large />
 
     <!-- Short description EN -->
     <ShopDetailsGroup
       :title="$t('form.description_short.label')"
       :language="$t('languages.english')"
-      :description="$t('shop_creator.steps.details.description_short_description')"
+      :description="
+        $t('shop_creator.steps.details.description_short_description')
+      "
       class="my-72"
     >
       <FormInput
@@ -112,7 +102,9 @@
     <ShopDetailsGroup
       :title="$t('form.description_long.label')"
       :language="$t('languages.english')"
-      :description="$t('shop_creator.steps.details.description_long_description')"
+      :description="
+        $t('shop_creator.steps.details.description_long_description')
+      "
       class="my-72"
     >
       <FormTextarea
@@ -123,13 +115,15 @@
       />
     </ShopDetailsGroup>
 
-    <FormDivider large/>
+    <FormDivider large />
 
     <!-- Short description DE -->
     <ShopDetailsGroup
       :title="$t('form.description_short.label')"
       :language="$t('languages.german')"
-      :description="$t('shop_creator.steps.details.description_short_description')"
+      :description="
+        $t('shop_creator.steps.details.description_short_description')
+      "
       class="my-72"
     >
       <FormInput
@@ -145,7 +139,9 @@
     <ShopDetailsGroup
       :title="$t('form.description_long.label')"
       :language="$t('languages.german')"
-      :description="$t('shop_creator.steps.details.description_long_description')"
+      :description="
+        $t('shop_creator.steps.details.description_long_description')
+      "
       class="my-72"
     >
       <FormTextarea
@@ -156,13 +152,15 @@
       />
     </ShopDetailsGroup>
 
-    <FormDivider large/>
+    <FormDivider large />
 
     <!-- Short description IT -->
     <ShopDetailsGroup
       :title="$t('form.description_short.label')"
       :language="$t('languages.italian')"
-      :description="$t('shop_creator.steps.details.description_short_description')"
+      :description="
+        $t('shop_creator.steps.details.description_short_description')
+      "
       class="my-72"
     >
       <FormInput
@@ -178,7 +176,9 @@
     <ShopDetailsGroup
       :title="$t('form.description_long.label')"
       :language="$t('languages.italian')"
-      :description="$t('shop_creator.steps.details.description_long_description')"
+      :description="
+        $t('shop_creator.steps.details.description_long_description')
+      "
       class="my-72"
     >
       <FormTextarea
@@ -188,7 +188,6 @@
         name="description_long"
       />
     </ShopDetailsGroup>
-
   </section>
 </template>
 
@@ -211,22 +210,22 @@ export default {
     FormTextarea,
     FormValidation,
     ShopDetailsGroup,
-    ShopDetailsGroupInline
+    ShopDetailsGroupInline,
   },
   props: {
     countries: {
       type: Array,
-      required: true
+      required: true,
     },
     errors: {
       type: Object,
-      required: true
+      required: true,
     },
     editable: {
       type: Boolean,
       required: false,
-      default: false
-    }
+      default: false,
+    },
   },
   computed: {
     ...mapGetters({
@@ -242,7 +241,7 @@ export default {
       shopShortDescriptionFr: 'shop/shopShortDescriptionFr',
       shopShortDescriptionEn: 'shop/shopShortDescriptionEn',
       shopShortDescriptionDe: 'shop/shopShortDescriptionDe',
-      shopShortDescriptionIt: 'shop/shopShortDescriptionIt'
+      shopShortDescriptionIt: 'shop/shopShortDescriptionIt',
     }),
     localPostalCode: {
       get() {
@@ -250,7 +249,7 @@ export default {
       },
       set(postalCode) {
         this.setShopPostalCode(postalCode)
-      }
+      },
     },
     localCity: {
       get() {
@@ -258,7 +257,7 @@ export default {
       },
       set(city) {
         this.setShopCity(city)
-      }
+      },
     },
     localCountry: {
       get() {
@@ -266,7 +265,7 @@ export default {
       },
       set(countryId) {
         this.setShopCountryId(countryId)
-      }
+      },
     },
     localShortDescriptionFr: {
       get() {
@@ -274,7 +273,7 @@ export default {
       },
       set(description) {
         this.setShopShortDescriptionFr(description)
-      }
+      },
     },
     localLongDescriptionFr: {
       get() {
@@ -282,7 +281,7 @@ export default {
       },
       set(description) {
         this.setShopLongDescriptionFr(description)
-      }
+      },
     },
     localShortDescriptionEn: {
       get() {
@@ -290,7 +289,7 @@ export default {
       },
       set(description) {
         this.setShopShortDescriptionEn(description)
-      }
+      },
     },
     localLongDescriptionEn: {
       get() {
@@ -298,7 +297,7 @@ export default {
       },
       set(description) {
         this.setShopLongDescriptionEn(description)
-      }
+      },
     },
     localShortDescriptionDe: {
       get() {
@@ -306,7 +305,7 @@ export default {
       },
       set(description) {
         this.setShopShortDescriptionDe(description)
-      }
+      },
     },
     localLongDescriptionDe: {
       get() {
@@ -314,7 +313,7 @@ export default {
       },
       set(description) {
         this.setShopLongDescriptionDe(description)
-      }
+      },
     },
     localShortDescriptionIt: {
       get() {
@@ -322,7 +321,7 @@ export default {
       },
       set(description) {
         this.setShopShortDescriptionIt(description)
-      }
+      },
     },
     localLongDescriptionIt: {
       get() {
@@ -330,11 +329,11 @@ export default {
       },
       set(description) {
         this.setShopLongDescriptionIt(description)
-      }
+      },
     },
     shopExistsAndNotEditable() {
       return this.shopExists && !this.editable
-    }
+    },
   },
   methods: {
     ...mapActions({
@@ -348,8 +347,8 @@ export default {
       setShopShortDescriptionFr: 'shop/setShopShortDescriptionFr',
       setShopShortDescriptionEn: 'shop/setShopShortDescriptionEn',
       setShopShortDescriptionDe: 'shop/setShopShortDescriptionDe',
-      setShopShortDescriptionIt: 'shop/setShopShortDescriptionIt'
-    })
-  }
+      setShopShortDescriptionIt: 'shop/setShopShortDescriptionIt',
+    }),
+  },
 }
 </script>

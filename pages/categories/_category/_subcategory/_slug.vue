@@ -1,6 +1,5 @@
 <template>
   <main>
-
     <!-- Header -->
     <Header
       :title="subcategory.name[locale]"
@@ -9,7 +8,6 @@
 
     <ContentSection>
       <div class="flex flex-wrap justify-center -mx-16">
-
         <!-- Products -->
         <Product
           v-for="product in products"
@@ -18,7 +16,6 @@
         />
       </div>
     </ContentSection>
-
   </main>
 </template>
 
@@ -33,32 +30,36 @@ export default {
   components: {
     ContentSection,
     Header,
-    Product
-  },
-  head() {
-    return {
-      title: this.subcategory.name[this.locale]
-    }
+    Product,
   },
   data() {
     return {
       subcategory: {},
-      products: []
+      products: [],
+    }
+  },
+  head() {
+    return {
+      title: this.subcategory.name[this.locale],
     }
   },
   computed: {
     ...mapGetters({
-      locale: 'locale'
-    })
+      locale: 'locale',
+    }),
   },
   async asyncData({ app, params }) {
-    const subcategory = await app.$axios.$get(`/categories/${params.subcategory}`)
-    const products = await app.$axios.$get(`/products?category=${params.subcategory}`)
+    const subcategory = await app.$axios.$get(
+      `/categories/${params.subcategory}`
+    )
+    const products = await app.$axios.$get(
+      `/products?category=${params.subcategory}`
+    )
 
     return {
       subcategory: subcategory.data,
-      products: products.data
+      products: products.data,
     }
-  }
+  },
 }
 </script>

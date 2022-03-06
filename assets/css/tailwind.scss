@@ -1,11 +1,11 @@
 @tailwind base;
-@import "partials/base";
+@import 'partials/base';
 
 @tailwind components;
-@import "partials/dropzone";
-@import "partials/search";
-@import "partials/toasts";
+@import 'partials/dropzone';
+@import 'partials/search';
+@import 'partials/toasts';
 
 @tailwind utilities;
-@import "partials/utilities";
-@import "partials/animations";
+@import 'partials/utilities';
+@import 'partials/animations';

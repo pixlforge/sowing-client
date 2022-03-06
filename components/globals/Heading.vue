@@ -4,18 +4,18 @@ export default {
     tag: {
       type: String,
       required: false,
-      default: 'h1'
+      default: 'h1',
     },
     visual: {
       type: String,
       required: false,
-      default: ''
+      default: '',
     },
     utilities: {
       type: String,
       required: false,
-      default: ''
-    }
+      default: '',
+    },
   },
   data() {
     return {
@@ -26,8 +26,8 @@ export default {
         h4: 'text-16 sm:text-20 font-extrabold leading-normal',
         h5: 'text-14 font-extrabold uppercase leading-normal',
         main: 'text-20 sm:text-24 md:text-30 font-extrabold text-center tracking-tight',
-        header: 'text-24 md:text-30 font-extrabold text-white tracking-tight'
-      }
+        header: 'text-24 md:text-30 font-extrabold text-white tracking-tight',
+      },
     }
   },
   computed: {
@@ -39,7 +39,7 @@ export default {
       }
 
       return classes
-    }
+    },
   },
   render(createElement) {
     return createElement(
@@ -47,6 +47,6 @@ export default {
       { attrs: { class: this.classes } },
       this.$slots.default
     )
-  }
+  },
 }
 </script>

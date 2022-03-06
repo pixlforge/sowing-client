@@ -3,10 +3,10 @@ export default {
     featured_categories: 'Featured categories',
     in: 'in',
     img: {
-      alt: 'Category image'
+      alt: 'Category image',
     },
     link: {
-      see_all: 'Show all products'
-    }
-  }
+      see_all: 'Show all products',
+    },
+  },
 }

@@ -1,37 +1,26 @@
 <template>
   <main>
-
     <!-- Header -->
-    <Header
-      :title="pageTitle"
-      icon="cash-register"
-    />
+    <Header :title="pageTitle" icon="cash-register" />
 
     <ContentSection>
       <div class="flex">
         <div class="w-3/4 mr-48">
-
           <!-- Payment methods -->
-          <Heading
-            tag="h2"
-            visual="h3"
-          >
-            {{ $t("checkout.payment") }}
+          <Heading tag="h2" visual="h3">
+            {{ $t('checkout.payment') }}
           </Heading>
 
           <PaymentMethods
             v-model="form.payment_method_id"
             :payment-methods="paymentMethods"
-            @payment-method:added="addPaymentMethod"
             class="mb-72 lg:mb-132 xl:mb-196"
+            @payment-method:added="addPaymentMethod"
           />
 
           <!-- Cart Overview -->
-          <Heading
-            tag="h2"
-            visual="h3"
-          >
-            {{ $t("cart.title") }}
+          <Heading tag="h2" visual="h3">
+            {{ $t('cart.title') }}
           </Heading>
 
           <CartOverviewProduct
@@ -42,13 +31,11 @@
         </div>
 
         <!-- Sidebar -->
-        <div class="w-1/4 bg-green-200 rounded-lg flex flex-col justify-start p-30 mt-48">
-
+        <div
+          class="w-1/4 bg-green-200 rounded-lg flex flex-col justify-start p-30 mt-48"
+        >
           <!-- Shipping address -->
-          <ShippingAddress
-            v-model="form.address_id"
-            :addresses="addresses"
-          />
+          <ShippingAddress v-model="form.address_id" :addresses="addresses" />
 
           <!-- Shipping methods dropdown -->
           <ShippingMethods
@@ -60,15 +47,11 @@
           />
 
           <!-- Price block -->
-          <div
-            v-if="!addressManagersVisible"
-            class="mt-48"
-          >
-
+          <div v-if="!addressManagersVisible" class="mt-48">
             <!-- Subtotal -->
             <div class="w-full text-gray-300 text-14 flex justify-between">
               <div>
-                {{ $t("checkout.subtotal") }}
+                {{ $t('checkout.subtotal') }}
               </div>
               <div>
                 {{ subtotal.formatted }}
@@ -77,16 +60,19 @@
 
             <!-- Shipping -->
             <div class="w-full text-gray-300 text-14 flex justify-between mt-5">
-              <div>{{ $t("checkout.delivery") }}</div>
+              <div>{{ $t('checkout.delivery') }}</div>
               <div v-if="shippingMethod">
-                {{ shippingMethod.price.currency }} {{ shippingMethod.price.amount }}
+                {{ shippingMethod.price.currency }}
+                {{ shippingMethod.price.amount }}
               </div>
             </div>
 
             <!-- Total -->
-            <div class="w-full text-20 font-bold uppercase flex justify-between mt-16">
+            <div
+              class="w-full text-20 font-bold uppercase flex justify-between mt-16"
+            >
               <div>
-                {{ $t("checkout.total") }}
+                {{ $t('checkout.total') }}
               </div>
               <div>
                 {{ total.formatted }}
@@ -99,16 +85,15 @@
             v-if="product.length && !addressManagersVisible"
             :disabled="is_empty || submitting"
             :title="$t('checkout.order')"
-            @click.native="order"
             icon="check-circle"
             class="shadow-xl mt-72"
+            @click.native="order"
           >
-            {{ $t("checkout.order") }}
+            {{ $t('checkout.order') }}
           </ButtonPrimary>
         </div>
       </div>
     </ContentSection>
-
   </main>
 </template>
 
@@ -133,9 +118,22 @@ export default {
     Heading,
     PaymentMethods,
     ShippingMethods,
-    ShippingAddress
+    ShippingAddress,
   },
   middleware: ['authenticated'],
+  data() {
+    return {
+      form: {
+        address_id: '',
+        payment_method_id: '',
+      },
+      errors: {},
+      addresses: [],
+      shippingMethods: [],
+      paymentMethods: [],
+      submitting: false,
+    }
+  },
   head() {
     return {
       title: this.pageTitle,
@@ -143,27 +141,14 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: ''
+          content: '',
         },
         {
           hid: 'robots',
           name: 'robots',
-          content: 'noindex'
-        }
-      ]
-    }
-  },
-  data() {
-    return {
-      form: {
-        address_id: '',
-        payment_method_id: ''
-      },
-      errors: {},
-      addresses: [],
-      shippingMethods: [],
-      paymentMethods: [],
-      submitting: false
+          content: 'noindex',
+        },
+      ],
     }
   },
   computed: {
@@ -174,7 +159,7 @@ export default {
       total: 'cart/total',
       has_changed: 'cart/hasChanged',
       shippingMethod: 'cart/shippingMethod',
-      addressManagersVisible: 'checkout/addressManagersVisible'
+      addressManagersVisible: 'checkout/addressManagersVisible',
     }),
     pageTitle() {
       return this.$t('checkout.title')
@@ -185,10 +170,12 @@ export default {
       },
       set(shippingMethodId) {
         this.setShippingMethod(
-          this.shippingMethods.find(method => method.id === parseInt(shippingMethodId))
+          this.shippingMethods.find(
+            (method) => method.id === parseInt(shippingMethodId)
+          )
         )
-      }
-    }
+      },
+    },
   },
   watch: {
     'form.address_id'(addressId) {
@@ -198,7 +185,7 @@ export default {
     },
     shippingMethodId() {
       this.getCart()
-    }
+    },
   },
   async asyncData({ app }) {
     const addresses = await app.$axios.$get('/addresses')
@@ -207,28 +194,28 @@ export default {
     return {
       title: app.head.title,
       addresses: addresses.data,
-      paymentMethods: paymentMethods.data
+      paymentMethods: paymentMethods.data,
     }
   },
   methods: {
     ...mapActions({
       getCart: 'cart/getCart',
       setShippingMethod: 'cart/setShippingMethod',
-      flash: 'alert/flash'
+      flash: 'alert/flash',
     }),
     async order() {
       this.submitting = true
       try {
         await this.$axios.$post('/orders', {
           ...this.form,
-          shipping_method_id: this.shippingMethodId
+          shipping_method_id: this.shippingMethodId,
         })
         this.$toast.success('It worked')
         this.$router.push({ name: 'orders' })
       } catch (e) {
         this.flash({
           type: 'danger',
-          message: e.response.data.message
+          message: e.response.data.message,
         })
         this.$toast.error(e.response.data.message)
       }
@@ -246,7 +233,7 @@ export default {
     },
     addPaymentMethod(method) {
       this.paymentMethods.push(method)
-    }
-  }
+    },
+  },
 }
 </script>

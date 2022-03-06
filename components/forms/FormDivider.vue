@@ -1,8 +1,5 @@
 <template>
-  <hr
-    :class="classes"
-    class="border border-gray-100"
-  >
+  <hr :class="classes" class="border border-gray-100" />
 </template>
 
 <script>
@@ -11,8 +8,8 @@ export default {
     large: {
       type: Boolean,
       required: false,
-      default: false
-    }
+      default: false,
+    },
   },
   computed: {
     classes() {
@@ -23,7 +20,7 @@ export default {
       }
 
       return classes
-    }
-  }
+    },
+  },
 }
 </script>

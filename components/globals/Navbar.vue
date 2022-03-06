@@ -1,27 +1,25 @@
 <template>
   <nav class="container flex flex-col md:flex-row items-center px-20 py-30">
-
     <div class="w-full flex justify-between items-center">
-
       <!-- Logo -->
       <nuxt-link :to="{ name: 'index' }">
-        <Logo class="w-48"/>
+        <Logo class="w-48" />
       </nuxt-link>
 
       <div class="flex md:hidden">
-
         <!-- Search page link -->
-        <ButtonSearch/>
+        <ButtonSearch />
 
         <!-- Cart page link -->
-        <ButtonCart class="ml-10"/>
+        <ButtonCart class="ml-10" />
       </div>
     </div>
 
-    <div class="w-full md:flex-1 flex justify-between md:justify-end mt-36 md:mt-0">
-
+    <div
+      class="w-full md:flex-1 flex justify-between md:justify-end mt-36 md:mt-0"
+    >
       <!-- Languages -->
-      <ButtonLanguages/>
+      <ButtonLanguages />
 
       <!-- Login -->
       <ButtonLinkSecondary
@@ -29,7 +27,7 @@
         :route="{ name: 'auth-login' }"
         class="ml-10 lg:ml-20"
       >
-        {{ $t("button.login") }}
+        {{ $t('button.login') }}
       </ButtonLinkSecondary>
 
       <!-- Register -->
@@ -40,25 +38,20 @@
         color="pink-dark"
         class="hidden md:block ml-10 lg:ml-20"
       >
-        {{ $t("button.register") }}
+        {{ $t('button.register') }}
       </ButtonLinkPrimary>
 
       <!-- Menu -->
-      <Menu
-        v-if="loggedIn"
-        class="ml-10 lg:ml-20"
-      />
+      <Menu v-if="loggedIn" class="ml-10 lg:ml-20" />
 
       <div class="hidden md:flex">
-
         <!-- Search page link -->
-        <ButtonSearch class="ml-10 lg:ml-20"/>
+        <ButtonSearch class="ml-10 lg:ml-20" />
 
         <!-- Cart page link -->
-        <ButtonCart class="ml-10 lg:ml-20"/>
+        <ButtonCart class="ml-10 lg:ml-20" />
       </div>
     </div>
-
   </nav>
 </template>
 
@@ -79,12 +72,12 @@ export default {
     ButtonLinkSecondary,
     ButtonSearch,
     Logo,
-    Menu
+    Menu,
   },
   computed: {
     loggedIn() {
       return this.$auth.loggedIn
-    }
-  }
+    },
+  },
 }
 </script>

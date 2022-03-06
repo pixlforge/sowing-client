@@ -1,14 +1,14 @@
 export default {
   aria: {
     buttons: {
-      languages: 'Lingue'
+      languages: 'Lingue',
     },
     inputs: {
-      email: 'Indirizzo email'
+      email: 'Indirizzo email',
     },
     links: {
       cart: 'Carrello',
-      search: 'Ricerca'
-    }
-  }
+      search: 'Ricerca',
+    },
+  },
 }

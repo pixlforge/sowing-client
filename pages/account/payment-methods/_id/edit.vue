@@ -1,7 +1,6 @@
 <template>
   <div>
     <header class="flex items-center">
-
       <!-- Back -->
       <ButtonBack
         :route="{ name: 'account-payment-methods' }"
@@ -9,11 +8,7 @@
       />
 
       <!-- Page title -->
-      <Heading
-        tag="h1"
-        visual="h1"
-        utilities="mx-auto sm:mx-0"
-      >
+      <Heading tag="h1" visual="h1" utilities="mx-auto sm:mx-0">
         {{ $t('account.payment_methods.titles.edit') }}
       </Heading>
     </header>
@@ -23,15 +18,10 @@
         {{ $t('account.payment_methods.edit.paragraph') }}
       </Paragraph>
 
-      <ButtonPrimary
-        @click.native="update"
-        icon="star"
-        class="mx-auto"
-      >
+      <ButtonPrimary icon="star" class="mx-auto" @click.native="update">
         {{ $t('button.default') }}
       </ButtonPrimary>
     </Card>
-
   </div>
 </template>
 
@@ -48,27 +38,29 @@ export default {
     ButtonPrimary,
     Card,
     Heading,
-    Paragraph
+    Paragraph,
   },
-  middleware: ['authenticated'],
   layout: 'account-management',
-  head() {
-    return {
-      title: `${this.$t('account.payment_methods.titles.edit')} | ${this.$t('account.title')}`,
-      meta: [
-        {
-          hid: 'robots',
-          name: 'robots',
-          content: 'noindex'
-        }
-      ]
-    }
-  },
+  middleware: ['authenticated'],
   async asyncData({ app, route }) {
     const res = await app.$axios.$get(`/payment-methods/${route.params.id}`)
 
     return {
-      paymentMethod: res.data
+      paymentMethod: res.data,
+    }
+  },
+  head() {
+    return {
+      title: `${this.$t('account.payment_methods.titles.edit')} | ${this.$t(
+        'account.title'
+      )}`,
+      meta: [
+        {
+          hid: 'robots',
+          name: 'robots',
+          content: 'noindex',
+        },
+      ],
     }
   },
   methods: {
@@ -80,7 +72,7 @@ export default {
       } catch (e) {
         this.$toast.error('toasts.general_error')
       }
-    }
-  }
+    },
+  },
 }
 </script>

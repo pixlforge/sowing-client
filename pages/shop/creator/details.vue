@@ -1,54 +1,42 @@
 <template>
   <main>
-
     <!-- Page contents -->
     <ContentSection>
-
       <!-- Title -->
-      <Heading
-        tag="h1"
-        visual="main"
-      >
-        {{ $t("shop_creator.steps.details.title") }}
+      <Heading tag="h1" visual="main">
+        {{ $t('shop_creator.steps.details.title') }}
       </Heading>
 
       <!-- Infos -->
-      <Paragraph
-        class="max-w-800"
-        center
-      >
-        {{ $t("shop_creator.steps.details.paragraph") }}
+      <Paragraph class="max-w-800" center>
+        {{ $t('shop_creator.steps.details.paragraph') }}
       </Paragraph>
 
       <!-- Shop details -->
       <ShopFeatureContainer class="max-w-800">
-        <ShopDetails
-          :countries="countries"
-          :errors="errors"
-        />
+        <ShopDetails :countries="countries" :errors="errors" />
       </ShopFeatureContainer>
 
       <!-- Controls -->
       <ShopCreatorControls>
-
         <!-- Previous -->
         <ButtonTertiary
-          @click.native="prev"
           icon="chevron-circle-left"
           class="order-1 md:order-none mx-5"
+          @click.native="prev"
         >
-          {{ $t("button.back") }}
+          {{ $t('button.back') }}
         </ButtonTertiary>
 
         <!-- Next -->
         <ButtonPrimary
           :disabled="!basicInfosProvided"
           :color="basicInfosProvided ? shopTheme : ''"
-          @click.native="store"
           icon="chevron-circle-right"
           class="order-none md_order-1 mx-5"
+          @click.native="store"
         >
-          {{ $t("button.next") }}
+          {{ $t('button.next') }}
         </ButtonPrimary>
       </ShopCreatorControls>
     </ContentSection>
@@ -77,15 +65,21 @@ export default {
     Paragraph,
     ShopCreatorControls,
     ShopDetails,
-    ShopFeatureContainer
+    ShopFeatureContainer,
   },
   mixins: [theming],
   layout: 'shop-creator',
+  middleware: ['authenticated'],
   transition: {
     name: 'slide',
-    mode: 'out-in'
+    mode: 'out-in',
   },
-  middleware: ['authenticated'],
+  data() {
+    return {
+      countries: [],
+      errors: {},
+    }
+  },
   head() {
     return {
       title: this.$t('shop_creator.steps.details.title'),
@@ -93,20 +87,14 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: ''
+          content: '',
         },
         {
           hid: 'robots',
           name: 'robots',
-          content: 'noindex'
-        }
-      ]
-    }
-  },
-  data() {
-    return {
-      countries: [],
-      errors: {}
+          content: 'noindex',
+        },
+      ],
     }
   },
   computed: {
@@ -119,17 +107,17 @@ export default {
       shopExists: 'shop/shopExists',
       stepDetails: 'shop/stepDetails',
       shopCountryId: 'shop/shopCountryId',
-      shopPostalCode: 'shop/shopPostalCode'
+      shopPostalCode: 'shop/shopPostalCode',
     }),
     basicInfosProvided() {
       return this.shopPostalCode && this.shopCity && this.shopCountryId
-    }
+    },
   },
   async asyncData({ app }) {
     const countries = await app.$axios.$get('/countries')
 
     return {
-      countries: countries.data
+      countries: countries.data,
     }
   },
   mounted() {
@@ -150,7 +138,7 @@ export default {
       getUserShop: 'shop/getUserShop',
       setStepName: 'shop/setStepName',
       setStepDetails: 'shop/setStepDetails',
-      setUserHasShop: 'setUserHasShop'
+      setUserHasShop: 'setUserHasShop',
     }),
     async store() {
       if (this.stepDetails) {
@@ -179,7 +167,7 @@ export default {
     },
     next() {
       this.$router.push({ name: 'shop-creator-customization' })
-    }
-  }
+    },
+  },
 }
 </script>

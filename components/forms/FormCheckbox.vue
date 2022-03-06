@@ -1,19 +1,16 @@
 <template>
-  <label
-    :for="name"
-    class="inline-flex items-center"
-  >
+  <label :for="name" class="inline-flex items-center">
     <input
       :id="name"
       :name="name"
       :checked="value"
       :disabled="disabled"
       :class="`text-${color}-500`"
-      @input="$emit('input', !value)"
       type="checkbox"
       class="form-checkbox rounded-lg text-24 disabled:text-gray-100 focus:shadow-outline focus:border-transparent disabled:cursor-not-allowed mr-10"
-    >
-    <slot/>
+      @input="$emit('input', !value)"
+    />
+    <slot />
   </label>
 </template>
 
@@ -22,22 +19,22 @@ export default {
   props: {
     name: {
       type: String,
-      required: true
+      required: true,
     },
     value: {
       type: Boolean,
-      required: true
+      required: true,
     },
     disabled: {
       type: Boolean,
       required: false,
-      default: false
+      default: false,
     },
     color: {
       type: String,
       required: false,
-      default: 'green'
-    }
-  }
+      default: 'green',
+    },
+  },
 }
 </script>

@@ -1,10 +1,7 @@
 <template>
   <div>
     <div class="">
-      <Heading
-        tag="h5"
-        visual="h3"
-      >
+      <Heading tag="h5" visual="h3">
         {{ title }}
       </Heading>
       <p class="text-16 leading-relaxed capitalize my-10">
@@ -15,7 +12,7 @@
       </p>
     </div>
     <div class="mt-24">
-      <slot/>
+      <slot />
     </div>
   </div>
 </template>
@@ -25,21 +22,21 @@ import Heading from '@/components/globals/Heading'
 
 export default {
   components: {
-    Heading
+    Heading,
   },
   props: {
     title: {
       type: String,
-      required: true
+      required: true,
     },
     language: {
       type: String,
-      required: true
+      required: true,
     },
     description: {
       type: String,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 }
 </script>

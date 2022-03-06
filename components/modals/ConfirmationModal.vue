@@ -1,19 +1,16 @@
 <template>
   <ModalTransition>
-
     <!-- Backdrop -->
     <div
-      ref="confirmationModalBackdrop"
       v-if="showModal"
+      ref="confirmationModalBackdrop"
       class="fixed inset-x-0 inset-y-0 bg-backdrop flex justify-center items-center z-10"
     >
-
       <!-- Modal background -->
       <div
         :class="`border-${color}-500`"
         class="w-full max-w-600 bg-white rounded-lg shadow-xl border-t-8 flex flex-col md:flex-row px-24 py-48"
       >
-
         <!-- Icon container -->
         <div class="w-full md:w-1/4 flex justify-center">
           <div
@@ -37,9 +34,10 @@
 
         <!-- Content container -->
         <div class="w-full md:w-3/4 mt-16 md:mt-0">
-
           <!-- Modal title -->
-          <h1 class="text-16 md:text-20 font-bold text-center md:text-left mb-12">
+          <h1
+            class="text-16 md:text-20 font-bold text-center md:text-left mb-12"
+          >
             {{ title }}
           </h1>
 
@@ -49,22 +47,18 @@
           </div>
 
           <div class="flex justify-center md:justify-start items-center">
-
             <!-- Confirm -->
             <ButtonPrimary
               :color="color"
               :icon="buttonIcon"
-              @click.native="$emit('confirm')"
               class="mr-10"
+              @click.native="$emit('confirm')"
             >
               {{ buttonLabel }}
             </ButtonPrimary>
 
             <!-- Cancel -->
-            <ButtonTertiary
-              @click.native="closeModal"
-              icon="times"
-            >
+            <ButtonTertiary icon="times" @click.native="closeModal">
               {{ $t('button.cancel') }}
             </ButtonTertiary>
           </div>
@@ -85,38 +79,38 @@ export default {
   components: {
     ButtonPrimary,
     ButtonTertiary,
-    ModalTransition
+    ModalTransition,
   },
   props: {
     title: {
       type: String,
-      required: true
+      required: true,
     },
     body: {
       type: String,
-      required: true
+      required: true,
     },
     icon: {
       type: String,
-      required: true
+      required: true,
     },
     buttonLabel: {
       type: String,
-      required: true
+      required: true,
     },
     buttonIcon: {
       type: String,
-      required: true
+      required: true,
     },
     color: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
   computed: {
     ...mapGetters({
-      showModal: 'confirmation/showModal'
-    })
+      showModal: 'confirmation/showModal',
+    }),
   },
   watch: {
     showModal() {
@@ -125,7 +119,7 @@ export default {
       } else {
         document.querySelector('body').classList.remove('overflow-hidden')
       }
-    }
+    },
   },
   mounted() {
     const escapeHandler = (event) => {
@@ -151,8 +145,8 @@ export default {
   },
   methods: {
     ...mapActions({
-      closeModal: 'confirmation/closeModal'
-    })
-  }
+      closeModal: 'confirmation/closeModal',
+    }),
+  },
 }
 </script>

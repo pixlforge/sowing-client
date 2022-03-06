@@ -1,7 +1,6 @@
 <template>
   <div>
     <div class="flex justify-center items-center">
-
       <!-- Done -->
       <div
         v-for="n in completedSteps"
@@ -22,12 +21,11 @@
         :key="`remaining-${n}`"
         class="w-10 h-10 flex justify-center items-center bg-gray-200 rounded-full mx-3"
       />
-
     </div>
 
     <!-- Label -->
     <div class="text-14 text-center mt-5">
-      <slot/>
+      <slot />
     </div>
   </div>
 </template>
@@ -40,12 +38,12 @@ export default {
   props: {
     currentStep: {
       type: Number,
-      required: true
-    }
+      required: true,
+    },
   },
   data() {
     return {
-      steps: 6
+      steps: 6,
     }
   },
   computed: {
@@ -54,7 +52,7 @@ export default {
     },
     remainingSteps() {
       return this.steps - this.currentStep
-    }
-  }
+    },
+  },
 }
 </script>

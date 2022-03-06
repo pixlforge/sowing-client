@@ -2,7 +2,7 @@ export default {
   cart: {
     labels: {
       price: 'Preis',
-      quantity: 'Menge'
+      quantity: 'Menge',
     },
     title: 'Mein Warenkorb',
     checkout: 'Zur Kasse',
@@ -10,6 +10,6 @@ export default {
     products: 'Produkte',
     for: 'für',
     cart_is_empty: 'Ihr Warenkorb ist leer',
-    add_something: 'Füge etwas hinzu!'
-  }
+    add_something: 'Füge etwas hinzu!',
+  },
 }

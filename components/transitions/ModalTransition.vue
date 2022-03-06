@@ -7,6 +7,6 @@
     leave-class="opacity-100"
     leave-to-class="opacity-0"
   >
-    <slot/>
+    <slot />
   </transition>
 </template>

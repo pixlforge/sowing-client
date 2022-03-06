@@ -1,43 +1,26 @@
 <template>
-  <div
-    :class="`border-${shopTheme}-200`"
-    class="bg-white border rounded-lg"
-  >
-
+  <div :class="`border-${shopTheme}-200`" class="bg-white border rounded-lg">
     <!-- Header -->
-    <header class="flex justify-between items-center bg-gray-100 p-20 lg:px-36 lg:py-20">
+    <header
+      class="flex justify-between items-center bg-gray-100 p-20 lg:px-36 lg:py-20"
+    >
       <div class="flex items-center">
-
         <!-- Collapse or expand the content -->
-        <ButtonCollapse
-          @click.native="toggleCollapse"
-          :active="collapse"
-        />
+        <ButtonCollapse :active="collapse" @click.native="toggleCollapse" />
 
         <!-- Type title -->
-        <Heading
-          :utilities="headingUtilities"
-          tag="h5"
-          visual="h5"
-        >
+        <Heading :utilities="headingUtilities" tag="h5" visual="h5">
           {{ typeName[locale] || $t('product.creator.type.unnamed') }}
         </Heading>
 
         <!-- Info Bubble: Add at least the type name in your own language -->
-        <InfoBubble
-          v-if="!typeName[locale]"
-          :color="shopTheme"
-          class="ml-16"
-        >
+        <InfoBubble v-if="!typeName[locale]" :color="shopTheme" class="ml-16">
           {{ $t('product.creator.type.add_type_name_in_your_own_language') }}
         </InfoBubble>
       </div>
 
       <!-- Delete -->
-      <ButtonDelete
-        @click.native="confirmDelete"
-        icon-size="text-16"
-      />
+      <ButtonDelete icon-size="text-16" @click.native="confirmDelete" />
     </header>
 
     <!-- Types -->
@@ -54,15 +37,12 @@
             :class="`border-${shopTheme}-200`"
             type="text"
             class="w-full border-2 border-dashed rounded-lg text-14 lg:text-16 placeholder-gray-300 px-20 py-16 mb-10"
-          >
+          />
         </div>
       </div>
 
       <!-- Product variations -->
-      <div
-        v-if="variationsForType"
-        class="px-20 lg:px-36"
-      >
+      <div v-if="variationsForType" class="px-20 lg:px-36">
         <ResourceList>
           <ProductVariation
             v-for="variation in variationsForType"
@@ -76,10 +56,10 @@
       <!-- Add a new product variation -->
       <div class="p-20 lg:px-36">
         <ButtonPulse
-          @click.native="addVariation"
           :should-pulse="productHasNoVariation"
           icon="box"
           class="text-12"
+          @click.native="addVariation"
         >
           <template v-if="productHasNoVariation">
             {{ $t('product.creator.variation.add') }}
@@ -90,15 +70,14 @@
         </ButtonPulse>
       </div>
     </template>
-
   </div>
 </template>
 
 <script>
-import theming from '@/mixins/theming'
-import locales from '@/mixins/locales'
 import { debounce as _debounce } from 'lodash'
 import { mapActions } from 'vuex'
+import theming from '@/mixins/theming'
+import locales from '@/mixins/locales'
 
 import ButtonCollapse from '@/components/buttons/ButtonCollapse'
 import ButtonDelete from '@/components/buttons/ButtonDelete'
@@ -116,28 +95,25 @@ export default {
     Heading,
     InfoBubble,
     ProductVariation,
-    ResourceList
+    ResourceList,
   },
-  mixins: [
-    theming,
-    locales
-  ],
+  mixins: [theming, locales],
   props: {
     type: {
       type: Object,
-      required: true
+      required: true,
     },
     product: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
   data() {
     return {
       form: {
-        name: this.type.name
+        name: this.type.name,
       },
-      collapse: false
+      collapse: false,
     }
   },
   computed: {
@@ -156,19 +132,22 @@ export default {
     },
     typeName() {
       return this.form.name
-    }
+    },
   },
   watch: {
     'form.name': {
       deep: true,
       handler: _debounce(async function () {
-        await this.$axios.$patch(`/products/${this.product.slug}/product-variation-types/${this.type.id}`, this.form)
-      }, 1000)
-    }
+        await this.$axios.$patch(
+          `/products/${this.product.slug}/product-variation-types/${this.type.id}`,
+          this.form
+        )
+      }, 1000),
+    },
   },
   methods: {
     ...mapActions({
-      openModal: 'confirmation/openModal'
+      openModal: 'confirmation/openModal',
     }),
     confirmDelete() {
       this.openModal(this.type.id)
@@ -178,15 +157,18 @@ export default {
     },
     async addVariation() {
       try {
-        await this.$axios.post(`/products/${this.product.slug}/product-variations`, {
-          product_variation_type_id: this.type.id
-        })
+        await this.$axios.post(
+          `/products/${this.product.slug}/product-variations`,
+          {
+            product_variation_type_id: this.type.id,
+          }
+        )
         this.$emit('product-variation:added')
         this.$toast.success('Congratulations!')
       } catch (e) {
         this.$toasted.error(this.$t('toasts.general_error'))
       }
-    }
-  }
+    },
+  },
 }
 </script>

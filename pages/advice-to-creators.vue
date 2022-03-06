@@ -1,41 +1,29 @@
 <template>
   <main>
-
     <!-- Header -->
-    <Header
-      :title="$t('advice_to_creators.title')"
-      icon="comment-dots"
-    />
+    <Header :title="$t('advice_to_creators.title')" icon="comment-dots" />
 
     <!-- Content -->
     <ContentSection class="max-w-800">
-      <Heading
-        tag="h1"
-        visual="h4"
-      >
+      <Heading tag="h1" visual="h4">
         {{ $t('advice_to_creators.created_a_shop') }}
       </Heading>
       <Paragraph>
         {{ $t('advice_to_creators.list_of_advices') }}
       </Paragraph>
-      <List
-        :items="advices"
-        icon="chevron-circle-right"
-        icon-color="green"
-      />
+      <List :items="advices" icon="chevron-circle-right" icon-color="green" />
       <Paragraph class="font-bold">
         {{ $t('advice_to_creators.wish_you_succcess') }}
       </Paragraph>
 
       <!-- Illustration -->
       <div class="my-72 md:my-96">
-        <IllustrationNewIdeas class="max-w-400 mx-auto"/>
+        <IllustrationNewIdeas class="max-w-400 mx-auto" />
       </div>
     </ContentSection>
 
     <!-- Streak newsletter -->
-    <StreakNewsletter/>
-
+    <StreakNewsletter />
   </main>
 </template>
 
@@ -56,7 +44,12 @@ export default {
     IllustrationNewIdeas,
     List,
     Paragraph,
-    StreakNewsletter
+    StreakNewsletter,
+  },
+  asyncData({ app }) {
+    return {
+      title: app.head.title,
+    }
   },
   head() {
     return {
@@ -65,9 +58,9 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: ''
-        }
-      ]
+          content: '',
+        },
+      ],
     }
   },
   computed: {
@@ -82,14 +75,9 @@ export default {
         this.$t('advice_to_creators.advice_07'),
         this.$t('advice_to_creators.advice_08'),
         this.$t('advice_to_creators.advice_09'),
-        this.$t('advice_to_creators.advice_10')
+        this.$t('advice_to_creators.advice_10'),
       ]
-    }
+    },
   },
-  asyncData({ app }) {
-    return {
-      title: app.head.title
-    }
-  }
 }
 </script>

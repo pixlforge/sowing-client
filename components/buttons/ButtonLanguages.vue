@@ -4,8 +4,8 @@
       ref="dropdownMenu"
       :title="$t('aria.buttons.languages')"
       :aria-label="$t('aria.buttons.languages')"
-      @click.prevent="toggleDropdown"
       class="outline-none focus:shadow-outline rounded-lg border border-gray-200 text-12 text-gray-500 font-bold text-center uppercase no-underline whitespace-no-wrap flex px-20 py-12"
+      @click.prevent="toggleDropdown"
     >
       <div :class="textTheme">
         <font-awesome-icon
@@ -13,10 +13,7 @@
           class="text-16 mr-5"
         />
       </div>
-      <font-awesome-icon
-        :icon="['fas', 'caret-down']"
-        class="text-16 ml-14"
-      />
+      <font-awesome-icon :icon="['fas', 'caret-down']" class="text-16 ml-14" />
     </button>
 
     <DropdownTransition>
@@ -45,15 +42,12 @@ export default {
   components: {
     DropdownContainer,
     DropdownItem,
-    DropdownTransition
+    DropdownTransition,
   },
-  mixins: [
-    theming,
-    locales
-  ],
+  mixins: [theming, locales],
   data() {
     return {
-      dropdownIsOpen: false
+      dropdownIsOpen: false,
     }
   },
   mounted() {
@@ -81,7 +75,7 @@ export default {
   methods: {
     toggleDropdown() {
       this.dropdownIsOpen = !this.dropdownIsOpen
-    }
-  }
+    },
+  },
 }
 </script>

@@ -3,8 +3,8 @@
     :to="{
       name: 'shop-slug-details',
       params: {
-        slug: result.slug
-      }
+        slug: result.slug,
+      },
     }"
     class="search__result-link"
   >
@@ -12,17 +12,10 @@
       :class="`bg-${result.theme} hover:bg-${result.theme}-dark`"
       class="search__result-content"
     >
-      <font-awesome-icon
-        :icon="['fas', 'store']"
-        class="search__result-icon"
-      />
+      <font-awesome-icon :icon="['fas', 'store']" class="search__result-icon" />
       <div>
-
         <!-- Name -->
-        <Heading
-          tag="h5"
-          visual="h4"
-        >
+        <Heading tag="h5" visual="h4">
           {{ result.name }}
         </Heading>
 
@@ -45,18 +38,18 @@ import Heading from '@/components/globals/Heading'
 
 export default {
   components: {
-    Heading
+    Heading,
   },
   props: {
     result: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
   computed: {
     ...mapGetters({
-      locale: 'locale'
-    })
-  }
+      locale: 'locale',
+    }),
+  },
 }
 </script>

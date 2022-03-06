@@ -3,14 +3,14 @@ import { mapGetters, mapActions } from 'vuex'
 export default {
   computed: {
     ...mapGetters({
-      shopExists: 'shop/shopExists'
-    })
+      shopExists: 'shop/shopExists',
+    }),
   },
   async asyncData({ app }) {
     const shop = await app.$axios.$get('/user/shop')
 
     return {
-      shopData: shop.data
+      shopData: shop.data,
     }
   },
   mounted() {
@@ -20,7 +20,7 @@ export default {
   },
   methods: {
     ...mapActions({
-      setShop: 'shop/setShop'
-    })
-  }
+      setShop: 'shop/setShop',
+    }),
+  },
 }

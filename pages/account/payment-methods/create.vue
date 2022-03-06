@@ -1,7 +1,6 @@
 <template>
   <div>
     <header class="flex items-center">
-
       <!-- Back -->
       <ButtonBack
         :route="{ name: 'account-payment-methods' }"
@@ -9,31 +8,20 @@
       />
 
       <!-- Page title -->
-      <Heading
-        tag="h1"
-        visual="h1"
-        utilities="mx-auto sm:mx-0"
-      >
+      <Heading tag="h1" visual="h1" utilities="mx-auto sm:mx-0">
         {{ $t('account.payment_methods.titles.create') }}
       </Heading>
     </header>
 
     <Card>
       <Paragraph class="text-center md:text-left">
-        {{ $t("stripe.add_a_card") }}
+        {{ $t('stripe.add_a_card') }}
       </Paragraph>
 
-      <form
-        @submit.prevent="store"
-        class="md:max-w-600"
-      >
-
+      <form class="md:max-w-600" @submit.prevent="store">
         <!-- Body -->
         <div class="my-60">
-          <div
-            id="elements"
-            class="bg-gray-100 rounded-lg px-24 py-20"
-          />
+          <div id="elements" class="bg-gray-100 rounded-lg px-24 py-20" />
         </div>
 
         <!-- Store -->
@@ -43,11 +31,10 @@
           icon="plus"
           class="mx-auto md:mx-0"
         >
-          {{ $t("button.add") }}
+          {{ $t('button.add') }}
         </ButtonPrimary>
       </form>
     </Card>
-
   </div>
 </template>
 
@@ -66,22 +53,10 @@ export default {
     ButtonPrimary,
     Card,
     Heading,
-    Paragraph
+    Paragraph,
   },
-  middleware: ['authenticated'],
   layout: 'account-management',
-  head() {
-    return {
-      title: `${this.$t('account.payment_methods.titles.create')} | ${this.$t('account.title')}`,
-      meta: [
-        {
-          hid: 'robots',
-          name: 'robots',
-          content: 'noindex'
-        }
-      ]
-    }
-  },
+  middleware: ['authenticated'],
   data() {
     return {
       storing: false,
@@ -95,16 +70,30 @@ export default {
             color: '#101010',
             fontSize: '16px',
             fontFamily: 'Montserrat',
-            iconColor: '#5FB881'
-          }
-        }
-      }
+            iconColor: '#5FB881',
+          },
+        },
+      },
+    }
+  },
+  head() {
+    return {
+      title: `${this.$t('account.payment_methods.titles.create')} | ${this.$t(
+        'account.title'
+      )}`,
+      meta: [
+        {
+          hid: 'robots',
+          name: 'robots',
+          content: 'noindex',
+        },
+      ],
     }
   },
   computed: {
     ...mapGetters({
-      locale: 'locale'
-    })
+      locale: 'locale',
+    }),
   },
   mounted() {
     this.stripe = window.Stripe(process.env.STRIPE_PUBLIC)
@@ -123,7 +112,7 @@ export default {
         this.$toast.error(this.$t('toasts.general_error'))
       } else {
         await this.$axios.$post('/payment-methods', {
-          token: token.id
+          token: token.id,
         })
         this.$toast.success(this.$t('toasts.cc_added'))
         this.card.clear()
@@ -131,7 +120,7 @@ export default {
       }
 
       this.storing = false
-    }
-  }
+    },
+  },
 }
 </script>

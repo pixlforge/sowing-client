@@ -1,15 +1,10 @@
 <template>
   <main>
-
     <!-- Page contents -->
     <ContentSection>
-
       <!-- Title -->
-      <Heading
-        tag="h1"
-        visual="main"
-      >
-        {{ $t("shop_creator.steps.connect.title") }}
+      <Heading tag="h1" visual="main">
+        {{ $t('shop_creator.steps.connect.title') }}
       </Heading>
 
       <!-- Infos -->
@@ -18,7 +13,7 @@
         class="max-w-800"
         center
       >
-        {{ $t("shop_creator.steps.connect.paragraph") }}
+        {{ $t('shop_creator.steps.connect.paragraph') }}
       </Paragraph>
 
       <!-- Connect process -->
@@ -30,10 +25,8 @@
               :class="btnTheme"
               class="inline-block outline-none focus:shadow-outline rounded-lg text-16 font-black text-white text-center uppercase no-underline whitespace-no-wrap transition-colors duration-200 ease-out px-48 py-20"
             >
-              <font-awesome-icon
-                :icon="['fab', 'cc-stripe']"
-              />
-              {{ $t("button.connect_with_stripe") }}
+              <font-awesome-icon :icon="['fab', 'cc-stripe']" />
+              {{ $t('button.connect_with_stripe') }}
             </a>
           </div>
         </template>
@@ -49,25 +42,24 @@
 
       <!-- Controls -->
       <ShopCreatorControls>
-
         <!-- Previous -->
         <ButtonTertiary
-          @click.native="prev"
           icon="chevron-circle-left"
           class="order-1 md:order-none mx-5"
+          @click.native="prev"
         >
-          {{ $t("button.back") }}
+          {{ $t('button.back') }}
         </ButtonTertiary>
 
         <!-- Next -->
         <ButtonPrimary
           :disabled="!stripeInfos"
           :color="stripeInfos ? shopTheme : ''"
-          @click.native="next"
           icon="chevron-circle-right"
           class="order-none md_order-1 mx-5"
+          @click.native="next"
         >
-          {{ $t("button.finalize_shop_creation") }}
+          {{ $t('button.finalize_shop_creation') }}
         </ButtonPrimary>
       </ShopCreatorControls>
     </ContentSection>
@@ -96,17 +88,19 @@ export default {
     Paragraph,
     ShopCreatorControls,
     ShopFeatureContainer,
-    Splash
+    Splash,
   },
   mixins: [theming],
-  middleware: [
-    'authenticated',
-    'hasShop'
-  ],
   layout: 'shop-creator',
+  middleware: ['authenticated', 'hasShop'],
   transition: {
     name: 'slide',
-    mode: 'out-in'
+    mode: 'out-in',
+  },
+  data() {
+    return {
+      tried: false,
+    }
   },
   head() {
     return {
@@ -115,37 +109,32 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: ''
+          content: '',
         },
         {
           hid: 'robots',
           name: 'robots',
-          content: 'noindex'
-        }
-      ]
-    }
-  },
-  data() {
-    return {
-      tried: false
+          content: 'noindex',
+        },
+      ],
     }
   },
   computed: {
     ...mapGetters({
       shopStripeUserId: 'shop/shopStripeUserId',
-      shopStripePublishableKey: 'shop/shopStripePublishableKey'
+      shopStripePublishableKey: 'shop/shopStripePublishableKey',
     }),
     stripeConnectOAuthUrl() {
-      return `https://dashboard.stripe.com/oauth/authorize?response_type=code&client_id=${
-        process.env.STRIPE_CONNECT
-      }&scope=read_write`
+      return `https://dashboard.stripe.com/oauth/authorize?response_type=code&client_id=${process.env.STRIPE_CONNECT}&scope=read_write`
     },
     stripeInfos() {
       return this.shopStripeUserId && this.shopStripePublishableKey
     },
     stripeInfosReceived() {
-      return this.tried && this.shopStripeUserId && this.shopStripePublishableKey
-    }
+      return (
+        this.tried && this.shopStripeUserId && this.shopStripePublishableKey
+      )
+    },
   },
   async mounted() {
     if (!this.shopExists && this.$auth.user.has_shop) {
@@ -165,12 +154,12 @@ export default {
       getUserShop: 'shop/getUserShop',
       setStepName: 'shop/setStepName',
       setStepDetails: 'shop/setStepDetails',
-      setStepCustomization: 'shop/setStepCustomization'
+      setStepCustomization: 'shop/setStepCustomization',
     }),
     async requestTokens(code) {
       try {
         await this.$axios.$post('/shops/connect', {
-          code: code
+          code,
         })
         await this.getUserShop()
       } catch (e) {}
@@ -182,7 +171,7 @@ export default {
     },
     next() {
       this.$router.push({ name: 'shop-creator-done' })
-    }
-  }
+    },
+  },
 }
 </script>

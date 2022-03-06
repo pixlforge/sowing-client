@@ -6,15 +6,13 @@
         :key="address.id"
         :class="{
           'border-green-500': address.id == selectedAddress.id,
-          'border-transparent': address.id != selectedAddress.id
+          'border-transparent': address.id != selectedAddress.id,
         }"
-        @click.prevent="selectAddress(address)"
         class="text-14 border-l-4 hover:border-green-500 cursor-pointer pl-0 -ml-10"
+        @click.prevent="selectAddress(address)"
       >
         <ul class="text-14 leading-relaxed pl-10 mt-20">
-          <li>
-            {{ address.first_name }} {{ address.last_name }}
-          </li>
+          <li>{{ address.first_name }} {{ address.last_name }}</li>
           <li v-if="address.company_name">
             {{ address.company_name }}
           </li>
@@ -25,22 +23,17 @@
             {{ address.address_line_2 }}
           </li>
           <li>
-            {{ address.country.code }} &ndash; {{ address.postal_code }} {{ address.city }}
+            {{ address.country.code }} &ndash; {{ address.postal_code }}
+            {{ address.city }}
           </li>
-          <li>
-            ({{ address.country.name[locale] }})
-          </li>
+          <li>({{ address.country.name[locale] }})</li>
         </ul>
       </li>
     </ul>
 
     <!-- Address creator button -->
-    <ButtonPrimary
-      @click.native="openCreator"
-      icon="plus"
-      class="w-full mt-20"
-    >
-      {{ $t("checkout.new_address") }}
+    <ButtonPrimary icon="plus" class="w-full mt-20" @click.native="openCreator">
+      {{ $t('checkout.new_address') }}
     </ButtonPrimary>
   </div>
 </template>
@@ -52,27 +45,27 @@ import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 
 export default {
   components: {
-    ButtonPrimary
+    ButtonPrimary,
   },
   props: {
     addresses: {
       type: Array,
-      required: true
+      required: true,
     },
     selectedAddress: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
   computed: {
     ...mapGetters({
-      locale: 'locale'
-    })
+      locale: 'locale',
+    }),
   },
   methods: {
     ...mapActions({
       closeAddressSelector: 'checkout/closeAddressSelector',
-      openAddressCreator: 'checkout/openAddressCreator'
+      openAddressCreator: 'checkout/openAddressCreator',
     }),
 
     openCreator() {
@@ -83,7 +76,7 @@ export default {
     selectAddress(address) {
       this.$emit('address:selected', address)
       this.$toast.success(this.$t('toasts.addresses.selected'))
-    }
-  }
+    },
+  },
 }
 </script>

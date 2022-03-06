@@ -1,11 +1,7 @@
 <template>
   <main>
-
     <!-- Header -->
-    <Header
-      :title="$t('register.title')"
-      icon="user-plus"
-    />
+    <Header :title="$t('register.title')" icon="user-plus" />
 
     <!-- Splash -->
     <Splash
@@ -18,7 +14,7 @@
         <img
           :alt="$t('register_success.congratulations')"
           src="~assets/img/success_smiley.svg"
-        >
+        />
       </template>
     </Splash>
   </main>
@@ -31,13 +27,13 @@ import Splash from '@/components/globals/Splash'
 export default {
   components: {
     Header,
-    Splash
+    Splash,
   },
   middleware: ['authenticated'],
   head() {
     return {
-      title: this.$t('register_success.title')
+      title: this.$t('register_success.title'),
     }
-  }
+  },
 }
 </script>

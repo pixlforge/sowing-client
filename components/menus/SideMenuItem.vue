@@ -1,15 +1,7 @@
 <template>
   <li>
-    <nuxt-link
-      :to="{ name: route }"
-      :class="classes"
-      class="block py-10"
-    >
-      <font-awesome-icon
-        v-if="icon"
-        :icon="['far', icon]"
-        class="mr-2"
-      />
+    <nuxt-link :to="{ name: route }" :class="classes" class="block py-10">
+      <font-awesome-icon v-if="icon" :icon="['far', icon]" class="mr-2" />
       {{ label }}
     </nuxt-link>
   </li>
@@ -23,17 +15,17 @@ export default {
   props: {
     label: {
       type: String,
-      required: true
+      required: true,
     },
     route: {
       type: String,
-      required: true
+      required: true,
     },
     icon: {
       type: String,
       required: false,
-      default: ''
-    }
+      default: '',
+    },
   },
   computed: {
     isCurrentRoute() {
@@ -47,7 +39,7 @@ export default {
       }
 
       return `hover:text-${this.shopTheme}-500 ${active}`
-    }
-  }
+    },
+  },
 }
 </script>

@@ -1,53 +1,41 @@
 <template>
   <main>
-
     <!-- Page contents -->
     <ContentSection>
-
       <!-- Title -->
-      <Heading
-        tag="h1"
-        visual="main"
-      >
-        {{ $t("shop_creator.steps.customization.title") }}
+      <Heading tag="h1" visual="main">
+        {{ $t('shop_creator.steps.customization.title') }}
       </Heading>
 
       <!-- Infos -->
-      <Paragraph
-        class="max-w-800"
-        center
-      >
-        {{ $t("shop_creator.steps.customization.paragraph") }}
+      <Paragraph class="max-w-800" center>
+        {{ $t('shop_creator.steps.customization.paragraph') }}
       </Paragraph>
 
       <!-- Shop customization -->
-      <ShopFeatureContainer
-        v-if="shop.id"
-        class="max-w-800"
-      >
-        <ShopCustomization/>
+      <ShopFeatureContainer v-if="shop.id" class="max-w-800">
+        <ShopCustomization />
       </ShopFeatureContainer>
 
       <!-- Controls -->
       <ShopCreatorControls>
-
         <!-- Previous -->
         <ButtonTertiary
-          @click.native="prev"
           icon="chevron-circle-left"
           class="order-1 md:order-none mx-5"
+          @click.native="prev"
         >
-          {{ $t("button.back") }}
+          {{ $t('button.back') }}
         </ButtonTertiary>
 
         <!-- Next -->
         <ButtonPrimary
           :color="shopTheme"
-          @click.native="next"
           icon="chevron-circle-right"
           class="order-none md_order-1 mx-5"
+          @click.native="next"
         >
-          {{ $t("button.next") }}
+          {{ $t('button.next') }}
         </ButtonPrimary>
       </ShopCreatorControls>
     </ContentSection>
@@ -76,15 +64,15 @@ export default {
     Paragraph,
     ShopCreatorControls,
     ShopCustomization,
-    ShopFeatureContainer
+    ShopFeatureContainer,
   },
   mixins: [theming],
   layout: 'shop-creator',
+  middleware: ['authenticated', 'hasShop'],
   transition: {
     name: 'slide',
-    mode: 'out-in'
+    mode: 'out-in',
   },
-  middleware: ['authenticated', 'hasShop'],
   head() {
     return {
       title: this.$t('shop_creator.steps.customization.title'),
@@ -92,14 +80,14 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: ''
+          content: '',
         },
         {
           hid: 'robots',
           name: 'robots',
-          content: 'noindex'
-        }
-      ]
+          content: 'noindex',
+        },
+      ],
     }
   },
   computed: {
@@ -107,8 +95,8 @@ export default {
       shop: 'shop/shop',
       stepName: 'shop/stepName',
       shopExists: 'shop/shopExists',
-      stepDetails: 'shop/stepDetails'
-    })
+      stepDetails: 'shop/stepDetails',
+    }),
   },
   mounted() {
     if (!this.shopExists && this.$auth.user.has_shop) {
@@ -122,7 +110,7 @@ export default {
     ...mapActions({
       getUserShop: 'shop/getUserShop',
       setStepName: 'shop/setStepName',
-      setStepDetails: 'shop/setStepDetails'
+      setStepDetails: 'shop/setStepDetails',
     }),
     prev() {
       this.$router.push({ name: 'shop-creator-details' })
@@ -131,7 +119,7 @@ export default {
       if (this.stepName && this.stepDetails) {
         this.$router.push({ name: 'shop-creator-connect' })
       }
-    }
-  }
+    },
+  },
 }
 </script>

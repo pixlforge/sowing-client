@@ -1,24 +1,21 @@
 <template>
   <div>
     <div class="flex flex-col lg:flex-row">
-
       <!-- Product featured image -->
       <div class="w-full lg:w-1/2 lg:pr-36">
         <img
           :src="imgUrl"
           :alt="imgAlt"
           class="block w-full rounded-lg shadow-2xl"
-        >
+        />
       </div>
 
       <!-- Product content -->
-      <div class="w-full lg:w-1/2 flex flex-col items-center lg:items-start p-30">
-
+      <div
+        class="w-full lg:w-1/2 flex flex-col items-center lg:items-start p-30"
+      >
         <!-- Base product name -->
-        <Heading
-          tag="h1"
-          visual="main"
-        >
+        <Heading tag="h1" visual="main">
           {{ productName }}
         </Heading>
 
@@ -28,7 +25,6 @@
         </p>
 
         <div class="w-full flex justify-between items-center">
-
           <!-- Base product price and currency -->
           <div class="flex items-start">
             <span
@@ -43,10 +39,7 @@
           </div>
 
           <!-- Total products in stock -->
-          <div
-            v-if="product.in_stock"
-            class="flex items-baseline text-14"
-          >
+          <div v-if="product.in_stock" class="flex items-baseline text-14">
             <font-awesome-icon
               :icon="['far', 'boxes']"
               :class="`text-${shopTheme}-500`"
@@ -61,26 +54,16 @@
           </div>
 
           <!-- Product is out of stock -->
-          <div
-            v-else
-            class="flex items-start text-16 text-red-500 mt-48"
-          >
-            <font-awesome-icon
-              :icon="['far', 'boxes']"
-              class="mr-10"
-            />
+          <div v-else class="flex items-start text-16 text-red-500 mt-48">
+            <font-awesome-icon :icon="['far', 'boxes']" class="mr-10" />
             <span class="font-bold">
               {{ productOutOfStock }}
             </span>
           </div>
         </div>
 
-        <form
-          @submit.prevent="add"
-          class="w-full"
-        >
-
-          <FormDivider/>
+        <form class="w-full" @submit.prevent="add">
+          <FormDivider />
 
           <!-- Variations -->
           <ProductVariation
@@ -93,7 +76,7 @@
           />
 
           <!-- Quantity -->
-          <FormDivider/>
+          <FormDivider />
 
           <FormLabel name="quantity">
             {{ quantityLabel }}
@@ -103,11 +86,7 @@
             :disabled="!form.quantity"
             name="quantity"
           >
-            <option
-              v-for="n in form.variation.stock_count"
-              :key="n"
-              :value="n"
-            >
+            <option v-for="n in form.variation.stock_count" :key="n" :value="n">
               {{ n }}
             </option>
           </FormSelect>
@@ -121,9 +100,8 @@
             size="large"
             class="shadow-2xl mt-36"
           >
-            {{ $t("button.add_to_cart") }}
+            {{ $t('button.add_to_cart') }}
           </ButtonPrimary>
-
         </form>
       </div>
     </div>
@@ -139,10 +117,9 @@
           :src="imgUrl"
           :alt="imgAlt"
           class="block rounded-lg shadow-lg mx-auto"
-        >
+        />
       </div>
     </div>
-
   </div>
 </template>
 
@@ -164,26 +141,26 @@ export default {
     FormLabel,
     FormSelect,
     Heading,
-    ProductVariation
+    ProductVariation,
   },
   mixins: [theming],
   props: {
     product: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
   data() {
     return {
       form: {
         variation: '',
-        quantity: null
-      }
+        quantity: null,
+      },
     }
   },
   computed: {
     ...mapGetters({
-      locale: 'locale'
+      locale: 'locale',
     }),
     imgUrl() {
       return require('@/assets/img/placeholders/category.svg')
@@ -211,23 +188,23 @@ export default {
     },
     productOutOfStock() {
       return this.$t('product.details.out_of_stock')
-    }
+    },
   },
   watch: {
     'form.variation'() {
       this.form.quantity = 1
-    }
+    },
   },
   methods: {
     ...mapActions({
-      store: 'cart/store'
+      store: 'cart/store',
     }),
     async add() {
       await this.store([
         {
           id: this.form.variation.id,
-          quantity: this.form.quantity
-        }
+          quantity: this.form.quantity,
+        },
       ])
 
       this.$toast.success(
@@ -236,15 +213,19 @@ export default {
           ${this.product.name[this.locale]}
           ${this.form.variation.type.name[this.locale]}
           ${this.form.variation.name[this.locale]}
-          ${this.form.quantity > 1 ? this.$t('toasts.cart.item_added_plural') : this.$t('toasts.cart.item_added_singular')}
+          ${
+            this.form.quantity > 1
+              ? this.$t('toasts.cart.item_added_plural')
+              : this.$t('toasts.cart.item_added_singular')
+          }
         `
       )
 
       this.form = {
         variation: '',
-        quantity: 1
+        quantity: 1,
       }
-    }
-  }
+    },
+  },
 }
 </script>

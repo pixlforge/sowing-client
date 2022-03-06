@@ -1,11 +1,10 @@
 <template>
   <div>
-
     <!-- Alert -->
-    <Alert/>
+    <Alert />
 
     <!-- Navbar -->
-    <Navbar/>
+    <Navbar />
 
     <!-- Header -->
     <Header
@@ -16,10 +15,8 @@
     <!-- Main -->
     <main class="bg-gray-100">
       <ContentSection>
-
         <!-- Content -->
         <div class="w-full flex flex-wrap">
-
           <!-- Side menu -->
           <SideMenu>
             <SideMenuList>
@@ -53,17 +50,17 @@
 
           <!-- Page content -->
           <section class="w-full lg:w-3/4 xl:w-4/5 mt-72 lg:mt-0">
-            <Nuxt/>
+            <Nuxt />
           </section>
         </div>
       </ContentSection>
     </main>
 
     <!-- Footer -->
-    <Footer/>
+    <Footer />
 
     <!-- Disclaimer -->
-    <Disclaimer/>
+    <FooterDisclaimer />
   </div>
 </template>
 
@@ -88,7 +85,7 @@ export default {
     Navbar,
     SideMenu,
     SideMenuItem,
-    SideMenuList
-  }
+    SideMenuList,
+  },
 }
 </script>

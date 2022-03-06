@@ -10,6 +10,6 @@ export default {
     payment: 'Paiement',
     subtotal: 'Sous-total',
     title: 'Caisse',
-    total: 'Total'
-  }
+    total: 'Total',
+  },
 }

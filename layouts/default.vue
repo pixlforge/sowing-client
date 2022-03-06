@@ -1,23 +1,22 @@
 <template>
   <div>
-
     <!-- Alert -->
-    <Alert/>
+    <Alert />
 
     <!-- Navbar -->
-    <Navbar/>
+    <Navbar />
 
     <!-- Categories -->
-    <CategoryBar/>
+    <CategoryBar />
 
     <!-- Page content -->
-    <Nuxt/>
+    <Nuxt />
 
     <!-- Footer -->
-    <Footer/>
+    <Footer />
 
     <!-- Disclaimer -->
-    <Disclaimer :class="bgTheme"/>
+    <FooterDisclaimer :class="bgTheme" />
   </div>
 </template>
 
@@ -36,8 +35,8 @@ export default {
     CategoryBar,
     Disclaimer,
     Footer,
-    Navbar
+    Navbar,
   },
-  mixins: [theming]
+  mixins: [theming],
 }
 </script>

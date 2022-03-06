@@ -8,10 +8,10 @@
     :class="{
       'border-red-500': errors[name],
       'bg-gray-100': theme !== 'light',
-      'bg-white': theme === 'light'
+      'bg-white': theme === 'light',
     }"
-    @input="$emit('input', $event.target.value)"
     class="block w-full appearance-none disabled:bg-white rounded-lg text-16 leading-tight text-gray-900 disabled:text-gray-200 placeholder-gray-200 outline-none focus:shadow-outline border border-transparent disabled:border-gray-200 disabled:cursor-not-allowed px-16 py-12"
+    @input="$emit('input', $event.target.value)"
   />
 </template>
 
@@ -21,35 +21,35 @@ export default {
     value: {
       type: [String, Number],
       required: false,
-      default: null
+      default: null,
     },
     name: {
       type: String,
       required: false,
-      default: ''
+      default: '',
     },
     disabled: {
       type: Boolean,
       required: false,
-      default: false
+      default: false,
     },
     errors: {
       type: Object,
       required: false,
       default: () => {
         return {}
-      }
+      },
     },
     rows: {
       type: Number,
       required: false,
-      default: 10
+      default: 10,
     },
     theme: {
       type: String,
       required: false,
-      default: ''
-    }
+      default: '',
+    },
   },
   computed: {
     classes() {
@@ -58,7 +58,7 @@ export default {
       }
 
       return 'border-red-500'
-    }
-  }
+    },
+  },
 }
 </script>

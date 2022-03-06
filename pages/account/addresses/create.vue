@@ -1,28 +1,19 @@
 <template>
   <div>
     <div class="flex items-center">
-
       <!-- Back -->
-      <ButtonBack
-        :route="{ name: 'account-addresses' }"
-        class="mr-20"
-      />
+      <ButtonBack :route="{ name: 'account-addresses' }" class="mr-20" />
 
       <!-- Page title -->
-      <Heading
-        tag="h1"
-        visual="h2"
-      >
+      <Heading tag="h1" visual="h2">
         {{ $t('account.addresses.titles.create') }}
       </Heading>
     </div>
 
     <Card>
       <form @submit.prevent="store">
-
         <!-- First row -->
         <FormRow>
-
           <!-- First name -->
           <FormRowGroup>
             <FormLabel name="first_name">
@@ -34,10 +25,7 @@
               name="first_name"
               required
             />
-            <FormValidation
-              :errors="errors"
-              name="first_name"
-            />
+            <FormValidation :errors="errors" name="first_name" />
           </FormRowGroup>
 
           <!-- Last name -->
@@ -51,10 +39,7 @@
               name="last_name"
               required
             />
-            <FormValidation
-              :errors="errors"
-              name="last_name"
-            />
+            <FormValidation :errors="errors" name="last_name" />
           </FormRowGroup>
         </FormRow>
 
@@ -68,14 +53,10 @@
             :errors="errors"
             name="company_name"
           />
-          <FormValidation
-            :errors="errors"
-            name="company_name"
-          />
+          <FormValidation :errors="errors" name="company_name" />
         </FormGroup>
 
         <FormRow>
-
           <!-- Address line 1 -->
           <FormRowGroup>
             <FormLabel name="address_line_1">
@@ -87,10 +68,7 @@
               name="address_line_1"
               required
             />
-            <FormValidation
-              :errors="errors"
-              name="address_line_1"
-            />
+            <FormValidation :errors="errors" name="address_line_1" />
           </FormRowGroup>
 
           <!-- Address line 2 -->
@@ -103,16 +81,12 @@
               :errors="errors"
               name="address_line_2"
             />
-            <FormValidation
-              :errors="errors"
-              name="address_line_2"
-            />
+            <FormValidation :errors="errors" name="address_line_2" />
           </FormRowGroup>
         </FormRow>
 
         <!-- Third row -->
         <FormRow>
-
           <!-- Postal code -->
           <FormRowGroup>
             <FormLabel name="postal_code">
@@ -124,10 +98,7 @@
               name="postal_code"
               required
             />
-            <FormValidation
-              :errors="errors"
-              name="postal_code"
-            />
+            <FormValidation :errors="errors" name="postal_code" />
           </FormRowGroup>
 
           <!-- City -->
@@ -141,10 +112,7 @@
               name="city"
               required
             />
-            <FormValidation
-              :errors="errors"
-              name="city"
-            />
+            <FormValidation :errors="errors" name="city" />
           </FormRowGroup>
         </FormRow>
 
@@ -159,10 +127,7 @@
 
         <!-- Default -->
         <FormGroup>
-          <FormCheckbox
-            v-model="form.is_default"
-            name="is_default"
-          >
+          <FormCheckbox v-model="form.is_default" name="is_default">
             <FormCheckboxLabel name="is_default">
               {{ $t('form.default_address.label') }}
             </FormCheckboxLabel>
@@ -171,13 +136,8 @@
 
         <!-- Controls -->
         <div class="flex">
-
           <!-- Submit -->
-          <ButtonPrimary
-            icon="check-circle"
-            type="submit"
-            class="mr-10"
-          >
+          <ButtonPrimary icon="check-circle" type="submit" class="mr-10">
             {{ $t('button.add') }}
           </ButtonPrimary>
 
@@ -225,22 +185,10 @@ export default {
     FormRow,
     FormRowGroup,
     FormValidation,
-    Heading
+    Heading,
   },
   layout: 'account-management',
   middleware: ['authenticated'],
-  head() {
-    return {
-      title: `${this.$t('account.addresses.titles.create')} | ${this.$t('account.title')}`,
-      meta: [
-        {
-          hid: 'robots',
-          name: 'robots',
-          content: 'noindex'
-        }
-      ]
-    }
-  },
   data() {
     return {
       form: {
@@ -252,9 +200,23 @@ export default {
         postal_code: '',
         city: '',
         country_id: '',
-        is_default: false
+        is_default: false,
       },
-      errors: {}
+      errors: {},
+    }
+  },
+  head() {
+    return {
+      title: `${this.$t('account.addresses.titles.create')} | ${this.$t(
+        'account.title'
+      )}`,
+      meta: [
+        {
+          hid: 'robots',
+          name: 'robots',
+          content: 'noindex',
+        },
+      ],
     }
   },
   methods: {
@@ -267,7 +229,7 @@ export default {
         this.errors = e.response.data.errors
         this.$toast.error(this.$t('toasts.validation'))
       }
-    }
-  }
+    },
+  },
 }
 </script>

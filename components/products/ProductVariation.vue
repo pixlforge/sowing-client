@@ -1,6 +1,5 @@
 <template>
   <div>
-
     <!-- Variation label -->
     <FormLabel name="variation">
       {{ variationType }}
@@ -9,8 +8,8 @@
     <!-- Variation select -->
     <FormSelect
       :value="selectedVariationId"
-      @change.native="changed"
       name="variation"
+      @change.native="changed"
     >
       <option
         v-for="variation in variations"
@@ -18,22 +17,18 @@
         :value="variation.id"
         :disabled="!variation.in_stock"
       >
-
         <!-- Variation name -->
         {{ variationName(variation) }}
 
         <!-- Price variation -->
         <template v-if="variation.price_varies">
-          ({{ variation.price.detailed.currency }} {{ variation.price.detailed.amount }})
+          ({{ variation.price.detailed.currency }}
+          {{ variation.price.detailed.amount }})
         </template>
 
-        <template v-if="!variation.in_stock">
-          ({{ outOfStock }})
-        </template>
-
+        <template v-if="!variation.in_stock"> ({{ outOfStock }}) </template>
       </option>
     </FormSelect>
-
   </div>
 </template>
 
@@ -46,26 +41,26 @@ import FormSelect from '@/components/forms/FormSelect'
 export default {
   components: {
     FormLabel,
-    FormSelect
+    FormSelect,
   },
   props: {
     type: {
       type: String,
-      required: true
+      required: true,
     },
     variations: {
       type: Array,
-      required: true
+      required: true,
     },
     value: {
       type: [Object, String],
       required: false,
-      default: ''
-    }
+      default: '',
+    },
   },
   computed: {
     ...mapGetters({
-      locale: 'locale'
+      locale: 'locale',
     }),
     outOfStock() {
       return this.$t('product.variations.select.out_of_stock')
@@ -86,14 +81,16 @@ export default {
       }
 
       return this.value.id
-    }
+    },
   },
   methods: {
     changed(event) {
       this.$emit('input', this.findVariation(event.target.value))
     },
     findVariation(id) {
-      const variation = this.variations.find(variation => variation.id === parseInt(id))
+      const variation = this.variations.find(
+        (variation) => variation.id === parseInt(id)
+      )
 
       if (typeof variation === 'undefined') {
         return null
@@ -103,7 +100,7 @@ export default {
     },
     variationName(variation) {
       return variation.name[this.locale]
-    }
-  }
+    },
+  },
 }
 </script>

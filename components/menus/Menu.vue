@@ -2,45 +2,32 @@
   <div class="md:relative">
     <button
       ref="dropdownMenu"
-      @click.prevent="toggleDropdown"
       class="outline-none focus:shadow-outline rounded-lg border border-gray-200 text-12 text-gray-500 font-extrabold text-center uppercase no-underline whitespace-no-wrap flex px-30 py-12"
+      @click.prevent="toggleDropdown"
     >
       {{ username }}
-      <font-awesome-icon
-        :icon="['fas', 'caret-down']"
-        class="text-16 ml-14"
-      />
+      <font-awesome-icon :icon="['fas', 'caret-down']" class="text-16 ml-14" />
     </button>
 
     <DropdownTransition>
       <DropdownContainer v-if="dropdownIsOpen">
-
         <!-- Account -->
-        <DropdownItem
-          :to="{ name: 'account-dashboard' }"
-          icon="user"
-        >
-          {{ $t("account.title") }}
+        <DropdownItem :to="{ name: 'account-dashboard' }" icon="user">
+          {{ $t('account.title') }}
         </DropdownItem>
 
         <!-- Orders -->
-        <DropdownItem
-          :to="{ name: 'orders' }"
-          icon="shipping-fast"
-        >
-          {{ $t("orders.title") }}
+        <DropdownItem :to="{ name: 'orders' }" icon="shipping-fast">
+          {{ $t('orders.title') }}
         </DropdownItem>
 
         <!-- Shop -->
-        <DropdownItem
-          :to="{ name: 'shop-management-dashboard' }"
-          icon="store"
-        >
-          {{ $t("shop.title") }}
+        <DropdownItem :to="{ name: 'shop-management-dashboard' }" icon="store">
+          {{ $t('shop.title') }}
         </DropdownItem>
 
         <template v-if="!userHasShop">
-          <DropdownDivider/>
+          <DropdownDivider />
 
           <!-- Shop create -->
           <li class="my-16">
@@ -50,20 +37,16 @@
               color="pink-dark"
               class="shadow-md"
             >
-              {{ $t("button.create_my_shop") }}
+              {{ $t('button.create_my_shop') }}
             </ButtonLinkPrimary>
           </li>
         </template>
 
-        <DropdownDivider/>
+        <DropdownDivider />
 
         <!-- Logout -->
-        <DropdownItem
-          @click.native="logout"
-          color="red"
-          icon="sign-out"
-        >
-          {{ $t("navbar.user.logout") }}
+        <DropdownItem color="red" icon="sign-out" @click.native="logout">
+          {{ $t('navbar.user.logout') }}
         </DropdownItem>
       </DropdownContainer>
     </DropdownTransition>
@@ -85,20 +68,20 @@ export default {
     DropdownContainer,
     DropdownDivider,
     DropdownItem,
-    DropdownTransition
+    DropdownTransition,
   },
   data() {
     return {
-      dropdownIsOpen: false
+      dropdownIsOpen: false,
     }
   },
   computed: {
     ...mapGetters({
-      userHasShop: 'userHasShop'
+      userHasShop: 'userHasShop',
     }),
     username() {
       return this.$auth.user.name
-    }
+    },
   },
   mounted() {
     const escapeHandler = (event) => {
@@ -124,7 +107,7 @@ export default {
   },
   methods: {
     ...mapActions({
-      emptyCart: 'cart/emptyCart'
+      emptyCart: 'cart/emptyCart',
     }),
     toggleDropdown() {
       this.dropdownIsOpen = !this.dropdownIsOpen
@@ -134,7 +117,7 @@ export default {
       this.$router.push({ name: 'index' })
       await this.$auth.logout()
       await this.emptyCart()
-    }
-  }
+    },
+  },
 }
 </script>

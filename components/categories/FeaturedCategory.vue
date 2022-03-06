@@ -4,21 +4,15 @@
       :style="imgUrl"
       class="relative h-full bg-cover bg-center bg-no-repeat flex items-end shadow-2xl"
     >
-
       <div class="flex flex-col items-start px-48 pb-48 z-10">
-
         <!-- Title -->
-        <Heading
-          tag="h2"
-          visual="h1"
-          utilities="text-white"
-        >
+        <Heading tag="h2" visual="h1" utilities="text-white">
           {{ category.name[locale] }}
         </Heading>
 
         <div class="text-white leading-none">
           <span class="text-16">
-            {{ $t("categories.in") }}
+            {{ $t('categories.in') }}
           </span>
           <span class="text-20 font-extrabold">
             {{ category.parent.name[locale] }}
@@ -36,18 +30,17 @@
             name: 'categories-category-subcategory-slug',
             params: {
               subcategory: category.parent.slug,
-              slug: category.slug
-            }
+              slug: category.slug,
+            },
           }"
           class="shadow-xl"
         >
-          {{ $t("categories.link.see_all") }}
+          {{ $t('categories.link.see_all') }}
         </ButtonLinkPrimary>
       </div>
 
       <!-- Mask -->
-      <div class="absolute w-full h-full bg-black opacity-50"/>
-
+      <div class="absolute w-full h-full bg-black opacity-50" />
     </div>
   </div>
 </template>
@@ -61,17 +54,17 @@ import Heading from '@/components/globals/Heading'
 export default {
   components: {
     ButtonLinkPrimary,
-    Heading
+    Heading,
   },
   props: {
     category: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
   computed: {
     ...mapGetters({
-      locale: 'locale'
+      locale: 'locale',
     }),
     categoryDescription() {
       if (!this.category.description[this.locale]) {
@@ -87,7 +80,7 @@ export default {
       }
 
       return `background-image: url(${this.category.media});`
-    }
-  }
+    },
+  },
 }
 </script>

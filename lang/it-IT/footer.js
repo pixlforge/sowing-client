@@ -5,7 +5,7 @@ export default {
       language: 'Lingua',
       sell_on_sowing: 'Vendere su Sowing',
       about: 'Informazioni',
-      social_networks: 'Reti sociali'
+      social_networks: 'Reti sociali',
     },
     links: {
       login: 'Log in',
@@ -15,12 +15,12 @@ export default {
       terms: "Condizioni d'uso",
       payments: 'Metodi di pagamento',
       shipments: 'Spedizioni',
-      faq: 'Domande frequenti'
+      faq: 'Domande frequenti',
     },
     disclaimer: {
       rights: 'Tutti i diritti riservati',
       made_with: 'Fatto con',
-      by: 'da'
-    }
-  }
+      by: 'da',
+    },
+  },
 }

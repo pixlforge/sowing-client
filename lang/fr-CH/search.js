@@ -7,6 +7,6 @@ export default {
     products: 'Produits',
     shops: 'Boutiques',
     no_product_found: 'Aucun produit trouvé',
-    no_shop_found: 'Aucune boutique trouvée'
-  }
+    no_shop_found: 'Aucune boutique trouvée',
+  },
 }

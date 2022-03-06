@@ -1,16 +1,15 @@
 <template>
   <div class="bg-gray-100">
     <div class="container flex py-60 lg:pb-72">
-
       <!-- Name -->
       <NavGroup>
         <NavOval
           :class="bgTheme"
-          @click.native="toShopCreatorName"
           class="text-white"
           label="1"
+          @click.native="toShopCreatorName"
         />
-        <NavLine :class="stepName ? bgTheme : 'bg-white'"/>
+        <NavLine :class="stepName ? bgTheme : 'bg-white'" />
         <NavLabel
           :label="$t('shop_creator.navigation.name')"
           :class="textTheme"
@@ -22,10 +21,10 @@
       <NavGroup>
         <NavOval
           :class="stepName ? `${bgTheme} text-white` : 'bg-white text-gray-200'"
-          @click.native="toShopCreatorDetails"
           label="2"
+          @click.native="toShopCreatorDetails"
         />
-        <NavLine :class="stepDetails ? bgTheme : 'bg-white'"/>
+        <NavLine :class="stepDetails ? bgTheme : 'bg-white'" />
         <NavLabel
           :label="$t('shop_creator.navigation.details')"
           :class="stepName ? textTheme : 'text-gray-200'"
@@ -36,11 +35,13 @@
       <!-- Customize -->
       <NavGroup>
         <NavOval
-          :class="stepDetails ? `${bgTheme} text-white` : 'bg-white text-gray-200'"
-          @click.native="toShopCreatorCustomization"
+          :class="
+            stepDetails ? `${bgTheme} text-white` : 'bg-white text-gray-200'
+          "
           label="3"
+          @click.native="toShopCreatorCustomization"
         />
-        <NavLine :class="stepCustomization ? bgTheme : 'bg-white'"/>
+        <NavLine :class="stepCustomization ? bgTheme : 'bg-white'" />
         <NavLabel
           :label="$t('shop_creator.navigation.customize')"
           :class="stepDetails ? textTheme : 'text-gray-200'"
@@ -51,11 +52,15 @@
       <!-- Connect -->
       <NavGroup>
         <NavOval
-          :class="stepCustomization ? `${bgTheme} text-white` : 'bg-white text-gray-200'"
-          @click.native="toShopCreatorConnect"
+          :class="
+            stepCustomization
+              ? `${bgTheme} text-white`
+              : 'bg-white text-gray-200'
+          "
           label="4"
+          @click.native="toShopCreatorConnect"
         />
-        <NavLine :class="stepConnect ? bgTheme : 'bg-white'"/>
+        <NavLine :class="stepConnect ? bgTheme : 'bg-white'" />
         <NavLabel
           :label="$t('shop_creator.navigation.connect')"
           :class="stepCustomization ? textTheme : 'text-gray-200'"
@@ -66,9 +71,11 @@
       <!-- Done -->
       <NavGroup last>
         <NavOval
-          :class="stepConnect ? `${bgTheme} text-white` : 'bg-white text-gray-200'"
-          @click.native="toShopCreatorDone"
+          :class="
+            stepConnect ? `${bgTheme} text-white` : 'bg-white text-gray-200'
+          "
           label="5"
+          @click.native="toShopCreatorDone"
         />
         <NavLabel
           :label="$t('shop_creator.navigation.done')"
@@ -76,7 +83,6 @@
           @click.native="toShopCreatorDone"
         />
       </NavGroup>
-
     </div>
   </div>
 </template>
@@ -95,7 +101,7 @@ export default {
     NavGroup,
     NavLabel,
     NavLine,
-    NavOval
+    NavOval,
   },
   mixins: [theming],
   computed: {
@@ -103,12 +109,12 @@ export default {
       stepName: 'shop/stepName',
       stepDetails: 'shop/stepDetails',
       stepCustomization: 'shop/stepCustomization',
-      stepConnect: 'shop/stepConnect'
-    })
+      stepConnect: 'shop/stepConnect',
+    }),
   },
   methods: {
     ...mapActions({
-      close: 'alert/close'
+      close: 'alert/close',
     }),
     toShopCreatorName() {
       this.close()
@@ -142,7 +148,7 @@ export default {
         this.close()
         this.$router.push({ name: 'shop-creator-done' })
       }
-    }
-  }
+    },
+  },
 }
 </script>

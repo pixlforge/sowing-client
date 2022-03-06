@@ -21,12 +21,12 @@ export default {
       required: false,
       default: () => {
         return {}
-      }
+      },
     },
     label: {
       type: String,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 }
 </script>

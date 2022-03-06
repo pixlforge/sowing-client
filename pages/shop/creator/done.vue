@@ -1,9 +1,7 @@
 <template>
   <main>
-
     <!-- Page contents -->
     <ContentSection>
-
       <Splash
         :title="$t('shop_creator.steps.done.title')"
         :subtitle="$t('shop_creator.steps.done.paragraph')"
@@ -11,30 +9,29 @@
         class="max-w-800"
       >
         <template slot="illustration">
-          <IllustrationSuccess/>
+          <IllustrationSuccess />
         </template>
       </Splash>
 
       <!-- Controls -->
       <ShopCreatorControls>
-
         <!-- Previous -->
         <ButtonTertiary
-          @click.native="prev"
           icon="chevron-circle-left"
           class="order-1 md:order-none mx-5"
+          @click.native="prev"
         >
-          {{ $t("button.back") }}
+          {{ $t('button.back') }}
         </ButtonTertiary>
 
         <!-- Next -->
         <ButtonPrimary
           :color="shopTheme"
-          @click.native="next"
           icon="chevron-circle-right"
           class="order-none md_order-1 mx-5"
+          @click.native="next"
         >
-          {{ $t("button.finish") }}
+          {{ $t('button.finish') }}
         </ButtonPrimary>
       </ShopCreatorControls>
     </ContentSection>
@@ -59,14 +56,14 @@ export default {
     ContentSection,
     IllustrationSuccess,
     ShopCreatorControls,
-    Splash
+    Splash,
   },
   mixins: [theming],
-  middleware: ['authenticated', 'hasShop'],
   layout: 'shop-creator',
+  middleware: ['authenticated', 'hasShop'],
   transition: {
     name: 'slide',
-    mode: 'out-in'
+    mode: 'out-in',
   },
   head() {
     return {
@@ -75,14 +72,14 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: ''
+          content: '',
         },
         {
           hid: 'robots',
           name: 'robots',
-          content: 'noindex'
-        }
-      ]
+          content: 'noindex',
+        },
+      ],
     }
   },
   computed: {
@@ -91,8 +88,8 @@ export default {
       shopExists: 'shop/shopExists',
       stepDetails: 'shop/stepDetails',
       stepCustomization: 'shop/stepCustomization',
-      stepConnect: 'shop/stepConnect'
-    })
+      stepConnect: 'shop/stepConnect',
+    }),
   },
   mounted() {
     if (!this.shopExists && this.$auth.user.has_shop) {
@@ -110,7 +107,7 @@ export default {
       setStepName: 'shop/setStepName',
       setStepDetails: 'shop/setStepDetails',
       setStepCustomization: 'shop/setStepCustomization',
-      setStepConnect: 'shop/setStepConnect'
+      setStepConnect: 'shop/setStepConnect',
     }),
     prev() {
       this.$router.push({ name: 'shop-creator-connect' })
@@ -124,7 +121,7 @@ export default {
       ) {
         this.$router.push({ name: 'shop-management-dashboard' })
       }
-    }
-  }
+    },
+  },
 }
 </script>

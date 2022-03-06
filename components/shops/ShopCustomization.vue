@@ -1,25 +1,20 @@
 <template>
   <div class="w-full">
-
     <!-- Profile image -->
     <section>
       <div class="flex justify-between items-center">
-
         <!-- Title -->
-        <Heading
-          tag="h1"
-          visual="h3"
-        >
-          {{ $t("form.avatar.label") }}
+        <Heading tag="h1" visual="h3">
+          {{ $t('form.avatar.label') }}
         </Heading>
 
         <!-- Delete avatar -->
         <ButtonPrimary
-          @click.native="deleteAvatar"
           size="mini"
           color="pink-dark"
+          @click.native="deleteAvatar"
         >
-          {{ $t("button.delete") }}
+          {{ $t('button.delete') }}
         </ButtonPrimary>
       </div>
 
@@ -37,22 +32,18 @@
     <!-- Cover image -->
     <section class="my-72">
       <div class="flex justify-between items-center">
-
         <!-- Title -->
-        <Heading
-          tag="h1"
-          visual="h3"
-        >
-          {{ $t("form.cover_image.label") }}
+        <Heading tag="h1" visual="h3">
+          {{ $t('form.cover_image.label') }}
         </Heading>
 
         <!-- Delete cover -->
         <ButtonPrimary
-          @click.native="deleteCover"
           size="mini"
           color="pink-dark"
+          @click.native="deleteCover"
         >
-          {{ $t("button.delete") }}
+          {{ $t('button.delete') }}
         </ButtonPrimary>
       </div>
 
@@ -69,13 +60,9 @@
 
     <!-- Theme selection -->
     <section>
-
       <!-- Title -->
-      <Heading
-        tag="h1"
-        visual="h3"
-      >
-        {{ $t("form.theme_selection.label") }}
+      <Heading tag="h1" visual="h3">
+        {{ $t('form.theme_selection.label') }}
       </Heading>
 
       <!-- Tiles list -->
@@ -85,11 +72,10 @@
           :key="index"
           class="mx-10 mt-20 lg:mt-0"
         >
-          <Tile :theme="theme"/>
+          <Tile :theme="theme" />
         </li>
       </ul>
     </section>
-
   </div>
 </template>
 
@@ -97,8 +83,8 @@
 import { mapGetters, mapActions } from 'vuex'
 
 import 'vue2-dropzone/dist/vue2Dropzone.css'
-import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 import Dropzone from 'nuxt-dropzone'
+import ButtonPrimary from '@/components/buttons/ButtonPrimary'
 import Heading from '@/components/globals/Heading'
 import Tile from '@/components/themes/Tile'
 
@@ -107,13 +93,13 @@ export default {
     ButtonPrimary,
     Dropzone,
     Heading,
-    Tile
+    Tile,
   },
   data() {
     return {
       dzOptions: {
         headers: {
-          Authorization: this.$auth.getToken('local')
+          Authorization: this.$auth.getToken('local'),
         },
         maxFiles: 1,
         maxFilesize: 2,
@@ -127,34 +113,32 @@ export default {
           'dropzone.dict_default_message'
         )}</span>`,
         dictFallbackMessage: this.$t('dropzone.dict_fallback_message'),
-        dictFileTooBig: this.$t('dropzone.dict_file_too_big')
-      }
+        dictFileTooBig: this.$t('dropzone.dict_file_too_big'),
+      },
     }
   },
   computed: {
     ...mapGetters({
       shop: 'shop/shop',
-      availableThemes: 'shop/availableThemes'
+      availableThemes: 'shop/availableThemes',
     }),
     optionsForAvatar() {
       return {
         ...this.dzOptions,
-        url: `${process.env.API_URL}/images/${
-          this.shop.slug
-        }/upload?type=avatar`
+        url: `${process.env.API_URL}/images/${this.shop.slug}/upload?type=avatar`,
       }
     },
     optionsForCover() {
       return {
         ...this.dzOptions,
-        url: `${process.env.API_URL}/images/${this.shop.slug}/upload?type=cover`
+        url: `${process.env.API_URL}/images/${this.shop.slug}/upload?type=cover`,
       }
-    }
+    },
   },
   methods: {
     ...mapActions({
       setCover: 'shop/setCover',
-      setAvatar: 'shop/setAvatar'
+      setAvatar: 'shop/setAvatar',
     }),
     deleteAvatar() {
       console.log('delete avatar')
@@ -177,7 +161,7 @@ export default {
         this.setCover(res.media.url)
         this.$toast.success(this.$t('toasts.shop_cover_updated'))
       }
-    }
-  }
+    },
+  },
 }
 </script>
