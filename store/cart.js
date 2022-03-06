@@ -6,9 +6,9 @@ export const state = () => ({
     is_empty: true,
     subtotal: {},
     total: {},
-    has_changed: false
+    has_changed: false,
   },
-  shippingMethod: null
+  shippingMethod: null,
 })
 
 export const getters = {
@@ -32,7 +32,7 @@ export const getters = {
   },
   shippingMethod(state) {
     return state.shippingMethod
-  }
+  },
 }
 
 export const mutations = {
@@ -57,7 +57,7 @@ export const mutations = {
   },
   SET_SHIPPING_METHOD(state, shippingMethod) {
     state.shippingMethod = shippingMethod
-  }
+  },
 }
 
 export const actions = {
@@ -85,14 +85,14 @@ export const actions = {
   },
   async update({ dispatch }, { productId, quantity }) {
     await this.$axios.$patch(`/cart/${productId}`, {
-      quantity
+      quantity,
     })
 
     dispatch('getCart')
   },
   async store({ dispatch }, variations) {
     await this.$axios.$post('/cart', {
-      'product_variations': variations
+      product_variations: variations,
     })
 
     dispatch('getCart')
@@ -102,5 +102,5 @@ export const actions = {
   },
   setShippingMethod({ commit }, shippingMethod) {
     commit('SET_SHIPPING_METHOD', shippingMethod)
-  }
+  },
 }

@@ -1,6 +1,6 @@
 export const state = () => ({
   message: '',
-  type: ''
+  type: '',
 })
 
 export const getters = {
@@ -9,7 +9,7 @@ export const getters = {
   },
   type(state) {
     return state.type
-  }
+  },
 }
 
 export const mutations = {
@@ -21,7 +21,7 @@ export const mutations = {
   },
   EMPTY_MESSAGE(state) {
     state.message = ''
-  }
+  },
 }
 
 export const actions = {
@@ -31,5 +31,5 @@ export const actions = {
   },
   close({ commit }) {
     commit('EMPTY_MESSAGE')
-  }
+  },
 }

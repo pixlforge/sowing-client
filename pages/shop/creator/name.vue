@@ -1,51 +1,42 @@
 <template>
   <main>
-
     <!-- Page contents -->
     <ContentSection>
-
       <!-- Title -->
-      <Heading
-        tag="h1"
-        visual="main"
-      >
-        {{ $t("shop_creator.steps.name.title") }}
+      <Heading tag="h1" visual="main">
+        {{ $t('shop_creator.steps.name.title') }}
       </Heading>
 
       <!-- Infos -->
-      <Paragraph
-        class="max-w-800"
-        center
-      >
-        {{ $t("shop_creator.steps.name.paragraph") }}
+      <Paragraph class="max-w-800" center>
+        {{ $t('shop_creator.steps.name.paragraph') }}
       </Paragraph>
 
       <!-- Shop name -->
       <ShopFeatureContainer class="max-w-600">
-        <ShopName/>
+        <ShopName />
       </ShopFeatureContainer>
 
       <!-- Controls -->
       <ShopCreatorControls>
-
         <!-- Previous -->
         <ButtonTertiary
-          @click.native="prev"
           icon="chevron-circle-left"
           class="order-1 md:order-none mx-5"
+          @click.native="prev"
         >
-          {{ $t("button.back") }}
+          {{ $t('button.back') }}
         </ButtonTertiary>
 
         <!-- Next -->
         <ButtonPrimary
           :disabled="!basicInfosProvided"
           :color="basicInfosProvided ? shopTheme : ''"
-          @click.native="next"
           icon="chevron-circle-right"
           class="order-none md_order-1 mx-5"
+          @click.native="next"
         >
-          {{ $t("button.next") }}
+          {{ $t('button.next') }}
         </ButtonPrimary>
       </ShopCreatorControls>
     </ContentSection>
@@ -74,14 +65,14 @@ export default {
     Paragraph,
     ShopCreatorControls,
     ShopFeatureContainer,
-    ShopName
+    ShopName,
   },
   mixins: [theming],
-  middleware: ['authenticated'],
   layout: 'shop-creator',
+  middleware: ['authenticated'],
   transition: {
     name: 'slide',
-    mode: 'out-in'
+    mode: 'out-in',
   },
   head() {
     return {
@@ -90,14 +81,14 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: ''
+          content: '',
         },
         {
           hid: 'robots',
           name: 'robots',
-          content: 'noindex'
-        }
-      ]
+          content: 'noindex',
+        },
+      ],
     }
   },
   computed: {
@@ -105,11 +96,11 @@ export default {
       terms: 'shop/terms',
       shopName: 'shop/shopName',
       shopExists: 'shop/shopExists',
-      stepDetails: 'shop/stepDetails'
+      stepDetails: 'shop/stepDetails',
     }),
     basicInfosProvided() {
       return this.shopName
-    }
+    },
   },
   async asyncData({ app, store }) {
     const shop = await app.$axios.$get('/user/shop')
@@ -134,7 +125,7 @@ export default {
       close: 'alert/close',
       setShop: 'shop/setShop',
       setStepName: 'shop/setStepName',
-      setStepDetails: 'shop/setStepDetails'
+      setStepDetails: 'shop/setStepDetails',
     }),
     prev() {
       this.$router.push({ name: 'shop-creator-terms' })
@@ -147,7 +138,7 @@ export default {
 
       try {
         await this.$axios.$post('/shops/checker', {
-          name: this.shopName
+          name: this.shopName,
         })
         this.close()
         this.$router.push({ name: 'shop-creator-details' })
@@ -160,10 +151,10 @@ export default {
           type: 'danger',
           message: `"<em>${this.shopName}</em>" ${this.$t(
             'toasts.is_already_in_use'
-          )}!`
+          )}!`,
         })
       }
-    }
-  }
+    },
+  },
 }
 </script>

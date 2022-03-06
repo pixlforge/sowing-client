@@ -10,13 +10,13 @@ const initialState = {
       en: '',
       fr: '',
       de: '',
-      it: ''
+      it: '',
     },
     description_long: {
       en: '',
       fr: '',
       de: '',
-      it: ''
+      it: '',
     },
     theme: 'green',
     postal_code: '',
@@ -26,9 +26,9 @@ const initialState = {
     stripe_publishable_key: '',
     media: {
       avatar: '',
-      cover: ''
-    }
-  }
+      cover: '',
+    },
+  },
 }
 
 export const state = () => ({
@@ -44,8 +44,8 @@ export const state = () => ({
     'teal',
     'brown',
     'gray',
-    'slate'
-  ]
+    'slate',
+  ],
 })
 
 export const getters = {
@@ -123,7 +123,7 @@ export const getters = {
   },
   shopStripePublishableKey(state) {
     return state.shop.stripe_publishable_key
-  }
+  },
 }
 
 export const mutations = {
@@ -192,7 +192,7 @@ export const mutations = {
   },
   RESET_SHOP(state) {
     Object.assign(state, initialState)
-  }
+  },
 }
 
 export const actions = {
@@ -273,5 +273,5 @@ export const actions = {
   },
   resetShop({ commit }) {
     commit('RESET_SHOP')
-  }
+  },
 }

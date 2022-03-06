@@ -1,18 +1,9 @@
 <template>
   <div>
-
     <!-- Title -->
-    <Heading
-      tag="h1"
-      visual="h1"
-    >
-      Dashboard
-    </Heading>
+    <Heading tag="h1" visual="h1"> Dashboard </Heading>
 
-    <Card>
-      this is the dashboard of the shop management section
-    </Card>
-
+    <Card> this is the dashboard of the shop management section </Card>
   </div>
 </template>
 
@@ -25,11 +16,11 @@ import Heading from '@/components/globals/Heading'
 export default {
   components: {
     Card,
-    Heading
+    Heading,
   },
   mixins: [shopManagement],
-  middleware: ['authenticated'],
   layout: 'shop-management',
+  middleware: ['authenticated'],
   head() {
     return {
       title: this.$t('shop.management.dashboard.title'),
@@ -37,15 +28,15 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: ''
+          content: '',
         },
         {
           hid: 'robots',
           name: 'robots',
-          content: 'noindex'
-        }
-      ]
+          content: 'noindex',
+        },
+      ],
     }
-  }
+  },
 }
 </script>

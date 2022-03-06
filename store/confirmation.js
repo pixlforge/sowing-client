@@ -1,6 +1,6 @@
 export const state = () => ({
   show: false,
-  resourceId: null
+  resourceId: null,
 })
 
 export const getters = {
@@ -9,7 +9,7 @@ export const getters = {
   },
   getResourceId(state) {
     return state.resourceId
-  }
+  },
 }
 
 export const mutations = {
@@ -24,7 +24,7 @@ export const mutations = {
   },
   CLEAR_RESOURCE_ID(state) {
     state.resourceId = null
-  }
+  },
 }
 
 export const actions = {
@@ -35,5 +35,5 @@ export const actions = {
   closeModal({ commit }) {
     commit('TOGGLE_SHOW')
     commit('CLEAR_RESOURCE_ID')
-  }
+  },
 }

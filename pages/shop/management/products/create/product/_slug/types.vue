@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-
     <!-- Progress -->
     <ProductCreatorProgress :current-step="4">
       {{ $t('product.creator.type.types_variations') }}
@@ -8,24 +7,19 @@
 
     <!-- Header -->
     <header class="flex flex-wrap items-center my-30">
-
       <!-- Back -->
       <ButtonBack
         :route="{
           name: 'shop-management-products-create-product-slug-price',
           params: {
-            slug: product.slug
-          }
+            slug: product.slug,
+          },
         }"
         class="mr-20"
       />
 
       <!-- Page title -->
-      <Heading
-        tag="h1"
-        visual="h4"
-        utilities="text-center"
-      >
+      <Heading tag="h1" visual="h4" utilities="text-center">
         {{ $t('product.management.create.types_for') }}
         <span :class="`text-${shopTheme}-500`">
           {{ product.name[locale] || $t('product.management.create.unnamed') }}
@@ -57,16 +51,16 @@
       :key="type.id"
       :type="type"
       :product="product"
-      @product-variation:added="getProduct"
       class="mb-10"
+      @product-variation:added="getProduct"
     />
 
     <!-- Add a new variation type -->
     <ButtonPulse
-      @click.native="addVariationType"
       :should-pulse="productHasNoType"
       icon="plus"
       class="text-14"
+      @click.native="addVariationType"
     >
       <template v-if="productHasNoType">
         {{ $t('product.creator.type.add') }}
@@ -79,14 +73,13 @@
     <!-- Controls -->
     <FormSection class="lg:w-full">
       <div class="flex justify-center items-center">
-
         <!-- Cancel -->
         <ButtonLinkTertiary
           :route="{
             name: 'shop-management-products-create-product-slug-price',
             params: {
-              slug: product.slug
-            }
+              slug: product.slug,
+            },
           }"
           icon="arrow-left"
         >
@@ -112,12 +105,11 @@
       :title="$t('modals.product_variation_type.delete.title')"
       :body="$t('modals.product_variation_type.delete.title')"
       :button-label="$t('button.delete')"
-      @confirm="destroy"
       button-icon="trash-alt"
       icon="exclamation-circle"
       color="red"
+      @confirm="destroy"
     />
-
   </div>
 </template>
 
@@ -147,41 +139,40 @@ export default {
     Heading,
     InfoTip,
     ProductCreatorProgress,
-    ProductVariationType
+    ProductVariationType,
   },
   mixins: [theming],
-  middleware: [
-    'authenticated',
-    'hasShop'
-  ],
   layout: 'create-product',
+  middleware: ['authenticated', 'hasShop'],
+  data() {
+    return {
+      product: {},
+      errors: {},
+    }
+  },
   head() {
     return {
-      title: `${this.$t('product.management.create.types')} | ${this.$t('product.management.create.title')} | ${this.product.name[this.locale]} | ${this.shop.name}`,
+      title: `${this.$t('product.management.create.types')} | ${this.$t(
+        'product.management.create.title'
+      )} | ${this.product.name[this.locale]} | ${this.shop.name}`,
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: ''
+          content: '',
         },
         {
           hid: 'robots',
           name: 'robots',
-          content: 'noindex'
-        }
-      ]
-    }
-  },
-  data() {
-    return {
-      product: {},
-      errors: {}
+          content: 'noindex',
+        },
+      ],
     }
   },
   computed: {
     ...mapGetters({
       locale: 'locale',
-      getResourceId: 'confirmation/getResourceId'
+      getResourceId: 'confirmation/getResourceId',
     }),
     productHasAtLeastOneType() {
       return this.product.types.length
@@ -191,7 +182,7 @@ export default {
     },
     productHasAtLeastOneVariation() {
       return this.product.variations.length
-    }
+    },
   },
   async asyncData({ app, params }) {
     const shop = await app.$axios.$get('/user/shop')
@@ -199,7 +190,7 @@ export default {
 
     return {
       shop: shop.data,
-      product: product.data
+      product: product.data,
     }
   },
   mounted() {
@@ -208,11 +199,13 @@ export default {
   methods: {
     ...mapActions({
       setShop: 'shop/setShop',
-      closeModal: 'confirmation/closeModal'
+      closeModal: 'confirmation/closeModal',
     }),
     async addVariationType() {
       try {
-        const type = await this.$axios.$post(`/products/${this.product.slug}/product-variation-types`)
+        const type = await this.$axios.$post(
+          `/products/${this.product.slug}/product-variation-types`
+        )
         this.product.types.push(type.data)
         this.$toast.success('Congratulations!!!')
       } catch (e) {
@@ -221,7 +214,9 @@ export default {
     },
     async destroy() {
       try {
-        await this.$axios.$delete(`/products/${this.product.slug}/product-variation-types/${this.getResourceId}`)
+        await this.$axios.$delete(
+          `/products/${this.product.slug}/product-variation-types/${this.getResourceId}`
+        )
         await this.getProduct()
         this.$toasted.success(this.$t('toasts.addresses.deleted'))
       } catch (e) {
@@ -232,7 +227,7 @@ export default {
     async getProduct() {
       const res = await this.$axios.$get(`/products/${this.product.slug}`)
       this.product = res.data
-    }
-  }
+    },
+  },
 }
 </script>

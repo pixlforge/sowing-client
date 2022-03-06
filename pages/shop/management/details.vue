@@ -1,32 +1,17 @@
 <template>
   <div>
-
     <!-- Title -->
-    <Heading
-      tag="h1"
-      visual="h1"
-    >
-      Détails
-    </Heading>
+    <Heading tag="h1" visual="h1"> Détails </Heading>
 
     <!-- Shop details -->
     <Card>
-      <ShopDetails
-        :countries="countries"
-        :errors="errors"
-        editable
-      />
+      <ShopDetails :countries="countries" :errors="errors" editable />
 
       <!-- Save changes -->
-      <ButtonPrimary
-        :color="shopTheme"
-        @click.native="update"
-        icon="check"
-      >
-        {{ $t("button.update") }}
+      <ButtonPrimary :color="shopTheme" icon="check" @click.native="update">
+        {{ $t('button.update') }}
       </ButtonPrimary>
     </Card>
-
   </div>
 </template>
 
@@ -45,14 +30,25 @@ export default {
     ButtonPrimary,
     Card,
     Heading,
-    ShopDetails
+    ShopDetails,
   },
-  mixins: [
-    theming,
-    shopManagement
-  ],
-  middleware: ['authenticated'],
+  mixins: [theming, shopManagement],
   layout: 'shop-management',
+  middleware: ['authenticated'],
+  async asyncData({ app }) {
+    const shop = await app.$axios.$get('/user/shop')
+    const countries = await app.$axios.$get('/countries')
+
+    return {
+      shopData: shop.data,
+      countries: countries.data,
+    }
+  },
+  data() {
+    return {
+      errors: {},
+    }
+  },
   head() {
     return {
       title: this.$t('shop.management.details.title'),
@@ -60,33 +56,19 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: ''
+          content: '',
         },
         {
           hid: 'robots',
           name: 'robots',
-          content: 'noindex'
-        }
-      ]
-    }
-  },
-  data() {
-    return {
-      errors: {}
-    }
-  },
-  async asyncData({ app }) {
-    const shop = await app.$axios.$get('/user/shop')
-    const countries = await app.$axios.$get('/countries')
-
-    return {
-      shopData: shop.data,
-      countries: countries.data
+          content: 'noindex',
+        },
+      ],
     }
   },
   methods: {
     ...mapActions({
-      updateShop: 'shop/updateShop'
+      updateShop: 'shop/updateShop',
     }),
     async update() {
       try {
@@ -96,7 +78,7 @@ export default {
         this.errors = e.response.data.errors
         this.$toast.error(this.$t('toasts.validation'))
       }
-    }
-  }
+    },
+  },
 }
 </script>

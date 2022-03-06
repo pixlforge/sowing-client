@@ -1,13 +1,9 @@
 <template>
   <div>
     <ResourceHeader>
-
       <!-- Page title -->
-      <Heading
-        tag="h1"
-        visual="h1"
-      >
-        {{ $t("product.management.index.title") }}
+      <Heading tag="h1" visual="h1">
+        {{ $t('product.management.index.title') }}
       </Heading>
 
       <!-- Add a product -->
@@ -18,10 +14,7 @@
       />
     </ResourceHeader>
 
-    <Card>
-      List of all products
-    </Card>
-
+    <Card> List of all products </Card>
   </div>
 </template>
 
@@ -38,11 +31,11 @@ export default {
     ButtonLinkAdd,
     Card,
     Heading,
-    ResourceHeader
+    ResourceHeader,
   },
   mixins: [shopManagement],
-  middleware: ['authenticated', 'hasShop'],
   layout: 'shop-management',
+  middleware: ['authenticated', 'hasShop'],
   head() {
     return {
       title: this.$t('product.management.index.title'),
@@ -50,15 +43,15 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: ''
+          content: '',
         },
         {
           hid: 'robots',
           name: 'robots',
-          content: 'noindex'
-        }
-      ]
+          content: 'noindex',
+        },
+      ],
     }
-  }
+  },
 }
 </script>

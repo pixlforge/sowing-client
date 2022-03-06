@@ -1,6 +1,5 @@
 <template>
   <div class="container-narrow">
-
     <!-- Progress -->
     <ProductCreatorProgress :current-step="2">
       {{ $t('product.creator.category.category') }}
@@ -8,24 +7,19 @@
 
     <!-- Header -->
     <header class="flex flex-wrap items-center my-30">
-
       <!-- Back -->
       <ButtonBack
         :route="{
           name: 'shop-management-products-create-product-slug',
           params: {
-            slug: product.slug
-          }
+            slug: product.slug,
+          },
         }"
         class="mr-20"
       />
 
       <!-- Page title -->
-      <Heading
-        tag="h1"
-        visual="h4"
-        utilities="text-center"
-      >
+      <Heading tag="h1" visual="h4" utilities="text-center">
         {{ $t('product.management.create.category_for') }}
         <span :class="`text-${shopTheme}-500`">
           {{ product.name[locale] || $t('product.management.create.unnamed') }}
@@ -39,10 +33,7 @@
     </InfoTip>
 
     <!-- Form -->
-    <form
-      @submit.prevent="update"
-      class="flex flex-wrap -mx-10"
-    >
+    <form class="flex flex-wrap -mx-10" @submit.prevent="update">
       <FormSection class="lg:w-full">
         <FormSectionTitle>
           {{ $t('form.category.label') }}
@@ -53,7 +44,8 @@
               {{ $t('form.category.label') }}
             </FormLabel>
             <FormLabelDescription>
-              Associez votre produit à une catégorie afin que nous puissions le répertorier dans le catalogue.
+              Associez votre produit à une catégorie afin que nous puissions le
+              répertorier dans le catalogue.
             </FormLabelDescription>
             <FormSelect
               v-model.number="form.category_id"
@@ -77,10 +69,7 @@
                 </option>
               </optgroup>
             </FormSelect>
-            <FormValidation
-              :errors="errors"
-              name="category_id"
-            />
+            <FormValidation :errors="errors" name="category_id" />
           </FormGroup>
         </FormFieldset>
       </FormSection>
@@ -88,14 +77,13 @@
       <!-- Controls -->
       <FormSection class="lg:w-full">
         <div class="flex justify-center items-center">
-
           <!-- Cancel -->
           <ButtonLinkTertiary
             :route="{
               name: 'shop-management-products-create-product-slug',
               params: {
-                slug: product.slug
-              }
+                slug: product.slug,
+              },
             }"
             icon="arrow-left"
           >
@@ -152,59 +140,60 @@ export default {
     FormSelect,
     FormValidation,
     InfoTip,
-    ProductCreatorProgress
+    ProductCreatorProgress,
   },
   mixins: [theming],
-  middleware: [
-    'authenticated',
-    'hasShop'
-  ],
   layout: 'create-product',
+  middleware: ['authenticated', 'hasShop'],
+  data() {
+    return {
+      form: {
+        category_id: null,
+      },
+      product: {},
+      errors: {},
+    }
+  },
   head() {
     return {
-      title: `${this.$t('product.management.create.category')} | ${this.product.name[this.locale]} | ${this.$t('product.management.create.title')} | ${this.shop.name}`,
+      title: `${this.$t('product.management.create.category')} | ${
+        this.product.name[this.locale]
+      } | ${this.$t('product.management.create.title')} | ${this.shop.name}`,
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: ''
+          content: '',
         },
         {
           hid: 'robots',
           name: 'robots',
-          content: 'noindex'
-        }
-      ]
-    }
-  },
-  data() {
-    return {
-      form: {
-        category_id: null
-      },
-      product: {},
-      errors: {}
+          content: 'noindex',
+        },
+      ],
     }
   },
   computed: {
     ...mapGetters({
       locale: 'locale',
-      categories: 'categories'
+      categories: 'categories',
     }),
     filteredCategories() {
       return this.categories.map((category) => {
         const parentCategory = {
           ...category,
-          children: category.children.map((subcategory) => {
-            if (subcategory.is_section) {
-              return subcategory.children
-            }
-            return subcategory
-          }).reduce((a, b) => a.concat(b), [])
+          children: category.children
+            .map((subcategory) => {
+              if (subcategory.is_section) {
+                return subcategory.children
+              }
+              return subcategory
+            })
+            .reduce((a, b) => a.concat(b), []),
         }
         return parentCategory
       })
-    }
+    },
   },
   async asyncData({ app, params }) {
     const shop = await app.$axios.$get('/user/shop')
@@ -212,7 +201,7 @@ export default {
 
     return {
       shop: shop.data,
-      product: product.data
+      product: product.data,
     }
   },
   mounted() {
@@ -221,7 +210,7 @@ export default {
   },
   methods: {
     ...mapActions({
-      setShop: 'shop/setShop'
+      setShop: 'shop/setShop',
     }),
     async update() {
       try {
@@ -229,8 +218,8 @@ export default {
         this.$router.push({
           name: 'shop-management-products-create-product-slug-price',
           params: {
-            slug: this.product.slug
-          }
+            slug: this.product.slug,
+          },
         })
       } catch (e) {
         this.errors = e.response.data.errors
@@ -240,7 +229,7 @@ export default {
       if (this.product.category !== null) {
         this.form.category_id = this.product.category.id
       }
-    }
-  }
+    },
+  },
 }
 </script>

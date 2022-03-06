@@ -1,6 +1,6 @@
 export const state = () => ({
   categories: [],
-  user: {}
+  user: {},
 })
 
 export const getters = {
@@ -14,7 +14,7 @@ export const getters = {
     if (state.auth.user) {
       return state.auth.user.has_shop
     }
-  }
+  },
 }
 
 export const mutations = {
@@ -26,7 +26,7 @@ export const mutations = {
   },
   SET_USER(state, user) {
     state.auth.user = user
-  }
+  },
 }
 
 export const actions = {
@@ -44,5 +44,5 @@ export const actions = {
   },
   setUser({ commit }, user) {
     commit('SET_USER', user)
-  }
+  },
 }

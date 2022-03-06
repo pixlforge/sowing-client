@@ -1,19 +1,12 @@
 <template>
   <div>
-
     <!-- Title -->
-    <Heading
-      tag="h1"
-      visual="h1"
-    >
-      Thème
-    </Heading>
+    <Heading tag="h1" visual="h1"> Thème </Heading>
 
     <!-- Shop customization -->
     <Card>
-      <ShopCustomization/>
+      <ShopCustomization />
     </Card>
-
   </div>
 </template>
 
@@ -29,14 +22,11 @@ export default {
   components: {
     Card,
     Heading,
-    ShopCustomization
+    ShopCustomization,
   },
-  mixins: [
-    theming,
-    shopManagement
-  ],
-  middleware: ['authenticated'],
+  mixins: [theming, shopManagement],
   layout: 'shop-management',
+  middleware: ['authenticated'],
   head() {
     return {
       title: this.$t('shop.management.theme.title'),
@@ -44,15 +34,15 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: ''
+          content: '',
         },
         {
           hid: 'robots',
           name: 'robots',
-          content: 'noindex'
-        }
-      ]
+          content: 'noindex',
+        },
+      ],
     }
-  }
+  },
 }
 </script>

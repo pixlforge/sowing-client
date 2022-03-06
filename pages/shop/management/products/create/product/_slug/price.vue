@@ -1,6 +1,5 @@
 <template>
   <div class="container-narrow">
-
     <!-- Progress -->
     <ProductCreatorProgress :current-step="3">
       {{ $t('product.creator.price.price') }}
@@ -8,24 +7,19 @@
 
     <!-- Header -->
     <header class="flex flex-wrap items-center my-30">
-
       <!-- Back -->
       <ButtonBack
         :route="{
           name: 'shop-management-products-create-product-slug-category',
           params: {
-            slug: product.slug
-          }
+            slug: product.slug,
+          },
         }"
         class="mr-20"
       />
 
       <!-- Page title -->
-      <Heading
-        tag="h1"
-        visual="h4"
-        utilities="text-center"
-      >
+      <Heading tag="h1" visual="h4" utilities="text-center">
         {{ $t('product.management.create.price_for') }}
         <span :class="`text-${shopTheme}-500`">
           {{ product.name[locale] || $t('product.management.create.unnamed') }}
@@ -39,10 +33,7 @@
     </InfoTip>
 
     <!-- Form -->
-    <form
-      @submit.prevent="update"
-      class="flex flex-wrap -mx-10"
-    >
+    <form class="flex flex-wrap -mx-10" @submit.prevent="update">
       <FormSection class="lg:w-full">
         <FormSectionTitle>
           {{ $t('form.price.label') }}
@@ -53,7 +44,9 @@
               {{ $t('form.price.label') }}
             </FormLabel>
             <FormLabelDescription>
-              Fixez le prix de votre produit en francs suisses (CHF) en tenant compte des frais d'envoi ainsi que des frais perçus par la plateforme.
+              Fixez le prix de votre produit en francs suisses (CHF) en tenant
+              compte des frais d'envoi ainsi que des frais perçus par la
+              plateforme.
             </FormLabelDescription>
             <FormInput
               ref="priceInput"
@@ -61,10 +54,7 @@
               :errors="errors"
               name="price"
             />
-            <FormValidation
-              :errors="errors"
-              name="price"
-            />
+            <FormValidation :errors="errors" name="price" />
           </FormGroup>
         </FormFieldset>
       </FormSection>
@@ -72,14 +62,13 @@
       <!-- Controls -->
       <FormSection class="lg:w-full">
         <div class="flex justify-center items-center">
-
           <!-- Cancel -->
           <ButtonLinkTertiary
             :route="{
               name: 'shop-management-products-create-product-slug-category',
               params: {
-                slug: product.slug
-              }
+                slug: product.slug,
+              },
             }"
             icon="arrow-left"
           >
@@ -137,52 +126,51 @@ export default {
     FormValidation,
     Heading,
     InfoTip,
-    ProductCreatorProgress
+    ProductCreatorProgress,
   },
   mixins: [theming],
   layout: 'create-product',
-  middleware: [
-    'authenticated',
-    'hasShop'
-  ],
-  head() {
-    return {
-      title: `${this.$t('product.management.create.price')} | ${this.product.name[this.locale]} | ${this.$t('product.management.create.title')} | ${this.shop.name}`,
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: ''
-        },
-        {
-          hid: 'robots',
-          name: 'robots',
-          content: 'noindex'
-        }
-      ]
-    }
-  },
+  middleware: ['authenticated', 'hasShop'],
   data() {
     return {
       form: {
-        price: null
+        price: null,
       },
       product: {},
       displayPrice: null,
       autoNumeric: {},
-      errors: {}
+      errors: {},
+    }
+  },
+  head() {
+    return {
+      title: `${this.$t('product.management.create.price')} | ${
+        this.product.name[this.locale]
+      } | ${this.$t('product.management.create.title')} | ${this.shop.name}`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: '',
+        },
+        {
+          hid: 'robots',
+          name: 'robots',
+          content: 'noindex',
+        },
+      ],
     }
   },
   computed: {
     ...mapGetters({
-      locale: 'locale'
-    })
+      locale: 'locale',
+    }),
   },
   watch: {
     displayPrice() {
       this.autoNumeric.reformat()
       this.form.price = this.autoNumeric.rawValue * 100
-    }
+    },
   },
   async asyncData({ app, params }) {
     const shop = await app.$axios.$get('/user/shop')
@@ -190,7 +178,7 @@ export default {
 
     return {
       shop: shop.data,
-      product: product.data
+      product: product.data,
     }
   },
   mounted() {
@@ -199,7 +187,7 @@ export default {
   },
   methods: {
     ...mapActions({
-      setShop: 'shop/setShop'
+      setShop: 'shop/setShop',
     }),
     async update() {
       try {
@@ -207,8 +195,8 @@ export default {
         this.$router.push({
           name: 'shop-management-products-create-product-slug-types',
           params: {
-            slug: this.product.slug
-          }
+            slug: this.product.slug,
+          },
         })
       } catch (e) {
         this.errors = e.response.data.errors
@@ -220,17 +208,18 @@ export default {
         decimalCharacter: '.',
         decimalCharacterAlternative: ',',
         currencySymbol: 'CHF ',
-        currencySymbolPlacement: AutoNumeric.options.currencySymbolPlacement.prefix,
+        currencySymbolPlacement:
+          AutoNumeric.options.currencySymbolPlacement.prefix,
         roundingMethod: AutoNumeric.options.roundingMethod.toNearest05Alt,
         minimumValue: '1',
         selectNumberOnly: true,
-        modifyValueOnWheel: false
+        modifyValueOnWheel: false,
       })
       if (this.product.price.detailed.amount > 0) {
         this.autoNumeric.set(this.product.price.detailed.amount)
         this.form.price = this.autoNumeric.rawValue * 100
       }
-    }
-  }
+    },
+  },
 }
 </script>

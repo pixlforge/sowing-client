@@ -7,7 +7,7 @@ module.exports = {
       lg: '1024px',
       xl: '1280px',
       '2xl': '1920px',
-      '3xl': '2560px'
+      '3xl': '2560px',
     },
     colors: {
       transparent: 'transparent',
@@ -24,7 +24,7 @@ module.exports = {
         600: '#478158',
         700: '#335C3F',
         800: '#1B3324',
-        900: '#0F2116'
+        900: '#0F2116',
       },
 
       gray: {
@@ -36,7 +36,7 @@ module.exports = {
         600: '#2E2E2E',
         700: '#212121',
         800: '#1A1A1A',
-        900: '#101010'
+        900: '#101010',
       },
 
       blue: {
@@ -48,7 +48,7 @@ module.exports = {
         600: '#2E74AC',
         700: '#21527A',
         800: '#1A4262',
-        900: '#10293D'
+        900: '#10293D',
       },
 
       brown: {
@@ -60,7 +60,7 @@ module.exports = {
         600: '#553C32',
         700: '#3C2B24',
         800: '#30221D',
-        900: '#1E1512'
+        900: '#1E1512',
       },
 
       indigo: {
@@ -72,7 +72,7 @@ module.exports = {
         600: '#404B86',
         700: '#2E3560',
         800: '#252B4D',
-        900: '#171B30'
+        900: '#171B30',
       },
 
       orange: {
@@ -84,7 +84,7 @@ module.exports = {
         600: '#dd6b20',
         700: '#c05621',
         800: '#9c4221',
-        900: '#7b341e'
+        900: '#7b341e',
       },
 
       purple: {
@@ -96,7 +96,7 @@ module.exports = {
         600: '#583D88',
         700: '#3F2C61',
         800: '#32234E',
-        900: '#201630'
+        900: '#201630',
       },
 
       pink: {
@@ -108,7 +108,7 @@ module.exports = {
         600: '#CF2B66',
         700: '#783149',
         800: '#60273A',
-        900: '#3C1824'
+        900: '#3C1824',
       },
 
       red: {
@@ -120,7 +120,7 @@ module.exports = {
         600: '#E53E3E',
         700: '#C53030',
         800: '#9B2C2C',
-        900: '#742A2A'
+        900: '#742A2A',
       },
 
       slate: {
@@ -132,7 +132,7 @@ module.exports = {
         600: '#3B4D55',
         700: '#2A373D',
         800: '#222C31',
-        900: '#151C1E'
+        900: '#151C1E',
       },
 
       teal: {
@@ -144,119 +144,119 @@ module.exports = {
         600: '#319795',
         700: '#2c7a7b',
         800: '#285e61',
-        900: '#234e52'
+        900: '#234e52',
       },
 
-      'backdrop': 'rgba(0, 0, 0, .25)'
+      backdrop: 'rgba(0, 0, 0, .25)',
     },
     fontSize: {
-      '5': '.5rem',
-      '10': '1rem',
-      '12': '1.2rem',
-      '14': '1.4rem',
-      '16': '1.6rem',
-      '18': '1.8rem',
-      '20': '2rem',
-      '24': '2.4rem',
-      '30': '3rem',
-      '36': '3.6rem',
-      '48': '4.8rem',
-      '60': '6rem',
-      '72': '7.2rem',
-      '132': '13.2rem'
+      5: '.5rem',
+      10: '1rem',
+      12: '1.2rem',
+      14: '1.4rem',
+      16: '1.6rem',
+      18: '1.8rem',
+      20: '2rem',
+      24: '2.4rem',
+      30: '3rem',
+      36: '3.6rem',
+      48: '4.8rem',
+      60: '6rem',
+      72: '7.2rem',
+      132: '13.2rem',
     },
     height: {
       auto: 'auto',
-      '3': '.3rem',
-      '10': '1rem',
-      '15': '1.5rem',
-      '20': '2rem',
-      '25': '2.5rem',
-      '30': '3rem',
-      '40': '4rem',
-      '42': '4.2rem',
-      '46': '4.6rem',
-      '50': '5rem',
-      '60': '6rem',
-      '75': '7.5rem',
-      '80': '8rem',
-      '90': '9rem',
-      '100': '10rem',
-      '110': '11rem',
-      '150': '15rem',
-      '200': '20rem',
-      '250': '25rem',
-      '300': '30rem',
-      '350': '35rem',
-      '400': '40rem',
-      '500': '50rem',
-      '700': '70rem',
+      3: '.3rem',
+      10: '1rem',
+      15: '1.5rem',
+      20: '2rem',
+      25: '2.5rem',
+      30: '3rem',
+      40: '4rem',
+      42: '4.2rem',
+      46: '4.6rem',
+      50: '5rem',
+      60: '6rem',
+      75: '7.5rem',
+      80: '8rem',
+      90: '9rem',
+      100: '10rem',
+      110: '11rem',
+      150: '15rem',
+      200: '20rem',
+      250: '25rem',
+      300: '30rem',
+      350: '35rem',
+      400: '40rem',
+      500: '50rem',
+      700: '70rem',
       full: '100%',
-      screen: '100vh'
+      screen: '100vh',
     },
     minWidth: {
-      full: '100%'
+      full: '100%',
     },
     minHeight: {
-      '160': '16rem',
-      '221': '22.1rem',
+      160: '16rem',
+      221: '22.1rem',
       full: '100%',
       'third-screen': '33vh',
       'half-screen': '50vh',
-      screen: '100vh'
+      screen: '100vh',
     },
     maxWidth: {
-      '200': '20rem',
-      '300': '30rem',
-      '400': '40rem',
-      '500': '50rem',
-      '600': '60rem',
-      '800': '80rem',
-      '1000': '100rem',
-      full: '100%'
+      200: '20rem',
+      300: '30rem',
+      400: '40rem',
+      500: '50rem',
+      600: '60rem',
+      800: '80rem',
+      1000: '100rem',
+      full: '100%',
     },
     padding: {
-      '0': '0',
-      '5': '.5rem',
-      '10': '1rem',
-      '12': '1.2rem',
-      '14': '1.4rem',
-      '16': '1.6rem',
-      '18': '1.8rem',
-      '20': '2rem',
-      '24': '2.4rem',
-      '30': '3rem',
-      '36': '3.6rem',
-      '48': '4.8rem',
-      '60': '6rem',
-      '72': '7.2rem',
-      '96': '9.6rem',
-      '132': '13.2rem',
-      '196': '19.6rem'
+      0: '0',
+      5: '.5rem',
+      10: '1rem',
+      12: '1.2rem',
+      14: '1.4rem',
+      16: '1.6rem',
+      18: '1.8rem',
+      20: '2rem',
+      24: '2.4rem',
+      30: '3rem',
+      36: '3.6rem',
+      48: '4.8rem',
+      60: '6rem',
+      72: '7.2rem',
+      96: '9.6rem',
+      132: '13.2rem',
+      196: '19.6rem',
     },
     margin: {
       auto: 'auto',
-      '0': '0',
-      '1': '.1rem',
-      '2': '.2rem',
-      '3': '.3rem',
-      '5': '.5rem',
-      '10': '1rem',
-      '12': '1.2rem',
-      '14': '1.4rem',
-      '16': '1.6rem',
-      '18': '1.8rem',
-      '20': '2rem',
-      '24': '2.4rem',
-      '30': '3rem',
-      '36': '3.6rem',
-      '48': '4.8rem',
-      '60': '6rem',
-      '72': '7.2rem',
-      '84': '8.4rem',
-      '96': '9.6rem',
-      '132': '13.2rem',
-      '196': '19.6rem',
+      0: '0',
+      1: '.1rem',
+      2: '.2rem',
+      3: '.3rem',
+      5: '.5rem',
+      10: '1rem',
+      12: '1.2rem',
+      14: '1.4rem',
+      16: '1.6rem',
+      18: '1.8rem',
+      20: '2rem',
+      24: '2.4rem',
+      30: '3rem',
+      36: '3.6rem',
+      48: '4.8rem',
+      60: '6rem',
+      72: '7.2rem',
+      84: '8.4rem',
+      96: '9.6rem',
+      132: '13.2rem',
+      196: '19.6rem',
       '-5': '-.5rem',
       '-10': '-1rem',
       '-12': '-1.2rem',
@@ -267,38 +267,38 @@ module.exports = {
       '-36': '-3.6rem',
       '-48': '-4.8rem',
       '-60': '-6rem',
-      '-72': '-7.2rem'
+      '-72': '-7.2rem',
     },
     container: {
       center: true,
-      padding: '2rem'
+      padding: '2rem',
     },
     extend: {
       fontFamily: {
-        sans: ['Montserrat']
+        sans: ['Montserrat'],
       },
       width: {
-        '10': '1rem',
-        '15': '1.5rem',
-        '20': '2rem',
-        '25': '2.5rem',
-        '30': '3rem',
-        '40': '4rem',
-        '50': '5rem',
-        '60': '6rem',
-        '75': '7.5rem',
-        '80': '8rem',
-        '90': '9rem',
-        '100': '10rem',
-        '110': '11rem',
-        '200': '20rem',
-        '300': '30rem',
-        '350': '35rem'
+        10: '1rem',
+        15: '1.5rem',
+        20: '2rem',
+        25: '2.5rem',
+        30: '3rem',
+        40: '4rem',
+        50: '5rem',
+        60: '6rem',
+        75: '7.5rem',
+        80: '8rem',
+        90: '9rem',
+        100: '10rem',
+        110: '11rem',
+        200: '20rem',
+        300: '30rem',
+        350: '35rem',
       },
       opacity: {
-        '10': '.1'
-      }
-    }
+        10: '.1',
+      },
+    },
   },
   variants: {
     accessibility: [],
@@ -307,7 +307,14 @@ module.exports = {
     alignSelf: ['responsive'],
     appearance: [],
     backgroundAttachment: ['responsive'],
-    backgroundColor: ['responsive', 'hover', 'focus', 'group-hover', 'disabled', 'odd'],
+    backgroundColor: [
+      'responsive',
+      'hover',
+      'focus',
+      'group-hover',
+      'disabled',
+      'odd',
+    ],
     backgroundPosition: ['responsive'],
     backgroundRepeat: ['responsive'],
     backgroundSize: ['responsive'],
@@ -360,7 +367,7 @@ module.exports = {
     whitespace: ['responsive'],
     wordBreak: [],
     width: ['responsive', 'first', 'last'],
-    zIndex: []
+    zIndex: [],
   },
   corePlugins: {
     container: false,
@@ -368,9 +375,7 @@ module.exports = {
     listStylePosition: false,
     maxHeight: false,
     pointerEvents: false,
-    verticalAlign: false
+    verticalAlign: false,
   },
-  plugins: [
-    require('@tailwindcss/custom-forms')
-  ]
+  plugins: [require('@tailwindcss/custom-forms')],
 }

@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-
     <!-- Progress -->
     <ProductCreatorProgress :current-step="5">
       {{ $t('product.creator.variation.variation') }}
@@ -8,27 +7,25 @@
 
     <!-- Header -->
     <header class="flex flex-wrap items-center my-30">
-
       <!-- Back -->
       <ButtonBack
         v-if="product"
         :route="{
           name: 'shop-management-products-create-product-slug-types',
           params: {
-            slug: product.slug
-          }
+            slug: product.slug,
+          },
         }"
         class="mr-20"
       />
 
       <!-- Page title -->
-      <Heading
-        tag="h1"
-        visual="h4"
-        utilities="text-center"
-      >
+      <Heading tag="h1" visual="h4" utilities="text-center">
         <span :class="`text-${shopTheme}-500`">
-          {{ variationName || $t('product.creator.variation.unnamed') | capitalizeFirstLetter }}
+          {{
+            variationName ||
+            $t('product.creator.variation.unnamed') | capitalizeFirstLetter
+          }}
         </span>
       </Heading>
     </header>
@@ -36,37 +33,28 @@
     <!-- Infotip -->
     <InfoTip icon="info">
       <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde numquam quia fugiat cum laboriosam iste. Ab, excepturi qui, repellat odio odit vitae aliquam dignissimos facere minus, quod obcaecati facilis. Quisquam.
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde numquam
+        quia fugiat cum laboriosam iste. Ab, excepturi qui, repellat odio odit
+        vitae aliquam dignissimos facere minus, quod obcaecati facilis.
+        Quisquam.
       </p>
     </InfoTip>
 
     <!-- Content -->
-    <form
-      @submit.prevent="update"
-      class="flex flex-wrap -mx-10"
-    >
-
+    <form class="flex flex-wrap -mx-10" @submit.prevent="update">
       <!-- French -->
       <FormSection>
         <FormSectionTitle>
           {{ $t('languages.french') }}
         </FormSectionTitle>
         <FormFieldset>
-
           <!-- Name -->
           <FormGroup>
             <FormLabel name="name.fr">
               {{ $t('form.name.label') }}
             </FormLabel>
-            <FormInput
-              v-model="form.name.fr"
-              :errors="errors"
-              name="name.fr"
-            />
-            <FormValidation
-              :errors="errors"
-              name="name.fr"
-            />
+            <FormInput v-model="form.name.fr" :errors="errors" name="name.fr" />
+            <FormValidation :errors="errors" name="name.fr" />
           </FormGroup>
 
           <!-- Description -->
@@ -80,10 +68,7 @@
               :errors="errors"
               name="description.fr"
             />
-            <FormValidation
-              :errors="errors"
-              name="description.fr"
-            />
+            <FormValidation :errors="errors" name="description.fr" />
           </FormGroup>
         </FormFieldset>
       </FormSection>
@@ -94,21 +79,13 @@
           {{ $t('languages.english') }}
         </FormSectionTitle>
         <FormFieldset>
-
           <!-- Name -->
           <FormGroup>
             <FormLabel name="name.en">
               {{ $t('form.name.label') }}
             </FormLabel>
-            <FormInput
-              v-model="form.name.en"
-              :errors="errors"
-              name="name.en"
-            />
-            <FormValidation
-              :errors="errors"
-              name="name.en"
-            />
+            <FormInput v-model="form.name.en" :errors="errors" name="name.en" />
+            <FormValidation :errors="errors" name="name.en" />
           </FormGroup>
 
           <!-- Description -->
@@ -122,10 +99,7 @@
               :errors="errors"
               name="description.en"
             />
-            <FormValidation
-              :errors="errors"
-              name="description.en"
-            />
+            <FormValidation :errors="errors" name="description.en" />
           </FormGroup>
         </FormFieldset>
       </FormSection>
@@ -136,21 +110,13 @@
           {{ $t('languages.german') }}
         </FormSectionTitle>
         <FormFieldset>
-
           <!-- Name -->
           <FormGroup>
             <FormLabel name="name.de">
               {{ $t('form.name.label') }}
             </FormLabel>
-            <FormInput
-              v-model="form.name.de"
-              :errors="errors"
-              name="name.de"
-            />
-            <FormValidation
-              :errors="errors"
-              name="name.de"
-            />
+            <FormInput v-model="form.name.de" :errors="errors" name="name.de" />
+            <FormValidation :errors="errors" name="name.de" />
           </FormGroup>
 
           <!-- Description -->
@@ -164,10 +130,7 @@
               :errors="errors"
               name="description.de"
             />
-            <FormValidation
-              :errors="errors"
-              name="description.de"
-            />
+            <FormValidation :errors="errors" name="description.de" />
           </FormGroup>
         </FormFieldset>
       </FormSection>
@@ -178,21 +141,13 @@
           {{ $t('languages.italian') }}
         </FormSectionTitle>
         <FormFieldset>
-
           <!-- Name -->
           <FormGroup>
             <FormLabel name="name.it">
               {{ $t('form.name.label') }}
             </FormLabel>
-            <FormInput
-              v-model="form.name.it"
-              :errors="errors"
-              name="name.it"
-            />
-            <FormValidation
-              :errors="errors"
-              name="name.it"
-            />
+            <FormInput v-model="form.name.it" :errors="errors" name="name.it" />
+            <FormValidation :errors="errors" name="name.it" />
           </FormGroup>
 
           <!-- Description -->
@@ -206,10 +161,7 @@
               :errors="errors"
               name="description.it"
             />
-            <FormValidation
-              :errors="errors"
-              name="description.it"
-            />
+            <FormValidation :errors="errors" name="description.it" />
           </FormGroup>
         </FormFieldset>
       </FormSection>
@@ -229,27 +181,22 @@
               :errors="errors"
               name="price"
             />
-            <FormValidation
-              :errors="errors"
-              name="price"
-            />
+            <FormValidation :errors="errors" name="price" />
           </FormGroup>
         </FormFieldset>
       </FormSection>
-
     </form>
 
     <!-- Controls -->
     <FormSection class="lg:w-full">
       <div class="flex justify-center items-center">
-
         <!-- Back -->
         <ButtonLinkTertiary
           :route="{
             name: 'shop-management-products-create-product-slug-types',
             params: {
-              slug: product.slug
-            }
+              slug: product.slug,
+            },
           }"
           icon="arrow-left"
         >
@@ -261,8 +208,8 @@
           :route="{
             name: 'shop-management-products-create-product-slug-types',
             params: {
-              slug: product.slug
-            }
+              slug: product.slug,
+            },
           }"
           :color="shopTheme"
           icon="arrow-left"
@@ -274,7 +221,6 @@
         </ButtonLinkPrimary>
       </div>
     </FormSection>
-
   </div>
 </template>
 
@@ -315,28 +261,22 @@ export default {
     FormValidation,
     Heading,
     InfoTip,
-    ProductCreatorProgress
+    ProductCreatorProgress,
   },
-  mixins: [
-    theming,
-    locales,
-    capitalizeFirstLetter
-  ],
-  middleware: [
-    'authenticated',
-    'hasShop'
-  ],
+  mixins: [theming, locales, capitalizeFirstLetter],
   layout: 'create-product',
-  head() {
+  middleware: ['authenticated', 'hasShop'],
+  async asyncData({ app, params }) {
+    const shop = await app.$axios.$get('/user/shop')
+    const product = await app.$axios.$get(`/products/${params.slug}`)
+    const variation = await app.$axios.$get(
+      `/products/${params.slug}/product-variations/${params.id}`
+    )
+
     return {
-      title: `${this.$t('product.creator.variation.title')} ${this.form.name[this.locale] || this.$t('product.creator.variation.unnamed')} | ${this.$t('product.management.create.title')} | ${this.product.name[this.locale]} | ${this.shop.name}`,
-      meta: [
-        {
-          hid: 'robots',
-          name: 'robots',
-          content: 'noindex'
-        }
-      ]
+      shop: shop.data,
+      product: product.data,
+      form: variation.data,
     }
   },
   data() {
@@ -344,30 +284,36 @@ export default {
       form: {},
       displayPrice: null,
       autoNumeric: {},
-      errors: {}
+      errors: {},
+    }
+  },
+  head() {
+    return {
+      title: `${this.$t('product.creator.variation.title')} ${
+        this.form.name[this.locale] ||
+        this.$t('product.creator.variation.unnamed')
+      } | ${this.$t('product.management.create.title')} | ${
+        this.product.name[this.locale]
+      } | ${this.shop.name}`,
+      meta: [
+        {
+          hid: 'robots',
+          name: 'robots',
+          content: 'noindex',
+        },
+      ],
     }
   },
   computed: {
     variationName() {
       return this.form.name[this.locale]
-    }
+    },
   },
   watch: {
     displayPrice() {
       this.autoNumeric.reformat()
       this.form.price = this.autoNumeric.rawValue * 100
-    }
-  },
-  async asyncData({ app, params }) {
-    const shop = await app.$axios.$get('/user/shop')
-    const product = await app.$axios.$get(`/products/${params.slug}`)
-    const variation = await app.$axios.$get(`/products/${params.slug}/product-variations/${params.id}`)
-
-    return {
-      shop: shop.data,
-      product: product.data,
-      form: variation.data
-    }
+    },
   },
   mounted() {
     this.setShop(this.shop)
@@ -375,7 +321,7 @@ export default {
   },
   methods: {
     ...mapActions({
-      setShop: 'shop/setShop'
+      setShop: 'shop/setShop',
     }),
     initAutoNumeric() {
       this.autoNumeric = new AutoNumeric(this.$refs.priceInput.$el, {
@@ -383,17 +329,18 @@ export default {
         decimalCharacter: '.',
         decimalCharacterAlternative: ',',
         currencySymbol: 'CHF ',
-        currencySymbolPlacement: AutoNumeric.options.currencySymbolPlacement.prefix,
+        currencySymbolPlacement:
+          AutoNumeric.options.currencySymbolPlacement.prefix,
         roundingMethod: AutoNumeric.options.roundingMethod.toNearest05Alt,
         minimumValue: '1',
         selectNumberOnly: true,
-        modifyValueOnWheel: false
+        modifyValueOnWheel: false,
       })
       if (this.product.price.detailed.amount > 0) {
         this.autoNumeric.set(this.product.price.detailed.amount)
         this.form.price = this.autoNumeric.rawValue * 100
       }
-    }
-  }
+    },
+  },
 }
 </script>

@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-
     <!-- Progress -->
     <ProductCreatorProgress :current-step="1">
       {{ $t('product.creator.name_description.name_description') }}
@@ -8,19 +7,11 @@
 
     <!-- Header -->
     <header class="flex flex-wrap items-center my-30">
-
       <!-- Back -->
-      <ButtonBack
-        :route="{ name: 'shop-management-products' }"
-        class="mr-20"
-      />
+      <ButtonBack :route="{ name: 'shop-management-products' }" class="mr-20" />
 
       <!-- Page title -->
-      <Heading
-        tag="h1"
-        visual="h4"
-        utilities="text-center"
-      >
+      <Heading tag="h1" visual="h4" utilities="text-center">
         {{ $t('product.management.create.name_and_description_for') }}
         <span :class="`text-${shopTheme}-500`">
           {{ form.name[locale] || $t('product.management.create.unnamed') }}
@@ -34,35 +25,24 @@
     </InfoTip>
 
     <!-- Form -->
-    <form
-      @submit.prevent="store"
-      class="flex flex-wrap -mx-10"
-    >
-
+    <form class="flex flex-wrap -mx-10" @submit.prevent="store">
       <!-- French -->
       <FormSection>
         <FormSectionTitle>
           {{ $t('languages.french') }}
         </FormSectionTitle>
         <FormFieldset>
-
           <!-- Name -->
           <FormGroup>
             <FormLabel name="name.fr">
               {{ $t('form.name.label') }}
             </FormLabel>
             <FormLabelDescription>
-              Le nom de votre produit. Entrez, en français, un nom descriptif identifiant votre produit.
+              Le nom de votre produit. Entrez, en français, un nom descriptif
+              identifiant votre produit.
             </FormLabelDescription>
-            <FormInput
-              v-model="form.name.fr"
-              :errors="errors"
-              name="name.fr"
-            />
-            <FormValidation
-              :errors="errors"
-              name="name.fr"
-            />
+            <FormInput v-model="form.name.fr" :errors="errors" name="name.fr" />
+            <FormValidation :errors="errors" name="name.fr" />
           </FormGroup>
 
           <!-- Description -->
@@ -71,17 +51,15 @@
               {{ $t('form.description.label') }}
             </FormLabel>
             <FormLabelDescription>
-              Décrivez, en français, votre produit de la manière dont vous le voulez.
+              Décrivez, en français, votre produit de la manière dont vous le
+              voulez.
             </FormLabelDescription>
             <FormTextarea
               v-model="form.description.fr"
               :errors="errors"
               name="description.fr"
             />
-            <FormValidation
-              :errors="errors"
-              name="description.fr"
-            />
+            <FormValidation :errors="errors" name="description.fr" />
           </FormGroup>
         </FormFieldset>
       </FormSection>
@@ -92,24 +70,17 @@
           {{ $t('languages.english') }}
         </FormSectionTitle>
         <FormFieldset>
-
           <!-- Name -->
           <FormGroup>
             <FormLabel name="name.en">
               {{ $t('form.name.label') }}
             </FormLabel>
             <FormLabelDescription>
-              Le nom de votre produit. Entrez, en anglais, un nom descriptif identifiant votre produit.
+              Le nom de votre produit. Entrez, en anglais, un nom descriptif
+              identifiant votre produit.
             </FormLabelDescription>
-            <FormInput
-              v-model="form.name.en"
-              :errors="errors"
-              name="name.en"
-            />
-            <FormValidation
-              :errors="errors"
-              name="name.en"
-            />
+            <FormInput v-model="form.name.en" :errors="errors" name="name.en" />
+            <FormValidation :errors="errors" name="name.en" />
           </FormGroup>
 
           <!-- Description -->
@@ -118,17 +89,15 @@
               {{ $t('form.description.label') }}
             </FormLabel>
             <FormLabelDescription>
-              Décrivez, en anglais, votre produit de la manière dont vous le voulez.
+              Décrivez, en anglais, votre produit de la manière dont vous le
+              voulez.
             </FormLabelDescription>
             <FormTextarea
               v-model="form.description.en"
               :errors="errors"
               name="description.en"
             />
-            <FormValidation
-              :errors="errors"
-              name="description.en"
-            />
+            <FormValidation :errors="errors" name="description.en" />
           </FormGroup>
         </FormFieldset>
       </FormSection>
@@ -139,24 +108,17 @@
           {{ $t('languages.german') }}
         </FormSectionTitle>
         <FormFieldset>
-
           <!-- Name -->
           <FormGroup>
             <FormLabel name="name.de">
               {{ $t('form.name.label') }}
             </FormLabel>
             <FormLabelDescription>
-              Le nom de votre produit. Entrez, en allemand, un nom descriptif identifiant votre produit.
+              Le nom de votre produit. Entrez, en allemand, un nom descriptif
+              identifiant votre produit.
             </FormLabelDescription>
-            <FormInput
-              v-model="form.name.de"
-              :errors="errors"
-              name="name.de"
-            />
-            <FormValidation
-              :errors="errors"
-              name="name.de"
-            />
+            <FormInput v-model="form.name.de" :errors="errors" name="name.de" />
+            <FormValidation :errors="errors" name="name.de" />
           </FormGroup>
 
           <!-- Description -->
@@ -165,17 +127,15 @@
               {{ $t('form.description.label') }}
             </FormLabel>
             <FormLabelDescription>
-              Décrivez, en allemand, votre produit de la manière dont vous le voulez.
+              Décrivez, en allemand, votre produit de la manière dont vous le
+              voulez.
             </FormLabelDescription>
             <FormTextarea
               v-model="form.description.de"
               :errors="errors"
               name="description.de"
             />
-            <FormValidation
-              :errors="errors"
-              name="description.de"
-            />
+            <FormValidation :errors="errors" name="description.de" />
           </FormGroup>
         </FormFieldset>
       </FormSection>
@@ -186,24 +146,17 @@
           {{ $t('languages.italian') }}
         </FormSectionTitle>
         <FormFieldset>
-
           <!-- Name -->
           <FormGroup>
             <FormLabel name="name.it">
               {{ $t('form.name.label') }}
             </FormLabel>
             <FormLabelDescription>
-              Le nom de votre produit. Entrez, en italien, un nom descriptif identifiant votre produit.
+              Le nom de votre produit. Entrez, en italien, un nom descriptif
+              identifiant votre produit.
             </FormLabelDescription>
-            <FormInput
-              v-model="form.name.it"
-              :errors="errors"
-              name="name.it"
-            />
-            <FormValidation
-              :errors="errors"
-              name="name.it"
-            />
+            <FormInput v-model="form.name.it" :errors="errors" name="name.it" />
+            <FormValidation :errors="errors" name="name.it" />
           </FormGroup>
 
           <!-- Description -->
@@ -212,17 +165,15 @@
               {{ $t('form.description.label') }}
             </FormLabel>
             <FormLabelDescription>
-              Décrivez, en italien, votre produit de la manière dont vous le voulez.
+              Décrivez, en italien, votre produit de la manière dont vous le
+              voulez.
             </FormLabelDescription>
             <FormTextarea
               v-model="form.description.it"
               :errors="errors"
               name="description.it"
             />
-            <FormValidation
-              :errors="errors"
-              name="description.it"
-            />
+            <FormValidation :errors="errors" name="description.it" />
           </FormGroup>
         </FormFieldset>
       </FormSection>
@@ -230,7 +181,6 @@
       <!-- Controls -->
       <FormSection class="lg:w-full">
         <div class="flex justify-center items-center">
-
           <!-- Cancel -->
           <ButtonLinkTertiary
             :route="{ name: 'shop-management-products' }"
@@ -252,7 +202,6 @@
         </div>
       </FormSection>
     </form>
-
   </div>
 </template>
 
@@ -292,31 +241,11 @@ export default {
     FormValidation,
     Heading,
     InfoTip,
-    ProductCreatorProgress
+    ProductCreatorProgress,
   },
   mixins: [theming],
-  middleware: [
-    'authenticated',
-    'hasShop'
-  ],
   layout: 'create-product',
-  head() {
-    return {
-      title: `${this.$t('product.management.create.title')} | ${this.shop.name}`,
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: ''
-        },
-        {
-          hid: 'robots',
-          name: 'robots',
-          content: 'noindex'
-        }
-      ]
-    }
-  },
+  middleware: ['authenticated', 'hasShop'],
   data() {
     return {
       form: {
@@ -324,29 +253,48 @@ export default {
           en: '',
           fr: '',
           de: '',
-          it: ''
+          it: '',
         },
         description: {
           en: '',
           fr: '',
           de: '',
-          it: ''
-        }
+          it: '',
+        },
       },
-      errors: {}
+      errors: {},
+    }
+  },
+  head() {
+    return {
+      title: `${this.$t('product.management.create.title')} | ${
+        this.shop.name
+      }`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: '',
+        },
+        {
+          hid: 'robots',
+          name: 'robots',
+          content: 'noindex',
+        },
+      ],
     }
   },
   computed: {
     ...mapGetters({
       categories: 'categories',
-      locale: 'locale'
-    })
+      locale: 'locale',
+    }),
   },
   async asyncData({ app, params }) {
     const shop = await app.$axios.$get('/user/shop')
 
     return {
-      shop: shop.data
+      shop: shop.data,
     }
   },
   mounted() {
@@ -354,7 +302,7 @@ export default {
   },
   methods: {
     ...mapActions({
-      setShop: 'shop/setShop'
+      setShop: 'shop/setShop',
     }),
     async store() {
       try {
@@ -363,13 +311,13 @@ export default {
         this.$router.push({
           name: 'shop-management-products-create-product-slug-category',
           params: {
-            slug: product.data.slug
-          }
+            slug: product.data.slug,
+          },
         })
       } catch (e) {
         this.errors = e.response.data.errors
       }
-    }
-  }
+    },
+  },
 }
 </script>

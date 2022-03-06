@@ -1,6 +1,6 @@
 export const state = () => ({
   addressSelectorIsOpen: false,
-  addressCreatorIsOpen: false
+  addressCreatorIsOpen: false,
 })
 
 export const getters = {
@@ -12,7 +12,7 @@ export const getters = {
   },
   addressManagersVisible(state) {
     return state.addressSelectorIsOpen || state.addressCreatorIsOpen
-  }
+  },
 }
 
 export const mutations = {
@@ -21,7 +21,7 @@ export const mutations = {
   },
   SET_ADDRESS_CREATOR(state, value) {
     state.addressCreatorIsOpen = value
-  }
+  },
 }
 
 export const actions = {
@@ -36,5 +36,5 @@ export const actions = {
   },
   closeAddressCreator({ commit }) {
     commit('SET_ADDRESS_CREATOR', false)
-  }
+  },
 }
