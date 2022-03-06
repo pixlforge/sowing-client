@@ -71,7 +71,7 @@ export default {
     // Doc: https://github.com/nuxt-community/axios-module#usage
     '@nuxtjs/axios',
     '@nuxtjs/auth',
-    'nuxt-fontawesome',
+    '@nuxtjs/fontawesome',
     'nuxt-webfontloader',
     '@nuxtjs/toast',
     ['@nuxtjs/dotenv', {}],
@@ -165,20 +165,13 @@ export default {
    * Font Awesome configuration
    */
   fontawesome: {
-    imports: [
-      {
-        set: '@fortawesome/pro-regular-svg-icons',
-        icons: ['far'],
-      },
-      {
-        set: '@fortawesome/pro-solid-svg-icons',
-        icons: ['fas'],
-      },
-      {
-        set: '@fortawesome/free-brands-svg-icons',
-        icons: ['fab'],
-      },
-    ],
+    icons: {
+      brands: true,
+    },
+    proIcons: {
+      solid: true,
+      regular: true,
+    },
   },
   /**
    * Toast configuration
