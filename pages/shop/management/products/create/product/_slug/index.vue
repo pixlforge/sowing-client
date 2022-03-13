@@ -14,7 +14,14 @@
       <Heading tag="h1" visual="h4" utilities="text-center">
         {{ $t('product.management.create.name_and_description_for') }}
         <span :class="`text-${shopTheme}-500`">
-          {{ form.name[locale] || $t('product.management.create.unnamed') }}
+          {{
+            form.name[locale] ||
+            form.name['en'] ||
+            form.name['fr'] ||
+            form.name['de'] ||
+            form.name['it'] ||
+            $t('product.management.create.unnamed')
+          }}
         </span>
       </Heading>
     </header>
