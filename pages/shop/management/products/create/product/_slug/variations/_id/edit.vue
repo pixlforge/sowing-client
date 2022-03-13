@@ -225,6 +225,7 @@
 </template>
 
 <script>
+import { debounce as _debounce } from 'lodash'
 import AutoNumeric from 'autonumeric'
 import { mapActions } from 'vuex'
 import theming from '@/mixins/theming'
@@ -314,6 +315,15 @@ export default {
       this.autoNumeric.reformat()
       this.form.price = this.autoNumeric.rawValue * 100
     },
+    form: {
+      deep: true,
+      handler: _debounce(async function () {
+        await this.$axios.$patch(
+          `/products/${this.product.slug}/product-variations/${this.form.id}`,
+          this.form
+        )
+      }, 1000),
+    },
   },
   mounted() {
     this.setShop(this.shop)
@@ -336,8 +346,8 @@ export default {
         selectNumberOnly: true,
         modifyValueOnWheel: false,
       })
-      if (this.product.price.detailed.amount > 0) {
-        this.autoNumeric.set(this.product.price.detailed.amount)
+      if (this.form.price.detailed.amount > 0) {
+        this.autoNumeric.set(this.form.price.detailed.amount)
         this.form.price = this.autoNumeric.rawValue * 100
       }
     },
