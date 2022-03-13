@@ -52,14 +52,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [
-    '~/plugins/axios',
-    '~/plugins/vue-instantsearch',
-    // {
-    //   src: '~/plugins/mailchimp-analytics',
-    //   ssr: false
-    // }
-  ],
+  plugins: ['~/plugins/axios', '~/plugins/vue-instantsearch'],
   /*
    ** Nuxt.js modules
    */
