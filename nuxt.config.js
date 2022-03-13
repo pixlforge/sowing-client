@@ -8,10 +8,6 @@ export default {
     port: 3000,
   },
   /*
-   ** App mode
-   */
-  mode: 'universal',
-  /*
    ** Headers of the page
    */
   head: {
